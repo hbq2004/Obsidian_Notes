@@ -4,20 +4,20 @@
     "type": "split",
     "children": [
       {
-        "id": "980e8a3a91e02b27",
+        "id": "5cee1e2d650731b1",
         "type": "tabs",
         "children": [
           {
-            "id": "6356cc9c1c692677",
+            "id": "bdd44db77d65278b",
             "type": "leaf",
             "state": {
               "type": "canvas",
               "state": {
                 "file": "01 - 数学/02 - 线代/02 - 矩阵.canvas",
                 "viewState": {
-                  "x": 3611.997553088022,
-                  "y": 5305.288606873542,
-                  "zoom": -4
+                  "x": 6947.042854863821,
+                  "y": 11710.079566692044,
+                  "zoom": -1.078813072626371
                 }
               },
               "icon": "lucide-layout-dashboard",
@@ -132,13 +132,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "01 - 数学/02 - 线代/矩阵总结.md",
+                "file": "01 - 数学/02 - 线代/02 - 矩阵.canvas",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "矩阵总结 的大纲"
+              "title": "02 - 矩阵 的大纲"
             }
           },
           {
@@ -232,29 +232,44 @@
       "bases:新建数据库": false,
       "realclaudian:Open Claudian": false,
       "omnisearch:Omnisearch": false,
-      "obsidian-git:Open Git source control": false
+      "obsidian-git:Open Git source control": false,
+      "hidden-folder-obsidian:显示文件夹": false
     }
   },
-  "active": "6356cc9c1c692677",
+  "active": "bdd44db77d65278b",
   "lastOpenFiles": [
     "01 - 数学/02 - 线代/01 - 行列式.canvas",
     "01 - 数学/02 - 线代/02 - 矩阵.canvas",
-    "01 - 数学/02 - 线代/03 - 向量组.canvas",
-    "_Attachments/Images/Pasted image 20260607152424.png",
-    "_Attachments/Images/Pasted image 20260607152154.png",
-    "_Attachments/Images/Pasted image 20260607151700.png",
-    "_Attachments/Images/Pasted image 20260607150844.png",
-    "_Attachments/Images/Pasted image 20260607150752.png",
-    "_Attachments/Images/Pasted image 20260607150402.png",
-    "_Attachments/Images/Pasted image 20260607150331.png",
-    "_Attachments/Images/Pasted image 20260607150038.png",
-    "_Attachments/Images/Pasted image 20260607150007.png",
-    "_Attachments/Images/Pasted image 20260607145718.png",
+    "01 - 数学/好题错题整理/02 - 线代/1000/1000b,3,5,矩阵乘法交换律,反例.md",
+    "_Attachments/Images/Pasted image 20260608160904.png",
+    "_Attachments/Images/Pasted image 20260608160857.png",
+    "_Attachments/Images/Pasted image 20260608160846.png",
+    "01 - 数学/好题错题整理/02 - 线代/1000/1000b,3,9,抽象问题转化为方程组求解.md",
+    "01 - 数学/好题错题整理/02 - 线代/1000/1000b,3,5,矩阵乘积为零,推导出某个矩阵为零的条件.md",
+    "01 - 数学/好题错题整理/02 - 线代/1000/1000b,3,4,矩阵高次幂,构造 P-1AP 形式.md",
+    "01 - 数学/好题错题整理/02 - 线代/1000/1000b,3,1,概念性好题.md",
+    "_Attachments/Images/Pasted image 20260608160642.png",
+    "_Attachments/Images/Pasted image 20260608160624.png",
+    "_Attachments/Images/Pasted image 20260608160614.png",
+    "_Attachments/Images/Pasted image 20260608160143.png",
+    "_Attachments/Images/Pasted image 20260608160121.png",
+    "_Attachments/Images/Pasted image 20260608155700.png",
+    "_Attachments/Images/Pasted image 20260608155646.png",
+    "01 - 数学/好题错题整理/02 - 线代/1000/1000b,3,10,抽象问题转化为方程组求解.md",
+    "01 - 数学/好题错题整理/02 - 线代/1000/1000b,2,3,抽象问题转化为方程组求解.md",
     "01 - 数学/02 - 线代/04 - 线性方程组.canvas",
+    "01 - 数学/02 - 线代/03 - 向量组.canvas",
     "01 - 数学/02 - 线代/05 - 矩阵相似理论.canvas",
-    "01 - 数学/02 - 线代/矩阵总结.md",
-    "01 - 数学/02 - 线代/秩 1 矩阵大观.canvas",
     "01 - 数学/02 - 线代/06 - 二次型.canvas",
+    "01 - 数学/02 - 线代/秩 1 矩阵大观.canvas",
+    "01 - 数学/02 - 线代/矩阵总结.md",
+    "01 - 数学/好题错题整理/02 - 线代/1000/2013,2,14-行列式与矩阵.md",
+    "01 - 数学/好题错题整理/02 - 线代/1000/定义法求特征值和特征向量.md",
+    "01 - 数学/好题错题整理/02 - 线代/500/未命名.md",
+    "01 - 数学/好题错题整理/02 - 线代/500/未命名 1.md",
+    "01 - 数学/好题错题整理/02 - 线代/500/选择题 1.md",
+    "01 - 数学/好题错题整理/02 - 线代/500",
+    "01 - 数学/好题错题整理/02 - 线代/1000",
     "2026-06-03.md",
     "study-notes-creator/SKILL.md",
     "study-notes-creator",
@@ -273,19 +288,10 @@
     "2026-05-03.md",
     "01 - 数学/02 - 线代/矩阵总结.md.tmp.444.32f25ec1f310",
     "01 - 数学/充分必要条件.md",
-    "01 - 数学/好题错题整理/02 - 线代/选择题 1.md",
-    "01 - 数学/好题错题整理/02 - 线代/未命名 1.md",
-    "01 - 数学/好题错题整理/02 - 线代/未命名.md",
-    "01 - 数学/好题错题整理/02 - 线代/定义法求特征值和特征向量.md",
-    "01 - 数学/好题错题整理/02 - 线代/2013,2,14-行列式与矩阵.md",
     "01 - 数学/01 - 高数/03 - 一元积分/02 - 一元积分计算大观.canvas",
     "01 - 数学/01 - 高数/03 - 一元积分/01 - 概念定理大观.canvas",
     "01 - 数学/01 - 高数/03 - 一元积分/03 - 反常积分敛散性大观.canvas",
     "01 - 数学/好题错题整理/02 - 线代",
-    "01 - 数学/好题错题整理",
-    "未命名.md",
-    "程序代码智能在线评判平台的设计与实现.md",
-    "答辩稿.pdf",
-    "01 - 数学/01 - 高数/02 - 一元微分/未命名"
+    "01 - 数学/好题错题整理"
   ]
 }
