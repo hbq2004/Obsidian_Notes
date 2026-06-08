@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01 - 数学/好题错题整理/02 - 线代/1000/1000b,3,10,抽象问题转化为方程组求解.md",
+                "file": "01 - 数学/好题错题整理/02 - 线代/1000/1000b,4,8,幂等矩阵的满秩分解性质.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "1000b,3,10,抽象问题转化为方程组求解"
+              "title": "1000b,4,8,幂等矩阵的满秩分解性质"
             }
           }
         ]
@@ -66,16 +66,6 @@
             }
           },
           {
-            "id": "9ee25ba6440a60e4",
-            "type": "leaf",
-            "state": {
-              "type": "git-view",
-              "state": {},
-              "icon": "git-pull-request",
-              "title": "Source Control"
-            }
-          },
-          {
             "id": "de7b63e125de8912",
             "type": "leaf",
             "state": {
@@ -84,9 +74,19 @@
               "icon": "lucide-bookmark",
               "title": "书签"
             }
+          },
+          {
+            "id": "9ee25ba6440a60e4",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       },
       {
         "id": "021290095a38d257",
@@ -124,13 +124,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "01 - 数学/好题错题整理/02 - 线代/1000/1000b,3,10,抽象问题转化为方程组求解.md",
+                "file": "01 - 数学/好题错题整理/02 - 线代/1000/1000b,4,8,幂等矩阵的满秩分解性质.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "1000b,3,10,抽象问题转化为方程组求解 的大纲"
+              "title": "1000b,4,8,幂等矩阵的满秩分解性质 的大纲"
             }
           },
           {
@@ -247,12 +247,18 @@
   },
   "active": "9ee25ba6440a60e4",
   "lastOpenFiles": [
+    "_Attachments/Images/Pasted image 20260609023304.png",
+    "_Attachments/Images/Pasted image 20260609022311.png",
+    "_Attachments/Images/Pasted image 20260609022253.png",
+    "_Attachments/Images/Pasted image 20260609022251.png",
+    "01 - 数学/好题错题整理/02 - 线代/1000/1000b,3,9,抽象问题转化为方程组求解.md",
+    "01 - 数学/好题错题整理/02 - 线代/1000/1000b,4,8,幂等矩阵的满秩分解性质.md",
+    "01 - 数学/好题错题整理/02 - 线代/1000/1000b,3,10,抽象问题转化为方程组求解.md",
     "01 - 数学/好题错题整理/02 - 线代/真题/2013,2,14,行列式与矩阵.md",
     "01 - 数学/好题错题整理/02 - 线代/真题",
     "01 - 数学/好题错题整理/02 - 线代/未命名.canvas",
     "01 - 数学/好题错题整理/02 - 线代/1000/~1000b,4,3,特征方程与主子式.md",
     "01 - 数学/好题错题整理/02 - 线代/1000/1000a,5,5,定义法求特征值和特征向量.md",
-    "01 - 数学/好题错题整理/02 - 线代/1000/1000b,3,9,抽象问题转化为方程组求解.md",
     "01 - 数学/好题错题整理/02 - 线代/1000/1000b,3,5,矩阵乘积为零,推导出某个矩阵为零的条件.md",
     "01 - 数学/好题错题整理/02 - 线代/1000/1000b,2,3,抽象问题转化为方程组求解.md",
     "_Attachments/Images/Pasted image 20260608230413.png",
@@ -271,11 +277,7 @@
     "01 - 数学/好题错题整理/02 - 线代/1000/1000b,3,5,矩阵乘法交换律,反例.md",
     "_Attachments/Images/Pasted image 20260608160904.png",
     "_Attachments/Images/Pasted image 20260608160857.png",
-    "_Attachments/Images/Pasted image 20260608160846.png",
     "01 - 数学/好题错题整理/02 - 线代/1000/1000b,3,1,概念性好题.md",
-    "_Attachments/Images/Pasted image 20260608160642.png",
-    "_Attachments/Images/Pasted image 20260608160624.png",
-    "01 - 数学/好题错题整理/02 - 线代/1000/1000b,3,10,抽象问题转化为方程组求解.md",
     "01 - 数学/02 - 线代/秩 1 矩阵大观.canvas",
     "01 - 数学/好题错题整理/02 - 线代/500/未命名.md",
     "01 - 数学/好题错题整理/02 - 线代/500/未命名 1.md",
@@ -297,7 +299,6 @@
     "computer-science-tutor",
     "2026-05-14.md",
     "2026-05-05.md",
-    "2026-05-03.md",
     "01 - 数学/02 - 线代/矩阵总结.md.tmp.444.32f25ec1f310",
     "01 - 数学/01 - 高数/03 - 一元积分/02 - 一元积分计算大观.canvas",
     "01 - 数学/01 - 高数/03 - 一元积分/01 - 概念定理大观.canvas",
