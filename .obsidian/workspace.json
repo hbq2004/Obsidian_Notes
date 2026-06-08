@@ -1,0 +1,291 @@
+{
+  "main": {
+    "id": "174b696ebfdbccf3",
+    "type": "split",
+    "children": [
+      {
+        "id": "980e8a3a91e02b27",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "6356cc9c1c692677",
+            "type": "leaf",
+            "state": {
+              "type": "canvas",
+              "state": {
+                "file": "01 - 数学/02 - 线代/02 - 矩阵.canvas",
+                "viewState": {
+                  "x": 3611.997553088022,
+                  "y": 5305.288606873542,
+                  "zoom": -4
+                }
+              },
+              "icon": "lucide-layout-dashboard",
+              "title": "02 - 矩阵"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "ee636a372a44cc40",
+    "type": "split",
+    "children": [
+      {
+        "id": "c0e7e161521c3933",
+        "type": "tabs",
+        "dimension": 48.71794871794871,
+        "children": [
+          {
+            "id": "12ec190f678aca36",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "29d7a9f6720fac2b",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "de7b63e125de8912",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      },
+      {
+        "id": "f9a086dbdd952ab6",
+        "type": "tabs",
+        "dimension": 25.641025641025646,
+        "children": [
+          {
+            "id": "9ee25ba6440a60e4",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
+          }
+        ]
+      },
+      {
+        "id": "021290095a38d257",
+        "type": "tabs",
+        "dimension": 25.641025641025646,
+        "children": [
+          {
+            "id": "b061961892ad316c",
+            "type": "leaf",
+            "state": {
+              "type": "recent-files",
+              "state": {},
+              "icon": "clock",
+              "title": "Recent files"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 322
+  },
+  "right": {
+    "id": "788c2b70f5d82052",
+    "type": "split",
+    "children": [
+      {
+        "id": "d3194df03de22e80",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2985ca4c34adc55a",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "01 - 数学/02 - 线代/矩阵总结.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "矩阵总结 的大纲"
+            }
+          },
+          {
+            "id": "d837ffc875a6ce6e",
+            "type": "leaf",
+            "state": {
+              "type": "claudian-view",
+              "state": {},
+              "icon": "bot",
+              "title": "Claudian"
+            }
+          },
+          {
+            "id": "66bba441f4181092",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "01 - 数学/01 - 高数/微分方程大观/微分方程求解.canvas",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "微分方程求解 的反向链接列表"
+            }
+          },
+          {
+            "id": "31a6fc57ba27f308",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "01 - 数学/01 - 高数/微分方程大观/微分方程求解.canvas",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "微分方程求解 的出链列表"
+            }
+          },
+          {
+            "id": "42733061a6ea5d4f",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "730d3f96cd74f495",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "添加笔记属性"
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "horizontal",
+    "width": 374.5,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "bases:新建数据库": false,
+      "realclaudian:Open Claudian": false,
+      "omnisearch:Omnisearch": false,
+      "obsidian-git:Open Git source control": false
+    }
+  },
+  "active": "6356cc9c1c692677",
+  "lastOpenFiles": [
+    "01 - 数学/02 - 线代/01 - 行列式.canvas",
+    "01 - 数学/02 - 线代/02 - 矩阵.canvas",
+    "01 - 数学/02 - 线代/03 - 向量组.canvas",
+    "_Attachments/Images/Pasted image 20260607152424.png",
+    "_Attachments/Images/Pasted image 20260607152154.png",
+    "_Attachments/Images/Pasted image 20260607151700.png",
+    "_Attachments/Images/Pasted image 20260607150844.png",
+    "_Attachments/Images/Pasted image 20260607150752.png",
+    "_Attachments/Images/Pasted image 20260607150402.png",
+    "_Attachments/Images/Pasted image 20260607150331.png",
+    "_Attachments/Images/Pasted image 20260607150038.png",
+    "_Attachments/Images/Pasted image 20260607150007.png",
+    "_Attachments/Images/Pasted image 20260607145718.png",
+    "01 - 数学/02 - 线代/04 - 线性方程组.canvas",
+    "01 - 数学/02 - 线代/05 - 矩阵相似理论.canvas",
+    "01 - 数学/02 - 线代/矩阵总结.md",
+    "01 - 数学/02 - 线代/秩 1 矩阵大观.canvas",
+    "01 - 数学/02 - 线代/06 - 二次型.canvas",
+    "2026-06-03.md",
+    "study-notes-creator/SKILL.md",
+    "study-notes-creator",
+    "flashcard-creator/references/anki-format.md",
+    "flashcard-creator/SKILL.md",
+    "flashcard-creator/references",
+    "flashcard-creator",
+    "computer-science-tutor/references/data-structures.md",
+    "computer-science-tutor/references/big-o.md",
+    "computer-science-tutor/references/algorithms.md",
+    "computer-science-tutor/SKILL.md",
+    "computer-science-tutor/references",
+    "computer-science-tutor",
+    "2026-05-14.md",
+    "2026-05-05.md",
+    "2026-05-03.md",
+    "01 - 数学/02 - 线代/矩阵总结.md.tmp.444.32f25ec1f310",
+    "01 - 数学/充分必要条件.md",
+    "01 - 数学/好题错题整理/02 - 线代/选择题 1.md",
+    "01 - 数学/好题错题整理/02 - 线代/未命名 1.md",
+    "01 - 数学/好题错题整理/02 - 线代/未命名.md",
+    "01 - 数学/好题错题整理/02 - 线代/定义法求特征值和特征向量.md",
+    "01 - 数学/好题错题整理/02 - 线代/2013,2,14-行列式与矩阵.md",
+    "01 - 数学/01 - 高数/03 - 一元积分/02 - 一元积分计算大观.canvas",
+    "01 - 数学/01 - 高数/03 - 一元积分/01 - 概念定理大观.canvas",
+    "01 - 数学/01 - 高数/03 - 一元积分/03 - 反常积分敛散性大观.canvas",
+    "01 - 数学/好题错题整理/02 - 线代",
+    "01 - 数学/好题错题整理",
+    "未命名.md",
+    "程序代码智能在线评判平台的设计与实现.md",
+    "答辩稿.pdf",
+    "01 - 数学/01 - 高数/02 - 一元微分/未命名"
+  ]
+}

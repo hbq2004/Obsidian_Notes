@@ -1,0 +1,114 @@
+{
+	"nodes":[
+		{"id":"adde09b40225b9ae","type":"group","x":-1400,"y":240,"width":1640,"height":1240,"color":"4","label":"经典例题整理"},
+		{"id":"581ccca5634d3f02","type":"group","x":1080,"y":-40,"width":900,"height":760,"color":"2","label":"题型整理"},
+		{"id":"f22c36cff08c61c3","type":"group","x":-1220,"y":-500,"width":660,"height":540,"color":"1","label":"口诀"},
+		{
+			"id":"461a2e32b9e6f870",
+			"type":"text",
+			"text":"反常积分敛散性讲解：\n[你的葫芦](https://www.bilibili.com/video/BV1vJp1eTE6S/) \n[阿赞学长 - 方法总结 + 模拟卷题目代刷](https://www.bilibili.com/video/BV1sr4y1Q7Np/) \n\n\n",
+			"styleAttributes":{"textAlign":"center"},
+			"x":-250,
+			"y":-500,
+			"width":440,
+			"height":160
+		},
+		{"id":"c1a74951a49df31e","type":"file","file":"_Attachments/Images/Pasted image 20260429224219.png","x":-1320,"y":360,"width":650,"height":125},
+		{"id":"8d9bac8247d5e66e","type":"file","file":"_Attachments/Images/Pasted image 20260429235744.png","x":-520,"y":342,"width":492,"height":574},
+		{
+			"id":"ad529a72aa91ec63",
+			"type":"text",
+			"text":"反常积分敛散性大观",
+			"styleAttributes":{"textAlign":"center"},
+			"x":-160,
+			"y":-180,
+			"width":260,
+			"height":60
+		},
+		{
+			"id":"8446b90fa835be0c",
+			"type":"text",
+			"text":"(3) p积分尺子口诀：大的喜欢大的，小的喜欢小的",
+			"styleAttributes":{"textAlign":"center"},
+			"x":-1190,
+			"y":-240,
+			"width":520,
+			"height":120
+		},
+		{
+			"id":"de2d68497f841a2b",
+			"type":"text",
+			"text":"(2) 三类用换元，非三类用极限和尺子",
+			"styleAttributes":{"textAlign":"center"},
+			"x":-1190,
+			"y":-320,
+			"width":390,
+			"height":80
+		},
+		{
+			"id":"8156e853166055f8",
+			"type":"text",
+			"text":"(1) 一段散就散，全段敛才敛",
+			"styleAttributes":{"textAlign":"center"},
+			"x":-1190,
+			"y":-400,
+			"width":300,
+			"height":80
+		},
+		{"id":"2ed457297a5002ae","type":"file","file":"_Attachments/Images/Pasted image 20260429231555.png","x":-1320,"y":560,"width":671,"height":137},
+		{
+			"id":"36842b32238f89ea",
+			"type":"text",
+			"text":"(2) 不等式",
+			"styleAttributes":{"textAlign":"center"},
+			"x":1160,
+			"y":120,
+			"width":260,
+			"height":60
+		},
+		{
+			"id":"fd6dcd5bac2ffd86",
+			"type":"text",
+			"text":"(1) 和极限结合",
+			"styleAttributes":{"textAlign":"center"},
+			"x":1160,
+			"y":60,
+			"width":260,
+			"height":60
+		}
+	],
+	"edges":[
+		{
+			"id":"137dcabe4e0de46a",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"ad529a72aa91ec63",
+			"fromSide":"left",
+			"toNode":"f22c36cff08c61c3",
+			"toSide":"right"
+		},
+		{
+			"id":"a9c2212c29340120",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"ad529a72aa91ec63",
+			"fromSide":"top",
+			"toNode":"461a2e32b9e6f870",
+			"toSide":"bottom"
+		},
+		{
+			"id":"0263377bec9f0578",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"2ed457297a5002ae",
+			"fromSide":"right",
+			"toNode":"8d9bac8247d5e66e",
+			"toSide":"left"
+		}
+	],
+	"metadata":{
+		"version":"1.0-1.0",
+		"frontmatter":{},
+		"startNode":"8e4c2eda2140bff3"
+	}
+}

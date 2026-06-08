@@ -1,0 +1,51 @@
+{
+	"nodes":[
+		{
+			"id":"a95929fbf03d1b27",
+			"type":"text",
+			"text":"秩 $1$ 矩阵大观",
+			"styleAttributes":{"textAlign":"center"},
+			"x":-140,
+			"y":-180,
+			"width":280,
+			"height":140
+		},
+		{"id":"b192c6d97b90886f","type":"file","file":"_Attachments/Images/Pasted image 20260519144112.png","x":-680,"y":160,"width":500,"height":401},
+		{"id":"1e85fa1c433b65f8","type":"file","file":"_Attachments/Images/Pasted image 20260519145031.png","x":-1280,"y":920,"width":598,"height":362},
+		{"id":"88800796ace8090e","type":"file","file":"_Attachments/Images/Pasted image 20260519145432.png","x":-1280,"y":1282,"width":600,"height":451},
+		{
+			"id":"8ec42db33b832bde",
+			"type":"text",
+			"text":"待整理：\n\n[秩 1 矩阵](https://search.bilibili.com/all?vt=71398924&keyword=%E7%A7%A9%201%20%E7%9F%A9%E9%98%B5&from_source=webtop_search&spm_id_from=333.1007&search_source=5) ",
+			"styleAttributes":{"textAlign":"center"},
+			"x":260,
+			"y":-60,
+			"width":500,
+			"height":220
+		}
+	],
+	"edges":[
+		{
+			"id":"c266e8207bdf2fc2",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"a95929fbf03d1b27",
+			"fromSide":"bottom",
+			"toNode":"b192c6d97b90886f",
+			"toSide":"top"
+		},
+		{
+			"id":"e9c6c06ef688cb4c",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"b192c6d97b90886f",
+			"fromSide":"bottom",
+			"toNode":"1e85fa1c433b65f8",
+			"toSide":"top"
+		}
+	],
+	"metadata":{
+		"version":"1.0-1.0",
+		"frontmatter":{}
+	}
+}

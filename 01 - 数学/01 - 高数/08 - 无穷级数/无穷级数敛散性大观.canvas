@@ -1,0 +1,19 @@
+{
+	"nodes":[
+		{
+			"id":"dd0b4ca5916f03ff",
+			"type":"text",
+			"text":"无穷级数敛散性大观",
+			"styleAttributes":{"textAlign":"center"},
+			"x":-260,
+			"y":-720,
+			"width":300,
+			"height":120
+		}
+	],
+	"edges":[],
+	"metadata":{
+		"version":"1.0-1.0",
+		"frontmatter":{}
+	}
+}

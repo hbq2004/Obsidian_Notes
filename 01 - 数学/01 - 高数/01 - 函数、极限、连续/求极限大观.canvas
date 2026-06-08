@@ -1,0 +1,31 @@
+{
+	"nodes":[
+		{"id":"acae430d837e94bc","type":"file","file":"_Attachments/Images/Pasted image 20260428222116.png","x":-600,"y":-60,"width":597,"height":291},
+		{"id":"9fbc61696ef8654f","type":"file","file":"_Attachments/Images/Pasted image 20260428222355.png","x":60,"y":28,"width":399,"height":115},
+		{
+			"id":"fa5c9e5c83ac6a27",
+			"type":"text",
+			"text":"求极限大观",
+			"styleAttributes":{"textAlign":"center"},
+			"x":-3,
+			"y":-620,
+			"width":323,
+			"height":120
+		}
+	],
+	"edges":[
+		{
+			"id":"03acb26b0c4dfce4",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"acae430d837e94bc",
+			"fromSide":"right",
+			"toNode":"9fbc61696ef8654f",
+			"toSide":"left"
+		}
+	],
+	"metadata":{
+		"version":"1.0-1.0",
+		"frontmatter":{}
+	}
+}
