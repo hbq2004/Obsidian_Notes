@@ -4,24 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "5cee1e2d650731b1",
+        "id": "d3a04440b3e1708c",
         "type": "tabs",
         "children": [
           {
-            "id": "bdd44db77d65278b",
+            "id": "b9ffb78e93aec7ce",
             "type": "leaf",
             "state": {
-              "type": "canvas",
+              "type": "markdown",
               "state": {
-                "file": "01 - 数学/02 - 线代/02 - 矩阵.canvas",
-                "viewState": {
-                  "x": 6947.042854863821,
-                  "y": 11710.079566692044,
-                  "zoom": -1.078813072626371
-                }
+                "file": "01 - 数学/好题错题整理/02 - 线代/1000/1000b,3,10,抽象问题转化为方程组求解.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-layout-dashboard",
-              "title": "02 - 矩阵"
+              "icon": "lucide-file",
+              "title": "1000b,3,10,抽象问题转化为方程组求解"
             }
           }
         ]
@@ -36,7 +33,7 @@
       {
         "id": "c0e7e161521c3933",
         "type": "tabs",
-        "dimension": 48.71794871794871,
+        "dimension": 65.51724137931035,
         "children": [
           {
             "id": "12ec190f678aca36",
@@ -69,6 +66,16 @@
             }
           },
           {
+            "id": "9ee25ba6440a60e4",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
+          },
+          {
             "id": "de7b63e125de8912",
             "type": "leaf",
             "state": {
@@ -78,29 +85,13 @@
               "title": "书签"
             }
           }
-        ]
-      },
-      {
-        "id": "f9a086dbdd952ab6",
-        "type": "tabs",
-        "dimension": 25.641025641025646,
-        "children": [
-          {
-            "id": "9ee25ba6440a60e4",
-            "type": "leaf",
-            "state": {
-              "type": "git-view",
-              "state": {},
-              "icon": "git-pull-request",
-              "title": "Source Control"
-            }
-          }
-        ]
+        ],
+        "currentTab": 2
       },
       {
         "id": "021290095a38d257",
         "type": "tabs",
-        "dimension": 25.641025641025646,
+        "dimension": 34.482758620689665,
         "children": [
           {
             "id": "b061961892ad316c",
@@ -116,7 +107,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 322
+    "width": 309.5110321044922
   },
   "right": {
     "id": "788c2b70f5d82052",
@@ -125,6 +116,7 @@
       {
         "id": "d3194df03de22e80",
         "type": "tabs",
+        "dimension": 75.72815533980582,
         "children": [
           {
             "id": "2985ca4c34adc55a",
@@ -132,13 +124,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "01 - 数学/02 - 线代/02 - 矩阵.canvas",
+                "file": "01 - 数学/好题错题整理/02 - 线代/1000/1000b,3,10,抽象问题转化为方程组求解.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "02 - 矩阵 的大纲"
+              "title": "1000b,3,10,抽象问题转化为方程组求解 的大纲"
             }
           },
           {
@@ -215,6 +207,23 @@
           }
         ],
         "currentTab": 1
+      },
+      {
+        "id": "91f188b1f9cfbc97",
+        "type": "tabs",
+        "dimension": 24.271844660194176,
+        "children": [
+          {
+            "id": "bdd44db77d65278b",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "关系图谱"
+            }
+          }
+        ]
       }
     ],
     "direction": "horizontal",
@@ -236,35 +245,38 @@
       "hidden-folder-obsidian:显示文件夹": false
     }
   },
-  "active": "bdd44db77d65278b",
+  "active": "9ee25ba6440a60e4",
   "lastOpenFiles": [
+    "01 - 数学/好题错题整理/02 - 线代/真题/2013,2,14,行列式与矩阵.md",
+    "01 - 数学/好题错题整理/02 - 线代/真题",
+    "01 - 数学/好题错题整理/02 - 线代/未命名.canvas",
+    "01 - 数学/好题错题整理/02 - 线代/1000/~1000b,4,3,特征方程与主子式.md",
+    "01 - 数学/好题错题整理/02 - 线代/1000/1000a,5,5,定义法求特征值和特征向量.md",
+    "01 - 数学/好题错题整理/02 - 线代/1000/1000b,3,9,抽象问题转化为方程组求解.md",
+    "01 - 数学/好题错题整理/02 - 线代/1000/1000b,3,5,矩阵乘积为零,推导出某个矩阵为零的条件.md",
+    "01 - 数学/好题错题整理/02 - 线代/1000/1000b,2,3,抽象问题转化为方程组求解.md",
+    "_Attachments/Images/Pasted image 20260608230413.png",
+    "_Attachments/Images/Pasted image 20260608225548.png",
+    "_Attachments/Images/Pasted image 20260608225526.png",
+    "_Attachments/Images/Pasted image 20260608225516.png",
     "01 - 数学/02 - 线代/01 - 行列式.canvas",
     "01 - 数学/02 - 线代/02 - 矩阵.canvas",
+    "01 - 数学/02 - 线代/03 - 向量组.canvas",
+    "01 - 数学/02 - 线代/06 - 二次型.canvas",
+    "01 - 数学/02 - 线代/矩阵总结.md",
+    "_Attachments/Images/Pasted image 20260608164511.png",
+    "01 - 数学/好题错题整理/02 - 线代/1000/1000b,3,4,矩阵高次幂,构造 P-1AP 形式.md",
+    "01 - 数学/02 - 线代/04 - 线性方程组.canvas",
+    "01 - 数学/02 - 线代/05 - 矩阵相似理论.canvas",
     "01 - 数学/好题错题整理/02 - 线代/1000/1000b,3,5,矩阵乘法交换律,反例.md",
     "_Attachments/Images/Pasted image 20260608160904.png",
     "_Attachments/Images/Pasted image 20260608160857.png",
     "_Attachments/Images/Pasted image 20260608160846.png",
-    "01 - 数学/好题错题整理/02 - 线代/1000/1000b,3,9,抽象问题转化为方程组求解.md",
-    "01 - 数学/好题错题整理/02 - 线代/1000/1000b,3,5,矩阵乘积为零,推导出某个矩阵为零的条件.md",
-    "01 - 数学/好题错题整理/02 - 线代/1000/1000b,3,4,矩阵高次幂,构造 P-1AP 形式.md",
     "01 - 数学/好题错题整理/02 - 线代/1000/1000b,3,1,概念性好题.md",
     "_Attachments/Images/Pasted image 20260608160642.png",
     "_Attachments/Images/Pasted image 20260608160624.png",
-    "_Attachments/Images/Pasted image 20260608160614.png",
-    "_Attachments/Images/Pasted image 20260608160143.png",
-    "_Attachments/Images/Pasted image 20260608160121.png",
-    "_Attachments/Images/Pasted image 20260608155700.png",
-    "_Attachments/Images/Pasted image 20260608155646.png",
     "01 - 数学/好题错题整理/02 - 线代/1000/1000b,3,10,抽象问题转化为方程组求解.md",
-    "01 - 数学/好题错题整理/02 - 线代/1000/1000b,2,3,抽象问题转化为方程组求解.md",
-    "01 - 数学/02 - 线代/04 - 线性方程组.canvas",
-    "01 - 数学/02 - 线代/03 - 向量组.canvas",
-    "01 - 数学/02 - 线代/05 - 矩阵相似理论.canvas",
-    "01 - 数学/02 - 线代/06 - 二次型.canvas",
     "01 - 数学/02 - 线代/秩 1 矩阵大观.canvas",
-    "01 - 数学/02 - 线代/矩阵总结.md",
-    "01 - 数学/好题错题整理/02 - 线代/1000/2013,2,14-行列式与矩阵.md",
-    "01 - 数学/好题错题整理/02 - 线代/1000/定义法求特征值和特征向量.md",
     "01 - 数学/好题错题整理/02 - 线代/500/未命名.md",
     "01 - 数学/好题错题整理/02 - 线代/500/未命名 1.md",
     "01 - 数学/好题错题整理/02 - 线代/500/选择题 1.md",
@@ -287,11 +299,8 @@
     "2026-05-05.md",
     "2026-05-03.md",
     "01 - 数学/02 - 线代/矩阵总结.md.tmp.444.32f25ec1f310",
-    "01 - 数学/充分必要条件.md",
     "01 - 数学/01 - 高数/03 - 一元积分/02 - 一元积分计算大观.canvas",
     "01 - 数学/01 - 高数/03 - 一元积分/01 - 概念定理大观.canvas",
-    "01 - 数学/01 - 高数/03 - 一元积分/03 - 反常积分敛散性大观.canvas",
-    "01 - 数学/好题错题整理/02 - 线代",
-    "01 - 数学/好题错题整理"
+    "01 - 数学/好题错题整理/02 - 线代"
   ]
 }
