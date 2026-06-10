@@ -22,7 +22,8 @@
 			"y":-60,
 			"width":500,
 			"height":220
-		}
+		},
+		{"id":"5263cce206c4697d","type":"file","file":"_Attachments/Images/Pasted image 20260609144803.png","x":-430,"y":960,"width":725,"height":345}
 	],
 	"edges":[
 		{
@@ -41,6 +42,15 @@
 			"fromNode":"b192c6d97b90886f",
 			"fromSide":"bottom",
 			"toNode":"1e85fa1c433b65f8",
+			"toSide":"top"
+		},
+		{
+			"id":"c396f51e33e38c08",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"b192c6d97b90886f",
+			"fromSide":"bottom",
+			"toNode":"5263cce206c4697d",
 			"toSide":"top"
 		}
 	],
