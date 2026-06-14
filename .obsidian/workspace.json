@@ -11,17 +11,14 @@
             "id": "b9ffb78e93aec7ce",
             "type": "leaf",
             "state": {
-              "type": "canvas",
+              "type": "markdown",
               "state": {
-                "file": "01 - 数学/02 - 线代/03 - 向量组.canvas",
-                "viewState": {
-                  "x": -1203.4154680287033,
-                  "y": 660.9848337063095,
-                  "zoom": -4
-                }
+                "file": "01 - 数学/好题错题整理/02 - 线代/真题/2013,2,14,行列式与矩阵.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-layout-dashboard",
-              "title": "03 - 向量组"
+              "icon": "lucide-file",
+              "title": "2013,2,14,行列式与矩阵"
             }
           }
         ]
@@ -249,6 +246,14 @@
   },
   "active": "9ee25ba6440a60e4",
   "lastOpenFiles": [
+    "01 - 数学/好题错题整理/02 - 线代/真题/2023,1,15,抽象问题转化为方程组.md",
+    "2026-06-03.md",
+    "2026-06-10.md",
+    "2026-05-14.md",
+    "2026-05-05.md",
+    "2026-05-03.md",
+    "01 - 数学/好题错题整理/02 - 线代/真题/2013,2,14,行列式与矩阵.md",
+    "01 - 数学/02 - 线代/03 - 向量组.canvas",
     "_Attachments/Images/Pasted image 20260609160750.png",
     "_Attachments/Images/Pasted image 20260609160643.png",
     "_Attachments/Images/Pasted image 20260609160520.png",
@@ -259,17 +264,13 @@
     "_Attachments/Images/Pasted image 20260609153259.png",
     "_Attachments/Images/Pasted image 20260609152649.png",
     "_Attachments/Images/Pasted image 20260609152316.png",
-    "_Attachments/Images/Pasted image 20260609152156.png",
-    "01 - 数学/好题错题整理/02 - 线代/真题/2023,1,15,抽象问题转化为方程组.md",
     "01 - 数学/02 - 线代/秩 1 矩阵大观.canvas",
-    "01 - 数学/02 - 线代/03 - 向量组.canvas",
     "01 - 数学/02 - 线代/01 - 行列式.canvas",
     "01 - 数学/02 - 线代/02 - 矩阵.canvas",
     "01 - 数学/02 - 线代/05 - 矩阵相似理论.canvas",
     "01 - 数学/好题错题整理/02 - 线代/1000/~1000b,4,8,幂等矩阵的满秩分解性质.md",
     "01 - 数学/好题错题整理/02 - 线代/1000/1000b,3,9,抽象问题转化为方程组求解.md",
     "01 - 数学/好题错题整理/02 - 线代/1000/1000b,3,10,抽象问题转化为方程组求解.md",
-    "01 - 数学/好题错题整理/02 - 线代/真题/2013,2,14,行列式与矩阵.md",
     "01 - 数学/好题错题整理/02 - 线代/真题",
     "01 - 数学/好题错题整理/02 - 线代/未命名.canvas",
     "01 - 数学/好题错题整理/02 - 线代/1000/~1000b,4,3,特征方程与主子式.md",
@@ -287,7 +288,6 @@
     "01 - 数学/好题错题整理/02 - 线代/500/选择题 1.md",
     "01 - 数学/好题错题整理/02 - 线代/500",
     "01 - 数学/好题错题整理/02 - 线代/1000",
-    "2026-06-03.md",
     "study-notes-creator/SKILL.md",
     "study-notes-creator",
     "flashcard-creator/references/anki-format.md",
@@ -296,11 +296,8 @@
     "flashcard-creator",
     "computer-science-tutor/references/data-structures.md",
     "computer-science-tutor/references/big-o.md",
-    "computer-science-tutor/references/algorithms.md",
-    "computer-science-tutor/SKILL.md",
     "computer-science-tutor/references",
     "computer-science-tutor",
-    "2026-05-14.md",
     "01 - 数学/02 - 线代/矩阵总结.md.tmp.444.32f25ec1f310",
     "01 - 数学/01 - 高数/03 - 一元积分/02 - 一元积分计算大观.canvas",
     "01 - 数学/01 - 高数/03 - 一元积分/01 - 概念定理大观.canvas",
