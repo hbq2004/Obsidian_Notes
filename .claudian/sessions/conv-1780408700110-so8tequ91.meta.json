@@ -4,13 +4,12 @@
   "title": "Summarize the given article",
   "titleGenerationStatus": "success",
   "createdAt": 1780408700111,
-  "updatedAt": 1780409444053,
+  "updatedAt": 1781788779148,
   "lastResponseAt": 1780409444053,
   "sessionId": "fdbf9928-f36d-4780-8833-81931103f5cb",
   "providerState": {
     "providerSessionId": "fdbf9928-f36d-4780-8833-81931103f5cb"
   },
-  "currentNote": "01 - 数学/02 - 线代/02 - 矩阵.canvas",
   "usage": {
     "model": "opus",
     "inputTokens": 8678,
