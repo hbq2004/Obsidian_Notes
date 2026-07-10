@@ -1,6 +1,126 @@
 {
   "recentFiles": [
     {
+      "basename": "3.3.2 纠错编码（海明校验码）",
+      "path": "02 - 408/04 - 计算机网络/03 - 数据链路层/3.3.2 纠错编码（海明校验码）.md"
+    },
+    {
+      "basename": "3.3.1 检错编码（奇偶校验码、循环冗余校验码CRC）",
+      "path": "02 - 408/04 - 计算机网络/03 - 数据链路层/3.3.1 检错编码（奇偶校验码、循环冗余校验码CRC）.md"
+    },
+    {
+      "basename": "3.4.3 后退N帧协议（GBN）",
+      "path": "02 - 408/04 - 计算机网络/03 - 数据链路层/3.4.3 后退N帧协议（GBN）.md"
+    },
+    {
+      "basename": "3.4.4 选择重传协议（SR）",
+      "path": "02 - 408/04 - 计算机网络/03 - 数据链路层/3.4.4 选择重传协议（SR）.md"
+    },
+    {
+      "basename": "3.4.1 流量控制、可靠传输于滑动窗口机制",
+      "path": "02 - 408/04 - 计算机网络/03 - 数据链路层/3.4.1 流量控制、可靠传输于滑动窗口机制.md"
+    },
+    {
+      "basename": "3.4.5 三种协议的信道利用率分析",
+      "path": "02 - 408/04 - 计算机网络/03 - 数据链路层/3.4.5 三种协议的信道利用率分析.md"
+    },
+    {
+      "basename": "3.5.2 随机访问-介质访问控制",
+      "path": "02 - 408/04 - 计算机网络/03 - 数据链路层/3.5.2 随机访问-介质访问控制.md"
+    },
+    {
+      "basename": "3.2 组帧",
+      "path": "02 - 408/04 - 计算机网络/03 - 数据链路层/3.2 组帧.md"
+    },
+    {
+      "basename": "3.7.2 PPP 协议及其工作过程",
+      "path": "02 - 408/04 - 计算机网络/03 - 数据链路层/3.7.2 PPP 协议及其工作过程.md"
+    },
+    {
+      "basename": "3.5.1 信道划分-介质访问控制",
+      "path": "02 - 408/04 - 计算机网络/03 - 数据链路层/3.5.1 信道划分-介质访问控制.md"
+    },
+    {
+      "basename": "3.4.2 停止等待协议（S-W）",
+      "path": "02 - 408/04 - 计算机网络/03 - 数据链路层/3.4.2 停止等待协议（S-W）.md"
+    },
+    {
+      "basename": "3.1 数据链路层的功能",
+      "path": "02 - 408/04 - 计算机网络/03 - 数据链路层/3.1 数据链路层的功能.md"
+    },
+    {
+      "basename": "3.7.1 广域网",
+      "path": "02 - 408/04 - 计算机网络/03 - 数据链路层/3.7.1 广域网.md"
+    },
+    {
+      "basename": "3.8 以太网交换机",
+      "path": "02 - 408/04 - 计算机网络/03 - 数据链路层/3.8 以太网交换机.md"
+    },
+    {
+      "basename": "3.5.2.2 CSMA CA 协议",
+      "path": "02 - 408/04 - 计算机网络/03 - 数据链路层/3.5.2.2 CSMA CA 协议.md"
+    },
+    {
+      "basename": "3.5.3 轮询访问-令牌传递协议",
+      "path": "02 - 408/04 - 计算机网络/03 - 数据链路层/3.5.3 轮询访问-令牌传递协议.md"
+    },
+    {
+      "basename": "1",
+      "path": "Anki/1.md"
+    },
+    {
+      "basename": "3.6.4 IEEE 802.11 无线局域网",
+      "path": "02 - 408/04 - 计算机网络/03 - 数据链路层/3.6.4 IEEE 802.11 无线局域网.md"
+    },
+    {
+      "basename": "3.6.2 以太网和 IEEE 802.3",
+      "path": "02 - 408/04 - 计算机网络/03 - 数据链路层/3.6.2 以太网和 IEEE 802.3.md"
+    },
+    {
+      "basename": "3.6.3 VLAN 的基本概念与基本原理",
+      "path": "02 - 408/04 - 计算机网络/03 - 数据链路层/3.6.3 VLAN 的基本概念与基本原理.md"
+    },
+    {
+      "basename": "3.6.1 局域网和基本概念与体系结构",
+      "path": "02 - 408/04 - 计算机网络/03 - 数据链路层/3.6.1 局域网和基本概念与体系结构.md"
+    },
+    {
+      "basename": "3.6.0 局域网和 IEEE 802 各工作组",
+      "path": "02 - 408/04 - 计算机网络/03 - 数据链路层/3.6.0 局域网和 IEEE 802 各工作组.md"
+    },
+    {
+      "basename": "3.5.2.1 CSMA CD 协议⭐",
+      "path": "02 - 408/04 - 计算机网络/03 - 数据链路层/3.5.2.1 CSMA CD 协议⭐.md"
+    },
+    {
+      "basename": "2",
+      "path": "Anki/2.md"
+    },
+    {
+      "basename": "1.5 计算机网络的性能指标",
+      "path": "02 - 408/04 - 计算机网络/01 - 计算机网络体系结构/1.5 计算机网络的性能指标.md"
+    },
+    {
+      "basename": "微分方程求解大观",
+      "path": "01 - 数学/01 - 高数/04 - 微分方程/微分方程求解大观.canvas"
+    },
+    {
+      "basename": "一元微分计算大观",
+      "path": "01 - 数学/01 - 高数/02 - 一元微分/一元微分计算大观.canvas"
+    },
+    {
+      "basename": "Pasted image 20260701213258",
+      "path": "_Attachments/Images/Pasted image 20260701213258.png"
+    },
+    {
+      "basename": "计网第三章",
+      "path": "_Template/计网第三章.md"
+    },
+    {
+      "basename": "计网第二章",
+      "path": "_Template/计网第二章.md"
+    },
+    {
       "basename": "2.3 物理层设备",
       "path": "02 - 408/04 - 计算机网络/02 - 物理层/2.3 物理层设备.md"
     },
@@ -9,12 +129,12 @@
       "path": "02 - 408/04 - 计算机网络/02 - 物理层/2.2 传输介质.md"
     },
     {
-      "basename": "3",
-      "path": "Anki/3.md"
+      "basename": "2.1.2 信道的极限容量",
+      "path": "02 - 408/04 - 计算机网络/02 - 物理层/2.1.2 信道的极限容量.md"
     },
     {
-      "basename": "1.4  计算机网络的分类",
-      "path": "02 - 408/04 - 计算机网络/01 - 计算机网络体系结构/1.4  计算机网络的分类.md"
+      "basename": "2.1.3 编码和调制",
+      "path": "02 - 408/04 - 计算机网络/02 - 物理层/2.1.3 编码和调制.md"
     },
     {
       "basename": "1.6 计算机网络的分层结构",
@@ -29,32 +149,16 @@
       "path": "02 - 408/04 - 计算机网络/01 - 计算机网络体系结构/1.1 计算机网络的概念.md"
     },
     {
-      "basename": "2",
-      "path": "Anki/2.md"
-    },
-    {
-      "basename": "1",
-      "path": "Anki/1.md"
+      "basename": "1.4  计算机网络的分类",
+      "path": "02 - 408/04 - 计算机网络/01 - 计算机网络体系结构/1.4  计算机网络的分类.md"
     },
     {
       "basename": "2.1.1 通信基础的基本概念",
       "path": "02 - 408/04 - 计算机网络/02 - 物理层/2.1.1 通信基础的基本概念.md"
     },
     {
-      "basename": "2.1.2 信道的极限容量",
-      "path": "02 - 408/04 - 计算机网络/02 - 物理层/2.1.2 信道的极限容量.md"
-    },
-    {
-      "basename": "2.1.3 编码和调制",
-      "path": "02 - 408/04 - 计算机网络/02 - 物理层/2.1.3 编码和调制.md"
-    },
-    {
       "basename": "Pasted image 20260630155501",
       "path": "_Attachments/Images/Pasted image 20260630155501.png"
-    },
-    {
-      "basename": "计网第二章",
-      "path": "_Template/计网第二章.md"
     },
     {
       "basename": "计网第一章",
@@ -77,10 +181,6 @@
       "path": "02 - 408/04 - 计算机网络/01 - 计算机网络体系结构/1.7 OSI 模型.md"
     },
     {
-      "basename": "1.5 计算机网络的性能指标",
-      "path": "02 - 408/04 - 计算机网络/01 - 计算机网络体系结构/1.5 计算机网络的性能指标.md"
-    },
-    {
       "basename": "1.3 电路交换、报文交换、分组交换",
       "path": "02 - 408/04 - 计算机网络/01 - 计算机网络体系结构/1.3 电路交换、报文交换、分组交换.md"
     },
@@ -95,106 +195,6 @@
     {
       "basename": "01 - 阅读方法及细节题",
       "path": "03 - 英语/01 - 阅读方法及细节题.md"
-    },
-    {
-      "basename": "唐迟阅读课",
-      "path": "03 - 英语/唐迟阅读课.md"
-    },
-    {
-      "basename": "Pasted image 20260623151817",
-      "path": "_Attachments/Images/Pasted image 20260623151817.png"
-    },
-    {
-      "basename": "Pasted image 20260621204959",
-      "path": "_Attachments/Images/Pasted image 20260621204959.png"
-    },
-    {
-      "basename": "Pasted image 20260621203748",
-      "path": "_Attachments/Images/Pasted image 20260621203748.png"
-    },
-    {
-      "basename": "Pasted image 20260620171820",
-      "path": "_Attachments/Images/Pasted image 20260620171820.png"
-    },
-    {
-      "basename": "tmp",
-      "path": "03 - 英语/tmp.md"
-    },
-    {
-      "basename": "阅读方法及细节题-流程图",
-      "path": "03 - 英语/阅读方法及细节题-流程图.svg"
-    },
-    {
-      "basename": "03 - 向量组",
-      "path": "01 - 数学/02 - 线代/03 - 向量组.canvas"
-    },
-    {
-      "basename": "Pasted image 20260615213334",
-      "path": "_Attachments/Images/Pasted image 20260615213334.png"
-    },
-    {
-      "basename": "Pasted image 20260615213213",
-      "path": "_Attachments/Images/Pasted image 20260615213213.png"
-    },
-    {
-      "basename": "Pasted image 20260615212955",
-      "path": "_Attachments/Images/Pasted image 20260615212955.png"
-    },
-    {
-      "basename": "Pasted image 20260615212912",
-      "path": "_Attachments/Images/Pasted image 20260615212912.png"
-    },
-    {
-      "basename": "02 - 矩阵",
-      "path": "01 - 数学/02 - 线代/02 - 矩阵.canvas"
-    },
-    {
-      "basename": "Pasted image 20260615212313",
-      "path": "_Attachments/Images/Pasted image 20260615212313.png"
-    },
-    {
-      "basename": "Pasted image 20260615212111",
-      "path": "_Attachments/Images/Pasted image 20260615212111.png"
-    },
-    {
-      "basename": "Pasted image 20260615211901",
-      "path": "_Attachments/Images/Pasted image 20260615211901.png"
-    },
-    {
-      "basename": "Pasted image 20260615211732",
-      "path": "_Attachments/Images/Pasted image 20260615211732.png"
-    },
-    {
-      "basename": "Pasted image 20260615211556",
-      "path": "_Attachments/Images/Pasted image 20260615211556.png"
-    },
-    {
-      "basename": "Pasted image 20260615175429",
-      "path": "_Attachments/Images/Pasted image 20260615175429.png"
-    },
-    {
-      "basename": "04 - 线性方程组",
-      "path": "01 - 数学/02 - 线代/04 - 线性方程组.canvas"
-    },
-    {
-      "basename": "2013,2,14,行列式与矩阵",
-      "path": "01 - 数学/好题错题整理/02 - 线代/真题/2013,2,14,行列式与矩阵.md"
-    },
-    {
-      "basename": "2023,1,15,抽象问题转化为方程组",
-      "path": "01 - 数学/好题错题整理/02 - 线代/真题/2023,1,15,抽象问题转化为方程组.md"
-    },
-    {
-      "basename": "Pasted image 20260609160750",
-      "path": "_Attachments/Images/Pasted image 20260609160750.png"
-    },
-    {
-      "basename": "Pasted image 20260609160643",
-      "path": "_Attachments/Images/Pasted image 20260609160643.png"
-    },
-    {
-      "basename": "Pasted image 20260609160520",
-      "path": "_Attachments/Images/Pasted image 20260609160520.png"
     }
   ],
   "omittedPaths": [],

@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "c48639c2f5df295b",
+        "id": "7b9088cb2ae5f1c1",
         "type": "tabs",
         "children": [
           {
-            "id": "3a4870a727350f65",
+            "id": "b7c740018e89d642",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "02 - 408/04 - 计算机网络/02 - 物理层/2.3 物理层设备.md",
+                "file": "02 - 408/04 - 计算机网络/03 - 数据链路层/3.3.2 纠错编码（海明校验码）.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2.3 物理层设备"
+              "title": "3.3.2 纠错编码（海明校验码）"
             }
           }
         ]
@@ -116,7 +116,7 @@
       {
         "id": "d3194df03de22e80",
         "type": "tabs",
-        "dimension": 75.72815533980582,
+        "dimension": 67.16814159292035,
         "children": [
           {
             "id": "2985ca4c34adc55a",
@@ -124,13 +124,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "02 - 408/04 - 计算机网络/02 - 物理层/2.3 物理层设备.md",
+                "file": "02 - 408/04 - 计算机网络/03 - 数据链路层/3.3.2 纠错编码（海明校验码）.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "2.3 物理层设备 的大纲"
+              "title": "3.3.2 纠错编码（海明校验码） 的大纲"
             }
           },
           {
@@ -200,7 +200,7 @@
       {
         "id": "91f188b1f9cfbc97",
         "type": "tabs",
-        "dimension": 24.271844660194173,
+        "dimension": 32.83185840707964,
         "children": [
           {
             "id": "bdd44db77d65278b",
@@ -216,8 +216,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 374.5,
-    "collapsed": true
+    "width": 374.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -229,48 +228,53 @@
       "command-palette:打开命令面板": false,
       "bases:新建数据库": false,
       "omnisearch:Omnisearch": false,
-      "realclaudian:Open Claudian": false,
       "obsidian-git:Open Git source control": false,
-      "obsidian-to-anki-plugin:Obsidian_to_Anki - Scan Vault": false
+      "obsidian-to-anki-plugin:Obsidian_to_Anki - Scan Vault": false,
+      "hidden-folder-obsidian:显示文件夹": false
     }
   },
-  "active": "12ec190f678aca36",
+  "active": "9ee25ba6440a60e4",
   "lastOpenFiles": [
-    "02 - 408/04 - 计算机网络/02 - 物理层/2.2 传输介质.md",
-    "02 - 408/04 - 计算机网络/02 - 物理层/2.3 物理层设备.md",
-    "_Attachments/Images/Pasted image 20260701085526.png",
-    "_Attachments/Images/Pasted image 20260701085429.png",
-    "_Attachments/Images/Pasted image 20260701085358.png",
-    "_Attachments/Images/Pasted image 20260701085233.png",
-    "_Attachments/Images/Pasted image 20260701085206.png",
-    "_Attachments/Images/Pasted image 20260701085131.png",
-    "_Attachments/Images/Pasted image 20260701084927.png",
-    "_Attachments/Images/Pasted image 20260701084907.png",
-    "_Attachments/Images/Pasted image 20260701084745.png",
-    "_Attachments/Images/Pasted image 20260701084704.png",
-    "Anki/3.md",
-    "02 - 408/04 - 计算机网络/01 - 计算机网络体系结构/1.4  计算机网络的分类.md",
-    "02 - 408/04 - 计算机网络/01 - 计算机网络体系结构/1.6 计算机网络的分层结构.md",
-    "02 - 408/04 - 计算机网络/01 - 计算机网络体系结构/1.2 计算机网络的组成和功能.md",
-    "02 - 408/04 - 计算机网络/01 - 计算机网络体系结构/1.1 计算机网络的概念.md",
-    "Anki/2.md",
+    "02 - 408/04 - 计算机网络/03 - 数据链路层/3.3.1 检错编码（奇偶校验码、循环冗余校验码CRC）.md",
+    "02 - 408/04 - 计算机网络/03 - 数据链路层/3.4.3 后退N帧协议（GBN）.md",
+    "02 - 408/04 - 计算机网络/03 - 数据链路层/3.4.4 选择重传协议（SR）.md",
+    "02 - 408/04 - 计算机网络/03 - 数据链路层/3.4.1 流量控制、可靠传输于滑动窗口机制.md",
+    "02 - 408/04 - 计算机网络/03 - 数据链路层/3.4.5 三种协议的信道利用率分析.md",
+    "02 - 408/04 - 计算机网络/03 - 数据链路层/3.5.2 随机访问-介质访问控制.md",
+    "02 - 408/04 - 计算机网络/03 - 数据链路层/3.2 组帧.md",
+    "02 - 408/04 - 计算机网络/03 - 数据链路层/3.7.2 PPP 协议及其工作过程.md",
+    "02 - 408/04 - 计算机网络/03 - 数据链路层/3.5.1 信道划分-介质访问控制.md",
+    "02 - 408/04 - 计算机网络/03 - 数据链路层/3.3.2 纠错编码（海明校验码）.md",
+    "02 - 408/04 - 计算机网络/03 - 数据链路层/3.4.2 停止等待协议（S-W）.md",
+    "02 - 408/04 - 计算机网络/03 - 数据链路层/3.1 数据链路层的功能.md",
+    "02 - 408/04 - 计算机网络/03 - 数据链路层/3.7.1 广域网.md",
+    "02 - 408/04 - 计算机网络/03 - 数据链路层/3.8 以太网交换机.md",
+    "02 - 408/04 - 计算机网络/03 - 数据链路层/3.5.2.2 CSMA CA 协议.md",
+    "02 - 408/04 - 计算机网络/03 - 数据链路层/3.5.3 轮询访问-令牌传递协议.md",
     "Anki/1.md",
-    "02 - 408/04 - 计算机网络/02 - 物理层/2.1.1 通信基础的基本概念.md",
-    "02 - 408/04 - 计算机网络/02 - 物理层/2.1.2 信道的极限容量.md",
-    "02 - 408/04 - 计算机网络/02 - 物理层/2.1.3 编码和调制.md",
+    "_Attachments/Images/Pasted image 20260710201745.png",
+    "_Attachments/Images/Pasted image 20260710201643.png",
+    "_Attachments/Images/Pasted image 20260710201610.png",
+    "_Attachments/Images/Pasted image 20260710201158.png",
+    "_Attachments/Images/Pasted image 20260710200850.png",
+    "_Attachments/Images/Pasted image 20260710200646.png",
+    "_Attachments/Images/Pasted image 20260710200635.png",
+    "_Attachments/Images/Pasted image 20260710200331.png",
+    "_Attachments/Images/Pasted image 20260710200311.png",
+    "_Attachments/Images/Pasted image 20260710200221.png",
+    "02 - 408/04 - 计算机网络/03 - 数据链路层/3.6.4 IEEE 802.11 无线局域网.md",
+    "02 - 408/04 - 计算机网络/03 - 数据链路层/3.6.2 以太网和 IEEE 802.3.md",
+    "02 - 408/04 - 计算机网络/03 - 数据链路层/3.6.3 VLAN 的基本概念与基本原理.md",
+    "02 - 408/04 - 计算机网络/03 - 数据链路层/3.6.1 局域网和基本概念与体系结构.md",
+    "02 - 408/04 - 计算机网络/03 - 数据链路层/3.6.0 局域网和 IEEE 802 各工作组.md",
+    "02 - 408/04 - 计算机网络/03 - 数据链路层/3.5.2.1 CSMA CD 协议⭐.md",
+    "Anki/2.md",
+    "Anki/3.md",
     "Anki/4.md",
-    "Anki/123.md",
-    "_Template/计网第二章.md",
-    "_Template/计网第一章.md",
-    "_Template/所属卡组.md",
-    "_Template/问答式.md",
-    "02 - 408/04 - 计算机网络/01 - 计算机网络体系结构/1.8 TCP-IP 模型.md",
-    "02 - 408/04 - 计算机网络/01 - 计算机网络体系结构/1.7 OSI 模型.md",
-    "Anki/5.md",
-    "_Template/408知识点.md",
-    "_Template/第1章 计算机网络体系结构.md",
-    "_Template/计算机网络.md",
-    "02 - 408/04 - 计算机网络/01 - 计算机网络体系结构/1.5 计算机网络的性能指标.md",
+    "01 - 数学/01 - 高数/04 - 微分方程/微分方程求解大观.canvas",
+    "01 - 数学/01 - 高数/02 - 一元微分/一元微分计算大观.canvas",
+    "02 - 408/03 - 操作系统",
+    "02 - 408/02 - 计算机组成原理",
     "未命名.base",
     "_Template",
     "Anki",
@@ -279,8 +283,6 @@
     "02 - 408/04 - 计算机网络/01 - 计算机网络体系结构",
     "02 - 408/04 - 计算机网络/06 - 应用层",
     "02 - 408/04 - 计算机网络/05 - 传输层",
-    "02 - 408/04 - 计算机网络/04 - 网络层",
-    "02 - 408/04 - 计算机网络/03 - 数据链路层",
     "未命名.canvas",
     "01 - 数学/02 - 线代/03 - 向量组.canvas",
     "01 - 数学/02 - 线代/02 - 矩阵.canvas",
@@ -288,8 +290,6 @@
     "01 - 数学/02 - 线代/秩 1 矩阵大观.canvas",
     "01 - 数学/02 - 线代/01 - 行列式.canvas",
     "01 - 数学/02 - 线代/05 - 矩阵相似理论.canvas",
-    "01 - 数学/好题错题整理/02 - 线代/未命名.canvas",
-    "01 - 数学/02 - 线代/06 - 二次型.canvas",
-    "01 - 数学/01 - 高数/03 - 一元积分/02 - 一元积分计算大观.canvas"
+    "01 - 数学/好题错题整理/02 - 线代/未命名.canvas"
   ]
 }
