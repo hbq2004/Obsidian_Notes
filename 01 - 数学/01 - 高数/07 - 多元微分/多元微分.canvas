@@ -1,0 +1,31 @@
+{
+	"nodes":[
+		{"id":"a933437752c376a2","type":"file","file":"_Attachments/Images/Pasted image 20260714061310.png","x":-180,"y":-460,"width":400,"height":328},
+		{
+			"id":"8ca62e9e5d8e123e",
+			"type":"text",
+			"text":"多元微分",
+			"styleAttributes":{"textAlign":"center"},
+			"x":-120,
+			"y":140,
+			"width":280,
+			"height":140
+		},
+		{"id":"360829ce0c202168","type":"file","file":"_Attachments/Images/Pasted image 20260714061315.png","x":220,"y":-455,"width":675,"height":323}
+	],
+	"edges":[
+		{
+			"id":"8f35c658a998f067",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"8ca62e9e5d8e123e",
+			"fromSide":"top",
+			"toNode":"a933437752c376a2",
+			"toSide":"bottom"
+		}
+	],
+	"metadata":{
+		"version":"1.0-1.0",
+		"frontmatter":{}
+	}
+}

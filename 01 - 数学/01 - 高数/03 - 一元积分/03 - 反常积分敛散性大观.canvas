@@ -1,47 +1,16 @@
 {
 	"nodes":[
-		{"id":"adde09b40225b9ae","type":"group","x":-1400,"y":240,"width":1640,"height":1240,"color":"4","label":"经典例题整理"},
-		{"id":"581ccca5634d3f02","type":"group","x":1080,"y":-40,"width":900,"height":760,"color":"2","label":"题型整理"},
-		{"id":"f22c36cff08c61c3","type":"group","x":-1220,"y":-500,"width":660,"height":540,"color":"1","label":"口诀"},
-		{
-			"id":"461a2e32b9e6f870",
-			"type":"text",
-			"text":"反常积分敛散性讲解：\n[你的葫芦](https://www.bilibili.com/video/BV1vJp1eTE6S/) \n[阿赞学长 - 方法总结 + 模拟卷题目代刷](https://www.bilibili.com/video/BV1sr4y1Q7Np/) \n\n\n",
-			"styleAttributes":{"textAlign":"center"},
-			"x":-250,
-			"y":-500,
-			"width":440,
-			"height":160
-		},
-		{"id":"c1a74951a49df31e","type":"file","file":"_Attachments/Images/Pasted image 20260429224219.png","x":-1320,"y":360,"width":650,"height":125},
-		{"id":"8d9bac8247d5e66e","type":"file","file":"_Attachments/Images/Pasted image 20260429235744.png","x":-520,"y":342,"width":492,"height":574},
-		{
-			"id":"ad529a72aa91ec63",
-			"type":"text",
-			"text":"反常积分敛散性大观",
-			"styleAttributes":{"textAlign":"center"},
-			"x":-160,
-			"y":-180,
-			"width":260,
-			"height":60
-		},
-		{
-			"id":"8446b90fa835be0c",
-			"type":"text",
-			"text":"(3) p积分尺子口诀：大的喜欢大的，小的喜欢小的",
-			"styleAttributes":{"textAlign":"center"},
-			"x":-1190,
-			"y":-240,
-			"width":520,
-			"height":120
-		},
+		{"id":"adde09b40225b9ae","type":"group","x":-2314,"y":760,"width":1640,"height":1300,"color":"4","label":"经典例题整理"},
+		{"id":"f22c36cff08c61c3","type":"group","x":-2140,"y":-160,"width":1292,"height":640,"color":"1","label":"口诀"},
+		{"id":"581ccca5634d3f02","type":"group","x":-2394,"y":2200,"width":900,"height":760,"color":"2","label":"题型整理"},
+		{"id":"2ed457297a5002ae","type":"file","file":"_Attachments/Images/Pasted image 20260429231555.png","x":-2234,"y":1140,"width":671,"height":137},
 		{
 			"id":"de2d68497f841a2b",
 			"type":"text",
 			"text":"(2) 三类用换元，非三类用极限和尺子",
 			"styleAttributes":{"textAlign":"center"},
-			"x":-1190,
-			"y":-320,
+			"x":-2110,
+			"y":20,
 			"width":390,
 			"height":80
 		},
@@ -50,52 +19,71 @@
 			"type":"text",
 			"text":"(1) 一段散就散，全段敛才敛",
 			"styleAttributes":{"textAlign":"center"},
-			"x":-1190,
-			"y":-400,
+			"x":-2110,
+			"y":-60,
 			"width":300,
 			"height":80
 		},
-		{"id":"2ed457297a5002ae","type":"file","file":"_Attachments/Images/Pasted image 20260429231555.png","x":-1320,"y":560,"width":671,"height":137},
+		{"id":"c1a74951a49df31e","type":"file","file":"_Attachments/Images/Pasted image 20260429224219.png","x":-2234,"y":940,"width":650,"height":125},
 		{
-			"id":"36842b32238f89ea",
+			"id":"8446b90fa835be0c",
 			"type":"text",
-			"text":"(2) 不等式",
+			"text":"(3) p积分尺子口诀：大的喜欢大的，小的喜欢小的",
 			"styleAttributes":{"textAlign":"center"},
-			"x":1160,
-			"y":120,
+			"x":-2110,
+			"y":100,
+			"width":470,
+			"height":128
+		},
+		{"id":"7fbb362d0c2d6946","type":"file","file":"_Attachments/Images/Pasted image 20260713034904.png","x":-1520,"y":100,"width":399,"height":136},
+		{"id":"8d9bac8247d5e66e","type":"file","file":"_Attachments/Images/Pasted image 20260429235744.png","x":-1434,"y":922,"width":492,"height":574},
+		{
+			"id":"ad529a72aa91ec63",
+			"type":"text",
+			"text":"反常积分敛散性大观",
+			"styleAttributes":{"textAlign":"center"},
+			"x":432,
+			"y":240,
 			"width":260,
 			"height":60
 		},
+		{"id":"1ee4919d762a28fc","type":"file","file":"_Attachments/Images/Pasted image 20260712171233.png","x":362,"y":-60,"width":400,"height":138},
 		{
 			"id":"fd6dcd5bac2ffd86",
 			"type":"text",
 			"text":"(1) 和极限结合",
 			"styleAttributes":{"textAlign":"center"},
-			"x":1160,
-			"y":60,
+			"x":-2314,
+			"y":2300,
 			"width":260,
 			"height":60
-		}
+		},
+		{
+			"id":"36842b32238f89ea",
+			"type":"text",
+			"text":"(2) 不等式",
+			"styleAttributes":{"textAlign":"center"},
+			"x":-2314,
+			"y":2360,
+			"width":260,
+			"height":60
+		},
+		{
+			"id":"461a2e32b9e6f870",
+			"type":"text",
+			"text":"反常积分敛散性讲解：\n[你的葫芦](https://www.bilibili.com/video/BV1vJp1eTE6S/) \n[阿赞学长 - 方法总结 + 模拟卷题目代刷](https://www.bilibili.com/video/BV1sr4y1Q7Np/) \n\n\n",
+			"styleAttributes":{"textAlign":"center"},
+			"x":1460,
+			"y":-60,
+			"width":440,
+			"height":160
+		},
+		{"id":"aa86c806348d823b","type":"file","file":"_Attachments/Images/Pasted image 20260713034820.png","x":-258,"y":682,"width":450,"height":271},
+		{"id":"bcff8209df945a61","type":"file","file":"_Attachments/Images/Pasted image 20260713035024.png","x":792,"y":682,"width":499,"height":240},
+		{"id":"07b6bcab3af37fc7","type":"file","file":"_Attachments/Images/Pasted image 20260713034805.png","x":292,"y":680,"width":400,"height":273},
+		{"id":"28e8c74b3b2b3e63","type":"file","file":"_Attachments/Images/Pasted image 20260716065439.png","x":1360,"y":720,"width":400,"height":194}
 	],
 	"edges":[
-		{
-			"id":"137dcabe4e0de46a",
-			"styleAttributes":{},
-			"toFloating":false,
-			"fromNode":"ad529a72aa91ec63",
-			"fromSide":"left",
-			"toNode":"f22c36cff08c61c3",
-			"toSide":"right"
-		},
-		{
-			"id":"a9c2212c29340120",
-			"styleAttributes":{},
-			"toFloating":false,
-			"fromNode":"ad529a72aa91ec63",
-			"fromSide":"top",
-			"toNode":"461a2e32b9e6f870",
-			"toSide":"bottom"
-		},
 		{
 			"id":"0263377bec9f0578",
 			"styleAttributes":{},
@@ -104,6 +92,62 @@
 			"fromSide":"right",
 			"toNode":"8d9bac8247d5e66e",
 			"toSide":"left"
+		},
+		{
+			"id":"342d6fd16a416840",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromFloating":false,
+			"fromNode":"ad529a72aa91ec63",
+			"fromSide":"top",
+			"toNode":"1ee4919d762a28fc",
+			"toSide":"bottom",
+			"label":"知识结构"
+		},
+		{
+			"id":"04970b9f2f4675d3",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"ad529a72aa91ec63",
+			"fromSide":"bottom",
+			"toNode":"07b6bcab3af37fc7",
+			"toSide":"top"
+		},
+		{
+			"id":"8bef501e0377da5b",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"ad529a72aa91ec63",
+			"fromSide":"bottom",
+			"toNode":"aa86c806348d823b",
+			"toSide":"top"
+		},
+		{
+			"id":"fbaff0430c770d7e",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"8446b90fa835be0c",
+			"fromSide":"right",
+			"toNode":"7fbb362d0c2d6946",
+			"toSide":"left"
+		},
+		{
+			"id":"b48eed2fc771a9f4",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"ad529a72aa91ec63",
+			"fromSide":"bottom",
+			"toNode":"bcff8209df945a61",
+			"toSide":"top"
+		},
+		{
+			"id":"12fd92df85718a5b",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"ad529a72aa91ec63",
+			"fromSide":"bottom",
+			"toNode":"28e8c74b3b2b3e63",
+			"toSide":"top"
 		}
 	],
 	"metadata":{

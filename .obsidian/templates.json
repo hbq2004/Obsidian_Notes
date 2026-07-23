@@ -1,3 +1,5 @@
 {
-  "folder": "_Template"
+  "folder": "_Template",
+  "timeFormat": "HH:mm:ss",
+  "dateFormat": "YYYY-MM-DD"
 }

@@ -8,5 +8,13 @@
   "omnisearch",
   "obsidian-git",
   "obsidian-to-anki-plugin",
-  "hidden-folder-obsidian"
+  "hidden-folder-obsidian",
+  "obsidian-hover-editor",
+  "callout-manager",
+  "dataview",
+  "templater-obsidian",
+  "obsidian-tasks-plugin",
+  "obsidian-linter",
+  "calendar",
+  "tag-wrangler"
 ]

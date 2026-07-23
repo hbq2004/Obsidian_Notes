@@ -1,58 +1,60 @@
 {
 	"nodes":[
-		{"id":"d6f21b8a51a0cd4d","type":"group","x":-840,"y":480,"width":1160,"height":1200,"label":"反函数"},
+		{"id":"dcca917ce3fd7fc0","type":"group","x":6880,"y":-240,"width":2920,"height":1800,"label":"基本求导公式和法则"},
+		{"id":"5df1cac12c67aa7b","type":"group","x":3840,"y":1400,"width":1440,"height":1640,"label":"高阶导数"},
+		{"id":"d6f21b8a51a0cd4d","type":"group","x":-1960,"y":1640,"width":1320,"height":1120,"label":"反函数"},
+		{"id":"5436615a8a2bba4e","type":"file","file":"_Attachments/Images/Pasted image 20260718210505.png","x":7560,"y":480,"width":282,"height":339},
+		{"id":"a533041575f8b868","type":"file","file":"_Attachments/Images/Pasted image 20260718205625.png","x":-4040,"y":1425,"width":599,"height":421},
+		{"id":"b4c8a6af040e035a","type":"file","file":"_Attachments/Images/Pasted image 20260718205720.png","x":-1880,"y":1777,"width":475,"height":456},
+		{"id":"4938a2fd9c5d1ce2","type":"file","file":"_Attachments/Images/Pasted image 20260505223953.png","x":-1280,"y":1899,"width":525,"height":333},
+		{"id":"89aee5d12c19024b","type":"file","file":"_Attachments/Images/Pasted image 20260505224200.png","x":-1280,"y":2233,"width":525,"height":374},
+		{"id":"5cacc44dd58c139e","type":"file","file":"_Attachments/Images/Pasted image 20260718205645.png","x":-3040,"y":1551,"width":667,"height":226},
+		{"id":"5cc2cb0a12b77544","type":"file","file":"_Attachments/Images/Pasted image 20260718210442.png","x":6960,"y":480,"width":592,"height":172},
+		{"id":"6a4a179e4fb15b11","type":"file","file":"_Attachments/Images/Pasted image 20260718210325.png","x":4000,"y":1480,"width":548,"height":134},
+		{"id":"efc48f3af0238166","type":"file","file":"_Attachments/Images/Pasted image 20260718210340.png","x":4000,"y":1614,"width":545,"height":291},
+		{
+			"id":"cc7e2eb0d69ea891",
+			"type":"text",
+			"text":"[李艳芳反函数求导](https://www.bilibili.com/video/BV1pPwAzNEaU/) ",
+			"styleAttributes":{"textAlign":"center"},
+			"x":-1137,
+			"y":1759,
+			"width":240,
+			"height":80
+		},
+		{"id":"15b30a08172a7594","type":"file","file":"_Attachments/Images/Pasted image 20260718205913.png","x":1760,"y":1673,"width":650,"height":286},
+		{"id":"3720c43a93b65ad6","type":"file","file":"_Attachments/Images/result_0qJVwp.png","x":2800,"y":1719,"width":625,"height":196},
+		{"id":"aead486013e35546","type":"file","file":"_Attachments/Images/Pasted image 20260718205440.png","x":-420,"y":-820,"width":400,"height":342},
 		{
 			"id":"d8b6174c276212df",
 			"type":"text",
 			"text":"一元微分计算大观",
 			"styleAttributes":{"textAlign":"center"},
 			"x":-360,
-			"y":-160,
+			"y":-120,
 			"width":280,
 			"height":100
 		},
+		{"id":"9e5091ef74a7d834","type":"file","file":"_Attachments/Images/Pasted image 20260718210457.png","x":6960,"y":652,"width":594,"height":172},
+		{"id":"47dcd975a31898fc","type":"file","file":"_Attachments/Images/Pasted image 20260718210206.png","x":4700,"y":2480,"width":498,"height":75},
+		{"id":"8444b9bff803b842","type":"file","file":"_Attachments/Images/Pasted image 20260718205528.png","x":6973,"y":-120,"width":575,"height":455},
+		{"id":"8cf7bd9c582b75da","type":"file","file":"_Attachments/Images/Pasted image 20260718210138.png","x":4000,"y":2280,"width":480,"height":149},
+		{"id":"d620e271ff0ae2ea","type":"file","file":"_Attachments/Images/Pasted image 20260718210151.png","x":4000,"y":2430,"width":485,"height":481},
+		{"id":"ec2260876eaf4631","type":"file","file":"_Attachments/Images/Pasted image 20260718210115.png","x":4000,"y":1980,"width":525,"height":221},
 		{
-			"id":"a0efdac703d62857",
+			"id":"705f80d7c2b9fb96",
 			"type":"text",
-			"text":"反函数求导",
+			"text":"比较**抽象展开**和**具体展开**的系数",
 			"styleAttributes":{"textAlign":"center"},
-			"x":-360,
-			"y":220,
-			"width":260,
-			"height":60
+			"x":4800,
+			"y":2671,
+			"width":300,
+			"height":120
 		},
-		{"id":"4938a2fd9c5d1ce2","type":"file","file":"_Attachments/Images/Pasted image 20260505223953.png","x":-760,"y":660,"width":525,"height":333},
-		{"id":"89aee5d12c19024b","type":"file","file":"_Attachments/Images/Pasted image 20260505224200.png","x":-760,"y":994,"width":525,"height":374},
-		{
-			"id":"cc7e2eb0d69ea891",
-			"type":"text",
-			"text":"[李艳芳反函数求导](https://www.bilibili.com/video/BV1pPwAzNEaU/) ",
-			"styleAttributes":{"textAlign":"center"},
-			"x":-617,
-			"y":520,
-			"width":240,
-			"height":80
-		}
+		{"id":"e69ceda9055c1080","type":"file","file":"_Attachments/Images/Pasted image 20260718205748.png","x":-360,"y":1700,"width":980,"height":243},
+		{"id":"a4f1f41e4c1e3d6c","type":"file","file":"_Attachments/Images/result_6yLo2X.png","x":820,"y":1597,"width":722,"height":438}
 	],
 	"edges":[
-		{
-			"id":"0e7f62436d1a07c9",
-			"styleAttributes":{},
-			"toFloating":false,
-			"fromNode":"d8b6174c276212df",
-			"fromSide":"bottom",
-			"toNode":"a0efdac703d62857",
-			"toSide":"top"
-		},
-		{
-			"id":"5c00ff8c15935567",
-			"styleAttributes":{},
-			"toFloating":false,
-			"fromNode":"a0efdac703d62857",
-			"fromSide":"bottom",
-			"toNode":"d6f21b8a51a0cd4d",
-			"toSide":"top"
-		},
 		{
 			"id":"633244aaf66c2e23",
 			"styleAttributes":{},
@@ -60,6 +62,119 @@
 			"fromNode":"cc7e2eb0d69ea891",
 			"fromSide":"bottom",
 			"toNode":"4938a2fd9c5d1ce2",
+			"toSide":"top"
+		},
+		{
+			"id":"93018b4e8223210a",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromFloating":false,
+			"fromNode":"d8b6174c276212df",
+			"fromSide":"top",
+			"toNode":"aead486013e35546",
+			"toSide":"bottom",
+			"label":"知识结构"
+		},
+		{
+			"id":"f5f6947b060e7a23",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"d8b6174c276212df",
+			"fromSide":"bottom",
+			"toNode":"a533041575f8b868",
+			"toSide":"top"
+		},
+		{
+			"id":"cfaa682ffbaa4f09",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"d8b6174c276212df",
+			"fromSide":"bottom",
+			"toNode":"5cacc44dd58c139e",
+			"toSide":"top"
+		},
+		{
+			"id":"7c1357a3f2820e99",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromFloating":false,
+			"fromNode":"d8b6174c276212df",
+			"fromSide":"bottom",
+			"toNode":"d6f21b8a51a0cd4d",
+			"toSide":"top",
+			"label":"最难理解的⭐"
+		},
+		{
+			"id":"d1510664e5a806fe",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"d8b6174c276212df",
+			"fromSide":"bottom",
+			"toNode":"e69ceda9055c1080",
+			"toSide":"top"
+		},
+		{
+			"id":"49f200709a800799",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"d8b6174c276212df",
+			"fromSide":"bottom",
+			"toNode":"a4f1f41e4c1e3d6c",
+			"toSide":"top",
+			"label":"容易和反函数混淆⭐"
+		},
+		{
+			"id":"c68cbefe7ea44d11",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"d8b6174c276212df",
+			"fromSide":"bottom",
+			"toNode":"15b30a08172a7594",
+			"toSide":"top"
+		},
+		{
+			"id":"4efa5e4fb405fa64",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"d8b6174c276212df",
+			"fromSide":"bottom",
+			"toNode":"3720c43a93b65ad6",
+			"toSide":"top"
+		},
+		{
+			"id":"44e2044b4bcf00fa",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"d8b6174c276212df",
+			"fromSide":"bottom",
+			"toNode":"5df1cac12c67aa7b",
+			"toSide":"top"
+		},
+		{
+			"id":"dab97ac026c6135c",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"8cf7bd9c582b75da",
+			"fromSide":"right",
+			"toNode":"47dcd975a31898fc",
+			"toSide":"left"
+		},
+		{
+			"id":"a4d520fce7f22e72",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"d620e271ff0ae2ea",
+			"fromSide":"right",
+			"toNode":"47dcd975a31898fc",
+			"toSide":"left"
+		},
+		{
+			"id":"c7d74dd4cc748dbe",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"47dcd975a31898fc",
+			"fromSide":"bottom",
+			"toNode":"705f80d7c2b9fb96",
 			"toSide":"top"
 		}
 	],

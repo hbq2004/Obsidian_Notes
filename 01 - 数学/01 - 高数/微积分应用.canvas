@@ -1,0 +1,20 @@
+{
+	"nodes":[
+		{"id":"1f8320064ba466f6","type":"file","file":"_Attachments/Images/799fbc86dc32f91792755e4e12a9e672 (3) 1.jpg","x":100,"y":-180,"width":400,"height":64},
+		{
+			"id":"1438977d5f2d7f24",
+			"type":"text",
+			"text":"微积分应用\n",
+			"styleAttributes":{"textAlign":"center"},
+			"x":-160,
+			"y":-20,
+			"width":260,
+			"height":60
+		}
+	],
+	"edges":[],
+	"metadata":{
+		"version":"1.0-1.0",
+		"frontmatter":{}
+	}
+}

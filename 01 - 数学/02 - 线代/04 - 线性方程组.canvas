@@ -4,60 +4,6 @@
 		{"id":"428b3b478af3949e","type":"group","x":4141,"y":4280,"width":2099,"height":4360,"color":"4","label":"经典母题"},
 		{"id":"2afa543e6c5d9ed4","type":"group","x":4141,"y":2640,"width":2259,"height":1280,"label":"零碎知识点（待整理）"},
 		{"id":"4f4c686aa8f29591","type":"group","x":-2360,"y":3480,"width":1700,"height":940,"label":"总结"},
-		{"id":"708f609dc3e8c0c4","type":"file","file":"_Attachments/Images/Capture_20260508_021254.jpg","x":-2285,"y":3513,"width":716,"height":294},
-		{"id":"21bb3077848fb2bb","type":"file","file":"_Attachments/Images/Capture_20260508_023333.jpg","x":-2285,"y":3920,"width":721,"height":176},
-		{"id":"33d978aa056b3bf0","type":"file","file":"_Attachments/Images/Capture_20260507_165833.jpg","x":-2235,"y":1720,"width":567,"height":166},
-		{"id":"06759ab0bf0546de","type":"file","file":"_Attachments/Images/Capture_20260507_170007.jpg","x":-2347,"y":2040,"width":800,"height":116},
-		{
-			"id":"22c5156d866e87db",
-			"type":"text",
-			"text":"⭐非齐通 = 齐通 + 非奇特",
-			"styleAttributes":{"textAlign":"center"},
-			"x":-2515,
-			"y":2991,
-			"width":350,
-			"height":113
-		},
-		{"id":"49e3c159bd5648a2","type":"file","file":"_Attachments/Images/Pasted image 20260506204823.png","x":-2640,"y":2387,"width":600,"height":157},
-		{"id":"9431d3cf9a83a342","type":"file","file":"_Attachments/Images/Pasted image 20260506204855.png","x":-2640,"y":2666,"width":599,"height":228},
-		{"id":"bac40b9487c8132d","type":"file","file":"_Attachments/Images/Pasted image 20260506204837.png","x":-2640,"y":2547,"width":599,"height":118},
-		{"id":"eb12974d67557ef5","type":"file","file":"_Attachments/Images/Capture_20260503_194211 1.jpg","x":-35,"y":-720,"width":400,"height":223},
-		{"id":"f79e47168b913354","type":"file","file":"_Attachments/Images/pintu-fulicat.com-1778071607290.png","x":-3460,"y":2387,"width":625,"height":660},
-		{"id":"67dec7158f1e2167","type":"file","file":"_Attachments/Images/Pasted image 20260506204344.png","x":-4260,"y":2856,"width":624,"height":193},
-		{"id":"e112fa267b5054d7","type":"file","file":"_Attachments/Images/Pasted image 20260506204316.png","x":-4260,"y":2599,"width":615,"height":257},
-		{
-			"id":"f7560f31e0928934",
-			"type":"text",
-			"text":"齐次方程组由于增广系数都是 $0$，所以不可能得到“系数矩阵的秩不等于增广矩阵的秩”的结果，即**齐次方程组一定有解**（且全 $0$ 一定是一组解）",
-			"styleAttributes":{"textAlign":"center"},
-			"x":-4218,
-			"y":3600,
-			"width":542,
-			"height":220
-		},
-		{"id":"6a95971604397580","type":"file","file":"_Attachments/Images/Pasted image 20260506204403.png","x":-4260,"y":3052,"width":625,"height":344},
-		{"id":"882ddac549513322","type":"file","file":"_Attachments/Images/Pasted image 20260506204301.png","x":-4260,"y":2430,"width":625,"height":166},
-		{
-			"id":"6fb146295ee32ae4",
-			"type":"text",
-			"text":"(2) 解方程原理与高斯消元法及解的判定",
-			"styleAttributes":{"textAlign":"center"},
-			"x":-3338,
-			"y":1262,
-			"width":438,
-			"height":118
-		},
-		{"id":"d627d402fac85b03","type":"file","file":"_Attachments/Images/973ac10dd25be56b477b6adee2624344.jpeg","x":560,"y":-751,"width":399,"height":286},
-		{
-			"id":"e1e04d31bfe18ae9",
-			"type":"text",
-			"text":"线性方程组",
-			"styleAttributes":{"textAlign":"center"},
-			"x":70,
-			"y":-240,
-			"width":190,
-			"height":80
-		},
 		{
 			"id":"becde15fa91278d8",
 			"type":"text",
@@ -68,17 +14,31 @@
 			"width":360,
 			"height":120
 		},
-		{"id":"a07951d52fd438f4","type":"file","file":"_Attachments/Images/Pasted image 20260506204231.png","x":-4960,"y":2430,"width":599,"height":507},
+		{"id":"33d978aa056b3bf0","type":"file","file":"_Attachments/Images/Capture_20260507_165833.jpg","x":-2235,"y":1720,"width":567,"height":166},
+		{"id":"708f609dc3e8c0c4","type":"file","file":"_Attachments/Images/Capture_20260508_021254.jpg","x":-2285,"y":3513,"width":716,"height":294},
+		{"id":"21bb3077848fb2bb","type":"file","file":"_Attachments/Images/Capture_20260508_023333.jpg","x":-2285,"y":3920,"width":721,"height":176},
 		{
-			"id":"d1f01848700605db",
+			"id":"22c5156d866e87db",
 			"type":"text",
-			"text":"(1) 齐次线性方程组（非齐次的导出组）",
+			"text":"⭐非齐通 = 齐通 + 非奇特",
 			"styleAttributes":{"textAlign":"center"},
-			"x":-4400,
-			"y":2070,
-			"width":430,
-			"height":60
+			"x":-2515,
+			"y":2991,
+			"width":350,
+			"height":113
 		},
+		{"id":"41426b008fa3c9c3","type":"file","file":"_Attachments/Images/Capture_20260508_020247.jpg","x":-1100,"y":2357,"width":400,"height":217},
+		{
+			"id":"86d1b0c949a02691",
+			"type":"text",
+			"text":"1. $r(A) \\neq r([A, b])$ $\\Longleftrightarrow$ $r(A) + 1 = r([A, b])$，即系数矩阵的秩不等于增广矩阵的值，那么只能比增广矩阵少 $1$.\n2. 若 $r(A) = r([A, b]) = r < n$，则等价于**有效方程数量小于未知数的数量**，约束太少，有无穷多解",
+			"styleAttributes":{"textAlign":"center"},
+			"x":-1840,
+			"y":2369,
+			"width":560,
+			"height":193
+		},
+		{"id":"49e3c159bd5648a2","type":"file","file":"_Attachments/Images/Pasted image 20260506204823.png","x":-2640,"y":2387,"width":600,"height":157},
 		{
 			"id":"2daf9369d58c3dc3",
 			"type":"text",
@@ -89,6 +49,45 @@
 			"width":320,
 			"height":80
 		},
+		{"id":"9431d3cf9a83a342","type":"file","file":"_Attachments/Images/Pasted image 20260506204855.png","x":-2640,"y":2666,"width":599,"height":228},
+		{
+			"id":"f7560f31e0928934",
+			"type":"text",
+			"text":"齐次方程组由于增广系数都是 $0$，所以不可能得到“系数矩阵的秩不等于增广矩阵的秩”的结果，即**齐次方程组一定有解**（且全 $0$ 一定是一组解）",
+			"styleAttributes":{"textAlign":"center"},
+			"x":-4218,
+			"y":3600,
+			"width":542,
+			"height":220
+		},
+		{"id":"06759ab0bf0546de","type":"file","file":"_Attachments/Images/Capture_20260507_170007.jpg","x":-2347,"y":2040,"width":800,"height":116},
+		{"id":"67dec7158f1e2167","type":"file","file":"_Attachments/Images/Pasted image 20260506204344.png","x":-4260,"y":2856,"width":624,"height":193},
+		{"id":"6a95971604397580","type":"file","file":"_Attachments/Images/Pasted image 20260506204403.png","x":-4260,"y":3052,"width":625,"height":344},
+		{"id":"bac40b9487c8132d","type":"file","file":"_Attachments/Images/Pasted image 20260506204837.png","x":-2640,"y":2547,"width":599,"height":118},
+		{"id":"e112fa267b5054d7","type":"file","file":"_Attachments/Images/Pasted image 20260506204316.png","x":-4260,"y":2599,"width":615,"height":257},
+		{
+			"id":"d1f01848700605db",
+			"type":"text",
+			"text":"(1) 齐次线性方程组（非齐次的导出组）",
+			"styleAttributes":{"textAlign":"center"},
+			"x":-4400,
+			"y":2070,
+			"width":430,
+			"height":60
+		},
+		{"id":"a07951d52fd438f4","type":"file","file":"_Attachments/Images/Pasted image 20260506204231.png","x":-4960,"y":2430,"width":599,"height":507},
+		{
+			"id":"6fb146295ee32ae4",
+			"type":"text",
+			"text":"(2) 解方程原理与高斯消元法及解的判定",
+			"styleAttributes":{"textAlign":"center"},
+			"x":-3338,
+			"y":1262,
+			"width":438,
+			"height":118
+		},
+		{"id":"f79e47168b913354","type":"file","file":"_Attachments/Images/pintu-fulicat.com-1778071607290.png","x":-3460,"y":2387,"width":625,"height":660},
+		{"id":"882ddac549513322","type":"file","file":"_Attachments/Images/Pasted image 20260506204301.png","x":-4260,"y":2430,"width":625,"height":166},
 		{"id":"93327d25423172f6","type":"file","file":"_Attachments/Images/pintu-fulicat.com-1778072309785.png","x":-7760,"y":954,"width":727,"height":944},
 		{"id":"710f0d1a06722122","type":"file","file":"_Attachments/Images/Capture_20260507_165508.jpg","x":-6878,"y":1655,"width":927,"height":92},
 		{
@@ -102,6 +101,33 @@
 			"height":130
 		},
 		{"id":"42782bcd080ad1cf","type":"file","file":"_Attachments/Images/Capture_20260507_164600.jpg","x":-6840,"y":1070,"width":841,"height":411},
+		{"id":"2ed3a284dd66c53c","type":"file","file":"_Attachments/Images/Pasted image 20260508022935.png","x":4880,"y":4560,"width":759,"height":289},
+		{"id":"aa252c10b2973d62","type":"file","file":"_Attachments/Images/Pasted image 20260508023127.png","x":5639,"y":4560,"width":525,"height":288},
+		{
+			"id":"bbd50dcf41450439",
+			"type":"text",
+			"text":"齐次线性方程组求解基础解析和通解：\n**自由赋值定基准，主元反算顺势跟**",
+			"styleAttributes":{"textAlign":"center"},
+			"x":4220,
+			"y":5140,
+			"width":420,
+			"height":160
+		},
+		{"id":"b86c6dd2acd0627f","type":"file","file":"_Attachments/Images/Pasted image 20260513135421.png","x":4934,"y":7953,"width":600,"height":286},
+		{"id":"dbee10946664b2e2","type":"file","file":"_Attachments/Images/Pasted image 20260513134645.png","x":5459,"y":7428,"width":637,"height":189},
+		{"id":"97d7ff6ab80521bc","type":"file","file":"_Attachments/Images/Pasted image 20260513134353.png","x":5459,"y":7206,"width":524,"height":234},
+		{"id":"f7b289406ab65263","type":"file","file":"_Attachments/Images/Pasted image 20260513133345.png","x":4935,"y":7440,"width":525,"height":353},
+		{"id":"7cba862efa0117fd","type":"file","file":"_Attachments/Images/Pasted image 20260513122306.png","x":5100,"y":5044,"width":649,"height":313},
+		{
+			"id":"a4f6ab4180f2a2de",
+			"type":"text",
+			"text":"矩阵行满秩，对应的非齐次方程一定有解",
+			"styleAttributes":{"textAlign":"center"},
+			"x":4220,
+			"y":4645,
+			"width":420,
+			"height":120
+		},
 		{
 			"id":"e04f87792170f0f4",
 			"type":"text",
@@ -112,27 +138,16 @@
 			"width":380,
 			"height":134
 		},
-		{"id":"e81da88dc81edd19","type":"file","file":"_Attachments/Images/Pasted image 20260513131429.png","x":5020,"y":5620,"width":622,"height":251},
+		{"id":"ca80f487e4dbe710","type":"file","file":"_Attachments/Images/Pasted image 20260513134853.png","x":5460,"y":7617,"width":649,"height":224},
 		{
-			"id":"6a64714d6de40cb7",
+			"id":"567fe907a9a6a969",
 			"type":"text",
-			"text":"极大无关组的向量个数\n和基础解系的向量个数",
+			"text":"\"配凑法\"凑出解",
 			"styleAttributes":{"textAlign":"center"},
-			"x":4300,
-			"y":3580,
-			"width":280,
-			"height":125
-		},
-		{"id":"00a44c226bf20d9b","type":"file","file":"_Attachments/Images/Pasted image 20260513133525.png","x":4934,"y":7206,"width":522,"height":234},
-		{
-			"id":"0aa6440a50a2e653",
-			"type":"text",
-			"text":"抽象向量组求基础解系和通解",
-			"styleAttributes":{"textAlign":"center"},
-			"x":4260,
-			"y":6264,
-			"width":360,
-			"height":117
+			"x":4240,
+			"y":8000,
+			"width":298,
+			"height":96
 		},
 		{
 			"id":"a1965f4d2a64ebad",
@@ -156,28 +171,9 @@
 			"width":320,
 			"height":120
 		},
+		{"id":"e81da88dc81edd19","type":"file","file":"_Attachments/Images/Pasted image 20260513131429.png","x":5020,"y":5620,"width":622,"height":251},
 		{"id":"d27df65629076ca0","type":"file","file":"_Attachments/Images/Pasted image 20260513130415.png","x":5020,"y":6200,"width":672,"height":244},
-		{
-			"id":"ee5b2a8878889928",
-			"type":"text",
-			"text":"为什么初等行变换是同解变换？",
-			"styleAttributes":{"textAlign":"center"},
-			"x":4320,
-			"y":2931,
-			"width":320,
-			"height":100
-		},
-		{"id":"0c7cd882cda191f7","type":"file","file":"_Attachments/Images/Pasted image 20260507165055.png","x":4820,"y":2760,"width":450,"height":301},
-		{
-			"id":"3e80c39f6c3d5dee",
-			"type":"text",
-			"text":"矩阵方程转化为线性方程组是否有解",
-			"styleAttributes":{"textAlign":"center"},
-			"x":4358,
-			"y":6720,
-			"width":420,
-			"height":152
-		},
+		{"id":"00a44c226bf20d9b","type":"file","file":"_Attachments/Images/Pasted image 20260513133525.png","x":4934,"y":7206,"width":522,"height":234},
 		{
 			"id":"dd4d18bb51509514",
 			"type":"text",
@@ -188,32 +184,58 @@
 			"width":418,
 			"height":140
 		},
-		{"id":"b86c6dd2acd0627f","type":"file","file":"_Attachments/Images/Pasted image 20260513135421.png","x":4934,"y":7953,"width":600,"height":286},
-		{"id":"dbee10946664b2e2","type":"file","file":"_Attachments/Images/Pasted image 20260513134645.png","x":5459,"y":7428,"width":637,"height":189},
-		{
-			"id":"567fe907a9a6a969",
-			"type":"text",
-			"text":"\"配凑法\"凑出解",
-			"styleAttributes":{"textAlign":"center"},
-			"x":4240,
-			"y":8000,
-			"width":298,
-			"height":96
-		},
 		{"id":"b7e6a45c4fc4bef4","type":"file","file":"_Attachments/Images/Pasted image 20260513132626.png","x":5196,"y":6720,"width":400,"height":212},
-		{"id":"97d7ff6ab80521bc","type":"file","file":"_Attachments/Images/Pasted image 20260513134353.png","x":5459,"y":7206,"width":524,"height":234},
-		{"id":"ca80f487e4dbe710","type":"file","file":"_Attachments/Images/Pasted image 20260513134853.png","x":5460,"y":7617,"width":649,"height":224},
-		{"id":"f7b289406ab65263","type":"file","file":"_Attachments/Images/Pasted image 20260513133345.png","x":4935,"y":7440,"width":525,"height":353},
-		{"id":"41426b008fa3c9c3","type":"file","file":"_Attachments/Images/Capture_20260508_020247.jpg","x":-1100,"y":2357,"width":400,"height":217},
 		{
-			"id":"86d1b0c949a02691",
+			"id":"3e80c39f6c3d5dee",
 			"type":"text",
-			"text":"1. $r(A) \\neq r([A, b])$ $\\Longleftrightarrow$ $r(A) + 1 = r([A, b])$，即系数矩阵的秩不等于增广矩阵的值，那么只能比增广矩阵少 $1$.\n2. 若 $r(A) = r([A, b]) = r < n$，则等价于**有效方程数量小于未知数的数量**，约束太少，有无穷多解",
+			"text":"矩阵方程转化为线性方程组是否有解",
 			"styleAttributes":{"textAlign":"center"},
-			"x":-1840,
-			"y":2369,
-			"width":560,
-			"height":193
+			"x":4358,
+			"y":6720,
+			"width":420,
+			"height":152
+		},
+		{"id":"eb12974d67557ef5","type":"file","file":"_Attachments/Images/Capture_20260503_194211 1.jpg","x":-35,"y":-720,"width":400,"height":223},
+		{
+			"id":"e1e04d31bfe18ae9",
+			"type":"text",
+			"text":"线性方程组",
+			"styleAttributes":{"textAlign":"center"},
+			"x":70,
+			"y":-240,
+			"width":190,
+			"height":80
+		},
+		{
+			"id":"6a64714d6de40cb7",
+			"type":"text",
+			"text":"极大无关组的向量个数\n和基础解系的向量个数",
+			"styleAttributes":{"textAlign":"center"},
+			"x":4300,
+			"y":3580,
+			"width":280,
+			"height":125
+		},
+		{
+			"id":"0aa6440a50a2e653",
+			"type":"text",
+			"text":"抽象向量组求基础解系和通解",
+			"styleAttributes":{"textAlign":"center"},
+			"x":4260,
+			"y":6264,
+			"width":360,
+			"height":117
+		},
+		{"id":"0c7cd882cda191f7","type":"file","file":"_Attachments/Images/Pasted image 20260507165055.png","x":4820,"y":2760,"width":450,"height":301},
+		{
+			"id":"ee5b2a8878889928",
+			"type":"text",
+			"text":"为什么初等行变换是同解变换？",
+			"styleAttributes":{"textAlign":"center"},
+			"x":4320,
+			"y":2931,
+			"width":320,
+			"height":100
 		},
 		{
 			"id":"48ef7ad740a5f172",
@@ -235,30 +257,8 @@
 			"width":540,
 			"height":200
 		},
-		{"id":"2ed3a284dd66c53c","type":"file","file":"_Attachments/Images/Pasted image 20260508022935.png","x":4880,"y":4560,"width":759,"height":289},
-		{
-			"id":"bbd50dcf41450439",
-			"type":"text",
-			"text":"齐次线性方程组求解基础解析和通解：\n**自由赋值定基准，主元反算顺势跟**",
-			"styleAttributes":{"textAlign":"center"},
-			"x":4220,
-			"y":5140,
-			"width":420,
-			"height":160
-		},
-		{"id":"7cba862efa0117fd","type":"file","file":"_Attachments/Images/Pasted image 20260513122306.png","x":5100,"y":5044,"width":649,"height":313},
-		{"id":"aa252c10b2973d62","type":"file","file":"_Attachments/Images/Pasted image 20260508023127.png","x":5639,"y":4560,"width":525,"height":288},
-		{
-			"id":"a4f6ab4180f2a2de",
-			"type":"text",
-			"text":"矩阵行满秩，对应的非齐次方程一定有解",
-			"styleAttributes":{"textAlign":"center"},
-			"x":4220,
-			"y":4645,
-			"width":420,
-			"height":120
-		},
 		{"id":"1a0ef4346c1c7b01","type":"file","file":"_Attachments/Images/Pasted image 20260513125923.png","x":5000,"y":3540,"width":399,"height":250},
+		{"id":"d627d402fac85b03","type":"file","file":"_Attachments/Images/973ac10dd25be56b477b6adee2624344.jpeg","x":560,"y":-751,"width":399,"height":286},
 		{"id":"cac91adc0d3b4e72","type":"file","file":"_Attachments/Images/Pasted image 20260513120558.png","x":1200,"y":1600,"width":621,"height":455},
 		{
 			"id":"93cbd3c44974e176",

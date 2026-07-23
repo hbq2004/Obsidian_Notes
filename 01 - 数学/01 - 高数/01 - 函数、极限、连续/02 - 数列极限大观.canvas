@@ -1,0 +1,32 @@
+{
+	"nodes":[
+		{"id":"8566a3a24a995080","type":"file","file":"_Attachments/Images/Pasted image 20260711161623.png","x":-360,"y":-540,"width":750,"height":507},
+		{
+			"id":"9c48ffb09cf6ec20",
+			"type":"text",
+			"text":"数列极限",
+			"styleAttributes":{"textAlign":"center"},
+			"x":-115,
+			"y":240,
+			"width":260,
+			"height":60
+		}
+	],
+	"edges":[
+		{
+			"id":"fe52fadd0ee0d2d8",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromFloating":false,
+			"fromNode":"9c48ffb09cf6ec20",
+			"fromSide":"top",
+			"toNode":"8566a3a24a995080",
+			"toSide":"bottom",
+			"label":"知识结构"
+		}
+	],
+	"metadata":{
+		"version":"1.0-1.0",
+		"frontmatter":{}
+	}
+}

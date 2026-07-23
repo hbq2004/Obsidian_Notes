@@ -1,0 +1,12 @@
+views:
+  - type: table
+    name: 表格
+    order:
+      - file.name
+      - file.ctime
+      - tricks
+    sort:
+      - property: file.ctime
+        direction: DESC
+    columnSize:
+      note.triks: 238

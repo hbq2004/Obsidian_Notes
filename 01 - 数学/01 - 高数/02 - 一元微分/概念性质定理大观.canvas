@@ -1,0 +1,318 @@
+{
+	"nodes":[
+		{"id":"1c01fee19d2270a0","type":"group","x":-3080,"y":2160,"width":2000,"height":1680,"label":"连续、可导重要概念题"},
+		{"id":"9d063554202347e0","type":"group","x":1060,"y":4080,"width":1220,"height":660,"label":"注意点"},
+		{"id":"a4a19cdc37edf5b2","type":"group","x":-2739,"y":1360,"width":1305,"height":320,"label":"可导的充要条件和必要条件"},
+		{
+			"id":"7fd57ba8401eae61",
+			"type":"text",
+			"text":"一元微分概念大观",
+			"styleAttributes":{"textAlign":"center"},
+			"x":-140,
+			"y":-40,
+			"width":280,
+			"height":80
+		},
+		{"id":"ebea7de32b227d0d","type":"file","file":"_Attachments/Images/Pasted image 20260713213222.png","x":-237,"y":1565,"width":667,"height":301},
+		{"id":"8f21b462de7981be","type":"file","file":"_Attachments/Images/Pasted image 20260713212526.png","x":-1679,"y":2256,"width":523,"height":600},
+		{"id":"d1e2779f9ae6b631","type":"file","file":"_Attachments/Images/Pasted image 20260713212623.png","x":-1679,"y":2859,"width":519,"height":196},
+		{"id":"4777858e9c2150a1","type":"file","file":"_Attachments/Images/Pasted image 20260715212035.png","x":-3032,"y":2759,"width":545,"height":247},
+		{
+			"id":"5e73cbc1edbee68b",
+			"type":"text",
+			"text":"二阶导存在 $\\implies$ 一阶导邻域内有定义 $\\Longleftrightarrow$ 原函数邻域内可导",
+			"styleAttributes":{"textAlign":"center"},
+			"x":-3000,
+			"y":3560,
+			"width":680,
+			"height":120
+		},
+		{"id":"8f03bfccbd0f72e8","type":"file","file":"_Attachments/Images/Pasted image 20260713213927.png","x":-2948,"y":3100,"width":575,"height":323},
+		{"id":"5ca914a2af14b9e1","type":"file","file":"_Attachments/Images/Pasted image 20260713213939.png","x":-2373,"y":3100,"width":353,"height":400},
+		{"id":"1742fa21364cf72d","type":"file","file":"_Attachments/Images/Pasted image 20260718211521.png","x":-320,"y":3456,"width":475,"height":205},
+		{"id":"af249ce521a92204","type":"file","file":"_Attachments/Images/Pasted image 20260718211711.png","x":200,"y":3475,"width":399,"height":174},
+		{"id":"28d118fda7434d08","type":"file","file":"_Attachments/Images/Pasted image 20260718212932.png","x":2120,"y":2587,"width":400,"height":271},
+		{"id":"215fc59baaf02ba8","type":"file","file":"_Attachments/Images/Pasted image 20260713155511.png","x":-305,"y":-554,"width":623,"height":225},
+		{
+			"id":"236e926841263ad8",
+			"type":"text",
+			"text":"[北大罗帆讲考研数学 - 极限、连续、可导](https://v.douyin.com/VBXMzBF6fxE/) \n\n",
+			"styleAttributes":{"textAlign":"center"},
+			"x":1400,
+			"y":2556,
+			"width":497,
+			"height":332
+		},
+		{"id":"44a3a782211d41cc","type":"file","file":"_Attachments/Images/Pasted image 20260718211841.png","x":640,"y":3475,"width":399,"height":311},
+		{"id":"3b7ac8156f5c2e0d","type":"file","file":"_Attachments/Images/Pasted image 20260718212216.png","x":1160,"y":3533,"width":499,"height":217},
+		{"id":"066b1251f09adab7","type":"file","file":"_Attachments/Images/Pasted image 20260718212424.png","x":1760,"y":3544,"width":400,"height":174},
+		{"id":"af98fcea773e0166","type":"file","file":"_Attachments/Images/Pasted image 20260718212555.png","x":2400,"y":3554,"width":399,"height":184},
+		{"id":"bdc17b8a4a46bf66","type":"file","file":"_Attachments/Images/Pasted image 20260718213410.png","x":3000,"y":3544,"width":400,"height":187},
+		{"id":"975c8739017c9925","type":"file","file":"_Attachments/Images/Pasted image 20260718213051.png","x":2520,"y":2593,"width":350,"height":295},
+		{
+			"id":"69199b0cc0cf2a27",
+			"type":"text",
+			"text":"极限存在 可以推出 邻域有定义",
+			"styleAttributes":{"textAlign":"center"},
+			"x":1140,
+			"y":4180,
+			"width":360,
+			"height":100
+		},
+		{"id":"c6edfba5feffa2ac","type":"file","file":"_Attachments/Images/Pasted image 20260713164727.png","x":-3659,"y":1505,"width":400,"height":138},
+		{"id":"cdfbb51cd87d2e9d","type":"file","file":"_Attachments/Images/Pasted image 20260713164852.png","x":-2119,"y":1410,"width":625,"height":199},
+		{"id":"d5254c0a57b9b916","type":"file","file":"_Attachments/Images/Pasted image 20260713213116.png","x":-237,"y":1220,"width":675,"height":340},
+		{"id":"1ca70e2fd5ac8e7d","type":"file","file":"_Attachments/Images/Pasted image 20260713032039.png","x":320,"y":-549,"width":325,"height":220},
+		{
+			"id":"d9845b790011fe3e",
+			"type":"text",
+			"text":"(3) 高阶导数",
+			"styleAttributes":{"textAlign":"center"},
+			"x":-80,
+			"y":829,
+			"width":360,
+			"height":116
+		},
+		{"id":"d93390dc3bf1e125","type":"file","file":"_Attachments/Images/result_oXRYq3.png","x":720,"y":1101,"width":500,"height":336},
+		{
+			"id":"80ac4686acf8f04c",
+			"type":"text",
+			"text":"(4) 微分",
+			"styleAttributes":{"textAlign":"center"},
+			"x":1260,
+			"y":780,
+			"width":260,
+			"height":60
+		},
+		{"id":"fc0ac3970d7a3acd","type":"file","file":"_Attachments/Images/Pasted image 20260713213435.png","x":1480,"y":1080,"width":400,"height":380},
+		{"id":"85bb668b9fbfb80a","type":"file","file":"_Attachments/Images/Pasted image 20260713213541.png","x":1880,"y":1080,"width":396,"height":400},
+		{"id":"c97ba55c5542bd33","type":"file","file":"_Attachments/Images/Pasted image 20260713164659.png","x":-3659,"y":1360,"width":400,"height":145},
+		{"id":"5761759ea926ab38","type":"file","file":"_Attachments/Images/Pasted image 20260713164752.png","x":-3179,"y":1376,"width":400,"height":258},
+		{
+			"id":"2fe2d6a0713918d9",
+			"type":"text",
+			"text":"(1) 导数",
+			"styleAttributes":{"textAlign":"center"},
+			"x":-2719,
+			"y":640,
+			"width":260,
+			"height":60
+		},
+		{"id":"dc423e916ccbf6f6","type":"file","file":"_Attachments/Images/Pasted image 20260713164816.png","x":-2679,"y":1389,"width":524,"height":232},
+		{"id":"c32cedf2f3212aed","type":"file","file":"_Attachments/Images/Pasted image 20260713212948.png","x":-1240,"y":800,"width":400,"height":173},
+		{"id":"4216022f5555feae","type":"file","file":"_Attachments/Images/Pasted image 20260713165112.png","x":-3032,"y":2300,"width":547,"height":289},
+		{"id":"0553ae2919f446b2","type":"file","file":"_Attachments/Images/455f119ae92bbf41477146114116ca8e.jpeg","x":-3032,"y":2589,"width":549,"height":170},
+		{"id":"4e77d3a9df136468","type":"file","file":"_Attachments/Images/Pasted image 20260713164944.png","x":-2373,"y":2508,"width":585,"height":333}
+	],
+	"edges":[
+		{
+			"id":"233419f24c0cad23",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromFloating":false,
+			"fromNode":"7fd57ba8401eae61",
+			"fromSide":"top",
+			"toNode":"215fc59baaf02ba8",
+			"toSide":"bottom",
+			"label":"知识结构"
+		},
+		{
+			"id":"faa6d088fd25590c",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromFloating":false,
+			"fromNode":"2fe2d6a0713918d9",
+			"fromSide":"bottom",
+			"toNode":"c97ba55c5542bd33",
+			"toSide":"top"
+		},
+		{
+			"id":"4ec85d05cc157cd5",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromFloating":false,
+			"fromNode":"2fe2d6a0713918d9",
+			"fromSide":"bottom",
+			"toNode":"5761759ea926ab38",
+			"toSide":"top",
+			"label":"⭐"
+		},
+		{
+			"id":"9bcae05c35a57ff5",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"7fd57ba8401eae61",
+			"fromSide":"bottom",
+			"toNode":"2fe2d6a0713918d9",
+			"toSide":"top"
+		},
+		{
+			"id":"199e1e1b85b4eaa9",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"2fe2d6a0713918d9",
+			"fromSide":"bottom",
+			"toNode":"a4a19cdc37edf5b2",
+			"toSide":"top"
+		},
+		{
+			"id":"31b4ae42ed933919",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromFloating":false,
+			"fromNode":"a4a19cdc37edf5b2",
+			"fromSide":"bottom",
+			"toNode":"1c01fee19d2270a0",
+			"toSide":"top"
+		},
+		{
+			"id":"7be95e4a5b7282b9",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"7fd57ba8401eae61",
+			"fromSide":"bottom",
+			"toNode":"c32cedf2f3212aed",
+			"toSide":"top",
+			"label":"(2) 导数的几何意义"
+		},
+		{
+			"id":"4f36bf77c7da4fb4",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"7fd57ba8401eae61",
+			"fromSide":"bottom",
+			"toNode":"d9845b790011fe3e",
+			"toSide":"top"
+		},
+		{
+			"id":"49d8e5be142ceb27",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"d9845b790011fe3e",
+			"fromSide":"bottom",
+			"toNode":"d5254c0a57b9b916",
+			"toSide":"top"
+		},
+		{
+			"id":"0b26d23e59229143",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"7fd57ba8401eae61",
+			"fromSide":"bottom",
+			"toNode":"80ac4686acf8f04c",
+			"toSide":"top"
+		},
+		{
+			"id":"a4716d7dfa35db95",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"80ac4686acf8f04c",
+			"fromSide":"bottom",
+			"toNode":"d93390dc3bf1e125",
+			"toSide":"top"
+		},
+		{
+			"id":"f25b485832510108",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"80ac4686acf8f04c",
+			"fromSide":"bottom",
+			"toNode":"fc0ac3970d7a3acd",
+			"toSide":"top"
+		},
+		{
+			"id":"3ca5427a92b4d23e",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"8f03bfccbd0f72e8",
+			"fromSide":"bottom",
+			"toNode":"5e73cbc1edbee68b",
+			"toSide":"top"
+		},
+		{
+			"id":"16e948c361adc3c7",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"236e926841263ad8",
+			"fromSide":"bottom",
+			"toNode":"1742fa21364cf72d",
+			"toSide":"top",
+			"label":"点连续"
+		},
+		{
+			"id":"f14e78ca0e470fcf",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"236e926841263ad8",
+			"fromSide":"bottom",
+			"toNode":"af249ce521a92204",
+			"toSide":"top",
+			"label":"去心邻域连续"
+		},
+		{
+			"id":"d96fa10c090efa43",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"236e926841263ad8",
+			"fromSide":"bottom",
+			"toNode":"44a3a782211d41cc",
+			"toSide":"top",
+			"label":"邻域连续"
+		},
+		{
+			"id":"e0dcc7341a23bdc1",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"236e926841263ad8",
+			"fromSide":"bottom",
+			"toNode":"3b7ac8156f5c2e0d",
+			"toSide":"top",
+			"label":"点可导"
+		},
+		{
+			"id":"5764e7cd550f0a25",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromFloating":false,
+			"fromNode":"236e926841263ad8",
+			"fromSide":"bottom",
+			"toNode":"066b1251f09adab7",
+			"toSide":"top",
+			"label":"去心邻域内可导"
+		},
+		{
+			"id":"03f1780e045dbcfa",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"236e926841263ad8",
+			"fromSide":"bottom",
+			"toNode":"af98fcea773e0166",
+			"toSide":"top",
+			"label":"邻域可导"
+		},
+		{
+			"id":"d150ab46f8c97d94",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"236e926841263ad8",
+			"fromSide":"right",
+			"toNode":"28d118fda7434d08",
+			"toSide":"left"
+		},
+		{
+			"id":"bd0c3fce7f59f407",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"236e926841263ad8",
+			"fromSide":"bottom",
+			"toNode":"bdc17b8a4a46bf66",
+			"toSide":"top",
+			"label":"⭐二阶导存在"
+		}
+	],
+	"metadata":{
+		"version":"1.0-1.0",
+		"frontmatter":{},
+		"startNode":"b13bc360e0ec6a43"
+	}
+}
