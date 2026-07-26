@@ -195,7 +195,7 @@
   transform: skewX(-20deg);
   backface-visibility: hidden;
 }
-.canvas-node[data-shape=parallelogram] .canvas-node-container .canvas-node-content .markdown-embed-content {
+.canvas-node[data-shape=parallelogram] .canvas-node-container .canvas-node-content > .markdown-embed-content {
   transform: skewX(20deg);
 }
 .canvas-node[data-shape=circle] .canvas-node-container {
@@ -347,6 +347,18 @@
   stroke: rgb(var(--canvas-color));
   stroke-width: calc(4px * var(--zoom-multiplier));
 }
+.icon-modal-suggestion {
+  display: flex;
+  align-items: center;
+  gap: var(--size-4-4);
+}
+.icon-modal-suggestion .icon-modal-suggestion-icon {
+  line-height: 0;
+}
+.icon-modal-suggestion .icon-modal-suggestion-id {
+  font-size: var(--font-ui-smaller);
+  color: var(--text-muted);
+}
 .canvas.is-exporting {
   --zoom-multiplier: 1;
 }
@@ -379,6 +391,76 @@
 }
 .canvas-wrapper.mod-readonly[data-hide-background-grid-when-in-readonly=true] .canvas-background {
   visibility: hidden;
+}
+.canvas-wrapper[data-reading-mode-fix-enabled=true] .canvas {
+}
+.canvas-wrapper[data-reading-mode-fix-enabled=true] .canvas .el-p > p:has(> span.vertical-space) {
+  margin-top: 0px;
+}
+.canvas-wrapper[data-reading-mode-fix-enabled=true] .canvas .el-p > p {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.canvas-wrapper[data-reading-mode-fix-enabled=true] .canvas :is(.el-ul, .el-ol) + .el-p > p:has(> span.vertical-space:first-child) {
+  margin-top: 24px;
+}
+.canvas-wrapper[data-reading-mode-fix-enabled=true] .canvas ol::before {
+  margin-left: -2px;
+}
+.canvas-wrapper[data-reading-mode-fix-enabled=true] .canvas ol {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.canvas-wrapper[data-reading-mode-fix-enabled=true] .canvas ul > li > ol > li {
+  margin-left: 36px;
+}
+.canvas-wrapper[data-reading-mode-fix-enabled=true] .canvas ul::before {
+  margin-left: -2px;
+}
+.canvas-wrapper[data-reading-mode-fix-enabled=true] .canvas ul {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.canvas-wrapper[data-reading-mode-fix-enabled=true] .canvas .el-ul > ul > li {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.canvas-wrapper[data-reading-mode-fix-enabled=true] .canvas ol > li > ul > li {
+  margin-left: 36px;
+}
+.canvas-wrapper[data-reading-mode-fix-enabled=true] .canvas ul > li > .list-bullet {
+  margin-top: 2px;
+}
+.canvas-wrapper[data-reading-mode-fix-enabled=true] .canvas .has-list-bullet .list-bullet::after {
+  margin-left: -4px;
+  margin-top: -3px;
+}
+.canvas-wrapper[data-reading-mode-fix-enabled=true] .canvas .el-h1 > h1,
+.canvas-wrapper[data-reading-mode-fix-enabled=true] .canvas .el-h2 > h2,
+.canvas-wrapper[data-reading-mode-fix-enabled=true] .canvas .el-h3 > h3,
+.canvas-wrapper[data-reading-mode-fix-enabled=true] .canvas .el-h4 > h4,
+.canvas-wrapper[data-reading-mode-fix-enabled=true] .canvas .el-h5 > h5,
+.canvas-wrapper[data-reading-mode-fix-enabled=true] .canvas .el-h6 > h6 {
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+}
+.canvas-wrapper[data-reading-mode-fix-enabled=true] .canvas .markdown-preview-section > .markdown-preview-pusher + :is(.el-h2) > :is(h2),
+.canvas-wrapper[data-reading-mode-fix-enabled=true] .canvas .markdown-preview-section > .markdown-preview-pusher + :is(.el-h3) > :is(h3) {
+  margin-top: 0px !important;
+}
+.canvas-wrapper[data-reading-mode-fix-enabled=true] .canvas .el-table {
+  margin-top: 24px;
+}
+.canvas-node-iframe-body[data-reading-mode-fix-enabled=true] {
+}
+.canvas-node-iframe-body[data-reading-mode-fix-enabled=true] .markdown-source-view .cm-contentContainer > .cm-content.cm-lineWrapping > .cm-line {
+  margin-right: -2px !important;
+}
+.canvas-node-iframe-body[data-reading-mode-fix-enabled=true] .mod-inside-iframe .HyperMD-header {
+  padding-top: 0px !important;
+}
+.canvas-node-iframe-body[data-reading-mode-fix-enabled=true] .cm-formatting-list.cm-formatting-list-ul {
+  margin-right: 7px;
 }
 .collapse-button {
   position: absolute;
@@ -494,7 +576,6 @@
 .ac-card-embed {
   display: flex;
   flex-direction: column;
-  contain: strict;
   overflow: hidden;
   background-color: var(--background-primary);
   border: 1px solid rgb(var(--canvas-color));

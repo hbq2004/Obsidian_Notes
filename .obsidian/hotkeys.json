@@ -41,5 +41,37 @@
       ],
       "key": "`"
     }
+  ],
+  "templater-obsidian:_Template/_图片链接加上答案.md": [
+    {
+      "modifiers": [
+        "Alt"
+      ],
+      "key": "A"
+    }
+  ],
+  "templater-obsidian:_Template/_图片链接加上题目.md": [
+    {
+      "modifiers": [
+        "Alt"
+      ],
+      "key": "Q"
+    }
+  ],
+  "templater-obsidian:z_Template/_图片链接加上题目.md": [
+    {
+      "modifiers": [
+        "Alt"
+      ],
+      "key": "Q"
+    }
+  ],
+  "obsidian-linter:paste-as-plain-text": [
+    {
+      "modifiers": [
+        "Alt"
+      ],
+      "key": "V"
+    }
   ]
 }

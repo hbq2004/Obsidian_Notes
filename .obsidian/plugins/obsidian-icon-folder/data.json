@@ -1,0 +1,48 @@
+{
+  "settings": {
+    "migrated": 6,
+    "iconPacksPath": ".obsidian/icons",
+    "fontSize": 16,
+    "emojiStyle": "native",
+    "iconColor": null,
+    "recentlyUsedIcons": [
+      "FasCode",
+      "📚",
+      "LiBrain",
+      "FasLandmark",
+      "FasSpellCheck"
+    ],
+    "recentlyUsedIconsSize": 5,
+    "rules": [],
+    "extraMargin": {
+      "top": 0,
+      "right": 4,
+      "bottom": 0,
+      "left": 0
+    },
+    "iconInTabsEnabled": false,
+    "iconInTitleEnabled": false,
+    "iconInTitlePosition": "above",
+    "iconInFrontmatterEnabled": false,
+    "iconInFrontmatterFieldName": "icon",
+    "iconColorInFrontmatterFieldName": "iconColor",
+    "iconsBackgroundCheckEnabled": false,
+    "iconsInNotesEnabled": true,
+    "iconsInLinksEnabled": true,
+    "iconIdentifier": ":",
+    "lucideIconPackType": "native",
+    "debugMode": false,
+    "useInternalPlugins": false
+  },
+  "03 - 英语": "FasSpellCheck",
+  "_Daily_Tasks": "LiListTodo",
+  "01 - 数学": "FasSquareRootVariable",
+  "01 - 数学/01 - 高数": "LiActivity",
+  "01 - 数学/02 - 线代": "LiGrid3x3",
+  "01 - 数学/03 - 概统": "LiDices",
+  "02 - 408": "FasMicrochip",
+  "04 - 政治": "FasLandmark",
+  "Anki": "LiBrain",
+  "好题错题整理": "📚",
+  "_Scripts": "FasCode"
+}

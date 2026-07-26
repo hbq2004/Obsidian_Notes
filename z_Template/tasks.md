@@ -1,0 +1,30 @@
+---
+mtime: 2026-07-25 02:22:44
+ctime: <% tp.file.creation_date('YYYY-MM-DD HH:mm:ss') %>
+---
+—— **截至**日期：
+
+```tasks
+not done
+due on or before today
+sort by priority desc
+```
+
+
+—— **计划**日期：
+
+```tasks
+not done
+scheduled on or before today
+sort by priority desc
+```
+
+
+—— 今天或之前开始：
+
+```tasks
+not done
+starts on or before today
+sort by priority desc
+```
+
