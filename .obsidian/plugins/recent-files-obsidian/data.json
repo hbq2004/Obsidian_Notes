@@ -1,48 +1,164 @@
 {
   "recentFiles": [
     {
+      "basename": "2009,42",
+      "path": "02 - 408/01 - 数据结构/大题/01 - 算法题/2009,42.md"
+    },
+    {
+      "basename": "2026-08-11",
+      "path": "_Daily_Tasks/2026-08-11.md"
+    },
+    {
       "basename": "链表",
       "path": "02 - 408/01 - 数据结构/大题/链表.md"
     },
     {
-      "basename": "2026-08-26",
-      "path": "_Daily_Tasks/2026-08-26.md"
+      "basename": "123123",
+      "path": "03 - 英语/00 - 易混淆单词/123123.md"
     },
     {
-      "basename": "2019,41",
-      "path": "02 - 408/01 - 数据结构/大题/01 - 算法题/2019,41.md"
+      "basename": "7.28",
+      "path": "03 - 英语/00 - 易混淆单词/7.28.md"
+    },
+    {
+      "basename": "Drawing 2026-07-28 21.30.40.excalidraw",
+      "path": "Excalidraw/Drawing 2026-07-28 21.30.40.excalidraw.md"
     },
     {
       "basename": "2012,42",
       "path": "02 - 408/01 - 数据结构/大题/01 - 算法题/2012,42.md"
     },
     {
-      "basename": "2026-07-30",
-      "path": "_Daily_Tasks/2026-07-30.md"
-    },
-    {
-      "basename": "2. 标签",
-      "path": "z_Template/2. 标签.md"
-    },
-    {
-      "basename": "计网第二章",
-      "path": "z_Template/计网第二章.md"
-    },
-    {
-      "basename": "2009,42",
-      "path": "02 - 408/01 - 数据结构/大题/01 - 算法题/2009,42.md"
-    },
-    {
-      "basename": "2026,41,BST,searchX",
-      "path": "02 - 408/01 - 数据结构/大题/01 - 算法题/2026,41,BST,searchX.md"
+      "basename": "2011,42",
+      "path": "02 - 408/01 - 数据结构/大题/01 - 算法题/2011,42.md"
     },
     {
       "basename": "2010,42",
       "path": "02 - 408/01 - 数据结构/大题/01 - 算法题/2010,42.md"
     },
     {
-      "basename": "2011,42",
-      "path": "02 - 408/01 - 数据结构/大题/01 - 算法题/2011,42.md"
+      "basename": "2026-07-28",
+      "path": "_Daily_Tasks/2026-07-28.md"
+    },
+    {
+      "basename": "_图片链接加上题目",
+      "path": "_Template/_图片链接加上题目.md"
+    },
+    {
+      "basename": "好题错题属性",
+      "path": "_Template/好题错题属性.md"
+    },
+    {
+      "basename": "充分必要条件",
+      "path": "充分必要条件.md"
+    },
+    {
+      "basename": "六级习题分类系统",
+      "path": "六级习题分类系统.md"
+    },
+    {
+      "basename": "LaTeX Suite",
+      "path": "LaTeX Suite.md"
+    },
+    {
+      "basename": "z_大雪深埋模考规划",
+      "path": "z_大雪深埋模考规划.md"
+    },
+    {
+      "basename": "计网第一章",
+      "path": "_Template/计网第一章.md"
+    },
+    {
+      "basename": "计网第三章",
+      "path": "_Template/计网第三章.md"
+    },
+    {
+      "basename": "数据库测试",
+      "path": "数据库测试.base"
+    },
+    {
+      "basename": "缩写",
+      "path": "缩写.md"
+    },
+    {
+      "basename": "微分方程求解大观",
+      "path": "01 - 数学/01 - 高数/04 - 微分方程/微分方程求解大观.canvas"
+    },
+    {
+      "basename": "01 - 概念性质定理大观",
+      "path": "01 - 数学/01 - 高数/03 - 一元积分/01 - 概念性质定理大观.canvas"
+    },
+    {
+      "basename": "02 - 一元积分计算大观",
+      "path": "01 - 数学/01 - 高数/03 - 一元积分/02 - 一元积分计算大观.canvas"
+    },
+    {
+      "basename": "03 - 反常积分敛散性大观",
+      "path": "01 - 数学/01 - 高数/03 - 一元积分/03 - 反常积分敛散性大观.canvas"
+    },
+    {
+      "basename": "Pasted image 20260714084456",
+      "path": "_Attachments/Images/Pasted image 20260714084456.png"
+    },
+    {
+      "basename": "概念性质定理大观",
+      "path": "01 - 数学/01 - 高数/02 - 一元微分/概念性质定理大观.canvas"
+    },
+    {
+      "basename": "一元微分计算大观",
+      "path": "01 - 数学/01 - 高数/02 - 一元微分/一元微分计算大观.canvas"
+    },
+    {
+      "basename": "2026-07-27",
+      "path": "_Daily_Tasks/2026-07-27.md"
+    },
+    {
+      "basename": "2014",
+      "path": "02 - 408/01 - 数据结构/大题/01 - 算法题/2014.md"
+    },
+    {
+      "basename": "卡特兰数_推导",
+      "path": "02 - 408/01 - 数据结构/卡特兰数_推导.md"
+    },
+    {
+      "basename": "2026-07-21",
+      "path": "_Daily_Tasks/2026-07-21.md"
+    },
+    {
+      "basename": "2026-07-23",
+      "path": "_Daily_Tasks/2026-07-23.md"
+    },
+    {
+      "basename": "2026-07-24",
+      "path": "_Daily_Tasks/2026-07-24.md"
+    },
+    {
+      "basename": "2026-07-25",
+      "path": "_Daily_Tasks/2026-07-25.md"
+    },
+    {
+      "basename": "2026-07-26",
+      "path": "_Daily_Tasks/2026-07-26.md"
+    },
+    {
+      "basename": "2026-07-22",
+      "path": "_Daily_Tasks/2026-07-22.md"
+    },
+    {
+      "basename": "206. 反转链表",
+      "path": "02 - 408/01 - 数据结构/大题/链表推荐题单/206. 反转链表.md"
+    },
+    {
+      "basename": "2019,41",
+      "path": "02 - 408/01 - 数据结构/大题/01 - 算法题/2019,41.md"
+    },
+    {
+      "basename": "计网第二章",
+      "path": "_Template/计网第二章.md"
+    },
+    {
+      "basename": "2026,41,BST,searchX",
+      "path": "02 - 408/01 - 数据结构/大题/01 - 算法题/2026,41,BST,searchX.md"
     },
     {
       "basename": "2024,41,TopSort",
@@ -65,14 +181,6 @@
       "path": "02 - 408/01 - 数据结构/大题/01 - 算法题/2017.md"
     },
     {
-      "basename": "2026-07-27",
-      "path": "_Daily_Tasks/2026-07-27.md"
-    },
-    {
-      "basename": "2026-08-10",
-      "path": "_Daily_Tasks/2026-08-10.md"
-    },
-    {
       "basename": "2015",
       "path": "02 - 408/01 - 数据结构/大题/01 - 算法题/2015.md"
     },
@@ -81,48 +189,8 @@
       "path": "02 - 408/01 - 数据结构/大题/01 - 算法题/2023,.md"
     },
     {
-      "basename": "2026-07-25",
-      "path": "_Daily_Tasks/2026-07-25.md"
-    },
-    {
-      "basename": "2026-07-21",
-      "path": "_Daily_Tasks/2026-07-21.md"
-    },
-    {
-      "basename": "六级习题分类系统",
-      "path": "六级习题分类系统.md"
-    },
-    {
-      "basename": "LaTeX Suite",
-      "path": "LaTeX Suite.md"
-    },
-    {
-      "basename": "206. 反转链表",
-      "path": "02 - 408/01 - 数据结构/大题/链表推荐题单/206. 反转链表.md"
-    },
-    {
-      "basename": "卡特兰数_推导",
-      "path": "02 - 408/01 - 数据结构/卡特兰数_推导.md"
-    },
-    {
-      "basename": "大雪深埋模考规划",
-      "path": "大雪深埋模考规划.md"
-    },
-    {
-      "basename": "充分必要条件",
-      "path": "充分必要条件.md"
-    },
-    {
-      "basename": "2026-07-26",
-      "path": "_Daily_Tasks/2026-07-26.md"
-    },
-    {
       "basename": "25,2,7 & 27,ep,2",
       "path": "好题错题整理/01 - 高数/概念题/一元积分/25,2,7 & 27,ep,2.md"
-    },
-    {
-      "basename": "数据库测试",
-      "path": "数据库测试.base"
     },
     {
       "basename": "27,ep,1,8,15",
@@ -131,66 +199,6 @@
     {
       "basename": "27,ep,2,11,17",
       "path": "好题错题整理/01 - 高数/计算题/微分方程/27,ep,2,11,17.md"
-    },
-    {
-      "basename": "27,ep,2,11,11",
-      "path": "好题错题整理/01 - 高数/计算题/微分方程/27,ep,2,11,11.md"
-    },
-    {
-      "basename": "27,30_zy,8.9,8.10",
-      "path": "好题错题整理/01 - 高数/概念题/一元积分/27,30_zy,8.9,8.10.md"
-    },
-    {
-      "basename": "2021",
-      "path": "02 - 408/01 - 数据结构/大题/01 - 算法题/2021.md"
-    },
-    {
-      "basename": "2026_Catalan",
-      "path": "02 - 408/01 - 数据结构/大题/02 - 应用题/2026_Catalan.md"
-    },
-    {
-      "basename": "2014",
-      "path": "02 - 408/01 - 数据结构/大题/01 - 算法题/2014.md"
-    },
-    {
-      "basename": "2013",
-      "path": "02 - 408/01 - 数据结构/大题/01 - 算法题/2013.md"
-    },
-    {
-      "basename": "2018",
-      "path": "02 - 408/01 - 数据结构/大题/01 - 算法题/2018.md"
-    },
-    {
-      "basename": "2022",
-      "path": "02 - 408/01 - 数据结构/大题/01 - 算法题/2022.md"
-    },
-    {
-      "basename": "缩写",
-      "path": "缩写.md"
-    },
-    {
-      "basename": "27徐涛强化课笔记(2)",
-      "path": "04 - 政治/27徐涛强化课笔记(2).pdf"
-    },
-    {
-      "basename": "1",
-      "path": "Anki/1.md"
-    },
-    {
-      "basename": "Drawing 2026-07-24 01.26.43.excalidraw",
-      "path": "Excalidraw/Drawing 2026-07-24 01.26.43.excalidraw.md"
-    },
-    {
-      "basename": "tasks",
-      "path": "z_Template/tasks.md"
-    },
-    {
-      "basename": "0. 创建时间 & 最后修改时间属性",
-      "path": "z_Template/0. 创建时间 & 最后修改时间属性.md"
-    },
-    {
-      "basename": "1. 好题错题属性",
-      "path": "z_Template/1. 好题错题属性.md"
     }
   ],
   "omittedPaths": [],

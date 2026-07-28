@@ -6,11 +6,11 @@
     "emojiStyle": "native",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "LiBookTemplate",
       "FasCode",
       "📚",
       "LiBrain",
-      "FasLandmark",
-      "FasSpellCheck"
+      "FasLandmark"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -44,5 +44,6 @@
   "04 - 政治": "FasLandmark",
   "Anki": "LiBrain",
   "好题错题整理": "📚",
-  "_Scripts": "FasCode"
+  "_Scripts": "FasCode",
+  "_Template": "LiBookTemplate"
 }

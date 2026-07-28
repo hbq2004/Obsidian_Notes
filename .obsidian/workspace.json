@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "7772aa1d440cf9db",
+        "id": "fe126ffd2c681556",
         "type": "tabs",
         "children": [
           {
-            "id": "126c5caefb747278",
+            "id": "08fea05bacbff4fb",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -20,8 +20,23 @@
               "icon": "lucide-file",
               "title": "链表"
             }
+          },
+          {
+            "id": "2ca00e6ea25f209d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "02 - 408/01 - 数据结构/大题/01 - 算法题/2009,42.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "2009,42"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -54,7 +69,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "path:\"_Scripts/\" ",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -234,6 +249,7 @@
   "left-ribbon": {
     "hiddenItems": {
       "daily-notes:打开/创建今天的日记": false,
+      "omnisearch:Omnisearch": false,
       "switcher:打开快速切换": false,
       "graph:查看关系图谱": false,
       "canvas:新建白板": false,
@@ -243,70 +259,70 @@
       "obsidian-to-anki-plugin:Obsidian_to_Anki - Scan Vault": false,
       "templater-obsidian:Templater": false,
       "callout-manager:Insert Callout": false,
-      "obsidian-excalidraw-plugin:新建绘图文件": false,
       "pdf-plus:PDF++: Toggle auto-copy": false,
       "pdf-plus:PDF++: Toggle auto-focus": false,
       "pdf-plus:PDF++: Toggle auto-paste": false,
+      "obsidian-excalidraw-plugin:新建绘图文件": false,
       "hidden-folder-obsidian:显示文件夹": false
     }
   },
-  "active": "126c5caefb747278",
+  "active": "9ee25ba6440a60e4",
   "lastOpenFiles": [
+    "_Daily_Tasks/2026-08-11.md",
+    "02 - 408/01 - 数据结构/大题/01 - 算法题/2009,42.md",
+    "02 - 408/01 - 数据结构/大题/链表.md",
+    "03 - 英语/00 - 易混淆单词/123123.md",
+    "03 - 英语/00 - 易混淆单词/7.28.md",
+    "03 - 英语/00 - 易混淆单词",
+    "Excalidraw/Drawing 2026-07-28 21.30.40.excalidraw.md",
+    "02 - 408/01 - 数据结构/大题/01 - 算法题/2012,42.md",
+    "_Daily_Tasks/2026-07-29.md",
+    "02 - 408/01 - 数据结构/大题/01 - 算法题/2011,42.md",
+    "02 - 408/01 - 数据结构/大题/01 - 算法题/2010,42.md",
+    "_Daily_Tasks/2026-07-28.md",
+    "_Template/_图片链接加上题目.md",
+    "12.md",
+    "123.md",
+    "_Template/好题错题属性.md",
+    "_Attachments/Images/Pasted image 20260728212021.png",
+    "充分必要条件.md",
+    "六级习题分类系统.md",
+    "LaTeX Suite.md",
+    "z_大雪深埋模考规划.md",
+    "_Template/2. 标签.md",
+    "_Template/计网第一章.md",
+    "_Template/计网第三章.md",
+    "_Template/_筛选题目⭐.md",
+    "_Template/0. 创建时间 & 最后修改时间属性.md",
+    "1.md",
+    "好题错题整理/1.md",
+    "好题错题整理/04 - 408",
+    "_Attachments/Images/Pasted image 20260725231006.png",
+    "数据库测试.base",
+    "01 - 数学/01 - 高数/04 - 微分方程/微分方程求解大观.canvas",
+    "01 - 数学/01 - 高数/03 - 一元积分/01 - 概念性质定理大观.canvas",
+    "01 - 数学/01 - 高数/03 - 一元积分/02 - 一元积分计算大观.canvas",
+    "01 - 数学/01 - 高数/03 - 一元积分/03 - 反常积分敛散性大观.canvas",
+    "_Attachments/Images/Pasted image 20260714084456.png",
+    "01 - 数学/01 - 高数/02 - 一元微分/概念性质定理大观.canvas",
+    "01 - 数学/01 - 高数/02 - 一元微分/一元微分计算大观.canvas",
     "_Scripts/_Scripts/question-recommender/view.js",
     "_Scripts/_Scripts/question-recommender/view.css",
     "_Scripts/_Scripts/question-recommender",
     "_Scripts/_Scripts",
-    "_Daily_Tasks/2026-08-26.md",
-    "02 - 408/01 - 数据结构/大题/链表.md",
-    "02 - 408/01 - 数据结构/大题/01 - 算法题/2019,41.md",
-    "02 - 408/01 - 数据结构/大题/01 - 算法题/2012,42.md",
-    "_Daily_Tasks/2026-07-30.md",
     "Scripts/question-recommender/view.js",
     "Scripts/question-recommender/view.css",
     "Scripts/question-recommender",
-    "Scripts",
-    "z_Template/2. 标签.md",
-    "z_Template/计网第二章.md",
-    "z_Template/3. ❗降级警告❗.md",
-    "_Daily_Tasks/2026-08-03.md",
-    "02 - 408/01 - 数据结构/大题/01 - 算法题/2009,42.md",
-    "02 - 408/01 - 数据结构/大题/01 - 算法题/2026,41,BST,searchX.md",
-    "02 - 408/01 - 数据结构/大题/01 - 算法题/2010,42.md",
-    "02 - 408/01 - 数据结构/大题/01 - 算法题/2011,42.md",
-    "02 - 408/01 - 数据结构/大题/01 - 算法题/2024,41,TopSort.md",
-    "02 - 408/01 - 数据结构/大题/01 - 算法题/2025,41,calMulMax.md",
-    "02 - 408/01 - 数据结构/大题/01 - 算法题/2020.md",
-    "02 - 408/01 - 数据结构/大题/01 - 算法题/2016,43.md",
-    "02 - 408/01 - 数据结构/大题/01 - 算法题/2017.md",
-    "_Daily_Tasks/2026-07-27.md",
-    "_Daily_Tasks/2026-08-10.md",
-    "02 - 408/01 - 数据结构/大题/01 - 算法题/2015.md",
-    "_Daily_Tasks/2026-07-29.md",
-    "_Daily_Tasks/2026-08-09.md",
-    "_Daily_Tasks/2026-08-25.md",
-    "_Daily_Tasks/2026-08-02.md",
-    "02 - 408/01 - 数据结构/大题/链表推荐题单",
     "_Attachments/Images/70dd3e0cf0a9abbe602292c09601e9de.png",
-    "_Scripts/question-recommender/view.js",
-    "_Scripts/question-recommender/view.css",
     "_Attachments/Images/Pasted image 20260726083743.png",
     "_Attachments/Images/Pasted image 20260726083720.png",
     "_Attachments/Images/Pasted image 20260726082238.png",
     "_Attachments/Images/Pasted image 20260726074304.png",
-    "_Attachments/Images/Pasted image 20260725231006.png",
     "_Attachments/Images/Pasted image 20260725225523.png",
     "_Attachments/Images/Pasted image 20260725225445.png",
-    "_Attachments/Images/Pasted image 20260725225215.png",
-    "_Attachments/Images/Pasted image 20260725225116.png",
-    "01 - 数学/01 - 高数/02 - 一元微分/一元微分计算大观.canvas",
-    "01 - 数学/01 - 高数/02 - 一元微分/概念性质定理大观.canvas",
     "01 - 数学/01 - 高数/01 - 函数、极限、连续/01 - 函数极限 + 连续与间断大观.canvas",
     "01 - 数学/01 - 高数/微积分应用.canvas",
     "01 - 数学/01 - 高数/01 - 函数、极限、连续/02 - 数列极限大观.canvas",
-    "01 - 数学/01 - 高数/04 - 微分方程/微分方程求解大观.canvas",
-    "01 - 数学/01 - 高数/03 - 一元积分/01 - 概念性质定理大观.canvas",
-    "01 - 数学/01 - 高数/03 - 一元积分/02 - 一元积分计算大观.canvas",
-    "01 - 数学/02 - 线代/01 - 行列式.canvas",
-    "01 - 数学/02 - 线代/02 - 矩阵.canvas"
+    "01 - 数学/02 - 线代/01 - 行列式.canvas"
   ]
 }

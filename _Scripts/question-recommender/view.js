@@ -22,7 +22,20 @@ const CONFIG = {
 
     maxResults: 100,
     historyLimit: 20,
-    reviewDays: [0, 1, 3, 7, 14, 30],
+
+    /*
+     * 复习强度：normal（常规）/ accelerated（加速）/ sprint（冲刺）。
+     * 当前默认使用 accelerated；数组下标对应 0～5 级。
+     */
+    reviewMode: "accelerated",
+    reviewSchedules: {
+        normal: [0, 1, 3, 7, 14, 30],
+        accelerated: [0, 1, 2, 4, 7, 14],
+        sprint: [0, 1, 1, 2, 4, 7]
+    },
+
+    /* 降级题在当前模式基础上再压缩为 50%，至少间隔 1 天 */
+    regressedReviewFactor: 0.5,
 
     /* 你的日记目录 */
     dailyNoteFolder: "_Daily_Tasks",
@@ -202,6 +215,39 @@ function parseLevel(value) {
     }
 
     return parsed;
+}
+
+/**
+ * 根据当前复习模式、题目等级和降级状态动态计算间隔。
+ * 0 级始终安排在当天；降级题会进一步缩短非零间隔。
+ */
+function getReviewIntervalDays(level, regressed = false) {
+    const schedules = CONFIG.reviewSchedules ?? {};
+    const normalSchedule = Array.isArray(schedules.normal)
+        ? schedules.normal
+        : [0, 1, 3, 7, 14, 30];
+    const selectedSchedule = Array.isArray(
+        schedules[CONFIG.reviewMode]
+    )
+        ? schedules[CONFIG.reviewMode]
+        : normalSchedule;
+
+    const configuredDays = Number(selectedSchedule[level]);
+    const fallbackDays = Number(normalSchedule[level]);
+    const baseDays = Number.isFinite(configuredDays)
+        ? Math.max(0, Math.round(configuredDays))
+        : Math.max(0, Math.round(fallbackDays || 0));
+
+    if (!regressed || baseDays === 0) {
+        return baseDays;
+    }
+
+    const configuredFactor = Number(CONFIG.regressedReviewFactor);
+    const factor = Number.isFinite(configuredFactor)
+        ? Math.min(1, Math.max(0.1, configuredFactor))
+        : 0.5;
+
+    return Math.max(1, Math.ceil(baseDays * factor));
 }
 
 function isTrue(value) {
@@ -1096,8 +1142,12 @@ function createLevelControl(item) {
 
                     frontmatter.last_reviewed = reviewTime;
 
+                    const reviewIntervalDays = getReviewIntervalDays(
+                        newLevel,
+                        regressed
+                    );
                     const newNextReview = localDateAfter(
-                        CONFIG.reviewDays[newLevel]
+                        reviewIntervalDays
                     );
 
                     frontmatter.next_review = newNextReview;
@@ -1134,7 +1184,8 @@ function createLevelControl(item) {
                         peakAfter,
                         newLevel,
                         oldNextReview,
-                        newNextReview
+                        newNextReview,
+                        reviewIntervalDays
                     };
                 }
             );
@@ -1179,7 +1230,9 @@ function createLevelControl(item) {
 
                 new Notice(
                     `⚠️ 发生降级：峰值${updateResult.peakBefore}级，` +
-                    `当前${updateResult.newLevel}级。`,
+                    `当前${updateResult.newLevel}级；` +
+                    `下次复习：${updateResult.newNextReview}` +
+                    `（加速间隔${updateResult.reviewIntervalDays}天）。`,
                     5000
                 );
             } else {
@@ -1191,7 +1244,8 @@ function createLevelControl(item) {
 
                 new Notice(
                     `✅ 已更新为${updateResult.newLevel}级，` +
-                    `下次复习：${updateResult.newNextReview}。`,
+                    `下次复习：${updateResult.newNextReview}` +
+                    `（间隔${updateResult.reviewIntervalDays}天）。`,
                     4000
                 );
             }

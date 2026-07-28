@@ -59,8 +59,8 @@
     },
     "yaml-timestamp": {
       "enabled": true,
-      "date-created": false,
-      "date-created-key": "date created",
+      "date-created": true,
+      "date-created-key": "ctime",
       "date-created-source-of-truth": "file system",
       "date-modified": true,
       "date-modified-key": "mtime",

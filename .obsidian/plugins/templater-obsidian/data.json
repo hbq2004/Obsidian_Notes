@@ -1,6 +1,6 @@
 {
   "command_timeout": 5,
-  "templates_folder": "z_Template",
+  "templates_folder": "_Template",
   "templates_pairs": [
     [
       "",
@@ -15,16 +15,12 @@
   "enable_folder_templates": true,
   "folder_templates": [
     {
-      "folder": "/",
-      "template": "z_Template/0. 创建时间 & 最后修改时间属性.md"
-    },
-    {
       "folder": "好题错题整理",
-      "template": "z_Template/1. 好题错题属性.md"
+      "template": "_Template/好题错题属性.md"
     },
     {
       "folder": "_Daily_Tasks",
-      "template": "z_Template/tasks.md"
+      "template": "_Template/tasks.md"
     }
   ],
   "enable_file_templates": false,
@@ -37,7 +33,7 @@
   "syntax_highlighting": true,
   "syntax_highlighting_mobile": false,
   "enabled_templates_hotkeys": [
-    "z_Template/_图片链接加上题目.md"
+    "_Template/_图片链接加上题目.md"
   ],
   "startup_templates": [
     ""

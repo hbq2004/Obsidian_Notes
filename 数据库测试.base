@@ -1,3 +1,5 @@
+formulas:
+  未命名: ""
 views:
   - type: table
     name: 表格
@@ -5,6 +7,7 @@ views:
       - file.name
       - file.ctime
       - tricks
+      - formula.未命名
     sort:
       - property: file.ctime
         direction: DESC

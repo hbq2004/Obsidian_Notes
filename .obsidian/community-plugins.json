@@ -21,5 +21,7 @@
   "excalidraw-extras",
   "quickadd",
   "obsidian-latex-suite",
-  "pdf-plus"
+  "pdf-plus",
+  "omnisearch",
+  "cm-chs-patch"
 ]
