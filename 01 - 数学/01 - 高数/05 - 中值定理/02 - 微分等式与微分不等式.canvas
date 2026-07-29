@@ -1,0 +1,32 @@
+{
+	"nodes":[
+		{
+			"id":"c88970c8dbcd6aeb",
+			"type":"text",
+			"text":"微分等式与微分不等式",
+			"styleAttributes":{"textAlign":"center"},
+			"x":-180,
+			"y":-40,
+			"width":360,
+			"height":160
+		},
+		{"id":"11977abd551d3f0f","type":"file","file":"_Attachments/Images/Pasted image 20260730015025.png","x":-200,"y":-480,"width":400,"height":206}
+	],
+	"edges":[
+		{
+			"id":"cedd02a882369546",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromFloating":false,
+			"fromNode":"c88970c8dbcd6aeb",
+			"fromSide":"top",
+			"toNode":"11977abd551d3f0f",
+			"toSide":"bottom",
+			"label":"知识结构"
+		}
+	],
+	"metadata":{
+		"version":"1.0-1.0",
+		"frontmatter":{}
+	}
+}

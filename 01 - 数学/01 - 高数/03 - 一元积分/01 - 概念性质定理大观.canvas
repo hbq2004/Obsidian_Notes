@@ -7,6 +7,9 @@
 		{"id":"6ddb511e3fd9d2f8","type":"group","x":-680,"y":1120,"width":1820,"height":1200,"color":"1","label":"定积分存在定理"},
 		{"id":"1b340838ba97fa13","type":"group","x":-7000,"y":1120,"width":800,"height":560,"label":"不定积分定义"},
 		{"id":"a9748e38c947c009","type":"file","file":"_Attachments/Images/Pasted image 20260712195209.png","x":-3629,"y":1782,"width":450,"height":247},
+		{"id":"55785218ae3a4074","type":"file","file":"_Attachments/Images/Pasted image 20260712194702.png","x":-4619,"y":2257,"width":400,"height":113},
+		{"id":"05def022b3d89bf7","type":"file","file":"_Attachments/Images/Pasted image 20260712194502.png","x":-5221,"y":2172,"width":521,"height":217},
+		{"id":"3e7ab56d28d84dae","type":"file","file":"_Attachments/Images/Pasted image 20260712225122.png","x":-3820,"y":3662,"width":466,"height":545},
 		{"id":"e1ab5c27d2779908","type":"file","file":"_Attachments/Images/Pasted image 20260712194803.png","x":-4426,"y":1782,"width":675,"height":134},
 		{
 			"id":"230b9c3eeee8676e",
@@ -30,51 +33,6 @@
 		},
 		{"id":"c35800935e41ab68","type":"file","file":"_Attachments/Images/Pasted image 20260712194334.png","x":-4114,"y":1472,"width":643,"height":132},
 		{"id":"dddebde5afc967f8","type":"file","file":"_Attachments/Images/Pasted image 20260712194308.png","x":-5208,"y":1462,"width":500,"height":312},
-		{
-			"id":"083a93b6fb1ccdec",
-			"type":"text",
-			"text":"[导数极限定理 - 千羽](https://www.bilibili.com/video/BV14aiSB3EWi?spm_id_from=333.788.videopod.sections&vd_source=5e53118bdffba34d123bb97d9a7caf9a&p=5) \n\n![[Pasted image 20260712230701.png]]",
-			"styleAttributes":{"textAlign":"center"},
-			"x":-5808,
-			"y":5540,
-			"width":1140,
-			"height":860
-		},
-		{
-			"id":"df8c8b59aa6d9a87",
-			"type":"text",
-			"text":"原函数极限存在 $\\not\\implies$ 极限值等于函数值\n\n函数**点**连续，且导函数极限存在 $\\implies$ **导函数极限值**等于**导函数函数值**\n\n![[Pasted image 20260712223328.png]]",
-			"styleAttributes":{"textAlign":"center"},
-			"x":-4540,
-			"y":3656,
-			"width":720,
-			"height":551
-		},
-		{"id":"3e7ab56d28d84dae","type":"file","file":"_Attachments/Images/Pasted image 20260712225122.png","x":-3820,"y":3662,"width":466,"height":545},
-		{"id":"b2d67dde1c109dee","type":"file","file":"_Attachments/Images/Pasted image 20260712194156.png","x":-6940,"y":1172,"width":672,"height":271},
-		{
-			"id":"f740f9b4f33b2004",
-			"type":"text",
-			"text":"不定积分一定要**指明在某个区间上**",
-			"styleAttributes":{"textAlign":"center"},
-			"x":-6784,
-			"y":1529,
-			"width":360,
-			"height":100
-		},
-		{"id":"da90bbdc4f0fa68d","type":"file","file":"_Attachments/Images/result_k9nrl6.png","x":-5721,"y":2131,"width":449,"height":401},
-		{"id":"900b77a7ff14d9a7","type":"file","file":"_Attachments/Images/Pasted image 20260712202907.png","x":-5700,"y":3640,"width":844,"height":582},
-		{"id":"55785218ae3a4074","type":"file","file":"_Attachments/Images/Pasted image 20260712194702.png","x":-4619,"y":2257,"width":400,"height":113},
-		{
-			"id":"fab8e0bf59a2d15b",
-			"type":"text",
-			"text":"**感性证明**（好记）\n\n由原函数存在定理可知，导函数若存在的话，要么连续，要么有震荡间断点，若**加上导函数极限存在**，则排除了震荡间断点的情况，因此推出导函数连续，即导函数的极限值等于导函数的函数值。",
-			"styleAttributes":{"textAlign":"center"},
-			"x":-5778,
-			"y":5030,
-			"width":1000,
-			"height":440
-		},
 		{"id":"446c1d125aeef396","type":"file","file":"_Attachments/Images/Pasted image 20260712225324.png","x":-4940,"y":4320,"width":542,"height":550},
 		{
 			"id":"c51f9a0ff961f664",
@@ -88,6 +46,48 @@
 		},
 		{"id":"e4039409f561b5b2","type":"file","file":"_Attachments/Images/Pasted image 20260713213743.png","x":-4079,"y":4345,"width":716,"height":500},
 		{
+			"id":"df8c8b59aa6d9a87",
+			"type":"text",
+			"text":"原函数极限存在 $\\not\\implies$ 极限值等于函数值\n\n函数**点**连续，且导函数极限存在 $\\implies$ **导函数极限值**等于**导函数函数值**\n\n![[Pasted image 20260712223328.png]]",
+			"styleAttributes":{"textAlign":"center"},
+			"x":-4540,
+			"y":3656,
+			"width":720,
+			"height":551
+		},
+		{"id":"b2d67dde1c109dee","type":"file","file":"_Attachments/Images/Pasted image 20260712194156.png","x":-6940,"y":1172,"width":672,"height":271},
+		{
+			"id":"f740f9b4f33b2004",
+			"type":"text",
+			"text":"不定积分一定要**指明在某个区间上**",
+			"styleAttributes":{"textAlign":"center"},
+			"x":-6784,
+			"y":1529,
+			"width":360,
+			"height":100
+		},
+		{
+			"id":"083a93b6fb1ccdec",
+			"type":"text",
+			"text":"[导数极限定理 - 千羽](https://www.bilibili.com/video/BV14aiSB3EWi?spm_id_from=333.788.videopod.sections&vd_source=5e53118bdffba34d123bb97d9a7caf9a&p=5) \n\n![[Pasted image 20260712230701.png]]",
+			"styleAttributes":{"textAlign":"center"},
+			"x":-5808,
+			"y":5540,
+			"width":1140,
+			"height":860
+		},
+		{"id":"900b77a7ff14d9a7","type":"file","file":"_Attachments/Images/Pasted image 20260712202907.png","x":-5700,"y":3640,"width":844,"height":582},
+		{
+			"id":"fab8e0bf59a2d15b",
+			"type":"text",
+			"text":"**感性证明**（好记）\n\n由原函数存在定理可知，导函数若存在的话，要么连续，要么有震荡间断点，若**加上导函数极限存在**，则排除了震荡间断点的情况，因此推出导函数连续，即导函数的极限值等于导函数的函数值。",
+			"styleAttributes":{"textAlign":"center"},
+			"x":-5778,
+			"y":5030,
+			"width":1000,
+			"height":440
+		},
+		{
 			"id":"4a9feb3a44b238b9",
 			"type":"text",
 			"text":"(1) 不定积分",
@@ -97,8 +97,25 @@
 			"width":260,
 			"height":60
 		},
-		{"id":"05def022b3d89bf7","type":"file","file":"_Attachments/Images/Pasted image 20260712194502.png","x":-5221,"y":2172,"width":521,"height":217},
+		{"id":"da90bbdc4f0fa68d","type":"file","file":"_Attachments/Images/result_k9nrl6.png","x":-5721,"y":2131,"width":449,"height":401},
+		{"id":"066909ec03366574","type":"file","file":"_Attachments/Images/Pasted image 20260713034548.png","x":7530,"y":1330,"width":400,"height":212},
+		{"id":"710ea15e695d522d","type":"file","file":"_Attachments/Images/Pasted image 20260713034534.png","x":6880,"y":1331,"width":586,"height":150},
+		{"id":"b021aa4469310085","type":"file","file":"_Attachments/Images/Pasted image 20260712200813.png","x":1375,"y":1334,"width":725,"height":568},
+		{"id":"99e456991c05feaa","type":"file","file":"_Attachments/Images/Pasted image 20260714084552.png","x":1375,"y":1902,"width":725,"height":232},
+		{"id":"3949c0c0532bb685","type":"file","file":"_Attachments/Images/Pasted image 20260712200830.png","x":2235,"y":1516,"width":775,"height":202},
+		{"id":"24921591fde8c850","type":"file","file":"_Attachments/Images/Pasted image 20260712200843.png","x":3100,"y":1565,"width":913,"height":111},
 		{"id":"ca223686eb407f52","type":"file","file":"_Attachments/Images/Pasted image 20260713034236.png","x":5540,"y":1601,"width":399,"height":142},
+		{
+			"id":"c21e8215dd72cc74",
+			"type":"text",
+			"text":"⭐重中之重",
+			"styleAttributes":{"textAlign":"center"},
+			"x":3342,
+			"y":1876,
+			"width":435,
+			"height":102
+		},
+		{"id":"89c57a45ea96527b","type":"file","file":"_Attachments/Images/Pasted image 20260713034141.png","x":4640,"y":1185,"width":498,"height":181},
 		{"id":"1d1351458506d5e4","type":"file","file":"_Attachments/Images/Pasted image 20260713034354.png","x":5540,"y":1743,"width":399,"height":170},
 		{
 			"id":"a2d4a4b3334e40d6",
@@ -112,7 +129,6 @@
 		},
 		{"id":"21b4bf5799da64a0","type":"file","file":"_Attachments/Images/Pasted image 20260713034308.png","x":5980,"y":1585,"width":447,"height":167},
 		{"id":"fec3cb52d37c2d2a","type":"file","file":"_Attachments/Images/Pasted image 20260713034413.png","x":5980,"y":1748,"width":450,"height":161},
-		{"id":"066909ec03366574","type":"file","file":"_Attachments/Images/Pasted image 20260713034548.png","x":7530,"y":1330,"width":400,"height":212},
 		{
 			"id":"97e7b9acfdf1a11d",
 			"type":"text",
@@ -123,20 +139,7 @@
 			"width":260,
 			"height":60
 		},
-		{"id":"a24627d2779555b6","type":"file","file":"_Attachments/Images/Pasted image 20260712201141.png","x":560,"y":1648,"width":552,"height":83},
-		{"id":"b021aa4469310085","type":"file","file":"_Attachments/Images/Pasted image 20260712200813.png","x":1375,"y":1334,"width":725,"height":568},
-		{
-			"id":"c21e8215dd72cc74",
-			"type":"text",
-			"text":"⭐重中之重",
-			"styleAttributes":{"textAlign":"center"},
-			"x":3342,
-			"y":1876,
-			"width":435,
-			"height":102
-		},
-		{"id":"89c57a45ea96527b","type":"file","file":"_Attachments/Images/Pasted image 20260713034141.png","x":4640,"y":1185,"width":498,"height":181},
-		{"id":"b1c1543a75c869b1","type":"file","file":"_Attachments/Images/Pasted image 20260713034201.png","x":4865,"y":1601,"width":531,"height":72},
+		{"id":"e05704fa10057734","type":"file","file":"_Attachments/Images/Pasted image 20260713034635.png","x":8000,"y":1276,"width":475,"height":414},
 		{
 			"id":"7352ca4c0eef8255",
 			"type":"text",
@@ -147,21 +150,21 @@
 			"width":260,
 			"height":60
 		},
+		{"id":"8b49c388e9171478","type":"file","file":"_Attachments/Images/Pasted image 20260712171300.png","x":29,"y":-720,"width":522,"height":229},
+		{"id":"b1c1543a75c869b1","type":"file","file":"_Attachments/Images/Pasted image 20260713034201.png","x":4865,"y":1601,"width":531,"height":72},
 		{"id":"7cb06161a9c6eea3","type":"file","file":"_Attachments/Images/Pasted image 20260713034433.png","x":4865,"y":1673,"width":545,"height":271},
-		{"id":"e05704fa10057734","type":"file","file":"_Attachments/Images/Pasted image 20260713034635.png","x":8000,"y":1276,"width":475,"height":414},
-		{"id":"710ea15e695d522d","type":"file","file":"_Attachments/Images/Pasted image 20260713034534.png","x":6880,"y":1331,"width":586,"height":150},
 		{"id":"1d63e1947a25a015","type":"file","file":"_Attachments/Images/Pasted image 20260712201040.png","x":-625,"y":1590,"width":624,"height":199},
 		{
-			"id":"350f91ddb1527957",
+			"id":"668818bd9079f99c",
 			"type":"text",
-			"text":"⭐定积分存在定理（常义可积性）",
+			"text":"一元积分概念与定理大观",
 			"styleAttributes":{"textAlign":"center"},
-			"x":0,
-			"y":1140,
-			"width":440,
-			"height":140
+			"x":160,
+			"y":-200,
+			"width":260,
+			"height":80
 		},
-		{"id":"99e456991c05feaa","type":"file","file":"_Attachments/Images/Pasted image 20260714084552.png","x":1375,"y":1902,"width":725,"height":232},
+		{"id":"419bc2485806cb93","type":"file","file":"_Attachments/Images/799fbc86dc32f91792755e4e12a9e672.jpg","x":551,"y":-713,"width":424,"height":222},
 		{
 			"id":"69cfb95514892e3b",
 			"type":"text",
@@ -173,23 +176,16 @@
 			"height":83
 		},
 		{
-			"id":"668818bd9079f99c",
+			"id":"350f91ddb1527957",
 			"type":"text",
-			"text":"一元积分概念与定理大观",
+			"text":"⭐定积分存在定理（常义可积性）",
 			"styleAttributes":{"textAlign":"center"},
-			"x":160,
-			"y":-200,
-			"width":260,
-			"height":80
+			"x":0,
+			"y":1140,
+			"width":440,
+			"height":140
 		},
-		{"id":"3949c0c0532bb685","type":"file","file":"_Attachments/Images/Pasted image 20260712200830.png","x":2235,"y":1516,"width":775,"height":202},
-		{"id":"8b49c388e9171478","type":"file","file":"_Attachments/Images/Pasted image 20260712171300.png","x":29,"y":-720,"width":522,"height":229},
-		{"id":"419bc2485806cb93","type":"file","file":"_Attachments/Images/799fbc86dc32f91792755e4e12a9e672.jpg","x":551,"y":-713,"width":424,"height":222},
-		{"id":"24921591fde8c850","type":"file","file":"_Attachments/Images/Pasted image 20260712200843.png","x":3100,"y":1565,"width":913,"height":111},
 		{"id":"62aea6c590cfd3ad","type":"file","file":"_Attachments/Images/result_bV02OG.png","x":80,"y":1590,"width":449,"height":200},
-		{"id":"d61d4b498ecf3e21","type":"file","file":"_Attachments/Images/Pasted image 20260714084456.png","x":260,"y":1980,"width":649,"height":229},
-		{"id":"675c9272f930eaa3","type":"file","file":"_Attachments/Images/Pasted image 20260712200443.png","x":-1745,"y":1720,"width":775,"height":203},
-		{"id":"51160c0cbd0e4736","type":"file","file":"_Attachments/Images/Pasted image 20260712200115.png","x":-1745,"y":1209,"width":624,"height":340},
 		{"id":"57c4d9b61f8099aa","type":"file","file":"_Attachments/Images/result_x7DRoq.png","x":-2480,"y":1166,"width":597,"height":387},
 		{"id":"02fbf2559b59b851","type":"file","file":"_Attachments/Images/result_47J3Ax.png","x":-2480,"y":1643,"width":621,"height":404,"color":"2"},
 		{
@@ -201,7 +197,11 @@
 			"y":2160,
 			"width":260,
 			"height":60
-		}
+		},
+		{"id":"675c9272f930eaa3","type":"file","file":"_Attachments/Images/Pasted image 20260712200443.png","x":-1745,"y":1720,"width":775,"height":203},
+		{"id":"51160c0cbd0e4736","type":"file","file":"_Attachments/Images/Pasted image 20260712200115.png","x":-1745,"y":1209,"width":624,"height":340},
+		{"id":"a24627d2779555b6","type":"file","file":"_Attachments/Images/Pasted image 20260712201141.png","x":560,"y":1648,"width":552,"height":83},
+		{"id":"d61d4b498ecf3e21","type":"file","file":"_Attachments/Images/Pasted image 20260714084456.png","x":260,"y":1980,"width":649,"height":229}
 	],
 	"edges":[
 		{
@@ -304,6 +304,7 @@
 			"id":"616e8ec50bac39fb",
 			"styleAttributes":{},
 			"toFloating":false,
+			"fromFloating":false,
 			"fromNode":"dddebde5afc967f8",
 			"fromSide":"bottom",
 			"toNode":"55785218ae3a4074",
