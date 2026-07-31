@@ -11,6 +11,7 @@
  * 7. 自动生成 Tasks 复习任务
  * 8. 支持在表格上方即时切换“仅看降级题”
  * 9. 不再创建 Notice 降级警告属性
+ * 10. 支持将当前筛选结果打印或另存为 PDF
  ******************************************************************/
 
 /* ================================================================
@@ -22,6 +23,9 @@ const CONFIG = {
 
     maxResults: 100,
     historyLimit: 20,
+
+    /* 打印前等待每张题图完成加载的最长时间 */
+    printImageLoadTimeoutMs: 15000,
 
     /*
      * 复习强度：normal（常规）/ accelerated（加速）/ sprint（冲刺）。
@@ -915,6 +919,8 @@ let filterButtonEl = null;
 let filterSummaryEl = null;
 let filterEmptyEl = null;
 let titleEl = null;
+let printButtonEl = null;
+let printInProgress = false;
 
 items.sort((a, b) => {
     const regressionDifference =
@@ -1303,14 +1309,462 @@ async function repairExistingReviewTasks(questionItems) {
 }
 
 /* ================================================================
- * 10. 渲染三列表格
+ * 10. 打印当前筛选结果
+ * ================================================================ */
+
+function getCurrentlyPrintableItems() {
+    return displayedItems.filter(
+        item => !regressionOnly || item.regressed
+    );
+}
+
+function getPrintImageMimeType(file) {
+    const extension = String(file?.extension ?? "").toLowerCase();
+
+    const mimeTypes = {
+        png: "image/png",
+        jpg: "image/jpeg",
+        jpeg: "image/jpeg",
+        jfif: "image/jpeg",
+        gif: "image/gif",
+        webp: "image/webp",
+        bmp: "image/bmp",
+        svg: "image/svg+xml",
+        avif: "image/avif"
+    };
+
+    return mimeTypes[extension] ?? null;
+}
+
+function resolvePrintImageFile(item, imageLink) {
+    const imagePath = String(imageLink?.path ?? "");
+
+    if (!imagePath) return null;
+
+    const directFile = app.vault.getAbstractFileByPath(imagePath);
+
+    if (directFile?.extension) {
+        return directFile;
+    }
+
+    const linkedFile = app.metadataCache.getFirstLinkpathDest(
+        imagePath,
+        item.page.file.path
+    );
+
+    return linkedFile?.extension ? linkedFile : null;
+}
+
+function waitForPrintImage(imageEl, timeoutMs) {
+    return new Promise((resolve, reject) => {
+        let settled = false;
+
+        const finish = callback => {
+            if (settled) return;
+
+            settled = true;
+            clearTimeout(timeoutId);
+            imageEl.removeEventListener("load", handleLoad);
+            imageEl.removeEventListener("error", handleError);
+            callback();
+        };
+
+        const handleLoad = () => {
+            finish(resolve);
+        };
+
+        const handleError = () => {
+            finish(() => {
+                reject(new Error(`题图加载失败：${imageEl.alt}`));
+            });
+        };
+
+        const timeoutId = setTimeout(() => {
+            finish(() => {
+                reject(new Error(`题图加载超时：${imageEl.alt}`));
+            });
+        }, timeoutMs);
+
+        imageEl.addEventListener("load", handleLoad, { once: true });
+        imageEl.addEventListener("error", handleError, { once: true });
+
+        if (imageEl.complete) {
+            Promise.resolve().then(() => {
+                if (imageEl.naturalWidth > 0) {
+                    handleLoad();
+                } else {
+                    handleError();
+                }
+            });
+        }
+    });
+}
+
+function waitForPrintLayout(targetWindow) {
+    return new Promise(resolve => {
+        targetWindow.requestAnimationFrame(() => {
+            resolve();
+        });
+    });
+}
+
+function createPrintRoot(printDocument) {
+    const printRootEl = printDocument.createElement("main");
+
+    printRootEl.className = "question-print-root";
+    printRootEl.setAttribute("aria-hidden", "true");
+    printRootEl.style.position = "fixed";
+    printRootEl.style.left = "-10000px";
+    printRootEl.style.top = "0";
+    printRootEl.style.width = "186mm";
+    printRootEl.style.margin = "0";
+    printRootEl.style.padding = "0";
+    printRootEl.style.opacity = "0";
+    printRootEl.style.pointerEvents = "none";
+    printRootEl.style.background = "#ffffff";
+    printRootEl.style.color = "#000000";
+    printDocument.body.appendChild(printRootEl);
+
+    return printRootEl;
+}
+
+function createPrintStyle(printDocument) {
+    const styleEl = printDocument.createElement("style");
+
+    styleEl.className = "question-print-runtime-style";
+    styleEl.textContent = `
+        .question-print-root,
+        .question-print-root * {
+            box-sizing: border-box;
+        }
+
+        .question-print-root {
+            font-family: "Microsoft YaHei", "PingFang SC",
+                "Noto Sans CJK SC", "Source Han Sans SC", sans-serif;
+        }
+
+        .question-print-item {
+            margin: 0;
+            break-inside: avoid-page;
+            page-break-inside: avoid;
+            break-after: page;
+            page-break-after: always;
+        }
+
+        .question-print-item:last-child {
+            break-after: auto;
+            page-break-after: auto;
+        }
+
+        .question-print-source {
+            margin: 0 0 3mm;
+            font-size: 10.5pt;
+            font-weight: 600;
+            line-height: 1.45;
+            overflow-wrap: anywhere;
+            break-after: avoid-page;
+            page-break-after: avoid;
+        }
+
+        .question-print-images {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* 题图紧跟来源置顶，余下空间留给手写作答。 */
+            justify-content: flex-start;
+            width: 100%;
+            height: 245mm;
+            gap: 3mm;
+            overflow: hidden;
+        }
+
+        .question-print-image {
+            display: block;
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            max-height: var(--question-print-image-max-height, 245mm);
+            margin: 0 auto;
+            object-fit: contain;
+        }
+
+        @media print {
+            @page {
+                size: A4 portrait;
+                margin: 12mm 12mm 14mm;
+            }
+
+            html.question-print-mode,
+            body.question-print-mode {
+                width: auto !important;
+                height: auto !important;
+                min-height: 0 !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                overflow: visible !important;
+                background: #ffffff !important;
+                color: #000000 !important;
+            }
+
+            body.question-print-mode > :not(.question-print-root) {
+                display: none !important;
+            }
+
+            body.question-print-mode > .question-print-root {
+                display: block !important;
+                position: static !important;
+                left: auto !important;
+                top: auto !important;
+                width: auto !important;
+                height: auto !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                overflow: visible !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+                pointer-events: auto !important;
+                background: #ffffff !important;
+                color: #000000 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            body.question-print-mode .question-print-root,
+            body.question-print-mode .question-print-root * {
+                visibility: visible !important;
+            }
+        }
+    `;
+
+    printDocument.head.appendChild(styleEl);
+
+    return styleEl;
+}
+
+async function printCurrentQuestions() {
+    if (printInProgress) return;
+
+    const printableItems = getCurrentlyPrintableItems();
+
+    if (printableItems.length === 0) {
+        new Notice("💡 当前筛选中没有可打印的题目。", 4000);
+        return;
+    }
+
+    printInProgress = true;
+    refreshRegressionFilterUI();
+
+    const printDocument = dv.container.ownerDocument;
+    const printWindow = printDocument?.defaultView;
+
+    if (!printDocument?.head || !printDocument.body || !printWindow) {
+        printInProgress = false;
+        refreshRegressionFilterUI();
+        new Notice("❌ 无法取得当前 Obsidian 打印窗口。", 6000);
+        return;
+    }
+
+    const urlApi = printWindow.URL ?? URL;
+    const BlobClass = printWindow.Blob ?? Blob;
+    const objectUrls = [];
+    let printRootEl = null;
+    let printStyleEl = null;
+    let cleanupTimer = null;
+    let afterPrintTimer = null;
+    let afterPrintHandler = null;
+    let cleanedUp = false;
+
+    const cleanup = () => {
+        if (cleanedUp) return;
+
+        cleanedUp = true;
+
+        if (cleanupTimer !== null) {
+            clearTimeout(cleanupTimer);
+        }
+
+        if (afterPrintTimer !== null) {
+            clearTimeout(afterPrintTimer);
+        }
+
+        for (const objectUrl of objectUrls) {
+            urlApi.revokeObjectURL(objectUrl);
+        }
+
+        if (afterPrintHandler) {
+            printWindow.removeEventListener(
+                "afterprint",
+                afterPrintHandler
+            );
+        }
+
+        printDocument.documentElement.classList.remove(
+            "question-print-mode"
+        );
+        printDocument.body.classList.remove("question-print-mode");
+        printRootEl?.remove();
+        printStyleEl?.remove();
+        printInProgress = false;
+        refreshRegressionFilterUI();
+    };
+
+    try {
+        printStyleEl = createPrintStyle(printDocument);
+        printRootEl = createPrintRoot(printDocument);
+
+        const imageLoadPromises = [];
+        const imageElements = [];
+        let imageCount = 0;
+
+        for (const item of printableItems) {
+            const itemEl = printDocument.createElement("section");
+            itemEl.className = "question-print-item";
+
+            const sourceEl = printDocument.createElement("p");
+            sourceEl.className = "question-print-source";
+            sourceEl.textContent = `题目来源：${item.page.file.name}`;
+
+            const imagesEl = printDocument.createElement("div");
+            imagesEl.className = "question-print-images";
+
+            const itemImageCount = Math.max(1, item.images.length);
+            const imageGapMm = 3;
+            const availableImageHeightMm = 245;
+            const maxImageHeightMm = Math.max(
+                20,
+                (
+                    availableImageHeightMm -
+                    imageGapMm * (itemImageCount - 1)
+                ) / itemImageCount
+            );
+
+            itemEl.appendChild(sourceEl);
+            itemEl.appendChild(imagesEl);
+            printRootEl.appendChild(itemEl);
+
+            for (const imageLink of item.images) {
+                const imageFile = resolvePrintImageFile(item, imageLink);
+
+                if (!imageFile) {
+                    throw new Error(
+                        `无法定位题图：${item.page.file.path}`
+                    );
+                }
+
+                const mimeType = getPrintImageMimeType(imageFile);
+
+                if (!mimeType) {
+                    throw new Error(
+                        `不支持打印的题图格式：${imageFile.path}`
+                    );
+                }
+
+                const imageData = await app.vault.readBinary(imageFile);
+                const objectUrl = urlApi.createObjectURL(
+                    new BlobClass([imageData], { type: mimeType })
+                );
+
+                objectUrls.push(objectUrl);
+
+                const imageEl = printDocument.createElement("img");
+                imageEl.className = "question-print-image";
+                imageEl.alt = `${item.page.file.name} · ${imageFile.name}`;
+                imageEl.style.setProperty(
+                    "--question-print-image-max-height",
+                    `${maxImageHeightMm}mm`
+                );
+
+                imagesEl.appendChild(imageEl);
+
+                imageEl.src = objectUrl;
+                imageElements.push(imageEl);
+
+                imageLoadPromises.push(
+                    waitForPrintImage(
+                        imageEl,
+                        Math.max(
+                            1000,
+                            Number(CONFIG.printImageLoadTimeoutMs) || 15000
+                        )
+                    )
+                );
+                imageCount++;
+            }
+        }
+
+        if (imageCount === 0) {
+            throw new Error("当前筛选结果中没有可打印的题图");
+        }
+
+        await Promise.all(imageLoadPromises);
+
+        await Promise.all(
+            imageElements.map(imageEl => {
+                if (typeof imageEl.decode !== "function") {
+                    return Promise.resolve();
+                }
+
+                return imageEl.decode();
+            })
+        );
+
+        if (printDocument.fonts?.ready) {
+            await printDocument.fonts.ready;
+        }
+
+        printDocument.documentElement.classList.add(
+            "question-print-mode"
+        );
+        printDocument.body.classList.add("question-print-mode");
+
+        await waitForPrintLayout(printWindow);
+        await waitForPrintLayout(printWindow);
+
+        afterPrintHandler = () => {
+            /* 给 Electron 留出读取打印树和图片资源的时间。 */
+            afterPrintTimer = setTimeout(cleanup, 1800);
+        };
+
+        printWindow.addEventListener(
+            "afterprint",
+            afterPrintHandler,
+            { once: true }
+        );
+
+        /* 极少数环境不会触发 afterprint，十分钟后兜底释放资源。 */
+        cleanupTimer = setTimeout(cleanup, 10 * 60 * 1000);
+
+        new Notice(
+            "🖨️ 当前筛选已按每页 1 题准备 " +
+            `${printableItems.length} 道题、` +
+            `${imageCount} 张题图；` +
+            "请在打印窗口中选择“另存为 PDF”。",
+            6000
+        );
+
+        printWindow.focus();
+        printWindow.print();
+    } catch (error) {
+        console.error("题目打印失败：", error);
+        cleanup();
+
+        new Notice(
+            `❌ 打印准备失败：${error?.message ?? "未知错误"}`,
+            7000
+        );
+    }
+}
+
+/* ================================================================
+ * 11. 渲染三列表格
  * ================================================================ */
 
 if (items.length === 0) {
     const currentTagText = currentTags.join("、");
 
     dv.paragraph(
-        `✅ 暂时没有找到同时包含 ${currentTagText}，并且带有『题目』图片的页面。`
+        `✅ 暂时没有找到同时包含 ${currentTagText}，` +
+        "并且带有『题目』图片的页面。"
     );
 
     return;
@@ -1347,10 +1801,16 @@ filterButtonEl = document.createElement("button");
 filterButtonEl.type = "button";
 filterButtonEl.className = "question-regression-filter-button";
 
+printButtonEl = document.createElement("button");
+printButtonEl.type = "button";
+printButtonEl.className = "question-print-button";
+printButtonEl.title = "只打印当前可见题目的来源和题图";
+
 filterSummaryEl = document.createElement("span");
 filterSummaryEl.className = "question-filter-summary";
 
 filterBarEl.appendChild(filterButtonEl);
+filterBarEl.appendChild(printButtonEl);
 filterBarEl.appendChild(filterSummaryEl);
 dv.container.appendChild(filterBarEl);
 
@@ -1363,6 +1823,10 @@ dv.container.appendChild(filterEmptyEl);
 filterButtonEl.addEventListener("click", () => {
     regressionOnly = !regressionOnly;
     refreshRegressionFilterUI();
+});
+
+printButtonEl.addEventListener("click", () => {
+    void printCurrentQuestions();
 });
 
 dv.table(
@@ -1388,6 +1852,8 @@ function refreshRegressionFilterUI() {
     const displayedRegressedCount = displayedItems.filter(
         item => item.regressed
     ).length;
+
+    const printableCount = getCurrentlyPrintableItems().length;
 
     for (const item of displayedItems) {
         const row = item.filterMarker?.closest("tr");
@@ -1431,6 +1897,17 @@ function refreshRegressionFilterUI() {
             : `当前显示 ${displayedItems.length} 道同类题`;
     }
 
+    if (printButtonEl) {
+        printButtonEl.disabled =
+            printInProgress ||
+            printableCount === 0;
+
+        printButtonEl.textContent =
+            printInProgress
+                ? "⏳ 正在准备…"
+                : `🖨️ 打印当前题目（${printableCount}）`;
+    }
+
     if (filterEmptyEl) {
         filterEmptyEl.hidden = !(
             regressionOnly &&
@@ -1448,7 +1925,7 @@ requestAnimationFrame(() => {
 });
 
 /* ================================================================
- * 11. 一次性修复旧任务
+ * 12. 一次性修复旧任务
  * ================================================================ */
 
 if (CONFIG.repairExistingTasksOnLoad) {

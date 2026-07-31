@@ -1,18 +1,17 @@
 {
 	"nodes":[
-		{"id":"e71f29728e40d378","type":"group","x":-360,"y":215,"width":2500,"height":1010,"color":"1","label":"涉及导数"},
-		{"id":"2d4af2cd458ead5e","type":"group","x":-2360,"y":200,"width":1740,"height":980,"color":"2","label":"涉及函数"},
-		{"id":"6e8adddef3da383e","type":"group","x":2440,"y":345,"width":620,"height":695,"color":"3","label":"涉及积分"},
-		{"id":"32c7c4d5bfb46553","type":"file","file":"_Attachments/Images/Pasted image 20260730010017.png","x":640,"y":-840,"width":475,"height":277},
+		{"id":"e71f29728e40d378","type":"group","x":-460,"y":345,"width":2580,"height":1735,"color":"1","label":"涉及导数"},
+		{"id":"2d4af2cd458ead5e","type":"group","x":-2360,"y":200,"width":1800,"height":1960,"color":"2","label":"涉及函数"},
+		{"id":"6e8adddef3da383e","type":"group","x":2320,"y":420,"width":620,"height":695,"color":"3","label":"涉及积分"},
 		{
-			"id":"582c1e43102c21bc",
+			"id":"631faae790c2fc73",
 			"type":"text",
-			"text":"中值定理（4 + 5 + 1）",
+			"text":"零点定理",
 			"styleAttributes":{"textAlign":"center"},
-			"x":747,
-			"y":-240,
-			"width":280,
-			"height":100
+			"x":-1180,
+			"y":350,
+			"width":260,
+			"height":60
 		},
 		{
 			"id":"eb000d22a6f4f58f",
@@ -24,16 +23,122 @@
 			"width":260,
 			"height":60
 		},
+		{"id":"7511efa91254600d","type":"file","file":"_Attachments/Images/Pasted image 20260730015845.png","x":-2260,"y":410,"width":775,"height":432},
+		{"id":"dfca9d7e51f73182","type":"file","file":"_Attachments/Images/Pasted image 20260731070146.png","x":-2197,"y":920,"width":650,"height":148},
+		{"id":"53f93a476878ad3d","type":"file","file":"_Attachments/Images/Pasted image 20260731070439.png","x":-2209,"y":1200,"width":675,"height":398},
+		{"id":"4e34f8608a96ee03","type":"file","file":"_Attachments/Images/Pasted image 20260731070805.png","x":-2246,"y":1720,"width":750,"height":326},
+		{"id":"82148a2b0bf109a7","type":"file","file":"_Attachments/Images/Pasted image 20260731071144.png","x":-1796,"y":2560,"width":600,"height":501},
+		{
+			"id":"4f8d4c009e66e737",
+			"type":"text",
+			"text":"介值和罗尔定理使用条件区别：\n\n1. 介值没有跨阶，罗尔跨了一阶\n2. 介值需要连续前提，意味着导函数需要连续？",
+			"styleAttributes":{"textAlign":"center"},
+			"x":-1761,
+			"y":2280,
+			"width":530,
+			"height":200
+		},
+		{"id":"9f58af75371b0e2d","type":"file","file":"_Attachments/Images/Pasted image 20260730230030.png","x":1426,"y":-458,"width":771,"height":436},
+		{"id":"ee8a00d428970daf","type":"file","file":"_Attachments/Images/ChatGPT Image 2026年7月31日 02_09_29.png","x":2200,"y":-458,"width":700,"height":438},
+		{
+			"id":"536dda81fa67a85a",
+			"type":"text",
+			"text":"柯西中值定理",
+			"styleAttributes":{"textAlign":"center"},
+			"x":1093,
+			"y":475,
+			"width":260,
+			"height":60
+		},
+		{
+			"id":"b8f3f3f9fed5b505",
+			"type":"text",
+			"text":"费马定理",
+			"styleAttributes":{"textAlign":"center"},
+			"x":-360,
+			"y":475,
+			"width":260,
+			"height":60
+		},
+		{
+			"id":"ffb8a12f6bba9d82",
+			"type":"text",
+			"text":"罗尔定理",
+			"styleAttributes":{"textAlign":"center"},
+			"x":80,
+			"y":475,
+			"width":260,
+			"height":60
+		},
+		{"id":"db90dc53516edbed","type":"file","file":"_Attachments/Images/Pasted image 20260730020805.png","x":2430,"y":700,"width":400,"height":167},
+		{"id":"a02146fce67e24c2","type":"file","file":"_Attachments/Images/Pasted image 20260730020342.png","x":10,"y":652,"width":400,"height":204},
+		{"id":"bb8187fade01e4b1","type":"file","file":"_Attachments/Images/Pasted image 20260730020148.png","x":-430,"y":622,"width":400,"height":234},
+		{"id":"ed7505bb5f22d311","type":"file","file":"_Attachments/Images/Pasted image 20260731165758.png","x":1000,"y":1440,"width":400,"height":327},
 		{
 			"id":"0fdde2c777bad830",
 			"type":"text",
-			"text":"介值定理",
+			"text":"⭐介值定理",
 			"styleAttributes":{"textAlign":"center"},
 			"x":-2000,
 			"y":350,
 			"width":260,
 			"height":60
 		},
+		{
+			"id":"582c1e43102c21bc",
+			"type":"text",
+			"text":"中值定理（4 + 5 + 1）",
+			"styleAttributes":{"textAlign":"center"},
+			"x":580,
+			"y":-287,
+			"width":280,
+			"height":100
+		},
+		{"id":"32c7c4d5bfb46553","type":"file","file":"_Attachments/Images/Pasted image 20260730010017.png","x":483,"y":-820,"width":475,"height":277},
+		{
+			"id":"7856e88a549e1bca",
+			"type":"text",
+			"text":"拉格朗日中值定理",
+			"styleAttributes":{"textAlign":"center"},
+			"x":580,
+			"y":475,
+			"width":260,
+			"height":60
+		},
+		{
+			"id":"4984aa82d9d6095b",
+			"type":"text",
+			"text":"积分中值定理",
+			"styleAttributes":{"textAlign":"center"},
+			"x":2500,
+			"y":515,
+			"width":260,
+			"height":60
+		},
+		{
+			"id":"2be8e1865bfffe5f",
+			"type":"text",
+			"text":"[[27,30_zy,8.8]] ",
+			"styleAttributes":{"textAlign":"center"},
+			"x":2500,
+			"y":935,
+			"width":260,
+			"height":60
+		},
+		{"id":"8fbafead09deeb79","type":"file","file":"_Attachments/Images/Pasted image 20260730020526.png","x":1560,"y":652,"width":400,"height":205},
+		{"id":"3b4be39c9626a6ed","type":"file","file":"_Attachments/Images/Pasted image 20260730020434.png","x":510,"y":664,"width":400,"height":180},
+		{"id":"f4e247def77ec54d","type":"file","file":"_Attachments/Images/Pasted image 20260730020501.png","x":960,"y":664,"width":524,"height":178},
+		{
+			"id":"e444fa0c7f696d70",
+			"type":"text",
+			"text":"泰勒中值定理",
+			"styleAttributes":{"textAlign":"center"},
+			"x":1630,
+			"y":475,
+			"width":260,
+			"height":60
+		},
+		{"id":"e2c327705c8252cd","type":"file","file":"_Attachments/Images/Pasted image 20260730015926.png","x":-1287,"y":540,"width":473,"height":194},
 		{
 			"id":"e2c8dc7ef96359b0",
 			"type":"text",
@@ -44,96 +149,19 @@
 			"width":260,
 			"height":60
 		},
-		{"id":"7511efa91254600d","type":"file","file":"_Attachments/Images/Pasted image 20260730015845.png","x":-2260,"y":410,"width":775,"height":433},
-		{
-			"id":"631faae790c2fc73",
-			"type":"text",
-			"text":"零点定理",
-			"styleAttributes":{"textAlign":"center"},
-			"x":-1180,
-			"y":350,
-			"width":260,
-			"height":60
-		},
-		{"id":"e2c327705c8252cd","type":"file","file":"_Attachments/Images/Pasted image 20260730015926.png","x":-1287,"y":540,"width":475,"height":194},
-		{"id":"bb8187fade01e4b1","type":"file","file":"_Attachments/Images/Pasted image 20260730020148.png","x":-330,"y":492,"width":400,"height":234},
-		{"id":"75d73eaf0c9b98c2","type":"file","file":"_Attachments/Images/Pasted image 20260730020211.png","x":-330,"y":825,"width":400,"height":174},
-		{
-			"id":"b8f3f3f9fed5b505",
-			"type":"text",
-			"text":"费马定理",
-			"styleAttributes":{"textAlign":"center"},
-			"x":-260,
-			"y":345,
-			"width":260,
-			"height":60
-		},
-		{"id":"a02146fce67e24c2","type":"file","file":"_Attachments/Images/Pasted image 20260730020342.png","x":110,"y":522,"width":400,"height":204},
-		{"id":"d928afa96fadee84","type":"file","file":"_Attachments/Images/Pasted image 20260730020414.png","x":110,"y":726,"width":400,"height":118},
-		{"id":"8fbafead09deeb79","type":"file","file":"_Attachments/Images/Pasted image 20260730020526.png","x":1660,"y":522,"width":400,"height":205},
-		{
-			"id":"e444fa0c7f696d70",
-			"type":"text",
-			"text":"泰勒中值定理",
-			"styleAttributes":{"textAlign":"center"},
-			"x":1730,
-			"y":345,
-			"width":260,
-			"height":60
-		},
-		{
-			"id":"ffb8a12f6bba9d82",
-			"type":"text",
-			"text":"罗尔定理",
-			"styleAttributes":{"textAlign":"center"},
-			"x":180,
-			"y":345,
-			"width":260,
-			"height":60
-		},
-		{"id":"3b4be39c9626a6ed","type":"file","file":"_Attachments/Images/Pasted image 20260730020434.png","x":610,"y":534,"width":400,"height":180},
-		{"id":"f4e247def77ec54d","type":"file","file":"_Attachments/Images/Pasted image 20260730020501.png","x":1060,"y":534,"width":525,"height":181},
-		{
-			"id":"536dda81fa67a85a",
-			"type":"text",
-			"text":"柯西中值定理",
-			"styleAttributes":{"textAlign":"center"},
-			"x":1193,
-			"y":345,
-			"width":260,
-			"height":60
-		},
-		{
-			"id":"7856e88a549e1bca",
-			"type":"text",
-			"text":"拉格朗日中值定理",
-			"styleAttributes":{"textAlign":"center"},
-			"x":680,
-			"y":345,
-			"width":260,
-			"height":60
-		},
-		{"id":"db90dc53516edbed","type":"file","file":"_Attachments/Images/Pasted image 20260730020805.png","x":2550,"y":625,"width":400,"height":167},
-		{
-			"id":"2be8e1865bfffe5f",
-			"type":"text",
-			"text":"[[27,30_zy,8.8]] ",
-			"styleAttributes":{"textAlign":"center"},
-			"x":2620,
-			"y":860,
-			"width":260,
-			"height":60
-		},
-		{
-			"id":"4984aa82d9d6095b",
-			"type":"text",
-			"text":"积分中值定理",
-			"styleAttributes":{"textAlign":"center"},
-			"x":2620,
-			"y":440,
-			"width":260,
-			"height":60
-		}
+		{"id":"75d73eaf0c9b98c2","type":"file","file":"_Attachments/Images/Pasted image 20260730020211.png","x":-430,"y":955,"width":400,"height":174},
+		{"id":"39b5c0db60500190","type":"file","file":"_Attachments/Images/Pasted image 20260731070457.png","x":-1534,"y":1203,"width":625,"height":398},
+		{"id":"ab755b2da4de757c","type":"file","file":"_Attachments/Images/Pasted image 20260731071739.png","x":-430,"y":1129,"width":398,"height":83},
+		{"id":"404db7a98bf6d9f0","type":"file","file":"_Attachments/Images/Pasted image 20260731071937.png","x":-430,"y":1212,"width":281,"height":400},
+		{"id":"dbc9cd986a374588","type":"file","file":"_Attachments/Images/Pasted image 20260731071951.png","x":-149,"y":1212,"width":170,"height":399},
+		{"id":"2f78719ece00a42b","type":"file","file":"_Attachments/Images/Pasted image 20260731072558.png","x":10,"y":856,"width":399,"height":118},
+		{"id":"65c50c55b3b0cdc7","type":"file","file":"_Attachments/Images/Pasted image 20260731164719.png","x":48,"y":974,"width":324,"height":257},
+		{"id":"987933aca67fb577","type":"file","file":"_Attachments/Images/Pasted image 20260731165259.png","x":510,"y":1189,"width":400,"height":330},
+		{"id":"d928afa96fadee84","type":"file","file":"_Attachments/Images/Pasted image 20260730020414.png","x":649,"y":2200,"width":516,"height":153},
+		{"id":"be3ae4f42053511e","type":"file","file":"_Attachments/Images/Pasted image 20260731165250.png","x":510,"y":1513,"width":400,"height":180},
+		{"id":"b89e7e0d29be242c","type":"file","file":"_Attachments/Images/Pasted image 20260731165239.png","x":510,"y":1693,"width":399,"height":143},
+		{"id":"b83922b3b742987c","type":"file","file":"_Attachments/Images/Pasted image 20260731165235.png","x":510,"y":1836,"width":399,"height":208},
+		{"id":"fd3d2e997b27f756","type":"file","file":"_Attachments/Images/Pasted image 20260731165315.png","x":510,"y":1017,"width":399,"height":172}
 	],
 	"edges":[
 		{
@@ -206,7 +234,7 @@
 			"fromSide":"bottom",
 			"toNode":"75d73eaf0c9b98c2",
 			"toSide":"top",
-			"label":"导数零点定理"
+			"label":"导数零点定理/\n导函数介值定理"
 		},
 		{
 			"id":"6e8ec4db42f290a5",
@@ -221,10 +249,12 @@
 			"id":"212db0888a317e59",
 			"styleAttributes":{},
 			"toFloating":false,
+			"fromFloating":false,
 			"fromNode":"7856e88a549e1bca",
 			"fromSide":"bottom",
 			"toNode":"3b4be39c9626a6ed",
-			"toSide":"top"
+			"toSide":"top",
+			"label":"函数与导数之间的关系"
 		},
 		{
 			"id":"793d7ba908a9becf",
@@ -261,6 +291,83 @@
 			"fromSide":"bottom",
 			"toNode":"2be8e1865bfffe5f",
 			"toSide":"top"
+		},
+		{
+			"id":"7ac3d43aee4cd2b9",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"582c1e43102c21bc",
+			"fromSide":"right",
+			"toNode":"9f58af75371b0e2d",
+			"toSide":"left"
+		},
+		{
+			"id":"0183556318c6fa04",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"7511efa91254600d",
+			"fromSide":"bottom",
+			"toNode":"dfca9d7e51f73182",
+			"toSide":"top"
+		},
+		{
+			"id":"1711ea6ae4900a20",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"dfca9d7e51f73182",
+			"fromSide":"bottom",
+			"toNode":"53f93a476878ad3d",
+			"toSide":"top",
+			"label":"推广证明"
+		},
+		{
+			"id":"4a7d96fc5885c77a",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"53f93a476878ad3d",
+			"fromSide":"bottom",
+			"toNode":"4e34f8608a96ee03",
+			"toSide":"top",
+			"label":"推广例题"
+		},
+		{
+			"id":"598a2593e2230fa2",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"4f8d4c009e66e737",
+			"fromSide":"bottom",
+			"toNode":"82148a2b0bf109a7",
+			"toSide":"top"
+		},
+		{
+			"id":"f7a6af9936bc4372",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromFloating":false,
+			"fromNode":"7856e88a549e1bca",
+			"fromSide":"right",
+			"toNode":"536dda81fa67a85a",
+			"toSide":"left",
+			"label":"拓展"
+		},
+		{
+			"id":"8ce1fc3b85536279",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"3b4be39c9626a6ed",
+			"fromSide":"bottom",
+			"toNode":"fd3d2e997b27f756",
+			"toSide":"top",
+			"label":"五个核心推论"
+		},
+		{
+			"id":"108add2a330c9abb",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"be3ae4f42053511e",
+			"fromSide":"right",
+			"toNode":"ed7505bb5f22d311",
+			"toSide":"left"
 		}
 	],
 	"metadata":{
