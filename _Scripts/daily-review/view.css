@@ -1,0 +1,375 @@
+/*
+ * 今日复习面板
+ * 所有规则均限制在 .daily-review-view 内，避免影响其他页面。
+ */
+
+.daily-review-view {
+    --dr-radius: 10px;
+    width: 100%;
+    min-width: 0;
+    color: var(--text-normal);
+}
+
+.daily-review-view * {
+    box-sizing: border-box;
+}
+
+/* 头部 */
+.daily-review-view .dr-header {
+    margin: 0 0 14px;
+    padding: 16px 18px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: var(--dr-radius);
+    background: var(--background-secondary);
+}
+
+.daily-review-view .dr-title {
+    margin: 0;
+    font-size: 1.3em;
+    line-height: 1.4;
+    text-align: center;
+}
+
+.daily-review-view .dr-description {
+    max-width: 860px;
+    margin: 8px auto 0;
+    color: var(--text-muted);
+    font-size: 0.92em;
+    line-height: 1.6;
+    text-align: center;
+    overflow-wrap: anywhere;
+}
+
+/* 汇总 chips */
+.daily-review-view .dr-summary {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 0 0 12px;
+}
+
+.daily-review-view .dr-chip {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 6px;
+    padding: 6px 12px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 999px;
+    background: var(--background-secondary);
+}
+
+.daily-review-view .dr-chip-label {
+    color: var(--text-muted);
+    font-size: 0.85em;
+}
+
+.daily-review-view .dr-chip-value {
+    font-weight: 700;
+}
+
+/* 筛选栏 */
+.daily-review-view .dr-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0 0 12px;
+}
+
+.daily-review-view .dr-filter-button {
+    appearance: none;
+    padding: 6px 14px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 999px;
+    cursor: pointer;
+    font-weight: 600;
+    background: var(--interactive-normal);
+    color: var(--text-normal);
+}
+
+.daily-review-view .dr-filter-button:hover {
+    background: var(--interactive-hover);
+}
+
+.daily-review-view .dr-filter-button.is-active {
+    border-color: var(--interactive-accent);
+    background: var(--interactive-accent);
+    color: var(--text-on-accent);
+}
+
+/* 空状态 */
+.daily-review-view .dr-empty {
+    margin: 14px 0;
+    padding: 28px 18px;
+    border: 1px dashed var(--background-modifier-border);
+    border-radius: var(--dr-radius);
+    background: var(--background-secondary);
+    color: var(--text-muted);
+    line-height: 1.6;
+    text-align: center;
+}
+
+/* 表格 */
+.daily-review-view .dr-table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: var(--dr-radius);
+    background: var(--background-primary);
+    scrollbar-width: thin;
+}
+
+.daily-review-view .dr-table {
+    width: 100%;
+    min-width: 980px;
+    margin: 0 !important;
+    border: 0 !important;
+    border-collapse: separate;
+    border-spacing: 0;
+    table-layout: fixed;
+}
+
+.daily-review-view .dr-table th,
+.daily-review-view .dr-table td {
+    padding: 10px 10px !important;
+    border-right: 1px solid var(--background-modifier-border);
+    border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.daily-review-view .dr-table th:last-child,
+.daily-review-view .dr-table td:last-child {
+    border-right: 0;
+}
+
+.daily-review-view .dr-table tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+.daily-review-view .dr-table thead th {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background: var(--background-secondary);
+    color: var(--text-normal);
+    font-size: 0.88em;
+    font-weight: 700;
+    text-align: center !important;
+    white-space: nowrap;
+}
+
+.daily-review-view .dr-table tbody tr:nth-child(even) {
+    background: var(--background-primary-alt);
+}
+
+.daily-review-view .dr-table tbody td {
+    color: var(--text-normal);
+    font-size: 0.9em;
+    line-height: 1.5;
+    vertical-align: middle !important;
+    overflow-wrap: anywhere;
+}
+
+.daily-review-view .dr-table th:nth-child(1),
+.daily-review-view .dr-table td:nth-child(1) {
+    width: 30%;
+}
+
+.daily-review-view .dr-table th:nth-child(2),
+.daily-review-view .dr-table td:nth-child(2) {
+    width: 18%;
+}
+
+.daily-review-view .dr-table th:nth-child(3),
+.daily-review-view .dr-table td:nth-child(3) {
+    width: 11%;
+}
+
+.daily-review-view .dr-table th:nth-child(4),
+.daily-review-view .dr-table td:nth-child(4) {
+    width: 14%;
+}
+
+.daily-review-view .dr-table th:nth-child(5),
+.daily-review-view .dr-table td:nth-child(5) {
+    width: 12%;
+}
+
+.daily-review-view .dr-table th:nth-child(6),
+.daily-review-view .dr-table td:nth-child(6) {
+    width: 15%;
+}
+
+/* 题图 */
+.daily-review-view .dr-image-preview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.daily-review-view .dr-image {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    max-height: 180px;
+    object-fit: contain;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+
+.daily-review-view .dr-image-placeholder {
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+    background: var(--background-secondary);
+    color: var(--text-muted);
+    font-size: 0.8em;
+    text-align: center;
+}
+
+/* 题目链接 */
+.daily-review-view .dr-question-link {
+    display: block;
+    width: 100%;
+    color: var(--link-color);
+    text-decoration-line: var(--link-decoration);
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    line-height: 1.45;
+}
+
+.daily-review-view .dr-question-link:hover {
+    color: var(--link-color-hover);
+    text-decoration-line: var(--link-decoration-hover);
+}
+
+/* 科目 chip */
+.daily-review-view .dr-subject-chip {
+    display: inline-block;
+    padding: 2px 9px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 999px;
+    font-size: 0.82em;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.daily-review-view .dr-subject-chip[data-status="other"] {
+    color: var(--text-muted);
+}
+
+/* 到期 */
+.daily-review-view .dr-due-text {
+    font-size: 0.88em;
+    white-space: nowrap;
+}
+
+.daily-review-view .dr-due-text[data-status="overdue"] {
+    color: var(--text-error);
+    font-weight: 600;
+}
+
+.daily-review-view .dr-due-text[data-status="today"] {
+    color: var(--text-accent);
+    font-weight: 600;
+}
+
+/* 状态 */
+.daily-review-view .dr-status-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+}
+
+.daily-review-view .dr-level-text {
+    font-weight: 600;
+}
+
+.daily-review-view .dr-regression-badge {
+    font-size: 0.78em;
+    line-height: 1.35;
+    color: var(--text-error);
+    white-space: normal;
+    overflow-wrap: anywhere;
+}
+
+.daily-review-view .dr-review-count {
+    font-size: 0.78em;
+    color: var(--text-muted);
+}
+
+/* 评级 */
+.daily-review-view .dr-level-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    min-width: 0;
+}
+
+.daily-review-view .dr-level-select {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    height: 36px !important;
+    min-height: 36px !important;
+    box-sizing: border-box;
+    padding: 5px 26px 6px 9px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 6px;
+    cursor: pointer;
+    white-space: nowrap;
+    overflow: visible;
+    text-overflow: clip;
+    text-align: center;
+    text-align-last: center;
+    line-height: 22px !important;
+    font-family: var(--font-interface);
+    font-size: 0.88em;
+    font-weight: 500;
+    background-color: var(--interactive-normal);
+    color: var(--text-normal);
+}
+
+.daily-review-view .dr-level-select option {
+    line-height: 1.6;
+    font-family: var(--font-interface);
+    font-weight: 400;
+}
+
+.daily-review-view .dr-level-select:disabled {
+    cursor: wait;
+    opacity: 0.6;
+}
+
+/* 错误提示 */
+.daily-review-view .dr-error {
+    margin: 12px 0;
+    padding: 12px 14px;
+    border: 1px solid var(--background-modifier-error);
+    border-radius: var(--dr-radius);
+    color: var(--text-error);
+    background: var(--background-modifier-error);
+}
+
+/* 窄屏适配 */
+@media (max-width: 720px) {
+    .daily-review-view .dr-summary,
+    .daily-review-view .dr-controls {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .daily-review-view .dr-chip {
+        justify-content: center;
+    }
+
+    .daily-review-view .dr-filter-button {
+        width: 100%;
+    }
+}
