@@ -225,7 +225,7 @@
 .knowledge-radar-view .kr-bar-fill {
     height: 100%;
     border-radius: 6px;
-    min-width: 2px;
+    min-width: 0;
     opacity: 0.85;
 }
 

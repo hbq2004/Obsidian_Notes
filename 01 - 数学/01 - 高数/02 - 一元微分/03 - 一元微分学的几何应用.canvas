@@ -1,0 +1,225 @@
+{
+	"nodes":[
+		{"id":"ee53bd68098635b4","type":"group","x":-2840,"y":1600,"width":3360,"height":1320,"color":"1","label":"凹凸性与拐点"},
+		{"id":"22384bfec878b6a9","type":"group","x":840,"y":1600,"width":2840,"height":1520,"color":"4","label":"渐近线"},
+		{"id":"0dee9a8b8e56fa0f","type":"group","x":3920,"y":1600,"width":2840,"height":1520,"label":"曲率及曲率半径"},
+		{"id":"165ec96357ad145c","type":"group","x":-5440,"y":1600,"width":2360,"height":1220,"label":"单调性与极值"},
+		{"id":"fa9a5106cd4cdbbe","type":"group","x":-3475,"y":3680,"width":1270,"height":1000,"label":"求极值点和拐点个数结论"},
+		{"id":"b4a8f7c6f67ba434","type":"group","x":-2710,"y":1700,"width":620,"height":697,"label":"凹凸性定义 1"},
+		{"id":"1bc8c306e01a939b","type":"group","x":1840,"y":2160,"width":840,"height":440,"label":"求渐近线流程图"},
+		{"id":"9485be4433a0f908","type":"group","x":-2710,"y":2480,"width":680,"height":340,"label":"凹凸性定义 2"},
+		{"id":"f1b365cc1e7ba535","type":"group","x":-5400,"y":1760,"width":580,"height":390,"label":"单调性定义"},
+		{"id":"856cd44ccf4b3190","type":"group","x":-980,"y":1820,"width":550,"height":260,"label":"拐点定义"},
+		{"id":"7576738ebe7a5ae6","type":"file","file":"_Attachments/Images/Pasted image 20260801205312.png","x":-5319,"y":1780,"width":395,"height":220},
+		{"id":"2c7ccd001f3d0f2a","type":"file","file":"_Attachments/Images/Pasted image 20260801203858.png","x":-4237,"y":1860,"width":375,"height":200},
+		{
+			"id":"0684ed840c457574",
+			"type":"text",
+			"text":"严格单调性：**有限个点**取到等号（例如 $x^3$ 在 $x = 0$）",
+			"styleAttributes":{"textAlign":"center"},
+			"x":-5251,
+			"y":2060,
+			"width":260,
+			"height":60
+		},
+		{"id":"eb06b2c8fffc0d6b","type":"file","file":"_Attachments/Images/Pasted image 20260801203917.png","x":-4980,"y":2287,"width":399,"height":261},
+		{"id":"cd326bd090c12a2c","type":"file","file":"_Attachments/Images/Pasted image 20260801210026.png","x":40,"y":2427,"width":400,"height":296},
+		{"id":"f0dc439594208bc0","type":"file","file":"_Attachments/Images/Pasted image 20260801204355.png","x":-920,"y":1880,"width":400,"height":159},
+		{"id":"1152f1ebc9cb2fbf","type":"file","file":"_Attachments/Images/result_eVbA1R.png","x":-580,"y":2430,"width":524,"height":231},
+		{"id":"682c22d4be795017","type":"file","file":"_Attachments/Images/result_8JQRwW.png","x":-200,"y":-140,"width":319,"height":474},
+		{
+			"id":"6556b7f7fe52f42c",
+			"type":"text",
+			"text":"一元微分学的几何应用",
+			"styleAttributes":{"textAlign":"center"},
+			"x":-180,
+			"y":540,
+			"width":280,
+			"height":120
+		},
+		{"id":"e107f47f209aa795","type":"file","file":"_Attachments/Images/Pasted image 20260801203926.png","x":-4560,"y":2328,"width":400,"height":178},
+		{"id":"dac4eeca7ff851fb","type":"file","file":"_Attachments/Images/Pasted image 20260801204010.png","x":-3540,"y":2353,"width":399,"height":127},
+		{"id":"dd6c927edac33d7b","type":"file","file":"_Attachments/Images/Pasted image 20260801204156.png","x":-2650,"y":1727,"width":484,"height":454},
+		{"id":"32fec4fdb4a9b034","type":"file","file":"_Attachments/Images/result_57zVqn.png","x":-2650,"y":2181,"width":475,"height":167},
+		{"id":"4493cf48e3b5270a","type":"file","file":"_Attachments/Images/Pasted image 20260801204218.png","x":-2600,"y":2500,"width":475,"height":89},
+		{"id":"7c29fdf42c76a681","type":"file","file":"_Attachments/Images/Pasted image 20260801204241.png","x":-2600,"y":2590,"width":475,"height":193},
+		{"id":"21c8aac891c2a7a3","type":"file","file":"_Attachments/Images/Pasted image 20260801203940.png","x":-4124,"y":2354,"width":523,"height":126},
+		{"id":"6a1bf1d8b961ee40","type":"file","file":"_Attachments/Images/Pasted image 20260801204058.png","x":-3540,"y":2520,"width":400,"height":236},
+		{"id":"869d3fde993e3c9d","type":"file","file":"_Attachments/Images/Pasted image 20260801205947.png","x":-1940,"y":2330,"width":575,"height":409},
+		{"id":"702772fe3e8c3ec1","type":"file","file":"_Attachments/Images/Pasted image 20260801210006.png","x":-1280,"y":2430,"width":615,"height":287},
+		{"id":"e7b253108b61afac","type":"file","file":"_Attachments/Images/Pasted image 20260801212050.png","x":-3405,"y":3780,"width":525,"height":348},
+		{"id":"3c0f5ccf9e508c16","type":"file","file":"_Attachments/Images/Pasted image 20260801214329.png","x":-3599,"y":2920,"width":519,"height":603},
+		{"id":"7be584e34b06b833","type":"file","file":"_Attachments/Images/Pasted image 20260801211549.png","x":980,"y":1840,"width":600,"height":191},
+		{"id":"c41586557a5afebe","type":"file","file":"_Attachments/Images/Pasted image 20260801211601.png","x":980,"y":2180,"width":588,"height":175},
+		{"id":"e90cd84f0277f5c1","type":"file","file":"_Attachments/Images/Pasted image 20260801211619.png","x":980,"y":2486,"width":550,"height":195},
+		{"id":"552e5aec4b68ba58","type":"file","file":"_Attachments/Images/Pasted image 20260801211630.png","x":980,"y":2682,"width":550,"height":243},
+		{"id":"79cb8984ea1e1e72","type":"file","file":"_Attachments/Images/Pasted image 20260801211701.png","x":1880,"y":2222,"width":721,"height":291},
+		{"id":"c7aa920172535abf","type":"file","file":"_Attachments/Images/Pasted image 20260801211711.png","x":2920,"y":2249,"width":498,"height":264},
+		{"id":"d835d122d8e03542","type":"file","file":"_Attachments/Images/Pasted image 20260801212224.png","x":4060,"y":1780,"width":750,"height":472},
+		{"id":"70bc00d1768c6961","type":"file","file":"_Attachments/Images/Pasted image 20260801212730.png","x":4085,"y":2540,"width":700,"height":389},
+		{"id":"08b93034fa8e7235","type":"file","file":"_Attachments/Images/Pasted image 20260801212937.png","x":4810,"y":1782,"width":1070,"height":474},
+		{"id":"b5b998c9d76802a1","type":"file","file":"_Attachments/Images/Pasted image 20260801211950.png","x":980,"y":2925,"width":572,"height":31}
+	],
+	"edges":[
+		{
+			"id":"b151f6209fcf5783",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"6556b7f7fe52f42c",
+			"fromSide":"top",
+			"toNode":"682c22d4be795017",
+			"toSide":"bottom",
+			"label":"知识结构"
+		},
+		{
+			"id":"2f6aaf38a0fcff0a",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"6556b7f7fe52f42c",
+			"fromSide":"bottom",
+			"toNode":"165ec96357ad145c",
+			"toSide":"top"
+		},
+		{
+			"id":"403a001068fe8909",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromFloating":false,
+			"fromNode":"2c7ccd001f3d0f2a",
+			"fromSide":"bottom",
+			"toNode":"eb06b2c8fffc0d6b",
+			"toSide":"top"
+		},
+		{
+			"id":"2dc644a2fef43182",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"dac4eeca7ff851fb",
+			"fromSide":"bottom",
+			"toNode":"6a1bf1d8b961ee40",
+			"toSide":"top"
+		},
+		{
+			"id":"2b821f8b36af6849",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"2c7ccd001f3d0f2a",
+			"fromSide":"bottom",
+			"toNode":"e107f47f209aa795",
+			"toSide":"top"
+		},
+		{
+			"id":"53ad3f78d9b59569",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"2c7ccd001f3d0f2a",
+			"fromSide":"bottom",
+			"toNode":"21c8aac891c2a7a3",
+			"toSide":"top"
+		},
+		{
+			"id":"13574d18ec886cb7",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"2c7ccd001f3d0f2a",
+			"fromSide":"bottom",
+			"toNode":"dac4eeca7ff851fb",
+			"toSide":"top"
+		},
+		{
+			"id":"b90b76528ca81d3f",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"6556b7f7fe52f42c",
+			"fromSide":"bottom",
+			"toNode":"ee53bd68098635b4",
+			"toSide":"top"
+		},
+		{
+			"id":"7b4d01514e293e2e",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"856cd44ccf4b3190",
+			"fromSide":"bottom",
+			"toNode":"869d3fde993e3c9d",
+			"toSide":"top"
+		},
+		{
+			"id":"bb9438757fa5ac17",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"856cd44ccf4b3190",
+			"fromSide":"bottom",
+			"toNode":"702772fe3e8c3ec1",
+			"toSide":"top"
+		},
+		{
+			"id":"0650641a2d20f915",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"856cd44ccf4b3190",
+			"fromSide":"bottom",
+			"toNode":"cd326bd090c12a2c",
+			"toSide":"top"
+		},
+		{
+			"id":"f179b5859fd426cb",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"856cd44ccf4b3190",
+			"fromSide":"bottom",
+			"toNode":"1152f1ebc9cb2fbf",
+			"toSide":"top"
+		},
+		{
+			"id":"80a42d784e35673c",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"7576738ebe7a5ae6",
+			"fromSide":"bottom",
+			"toNode":"0684ed840c457574",
+			"toSide":"top"
+		},
+		{
+			"id":"0ffe006918d1137c",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"6556b7f7fe52f42c",
+			"fromSide":"bottom",
+			"toNode":"22384bfec878b6a9",
+			"toSide":"top"
+		},
+		{
+			"id":"d8b52c421402cffe",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"6556b7f7fe52f42c",
+			"fromSide":"bottom",
+			"toNode":"0dee9a8b8e56fa0f",
+			"toSide":"top"
+		},
+		{
+			"id":"d09c358674c7e65f",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"d835d122d8e03542",
+			"fromSide":"bottom",
+			"toNode":"70bc00d1768c6961",
+			"toSide":"top",
+			"label":"利用 arctany' 求导方便记忆"
+		},
+		{
+			"id":"674b10a1c24a4401",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"6a1bf1d8b961ee40",
+			"fromSide":"bottom",
+			"toNode":"3c0f5ccf9e508c16",
+			"toSide":"top"
+		}
+	],
+	"metadata":{
+		"version":"1.0-1.0",
+		"frontmatter":{}
+	}
+}

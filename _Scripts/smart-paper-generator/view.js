@@ -95,6 +95,25 @@ dv.container.classList.add("smart-paper-view");
 const viewDocument = dv.container.ownerDocument;
 const viewWindow = viewDocument?.defaultView;
 
+/* 配置在一次视图执行期间保持不变，提前编译热点查询所需的只读索引。 */
+const IMAGE_MIME_TYPES = Object.freeze({
+    png: "image/png",
+    jpg: "image/jpeg",
+    jpeg: "image/jpeg",
+    jfif: "image/jpeg",
+    gif: "image/gif",
+    webp: "image/webp",
+    bmp: "image/bmp",
+    svg: "image/svg+xml",
+    avif: "image/avif"
+});
+const ALL_SUBJECTS = CONFIG.paperTypes.flatMap(type => type.subjects);
+const SUBJECT_TAG_MATCHERS = ALL_SUBJECTS.map(subject => ({
+    subject,
+    tagRootKeys: asArray(subject.tagRoots).map(tagKey)
+}));
+const PRINT_BINARY_READ_CONCURRENCY = 4;
+
 /* ================================================================
  * 1. 通用函数
  * ================================================================ */
@@ -130,7 +149,7 @@ function getPaperType(paperTypeId) {
 }
 
 function getAllSubjects() {
-    return CONFIG.paperTypes.flatMap(type => type.subjects);
+    return ALL_SUBJECTS;
 }
 
 function normalizeTag(tag) {
@@ -165,7 +184,9 @@ function getPageTags(page) {
 
     for (const rawTag of rawTags) {
         const normalized = normalizeTag(rawTag);
-        const key = tagKey(normalized);
+        const key = normalized
+            .replace(/\/+$/g, "")
+            .toLocaleLowerCase();
 
         if (!normalized || visited.has(key)) continue;
 
@@ -177,7 +198,11 @@ function getPageTags(page) {
 }
 
 function parseLevel(value) {
-    if (value === undefined || value === null || value === "") {
+    if (
+        value === undefined ||
+        value === null ||
+        (typeof value === "string" && value.trim() === "")
+    ) {
         return null;
     }
 
@@ -191,7 +216,8 @@ function parseLevel(value) {
 }
 
 function isTrue(value) {
-    return value === true || String(value).toLowerCase() === "true";
+    return value === true ||
+        String(value).trim().toLowerCase() === "true";
 }
 
 function pad2(value) {
@@ -216,6 +242,8 @@ function normalizeIsoDate(value) {
     }
 
     if (value instanceof Date) {
+        if (Number.isNaN(value.getTime())) return null;
+
         return [
             value.getFullYear(),
             "-",
@@ -226,13 +254,26 @@ function normalizeIsoDate(value) {
     }
 
     if (value && typeof value.toISODate === "function") {
-        return value.toISODate();
+        const isoDate = value.toISODate();
+        const parsed = moment(isoDate, "YYYY-MM-DD", true);
+
+        return parsed.isValid() ? parsed.format("YYYY-MM-DD") : null;
     }
 
     const text = String(value);
     const directMatch = text.match(/\d{4}-\d{2}-\d{2}/);
 
-    if (directMatch) return directMatch[0];
+    if (directMatch) {
+        const parsedDirect = moment(
+            directMatch[0],
+            "YYYY-MM-DD",
+            true
+        );
+
+        return parsedDirect.isValid()
+            ? parsedDirect.format("YYYY-MM-DD")
+            : null;
+    }
 
     const parsed = moment(value);
     return parsed.isValid() ? parsed.format("YYYY-MM-DD") : null;
@@ -250,67 +291,126 @@ function getLevelText(level) {
 
 function getImageMimeType(file) {
     const extension = String(file?.extension ?? "").toLowerCase();
-    const mimeTypes = {
-        png: "image/png",
-        jpg: "image/jpeg",
-        jpeg: "image/jpeg",
-        jfif: "image/jpeg",
-        gif: "image/gif",
-        webp: "image/webp",
-        bmp: "image/bmp",
-        svg: "image/svg+xml",
-        avif: "image/avif"
-    };
 
-    return mimeTypes[extension] ?? null;
+    return IMAGE_MIME_TYPES[extension] ?? null;
+}
+
+/**
+ * 只把嵌入别名/替代文字中的独立“题目”字段视为题目标记。
+ * 支持 |题目、|宽度|题目、|题目|宽度；不会因文件名含“题目”而误判。
+ */
+function embedHasQuestionMarker(embed) {
+    const marker = String(CONFIG.questionMarker ?? "").trim();
+    if (!marker) return false;
+
+    const hasMarkerToken = value => String(value ?? "")
+        .split("|")
+        .some(token => token.trim() === marker);
+
+    const original = String(embed?.original ?? "").trim();
+    if (!original) return hasMarkerToken(embed?.displayText);
+
+    const markdownMatch = original.match(/^!\[([^\]]*)\]\s*\(/);
+    if (markdownMatch) return hasMarkerToken(markdownMatch[1]);
+
+    const wikiMatch = original.match(/^!?\[\[([\s\S]*)\]\]$/);
+    const inner = wikiMatch ? wikiMatch[1] : original;
+    const parts = inner.split("|");
+
+    return parts.length > 1 &&
+        parts.slice(1).some(token => token.trim() === marker);
+}
+
+/*
+ * Dataview 页面对象是一次查询的快照，题目笔记在组卷后被移动或重命名时，
+ * page.file.path / name 不会随之更新；Obsidian 的 TFile 对象则会更新 path。
+ * 所有后续链接和打印标题优先重新解析保存的 TFile，避免指向旧位置。
+ */
+function resolveQuestionSourceFile(item) {
+    const storedFile = item?.sourceFile;
+    const storedPath = normalizeVaultPath(storedFile?.path);
+
+    if (storedPath) {
+        const resolvedStoredFile = app.vault.getAbstractFileByPath(storedPath);
+
+        if (resolvedStoredFile?.extension === "md") {
+            item.sourceFile = resolvedStoredFile;
+            return resolvedStoredFile;
+        }
+    }
+
+    const snapshotPath = normalizeVaultPath(item?.page?.file?.path);
+
+    if (snapshotPath) {
+        const resolvedSnapshotFile = app.vault.getAbstractFileByPath(
+            snapshotPath
+        );
+
+        if (resolvedSnapshotFile?.extension === "md") {
+            item.sourceFile = resolvedSnapshotFile;
+            return resolvedSnapshotFile;
+        }
+    }
+
+    return null;
+}
+
+function getQuestionSourcePath(item) {
+    return resolveQuestionSourceFile(item)?.path ??
+        normalizeVaultPath(item?.page?.file?.path);
+}
+
+function getQuestionSourceName(item) {
+    const sourceFile = resolveQuestionSourceFile(item);
+
+    return sourceFile?.basename ??
+        sourceFile?.name?.replace(/\.md$/i, "") ??
+        String(item?.page?.file?.name ?? "未知题目");
 }
 
 /* ================================================================
  * 2. 题库扫描与科目识别
  * ================================================================ */
 
-function detectSubject(page, allowedSubjects) {
-    const pageTags = getPageTags(page);
-    const tagMatches = getAllSubjects().filter(subject => (
-        asArray(subject.tagRoots).some(requiredTag => (
-            pageTags.some(candidateTag => (
-                isSameTagOrDescendant(candidateTag, requiredTag)
+function detectSubject(page, allowedSubjectIds) {
+    const pageTagKeys = getPageTags(page).map(tagKey);
+    const tagMatches = SUBJECT_TAG_MATCHERS.filter(({ tagRootKeys }) => (
+        tagRootKeys.some(requiredKey => (
+            pageTagKeys.some(candidateKey => (
+                candidateKey === requiredKey ||
+                candidateKey.startsWith(`${requiredKey}/`)
             ))
         ))
     ));
 
     if (tagMatches.length !== 1) return null;
 
-    const matchedSubject = tagMatches[0];
-    return allowedSubjects.some(subject => subject.id === matchedSubject.id)
+    const matchedSubject = tagMatches[0].subject;
+    return allowedSubjectIds.has(matchedSubject.id)
         ? matchedSubject
         : null;
 }
 
-function getQuestionImageFiles(page) {
-    const sourceFile = app.vault.getAbstractFileByPath(page.file.path);
+function getQuestionImageFiles(page, sourceFile = undefined) {
+    const liveSourceFile = sourceFile === undefined
+        ? app.vault.getAbstractFileByPath(page.file.path)
+        : sourceFile;
 
-    if (!sourceFile || sourceFile.extension !== "md") {
+    if (!liveSourceFile || liveSourceFile.extension !== "md") {
         return [];
     }
 
-    const cache = app.metadataCache.getFileCache(sourceFile);
+    const cache = app.metadataCache.getFileCache(liveSourceFile);
     const embeds = cache?.embeds ?? [];
     const imageFiles = [];
     const visitedPaths = new Set();
 
     for (const embed of embeds) {
-        const markerText = [
-            embed.original ?? "",
-            embed.displayText ?? "",
-            embed.link ?? ""
-        ].join(" ");
-
-        if (!markerText.includes(CONFIG.questionMarker)) continue;
+        if (!embedHasQuestionMarker(embed)) continue;
 
         const imageFile = app.metadataCache.getFirstLinkpathDest(
             embed.link,
-            sourceFile.path
+            liveSourceFile.path
         );
 
         if (
@@ -328,7 +428,7 @@ function getQuestionImageFiles(page) {
     return imageFiles;
 }
 
-function buildQuestionItem(page, subject, imageFiles) {
+function buildQuestionItem(page, subject, imageFiles, sourceFile = undefined) {
     const level = parseLevel(page.level);
     const peakLevel = parseLevel(page.peak_level) ?? level;
     const regressed =
@@ -341,7 +441,9 @@ function buildQuestionItem(page, subject, imageFiles) {
 
     return {
         page,
-        sourceFile: app.vault.getAbstractFileByPath(page.file.path),
+        sourceFile: sourceFile === undefined
+            ? app.vault.getAbstractFileByPath(page.file.path)
+            : sourceFile,
         imageFiles,
         subjectId: subject.id,
         subjectLabel: subject.label,
@@ -370,6 +472,10 @@ function scanQuestionBank(paperType) {
     }
 
     const items = [];
+    const allowedSubjectIds = new Set(subjects.map(subject => subject.id));
+    const availableCounts = Object.fromEntries(
+        subjects.map(subject => [subject.id, 0])
+    );
     const visitedPaths = new Set();
     const visitedQuestionSignatures = new Set();
     let categorizedWithoutQuestionImage = 0;
@@ -380,11 +486,12 @@ function scanQuestionBank(paperType) {
 
         if (!pagePath || visitedPaths.has(pagePath)) continue;
 
-        const subject = detectSubject(page, subjects);
+        const subject = detectSubject(page, allowedSubjectIds);
 
         if (!subject) continue;
 
-        const imageFiles = getQuestionImageFiles(page);
+        const sourceFile = app.vault.getAbstractFileByPath(page.file.path);
+        const imageFiles = getQuestionImageFiles(page, sourceFile);
 
         if (imageFiles.length === 0) {
             categorizedWithoutQuestionImage++;
@@ -410,21 +517,23 @@ function scanQuestionBank(paperType) {
         if (questionSignature) {
             visitedQuestionSignatures.add(questionSignature);
         }
-        items.push(buildQuestionItem(page, subject, imageFiles));
+        items.push(buildQuestionItem(
+            page,
+            subject,
+            imageFiles,
+            sourceFile
+        ));
+        availableCounts[subject.id]++;
     }
 
-    items.sort((a, b) => a.page.file.path.localeCompare(
-        b.page.file.path,
+    const sourcePaths = new Map(
+        items.map(item => [item, getQuestionSourcePath(item)])
+    );
+    items.sort((a, b) => sourcePaths.get(a).localeCompare(
+        sourcePaths.get(b),
         "zh-CN",
         { numeric: true }
     ));
-
-    const availableCounts = Object.fromEntries(
-        subjects.map(subject => [
-            subject.id,
-            items.filter(item => item.subjectId === subject.id).length
-        ])
-    );
 
     return {
         items,
@@ -571,7 +680,11 @@ function deterministicUnitHash(value) {
     return ((hash >>> 0) + 1) / 4294967297;
 }
 
-function getSelectionProfile(item, today = localDate()) {
+function getSelectionProfile(
+    item,
+    today = localDate(),
+    preparedTodayMoment = null
+) {
     const levelWeakness = item.level === null
         ? 0.65
         : (5 - Math.min(5, Math.max(0, item.level))) / 5;
@@ -588,7 +701,8 @@ function getSelectionProfile(item, today = localDate()) {
     let dueScore = 0;
 
     if (reviewDate) {
-        const todayMoment = moment(today).startOf("day");
+        const todayMoment = preparedTodayMoment ??
+            moment(today).startOf("day");
         const reviewMoment = moment(reviewDate).startOf("day");
 
         if (todayMoment.isValid() && reviewMoment.isValid()) {
@@ -633,22 +747,30 @@ function getSelectionProfile(item, today = localDate()) {
 }
 
 function selectWeightedItems(candidates, count, seed, subjectId) {
+    const today = localDate();
+    const todayMoment = moment(today).startOf("day");
+
     return candidates
         .map(item => {
-            const selection = getSelectionProfile(item);
+            const sourcePath = getQuestionSourcePath(item);
+            const selection = getSelectionProfile(
+                item,
+                today,
+                todayMoment
+            );
             const randomValue = deterministicUnitHash(
-                `${seed}\u0000${subjectId}\u0000${item.page.file.path}`
+                `${seed}\u0000${subjectId}\u0000${sourcePath}`
             );
             const selectionCost = -Math.log(
                 Math.max(randomValue, 1e-12)
             ) / selection.weight;
 
-            return { item, selection, selectionCost };
+            return { item, sourcePath, selection, selectionCost };
         })
         .sort((a, b) => (
             a.selectionCost - b.selectionCost ||
-            a.item.page.file.path.localeCompare(
-                b.item.page.file.path,
+            a.sourcePath.localeCompare(
+                b.sourcePath,
                 "zh-CN",
                 { numeric: true }
             )
@@ -673,11 +795,16 @@ function composePaper(bank, requestedCount, paperType) {
     );
     const seed = `${Date.now()}-${Math.random()}`;
     const selectedItems = [];
+    const candidatesBySubject = new Map(
+        subjects.map(subject => [subject.id, []])
+    );
+
+    for (const item of bank.items) {
+        candidatesBySubject.get(item.subjectId)?.push(item);
+    }
 
     for (const subject of subjects) {
-        const candidates = bank.items.filter(item => (
-            item.subjectId === subject.id
-        ));
+        const candidates = candidatesBySubject.get(subject.id) ?? [];
 
         selectedItems.push(...selectWeightedItems(
             candidates,
@@ -688,7 +815,7 @@ function composePaper(bank, requestedCount, paperType) {
     }
 
     const uniquePathCount = new Set(
-        selectedItems.map(item => item.page.file.path)
+        selectedItems.map(item => getQuestionSourcePath(item))
     ).size;
 
     if (uniquePathCount !== selectedItems.length) {
@@ -924,6 +1051,8 @@ function renderPaper() {
     }
 
     summaryEl.textContent = parts.join("；") + "。";
+    const rowsFragment = viewDocument.createDocumentFragment?.() ?? null;
+    const rowsParent = rowsFragment ?? tableBodyEl;
 
     paperItems.forEach((item, index) => {
         const rowEl = viewDocument.createElement("tr");
@@ -947,11 +1076,44 @@ function renderPaper() {
         sourceLinkEl.href = item.page.file.path;
         sourceLinkEl.dataset.href = item.page.file.path;
         sourceLinkEl.textContent = item.page.file.name;
+        let renderedSourceFile = null;
+        const updateSourceLink = event => {
+            const sourceFile = resolveQuestionSourceFile(item);
+
+            if (!sourceFile) {
+                renderedSourceFile = null;
+                event?.preventDefault?.();
+                event?.stopPropagation?.();
+
+                if (!event || event.type === "click") {
+                    new Notice(
+                        `❌ 题目笔记已删除或无法定位：` +
+                        `${item.page.file.path}`,
+                        6000
+                    );
+                }
+                return false;
+            }
+
+            renderedSourceFile = sourceFile;
+            sourceLinkEl.href = sourceFile.path;
+            sourceLinkEl.dataset.href = sourceFile.path;
+            sourceLinkEl.textContent = sourceFile.basename;
+            return true;
+        };
+
+        updateSourceLink();
+        /* 在 Obsidian 处理 internal-link 的冒泡事件前刷新移动后的路径。 */
+        sourceLinkEl.addEventListener("pointerdown", updateSourceLink);
+        sourceLinkEl.addEventListener("click", updateSourceLink);
         sourceCellEl.appendChild(sourceLinkEl);
 
         const imageCellEl = viewDocument.createElement("td");
         const imageListEl = viewDocument.createElement("ul");
         imageListEl.className = "smart-paper-images";
+        const renderedSourceName = renderedSourceFile?.basename ??
+            renderedSourceFile?.name?.replace(/\.md$/i, "") ??
+            String(item?.page?.file?.name ?? "未知题目");
 
         for (const imageFile of item.imageFiles) {
             const imageItemEl = viewDocument.createElement("li");
@@ -959,7 +1121,7 @@ function renderPaper() {
             const imageEl = viewDocument.createElement("img");
             imageEl.className = "smart-paper-image";
             imageEl.loading = "lazy";
-            imageEl.alt = `${item.page.file.name} · ${imageFile.name}`;
+            imageEl.alt = `${renderedSourceName} · ${imageFile.name}`;
             imageEl.addEventListener("error", () => {
                 const placeholderEl = viewDocument.createElement("div");
                 placeholderEl.className = "smart-paper-image-placeholder";
@@ -1013,8 +1175,10 @@ function renderPaper() {
         rowEl.appendChild(sourceCellEl);
         rowEl.appendChild(imageCellEl);
         rowEl.appendChild(basisCellEl);
-        tableBodyEl.appendChild(rowEl);
+        rowsParent.appendChild(rowEl);
     });
+
+    if (rowsFragment) tableBodyEl.appendChild(rowsFragment);
 
     emptyEl.hidden = true;
     tableWrapEl.hidden = false;
@@ -1137,6 +1301,40 @@ function waitForPrintLayout(targetWindow) {
     return new Promise(resolve => {
         targetWindow.requestAnimationFrame(resolve);
     });
+}
+
+async function mapWithConcurrency(values, concurrency, mapper) {
+    const entries = Array.from(values);
+    if (entries.length === 0) return [];
+
+    const results = new Array(entries.length);
+    const errors = new Array(entries.length);
+    const failed = new Array(entries.length).fill(false);
+    const workerCount = Math.min(
+        entries.length,
+        Math.max(1, Math.floor(Number(concurrency) || 1))
+    );
+    let nextIndex = 0;
+
+    const worker = async () => {
+        while (nextIndex < entries.length) {
+            const index = nextIndex++;
+
+            try {
+                results[index] = await mapper(entries[index], index);
+            } catch (error) {
+                errors[index] = error;
+                failed[index] = true;
+            }
+        }
+    };
+
+    await Promise.all(Array.from({ length: workerCount }, worker));
+
+    const firstFailedIndex = failed.findIndex(Boolean);
+    if (firstFailedIndex >= 0) throw errors[firstFailedIndex];
+
+    return results;
 }
 
 function createPrintRoot(printDocument) {
@@ -1330,49 +1528,87 @@ async function printPaper() {
         const imageLoadPromises = [];
         const imageElements = [];
         let imageCount = 0;
+        const printEntries = printableItems.map(item => {
+            const sourceFile = resolveQuestionSourceFile(item);
 
-        for (const item of printableItems) {
+            if (!sourceFile) {
+                throw new Error(
+                    `题目笔记已删除或无法定位，请重新组卷：` +
+                    `${item.page.file.path}`
+                );
+            }
+
+            const itemImageCount = Math.max(1, item.imageFiles.length);
+            const imageGapMm = 3;
+            const availableImageHeightMm = 245;
+
+            return {
+                item,
+                sourceFile,
+                maxImageHeightMm: Math.max(
+                    20,
+                    (
+                        availableImageHeightMm -
+                        imageGapMm * (itemImageCount - 1)
+                    ) / itemImageCount
+                )
+            };
+        });
+        const imageReadTasks = printEntries.flatMap(entry => (
+            entry.item.imageFiles.map(imageFile => ({ entry, imageFile }))
+        ));
+        const imagePayloads = await mapWithConcurrency(
+            imageReadTasks,
+            PRINT_BINARY_READ_CONCURRENCY,
+            async ({ imageFile }) => {
+                const mimeType = getImageMimeType(imageFile);
+
+                if (!mimeType) {
+                    throw new Error(
+                        `不支持的题图格式：${imageFile.path}`
+                    );
+                }
+
+                return {
+                    imageFile,
+                    mimeType,
+                    imageData: await app.vault.readBinary(imageFile)
+                };
+            }
+        );
+        let imagePayloadIndex = 0;
+
+        for (const entry of printEntries) {
+            const { item, sourceFile, maxImageHeightMm } = entry;
+
             const itemEl = printDocument.createElement("section");
             itemEl.className = "smart-paper-print-item";
 
             const sourceEl = printDocument.createElement("p");
             sourceEl.className = "smart-paper-print-source";
-            sourceEl.textContent = `题目来源：${item.page.file.name}`;
+            sourceEl.textContent = `题目来源：${sourceFile.basename}`;
 
             const imagesEl = printDocument.createElement("div");
             imagesEl.className = "smart-paper-print-images";
-
-            const itemImageCount = Math.max(1, item.imageFiles.length);
-            const imageGapMm = 3;
-            const availableImageHeightMm = 245;
-            const maxImageHeightMm = Math.max(
-                20,
-                (
-                    availableImageHeightMm -
-                    imageGapMm * (itemImageCount - 1)
-                ) / itemImageCount
-            );
 
             itemEl.appendChild(sourceEl);
             itemEl.appendChild(imagesEl);
             printRootEl.appendChild(itemEl);
 
             for (const imageFile of item.imageFiles) {
-                const mimeType = getImageMimeType(imageFile);
-
-                if (!mimeType) {
-                    throw new Error(`不支持的题图格式：${imageFile.path}`);
-                }
-
-                const imageData = await app.vault.readBinary(imageFile);
+                const payload = imagePayloads[imagePayloadIndex++];
                 const objectUrl = urlApi.createObjectURL(
-                    new BlobClass([imageData], { type: mimeType })
+                    new BlobClass(
+                        [payload.imageData],
+                        { type: payload.mimeType }
+                    )
                 );
+                payload.imageData = null;
                 objectUrls.push(objectUrl);
 
                 const imageEl = printDocument.createElement("img");
                 imageEl.className = "smart-paper-print-image";
-                imageEl.alt = `${item.page.file.name} · ${imageFile.name}`;
+                imageEl.alt = `${sourceFile.basename} · ${imageFile.name}`;
                 imageEl.style.setProperty(
                     "--smart-paper-image-max-height",
                     `${maxImageHeightMm}mm`

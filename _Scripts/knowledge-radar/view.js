@@ -46,6 +46,14 @@ const CONFIG = {
     radarRingCount: 5
 };
 
+/* Chromium/Obsidian can render these attachment types in an <img>. */
+const IMAGE_EXTENSIONS = new Set([
+    "avif", "bmp", "gif", "jfif", "jpeg", "jpg",
+    "png", "svg", "webp"
+]);
+
+const QUESTION_MARKER = String(CONFIG.questionMarker ?? "").trim();
+
 dv.container.classList.add("knowledge-radar-view");
 
 const viewDocument = dv.container.ownerDocument;
@@ -99,6 +107,12 @@ function isSameTagOrDescendant(candidate, required) {
     );
 }
 
+/* 根标签只规范化一次；扫描时直接比较规范化后的键。 */
+const SUBJECT_MATCHERS = CONFIG.subjects.map(subject => ({
+    subject,
+    tagRootKeys: subject.tagRoots.map(tagKey)
+}));
+
 /* 读取页面真实标签：YAML/属性 tags + 正文精确标签 etags */
 function getPageTags(page) {
     const rawTags = [
@@ -121,8 +135,33 @@ function getPageTags(page) {
     return result;
 }
 
+/* 扫描只消费规范化后的键，避免为每页创建无用的标签文本中间数组。 */
+function getPageTagKeys(page) {
+    const result = [];
+    const visited = new Set();
+
+    for (const rawTags of [
+        asArray(page?.tags),
+        asArray(page?.file?.etags)
+    ]) {
+        for (const rawTag of rawTags) {
+            const key = tagKey(rawTag);
+            if (!key || visited.has(key)) continue;
+
+            visited.add(key);
+            result.push(key);
+        }
+    }
+
+    return result;
+}
+
 function parseLevel(value) {
-    if (value === undefined || value === null || value === "") {
+    if (
+        value === undefined ||
+        value === null ||
+        (typeof value === "string" && value.trim() === "")
+    ) {
         return null;
     }
 
@@ -136,7 +175,8 @@ function parseLevel(value) {
 }
 
 function isTrue(value) {
-    return value === true || String(value).toLowerCase() === "true";
+    return value === true ||
+        String(value).trim().toLowerCase() === "true";
 }
 
 function pad2(value) {
@@ -161,6 +201,8 @@ function normalizeIsoDate(value) {
     }
 
     if (value instanceof Date) {
+        if (Number.isNaN(value.getTime())) return null;
+
         return [
             value.getFullYear(),
             "-",
@@ -171,13 +213,26 @@ function normalizeIsoDate(value) {
     }
 
     if (value && typeof value.toISODate === "function") {
-        return value.toISODate();
+        const isoDate = value.toISODate();
+        const parsed = moment(isoDate, "YYYY-MM-DD", true);
+
+        return parsed.isValid() ? parsed.format("YYYY-MM-DD") : null;
     }
 
     const text = String(value);
     const directMatch = text.match(/\d{4}-\d{2}-\d{2}/);
 
-    if (directMatch) return directMatch[0];
+    if (directMatch) {
+        const parsedDirect = moment(
+            directMatch[0],
+            "YYYY-MM-DD",
+            true
+        );
+
+        return parsedDirect.isValid()
+            ? parsedDirect.format("YYYY-MM-DD")
+            : null;
+    }
 
     const parsed = moment(value);
     return parsed.isValid() ? parsed.format("YYYY-MM-DD") : null;
@@ -206,6 +261,42 @@ function formatNumber(value, digits = 1) {
         : Number(value).toFixed(digits);
 }
 
+/**
+ * 只把嵌入别名/替代文字中的独立“题目”字段视为题目标记。
+ * 支持 |题目、|宽度|题目、|题目|宽度；不会因文件名含“题目”而误判。
+ */
+function embedHasQuestionMarker(embed) {
+    const marker = QUESTION_MARKER;
+    if (!marker) return false;
+
+    const hasMarkerToken = value => String(value ?? "")
+        .split("|")
+        .some(token => token.trim() === marker);
+
+    const original = String(embed?.original ?? "").trim();
+    if (!original) return hasMarkerToken(embed?.displayText);
+
+    /* 标准 Markdown 图片：![题目](image.png) */
+    const markdownMatch = original.match(/^!\[([^\]]*)\]\s*\(/);
+    if (markdownMatch) return hasMarkerToken(markdownMatch[1]);
+
+    /* Wiki 嵌入；CachedMetadata.original 可能含或不含 ![[...]] 外壳。 */
+    const wikiMatch = original.match(/^!?\[\[([\s\S]*)\]\]$/);
+    const inner = wikiMatch ? wikiMatch[1] : original;
+    const parts = inner.split("|");
+
+    return parts.length > 1 &&
+        parts.slice(1).some(token => token.trim() === marker);
+}
+
+function isImageFile(file) {
+    return Boolean(
+        file &&
+        typeof file.extension === "string" &&
+        IMAGE_EXTENSIONS.has(file.extension.toLowerCase())
+    );
+}
+
 /** 页面是否包含带“题目”标记的嵌入图片（与另外两个脚本口径一致） */
 function hasQuestionMarker(page) {
     const sourceFile = app.vault.getAbstractFileByPath(page.file.path);
@@ -218,13 +309,14 @@ function hasQuestionMarker(page) {
     const embeds = cache?.embeds ?? [];
 
     return embeds.some(embed => {
-        const markerText = [
-            embed.original ?? "",
-            embed.displayText ?? "",
-            embed.link ?? ""
-        ].join(" ");
+        if (!embedHasQuestionMarker(embed)) return false;
 
-        return markerText.includes(CONFIG.questionMarker);
+        const targetFile = app.metadataCache.getFirstLinkpathDest(
+            embed.link,
+            sourceFile.path
+        );
+
+        return isImageFile(targetFile);
     });
 }
 
@@ -232,7 +324,12 @@ function hasQuestionMarker(page) {
  * 2. 扫描与统计
  * ================================================================ */
 
-function computeStats(subject, pages) {
+function computeStats(
+    subject,
+    pages,
+    today = localDate(),
+    pageFactsCache = null
+) {
     const total = pages.length;
     let ratedCount = 0;
     let levelSum = 0;
@@ -242,14 +339,35 @@ function computeStats(subject, pages) {
     let dueCount = 0;
     let overdueCount = 0;
     let overdueDaysSum = 0;
-    const today = localDate();
 
     for (const page of pages) {
-        const level = parseLevel(page.level);
-        const peakLevel = parseLevel(page.peak_level) ?? level;
-        const regressed =
-            isTrue(page.regressed) ||
-            (level !== null && peakLevel !== null && level < peakLevel);
+        let facts = pageFactsCache?.get(page);
+
+        if (!facts) {
+            const level = parseLevel(page.level);
+            const peakLevel = parseLevel(page.peak_level) ?? level;
+            const regressed =
+                isTrue(page.regressed) ||
+                (level !== null && peakLevel !== null && level < peakLevel);
+            const nextReview = normalizeIsoDate(page.next_review);
+            const isDue = Boolean(nextReview && nextReview <= today);
+            const isOverdue = Boolean(nextReview && nextReview < today);
+
+            facts = {
+                level,
+                peakLevel,
+                regressed,
+                isDue,
+                isOverdue,
+                overdueDays: isOverdue
+                    ? diffDays(nextReview, today)
+                    : 0
+            };
+
+            pageFactsCache?.set(page, facts);
+        }
+
+        const { level, peakLevel, regressed } = facts;
 
         if (level !== null) {
             ratedCount++;
@@ -263,14 +381,12 @@ function computeStats(subject, pages) {
 
         if (regressed) regressedCount++;
 
-        const nextReview = normalizeIsoDate(page.next_review);
-
-        if (nextReview && nextReview <= today) {
+        if (facts.isDue) {
             dueCount++;
 
-            if (nextReview < today) {
+            if (facts.isOverdue) {
                 overdueCount++;
-                overdueDaysSum += diffDays(nextReview, today);
+                overdueDaysSum += facts.overdueDays;
             }
         }
     }
@@ -316,30 +432,49 @@ function scanAll(scope) {
         return { error: new Error("Dataview 无法读取全库页面") };
     }
 
-    const subjectStats = CONFIG.subjects.map(subject => {
-        const matched = [];
-        const seen = new Set();
+    const matchedBySubject = SUBJECT_MATCHERS.map(() => []);
+    const seenBySubject = SUBJECT_MATCHERS.map(() => new Set());
 
-        for (const page of pages) {
-            const pagePath = normalizeVaultPath(page?.file?.path);
-            if (!pagePath || seen.has(pagePath)) continue;
+    /* 全库只遍历一次：每页的标签与题目标记也只解析一次。 */
+    for (const page of pages) {
+        const pagePath = normalizeVaultPath(page?.file?.path);
+        if (!pagePath) continue;
 
-            const pageTags = getPageTags(page);
-            const hitSubject = subject.tagRoots.some(requiredTag =>
-                pageTags.some(candidateTag =>
-                    isSameTagOrDescendant(candidateTag, requiredTag)
-                )
+        const pageTagKeys = getPageTagKeys(page);
+        const matchedIndexes = [];
+
+        for (let index = 0; index < SUBJECT_MATCHERS.length; index++) {
+            if (seenBySubject[index].has(pagePath)) continue;
+
+            const hitSubject = SUBJECT_MATCHERS[index].tagRootKeys.some(
+                requiredKey => pageTagKeys.some(candidateKey => (
+                    candidateKey === requiredKey ||
+                    candidateKey.startsWith(`${requiredKey}/`)
+                ))
             );
-            if (!hitSubject) continue;
 
-            if (scope === "question" && !hasQuestionMarker(page)) continue;
-
-            seen.add(pagePath);
-            matched.push(page);
+            if (hitSubject) matchedIndexes.push(index);
         }
 
-        return computeStats(subject, matched);
-    });
+        if (matchedIndexes.length === 0) continue;
+        if (scope === "question" && !hasQuestionMarker(page)) continue;
+
+        for (const index of matchedIndexes) {
+            seenBySubject[index].add(pagePath);
+            matchedBySubject[index].push(page);
+        }
+    }
+
+    const today = localDate();
+    const pageFactsCache = new Map();
+    const subjectStats = SUBJECT_MATCHERS.map((matcher, index) => (
+        computeStats(
+            matcher.subject,
+            matchedBySubject[index],
+            today,
+            pageFactsCache
+        )
+    ));
 
     /* 汇总口径：跨科目去重后的全部页面（同一页含多个科目标签只计一次） */
     const union = [];
@@ -355,7 +490,9 @@ function scanAll(scope) {
 
     const overall = computeStats(
         { id: "ALL", label: "全库", color: "#888888" },
-        union
+        union,
+        today,
+        pageFactsCache
     );
 
     return { subjectStats, overall };

@@ -13,9 +13,9 @@
  *   paper_type: math1        # math1 | cs408
  *   target: 135              # 可选，缺省用试卷类型默认目标
  *   scores:
- *     AM: 110
+ *     AM: 75
  *     LA: 30
- *     P&S: 40
+ *     P&S: 30
  *   note: "选择题崩了"        # 可选
  *
  * 使用：在笔记中插入 DataviewJS 代码块
@@ -77,6 +77,14 @@ const ALL_SUBJECTS = [
     { id: "CN",  label: "计网",   color: "#b07aa1", maxScore: 25 }
 ];
 
+/* 热路径查表：避免扫描每一条模考记录时重复线性查找配置。 */
+const PAPER_TYPE_BY_ID = new Map(
+    CONFIG.paperTypes.map(paperType => [paperType.id, paperType])
+);
+const SUBJECT_INDEX_BY_ID = new Map(
+    ALL_SUBJECTS.map((subject, index) => [subject.id, index])
+);
+
 /* ================================================================
  * 1. 通用函数
  * ================================================================ */
@@ -101,7 +109,8 @@ function normalizeVaultPath(path) {
 }
 
 function isTrue(value) {
-    return value === true || String(value).toLowerCase() === "true";
+    return value === true ||
+        String(value).trim().toLowerCase() === "true";
 }
 
 function pad2(value) {
@@ -120,41 +129,58 @@ function localDate() {
     ].join("");
 }
 
+function isValidIsoDate(value) {
+    const match = String(value ?? "").match(
+        /^(\d{4})-(\d{2})-(\d{2})$/
+    );
+
+    if (!match) return false;
+
+    const year = Number(match[1]);
+    const month = Number(match[2]);
+    const day = Number(match[3]);
+    const leapYear = year % 4 === 0 && (year % 100 !== 0 || year % 400 === 0);
+    const daysInMonth = [
+        31, leapYear ? 29 : 28, 31, 30, 31, 30,
+        31, 31, 30, 31, 30, 31
+    ];
+
+    return month >= 1 && month <= 12 &&
+        day >= 1 && day <= daysInMonth[month - 1];
+}
+
 function normalizeIsoDate(value) {
     if (value === undefined || value === null || value === "") {
         return null;
     }
 
     if (value instanceof Date) {
-        return [
+        if (!Number.isFinite(value.getTime())) return null;
+
+        const iso = [
             value.getFullYear(),
             "-",
             pad2(value.getMonth() + 1),
             "-",
             pad2(value.getDate())
         ].join("");
+
+        return isValidIsoDate(iso) ? iso : null;
     }
 
     if (value && typeof value.toISODate === "function") {
-        return value.toISODate();
+        const iso = value.toISODate();
+        return isValidIsoDate(iso) ? iso : null;
     }
 
     const text = String(value);
     const directMatch = text.match(/\d{4}-\d{2}-\d{2}/);
 
-    if (directMatch) return directMatch[0];
+    if (directMatch && isValidIsoDate(directMatch[0])) {
+        return directMatch[0];
+    }
 
     return null;
-}
-
-function isoToTime(iso) {
-    const match = String(iso ?? "").match(/^(\d{4})-(\d{2})-(\d{2})$/);
-    if (!match) return NaN;
-    return Date.UTC(
-        Number(match[1]),
-        Number(match[2]) - 1,
-        Number(match[3])
-    );
 }
 
 function formatDateShort(iso) {
@@ -178,7 +204,21 @@ function formatNumber(value, digits = 1) {
 }
 
 function getPaperType(paperTypeId) {
-    return CONFIG.paperTypes.find(type => type.id === paperTypeId) ?? null;
+    const normalizedId = String(paperTypeId ?? "").trim();
+    return PAPER_TYPE_BY_ID.get(normalizedId) ?? null;
+}
+
+function parseFiniteNumber(value) {
+    if (typeof value === "number") {
+        return Number.isFinite(value) ? value : null;
+    }
+
+    if (typeof value !== "string" || value.trim() === "") {
+        return null;
+    }
+
+    const number = Number(value);
+    return Number.isFinite(number) ? number : null;
 }
 
 function parseScores(raw) {
@@ -189,9 +229,9 @@ function parseScores(raw) {
     }
 
     for (const [key, value] of Object.entries(raw)) {
-        const num = Number(value);
+        const num = parseFiniteNumber(value);
 
-        if (Number.isFinite(num)) {
+        if (num !== null) {
             result[key] = num;
         }
     }
@@ -204,6 +244,7 @@ function parseScores(raw) {
 function buildExam(page) {
     const paperType = getPaperType(page.paper_type);
     const scores = parseScores(page.scores);
+    const validationErrors = [];
 
     /* 日期：优先 exam_date，其次文件名中的日期 */
     let date = normalizeIsoDate(page.exam_date);
@@ -212,30 +253,54 @@ function buildExam(page) {
         const nameMatch = String(page.file.name ?? "").match(
             /(\d{4}-\d{2}-\d{2})/
         );
-        date = nameMatch ? nameMatch[1] : null;
+        date = nameMatch ? normalizeIsoDate(nameMatch[1]) : null;
     }
 
-    const subjects = paperType
-        ? paperType.subjects
-        : null;
+    if (!date) {
+        validationErrors.push("缺少有效考试日期");
+    }
 
-    /* 总分：按该试卷类型科目求和；未知类型则求和全部科目 */
+    if (!paperType) {
+        validationErrors.push("试卷类型无效");
+    }
+
+    /* 只统计已知试卷类型中完整、合法的各科分数。 */
     let total = 0;
     let scoreCount = 0;
 
-    for (const [subjectId, score] of Object.entries(scores)) {
-        if (!subjects || subjects.some(subject => subject.id === subjectId)) {
-            total += score;
-            scoreCount++;
+    for (const subject of paperType?.subjects ?? []) {
+        const score = scores[subject.id];
+
+        if (!Number.isFinite(score)) {
+            validationErrors.push(`${subject.label}缺少有效分数`);
+            continue;
         }
+
+        if (score < 0 || score > subject.maxScore) {
+            validationErrors.push(
+                `${subject.label}分数应在 0～${subject.maxScore} 之间`
+            );
+            continue;
+        }
+
+        total += score;
+        scoreCount++;
     }
 
     const maxScore = paperType?.maxScore ?? 150;
     const defaultTarget = paperType?.defaultTarget ?? 150;
-    const parsedTarget = Number(page.target);
-    const target = Number.isFinite(parsedTarget) && parsedTarget > 0
+    const targetWasProvided = page.target !== undefined &&
+        page.target !== null && String(page.target).trim() !== "";
+    const parsedTarget = parseFiniteNumber(page.target);
+    const targetIsValid = parsedTarget !== null &&
+        parsedTarget > 0 && parsedTarget <= maxScore;
+    const target = targetIsValid
         ? parsedTarget
         : defaultTarget;
+
+    if (targetWasProvided && !targetIsValid) {
+        validationErrors.push(`目标分应在 1～${maxScore} 之间`);
+    }
 
     return {
         page,
@@ -248,7 +313,8 @@ function buildExam(page) {
         target,
         rate: maxScore > 0 ? total / maxScore : 0,
         met: total >= target,
-        note: page.note ? String(page.note) : ""
+        note: page.note ? String(page.note) : "",
+        validationErrors
     };
 }
 
@@ -262,7 +328,8 @@ function scanExams() {
         return { error: new Error("Dataview 无法读取全库页面") };
     }
 
-    const exams = [];
+    const validExams = [];
+    const invalidExams = [];
 
     for (const page of pages) {
         if (!isTrue(page.mock_exam)) continue;
@@ -270,18 +337,35 @@ function scanExams() {
         const pagePath = normalizeVaultPath(page?.file?.path);
         if (!pagePath) continue;
 
-        exams.push(buildExam(page));
+        const exam = buildExam(page);
+
+        if (exam.validationErrors.length > 0) {
+            invalidExams.push(exam);
+        } else {
+            validExams.push(exam);
+        }
     }
 
-    const invalidCount = exams.filter(
-        exam => !exam.date || exam.scoreCount === 0
-    ).length;
+    validExams.sort((a, b) => (
+        a.date.localeCompare(b.date) ||
+        String(a.page.file.path).localeCompare(String(b.page.file.path))
+    ));
 
-    const validExams = exams
-        .filter(exam => exam.date && exam.scoreCount > 0)
-        .sort((a, b) => a.date.localeCompare(b.date));
+    if (invalidExams.length > 0) {
+        console.warn(
+            "模考追踪忽略了无效记录：",
+            invalidExams.map(exam => ({
+                path: exam.page.file.path,
+                errors: exam.validationErrors
+            }))
+        );
+    }
 
-    return { exams: validExams, invalidCount };
+    return {
+        exams: validExams,
+        invalidCount: invalidExams.length,
+        invalidExams
+    };
 }
 
 function computeOverall(exams) {
@@ -300,13 +384,17 @@ function computeOverall(exams) {
         };
     }
 
-    const totalSum = exams.reduce((sum, exam) => sum + exam.total, 0);
-    const meetCount = exams.filter(exam => exam.met).length;
+    let totalSum = 0;
+    let rateSum = 0;
+    let meetCount = 0;
     const latest = exams[exams.length - 1];
     let best = exams[0];
     let worst = exams[0];
 
     for (const exam of exams) {
+        totalSum += exam.total;
+        rateSum += exam.rate;
+        if (exam.met) meetCount++;
         if (exam.total > best.total) best = exam;
         if (exam.total < worst.total) worst = exam;
     }
@@ -314,7 +402,7 @@ function computeOverall(exams) {
     return {
         count,
         avgTotal: totalSum / count,
-        avgRate: exams.reduce((sum, exam) => sum + exam.rate, 0) / count,
+        avgRate: rateSum / count,
         meetCount,
         meetRate: meetCount / count,
         latest,
@@ -324,55 +412,67 @@ function computeOverall(exams) {
 }
 
 function computeSubjectStats(exams) {
-    return ALL_SUBJECTS.map(subjectDef => {
-        const samples = [];
-        let coveredCount = 0;
+    const accumulators = ALL_SUBJECTS.map(() => ({
+        coveredCount: 0,
+        sampleCount: 0,
+        scoreSum: 0,
+        minScore: null,
+        maxScore: null,
+        firstScore: null,
+        lastScore: null
+    }));
 
-        for (const exam of exams) {
-            if (!exam.paperType) continue;
+    /* 一次遍历同时累计七科，避免每科都重新扫描全部模考。 */
+    for (const exam of exams) {
+        for (const subject of exam.paperType?.subjects ?? []) {
+            const subjectIndex = SUBJECT_INDEX_BY_ID.get(subject.id);
+            if (subjectIndex === undefined) continue;
 
-            const inPaper = exam.paperType.subjects.some(
-                subject => subject.id === subjectDef.id
-            );
-            if (!inPaper) continue;
+            const accumulator = accumulators[subjectIndex];
+            accumulator.coveredCount++;
 
-            coveredCount++;
+            const score = exam.scores[subject.id];
+            if (!Number.isFinite(score)) continue;
 
-            const score = exam.scores[subjectDef.id];
-
-            if (Number.isFinite(score)) {
-                samples.push({ score, date: exam.date });
+            accumulator.sampleCount++;
+            accumulator.scoreSum += score;
+            accumulator.minScore = accumulator.minScore === null
+                ? score
+                : Math.min(accumulator.minScore, score);
+            accumulator.maxScore = accumulator.maxScore === null
+                ? score
+                : Math.max(accumulator.maxScore, score);
+            if (accumulator.firstScore === null) {
+                accumulator.firstScore = score;
             }
+            accumulator.lastScore = score;
         }
+    }
 
-        const scores = samples.map(sample => sample.score);
-        const avgScore = scores.length > 0
-            ? scores.reduce((sum, score) => sum + score, 0) / scores.length
+    return ALL_SUBJECTS.map((subjectDef, index) => {
+        const accumulator = accumulators[index];
+        const avgScore = accumulator.sampleCount > 0
+            ? accumulator.scoreSum / accumulator.sampleCount
             : null;
         const avgRate = avgScore !== null && subjectDef.maxScore > 0
             ? avgScore / subjectDef.maxScore
             : 0;
-        const minScore = scores.length > 0 ? Math.min(...scores) : null;
-        const maxScore = scores.length > 0 ? Math.max(...scores) : null;
-        const firstScore = samples.length > 0 ? samples[0].score : null;
-        const lastScore = samples.length > 0
-            ? samples[samples.length - 1].score
-            : null;
 
         return {
             subject: subjectDef,
-            coveredCount,
-            sampleCount: scores.length,
+            coveredCount: accumulator.coveredCount,
+            sampleCount: accumulator.sampleCount,
             avgScore,
             avgRate,
-            minScore,
-            maxScore,
-            firstScore,
-            lastScore,
-            trend: firstScore !== null && lastScore !== null
-                ? lastScore - firstScore
+            minScore: accumulator.minScore,
+            maxScore: accumulator.maxScore,
+            firstScore: accumulator.firstScore,
+            lastScore: accumulator.lastScore,
+            trend: accumulator.firstScore !== null &&
+                accumulator.lastScore !== null
+                ? accumulator.lastScore - accumulator.firstScore
                 : null,
-            weak: avgRate < CONFIG.weakRateThreshold
+            weak: avgScore !== null && avgRate < CONFIG.weakRateThreshold
         };
     });
 }/* ================================================================
@@ -411,23 +511,18 @@ function createTrendSvg(exams) {
         "aria-label": "模考总分趋势折线图"
     });
 
-    const xFor = iso => {
+    const xFor = index => {
         if (exams.length === 1) {
             /* 单场模考时把点画在图表中央 */
             return margin.left + innerWidth / 2;
         }
 
-        const time = isoToTime(iso);
-        return margin.left + (time - xMin) / (xRange || 1) * innerWidth;
+        /* 按场次均匀排布，避免同一天的多场模考完全重叠。 */
+        return margin.left + index / (exams.length - 1) * innerWidth;
     };
     const yFor = score => (
         margin.top + innerHeight - clamp01(score / maxY) * innerHeight
     );
-
-    const times = exams.map(exam => isoToTime(exam.date));
-    const xMin = Math.min(...times);
-    const xMax = Math.max(...times);
-    const xRange = xMax - xMin;
 
     /* 网格线与 Y 轴刻度 */
     for (let value = 0; value <= maxY; value += 25) {
@@ -452,11 +547,11 @@ function createTrendSvg(exams) {
     }
 
     /* X 轴日期刻度（点过多时每隔一个显示） */
-    const step = exams.length > 12 ? 2 : 1;
+    const step = Math.max(1, Math.ceil(exams.length / 10));
 
     for (let index = 0; index < exams.length; index += step) {
         const exam = exams[index];
-        const x = xFor(exam.date);
+        const x = xFor(index);
 
         const labelEl = createSvgEl("text", {
             x: x.toFixed(2),
@@ -470,7 +565,7 @@ function createTrendSvg(exams) {
 
     /* 折线 */
     const linePoints = exams.map((exam, index) => {
-        const x = xFor(exam.date);
+        const x = xFor(index);
         const y = yFor(exam.total);
         return { x, y, exam };
     });
@@ -546,6 +641,10 @@ function createRateBars(subjectStats) {
         fillEl.style.width = `${Math.round(clamp01(stat.avgRate) * 100)}%`;
         fillEl.style.background = stat.subject.color;
 
+        if (stat.sampleCount > 0) {
+            fillEl.classList.add("has-data");
+        }
+
         if (stat.weak) {
             fillEl.classList.add("is-weak");
         }
@@ -577,6 +676,7 @@ function createRateBars(subjectStats) {
 let formVisible = false;
 let formTypeId = CONFIG.paperTypes[0].id;
 let scoreInputs = {};
+let submitInProgress = false;
 
 function buildScoreInputs(containerEl) {
     containerEl.replaceChildren();
@@ -613,6 +713,9 @@ function createFormEl() {
     formEl.className = "me-form";
     formEl.hidden = !formVisible;
 
+    /* 收起时只保留隐藏容器，展开时再创建输入控件与监听器。 */
+    if (!formVisible) return formEl;
+
     /* 日期 */
     const dateField = viewDocument.createElement("label");
     dateField.className = "me-form-field";
@@ -622,7 +725,7 @@ function createFormEl() {
     dateLabel.textContent = "考试日期";
 
     const dateInput = viewDocument.createElement("input");
-    dateInput.type = "text";
+    dateInput.type = "date";
     dateInput.placeholder = "YYYY-MM-DD";
     dateInput.value = localDate();
     dateInput.className = "me-form-input me-form-date";
@@ -718,12 +821,29 @@ function createFormEl() {
     );
 
     submitButton.addEventListener("click", async () => {
-        await submitExam({
-            date: dateInput.value.trim(),
-            paperTypeId: typeSelect.value,
-            targetText: targetInput.value.trim(),
-            note: noteInput.value.trim()
-        });
+        if (submitInProgress) return;
+
+        submitInProgress = true;
+        submitButton.disabled = true;
+        cancelButton.disabled = true;
+        submitButton.textContent = "保存中…";
+
+        try {
+            await submitExam({
+                date: dateInput.value.trim(),
+                paperTypeId: typeSelect.value,
+                targetText: targetInput.value.trim(),
+                note: noteInput.value.trim()
+            });
+        } finally {
+            submitInProgress = false;
+
+            if (submitButton.isConnected) {
+                submitButton.disabled = false;
+                cancelButton.disabled = false;
+                submitButton.textContent = "💾 保存记录";
+            }
+        }
     });
 
     cancelButton.addEventListener("click", () => {
@@ -737,12 +857,66 @@ function createFormEl() {
 function yamlEscape(value) {
     return String(value ?? "")
         .replace(/\\/g, "\\\\")
-        .replace(/"/g, "\\\"");
+        .replace(/"/g, "\\\"")
+        .replace(/\r/g, "\\r")
+        .replace(/\n/g, "\\n")
+        .replace(/\t/g, "\\t");
+}
+
+async function ensureParentFolders(filePath) {
+    const folderParts = normalizeVaultPath(filePath)
+        .split("/")
+        .slice(0, -1);
+    let currentPath = "";
+
+    for (const part of folderParts) {
+        currentPath = currentPath ? `${currentPath}/${part}` : part;
+        let existing = app.vault.getAbstractFileByPath(currentPath);
+
+        if (!existing) {
+            try {
+                await app.vault.createFolder(currentPath);
+            } catch (error) {
+                /* 另一个视图可能刚好创建了同一目录，创建失败后复查。 */
+                existing = app.vault.getAbstractFileByPath(currentPath);
+
+                if (!existing) throw error;
+            }
+
+            existing = app.vault.getAbstractFileByPath(currentPath);
+        }
+
+        if (!existing || !Array.isArray(existing.children)) {
+            throw new Error(`${currentPath} 已被同名文件占用`);
+        }
+    }
+}
+
+async function createUniqueExamFile(folder, baseName, content) {
+    for (let suffix = 1; suffix < 10000; suffix++) {
+        const fileName = suffix === 1
+            ? `${baseName}.md`
+            : `${baseName}-${suffix}.md`;
+        const targetPath = folder ? `${folder}/${fileName}` : fileName;
+
+        if (app.vault.getAbstractFileByPath(targetPath)) continue;
+
+        try {
+            await app.vault.create(targetPath, content);
+            return targetPath;
+        } catch (error) {
+            /* 多个视图同时提交时，若路径刚被占用则继续尝试后缀。 */
+            if (app.vault.getAbstractFileByPath(targetPath)) continue;
+            throw error;
+        }
+    }
+
+    throw new Error("同日期同类型的记录过多，无法生成唯一文件名");
 }
 
 async function submitExam({ date, paperTypeId, targetText, note }) {
-    if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) {
-        new Notice("❌ 请填写 YYYY-MM-DD 格式的考试日期。", 5000);
+    if (!isValidIsoDate(date)) {
+        new Notice("❌ 请填写真实有效的考试日期（YYYY-MM-DD）。", 5000);
         return;
     }
 
@@ -754,34 +928,35 @@ async function submitExam({ date, paperTypeId, targetText, note }) {
     }
 
     const scores = {};
-    let allFilled = true;
 
     for (const subject of paperType.subjects) {
         const inputEl = scoreInputs[subject.id];
         const rawValue = String(inputEl?.value ?? "").trim();
+        const value = parseFiniteNumber(rawValue);
 
-        if (rawValue === "") {
-            allFilled = false;
-            break;
+        if (value === null) {
+            new Notice(`❌ 请填写${subject.label}的有效得分。`, 5000);
+            return;
         }
 
-        const value = Number(rawValue);
-
-        if (!Number.isFinite(value) || value < 0) {
-            allFilled = false;
-            break;
+        if (value < 0 || value > subject.maxScore) {
+            new Notice(
+                `❌ ${subject.label}得分应在 0～${subject.maxScore} 之间。`,
+                5000
+            );
+            return;
         }
 
         scores[subject.id] = value;
     }
 
-    if (!allFilled) {
-        new Notice("❌ 请填写所有科目的得分（非负数字）。", 5000);
+    const parsedTarget = parseFiniteNumber(targetText);
+    const hasTarget = targetText !== "";
+
+    if (hasTarget && parsedTarget === null) {
+        new Notice("❌ 目标分必须是有效数字。", 5000);
         return;
     }
-
-    const parsedTarget = Number(targetText);
-    const hasTarget = targetText !== "" && Number.isFinite(parsedTarget);
 
     if (hasTarget && (parsedTarget <= 0 || parsedTarget > paperType.maxScore)) {
         new Notice(
@@ -793,18 +968,6 @@ async function submitExam({ date, paperTypeId, targetText, note }) {
 
     const folder = normalizeVaultPath(CONFIG.examFolder);
     const baseName = `${date}-${paperType.label}模考`;
-    let targetPath = folder
-        ? `${folder}/${baseName}.md`
-        : `${baseName}.md`;
-
-    let suffix = 2;
-
-    while (app.vault.getAbstractFileByPath(targetPath)) {
-        targetPath = folder
-            ? `${folder}/${baseName}-${suffix}.md`
-            : `${baseName}-${suffix}.md`;
-        suffix++;
-    }
 
     const lines = [
         "---",
@@ -830,11 +993,17 @@ async function submitExam({ date, paperTypeId, targetText, note }) {
     lines.push("---", "");
 
     const content = lines.join("\n") +
-        `# ${date} ${paperType.label}模考` +
+        `\n# ${date} ${paperType.label}模考` +
         "\n\n> 由「模考成绩追踪」脚本创建，分数请直接在 Frontmatter 中修改。\n";
 
+    let targetPath;
+
     try {
-        await app.vault.create(targetPath, content);
+        const provisionalPath = folder
+            ? `${folder}/${baseName}.md`
+            : `${baseName}.md`;
+        await ensureParentFolders(provisionalPath);
+        targetPath = await createUniqueExamFile(folder, baseName, content);
     } catch (error) {
         console.error("模考记录创建失败：", error);
         new Notice(`❌ 记录创建失败：${error?.message ?? "未知错误"}`, 6000);
@@ -849,8 +1018,13 @@ async function submitExam({ date, paperTypeId, targetText, note }) {
 
     formVisible = false;
 
+    /* 立即收起表单；索引刷新前仍展示原统计数据。 */
+    render();
+
     /* Dataview 索引可能需要一点时间，稍后自动刷新视图 */
-    setTimeout(() => render(), 1200);
+    setTimeout(() => {
+        if (dv.container.isConnected !== false) render();
+    }, 1200);
 }
 
 /* ================================================================
@@ -867,6 +1041,24 @@ function createStatusChip(text, status) {
     chipEl.dataset.status = status;
     chipEl.textContent = text;
     return chipEl;
+}
+
+function createInvalidWarning(scanResult) {
+    if (!scanResult.invalidCount) return null;
+
+    const warningEl = viewDocument.createElement("p");
+    warningEl.className = "me-warning";
+    warningEl.textContent =
+        `⚠️ 有 ${scanResult.invalidCount} 条记录的数据不完整或超出范围，` +
+        "已从统计中排除；鼠标悬停可查看详情。";
+    warningEl.title = scanResult.invalidExams
+        .slice(0, 20)
+        .map(exam => (
+            `${exam.page.file.path}：${exam.validationErrors.join("；")}`
+        ))
+        .join("\n");
+
+    return warningEl;
 }
 
 function createStatsTable(exams) {
@@ -974,7 +1166,6 @@ function render() {
 
     const exams = scanResult.exams;
     const overall = computeOverall(exams);
-    const subjectStats = computeSubjectStats(exams);
 
     /* 头部 */
     const headerEl = viewDocument.createElement("div");
@@ -1061,11 +1252,16 @@ function render() {
     if (overall.count === 0) {
         const emptyEl = viewDocument.createElement("div");
         emptyEl.className = "me-empty";
-        emptyEl.textContent =
-            "还没有模考记录。点击“➕ 新建模考记录”录入第一场模考；" +
-            "或在 _Mock_Exams 目录下手动创建带 mock_exam 属性的笔记。";
+        emptyEl.textContent = scanResult.invalidCount > 0
+            ? "目前没有可统计的有效模考记录。请修正下方提示中的记录，" +
+                "或点击“➕ 新建模考记录”重新录入。"
+            : "还没有模考记录。点击“➕ 新建模考记录”录入第一场模考；" +
+                "或在 _Mock_Exams 目录下手动创建带 mock_exam 属性的笔记。";
 
         rootEl.appendChild(emptyEl);
+
+        const warningEl = createInvalidWarning(scanResult);
+        if (warningEl) rootEl.appendChild(warningEl);
         return;
     }
 
@@ -1082,6 +1278,7 @@ function render() {
     rootEl.appendChild(trendCardEl);
 
     /* 各科得分率 */
+    const subjectStats = computeSubjectStats(exams);
     const rateCardEl = viewDocument.createElement("div");
     rateCardEl.className = "me-card me-rate-card";
 
@@ -1106,13 +1303,8 @@ function render() {
     tableWrapEl.appendChild(createStatsTable(exams));
     rootEl.appendChild(tableWrapEl);
 
-    if (scanResult.invalidCount > 0) {
-        const warningEl = viewDocument.createElement("p");
-        warningEl.className = "me-warning";
-        warningEl.textContent =
-            `⚠️ 有 ${scanResult.invalidCount} 条记录缺少日期或分数，未计入统计。`;
-        rootEl.appendChild(warningEl);
-    }
+    const warningEl = createInvalidWarning(scanResult);
+    if (warningEl) rootEl.appendChild(warningEl);
 }
 
 render();

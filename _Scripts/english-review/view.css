@@ -1,0 +1,8 @@
+.english-review-view {
+  width: 100%;
+  min-width: 0;
+}
+
+.english-review-view table {
+  margin-bottom: 1rem;
+}

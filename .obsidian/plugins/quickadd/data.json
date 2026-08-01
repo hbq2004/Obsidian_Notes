@@ -1,5 +1,26 @@
 {
-  "choices": [],
+  "choices": [
+    {
+      "id": "42b7407d-48f2-4eed-bc74-9a7b61123f10",
+      "name": "英语一｜复习操作",
+      "type": "Macro",
+      "command": true,
+      "runOnStartup": false,
+      "macro": {
+        "id": "3b320164-e4ae-43e9-9d3d-26fa91084e0f",
+        "name": "英语一｜复习操作",
+        "commands": [
+          {
+            "id": "092bdeac-02eb-4e04-a67e-2a8801dd59bb",
+            "name": "english-review-actions.js",
+            "type": "UserScript",
+            "path": "_Scripts/english-quickadd/english-review-actions.js",
+            "settings": {}
+          }
+        ]
+      }
+    }
+  ],
   "inputPrompt": "single-line",
   "persistInputPromptDrafts": true,
   "useSelectionAsCaptureValue": true,

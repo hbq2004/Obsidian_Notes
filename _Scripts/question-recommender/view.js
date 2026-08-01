@@ -78,6 +78,17 @@ const CONFIG = {
     repairExistingTasksOnLoad: false
 };
 
+/* 运行期只读对象：避免全库扫描和排序时重复创建排序规则。 */
+const QUESTION_NAME_COLLATOR = new Intl.Collator(
+    "zh-CN",
+    { numeric: true }
+);
+
+const QUESTION_MARKER = String(CONFIG.questionMarker ?? "").trim();
+const MARKDOWN_EMBED_PATTERN = /^!\[([^\]]*)\]\s*\(/;
+const WIKI_EMBED_PATTERN = /^!?\[\[([\s\S]*)\]\]$/;
+const PRINT_BINARY_READ_CONCURRENCY = 4;
+
 /* ================================================================
  * 1. 六级分类
  * ================================================================ */
@@ -147,11 +158,15 @@ function normalizeTag(tag) {
     return value.startsWith("#") ? value : `#${value}`;
 }
 
-/* 标签比较忽略大小写，并移除末尾多余的斜杠 */
-function tagKey(tag) {
-    return normalizeTag(tag)
+function normalizedTagKey(normalizedTag) {
+    return normalizedTag
         .replace(/\/+$/g, "")
         .toLocaleLowerCase();
+}
+
+/* 标签比较忽略大小写，并移除末尾多余的斜杠 */
+function tagKey(tag) {
+    return normalizedTagKey(normalizeTag(tag));
 }
 
 /**
@@ -178,6 +193,46 @@ function isSameTagOrDescendant(candidate, required) {
 }
 
 /**
+ * 使用预计算后的目标标签键匹配页面。
+ * 与 getPageTags() + every()/some() 的 AND 语义相同，但每个原始标签
+ * 只规范化一次，并在全部目标均命中后立即结束扫描。
+ */
+function pageMatchesAllTagRequirements(page, requirements) {
+    const matched = new Array(requirements.length).fill(false);
+    let matchedCount = 0;
+
+    const inspectTags = rawTags => {
+        for (const rawTag of asArray(rawTags)) {
+            const candidateKey = tagKey(rawTag);
+
+            if (!candidateKey) continue;
+
+            for (let index = 0; index < requirements.length; index++) {
+                if (matched[index]) continue;
+
+                const requirement = requirements[index];
+
+                if (
+                    candidateKey === requirement.key ||
+                    candidateKey.startsWith(requirement.descendantPrefix)
+                ) {
+                    matched[index] = true;
+                    matchedCount++;
+
+                    if (matchedCount === requirements.length) {
+                        return true;
+                    }
+                }
+            }
+        }
+
+        return false;
+    };
+
+    return inspectTags(page.tags) || inspectTags(page.file?.etags);
+}
+
+/**
  * 读取页面的全部真实标签。
  *
  * - page.tags：属性面板 / YAML 中显式填写的 tags
@@ -197,9 +252,12 @@ function getPageTags(page) {
 
     for (const rawTag of rawTags) {
         const normalized = normalizeTag(rawTag);
-        const key = tagKey(normalized);
 
-        if (!normalized || visited.has(key)) continue;
+        if (!normalized) continue;
+
+        const key = normalizedTagKey(normalized);
+
+        if (visited.has(key)) continue;
 
         visited.add(key);
         result.push(normalized);
@@ -209,7 +267,11 @@ function getPageTags(page) {
 }
 
 function parseLevel(value) {
-    if (value === undefined || value === null || value === "") {
+    if (
+        value === undefined ||
+        value === null ||
+        (typeof value === "string" && value.trim() === "")
+    ) {
         return null;
     }
 
@@ -256,7 +318,16 @@ function getReviewIntervalDays(level, regressed = false) {
 }
 
 function isTrue(value) {
-    return value === true || String(value).toLowerCase() === "true";
+    return value === true ||
+        String(value).trim().toLowerCase() === "true";
+}
+
+function parseNonNegativeInteger(value) {
+    const parsed = Number(value);
+
+    return Number.isFinite(parsed) && parsed >= 0
+        ? Math.floor(parsed)
+        : 0;
 }
 
 function pad2(value) {
@@ -319,6 +390,8 @@ function normalizeIsoDate(value) {
     }
 
     if (value instanceof Date) {
+        if (Number.isNaN(value.getTime())) return null;
+
         return [
             value.getFullYear(),
             "-",
@@ -329,13 +402,26 @@ function normalizeIsoDate(value) {
     }
 
     if (value && typeof value.toISODate === "function") {
-        return value.toISODate();
+        const isoDate = value.toISODate();
+        const parsed = moment(isoDate, "YYYY-MM-DD", true);
+
+        return parsed.isValid() ? parsed.format("YYYY-MM-DD") : null;
     }
 
     const text = String(value);
     const directMatch = text.match(/\d{4}-\d{2}-\d{2}/);
 
-    if (directMatch) return directMatch[0];
+    if (directMatch) {
+        const parsedDirect = moment(
+            directMatch[0],
+            "YYYY-MM-DD",
+            true
+        );
+
+        return parsedDirect.isValid()
+            ? parsedDirect.format("YYYY-MM-DD")
+            : null;
+    }
 
     const parsed = moment(value);
     return parsed.isValid() ? parsed.format("YYYY-MM-DD") : null;
@@ -789,6 +875,15 @@ if (currentTags.length === 0) {
     return;
 }
 
+const currentTagRequirements = currentTags.map(tag => {
+    const key = normalizedTagKey(tag);
+
+    return {
+        key,
+        descendantPrefix: `${key}/`
+    };
+});
+
 
 /* ================================================================
  * 5. 查询整个仓库
@@ -804,13 +899,45 @@ try {
     return;
 }
 
-candidatePages = candidatePages.filter(
-    page => page.file.path !== currentFile.file.path
-);
-
 /* ================================================================
  * 6. 获取题目图片
  * ================================================================ */
+
+/**
+ * 只把嵌入别名/替代文字中的独立“题目”字段视为题目标记。
+ * 支持 |题目、|宽度|题目、|题目|宽度；不会因文件名含“题目”而误判。
+ */
+function hasQuestionMarkerToken(value) {
+    const tokens = String(value ?? "").split("|");
+
+    for (const token of tokens) {
+        if (token.trim() === QUESTION_MARKER) return true;
+    }
+
+    return false;
+}
+
+function embedHasQuestionMarker(embed) {
+    if (!QUESTION_MARKER) return false;
+
+    const original = String(embed?.original ?? "").trim();
+    if (!original) return hasQuestionMarkerToken(embed?.displayText);
+
+    const markdownMatch = original.match(MARKDOWN_EMBED_PATTERN);
+    if (markdownMatch) {
+        return hasQuestionMarkerToken(markdownMatch[1]);
+    }
+
+    const wikiMatch = original.match(WIKI_EMBED_PATTERN);
+    const inner = wikiMatch ? wikiMatch[1] : original;
+    const parts = inner.split("|");
+
+    for (let index = 1; index < parts.length; index++) {
+        if (parts[index].trim() === QUESTION_MARKER) return true;
+    }
+
+    return false;
+}
 
 function getQuestionImages(page) {
     const sourceFile = app.vault.getAbstractFileByPath(page.file.path);
@@ -826,13 +953,7 @@ function getQuestionImages(page) {
     const visitedPaths = new Set();
 
     for (const embed of embeds) {
-        const markerText = [
-            embed.original ?? "",
-            embed.displayText ?? "",
-            embed.link ?? ""
-        ].join(" ");
-
-        if (!markerText.includes(CONFIG.questionMarker)) {
+        if (!embedHasQuestionMarker(embed)) {
             continue;
         }
 
@@ -841,7 +962,11 @@ function getQuestionImages(page) {
             sourceFile.path
         );
 
-        if (!targetFile || visitedPaths.has(targetFile.path)) {
+        if (
+            !targetFile ||
+            !getPrintImageMimeType(targetFile) ||
+            visitedPaths.has(targetFile.path)
+        ) {
             continue;
         }
 
@@ -856,59 +981,56 @@ function getQuestionImages(page) {
  * 7. 筛选与构建题目数据
  * ================================================================ */
 
-let items = candidatePages
-    .map(page => {
-        const pageTags = getPageTags(page);
+const items = [];
 
-        /**
-         * 当前文件的每一个标签，都必须在候选页面中找到：
-         * 1. 完全相同的标签；或
-         * 2. 该标签下任意深度的子标签。
-         *
-         * 当前 #27_ep 可以匹配：
-         * #27_ep
-         * #27_ep/大雪深埋
-         * #27_ep/大雪深埋/一阶方程/可分离变量
-         */
-        const matchesAllTags = currentTags.every(
-            requiredTag => pageTags.some(
-                candidateTag => isSameTagOrDescendant(
-                    candidateTag,
-                    requiredTag
-                )
-            )
+for (const page of candidatePages) {
+    if (page.file.path === currentFile.file.path) continue;
+
+    /**
+     * 当前文件的每一个标签，都必须在候选页面中找到：
+     * 1. 完全相同的标签；或
+     * 2. 该标签下任意深度的子标签。
+     *
+     * 当前 #27_ep 可以匹配：
+     * #27_ep
+     * #27_ep/大雪深埋
+     * #27_ep/大雪深埋/一阶方程/可分离变量
+     */
+    if (!pageMatchesAllTagRequirements(
+        page,
+        currentTagRequirements
+    )) {
+        continue;
+    }
+
+    const images = getQuestionImages(page);
+
+    if (images.length === 0) continue;
+
+    const level = parseLevel(page.level);
+    const peakLevel = parseLevel(page.peak_level) ?? level;
+    const hasLegacyRegressionNotice =
+        isLegacyRegressionNotice(page.Notice) ||
+        isLegacyRegressionNotice(page.notice);
+
+    const regressed =
+        isTrue(page.regressed) ||
+        (
+            level !== null &&
+            peakLevel !== null &&
+            level < peakLevel
         );
 
-        return { page, matchesAllTags };
-    })
-    .filter(item => item.matchesAllTags)
-    .map(item => {
-        const page = item.page;
-        const level = parseLevel(page.level);
-        const peakLevel = parseLevel(page.peak_level) ?? level;
-        const hasLegacyRegressionNotice =
-            isLegacyRegressionNotice(page.Notice) ||
-            isLegacyRegressionNotice(page.notice);
-
-        const regressed =
-            isTrue(page.regressed) ||
-            (
-                level !== null &&
-                peakLevel !== null &&
-                level < peakLevel
-            );
-
-        return {
-            page,
-            images: getQuestionImages(page),
-            level,
-            peakLevel,
-            regressed,
-            hasLegacyRegressionNotice,
-            nextReview: normalizeIsoDate(page.next_review)
-        };
-    })
-    .filter(item => item.images.length > 0);
+    items.push({
+        page,
+        images,
+        level,
+        peakLevel,
+        regressed,
+        hasLegacyRegressionNotice,
+        nextReview: normalizeIsoDate(page.next_review)
+    });
+}
 
 /*
  * weak_only 只作为按钮的初始状态。
@@ -938,10 +1060,9 @@ items.sort((a, b) => {
         return levelA - levelB;
     }
 
-    return a.page.file.name.localeCompare(
-        b.page.file.name,
-        "zh-CN",
-        { numeric: true }
+    return QUESTION_NAME_COLLATOR.compare(
+        a.page.file.name,
+        b.page.file.name
     );
 });
 
@@ -1142,10 +1263,7 @@ function createLevelControl(item) {
                     frontmatter.peak_level = peakAfter;
 
                     frontmatter.review_count =
-                        Math.max(
-                            0,
-                            Number(frontmatter.review_count) || 0
-                        ) + 1;
+                        parseNonNegativeInteger(frontmatter.review_count) + 1;
 
                     frontmatter.last_reviewed = reviewTime;
 
@@ -1314,27 +1432,34 @@ async function repairExistingReviewTasks(questionItems) {
  * ================================================================ */
 
 function getCurrentlyPrintableItems() {
-    return displayedItems.filter(
-        item => !regressionOnly || item.regressed
-    );
+    return regressionOnly
+        ? displayedItems.filter(item => item.regressed)
+        : displayedItems;
 }
 
 function getPrintImageMimeType(file) {
     const extension = String(file?.extension ?? "").toLowerCase();
 
-    const mimeTypes = {
-        png: "image/png",
-        jpg: "image/jpeg",
-        jpeg: "image/jpeg",
-        jfif: "image/jpeg",
-        gif: "image/gif",
-        webp: "image/webp",
-        bmp: "image/bmp",
-        svg: "image/svg+xml",
-        avif: "image/avif"
-    };
-
-    return mimeTypes[extension] ?? null;
+    switch (extension) {
+        case "png":
+            return "image/png";
+        case "jpg":
+        case "jpeg":
+        case "jfif":
+            return "image/jpeg";
+        case "gif":
+            return "image/gif";
+        case "webp":
+            return "image/webp";
+        case "bmp":
+            return "image/bmp";
+        case "svg":
+            return "image/svg+xml";
+        case "avif":
+            return "image/avif";
+        default:
+            return null;
+    }
 }
 
 function resolvePrintImageFile(item, imageLink) {
@@ -1542,6 +1667,44 @@ function createPrintStyle(printDocument) {
     return styleEl;
 }
 
+/**
+ * 以有限并发读取题图，避免大量题目打印时逐张等待磁盘 I/O。
+ * 全部读取任务结束后才抛出最靠前题图的错误，确保不会留下仍在运行、
+ * 却已脱离清理流程的异步读取。
+ */
+async function readPrintImageData(descriptors) {
+    let nextIndex = 0;
+    let firstFailure = null;
+
+    const readNext = async () => {
+        while (nextIndex < descriptors.length) {
+            const index = nextIndex++;
+
+            try {
+                descriptors[index].imageData =
+                    await app.vault.readBinary(
+                        descriptors[index].imageFile
+                    );
+            } catch (error) {
+                if (!firstFailure || index < firstFailure.index) {
+                    firstFailure = { index, error };
+                }
+            }
+        }
+    };
+
+    const workerCount = Math.min(
+        PRINT_BINARY_READ_CONCURRENCY,
+        descriptors.length
+    );
+
+    await Promise.all(
+        Array.from({ length: workerCount }, () => readNext())
+    );
+
+    if (firstFailure) throw firstFailure.error;
+}
+
 async function printCurrentQuestions() {
     if (printInProgress) return;
 
@@ -1615,6 +1778,7 @@ async function printCurrentQuestions() {
 
         const imageLoadPromises = [];
         const imageElements = [];
+        const imageDescriptors = [];
         let imageCount = 0;
 
         for (const item of printableItems) {
@@ -1660,13 +1824,6 @@ async function printCurrentQuestions() {
                     );
                 }
 
-                const imageData = await app.vault.readBinary(imageFile);
-                const objectUrl = urlApi.createObjectURL(
-                    new BlobClass([imageData], { type: mimeType })
-                );
-
-                objectUrls.push(objectUrl);
-
                 const imageEl = printDocument.createElement("img");
                 imageEl.className = "question-print-image";
                 imageEl.alt = `${item.page.file.name} · ${imageFile.name}`;
@@ -1676,25 +1833,45 @@ async function printCurrentQuestions() {
                 );
 
                 imagesEl.appendChild(imageEl);
-
-                imageEl.src = objectUrl;
-                imageElements.push(imageEl);
-
-                imageLoadPromises.push(
-                    waitForPrintImage(
-                        imageEl,
-                        Math.max(
-                            1000,
-                            Number(CONFIG.printImageLoadTimeoutMs) || 15000
-                        )
-                    )
-                );
+                imageDescriptors.push({
+                    imageFile,
+                    imageEl,
+                    mimeType,
+                    imageData: null
+                });
                 imageCount++;
             }
         }
 
         if (imageCount === 0) {
             throw new Error("当前筛选结果中没有可打印的题图");
+        }
+
+        await readPrintImageData(imageDescriptors);
+
+        const imageLoadTimeoutMs = Math.max(
+            1000,
+            Number(CONFIG.printImageLoadTimeoutMs) || 15000
+        );
+
+        for (const descriptor of imageDescriptors) {
+            const objectUrl = urlApi.createObjectURL(
+                new BlobClass(
+                    [descriptor.imageData],
+                    { type: descriptor.mimeType }
+                )
+            );
+
+            descriptor.imageData = null;
+            objectUrls.push(objectUrl);
+            imageElements.push(descriptor.imageEl);
+            descriptor.imageEl.src = objectUrl;
+            imageLoadPromises.push(
+                waitForPrintImage(
+                    descriptor.imageEl,
+                    imageLoadTimeoutMs
+                )
+            );
         }
 
         await Promise.all(imageLoadPromises);
@@ -1846,25 +2023,31 @@ if (items.length > CONFIG.maxResults) {
  * 即时切换表格行，不重新查询仓库，也不修改题目或专题属性。
  */
 function refreshRegressionFilterUI() {
-    const totalRegressedCount = items.filter(
-        item => item.regressed
-    ).length;
+    let totalRegressedCount = 0;
 
-    const displayedRegressedCount = displayedItems.filter(
-        item => item.regressed
-    ).length;
+    for (const item of items) {
+        if (item.regressed) totalRegressedCount++;
+    }
 
-    const printableCount = getCurrentlyPrintableItems().length;
+    let displayedRegressedCount = 0;
 
     for (const item of displayedItems) {
-        const row = item.filterMarker?.closest("tr");
+        if (item.regressed) displayedRegressedCount++;
+
+        const row = item.tableRow ??
+            item.filterMarker?.closest("tr");
 
         if (row) {
+            item.tableRow = row;
             row.hidden =
                 regressionOnly &&
                 !item.regressed;
         }
     }
+
+    const printableCount = regressionOnly
+        ? displayedRegressedCount
+        : displayedItems.length;
 
     if (titleEl) {
         titleEl.textContent = regressionOnly

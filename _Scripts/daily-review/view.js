@@ -63,6 +63,14 @@ const CONFIG = {
     ]
 };
 
+/* Chromium/Obsidian can render these attachment types in an <img>. */
+const IMAGE_EXTENSIONS = new Set([
+    "avif", "bmp", "gif", "jfif", "jpeg", "jpg",
+    "png", "svg", "webp"
+]);
+
+const QUESTION_MARKER = String(CONFIG.questionMarker ?? "").trim();
+
 dv.container.classList.add("daily-review-view");
 
 const viewDocument = dv.container.ownerDocument;
@@ -126,6 +134,17 @@ function isSameTagOrDescendant(candidate, required) {
     );
 }
 
+/* 科目根标签在视图加载时只规范化一次，避免扫描每道题时重复处理。 */
+const SUBJECT_MATCHERS = CONFIG.subjects.map((subject, index) => ({
+    subject,
+    index,
+    tagRootKeys: subject.tagRoots.map(tagKey)
+}));
+
+const SUBJECT_INDEX_BY_ID = new Map(
+    SUBJECT_MATCHERS.map(entry => [entry.subject.id, entry.index])
+);
+
 function getPageTags(page) {
     const rawTags = [
         ...asArray(page?.tags),
@@ -147,8 +166,33 @@ function getPageTags(page) {
     return result;
 }
 
+/* 扫描热路径只需要比较键，跳过“规范化文本再规范化为键”的中间数组。 */
+function getPageTagKeys(page) {
+    const result = [];
+    const visited = new Set();
+
+    for (const rawTags of [
+        asArray(page?.tags),
+        asArray(page?.file?.etags)
+    ]) {
+        for (const rawTag of rawTags) {
+            const key = tagKey(rawTag);
+            if (!key || visited.has(key)) continue;
+
+            visited.add(key);
+            result.push(key);
+        }
+    }
+
+    return result;
+}
+
 function parseLevel(value) {
-    if (value === undefined || value === null || value === "") {
+    if (
+        value === undefined ||
+        value === null ||
+        (typeof value === "string" && value.trim() === "")
+    ) {
         return null;
     }
 
@@ -162,7 +206,16 @@ function parseLevel(value) {
 }
 
 function isTrue(value) {
-    return value === true || String(value).toLowerCase() === "true";
+    return value === true ||
+        String(value).trim().toLowerCase() === "true";
+}
+
+function parseNonNegativeInteger(value) {
+    const parsed = Number(value);
+
+    return Number.isFinite(parsed) && parsed >= 0
+        ? Math.floor(parsed)
+        : 0;
 }
 
 function pad2(value) {
@@ -218,6 +271,8 @@ function normalizeIsoDate(value) {
     }
 
     if (value instanceof Date) {
+        if (Number.isNaN(value.getTime())) return null;
+
         return [
             value.getFullYear(),
             "-",
@@ -228,13 +283,26 @@ function normalizeIsoDate(value) {
     }
 
     if (value && typeof value.toISODate === "function") {
-        return value.toISODate();
+        const isoDate = value.toISODate();
+        const parsed = moment(isoDate, "YYYY-MM-DD", true);
+
+        return parsed.isValid() ? parsed.format("YYYY-MM-DD") : null;
     }
 
     const text = String(value);
     const directMatch = text.match(/\d{4}-\d{2}-\d{2}/);
 
-    if (directMatch) return directMatch[0];
+    if (directMatch) {
+        const parsedDirect = moment(
+            directMatch[0],
+            "YYYY-MM-DD",
+            true
+        );
+
+        return parsedDirect.isValid()
+            ? parsedDirect.format("YYYY-MM-DD")
+            : null;
+    }
 
     const parsed = moment(value);
     return parsed.isValid() ? parsed.format("YYYY-MM-DD") : null;
@@ -310,6 +378,42 @@ function removeLegacyRegressionNoticeFromFrontmatter(frontmatter) {
     }
 
     return removed;
+}
+
+/**
+ * 只把嵌入别名/替代文字中的独立“题目”字段视为题目标记。
+ * 支持 |题目、|宽度|题目、|题目|宽度；不会因文件名含“题目”而误判。
+ */
+function embedHasQuestionMarker(embed) {
+    const marker = QUESTION_MARKER;
+    if (!marker) return false;
+
+    const hasMarkerToken = value => String(value ?? "")
+        .split("|")
+        .some(token => token.trim() === marker);
+
+    const original = String(embed?.original ?? "").trim();
+    if (!original) return hasMarkerToken(embed?.displayText);
+
+    /* 标准 Markdown 图片：![题目](image.png) */
+    const markdownMatch = original.match(/^!\[([^\]]*)\]\s*\(/);
+    if (markdownMatch) return hasMarkerToken(markdownMatch[1]);
+
+    /* Wiki 嵌入；CachedMetadata.original 可能含或不含 ![[...]] 外壳。 */
+    const wikiMatch = original.match(/^!?\[\[([\s\S]*)\]\]$/);
+    const inner = wikiMatch ? wikiMatch[1] : original;
+    const parts = inner.split("|");
+
+    return parts.length > 1 &&
+        parts.slice(1).some(token => token.trim() === marker);
+}
+
+function isImageFile(file) {
+    return Boolean(
+        file &&
+        typeof file.extension === "string" &&
+        IMAGE_EXTENSIONS.has(file.extension.toLowerCase())
+    );
 }
 
 /* ================================================================
@@ -662,8 +766,14 @@ async function syncReviewTask({
  * 4. 题目扫描
  * ================================================================ */
 
-function getQuestionImageFiles(page) {
-    const sourceFile = app.vault.getAbstractFileByPath(page.file.path);
+function getQuestionImageFiles(
+    page,
+    knownSourceFile,
+    maxResults = Number.POSITIVE_INFINITY
+) {
+    const sourceFile = knownSourceFile === undefined
+        ? app.vault.getAbstractFileByPath(page.file.path)
+        : knownSourceFile;
 
     if (!sourceFile || sourceFile.extension !== "md") {
         return [];
@@ -675,13 +785,7 @@ function getQuestionImageFiles(page) {
     const visitedPaths = new Set();
 
     for (const embed of embeds) {
-        const markerText = [
-            embed.original ?? "",
-            embed.displayText ?? "",
-            embed.link ?? ""
-        ].join(" ");
-
-        if (!markerText.includes(CONFIG.questionMarker)) {
+        if (!embedHasQuestionMarker(embed)) {
             continue;
         }
 
@@ -690,41 +794,52 @@ function getQuestionImageFiles(page) {
             sourceFile.path
         );
 
-        if (!targetFile || visitedPaths.has(targetFile.path)) {
+        if (
+            !isImageFile(targetFile) ||
+            visitedPaths.has(targetFile.path)
+        ) {
             continue;
         }
 
         visitedPaths.add(targetFile.path);
         result.push(targetFile);
+
+        if (result.length >= maxResults) break;
     }
 
     return result;
 }
 
 function detectSubject(page) {
-    const pageTags = getPageTags(page);
-    const matches = CONFIG.subjects.filter(subject => (
-        subject.tagRoots.some(requiredTag => (
-            pageTags.some(candidateTag => (
-                isSameTagOrDescendant(candidateTag, requiredTag)
+    const pageTagKeys = getPageTagKeys(page);
+
+    for (const matcher of SUBJECT_MATCHERS) {
+        const hitSubject = matcher.tagRootKeys.some(requiredKey => (
+            pageTagKeys.some(candidateKey => (
+                candidateKey === requiredKey ||
+                candidateKey.startsWith(`${requiredKey}/`)
             ))
-        ))
-    ));
+        ));
 
-    if (matches.length === 0) return null;
+        if (hitSubject) return matcher.subject;
+    }
 
-    return matches[0];
+    return null;
 }
 
-function buildItem(page) {
-    const sourceFile = app.vault.getAbstractFileByPath(page.file.path);
+function buildItem(page, context = {}) {
+    const sourceFile = context.sourceFile === undefined
+        ? app.vault.getAbstractFileByPath(page.file.path)
+        : context.sourceFile;
     const level = parseLevel(page.level);
     const peakLevel = parseLevel(page.peak_level) ?? level;
     const regressed =
         isTrue(page.regressed) ||
         (level !== null && peakLevel !== null && level < peakLevel);
-    const nextReview = normalizeIsoDate(page.next_review);
-    const today = localDate();
+    const nextReview = context.nextReview === undefined
+        ? normalizeIsoDate(page.next_review)
+        : context.nextReview;
+    const today = context.today ?? localDate();
     const overdueDays =
         nextReview && nextReview < today
             ? diffDays(nextReview, today)
@@ -733,7 +848,7 @@ function buildItem(page) {
     return {
         page,
         sourceFile,
-        imageFiles: getQuestionImageFiles(page),
+        imageFiles: getQuestionImageFiles(page, sourceFile, 2),
         level,
         peakLevel,
         regressed,
@@ -741,7 +856,7 @@ function buildItem(page) {
         overdueDays,
         isOverdue: overdueDays > 0,
         isDueToday: nextReview === today,
-        reviewCount: Math.max(0, Number(page.review_count) || 0),
+        reviewCount: parseNonNegativeInteger(page.review_count),
         lastReviewed: page.last_reviewed
             ? String(page.last_reviewed)
             : null,
@@ -770,7 +885,12 @@ function scanDueQuestions() {
 
         if (!nextReview || nextReview > today) continue;
 
-        const item = buildItem(page);
+        const sourceFile = app.vault.getAbstractFileByPath(page.file.path);
+        const item = buildItem(page, {
+            sourceFile,
+            nextReview,
+            today
+        });
 
         if (item.imageFiles.length === 0) continue;
 
@@ -792,10 +912,10 @@ function scanDueQuestions() {
         }
 
         const subjectIndexA = a.subject
-            ? CONFIG.subjects.findIndex(s => s.id === a.subject.id)
+            ? (SUBJECT_INDEX_BY_ID.get(a.subject.id) ?? 999)
             : 999;
         const subjectIndexB = b.subject
-            ? CONFIG.subjects.findIndex(s => s.id === b.subject.id)
+            ? (SUBJECT_INDEX_BY_ID.get(b.subject.id) ?? 999)
             : 999;
 
         if (subjectIndexA !== subjectIndexB) {
@@ -821,28 +941,37 @@ dv.container.appendChild(rootEl);
 let filterMode = "all"; // "all" | "overdue" | "regressed"
 let items = [];
 
-function getDisplayedItems() {
-    if (filterMode === "overdue") {
-        return items.filter(item => item.isOverdue);
-    }
-
-    if (filterMode === "regressed") {
-        return items.filter(item => item.regressed);
-    }
-
-    return items;
-}
-
-function getCounts() {
-    return {
+function getRenderState() {
+    const counts = {
         total: items.length,
-        overdue: items.filter(item => item.isOverdue).length,
-        regressed: items.filter(item => item.regressed).length,
-        maxOverdueDays: items.reduce(
-            (max, item) => Math.max(max, item.overdueDays),
-            0
-        )
+        overdue: 0,
+        regressed: 0,
+        maxOverdueDays: 0
     };
+    const displayedItems = [];
+
+    for (const item of items) {
+        if (item.isOverdue) counts.overdue++;
+        if (item.regressed) counts.regressed++;
+        counts.maxOverdueDays = Math.max(
+            counts.maxOverdueDays,
+            item.overdueDays
+        );
+
+        const isDisplayed =
+            filterMode === "all" ||
+            (filterMode === "overdue" && item.isOverdue) ||
+            (filterMode === "regressed" && item.regressed);
+
+        if (
+            isDisplayed &&
+            displayedItems.length < CONFIG.maxResults
+        ) {
+            displayedItems.push(item);
+        }
+    }
+
+    return { counts, displayedItems };
 }
 
 function createSubjectChip(subject) {
@@ -1043,10 +1172,7 @@ function createLevelControl(item) {
                     frontmatter.peak_level = peakAfter;
 
                     frontmatter.review_count =
-                        Math.max(
-                            0,
-                            Number(frontmatter.review_count) || 0
-                        ) + 1;
+                        parseNonNegativeInteger(frontmatter.review_count) + 1;
 
                     frontmatter.last_reviewed = reviewTime;
 
@@ -1105,7 +1231,9 @@ function createLevelControl(item) {
             item.nextReview = updateResult?.newNextReview ?? null;
             item.isOverdue = false;
             item.isDueToday = false;
-            item.reviewCount += 1;
+            if (!updateResult?.cleared) {
+                item.reviewCount += 1;
+            }
 
             try {
                 await syncReviewTask({
@@ -1143,16 +1271,17 @@ function createLevelControl(item) {
             }
 
             /* 已刷完的题目（下次复习在未来）从今天面板移除 */
+            const today = localDate();
             items = items.filter(entry => {
                 if (entry.page.file.path !== item.page.file.path) {
                     return true;
                 }
 
                 return Boolean(entry.nextReview) &&
-                    entry.nextReview <= localDate();
+                    entry.nextReview <= today;
             });
 
-            render({ rescan: false });
+            render();
         } catch (error) {
             console.error("评级写入失败：", error);
             selectEl.value = String(oldUiLevel ?? -1);
@@ -1184,11 +1313,7 @@ function render(options = {}) {
 
         items = scanResult.items;
     }
-    const counts = getCounts();
-    const displayedItems = getDisplayedItems().slice(
-        0,
-        CONFIG.maxResults
-    );
+    const { counts, displayedItems } = getRenderState();
 
     /* 头部 */
     const headerEl = viewDocument.createElement("div");
