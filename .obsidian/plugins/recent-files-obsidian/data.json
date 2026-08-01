@@ -1,12 +1,80 @@
 {
   "recentFiles": [
     {
+      "basename": "01 - 中值定理大观",
+      "path": "01 - 数学/01 - 高数/05 - 中值定理/01 - 中值定理大观.canvas"
+    },
+    {
+      "basename": "Pasted image 20260801113929",
+      "path": "_Attachments/Images/Pasted image 20260801113929.png"
+    },
+    {
+      "basename": "Pasted image 20260730020414",
+      "path": "_Attachments/Images/Pasted image 20260730020414.png"
+    },
+    {
+      "basename": "Pasted image 20260801113342",
+      "path": "_Attachments/Images/Pasted image 20260801113342.png"
+    },
+    {
+      "basename": "Pasted image 20260801113137",
+      "path": "_Attachments/Images/Pasted image 20260801113137.png"
+    },
+    {
+      "basename": "Pasted image 20260801113000",
+      "path": "_Attachments/Images/Pasted image 20260801113000.png"
+    },
+    {
+      "basename": "Pasted image 20260801112642",
+      "path": "_Attachments/Images/Pasted image 20260801112642.png"
+    },
+    {
+      "basename": "Pasted image 20260801112527",
+      "path": "_Attachments/Images/Pasted image 20260801112527.png"
+    },
+    {
       "basename": "链表",
       "path": "02 - 408/01 - 数据结构/大题/链表.md"
     },
     {
-      "basename": "01 - 中值定理大观",
-      "path": "01 - 数学/01 - 高数/05 - 中值定理/01 - 中值定理大观.canvas"
+      "basename": "02 - 微分等式与微分不等式",
+      "path": "01 - 数学/01 - 高数/05 - 中值定理/02 - 微分等式与微分不等式.canvas"
+    },
+    {
+      "basename": "2025,41,calMulMax",
+      "path": "02 - 408/01 - 数据结构/大题/01 - 算法题/2025,41,calMulMax.md"
+    },
+    {
+      "basename": "2026,41,BST,searchX",
+      "path": "02 - 408/01 - 数据结构/大题/01 - 算法题/2026,41,BST,searchX.md"
+    },
+    {
+      "basename": "2026-08-01",
+      "path": "_Daily_Tasks/2026-08-01.md"
+    },
+    {
+      "basename": "2012,42",
+      "path": "02 - 408/01 - 数据结构/大题/01 - 算法题/2012,42.md"
+    },
+    {
+      "basename": "2019,41",
+      "path": "02 - 408/01 - 数据结构/大题/01 - 算法题/2019,41.md"
+    },
+    {
+      "basename": "2026-07-21",
+      "path": "_Daily_Tasks/2026-07-21.md"
+    },
+    {
+      "basename": "2026-07-31",
+      "path": "_Daily_Tasks/2026-07-31.md"
+    },
+    {
+      "basename": "2026-07-30",
+      "path": "_Daily_Tasks/2026-07-30.md"
+    },
+    {
+      "basename": "2026-07-29",
+      "path": "_Daily_Tasks/2026-07-29.md"
     },
     {
       "basename": "爸爸儿子理论",
@@ -23,10 +91,6 @@
     {
       "basename": "Pasted image 20260731165758",
       "path": "_Attachments/Images/Pasted image 20260731165758.png"
-    },
-    {
-      "basename": "Pasted image 20260730020414",
-      "path": "_Attachments/Images/Pasted image 20260730020414.png"
     },
     {
       "basename": "Pasted image 20260731165315",
@@ -93,14 +157,6 @@
       "path": "_Attachments/Images/Pasted image 20260731070146.png"
     },
     {
-      "basename": "02 - 微分等式与微分不等式",
-      "path": "01 - 数学/01 - 高数/05 - 中值定理/02 - 微分等式与微分不等式.canvas"
-    },
-    {
-      "basename": "2026-07-31",
-      "path": "_Daily_Tasks/2026-07-31.md"
-    },
-    {
       "basename": "01 - 概念性质定理大观",
       "path": "01 - 数学/01 - 高数/02 - 一元微分/01 - 概念性质定理大观.canvas"
     },
@@ -143,58 +199,6 @@
     {
       "basename": "Pasted image 20260730230001",
       "path": "_Attachments/Images/Pasted image 20260730230001.png"
-    },
-    {
-      "basename": "2015",
-      "path": "02 - 408/01 - 数据结构/大题/01 - 算法题/2015.md"
-    },
-    {
-      "basename": "202607300734",
-      "path": "好题错题整理/01 - 高数/概念题/202607300734.md"
-    },
-    {
-      "basename": "27,ep,2,3,12",
-      "path": "好题错题整理/01 - 高数/概念题/一元微分/27,ep,2,3,12.md"
-    },
-    {
-      "basename": "2025,1,3",
-      "path": "好题错题整理/01 - 高数/概念题/一元微分/2025,1,3.md"
-    },
-    {
-      "basename": "202607290707",
-      "path": "好题错题整理/01 - 高数/概念题/202607290707.md"
-    },
-    {
-      "basename": "202607300445",
-      "path": "好题错题整理/01 - 高数/概念题/202607300445.md"
-    },
-    {
-      "basename": "极限与导数",
-      "path": "好题错题整理/概念题总结/极限与导数.md"
-    },
-    {
-      "basename": "02 - 数列极限大观",
-      "path": "01 - 数学/01 - 高数/01 - 函数、极限、连续/02 - 数列极限大观.canvas"
-    },
-    {
-      "basename": "01 - 函数极限 + 连续与间断大观",
-      "path": "01 - 数学/01 - 高数/01 - 函数、极限、连续/01 - 函数极限 + 连续与间断大观.canvas"
-    },
-    {
-      "basename": "Drawing 2026-07-24 01.26.43.excalidraw",
-      "path": "Excalidraw/Drawing 2026-07-24 01.26.43.excalidraw.md"
-    },
-    {
-      "basename": "Drawing 2026-07-28 21.30.40.excalidraw",
-      "path": "Excalidraw/Drawing 2026-07-28 21.30.40.excalidraw.md"
-    },
-    {
-      "basename": "Pasted image 20260730045117",
-      "path": "_Attachments/Images/Pasted image 20260730045117.png"
-    },
-    {
-      "basename": "27,30_zy,8.8",
-      "path": "好题错题整理/01 - 高数/概念题/一元积分/27,30_zy,8.8.md"
     }
   ],
   "omittedPaths": [],

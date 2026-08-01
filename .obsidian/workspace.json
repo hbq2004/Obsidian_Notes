@@ -4,21 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "447df0feb4d364dc",
+        "id": "d94f16867ee1afa7",
         "type": "tabs",
         "children": [
           {
-            "id": "6e3cefdf7a05c423",
+            "id": "7a3d8a4f4f13ef1b",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "canvas",
               "state": {
-                "file": "02 - 408/01 - 数据结构/大题/链表.md",
-                "mode": "source",
-                "source": false
+                "file": "01 - 数学/01 - 高数/05 - 中值定理/01 - 中值定理大观.canvas",
+                "viewState": {
+                  "x": 1378.0068716294122,
+                  "y": 3146.3546802960823,
+                  "zoom": -2.6514836592170354
+                }
               },
-              "icon": "lucide-file",
-              "title": "链表"
+              "icon": "lucide-layout-dashboard",
+              "title": "01 - 中值定理大观"
             }
           }
         ]
@@ -256,7 +259,28 @@
   },
   "active": "9ee25ba6440a60e4",
   "lastOpenFiles": [
+    "_Attachments/Images/Pasted image 20260801113929.png",
+    "_Attachments/Images/Pasted image 20260801113342.png",
+    "_Attachments/Images/Pasted image 20260801113137.png",
+    "_Attachments/Images/Pasted image 20260801113000.png",
+    "_Attachments/Images/Pasted image 20260801112642.png",
+    "_Attachments/Images/Pasted image 20260801112527.png",
+    "02 - 408/01 - 数据结构/大题/链表.md",
     "01 - 数学/01 - 高数/05 - 中值定理/01 - 中值定理大观.canvas",
+    "01 - 数学/01 - 高数/05 - 中值定理/02 - 微分等式与微分不等式.canvas",
+    "好题错题整理/01 - 高数/概念题/一元积分/27,30_zy,8.9,8.10.md",
+    "02 - 408/01 - 数据结构/大题/01 - 算法题/2025,41,calMulMax.md",
+    "02 - 408/01 - 数据结构/大题/01 - 算法题/2026,41,BST,searchX.md",
+    "_Daily_Tasks/2026-08-01.md",
+    "02 - 408/01 - 数据结构/大题/01 - 算法题/2012,42.md",
+    "_Daily_Tasks/2026-08-02.md",
+    "02 - 408/01 - 数据结构/大题/01 - 算法题/2019,41.md",
+    "_Daily_Tasks/2026-08-08.md",
+    "_Daily_Tasks/2026-08-05.md",
+    "_Daily_Tasks/2026-07-21.md",
+    "_Daily_Tasks/2026-07-31.md",
+    "_Daily_Tasks/2026-07-30.md",
+    "_Daily_Tasks/2026-07-29.md",
     "_Scripts/smart-paper-generator/README.md",
     "_Scripts/question-recommender/README.md",
     "_Scripts/knowledge-radar/README.md",
@@ -278,36 +302,16 @@
     "_Attachments/Images/Pasted image 20260801004213.png",
     "_Attachments/Images/Pasted image 20260801004132.png",
     "_Attachments/Images/Pasted image 20260801004014.png",
-    "_Attachments/Images/Pasted image 20260801003929.png",
-    "_Attachments/Images/Pasted image 20260801003810.png",
-    "_Attachments/Images/Pasted image 20260801003605.png",
-    "_Attachments/Images/Pasted image 20260801002443.png",
-    "_Attachments/Images/Pasted image 20260801002047.png",
     "Anki 制卡 - 单词.md",
     "test.md",
-    "01 - 数学/01 - 高数/05 - 中值定理/02 - 微分等式与微分不等式.canvas",
-    "_Daily_Tasks/2026-07-31.md",
     "01 - 数学/01 - 高数/02 - 一元微分/01 - 概念性质定理大观.canvas",
     "01 - 数学/01 - 高数/02 - 一元微分/02 - 一元微分计算大观.canvas",
     "01 - 数学/01 - 高数/02 - 一元微分/03 - 几何应用.canvas",
     "Excalidraw/中值定理 2026-07-31 01.49.24.excalidraw.md",
-    "02 - 408/01 - 数据结构/大题/链表.md",
     "好题错题整理/01 - 高数/证明题/中值定理/罗尔定理构造零点.md",
-    "_Template/智能组卷.md",
     "_Scripts/smart-paper-generator/view.js",
-    "02 - 408/01 - 数据结构/大题/01 - 算法题/2015.md",
-    "好题错题整理/01 - 高数/概念题/202607300734.md",
-    "好题错题整理/01 - 高数/概念题/一元微分/27,ep,2,3,12.md",
-    "好题错题整理/01 - 高数/概念题/一元微分/2025,1,3.md",
-    "好题错题整理/01 - 高数/概念题/202607290707.md",
-    "好题错题整理/01 - 高数/概念题/202607300445.md",
-    "好题错题整理/概念题总结/极限与导数.md",
     "01 - 数学/01 - 高数/01 - 函数、极限、连续/02 - 数列极限大观.canvas",
     "01 - 数学/01 - 高数/01 - 函数、极限、连续/01 - 函数极限 + 连续与间断大观.canvas",
-    "Excalidraw/Drawing 2026-07-24 01.26.43.excalidraw.md",
-    "Excalidraw/Drawing 2026-07-28 21.30.40.excalidraw.md",
-    "202607300734.md",
-    "好题错题整理/01 - 高数/概念题/202607300706.md",
     "01 - 数学/01 - 高数/03 - 一元积分/01 - 概念性质定理大观.canvas",
     "01 - 数学/01 - 高数/06 - 无穷级数/无穷级数.canvas",
     "01 - 数学/01 - 高数/06 - 无穷级数/无穷级数敛散性大观.canvas"
