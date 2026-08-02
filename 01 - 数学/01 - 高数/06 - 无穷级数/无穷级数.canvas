@@ -1,5 +1,30 @@
 {
 	"nodes":[
+		{"id":"0895b607afb14b4b","type":"group","x":400,"y":480,"width":11440,"height":2720,"label":"函数项级数"},
+		{"id":"fb6a3f39700c392c","type":"group","x":-4480,"y":480,"width":4480,"height":2080,"label":"常数项级数的概念与性质"},
+		{"id":"94996d129b8d9b1e","type":"group","x":3547,"y":943,"width":2360,"height":1560,"label":"幂级数的收敛区间、收敛于、收敛半径的基本性质与求法"},
+		{"id":"88d3b385a861199a","type":"group","x":-1760,"y":943,"width":1720,"height":1497,"label":"一般项级数（交错级数 / 任意项级数）及其敛散性判别"},
+		{"id":"9cefca7458f56b7d","type":"group","x":6120,"y":1333,"width":2055,"height":1120,"label":"幂级数求和函数（解答题/客观题） —— 小猪佩奇法"},
+		{"id":"fc0bfef187cc072e","type":"group","x":-4400,"y":680,"width":1520,"height":1000,"label":"常数项级数通用性质"},
+		{"id":"045056bf3b7e9d36","type":"group","x":-1020,"y":1016,"width":960,"height":1384,"label":"任意项级数"},
+		{"id":"3c8b16549a618ab8","type":"group","x":8347,"y":1483,"width":1480,"height":820,"label":"函数展开成幂级数"},
+		{"id":"cf9d2dfc0bbadb29","type":"group","x":10027,"y":1563,"width":1540,"height":740,"label":"傅里叶级数（客观题）"},
+		{"id":"ce178658a8a49ee0","type":"group","x":-2840,"y":1047,"width":1000,"height":873,"label":"正项级数及其敛散性判别"},
+		{"id":"2211442deb6b295a","type":"group","x":-3860,"y":750,"width":920,"height":860,"label":"性质"},
+		{"id":"b65d22adfde40726","type":"group","x":-1720,"y":1016,"width":665,"height":800,"label":"交错级数"},
+		{"id":"8be31ecad0110413","type":"group","x":-4340,"y":750,"width":440,"height":593,"label":"概念"},
+		{"id":"519810ec7428fdc7","type":"file","file":"_Attachments/Images/Pasted image 20260802235732.png","x":-4320,"y":770,"width":400,"height":148},
+		{"id":"6d333dbdc2e18289","type":"file","file":"_Attachments/Images/Pasted image 20260803000237.png","x":-3830,"y":810,"width":400,"height":307},
+		{
+			"id":"198adaddb139c3ec",
+			"type":"text",
+			"text":"**常数项级数分类**\n\n1. 正项级数\n2. 一般项级数\n\t1. 交错级数\n\t2. 任意项级数",
+			"styleAttributes":{"textAlign":"center"},
+			"x":-1880,
+			"y":590,
+			"width":460,
+			"height":220
+		},
 		{
 			"id":"d99f725718960139",
 			"type":"text",
@@ -10,68 +35,51 @@
 			"width":260,
 			"height":60
 		},
-		{"id":"f8f95b8f56ba1b4d","type":"file","file":"_Attachments/Images/Pasted image 20260505225214.png","x":-400,"y":-720,"width":270,"height":400},
+		{"id":"b4db437e5328fc06","type":"file","file":"_Attachments/Images/c1c95d96d69ca0720f2bc451f5eacc85.jpeg","x":40,"y":-714,"width":400,"height":394},
+		{"id":"f8f95b8f56ba1b4d","type":"file","file":"_Attachments/Images/Pasted image 20260505225214.png","x":-405,"y":-720,"width":270,"height":400},
+		{"id":"9325239f335cb990","type":"file","file":"_Attachments/Images/Pasted image 20260803000517.png","x":-3390,"y":875,"width":399,"height":178},
+		{"id":"580c95f2f7f58059","type":"file","file":"_Attachments/Images/Pasted image 20260803000700.png","x":-3390,"y":1053,"width":400,"height":381},
+		{"id":"7da16787f93e4b84","type":"file","file":"_Attachments/Images/Pasted image 20260803000338.png","x":-3830,"y":1150,"width":400,"height":400},
+		{"id":"44e42ab6a56024e4","type":"file","file":"_Attachments/Images/Pasted image 20260803002209.png","x":-2740,"y":1108,"width":400,"height":172},
+		{"id":"612cc4e60150b8e6","type":"file","file":"_Attachments/Images/Pasted image 20260803002223.png","x":-2740,"y":1280,"width":400,"height":148},
+		{"id":"181a69a1a4c039df","type":"file","file":"_Attachments/Images/Pasted image 20260803002426.png","x":-2740,"y":1428,"width":400,"height":184},
 		{
-			"id":"1018f78481ea8984",
+			"id":"5edba6dbe95ec5e5",
 			"type":"text",
-			"text":"(2) 函数项级数",
+			"text":"收敛原则：类比数列极限**单调有界准则**",
 			"styleAttributes":{"textAlign":"center"},
-			"x":720,
-			"y":140,
+			"x":-2280,
+			"y":1154,
 			"width":360,
-			"height":100
+			"height":80
 		},
+		{"id":"a5be219bd60059e0","type":"file","file":"_Attachments/Images/Pasted image 20260803002531.png","x":-2340,"y":1234,"width":400,"height":376},
+		{"id":"1bb180c0cb074485","type":"file","file":"_Attachments/Images/Pasted image 20260802235822.png","x":-4320,"y":918,"width":400,"height":174},
+		{"id":"a60fe30fdccb6a54","type":"file","file":"_Attachments/Images/Pasted image 20260803000024.png","x":-4320,"y":1210,"width":400,"height":113},
 		{
-			"id":"a45d1ce76a44fa24",
+			"id":"7a3e20687d661a96",
 			"type":"text",
-			"text":"(1) 常数项级数",
+			"text":"类比反常积分敛散性",
 			"styleAttributes":{"textAlign":"center"},
-			"x":-1480,
-			"y":140,
-			"width":320,
-			"height":100
-		},
-		{
-			"id":"14e569003e082b36",
-			"type":"text",
-			"text":"(1) 正项级数",
-			"styleAttributes":{"textAlign":"center"},
-			"x":-2020,
-			"y":420,
+			"x":-2270,
+			"y":1840,
 			"width":260,
 			"height":60
 		},
-		{
-			"id":"5d0d172af6b77eef",
-			"type":"text",
-			"text":"(2) 一般项级数",
-			"styleAttributes":{"textAlign":"center"},
-			"x":-620,
-			"y":450,
-			"width":260,
-			"height":60
-		},
-		{
-			"id":"ee2948def731874c",
-			"type":"text",
-			"text":"(1) 交错级数\n",
-			"styleAttributes":{"textAlign":"center"},
-			"x":-860,
-			"y":680,
-			"width":260,
-			"height":60
-		},
-		{
-			"id":"db5f24d80e47b992",
-			"type":"text",
-			"text":"(2) 任意项级数",
-			"styleAttributes":{"textAlign":"center"},
-			"x":-420,
-			"y":680,
-			"width":260,
-			"height":60
-		},
-		{"id":"b4db437e5328fc06","type":"file","file":"_Attachments/Images/c1c95d96d69ca0720f2bc451f5eacc85.jpeg","x":40,"y":-714,"width":400,"height":394}
+		{"id":"87b456e96c70bc12","type":"file","file":"_Attachments/Images/Pasted image 20260803002604.png","x":-2740,"y":1612,"width":399,"height":250},
+		{"id":"f78c98989411046c","type":"file","file":"_Attachments/Images/Pasted image 20260803002639.png","x":-2340,"y":1612,"width":399,"height":168},
+		{"id":"45310a2402d2eaae","type":"file","file":"_Attachments/Images/Pasted image 20260803004947.png","x":-980,"y":1668,"width":473,"height":99},
+		{"id":"95f01ab68fce51af","type":"file","file":"_Attachments/Images/Pasted image 20260803005051.png","x":-980,"y":1767,"width":477,"height":504},
+		{"id":"cc8756a50848d278","type":"file","file":"_Attachments/Images/Pasted image 20260803003118.png","x":-1680,"y":1062,"width":575,"height":135},
+		{"id":"5a9fcaebc6e72745","type":"file","file":"_Attachments/Images/result_q73B7W.png","x":-1680,"y":1198,"width":565,"height":190},
+		{"id":"432f0f877af94957","type":"file","file":"_Attachments/Images/Pasted image 20260803003316.png","x":-1680,"y":1388,"width":572,"height":371},
+		{"id":"9706b81f00ee4c61","type":"file","file":"_Attachments/Images/Pasted image 20260803003547.png","x":-980,"y":1143,"width":475,"height":111},
+		{"id":"05b09d83a6b50bc2","type":"file","file":"_Attachments/Images/Pasted image 20260803004902.png","x":-980,"y":1256,"width":475,"height":411},
+		{"id":"2a9c00374f634690","type":"file","file":"_Attachments/Images/Pasted image 20260803003429.png","x":-980,"y":1079,"width":479,"height":64},
+		{"id":"e3f0511700563868","type":"file","file":"_Attachments/Images/Pasted image 20260803010300.png","x":-505,"y":1143,"width":325,"height":116},
+		{"id":"f22c3ede35506e07","type":"file","file":"_Attachments/Images/Pasted image 20260803010203.png","x":-503,"y":1687,"width":400,"height":312},
+		{"id":"cde7ba1d3cfb57d0","type":"file","file":"_Attachments/Images/Pasted image 20260803010339.png","x":-503,"y":1999,"width":400,"height":272},
+		{"id":"80f3094483b64fa5","type":"file","file":"_Attachments/Images/Pasted image 20260802235440.png","x":6235,"y":1493,"width":597,"height":241}
 	],
 	"edges":[
 		{
@@ -89,53 +97,9 @@
 			"toFloating":false,
 			"fromNode":"d99f725718960139",
 			"fromSide":"bottom",
-			"toNode":"a45d1ce76a44fa24",
-			"toSide":"top"
-		},
-		{
-			"id":"71fd656b85d47d3e",
-			"styleAttributes":{},
-			"toFloating":false,
-			"fromNode":"d99f725718960139",
-			"fromSide":"bottom",
-			"toNode":"1018f78481ea8984",
-			"toSide":"top"
-		},
-		{
-			"id":"d2ee57a0390b5f60",
-			"styleAttributes":{},
-			"toFloating":false,
-			"fromNode":"a45d1ce76a44fa24",
-			"fromSide":"bottom",
-			"toNode":"14e569003e082b36",
-			"toSide":"top"
-		},
-		{
-			"id":"0c04c6a37614a301",
-			"styleAttributes":{},
-			"toFloating":false,
-			"fromNode":"a45d1ce76a44fa24",
-			"fromSide":"bottom",
-			"toNode":"5d0d172af6b77eef",
-			"toSide":"top"
-		},
-		{
-			"id":"19866a956a5c998a",
-			"styleAttributes":{},
-			"toFloating":false,
-			"fromNode":"5d0d172af6b77eef",
-			"fromSide":"bottom",
-			"toNode":"ee2948def731874c",
-			"toSide":"top"
-		},
-		{
-			"id":"689afe4018351ccd",
-			"styleAttributes":{},
-			"toFloating":false,
-			"fromNode":"5d0d172af6b77eef",
-			"fromSide":"bottom",
-			"toNode":"db5f24d80e47b992",
-			"toSide":"top"
+			"toNode":"fb6a3f39700c392c",
+			"toSide":"top",
+			"label":"常数项级数"
 		},
 		{
 			"id":"659346e1243e0acd",
@@ -145,6 +109,64 @@
 			"fromSide":"right",
 			"toNode":"b4db437e5328fc06",
 			"toSide":"left"
+		},
+		{
+			"id":"cb801267939c4018",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromFloating":false,
+			"fromNode":"1bb180c0cb074485",
+			"fromSide":"bottom",
+			"toNode":"a60fe30fdccb6a54",
+			"toSide":"top",
+			"label":"几何级数敛散性结论"
+		},
+		{
+			"id":"5f095472bed5fc92",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"44e42ab6a56024e4",
+			"fromSide":"right",
+			"toNode":"5edba6dbe95ec5e5",
+			"toSide":"left"
+		},
+		{
+			"id":"803e6b0973b555c8",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"198adaddb139c3ec",
+			"fromSide":"bottom",
+			"toNode":"ce178658a8a49ee0",
+			"toSide":"top"
+		},
+		{
+			"id":"53768d8ffadff11c",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"f78c98989411046c",
+			"fromSide":"bottom",
+			"toNode":"7a3e20687d661a96",
+			"toSide":"top"
+		},
+		{
+			"id":"1425219621479c6b",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"198adaddb139c3ec",
+			"fromSide":"bottom",
+			"toNode":"88d3b385a861199a",
+			"toSide":"top"
+		},
+		{
+			"id":"1bcb4552b937ace1",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromFloating":false,
+			"fromNode":"d99f725718960139",
+			"fromSide":"bottom",
+			"toNode":"0895b607afb14b4b",
+			"toSide":"top",
+			"label":"函数项级数"
 		}
 	],
 	"metadata":{

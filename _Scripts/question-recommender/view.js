@@ -13,6 +13,7 @@
  * 8. 支持在表格上方即时切换“仅看降级题”
  * 9. 不再创建 Notice 降级警告属性
  * 10. 支持将当前筛选结果打印或另存为 PDF
+ * 11. 支持按当前标签无放回随机抽取 X 道已刷题二刷
  ******************************************************************/
 
 /* ================================================================
@@ -23,6 +24,7 @@ const CONFIG = {
     questionMarker: "题目",
 
     maxResults: 100,
+    randomReviewDefaultCount: 10,
     historyLimit: 20,
 
     /* 打印前等待每张题图完成加载的最长时间 */
@@ -77,6 +79,22 @@ const CONFIG = {
      */
     repairExistingTasksOnLoad: false
 };
+
+/*
+ * 默认调用保持完整推荐列表；专用二刷入口会传入 mode: "random-review"。
+ * Dataview 自定义视图通过全局 input 提供调用参数。
+ */
+const VIEW_OPTIONS = (
+    typeof input === "object" &&
+    input !== null &&
+    !Array.isArray(input)
+)
+    ? input
+    : {};
+
+const RANDOM_REVIEW_MODE =
+    String(VIEW_OPTIONS.mode ?? "").trim().toLowerCase() ===
+    "random-review";
 
 /* 运行期只读对象：避免全库扫描和排序时重复创建排序规则。 */
 const QUESTION_NAME_COLLATOR = new Intl.Collator(
@@ -133,6 +151,10 @@ const LEVEL_OPTIONS = [
 
 /* view.css 会由 dv.view() 自动加载 */
 dv.container.classList.add("question-recommend-view");
+
+if (RANDOM_REVIEW_MODE) {
+    dv.container.classList.add("question-random-review-view");
+}
 
 /* ================================================================
  * 2. 通用函数
@@ -266,18 +288,26 @@ function getPageTags(page) {
     return result;
 }
 
-function parseLevel(value) {
-    if (
-        value === undefined ||
-        value === null ||
-        (typeof value === "string" && value.trim() === "")
-    ) {
-        return null;
+function parseIntegerScalar(value) {
+    if (typeof value === "number") {
+        return Number.isSafeInteger(value) ? value : null;
     }
 
-    const parsed = Number(value);
+    if (typeof value !== "string") return null;
 
-    if (!Number.isInteger(parsed) || parsed < 0 || parsed > 5) {
+    const normalized = value.trim();
+
+    if (!/^[+-]?\d+$/.test(normalized)) return null;
+
+    const parsed = Number(normalized);
+
+    return Number.isSafeInteger(parsed) ? parsed : null;
+}
+
+function parseLevel(value) {
+    const parsed = parseIntegerScalar(value);
+
+    if (parsed === null || parsed < 0 || parsed > 5) {
         return null;
     }
 
@@ -323,11 +353,76 @@ function isTrue(value) {
 }
 
 function parseNonNegativeInteger(value) {
-    const parsed = Number(value);
+    const parsed = parseIntegerScalar(value);
 
-    return Number.isFinite(parsed) && parsed >= 0
-        ? Math.floor(parsed)
+    return parsed !== null && parsed >= 0
+        ? parsed
         : 0;
+}
+
+function hasValidReviewCount(value) {
+    const parsed = parseIntegerScalar(value);
+
+    return parsed !== null && parsed >= 0;
+}
+
+function parseBooleanOption(value, fallback) {
+    if (value === undefined || value === null || value === "") {
+        return fallback;
+    }
+
+    if (typeof value === "boolean") return value;
+
+    const normalized = String(value).trim().toLowerCase();
+
+    if (["true", "1", "yes", "on"].includes(normalized)) {
+        return true;
+    }
+
+    if (["false", "0", "no", "off"].includes(normalized)) {
+        return false;
+    }
+
+    return fallback;
+}
+
+function clampRandomReviewCount(value) {
+    const parsed = Math.floor(Number(value));
+
+    if (!Number.isFinite(parsed)) {
+        return CONFIG.randomReviewDefaultCount;
+    }
+
+    return Math.min(
+        CONFIG.maxResults,
+        Math.max(1, parsed)
+    );
+}
+
+/**
+ * 部分 Fisher-Yates 洗牌：从完整候选池无放回抽取，不受默认排序影响。
+ */
+function sampleWithoutReplacement(candidates, count, rng = Math.random) {
+    const pool = Array.from(candidates ?? []);
+    const wantedCount = Math.min(
+        pool.length,
+        Math.max(0, Math.floor(Number(count) || 0))
+    );
+
+    for (let index = 0; index < wantedCount; index++) {
+        const remainingCount = pool.length - index;
+        const randomValue = Number(rng());
+        const safeRandomValue = Number.isFinite(randomValue)
+            ? Math.min(Math.max(randomValue, 0), 1 - Number.EPSILON)
+            : 0;
+        const swapIndex = index + Math.floor(
+            safeRandomValue * remainingCount
+        );
+
+        [pool[index], pool[swapIndex]] = [pool[swapIndex], pool[index]];
+    }
+
+    return pool.slice(0, wantedCount);
 }
 
 function pad2(value) {
@@ -1023,11 +1118,14 @@ for (const page of candidatePages) {
 
     items.push({
         page,
+        sourceFile: app.vault.getAbstractFileByPath(page.file.path),
         images,
         level,
         peakLevel,
         regressed,
         hasLegacyRegressionNotice,
+        hasRecordedReviewCount: hasValidReviewCount(page.review_count),
+        reviewCount: parseNonNegativeInteger(page.review_count),
         nextReview: normalizeIsoDate(page.next_review)
     });
 }
@@ -1044,6 +1142,8 @@ let filterEmptyEl = null;
 let titleEl = null;
 let printButtonEl = null;
 let printInProgress = false;
+let randomReviewPool = [];
+let randomReviewControls = null;
 
 items.sort((a, b) => {
     const regressionDifference =
@@ -1080,9 +1180,7 @@ async function cleanupLegacyRegressionNotices(questionItems) {
             continue;
         }
 
-        const targetFile = app.vault.getAbstractFileByPath(
-            item.page.file.path
-        );
+        const targetFile = resolveQuestionSourceFile(item);
 
         if (!targetFile || targetFile.extension !== "md") {
             continue;
@@ -1109,7 +1207,11 @@ async function cleanupLegacyRegressionNotices(questionItems) {
     return removedCount;
 }
 
-if (CONFIG.cleanupLegacyRegressionNoticesOnLoad) {
+/* 随机二刷只负责抽题，不在打开面板时批量迁移整个候选池。 */
+if (
+    CONFIG.cleanupLegacyRegressionNoticesOnLoad &&
+    !RANDOM_REVIEW_MODE
+) {
     try {
         const removedNoticeCount =
             await cleanupLegacyRegressionNotices(items);
@@ -1148,6 +1250,15 @@ function createLevelControl(item) {
     const badgeEl = document.createElement("span");
     badgeEl.className = "question-regression-badge";
 
+    const submitButtonEl = RANDOM_REVIEW_MODE
+        ? document.createElement("button")
+        : null;
+
+    if (submitButtonEl) {
+        submitButtonEl.type = "button";
+        submitButtonEl.className = "question-level-submit-button";
+    }
+
     for (const option of LEVEL_OPTIONS) {
         const optionEl = document.createElement("option");
         optionEl.value = String(option.val);
@@ -1181,23 +1292,48 @@ function createLevelControl(item) {
 
     updateBadge(item.regressed, item.peakLevel, item.level);
 
-    selectEl.addEventListener("change", async () => {
+    function refreshSubmissionUI() {
+        const selectedLevel = Number(selectEl.value);
+        selectEl.title = getLevelOptionText(
+            selectedLevel === -1 ? null : selectedLevel
+        );
+
+        if (!submitButtonEl) return;
+
+        submitButtonEl.textContent = selectedLevel === -1
+            ? "清除评级"
+            : "记录本轮";
+        submitButtonEl.title = selectedLevel === -1
+            ? "清除当前评级和未完成复习任务"
+            : "提交本轮反馈并安排下次复习";
+        submitButtonEl.disabled =
+            selectEl.disabled ||
+            (selectedLevel === -1 && currentLevel === null);
+    }
+
+    async function persistSelectedLevel(allowSameLevel = false) {
         const newLevel = Number(selectEl.value);
         const oldUiLevel = currentLevel;
+        const isSameLevel = newLevel === (currentLevel ?? -1);
 
-        if (newLevel === (currentLevel ?? -1)) return;
+        if (
+            isSameLevel &&
+            (!allowSameLevel || newLevel === -1)
+        ) {
+            return;
+        }
 
-        const targetFile = app.vault.getAbstractFileByPath(
-            item.page.file.path
-        );
+        const targetFile = resolveQuestionSourceFile(item);
 
         if (!targetFile || targetFile.extension !== "md") {
             selectEl.value = String(oldUiLevel ?? -1);
+            refreshSubmissionUI();
             new Notice("❌ 无法定位对应题目笔记。");
             return;
         }
 
         selectEl.disabled = true;
+        refreshSubmissionUI();
         let updateResult = null;
 
         try {
@@ -1208,6 +1344,11 @@ function createLevelControl(item) {
                 frontmatter => {
                     const storedLevel = parseLevel(frontmatter.level);
                     const storedPeak = parseLevel(frontmatter.peak_level);
+                    const hasStoredReviewCount = hasValidReviewCount(
+                        frontmatter.review_count
+                    );
+                    const storedReviewCount =
+                        parseNonNegativeInteger(frontmatter.review_count);
                     const oldNextReview = normalizeIsoDate(
                         frontmatter.next_review
                     );
@@ -1232,7 +1373,9 @@ function createLevelControl(item) {
                             oldNextReview,
                             newNextReview: null,
                             peakAfter: storedPeak,
-                            newLevel: null
+                            newLevel: null,
+                            hasRecordedReviewCount: hasStoredReviewCount,
+                            reviewCount: storedReviewCount
                         };
 
                         return;
@@ -1262,8 +1405,8 @@ function createLevelControl(item) {
 
                     frontmatter.peak_level = peakAfter;
 
-                    frontmatter.review_count =
-                        parseNonNegativeInteger(frontmatter.review_count) + 1;
+                    const newReviewCount = storedReviewCount + 1;
+                    frontmatter.review_count = newReviewCount;
 
                     frontmatter.last_reviewed = reviewTime;
 
@@ -1310,7 +1453,9 @@ function createLevelControl(item) {
                         newLevel,
                         oldNextReview,
                         newNextReview,
-                        reviewIntervalDays
+                        reviewIntervalDays,
+                        hasRecordedReviewCount: true,
+                        reviewCount: newReviewCount
                     };
                 }
             );
@@ -1326,6 +1471,12 @@ function createLevelControl(item) {
             item.regressed = Boolean(updateResult?.regressed);
             item.nextReview = updateResult?.newNextReview ?? null;
             item.hasLegacyRegressionNotice = false;
+            item.hasRecordedReviewCount = Boolean(
+                updateResult?.hasRecordedReviewCount
+            );
+            item.reviewCount = parseNonNegativeInteger(
+                updateResult?.reviewCount
+            );
 
             try {
                 await syncReviewTask({
@@ -1387,11 +1538,25 @@ function createLevelControl(item) {
             );
         } finally {
             selectEl.disabled = false;
+            refreshSubmissionUI();
         }
-    });
+    }
+
+    if (submitButtonEl) {
+        selectEl.addEventListener("change", refreshSubmissionUI);
+        submitButtonEl.addEventListener("click", () => {
+            void persistSelectedLevel(true);
+        });
+    } else {
+        selectEl.addEventListener("change", () => {
+            void persistSelectedLevel(false);
+        });
+    }
 
     wrapper.appendChild(selectEl);
+    if (submitButtonEl) wrapper.appendChild(submitButtonEl);
     wrapper.appendChild(badgeEl);
+    refreshSubmissionUI();
 
     return wrapper;
 }
@@ -1934,7 +2099,568 @@ async function printCurrentQuestions() {
 }
 
 /* ================================================================
- * 11. 渲染三列表格
+ * 11. 标签随机二刷模式
+ * ================================================================ */
+
+function isSecondReviewCandidate(item) {
+    /* 旧题以 level 兼容识别；新题以实际 review_count 为准。 */
+    return item.hasRecordedReviewCount
+        ? item.reviewCount > 0
+        : item.level !== null;
+}
+
+function getQuestionSignature(item) {
+    const imagePaths = asArray(item?.images)
+        .map(imageLink => normalizeVaultPath(imageLink?.path))
+        .filter(Boolean)
+        .sort();
+
+    if (imagePaths.length > 0) {
+        return imagePaths.join("\u0000");
+    }
+
+    return normalizeVaultPath(item?.page?.file?.path);
+}
+
+function deduplicateQuestionItems(questionItems) {
+    const result = [];
+    const visitedSignatures = new Set();
+
+    for (const item of questionItems) {
+        const signature = getQuestionSignature(item);
+
+        if (signature && visitedSignatures.has(signature)) continue;
+
+        if (signature) visitedSignatures.add(signature);
+        result.push(item);
+    }
+
+    return result;
+}
+
+function resolveQuestionSourceFile(item) {
+    const storedFile = item?.sourceFile;
+    const storedPath = normalizeVaultPath(storedFile?.path);
+
+    if (storedPath) {
+        const resolvedStoredFile =
+            app.vault.getAbstractFileByPath(storedPath);
+
+        if (resolvedStoredFile?.extension === "md") {
+            return resolvedStoredFile;
+        }
+    }
+
+    const pagePath = normalizeVaultPath(item?.page?.file?.path);
+    const pageFile = pagePath
+        ? app.vault.getAbstractFileByPath(pagePath)
+        : null;
+
+    return pageFile?.extension === "md" ? pageFile : null;
+}
+
+function createRandomReviewSourceLink(item, viewDocument) {
+    const sourceLinkEl = viewDocument.createElement("a");
+    sourceLinkEl.className =
+        "internal-link question-random-source-link";
+
+    const updateSourceLink = event => {
+        const sourceFile = resolveQuestionSourceFile(item);
+
+        if (!sourceFile) {
+            event?.preventDefault?.();
+            event?.stopPropagation?.();
+
+            if (!event || event.type === "click") {
+                new Notice(
+                    `❌ 题目笔记已删除或无法定位：` +
+                    `${item.page.file.path}`,
+                    6000
+                );
+            }
+
+            return false;
+        }
+
+        sourceLinkEl.href = sourceFile.path;
+        sourceLinkEl.dataset.href = sourceFile.path;
+        sourceLinkEl.textContent = sourceFile.basename;
+        return true;
+    };
+
+    updateSourceLink();
+    sourceLinkEl.addEventListener("pointerdown", updateSourceLink);
+    sourceLinkEl.addEventListener("click", updateSourceLink);
+
+    return sourceLinkEl;
+}
+
+function createRandomReviewImages(item, viewDocument) {
+    const imageListEl = viewDocument.createElement("ul");
+    imageListEl.className = "question-random-images";
+    const sourceName = resolveQuestionSourceFile(item)?.basename ??
+        item.page.file.name;
+
+    for (const imageLink of item.images) {
+        const imageItemEl = viewDocument.createElement("li");
+        imageItemEl.className = "question-random-image-item";
+        const imageFile = resolvePrintImageFile(item, imageLink);
+
+        if (!imageFile) {
+            const placeholderEl = viewDocument.createElement("div");
+            placeholderEl.className = "question-random-image-placeholder";
+            placeholderEl.textContent = "题图已移动或无法定位";
+            imageItemEl.appendChild(placeholderEl);
+            imageListEl.appendChild(imageItemEl);
+            continue;
+        }
+
+        const imageEl = viewDocument.createElement("img");
+        imageEl.className = "question-random-image";
+        imageEl.loading = "lazy";
+        imageEl.alt = `${sourceName} · ${imageFile.name}`;
+        imageEl.src = app.vault.getResourcePath(imageFile);
+        imageEl.addEventListener("error", () => {
+            const placeholderEl = viewDocument.createElement("div");
+            placeholderEl.className = "question-random-image-placeholder";
+            placeholderEl.textContent =
+                `题图预览加载失败：${imageFile.name}`;
+            imageEl.replaceWith(placeholderEl);
+        }, { once: true });
+
+        imageItemEl.appendChild(imageEl);
+        imageListEl.appendChild(imageItemEl);
+    }
+
+    return imageListEl;
+}
+
+function renderRandomReviewMode() {
+    const viewDocument = dv.container.ownerDocument ?? document;
+    const configuredCount = clampRandomReviewCount(
+        VIEW_OPTIONS.count ?? VIEW_OPTIONS.defaultCount
+    );
+    const configuredReviewedOnly = parseBooleanOption(
+        VIEW_OPTIONS.reviewedOnly,
+        true
+    );
+    const inputSignature = JSON.stringify([
+        configuredCount,
+        configuredReviewedOnly
+    ]);
+    const storageKeySuffix = String(
+        VIEW_OPTIONS.storageKey ?? currentFile.file.path
+    );
+    const sessionStorageKey =
+        `question-recommender:random-review:${storageKeySuffix}`;
+
+    function readRandomReviewState() {
+        try {
+            const rawState =
+                viewDocument.defaultView?.sessionStorage?.getItem(
+                    sessionStorageKey
+                );
+            const parsedState = rawState ? JSON.parse(rawState) : null;
+
+            return (
+                parsedState &&
+                parsedState.inputSignature === inputSignature &&
+                Array.isArray(parsedState.paths)
+            )
+                ? parsedState
+                : null;
+        } catch (error) {
+            console.warn("随机二刷会话状态读取失败：", error);
+            return null;
+        }
+    }
+
+    function writeRandomReviewState(state) {
+        try {
+            viewDocument.defaultView?.sessionStorage?.setItem(
+                sessionStorageKey,
+                JSON.stringify({
+                    inputSignature,
+                    count: state.count,
+                    reviewedOnly: state.reviewedOnly,
+                    regressionOnly: Boolean(state.regressionOnly),
+                    paths: state.paths
+                })
+            );
+        } catch (error) {
+            console.warn("随机二刷会话状态保存失败：", error);
+        }
+    }
+
+    const storedState = readRandomReviewState();
+    const initialCount = storedState
+        ? clampRandomReviewCount(storedState.count)
+        : configuredCount;
+    const initialReviewedOnly = storedState
+        ? Boolean(storedState.reviewedOnly)
+        : configuredReviewedOnly;
+    let lastDrawnCount = initialCount;
+
+    if (
+        storedState &&
+        typeof storedState.regressionOnly === "boolean"
+    ) {
+        regressionOnly = storedState.regressionOnly;
+    }
+
+    const headerEl = viewDocument.createElement("header");
+    headerEl.className = "question-random-header";
+
+    titleEl = viewDocument.createElement("h3");
+    titleEl.className = "question-random-title";
+
+    const tagSummaryEl = viewDocument.createElement("p");
+    tagSummaryEl.className = "question-random-tags";
+    tagSummaryEl.textContent = `当前标签：${currentTags.join("、")}`;
+
+    headerEl.appendChild(titleEl);
+    headerEl.appendChild(tagSummaryEl);
+
+    const controlsEl = viewDocument.createElement("div");
+    controlsEl.className = "question-filter-bar question-random-controls";
+
+    const countLabelEl = viewDocument.createElement("label");
+    countLabelEl.className = "question-random-count-label";
+    countLabelEl.append("抽题数");
+
+    const countInputEl = viewDocument.createElement("input");
+    countInputEl.className = "question-random-count-input";
+    countInputEl.type = "number";
+    countInputEl.min = "1";
+    countInputEl.max = String(CONFIG.maxResults);
+    countInputEl.step = "1";
+    countInputEl.inputMode = "numeric";
+    countInputEl.value = String(initialCount);
+    countInputEl.setAttribute("aria-label", "随机二刷抽题数");
+    countLabelEl.appendChild(countInputEl);
+
+    const reviewedLabelEl = viewDocument.createElement("label");
+    reviewedLabelEl.className = "question-random-reviewed-label";
+
+    const reviewedOnlyEl = viewDocument.createElement("input");
+    reviewedOnlyEl.type = "checkbox";
+    reviewedOnlyEl.checked = initialReviewedOnly;
+    reviewedOnlyEl.setAttribute("aria-label", "仅抽已刷题");
+    reviewedLabelEl.appendChild(reviewedOnlyEl);
+    reviewedLabelEl.append("仅抽已刷题");
+
+    const drawButtonEl = viewDocument.createElement("button");
+    drawButtonEl.type = "button";
+    drawButtonEl.className = "question-random-draw-button";
+    drawButtonEl.title = "从当前标签匹配的二刷池中无放回随机抽题";
+
+    filterButtonEl = viewDocument.createElement("button");
+    filterButtonEl.type = "button";
+    filterButtonEl.className = "question-regression-filter-button";
+
+    printButtonEl = viewDocument.createElement("button");
+    printButtonEl.type = "button";
+    printButtonEl.className = "question-print-button";
+    printButtonEl.title = "只打印本组当前可见题目的来源和题图";
+
+    randomReviewControls = {
+        countInputEl,
+        reviewedOnlyEl,
+        drawButtonEl
+    };
+
+    controlsEl.appendChild(countLabelEl);
+    controlsEl.appendChild(reviewedLabelEl);
+    controlsEl.appendChild(drawButtonEl);
+    controlsEl.appendChild(filterButtonEl);
+    controlsEl.appendChild(printButtonEl);
+
+    const statusEl = viewDocument.createElement("div");
+    statusEl.className = "question-random-status";
+    statusEl.setAttribute("aria-live", "polite");
+
+    const poolSummaryEl = viewDocument.createElement("span");
+    poolSummaryEl.className = "question-random-pool-summary";
+
+    filterSummaryEl = viewDocument.createElement("span");
+    filterSummaryEl.className = "question-filter-summary";
+
+    statusEl.appendChild(poolSummaryEl);
+    statusEl.appendChild(filterSummaryEl);
+
+    const poolEmptyEl = viewDocument.createElement("div");
+    poolEmptyEl.className = "question-filter-empty";
+    poolEmptyEl.setAttribute("role", "status");
+    poolEmptyEl.hidden = true;
+
+    filterEmptyEl = viewDocument.createElement("div");
+    filterEmptyEl.className = "question-filter-empty";
+    filterEmptyEl.textContent = "本组没有待恢复的降级题。";
+    filterEmptyEl.hidden = true;
+
+    const tableWrapEl = viewDocument.createElement("div");
+    tableWrapEl.className = "question-random-table-wrap";
+
+    const tableEl = viewDocument.createElement("table");
+    tableEl.className = "question-random-table";
+
+    const tableHeadEl = viewDocument.createElement("thead");
+    const headRowEl = viewDocument.createElement("tr");
+
+    for (const heading of ["题号", "题目", "题图预览", "本轮反馈"]) {
+        const headingEl = viewDocument.createElement("th");
+        headingEl.textContent = heading;
+        headRowEl.appendChild(headingEl);
+    }
+
+    tableHeadEl.appendChild(headRowEl);
+
+    const tableBodyEl = viewDocument.createElement("tbody");
+    tableEl.appendChild(tableHeadEl);
+    tableEl.appendChild(tableBodyEl);
+    tableWrapEl.appendChild(tableEl);
+
+    dv.container.appendChild(headerEl);
+    dv.container.appendChild(controlsEl);
+    dv.container.appendChild(statusEl);
+    dv.container.appendChild(poolEmptyEl);
+    dv.container.appendChild(filterEmptyEl);
+    dv.container.appendChild(tableWrapEl);
+
+    function renderRows() {
+        tableBodyEl.replaceChildren();
+
+        for (const item of items) {
+            item.tableRow = null;
+            item.filterMarker = null;
+        }
+
+        if (displayedItems.length === 0) {
+            tableWrapEl.hidden = true;
+            return;
+        }
+
+        const rowsFragment =
+            viewDocument.createDocumentFragment?.() ?? null;
+        const rowsParent = rowsFragment ?? tableBodyEl;
+
+        displayedItems.forEach((item, index) => {
+            const rowEl = viewDocument.createElement("tr");
+            item.tableRow = rowEl;
+
+            const numberCellEl = viewDocument.createElement("td");
+            numberCellEl.dataset.label = "题号";
+            const numberEl = viewDocument.createElement("span");
+            numberEl.className = "question-random-number";
+            numberEl.textContent = String(index + 1);
+            numberCellEl.appendChild(numberEl);
+
+            const sourceCellEl = viewDocument.createElement("td");
+            sourceCellEl.className = "question-random-source";
+            sourceCellEl.dataset.label = "题目";
+            sourceCellEl.appendChild(
+                createRandomReviewSourceLink(item, viewDocument)
+            );
+
+            const imageCellEl = viewDocument.createElement("td");
+            imageCellEl.dataset.label = "题图";
+            imageCellEl.appendChild(
+                createRandomReviewImages(item, viewDocument)
+            );
+
+            const feedbackCellEl = viewDocument.createElement("td");
+            feedbackCellEl.dataset.label = "反馈";
+            feedbackCellEl.appendChild(createLevelControl(item));
+
+            rowEl.appendChild(numberCellEl);
+            rowEl.appendChild(sourceCellEl);
+            rowEl.appendChild(imageCellEl);
+            rowEl.appendChild(feedbackCellEl);
+            rowsParent.appendChild(rowEl);
+        });
+
+        if (rowsFragment) tableBodyEl.appendChild(rowsFragment);
+        tableWrapEl.hidden = false;
+    }
+
+    function drawRandomReview(reuseStoredSelection = false) {
+        const requestedCount = clampRandomReviewCount(
+            countInputEl.value
+        );
+        countInputEl.value = String(requestedCount);
+        lastDrawnCount = requestedCount;
+
+        const eligibleItems = reviewedOnlyEl.checked
+            ? items.filter(isSecondReviewCandidate)
+            : [...items];
+        randomReviewPool = deduplicateQuestionItems(eligibleItems);
+
+        const poolByPath = new Map(
+            randomReviewPool.map(item => [
+                normalizeVaultPath(item.page.file.path),
+                item
+            ])
+        );
+        const reusableState = reuseStoredSelection
+            ? readRandomReviewState()
+            : null;
+        const previousSelectionKey = displayedItems
+            .map(item => normalizeVaultPath(item.page.file.path))
+            .sort()
+            .join("\u0000");
+        let nextItems = [];
+
+        if (
+            reusableState &&
+            clampRandomReviewCount(reusableState.count) ===
+                requestedCount &&
+            Boolean(reusableState.reviewedOnly) ===
+                reviewedOnlyEl.checked
+        ) {
+            const selectedPaths = new Set();
+
+            for (const path of reusableState.paths) {
+                const normalizedPath = normalizeVaultPath(path);
+                const item = poolByPath.get(normalizedPath);
+
+                if (!item || selectedPaths.has(normalizedPath)) continue;
+
+                selectedPaths.add(normalizedPath);
+                nextItems.push(item);
+
+                if (nextItems.length === requestedCount) break;
+            }
+
+            if (nextItems.length < requestedCount) {
+                const remainingItems = randomReviewPool.filter(item => (
+                    !selectedPaths.has(
+                        normalizeVaultPath(item.page.file.path)
+                    )
+                ));
+
+                nextItems.push(...sampleWithoutReplacement(
+                    remainingItems,
+                    requestedCount - nextItems.length
+                ));
+            }
+        } else {
+            nextItems = sampleWithoutReplacement(
+                randomReviewPool,
+                requestedCount
+            );
+
+            if (
+                previousSelectionKey &&
+                randomReviewPool.length > nextItems.length
+            ) {
+                let nextSelectionKey = nextItems
+                    .map(item => normalizeVaultPath(item.page.file.path))
+                    .sort()
+                    .join("\u0000");
+
+                for (
+                    let attempt = 0;
+                    attempt < 4 &&
+                    nextSelectionKey === previousSelectionKey;
+                    attempt++
+                ) {
+                    nextItems = sampleWithoutReplacement(
+                        randomReviewPool,
+                        requestedCount
+                    );
+                    nextSelectionKey = nextItems
+                        .map(item => normalizeVaultPath(item.page.file.path))
+                        .sort()
+                        .join("\u0000");
+                }
+
+                if (nextSelectionKey === previousSelectionKey) {
+                    const previousPaths = new Set(
+                        displayedItems.map(item => normalizeVaultPath(
+                            item.page.file.path
+                        ))
+                    );
+                    const replacement = randomReviewPool.find(item => (
+                        !previousPaths.has(normalizeVaultPath(
+                            item.page.file.path
+                        ))
+                    ));
+
+                    if (replacement && nextItems.length > 0) {
+                        nextItems[nextItems.length - 1] = replacement;
+                    }
+                }
+            }
+        }
+
+        displayedItems = nextItems;
+        writeRandomReviewState({
+            count: requestedCount,
+            reviewedOnly: reviewedOnlyEl.checked,
+            regressionOnly,
+            paths: displayedItems.map(item => item.page.file.path)
+        });
+
+        const actualCount = displayedItems.length;
+        const shortage = Math.max(0, requestedCount - actualCount);
+        const duplicateCount =
+            eligibleItems.length - randomReviewPool.length;
+        const poolType = reviewedOnlyEl.checked
+            ? "二刷池"
+            : "全部匹配题";
+
+        poolSummaryEl.textContent =
+            `标签匹配 ${items.length} 道；${poolType} ` +
+            `${randomReviewPool.length} 道；本组 ${actualCount} 道` +
+            (duplicateCount > 0
+                ? `；按相同题图去重 ${duplicateCount} 道`
+                : "") +
+            (shortage > 0 ? `；库存不足 ${shortage} 道` : "");
+
+        poolEmptyEl.textContent = reviewedOnlyEl.checked
+            ? "当前标签下没有已刷题；关闭“仅抽已刷题”可查看全部匹配题。"
+            : "当前标签下没有可抽取的题目。";
+        poolEmptyEl.hidden = actualCount > 0;
+        drawButtonEl.disabled =
+            printInProgress ||
+            randomReviewPool.length === 0;
+        drawButtonEl.textContent = "再抽一组";
+
+        renderRows();
+        refreshRegressionFilterUI();
+    }
+
+    countInputEl.addEventListener("keydown", event => {
+        if (event.key === "Enter") drawRandomReview();
+    });
+
+    reviewedOnlyEl.addEventListener("change", () => {
+        drawRandomReview();
+    });
+    drawButtonEl.addEventListener("click", () => {
+        drawRandomReview();
+    });
+
+    filterButtonEl.addEventListener("click", () => {
+        regressionOnly = !regressionOnly;
+        writeRandomReviewState({
+            count: lastDrawnCount,
+            reviewedOnly: reviewedOnlyEl.checked,
+            regressionOnly,
+            paths: displayedItems.map(item => item.page.file.path)
+        });
+        refreshRegressionFilterUI();
+    });
+
+    printButtonEl.addEventListener("click", () => {
+        void printCurrentQuestions();
+    });
+
+    drawRandomReview(true);
+}
+
+/* ================================================================
+ * 12. 渲染推荐结果
  * ================================================================ */
 
 if (items.length === 0) {
@@ -1945,6 +2671,11 @@ if (items.length === 0) {
         "并且带有『题目』图片的页面。"
     );
 
+    return;
+}
+
+if (RANDOM_REVIEW_MODE) {
+    renderRandomReviewMode();
     return;
 }
 
@@ -2023,9 +2754,12 @@ if (items.length > CONFIG.maxResults) {
  * 即时切换表格行，不重新查询仓库，也不修改题目或专题属性。
  */
 function refreshRegressionFilterUI() {
+    const regressionScope = RANDOM_REVIEW_MODE
+        ? displayedItems
+        : items;
     let totalRegressedCount = 0;
 
-    for (const item of items) {
+    for (const item of regressionScope) {
         if (item.regressed) totalRegressedCount++;
     }
 
@@ -2043,6 +2777,14 @@ function refreshRegressionFilterUI() {
                 regressionOnly &&
                 !item.regressed;
         }
+
+        if (item.filterMarker) {
+            item.filterMarker.inert = printInProgress;
+            item.filterMarker.classList.toggle(
+                "is-print-locked",
+                printInProgress
+            );
+        }
     }
 
     const printableCount = regressionOnly
@@ -2050,9 +2792,16 @@ function refreshRegressionFilterUI() {
         : displayedItems.length;
 
     if (titleEl) {
-        titleEl.textContent = regressionOnly
-            ? `🚨 同类弱点题专项突破 · ${totalRegressedCount}题`
-            : `🔗 同类题推荐拓展 · ${items.length}题`;
+        if (RANDOM_REVIEW_MODE) {
+            titleEl.textContent = regressionOnly
+                ? `标签随机二刷 · 本组降级题 ${displayedRegressedCount} 道`
+                : `标签随机二刷 · ${displayedItems.length} / ` +
+                    `${randomReviewPool.length} 道`;
+        } else {
+            titleEl.textContent = regressionOnly
+                ? `🚨 同类弱点题专项突破 · ${totalRegressedCount}题`
+                : `🔗 同类题推荐拓展 · ${items.length}题`;
+        }
     }
 
     if (filterButtonEl) {
@@ -2065,20 +2814,31 @@ function refreshRegressionFilterUI() {
             "aria-pressed",
             String(regressionOnly)
         );
+        filterButtonEl.disabled =
+            printInProgress ||
+            displayedItems.length === 0;
 
         filterButtonEl.textContent = regressionOnly
             ? `🚨 仅看降级题：开（${totalRegressedCount}）`
             : `仅看降级题：关（${totalRegressedCount}）`;
 
         filterButtonEl.title = regressionOnly
-            ? "点击显示全部同类题"
+            ? (RANDOM_REVIEW_MODE
+                ? "点击显示本组全部题目"
+                : "点击显示全部同类题")
             : "点击只显示当前等级低于历史峰值的题目";
     }
 
     if (filterSummaryEl) {
-        filterSummaryEl.textContent = regressionOnly
-            ? `当前显示 ${displayedRegressedCount} 道待恢复题`
-            : `当前显示 ${displayedItems.length} 道同类题`;
+        if (RANDOM_REVIEW_MODE) {
+            filterSummaryEl.textContent = regressionOnly
+                ? `当前显示本组 ${displayedRegressedCount} 道待恢复题`
+                : `当前显示本组 ${displayedItems.length} 道题`;
+        } else {
+            filterSummaryEl.textContent = regressionOnly
+                ? `当前显示 ${displayedRegressedCount} 道待恢复题`
+                : `当前显示 ${displayedItems.length} 道同类题`;
+        }
     }
 
     if (printButtonEl) {
@@ -2092,10 +2852,19 @@ function refreshRegressionFilterUI() {
                 : `🖨️ 打印当前题目（${printableCount}）`;
     }
 
+    if (randomReviewControls) {
+        randomReviewControls.countInputEl.disabled = printInProgress;
+        randomReviewControls.reviewedOnlyEl.disabled = printInProgress;
+        randomReviewControls.drawButtonEl.disabled =
+            printInProgress ||
+            randomReviewPool.length === 0;
+    }
+
     if (filterEmptyEl) {
         filterEmptyEl.hidden = !(
             regressionOnly &&
-            totalRegressedCount === 0
+            totalRegressedCount === 0 &&
+            displayedItems.length > 0
         );
     }
 }
@@ -2109,7 +2878,7 @@ requestAnimationFrame(() => {
 });
 
 /* ================================================================
- * 12. 一次性修复旧任务
+ * 13. 一次性修复旧任务
  * ================================================================ */
 
 if (CONFIG.repairExistingTasksOnLoad) {

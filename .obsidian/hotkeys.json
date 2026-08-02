@@ -100,5 +100,14 @@
       ],
       "key": "P"
     }
+  ],
+  "quickadd:choice:42b7407d-48f2-4eed-bc74-9a7b61123f10": [
+    {
+      "modifiers": [
+        "Mod",
+        "Shift"
+      ],
+      "key": "R"
+    }
   ]
 }

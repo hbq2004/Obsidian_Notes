@@ -1,184 +1,204 @@
 {
   "recentFiles": [
     {
-      "basename": "tasks",
-      "path": "_Template/tasks.md"
+      "basename": "链表",
+      "path": "02 - 408/01 - 数据结构/大题/链表.md"
     },
     {
-      "basename": "2020,1,19",
-      "path": "好题错题整理/01 - 高数/证明题/中值定理/2020,1,19.md"
+      "basename": "无穷级数",
+      "path": "01 - 数学/01 - 高数/06 - 无穷级数/无穷级数.canvas"
     },
     {
-      "basename": "问答式",
-      "path": "_Template/问答式.md"
+      "basename": "2026-08-03",
+      "path": "_Daily_Tasks/2026-08-03.md"
     },
     {
-      "basename": "智能组卷",
-      "path": "_Template/智能组卷.md"
+      "basename": "2026-08-02",
+      "path": "_Daily_Tasks/2026-08-02.md"
     },
     {
-      "basename": "01 - 中值定理大观",
-      "path": "01 - 数学/01 - 高数/05 - 中值定理/01 - 中值定理大观.canvas"
+      "basename": "2009,42",
+      "path": "02 - 408/01 - 数据结构/大题/01 - 算法题/2009,42.md"
     },
     {
-      "basename": "Pasted image 20260802011822",
-      "path": "_Attachments/Images/Pasted image 20260802011822.png"
+      "basename": "README",
+      "path": "_Scripts/random-second-review/README.md"
     },
     {
-      "basename": "Pasted image 20260801112642",
-      "path": "_Attachments/Images/Pasted image 20260801112642.png"
+      "basename": "Pasted image 20260803010339",
+      "path": "_Attachments/Images/Pasted image 20260803010339.png"
     },
     {
-      "basename": "Pasted image 20260730020526",
-      "path": "_Attachments/Images/Pasted image 20260730020526.png"
+      "basename": "Pasted image 20260803010203",
+      "path": "_Attachments/Images/Pasted image 20260803010203.png"
     },
     {
-      "basename": "罗尔定理构造零点",
-      "path": "好题错题整理/01 - 高数/证明题/中值定理/罗尔定理构造零点.md"
+      "basename": "Pasted image 20260803010300",
+      "path": "_Attachments/Images/Pasted image 20260803010300.png"
     },
     {
-      "basename": "02 - 微分等式与微分不等式",
-      "path": "01 - 数学/01 - 高数/05 - 中值定理/02 - 微分等式与微分不等式.canvas"
+      "basename": "绝对收敛和条件收敛 2026-08-03 00.53.29.excalidraw",
+      "path": "Excalidraw/绝对收敛和条件收敛 2026-08-03 00.53.29.excalidraw.md"
     },
     {
-      "basename": "27,900b,2,FIB,23 & 2026,zy_8,",
-      "path": "好题错题整理/01 - 高数/计算题/一元微分/27,900b,2,FIB,23 & 2026,zy_8,.md"
+      "basename": "Pasted image 20260803005051",
+      "path": "_Attachments/Images/Pasted image 20260803005051.png"
+    },
+    {
+      "basename": "Pasted image 20260803004947",
+      "path": "_Attachments/Images/Pasted image 20260803004947.png"
+    },
+    {
+      "basename": "Pasted image 20260803004902",
+      "path": "_Attachments/Images/Pasted image 20260803004902.png"
+    },
+    {
+      "basename": "Pasted image 20260803003547",
+      "path": "_Attachments/Images/Pasted image 20260803003547.png"
+    },
+    {
+      "basename": "Pasted image 20260803003429",
+      "path": "_Attachments/Images/Pasted image 20260803003429.png"
+    },
+    {
+      "basename": "Pasted image 20260803003316",
+      "path": "_Attachments/Images/Pasted image 20260803003316.png"
+    },
+    {
+      "basename": "result_q73B7W",
+      "path": "_Attachments/Images/result_q73B7W.png"
+    },
+    {
+      "basename": "Pasted image 20260803003118",
+      "path": "_Attachments/Images/Pasted image 20260803003118.png"
+    },
+    {
+      "basename": "Pasted image 20260803002639",
+      "path": "_Attachments/Images/Pasted image 20260803002639.png"
+    },
+    {
+      "basename": "Pasted image 20260803002604",
+      "path": "_Attachments/Images/Pasted image 20260803002604.png"
+    },
+    {
+      "basename": "Pasted image 20260803002531",
+      "path": "_Attachments/Images/Pasted image 20260803002531.png"
+    },
+    {
+      "basename": "Pasted image 20260803002501",
+      "path": "_Attachments/Images/Pasted image 20260803002501.png"
+    },
+    {
+      "basename": "Pasted image 20260803002426",
+      "path": "_Attachments/Images/Pasted image 20260803002426.png"
+    },
+    {
+      "basename": "Pasted image 20260803002223",
+      "path": "_Attachments/Images/Pasted image 20260803002223.png"
+    },
+    {
+      "basename": "Pasted image 20260803002209",
+      "path": "_Attachments/Images/Pasted image 20260803002209.png"
+    },
+    {
+      "basename": "Pasted image 20260803000700",
+      "path": "_Attachments/Images/Pasted image 20260803000700.png"
+    },
+    {
+      "basename": "Pasted image 20260803000517",
+      "path": "_Attachments/Images/Pasted image 20260803000517.png"
+    },
+    {
+      "basename": "Pasted image 20260803000338",
+      "path": "_Attachments/Images/Pasted image 20260803000338.png"
+    },
+    {
+      "basename": "Pasted image 20260803000237",
+      "path": "_Attachments/Images/Pasted image 20260803000237.png"
+    },
+    {
+      "basename": "Pasted image 20260803000024",
+      "path": "_Attachments/Images/Pasted image 20260803000024.png"
+    },
+    {
+      "basename": "Pasted image 20260802235822",
+      "path": "_Attachments/Images/Pasted image 20260802235822.png"
+    },
+    {
+      "basename": "Pasted image 20260802235732",
+      "path": "_Attachments/Images/Pasted image 20260802235732.png"
+    },
+    {
+      "basename": "Pasted image 20260802235440",
+      "path": "_Attachments/Images/Pasted image 20260802235440.png"
+    },
+    {
+      "basename": "Pasted image 20260505225214",
+      "path": "_Attachments/Images/Pasted image 20260505225214.png"
+    },
+    {
+      "basename": "多元微分",
+      "path": "01 - 数学/01 - 高数/07 - 多元微分/多元微分.canvas"
+    },
+    {
+      "basename": "06 - 二次型",
+      "path": "01 - 数学/02 - 线代/06 - 二次型.canvas"
+    },
+    {
+      "basename": "01 - 行列式",
+      "path": "01 - 数学/02 - 线代/01 - 行列式.canvas"
+    },
+    {
+      "basename": "02 - 矩阵",
+      "path": "01 - 数学/02 - 线代/02 - 矩阵.canvas"
+    },
+    {
+      "basename": "05 - 矩阵相似理论",
+      "path": "01 - 数学/02 - 线代/05 - 矩阵相似理论.canvas"
+    },
+    {
+      "basename": "04 - 线性方程组",
+      "path": "01 - 数学/02 - 线代/04 - 线性方程组.canvas"
+    },
+    {
+      "basename": "六级习题分类系统",
+      "path": "六级习题分类系统.md"
+    },
+    {
+      "basename": "充分必要条件",
+      "path": "充分必要条件.md"
+    },
+    {
+      "basename": "数据库测试",
+      "path": "数据库测试.base"
+    },
+    {
+      "basename": "Anki 制卡 - 单词",
+      "path": "Anki 制卡 - 单词.md"
+    },
+    {
+      "basename": "LaTeX Suite",
+      "path": "LaTeX Suite.md"
+    },
+    {
+      "basename": "z_大雪深埋模考规划",
+      "path": "z_大雪深埋模考规划.md"
     },
     {
       "basename": "缩写",
       "path": "缩写.md"
     },
     {
-      "basename": "2026-08-01",
-      "path": "_Daily_Tasks/2026-08-01.md"
+      "basename": "206. 反转链表",
+      "path": "02 - 408/01 - 数据结构/大题/链表推荐题单/206. 反转链表.md"
     },
     {
-      "basename": "03 - 一元微分学的几何应用",
-      "path": "01 - 数学/01 - 高数/02 - 一元微分/03 - 一元微分学的几何应用.canvas"
+      "basename": "README.quickadd",
+      "path": "_Scripts/_test-staging/README.quickadd.md"
     },
     {
-      "basename": "Pasted image 20260801214329",
-      "path": "_Attachments/Images/Pasted image 20260801214329.png"
-    },
-    {
-      "basename": "Pasted image 20260801212937",
-      "path": "_Attachments/Images/Pasted image 20260801212937.png"
-    },
-    {
-      "basename": "Pasted image 20260801212730",
-      "path": "_Attachments/Images/Pasted image 20260801212730.png"
-    },
-    {
-      "basename": "Pasted image 20260801212224",
-      "path": "_Attachments/Images/Pasted image 20260801212224.png"
-    },
-    {
-      "basename": "Pasted image 20260801212211",
-      "path": "_Attachments/Images/Pasted image 20260801212211.png"
-    },
-    {
-      "basename": "Pasted image 20260801212050",
-      "path": "_Attachments/Images/Pasted image 20260801212050.png"
-    },
-    {
-      "basename": "Pasted image 20260801211711",
-      "path": "_Attachments/Images/Pasted image 20260801211711.png"
-    },
-    {
-      "basename": "Pasted image 20260801211950",
-      "path": "_Attachments/Images/Pasted image 20260801211950.png"
-    },
-    {
-      "basename": "6704876f21bf4dc9ba1db52d14686870",
-      "path": "_Attachments/Images/6704876f21bf4dc9ba1db52d14686870.png"
-    },
-    {
-      "basename": "Pasted image 20260801211701",
-      "path": "_Attachments/Images/Pasted image 20260801211701.png"
-    },
-    {
-      "basename": "Pasted image 20260801211630",
-      "path": "_Attachments/Images/Pasted image 20260801211630.png"
-    },
-    {
-      "basename": "Pasted image 20260801211619",
-      "path": "_Attachments/Images/Pasted image 20260801211619.png"
-    },
-    {
-      "basename": "Pasted image 20260801211601",
-      "path": "_Attachments/Images/Pasted image 20260801211601.png"
-    },
-    {
-      "basename": "Pasted image 20260801211549",
-      "path": "_Attachments/Images/Pasted image 20260801211549.png"
-    },
-    {
-      "basename": "Pasted image 20260801205312",
-      "path": "_Attachments/Images/Pasted image 20260801205312.png"
-    },
-    {
-      "basename": "Pasted image 20260801210026",
-      "path": "_Attachments/Images/Pasted image 20260801210026.png"
-    },
-    {
-      "basename": "result_eVbA1R",
-      "path": "_Attachments/Images/result_eVbA1R.png"
-    },
-    {
-      "basename": "Pasted image 20260801210006",
-      "path": "_Attachments/Images/Pasted image 20260801210006.png"
-    },
-    {
-      "basename": "Pasted image 20260801205947",
-      "path": "_Attachments/Images/Pasted image 20260801205947.png"
-    },
-    {
-      "basename": "Pasted image 20260801204355",
-      "path": "_Attachments/Images/Pasted image 20260801204355.png"
-    },
-    {
-      "basename": "Pasted image 20260801204010",
-      "path": "_Attachments/Images/Pasted image 20260801204010.png"
-    },
-    {
-      "basename": "result_57zVqn",
-      "path": "_Attachments/Images/result_57zVqn.png"
-    },
-    {
-      "basename": "Pasted image 20260801204241",
-      "path": "_Attachments/Images/Pasted image 20260801204241.png"
-    },
-    {
-      "basename": "Pasted image 20260801204218",
-      "path": "_Attachments/Images/Pasted image 20260801204218.png"
-    },
-    {
-      "basename": "Pasted image 20260801204156",
-      "path": "_Attachments/Images/Pasted image 20260801204156.png"
-    },
-    {
-      "basename": "Pasted image 20260801203917",
-      "path": "_Attachments/Images/Pasted image 20260801203917.png"
-    },
-    {
-      "basename": "Pasted image 20260801204058",
-      "path": "_Attachments/Images/Pasted image 20260801204058.png"
-    },
-    {
-      "basename": "Pasted image 20260801203940",
-      "path": "_Attachments/Images/Pasted image 20260801203940.png"
-    },
-    {
-      "basename": "Pasted image 20260801203926",
-      "path": "_Attachments/Images/Pasted image 20260801203926.png"
-    },
-    {
-      "basename": "Pasted image 20260801203858",
-      "path": "_Attachments/Images/Pasted image 20260801203858.png"
-    },
-    {
-      "basename": "result_8JQRwW",
-      "path": "_Attachments/Images/result_8JQRwW.png"
+      "basename": "README.dashboard",
+      "path": "_Scripts/_test-staging/README.dashboard.md"
     }
   ],
   "omittedPaths": [],

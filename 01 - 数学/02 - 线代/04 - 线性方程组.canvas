@@ -5,19 +5,6 @@
 		{"id":"2afa543e6c5d9ed4","type":"group","x":4141,"y":2640,"width":2259,"height":1280,"label":"零碎知识点（待整理）"},
 		{"id":"4f4c686aa8f29591","type":"group","x":-2360,"y":3480,"width":1700,"height":940,"label":"总结"},
 		{
-			"id":"becde15fa91278d8",
-			"type":"text",
-			"text":"行列式中的**克拉默法则**只适用于 $n$ 个方程 $n$ 个未知数的情况",
-			"styleAttributes":{"textAlign":"center"},
-			"x":-460,
-			"y":-260,
-			"width":360,
-			"height":120
-		},
-		{"id":"33d978aa056b3bf0","type":"file","file":"_Attachments/Images/Capture_20260507_165833.jpg","x":-2235,"y":1720,"width":567,"height":166},
-		{"id":"708f609dc3e8c0c4","type":"file","file":"_Attachments/Images/Capture_20260508_021254.jpg","x":-2285,"y":3513,"width":716,"height":294},
-		{"id":"21bb3077848fb2bb","type":"file","file":"_Attachments/Images/Capture_20260508_023333.jpg","x":-2285,"y":3920,"width":721,"height":176},
-		{
 			"id":"22c5156d866e87db",
 			"type":"text",
 			"text":"⭐非齐通 = 齐通 + 非奇特",
@@ -28,6 +15,9 @@
 			"height":113
 		},
 		{"id":"41426b008fa3c9c3","type":"file","file":"_Attachments/Images/Capture_20260508_020247.jpg","x":-1100,"y":2357,"width":400,"height":217},
+		{"id":"33d978aa056b3bf0","type":"file","file":"_Attachments/Images/Capture_20260507_165833.jpg","x":-2235,"y":1720,"width":567,"height":166},
+		{"id":"708f609dc3e8c0c4","type":"file","file":"_Attachments/Images/Capture_20260508_021254.jpg","x":-2285,"y":3513,"width":716,"height":294},
+		{"id":"21bb3077848fb2bb","type":"file","file":"_Attachments/Images/Capture_20260508_023333.jpg","x":-2285,"y":3920,"width":721,"height":176},
 		{
 			"id":"86d1b0c949a02691",
 			"type":"text",
@@ -39,6 +29,7 @@
 			"height":193
 		},
 		{"id":"49e3c159bd5648a2","type":"file","file":"_Attachments/Images/Pasted image 20260506204823.png","x":-2640,"y":2387,"width":600,"height":157},
+		{"id":"06759ab0bf0546de","type":"file","file":"_Attachments/Images/Capture_20260507_170007.jpg","x":-2347,"y":2040,"width":800,"height":116},
 		{
 			"id":"2daf9369d58c3dc3",
 			"type":"text",
@@ -50,6 +41,9 @@
 			"height":80
 		},
 		{"id":"9431d3cf9a83a342","type":"file","file":"_Attachments/Images/Pasted image 20260506204855.png","x":-2640,"y":2666,"width":599,"height":228},
+		{"id":"67dec7158f1e2167","type":"file","file":"_Attachments/Images/Pasted image 20260506204344.png","x":-4260,"y":2856,"width":624,"height":193},
+		{"id":"bac40b9487c8132d","type":"file","file":"_Attachments/Images/Pasted image 20260506204837.png","x":-2640,"y":2547,"width":599,"height":118},
+		{"id":"e112fa267b5054d7","type":"file","file":"_Attachments/Images/Pasted image 20260506204316.png","x":-4260,"y":2599,"width":615,"height":257},
 		{
 			"id":"f7560f31e0928934",
 			"type":"text",
@@ -60,11 +54,8 @@
 			"width":542,
 			"height":220
 		},
-		{"id":"06759ab0bf0546de","type":"file","file":"_Attachments/Images/Capture_20260507_170007.jpg","x":-2347,"y":2040,"width":800,"height":116},
-		{"id":"67dec7158f1e2167","type":"file","file":"_Attachments/Images/Pasted image 20260506204344.png","x":-4260,"y":2856,"width":624,"height":193},
 		{"id":"6a95971604397580","type":"file","file":"_Attachments/Images/Pasted image 20260506204403.png","x":-4260,"y":3052,"width":625,"height":344},
-		{"id":"bac40b9487c8132d","type":"file","file":"_Attachments/Images/Pasted image 20260506204837.png","x":-2640,"y":2547,"width":599,"height":118},
-		{"id":"e112fa267b5054d7","type":"file","file":"_Attachments/Images/Pasted image 20260506204316.png","x":-4260,"y":2599,"width":615,"height":257},
+		{"id":"882ddac549513322","type":"file","file":"_Attachments/Images/Pasted image 20260506204301.png","x":-4260,"y":2430,"width":625,"height":166},
 		{
 			"id":"d1f01848700605db",
 			"type":"text",
@@ -87,7 +78,6 @@
 			"height":118
 		},
 		{"id":"f79e47168b913354","type":"file","file":"_Attachments/Images/pintu-fulicat.com-1778071607290.png","x":-3460,"y":2387,"width":625,"height":660},
-		{"id":"882ddac549513322","type":"file","file":"_Attachments/Images/Pasted image 20260506204301.png","x":-4260,"y":2430,"width":625,"height":166},
 		{"id":"93327d25423172f6","type":"file","file":"_Attachments/Images/pintu-fulicat.com-1778072309785.png","x":-7760,"y":954,"width":727,"height":944},
 		{"id":"710f0d1a06722122","type":"file","file":"_Attachments/Images/Capture_20260507_165508.jpg","x":-6878,"y":1655,"width":927,"height":92},
 		{
@@ -101,54 +91,6 @@
 			"height":130
 		},
 		{"id":"42782bcd080ad1cf","type":"file","file":"_Attachments/Images/Capture_20260507_164600.jpg","x":-6840,"y":1070,"width":841,"height":411},
-		{"id":"2ed3a284dd66c53c","type":"file","file":"_Attachments/Images/Pasted image 20260508022935.png","x":4880,"y":4560,"width":759,"height":289},
-		{"id":"aa252c10b2973d62","type":"file","file":"_Attachments/Images/Pasted image 20260508023127.png","x":5639,"y":4560,"width":525,"height":288},
-		{
-			"id":"bbd50dcf41450439",
-			"type":"text",
-			"text":"齐次线性方程组求解基础解析和通解：\n**自由赋值定基准，主元反算顺势跟**",
-			"styleAttributes":{"textAlign":"center"},
-			"x":4220,
-			"y":5140,
-			"width":420,
-			"height":160
-		},
-		{"id":"b86c6dd2acd0627f","type":"file","file":"_Attachments/Images/Pasted image 20260513135421.png","x":4934,"y":7953,"width":600,"height":286},
-		{"id":"dbee10946664b2e2","type":"file","file":"_Attachments/Images/Pasted image 20260513134645.png","x":5459,"y":7428,"width":637,"height":189},
-		{"id":"97d7ff6ab80521bc","type":"file","file":"_Attachments/Images/Pasted image 20260513134353.png","x":5459,"y":7206,"width":524,"height":234},
-		{"id":"f7b289406ab65263","type":"file","file":"_Attachments/Images/Pasted image 20260513133345.png","x":4935,"y":7440,"width":525,"height":353},
-		{"id":"7cba862efa0117fd","type":"file","file":"_Attachments/Images/Pasted image 20260513122306.png","x":5100,"y":5044,"width":649,"height":313},
-		{
-			"id":"a4f6ab4180f2a2de",
-			"type":"text",
-			"text":"矩阵行满秩，对应的非齐次方程一定有解",
-			"styleAttributes":{"textAlign":"center"},
-			"x":4220,
-			"y":4645,
-			"width":420,
-			"height":120
-		},
-		{
-			"id":"e04f87792170f0f4",
-			"type":"text",
-			"text":"非齐次线性方程组求解基础解系和通解",
-			"styleAttributes":{"textAlign":"center"},
-			"x":4240,
-			"y":5679,
-			"width":380,
-			"height":134
-		},
-		{"id":"ca80f487e4dbe710","type":"file","file":"_Attachments/Images/Pasted image 20260513134853.png","x":5460,"y":7617,"width":649,"height":224},
-		{
-			"id":"567fe907a9a6a969",
-			"type":"text",
-			"text":"\"配凑法\"凑出解",
-			"styleAttributes":{"textAlign":"center"},
-			"x":4240,
-			"y":8000,
-			"width":298,
-			"height":96
-		},
 		{
 			"id":"a1965f4d2a64ebad",
 			"type":"text",
@@ -171,19 +113,12 @@
 			"width":320,
 			"height":120
 		},
+		{"id":"aa252c10b2973d62","type":"file","file":"_Attachments/Images/Pasted image 20260508023127.png","x":5639,"y":4560,"width":525,"height":288},
+		{"id":"97d7ff6ab80521bc","type":"file","file":"_Attachments/Images/Pasted image 20260513134353.png","x":5459,"y":7206,"width":524,"height":234},
+		{"id":"7cba862efa0117fd","type":"file","file":"_Attachments/Images/Pasted image 20260513122306.png","x":5100,"y":5044,"width":649,"height":313},
 		{"id":"e81da88dc81edd19","type":"file","file":"_Attachments/Images/Pasted image 20260513131429.png","x":5020,"y":5620,"width":622,"height":251},
 		{"id":"d27df65629076ca0","type":"file","file":"_Attachments/Images/Pasted image 20260513130415.png","x":5020,"y":6200,"width":672,"height":244},
 		{"id":"00a44c226bf20d9b","type":"file","file":"_Attachments/Images/Pasted image 20260513133525.png","x":4934,"y":7206,"width":522,"height":234},
-		{
-			"id":"dd4d18bb51509514",
-			"type":"text",
-			"text":"齐次和非齐次的线性无关的解的最多数量",
-			"styleAttributes":{"textAlign":"center"},
-			"x":4260,
-			"y":7300,
-			"width":418,
-			"height":140
-		},
 		{"id":"b7e6a45c4fc4bef4","type":"file","file":"_Attachments/Images/Pasted image 20260513132626.png","x":5196,"y":6720,"width":400,"height":212},
 		{
 			"id":"3e80c39f6c3d5dee",
@@ -195,37 +130,8 @@
 			"width":420,
 			"height":152
 		},
-		{"id":"eb12974d67557ef5","type":"file","file":"_Attachments/Images/Capture_20260503_194211 1.jpg","x":-35,"y":-720,"width":400,"height":223},
-		{
-			"id":"e1e04d31bfe18ae9",
-			"type":"text",
-			"text":"线性方程组",
-			"styleAttributes":{"textAlign":"center"},
-			"x":70,
-			"y":-240,
-			"width":190,
-			"height":80
-		},
-		{
-			"id":"6a64714d6de40cb7",
-			"type":"text",
-			"text":"极大无关组的向量个数\n和基础解系的向量个数",
-			"styleAttributes":{"textAlign":"center"},
-			"x":4300,
-			"y":3580,
-			"width":280,
-			"height":125
-		},
-		{
-			"id":"0aa6440a50a2e653",
-			"type":"text",
-			"text":"抽象向量组求基础解系和通解",
-			"styleAttributes":{"textAlign":"center"},
-			"x":4260,
-			"y":6264,
-			"width":360,
-			"height":117
-		},
+		{"id":"b86c6dd2acd0627f","type":"file","file":"_Attachments/Images/Pasted image 20260513135421.png","x":4934,"y":7953,"width":600,"height":286},
+		{"id":"dbee10946664b2e2","type":"file","file":"_Attachments/Images/Pasted image 20260513134645.png","x":5459,"y":7428,"width":637,"height":189},
 		{"id":"0c7cd882cda191f7","type":"file","file":"_Attachments/Images/Pasted image 20260507165055.png","x":4820,"y":2760,"width":450,"height":301},
 		{
 			"id":"ee5b2a8878889928",
@@ -257,7 +163,69 @@
 			"width":540,
 			"height":200
 		},
-		{"id":"1a0ef4346c1c7b01","type":"file","file":"_Attachments/Images/Pasted image 20260513125923.png","x":5000,"y":3540,"width":399,"height":250},
+		{
+			"id":"567fe907a9a6a969",
+			"type":"text",
+			"text":"\"配凑法\"凑出解",
+			"styleAttributes":{"textAlign":"center"},
+			"x":4240,
+			"y":8000,
+			"width":298,
+			"height":96
+		},
+		{
+			"id":"dd4d18bb51509514",
+			"type":"text",
+			"text":"齐次和非齐次的线性无关的解的最多数量",
+			"styleAttributes":{"textAlign":"center"},
+			"x":4260,
+			"y":7300,
+			"width":418,
+			"height":140
+		},
+		{"id":"f7b289406ab65263","type":"file","file":"_Attachments/Images/Pasted image 20260513133345.png","x":4935,"y":7440,"width":525,"height":353},
+		{
+			"id":"e04f87792170f0f4",
+			"type":"text",
+			"text":"非齐次线性方程组求解基础解系和通解",
+			"styleAttributes":{"textAlign":"center"},
+			"x":4240,
+			"y":5679,
+			"width":380,
+			"height":134
+		},
+		{"id":"ca80f487e4dbe710","type":"file","file":"_Attachments/Images/Pasted image 20260513134853.png","x":5460,"y":7617,"width":649,"height":224},
+		{
+			"id":"0aa6440a50a2e653",
+			"type":"text",
+			"text":"抽象向量组求基础解系和通解",
+			"styleAttributes":{"textAlign":"center"},
+			"x":4260,
+			"y":6264,
+			"width":360,
+			"height":117
+		},
+		{
+			"id":"becde15fa91278d8",
+			"type":"text",
+			"text":"行列式中的**克拉默法则**只适用于 $n$ 个方程 $n$ 个未知数的情况",
+			"styleAttributes":{"textAlign":"center"},
+			"x":-460,
+			"y":-260,
+			"width":360,
+			"height":120
+		},
+		{"id":"eb12974d67557ef5","type":"file","file":"_Attachments/Images/Capture_20260503_194211 1.jpg","x":-35,"y":-720,"width":400,"height":223},
+		{
+			"id":"e1e04d31bfe18ae9",
+			"type":"text",
+			"text":"线性方程组",
+			"styleAttributes":{"textAlign":"center"},
+			"x":70,
+			"y":-240,
+			"width":190,
+			"height":80
+		},
 		{"id":"d627d402fac85b03","type":"file","file":"_Attachments/Images/973ac10dd25be56b477b6adee2624344.jpeg","x":560,"y":-751,"width":399,"height":286},
 		{"id":"cac91adc0d3b4e72","type":"file","file":"_Attachments/Images/Pasted image 20260513120558.png","x":1200,"y":1600,"width":621,"height":455},
 		{
@@ -270,7 +238,39 @@
 			"width":360,
 			"height":100
 		},
-		{"id":"d7b4b03598838f97","type":"file","file":"_Attachments/Images/Pasted image 20260513130910.png","x":2300,"y":1640,"width":675,"height":430}
+		{"id":"d7b4b03598838f97","type":"file","file":"_Attachments/Images/Pasted image 20260513130910.png","x":2300,"y":1640,"width":675,"height":430},
+		{
+			"id":"6a64714d6de40cb7",
+			"type":"text",
+			"text":"极大无关组的向量个数\n和基础解系的向量个数",
+			"styleAttributes":{"textAlign":"center"},
+			"x":4300,
+			"y":3580,
+			"width":280,
+			"height":125
+		},
+		{"id":"1a0ef4346c1c7b01","type":"file","file":"_Attachments/Images/Pasted image 20260513125923.png","x":5000,"y":3540,"width":399,"height":250},
+		{"id":"2ed3a284dd66c53c","type":"file","file":"_Attachments/Images/Pasted image 20260508022935.png","x":4880,"y":4560,"width":759,"height":289},
+		{
+			"id":"bbd50dcf41450439",
+			"type":"text",
+			"text":"齐次线性方程组求解基础解析和通解：\n**自由赋值定基准，主元反算顺势跟**",
+			"styleAttributes":{"textAlign":"center"},
+			"x":4220,
+			"y":5140,
+			"width":420,
+			"height":160
+		},
+		{
+			"id":"a4f6ab4180f2a2de",
+			"type":"text",
+			"text":"矩阵行满秩，对应的非齐次方程一定有解",
+			"styleAttributes":{"textAlign":"center"},
+			"x":4220,
+			"y":4645,
+			"width":420,
+			"height":120
+		}
 	],
 	"edges":[
 		{
