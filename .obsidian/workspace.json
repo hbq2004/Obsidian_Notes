@@ -4,42 +4,77 @@
     "type": "split",
     "children": [
       {
-        "id": "35b60a976b7f1403",
+        "id": "d7cb64aaeab2d8db",
         "type": "tabs",
         "children": [
           {
-            "id": "30b87e0d619e2f9e",
+            "id": "02745da9bbff493f",
             "type": "leaf",
+            "pinned": true,
             "state": {
               "type": "canvas",
               "state": {
-                "file": "01 - 数学/01 - 高数/06 - 无穷级数/无穷级数.canvas",
+                "file": "01 - 数学/02 - 线代/01 - 行列式.canvas",
                 "viewState": {
-                  "x": -1448.7862662973696,
-                  "y": 1302.2853958061676,
-                  "zoom": -3.2697032681565927
+                  "x": 4165,
+                  "y": 7320,
+                  "zoom": -4
                 }
               },
+              "pinned": true,
               "icon": "lucide-layout-dashboard",
-              "title": "无穷级数"
+              "title": "01 - 行列式"
             }
           },
           {
-            "id": "3d1913e9f36e4209",
+            "id": "c835f7fa190f1ca2",
+            "type": "leaf",
+            "pinned": true,
+            "state": {
+              "type": "canvas",
+              "state": {
+                "file": "01 - 数学/02 - 线代/02 - 矩阵.canvas",
+                "viewState": {
+                  "x": 1900,
+                  "y": 9750,
+                  "zoom": -4
+                }
+              },
+              "pinned": true,
+              "icon": "lucide-layout-dashboard",
+              "title": "02 - 矩阵"
+            }
+          },
+          {
+            "id": "fbb506a42ce44b29",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "02 - 408/01 - 数据结构/大题/链表.md",
+                "file": "02 - 408/02 - 计算机组成原理/01/05 - 计算机系统的工作原理.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "链表"
+              "title": "05 - 计算机系统的工作原理"
+            }
+          },
+          {
+            "id": "a77d1f13b49aa6ed",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "02 - 408/02 - 计算机组成原理/01/02 - ⭐计算机硬件的基本组成与工作原理.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "02 - ⭐计算机硬件的基本组成与工作原理"
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -144,13 +179,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "01 - 数学/01 - 高数/05 - 中值定理/中值定理大观.canvas",
+                "file": "02 - 408/02 - 计算机组成原理/01/02 - ⭐计算机硬件的基本组成与工作原理.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "中值定理大观 的大纲"
+              "title": "大纲"
             }
           },
           {
@@ -188,10 +223,10 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "Anki/2.md"
+                "file": "好题错题整理/好题错题筛选页.md"
               },
               "icon": "lucide-info",
-              "title": "2的笔记属性"
+              "title": "笔记属性"
             }
           },
           {
@@ -227,8 +262,7 @@
               "title": "2 的出链列表"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       },
       {
         "id": "fc86d4887f1486af",
@@ -249,8 +283,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 374.5,
-    "collapsed": true
+    "width": 374.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -275,60 +308,60 @@
   },
   "active": "9ee25ba6440a60e4",
   "lastOpenFiles": [
-    "01 - 数学/01 - 高数/06 - 无穷级数/无穷级数.canvas",
-    "02 - 408/01 - 数据结构/大题/链表.md",
-    "_Daily_Tasks/2026-08-03.md",
-    "_Daily_Tasks/2026-08-02.md",
-    "_Daily_Tasks/2026-08-10.md",
-    "02 - 408/01 - 数据结构/大题/01 - 算法题/2009,42.md",
-    "_Scripts/random-second-review/README.md",
-    "02 - 408/01 - 数据结构/大题/01 - 算法题/2012,42.md",
-    "_Attachments/Images/Pasted image 20260803010339.png",
-    "_Attachments/Images/Pasted image 20260803010300.png",
-    "_Attachments/Images/Pasted image 20260803010203.png",
-    "Excalidraw/绝对收敛和条件收敛 2026-08-03 00.53.29.excalidraw.md",
-    "01 - 数学/01 - 高数/06 - 无穷级数/无穷级数敛散性大观.canvas",
-    "_Attachments/Images/Pasted image 20260803005051.png",
-    "_Attachments/Images/Pasted image 20260803004947.png",
-    "_Attachments/Images/Pasted image 20260803004902.png",
-    "_Attachments/Images/Pasted image 20260803003547.png",
-    "_Attachments/Images/Pasted image 20260803003429.png",
-    "_Attachments/Images/Pasted image 20260803003316.png",
-    "_Attachments/Images/result_q73B7W.png",
-    "01 - 数学/01 - 高数/07 - 多元微分/多元微分.canvas",
-    "_Scripts/random-second-review/view.js",
-    "_Scripts/random-second-review",
-    "01 - 数学/02 - 线代/06 - 二次型.canvas",
-    "01 - 数学/02 - 线代/01 - 行列式.canvas",
+    "02 - 408/02 - 计算机组成原理/01/03 - 计算机软件.md",
+    "02 - 408/02 - 计算机组成原理/01/04 - 计算机系统的层次结构.md",
+    "02 - 408/02 - 计算机组成原理/01/05 - 计算机系统的工作原理.md",
+    "02 - 408/02 - 计算机组成原理/01/06 - 计算机的性能指标.md",
+    "02 - 408/02 - 计算机组成原理/01/01 - 计算机的发展.md",
+    "02 - 408/02 - 计算机组成原理/01/02 - ⭐计算机硬件的基本组成与工作原理.md",
+    "_Attachments/Images/Pasted image 20260813210750.png",
+    "_Attachments/Images/Pasted image 20260813210748.png",
+    "_Attachments/Images/Pasted image 20260813210707.png",
+    "_Attachments/Images/Pasted image 20260813210611.png",
+    "_Attachments/Images/Pasted image 20260813210430.png",
+    "_Attachments/Images/Pasted image 20260813210337.png",
+    "_Attachments/Images/Pasted image 20260813210312.png",
+    "_Attachments/Images/Pasted image 20260813205921.png",
+    "_Attachments/Images/Pasted image 20260813205805.png",
+    "_Attachments/Images/Pasted image 20260813205528.png",
+    "_Attachments/Images/QQ20260813-203840.mp4",
+    "02 - 408/02 - 计算机组成原理/01/00 - 计算机组成原理.md",
     "01 - 数学/02 - 线代/02 - 矩阵.canvas",
+    "好题错题整理/02 - 线代/26,没咋了线代基础,4,6,1.md",
+    "好题错题整理/02 - 线代/26,没咋了线代强化,1,3,7.md",
+    "好题错题整理/02 - 线代/26,没咋了线代强化,1,1,25.md",
+    "好题错题整理/02 - 线代/26,没咋了线代强化,1,1,7.md",
+    "好题错题整理/02 - 线代/26,没咋了线代强化,,1,1,24.md",
+    "好题错题整理/02 - 线代/26,没咋了线代基础,4,6,5.md",
+    "01 - 数学/02 - 线代/01 - 行列式.canvas",
     "01 - 数学/02 - 线代/05 - 矩阵相似理论.canvas",
+    "01 - 数学/02 - 线代/06 - 二次型.canvas",
+    "01 - 数学/02 - 线代/03 - 向量组.canvas",
+    "好题错题整理/_待确认/26,没咋了.md",
+    "好题错题整理/_待确认/26,没咋了线代基础,880a,没咋了线代强化,880b,1000a.md",
+    "好题错题整理/_待确认/26,没咋了线代强化.md",
+    "02 - 408/03 - 操作系统/01",
+    "02 - 408/02 - 计算机组成原理/02",
+    "02 - 408/02 - 计算机组成原理/01",
+    "02 - 408/02 - 计算机组成原理/01.canvas",
+    "好题错题整理/好题错题筛选页.md",
+    "好题错题整理/02 - 线代/1000/27,1000b,4,3 - 怪题.md",
+    "好题错题整理/02 - 线代/27,zy_9,1,6.md",
+    "_Daily_Tasks/2026-08-12.md",
     "01 - 数学/02 - 线代/04 - 线性方程组.canvas",
-    "六级习题分类系统.md",
-    "充分必要条件.md",
-    "数据库测试.base",
-    "Anki 制卡 - 单词.md",
-    "LaTeX Suite.md",
-    "z_大雪深埋模考规划.md",
-    "缩写.md",
-    "02 - 408/01 - 数据结构/大题/链表推荐题单/206. 反转链表.md",
-    "好题错题整理/01 - 高数/证明题/中值定理/罗尔定理构造零点.md",
-    "_Scripts/kaoyan-11408-obsidian/SKILL.md",
-    "_Scripts/__remove-english-stage/references/obsidian-notes.md",
-    "_Scripts/__remove-english-stage/SKILL.md",
-    "_Scripts/__remove-english-stage/references",
-    "_Scripts/__remove-english-stage",
-    "_Scripts/_test-staging/README.quickadd.md",
-    "_Scripts/_test-staging/README.dashboard.md",
-    "_Template/英语/英语每日.md",
-    "_Template/英语/英语周复盘.md",
-    "_Template/英语/英语作文复盘.md",
-    "_Template/英语/英语阅读复盘.md",
-    "_Scripts/kaoyan-11408-obsidian/agents/openai.yaml",
-    "_Scripts/kaoyan-11408-obsidian/references",
-    "_Scripts/kaoyan-11408-obsidian/agents",
-    "_Scripts/kaoyan-11408-obsidian",
-    "_Scripts/__kaoyan-11408-validate",
-    "01 - 数学/01 - 高数/05 - 中值定理/01 - 中值定理大观.canvas",
-    "01 - 数学/01 - 高数/05 - 中值定理/02 - 微分等式与微分不等式.canvas"
+    "好题错题整理/02 - 线代/1000/27,1000b,3,9.md",
+    "好题错题整理/02 - 线代/26,没咋了线代强化,1,1,19.md",
+    "好题错题整理/02 - 线代/26,没咋了线代强化,1,3,2.md",
+    "好题错题整理/02 - 线代/1000/27,1000b,3,10.md",
+    "好题错题整理/02 - 线代/26,没咋了线代强化,1,3,4.md",
+    "好题错题整理/_待确认/20260812152432534.md.codex-tmp",
+    "好题错题整理/02 - 线代/20260812141155528.md.codex-bak",
+    "好题错题整理/02 - 线代/20260812141155528.md.codex-tmp",
+    "01 - 数学/02 - 线代/秩 1 矩阵大观.canvas",
+    "_Attachments/题目识别",
+    "好题错题整理/_待确认",
+    "01 - 数学/02 - 线代/秩一矩阵.pdf",
+    "01 - 数学/01 - 高数/06 - 无穷级数/无穷级数.canvas",
+    "01 - 数学/01 - 高数/03 - 一元积分/02 - 一元积分计算大观.canvas"
   ]
 }

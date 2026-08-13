@@ -5,53 +5,8 @@
 		{"id":"8b08a31d48ad1f41","type":"group","x":14400,"y":-1040,"width":1850,"height":1140,"label":"奇淫巧计"},
 		{"id":"628c38d5d7dd66dd","type":"group","x":12320,"y":-1160,"width":1680,"height":1200,"color":"2","label":"基础积分表"},
 		{"id":"52f5b62a423adb52","type":"group","x":14400,"y":360,"width":2080,"height":910,"label":"注意点"},
-		{"id":"16b3ed1e1b30d0bb","type":"file","file":"_Attachments/Images/Pasted image 20260714054354.png","x":2160,"y":1172,"width":700,"height":140},
-		{
-			"id":"d1d2fc37593d1566",
-			"type":"text",
-			"text":"(2) 定积分",
-			"styleAttributes":{"textAlign":"center"},
-			"x":3163,
-			"y":532,
-			"width":340,
-			"height":110
-		},
-		{"id":"ef45f0c1081a7710","type":"file","file":"_Attachments/Images/Pasted image 20260714083650.png","x":3668,"y":427,"width":301,"height":320},
-		{"id":"2be39c62a60423d7","type":"file","file":"_Attachments/Images/Pasted image 20260714054413.png","x":2160,"y":1592,"width":687,"height":258},
-		{"id":"1c55b9ebff20b233","type":"file","file":"_Attachments/Images/Pasted image 20260714054447.png","x":2160,"y":1850,"width":698,"height":421},
-		{"id":"dfe41b0b16cf888d","type":"file","file":"_Attachments/Images/Pasted image 20260714054909.png","x":3049,"y":1177,"width":624,"height":225},
-		{
-			"id":"2771bf2f8310efc9",
-			"type":"text",
-			"text":"(5) 特殊定积分",
-			"styleAttributes":{"textAlign":"center"},
-			"x":4975,
-			"y":1181,
-			"width":320,
-			"height":100
-		},
-		{"id":"45c366e34944fdbd","type":"file","file":"_Attachments/Images/Pasted image 20260714084308.png","x":5135,"y":1633,"width":523,"height":121},
-		{"id":"09ca38e8c1b9c5d8","type":"file","file":"_Attachments/Images/Pasted image 20260714084213.png","x":5135,"y":1756,"width":525,"height":390},
-		{"id":"6f36cccab84a70c9","type":"file","file":"_Attachments/Images/result_6yLDJG.png","x":4595,"y":1573,"width":471,"height":177},
 		{"id":"e5a4a50583ae5aad","type":"file","file":"_Attachments/Images/Pasted image 20260714083828.png","x":1152,"y":1277,"width":756,"height":100},
 		{"id":"aca9fc1dc40a489a","type":"file","file":"_Attachments/Images/Pasted image 20260714083846.png","x":880,"y":1592,"width":400,"height":366},
-		{"id":"f8269a41cda3778c","type":"file","file":"_Attachments/Images/Pasted image 20260714055215.png","x":4595,"y":1750,"width":471,"height":197},
-		{"id":"3ec2da14326a185d","type":"file","file":"_Attachments/Images/Pasted image 20260714054924.png","x":3819,"y":1215,"width":634,"height":162},
-		{"id":"38b46da1f13e04a8","type":"file","file":"_Attachments/Images/Pasted image 20260714055305.png","x":5740,"y":1575,"width":400,"height":274},
-		{"id":"e76577b38c02d755","type":"file","file":"_Attachments/Images/Pasted image 20260714084033.png","x":5740,"y":1849,"width":400,"height":205},
-		{"id":"6e93b02217bcaa09","type":"file","file":"_Attachments/Images/Pasted image 20260714052816.png","x":3820,"y":-960,"width":574,"height":382},
-		{"id":"8657f30086c37827","type":"file","file":"_Attachments/Images/799fbc86dc32f91792755e4e12a9e672 (1).jpg","x":4795,"y":-960,"width":575,"height":379},
-		{"id":"4a553f80acb0940f","type":"file","file":"_Attachments/Images/Pasted image 20260712171212.png","x":4395,"y":-960,"width":400,"height":383},
-		{
-			"id":"90489ab8b1ced9aa",
-			"type":"text",
-			"text":"一元积分计算大观",
-			"styleAttributes":{"textAlign":"center"},
-			"x":4465,
-			"y":-320,
-			"width":260,
-			"height":60
-		},
 		{
 			"id":"6537ea9545e737f0",
 			"type":"text",
@@ -191,30 +146,6 @@
 		},
 		{"id":"39de698151498ce6","type":"file","file":"_Attachments/Images/Pasted image 20260714061207.png","x":10750,"y":1080,"width":525,"height":274},
 		{
-			"id":"2fce37239f9f5a3b",
-			"type":"text",
-			"text":"$\\arctan x + \\arctan \\dfrac 1x = \\dfrac {\\pi}2 \\cdot \\text{sgn} (x)$ ",
-			"styleAttributes":{"textAlign":"center"},
-			"x":14520,
-			"y":520,
-			"width":330,
-			"height":166
-		},
-		{
-			"id":"cca33ec72c2cfe9a",
-			"type":"text",
-			"text":"与答案差异部分",
-			"styleAttributes":{"textAlign":"center"},
-			"x":15040,
-			"y":573,
-			"width":260,
-			"height":60
-		},
-		{"id":"6bbce6aad3d57fb0","type":"file","file":"_Attachments/Images/result_Nz4VY0.png","x":12420,"y":-1100,"width":561,"height":1058},
-		{"id":"cc2b1fad6dcd7e51","type":"file","file":"_Attachments/Images/Pasted image 20260714072802.png","x":13080,"y":-805,"width":812,"height":469},
-		{"id":"69ccf5fb83653fd3","type":"file","file":"_Attachments/Images/Pasted image 20260714083129.png","x":13260,"y":480,"width":452,"height":480},
-		{"id":"da9c3cba325bc1d4","type":"file","file":"_Attachments/Images/Pasted image 20260714083104.png","x":12400,"y":520,"width":774,"height":294},
-		{
 			"id":"86d419e2a0073533",
 			"type":"text",
 			"text":"不常见凑微分",
@@ -275,6 +206,36 @@
 			"height":880
 		},
 		{
+			"id":"2fce37239f9f5a3b",
+			"type":"text",
+			"text":"$\\arctan x + \\arctan \\dfrac 1x = \\dfrac {\\pi}2 \\cdot \\text{sgn} (x)$ ",
+			"styleAttributes":{"textAlign":"center"},
+			"x":14520,
+			"y":520,
+			"width":330,
+			"height":166
+		},
+		{
+			"id":"cca33ec72c2cfe9a",
+			"type":"text",
+			"text":"与答案差异部分",
+			"styleAttributes":{"textAlign":"center"},
+			"x":15040,
+			"y":573,
+			"width":260,
+			"height":60
+		},
+		{"id":"6bbce6aad3d57fb0","type":"file","file":"_Attachments/Images/result_Nz4VY0.png","x":12420,"y":-1100,"width":561,"height":1058},
+		{"id":"cc2b1fad6dcd7e51","type":"file","file":"_Attachments/Images/Pasted image 20260714072802.png","x":13080,"y":-805,"width":812,"height":469},
+		{"id":"69ccf5fb83653fd3","type":"file","file":"_Attachments/Images/Pasted image 20260714083129.png","x":13260,"y":480,"width":452,"height":480},
+		{"id":"da9c3cba325bc1d4","type":"file","file":"_Attachments/Images/Pasted image 20260714083104.png","x":12400,"y":520,"width":774,"height":294},
+		{"id":"8441776ed0525622","type":"file","file":"_Attachments/Images/Pasted image 20260714055433.png","x":6560,"y":1091,"width":575,"height":272},
+		{"id":"45c366e34944fdbd","type":"file","file":"_Attachments/Images/Pasted image 20260714084308.png","x":5135,"y":1633,"width":523,"height":121},
+		{"id":"09ca38e8c1b9c5d8","type":"file","file":"_Attachments/Images/Pasted image 20260714084213.png","x":5135,"y":1756,"width":525,"height":390},
+		{"id":"6f36cccab84a70c9","type":"file","file":"_Attachments/Images/result_6yLDJG.png","x":4595,"y":1573,"width":471,"height":177},
+		{"id":"f8269a41cda3778c","type":"file","file":"_Attachments/Images/Pasted image 20260714055215.png","x":4595,"y":1750,"width":471,"height":197},
+		{"id":"38b46da1f13e04a8","type":"file","file":"_Attachments/Images/Pasted image 20260714055305.png","x":5740,"y":1575,"width":400,"height":274},
+		{
 			"id":"a36f50c65f783cc9",
 			"type":"text",
 			"text":"(2) 奇偶性、周期性结论",
@@ -284,11 +245,9 @@
 			"width":280,
 			"height":80
 		},
-		{"id":"8441776ed0525622","type":"file","file":"_Attachments/Images/Pasted image 20260714055433.png","x":6560,"y":1091,"width":575,"height":272},
 		{"id":"2e94862accb71f9a","type":"file","file":"_Attachments/Images/Pasted image 20260714055810.png","x":7115,"y":1531,"width":600,"height":138},
 		{"id":"8a2533b25c4bf85c","type":"file","file":"_Attachments/Images/Pasted image 20260714055909.png","x":8515,"y":1585,"width":775,"height":80},
 		{"id":"a6ced973080d3dc5","type":"file","file":"_Attachments/Images/Pasted image 20260714055820.png","x":7815,"y":1541,"width":613,"height":130},
-		{"id":"f814bdf7561a3711","type":"file","file":"_Attachments/Images/Pasted image 20260714055942.png","x":7478,"y":1891,"width":644,"height":343},
 		{
 			"id":"c276c9ce81115ffa",
 			"type":"text",
@@ -301,7 +260,48 @@
 			"y":791,
 			"width":320,
 			"height":100
-		}
+		},
+		{"id":"16b3ed1e1b30d0bb","type":"file","file":"_Attachments/Images/Pasted image 20260714054354.png","x":2160,"y":1172,"width":700,"height":140},
+		{"id":"2be39c62a60423d7","type":"file","file":"_Attachments/Images/Pasted image 20260714054413.png","x":2160,"y":1592,"width":687,"height":258},
+		{
+			"id":"2771bf2f8310efc9",
+			"type":"text",
+			"text":"(5) 特殊定积分",
+			"styleAttributes":{"textAlign":"center"},
+			"x":4975,
+			"y":1181,
+			"width":320,
+			"height":100
+		},
+		{"id":"3ec2da14326a185d","type":"file","file":"_Attachments/Images/Pasted image 20260714054924.png","x":3819,"y":1215,"width":634,"height":162},
+		{"id":"e76577b38c02d755","type":"file","file":"_Attachments/Images/Pasted image 20260714084033.png","x":5740,"y":1849,"width":400,"height":205},
+		{"id":"6e93b02217bcaa09","type":"file","file":"_Attachments/Images/Pasted image 20260714052816.png","x":3820,"y":-960,"width":574,"height":382},
+		{"id":"8657f30086c37827","type":"file","file":"_Attachments/Images/799fbc86dc32f91792755e4e12a9e672 (1).jpg","x":4795,"y":-960,"width":575,"height":379},
+		{"id":"4a553f80acb0940f","type":"file","file":"_Attachments/Images/Pasted image 20260712171212.png","x":4395,"y":-960,"width":400,"height":383},
+		{
+			"id":"90489ab8b1ced9aa",
+			"type":"text",
+			"text":"一元积分计算大观",
+			"styleAttributes":{"textAlign":"center"},
+			"x":4465,
+			"y":-320,
+			"width":260,
+			"height":60
+		},
+		{"id":"f814bdf7561a3711","type":"file","file":"_Attachments/Images/Pasted image 20260714055942.png","x":7478,"y":1891,"width":644,"height":343},
+		{
+			"id":"d1d2fc37593d1566",
+			"type":"text",
+			"text":"(2) 定积分",
+			"styleAttributes":{"textAlign":"center"},
+			"x":3163,
+			"y":532,
+			"width":340,
+			"height":110
+		},
+		{"id":"ef45f0c1081a7710","type":"file","file":"_Attachments/Images/Pasted image 20260714083650.png","x":3668,"y":427,"width":301,"height":320},
+		{"id":"1c55b9ebff20b233","type":"file","file":"_Attachments/Images/Pasted image 20260714054447.png","x":2160,"y":1850,"width":698,"height":421},
+		{"id":"dfe41b0b16cf888d","type":"file","file":"_Attachments/Images/Pasted image 20260714054909.png","x":3049,"y":1177,"width":624,"height":225}
 	],
 	"edges":[
 		{

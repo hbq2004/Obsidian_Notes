@@ -97,12 +97,14 @@
 .smart-paper-view .smart-paper-type-select:focus-visible,
 .smart-paper-view .smart-paper-count-select:focus-visible,
 .smart-paper-view .smart-paper-generate-button:focus-visible,
+.smart-paper-view .smart-paper-order-lock-button:focus-visible,
 .smart-paper-view .smart-paper-print-button:focus-visible {
     outline: 2px solid var(--interactive-accent);
     outline-offset: 2px;
 }
 
 .smart-paper-view .smart-paper-generate-button,
+.smart-paper-view .smart-paper-order-lock-button,
 .smart-paper-view .smart-paper-print-button {
     appearance: none;
     min-height: 36px;
@@ -129,6 +131,18 @@
     color: var(--interactive-accent);
 }
 
+.smart-paper-view .smart-paper-order-lock-button {
+    border: 1px solid var(--background-modifier-border);
+    background: var(--interactive-normal);
+    color: var(--text-normal);
+}
+
+.smart-paper-view .smart-paper-order-lock-button.is-active {
+    border-color: var(--interactive-accent);
+    background: var(--interactive-accent);
+    color: var(--text-on-accent);
+}
+
 .smart-paper-view .smart-paper-generate-button:hover:not(:disabled) {
     filter: brightness(1.08);
 }
@@ -137,9 +151,19 @@
     background: var(--interactive-hover);
 }
 
+.smart-paper-view .smart-paper-order-lock-button:hover:not(:disabled) {
+    background: var(--interactive-hover);
+}
+
+.smart-paper-view .smart-paper-order-lock-button.is-active:hover:not(:disabled) {
+    background: var(--interactive-accent);
+    filter: brightness(1.08);
+}
+
 .smart-paper-view .smart-paper-type-select:disabled,
 .smart-paper-view .smart-paper-count-select:disabled,
 .smart-paper-view .smart-paper-generate-button:disabled,
+.smart-paper-view .smart-paper-order-lock-button:disabled,
 .smart-paper-view .smart-paper-print-button:disabled {
     cursor: not-allowed;
     opacity: 0.55;
@@ -148,6 +172,7 @@
 .smart-paper-view .smart-paper-type-select.smart-paper-busy:disabled,
 .smart-paper-view .smart-paper-count-select.smart-paper-busy:disabled,
 .smart-paper-view .smart-paper-generate-button.smart-paper-busy:disabled,
+.smart-paper-view .smart-paper-order-lock-button.smart-paper-busy:disabled,
 .smart-paper-view .smart-paper-print-button.smart-paper-busy:disabled {
     cursor: wait;
 }
@@ -448,6 +473,7 @@
     }
 
     .smart-paper-view .smart-paper-generate-button,
+    .smart-paper-view .smart-paper-order-lock-button,
     .smart-paper-view .smart-paper-print-button {
         width: 100%;
     }

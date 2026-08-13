@@ -14,6 +14,7 @@
  * 9. 不再创建 Notice 降级警告属性
  * 10. 支持将当前筛选结果打印或另存为 PDF
  * 11. 支持按当前标签无放回随机抽取 X 道已刷题二刷
+ * 12. 支持固定当前题目顺序，评级刷新后不再重新排序
  ******************************************************************/
 
 /* ================================================================
@@ -1034,8 +1035,10 @@ function embedHasQuestionMarker(embed) {
     return false;
 }
 
-function getQuestionImages(page) {
-    const sourceFile = app.vault.getAbstractFileByPath(page.file.path);
+function getQuestionImages(page, knownSourceFile = undefined) {
+    const sourceFile = knownSourceFile === undefined
+        ? app.vault.getAbstractFileByPath(page.file.path)
+        : knownSourceFile;
 
     if (!sourceFile || sourceFile.extension !== "md") {
         return [];
@@ -1098,7 +1101,8 @@ for (const page of candidatePages) {
         continue;
     }
 
-    const images = getQuestionImages(page);
+    const sourceFile = app.vault.getAbstractFileByPath(page.file.path);
+    const images = getQuestionImages(page, sourceFile);
 
     if (images.length === 0) continue;
 
@@ -1118,7 +1122,7 @@ for (const page of candidatePages) {
 
     items.push({
         page,
-        sourceFile: app.vault.getAbstractFileByPath(page.file.path),
+        sourceFile,
         images,
         level,
         peakLevel,
@@ -1141,11 +1145,244 @@ let filterSummaryEl = null;
 let filterEmptyEl = null;
 let titleEl = null;
 let printButtonEl = null;
+let orderLockButtonEl = null;
 let printInProgress = false;
 let randomReviewPool = [];
 let randomReviewControls = null;
 
-items.sort((a, b) => {
+const QUESTION_ORDER_LOCK_VERSION = 2;
+const LEGACY_QUESTION_ORDER_LOCK_VERSION = 1;
+const questionOrderScopeSignature = JSON.stringify(
+    currentTagRequirements
+        .map(requirement => requirement.key)
+        .sort()
+);
+const questionOrderStorageKey =
+    "question-recommender:order-lock:" +
+    encodeURIComponent(String(app.vault.getName?.() ?? "vault")) + ":" +
+    normalizeVaultPath(currentFile.file.path);
+
+function getQuestionOrderPath(item) {
+    return normalizeVaultPath(
+        item?.sourceFile?.path ?? item?.page?.file?.path
+    );
+}
+
+/*
+ * 题目标题会参与笔记路径，因此路径不能作为“固定顺序”的唯一标识。
+ * 优先保存显式 ID、文件创建时间和题图组合；它们在笔记重命名后仍保持不变。
+ */
+function getQuestionOrderAnchors(item) {
+    const anchors = [];
+    const explicitId = item?.page?.question_id ??
+        item?.page?.question_uid;
+
+    if (
+        (typeof explicitId === "string" ||
+            typeof explicitId === "number") &&
+        String(explicitId).trim()
+    ) {
+        anchors.push(`question-id:${String(explicitId).trim()}`);
+    }
+
+    const sourceFile = app.vault.getAbstractFileByPath(
+        getQuestionOrderPath(item)
+    ) ?? item?.sourceFile;
+    const sourceCtime = Number(
+        sourceFile?.stat?.ctime ??
+        item?.page?.file?.ctime?.valueOf?.()
+    );
+
+    if (Number.isFinite(sourceCtime) && sourceCtime > 0) {
+        anchors.push(`note-ctime:${Math.trunc(sourceCtime)}`);
+    }
+
+    const imagePaths = asArray(item?.images)
+        .map(imageLink => normalizeVaultPath(imageLink?.path))
+        .filter(Boolean)
+        .sort();
+
+    if (imagePaths.length > 0) {
+        anchors.push(`question-images:${imagePaths.join("\u0000")}`);
+    }
+
+    return Array.from(new Set(anchors));
+}
+
+function createQuestionOrderEntry(item) {
+    const path = getQuestionOrderPath(item);
+    const anchors = getQuestionOrderAnchors(item);
+
+    return path || anchors.length > 0
+        ? { path, anchors }
+        : null;
+}
+
+function normalizeStoredQuestionOrderEntry(entry) {
+    if (typeof entry === "string") {
+        const path = normalizeVaultPath(entry);
+        return path ? { path, anchors: [] } : null;
+    }
+
+    const path = normalizeVaultPath(entry?.path);
+    const anchors = Array.from(new Set(
+        asArray(entry?.anchors)
+            .map(anchor => String(anchor ?? "").trim())
+            .filter(Boolean)
+    ));
+
+    return path || anchors.length > 0
+        ? { path, anchors }
+        : null;
+}
+
+function getQuestionOrderPathParts(path) {
+    const normalizedPath = normalizeVaultPath(path);
+    const slashIndex = normalizedPath.lastIndexOf("/");
+    const directory = slashIndex >= 0
+        ? normalizedPath.slice(0, slashIndex)
+        : "";
+    const filename = slashIndex >= 0
+        ? normalizedPath.slice(slashIndex + 1)
+        : normalizedPath;
+
+    return {
+        directory: directory.toLocaleLowerCase(),
+        stem: filename.replace(/\.md$/i, "").toLocaleLowerCase()
+    };
+}
+
+/* 兼容旧版仅保存路径的锁：识别“原名 + 后缀”这一类重命名。 */
+function isLikelyRenamedQuestionPath(storedPath, currentPath) {
+    const stored = getQuestionOrderPathParts(storedPath);
+    const current = getQuestionOrderPathParts(currentPath);
+
+    if (
+        !stored.stem ||
+        !current.stem ||
+        stored.directory !== current.directory ||
+        stored.stem === current.stem
+    ) {
+        return false;
+    }
+
+    const shorter = stored.stem.length <= current.stem.length
+        ? stored.stem
+        : current.stem;
+    const longer = shorter === stored.stem
+        ? current.stem
+        : stored.stem;
+
+    if (!longer.startsWith(shorter)) return false;
+
+    return /^[\s~\-_—－（(【\[]/.test(longer.slice(shorter.length));
+}
+
+function getQuestionOrderEntries(state) {
+    const rawEntries = Array.isArray(state?.entries)
+        ? state.entries
+        : asArray(state?.paths);
+
+    return rawEntries
+        .map(normalizeStoredQuestionOrderEntry)
+        .filter(Boolean);
+}
+
+function buildQuestionOrderLookup(entries) {
+    const orderByPath = new Map();
+    const orderByAnchor = new Map();
+
+    entries.forEach((entry, index) => {
+        if (entry.path && !orderByPath.has(entry.path)) {
+            orderByPath.set(entry.path, index);
+        }
+
+        for (const anchor of entry.anchors) {
+            if (!orderByAnchor.has(anchor)) {
+                orderByAnchor.set(anchor, index);
+            } else if (orderByAnchor.get(anchor) !== index) {
+                /* 重复锚点不具备唯一性，禁止据此误配题目。 */
+                orderByAnchor.set(anchor, null);
+            }
+        }
+    });
+
+    return { entries, orderByPath, orderByAnchor };
+}
+
+function findQuestionOrderIndex(item, lookup) {
+    for (const anchor of getQuestionOrderAnchors(item)) {
+        const index = lookup.orderByAnchor.get(anchor);
+        if (Number.isInteger(index)) return index;
+    }
+
+    const path = getQuestionOrderPath(item);
+    const exactIndex = lookup.orderByPath.get(path);
+
+    if (Number.isInteger(exactIndex)) return exactIndex;
+
+    const renamedMatches = [];
+
+    lookup.entries.forEach((entry, index) => {
+        if (
+            entry.anchors.length === 0 &&
+            isLikelyRenamedQuestionPath(entry.path, path)
+        ) {
+            renamedMatches.push(index);
+        }
+    });
+
+    return renamedMatches.length === 1
+        ? renamedMatches[0]
+        : undefined;
+}
+
+function mergeQuestionOrderEntries(questionItems, previousState = null) {
+    const previousEntries = getQuestionOrderEntries(previousState);
+
+    if (previousEntries.length === 0) {
+        return questionItems
+            .map(createQuestionOrderEntry)
+            .filter(Boolean);
+    }
+
+    const mergedEntries = previousEntries.map(entry => ({
+        path: entry.path,
+        anchors: [...entry.anchors]
+    }));
+    const lookup = buildQuestionOrderLookup(previousEntries);
+    const claimedIndexes = new Set();
+
+    for (const item of questionItems) {
+        const currentEntry = createQuestionOrderEntry(item);
+        if (!currentEntry) continue;
+
+        const matchedIndex = findQuestionOrderIndex(item, lookup);
+
+        if (
+            Number.isInteger(matchedIndex) &&
+            !claimedIndexes.has(matchedIndex)
+        ) {
+            const previousEntry = mergedEntries[matchedIndex];
+            previousEntry.path = currentEntry.path || previousEntry.path;
+            previousEntry.anchors = Array.from(new Set([
+                ...previousEntry.anchors,
+                ...currentEntry.anchors
+            ]));
+            claimedIndexes.add(matchedIndex);
+        } else {
+            mergedEntries.push(currentEntry);
+        }
+    }
+
+    /*
+     * 未出现的旧条目暂时保留：重命名时 Dataview 可能短暂返回空档，
+     * 若立即删除锁记录，下一次索引完成后该题仍会被误当成新题。
+     */
+    return mergedEntries;
+}
+
+function compareQuestionPriority(a, b) {
     const regressionDifference =
         Number(b.regressed) - Number(a.regressed);
 
@@ -1164,7 +1401,244 @@ items.sort((a, b) => {
         a.page.file.name,
         b.page.file.name
     );
-});
+}
+
+function getQuestionOrderStorage() {
+    try {
+        return dv.container.ownerDocument?.defaultView?.localStorage ?? null;
+    } catch (error) {
+        console.warn("题目顺序存储不可用：", error);
+        return null;
+    }
+}
+
+function readQuestionOrderLock() {
+    try {
+        const storage = getQuestionOrderStorage();
+        const rawState = storage?.getItem(questionOrderStorageKey);
+        const state = rawState ? JSON.parse(rawState) : null;
+
+        const scopeMatches =
+            state?.scopeSignature === questionOrderScopeSignature;
+        const hasCurrentEntries =
+            state?.version === QUESTION_ORDER_LOCK_VERSION &&
+            Array.isArray(state.entries);
+        const hasLegacyPaths =
+            state?.version === LEGACY_QUESTION_ORDER_LOCK_VERSION &&
+            Array.isArray(state.paths);
+
+        if (scopeMatches && (hasCurrentEntries || hasLegacyPaths)) {
+            const entries = getQuestionOrderEntries(state);
+            if (entries.length > 0) return { ...state, entries };
+        }
+
+        if (rawState) storage?.removeItem(questionOrderStorageKey);
+    } catch (error) {
+        console.warn("固定题目顺序读取失败：", error);
+    }
+
+    return null;
+}
+
+function writeQuestionOrderLock(
+    questionItems = items,
+    previousState = null
+) {
+    const entries = mergeQuestionOrderEntries(
+        questionItems,
+        previousState
+    );
+    const paths = entries
+        .map(entry => entry.path)
+        .filter(Boolean);
+
+    if (entries.length === 0) return false;
+
+    try {
+        const storage = getQuestionOrderStorage();
+        if (!storage) return false;
+
+        storage.setItem(
+            questionOrderStorageKey,
+            JSON.stringify({
+                version: QUESTION_ORDER_LOCK_VERSION,
+                scopeSignature: questionOrderScopeSignature,
+                entries,
+                paths
+            })
+        );
+        return true;
+    } catch (error) {
+        console.warn("固定题目顺序保存失败：", error);
+        return false;
+    }
+}
+
+function clearQuestionOrderLock() {
+    try {
+        getQuestionOrderStorage()?.removeItem(questionOrderStorageKey);
+        return true;
+    } catch (error) {
+        console.warn("固定题目顺序清除失败：", error);
+        return false;
+    }
+}
+
+function applyLockedQuestionOrder(questionItems, state) {
+    const lookup = buildQuestionOrderLookup(
+        getQuestionOrderEntries(state)
+    );
+
+    questionItems.sort((a, b) => {
+        const orderA = findQuestionOrderIndex(a, lookup);
+        const orderB = findQuestionOrderIndex(b, lookup);
+        const hasOrderA = orderA !== undefined;
+        const hasOrderB = orderB !== undefined;
+
+        if (hasOrderA && hasOrderB) return orderA - orderB;
+        if (hasOrderA) return -1;
+        if (hasOrderB) return 1;
+        return compareQuestionPriority(a, b);
+    });
+}
+
+/*
+ * 旧版曾在每次刷新时直接覆写路径锁，因此重命名可能已经把题目追加到末尾。
+ * 迁移到稳定锚点前，仅针对末尾连续的“名称带明显后缀”题目做一次
+ * 保守修复；普通题名和用户原有的固定相对顺序均保持不动。
+ */
+function hasLikelyQuestionTitleSuffix(item) {
+    const filename = getQuestionOrderPath(item)
+        .split("/")
+        .pop()
+        ?.replace(/\.md$/i, "") ?? "";
+
+    return /(?:\s[-—－]\s*[^\s-].*|\s~+\s*)$/u.test(filename);
+}
+
+function repairLegacyAppendedRenames(questionItems, state) {
+    if (state?.version !== LEGACY_QUESTION_ORDER_LOCK_VERSION) {
+        return false;
+    }
+
+    let appendedBlockStart = questionItems.length;
+
+    while (
+        appendedBlockStart > 0 &&
+        hasLikelyQuestionTitleSuffix(
+            questionItems[appendedBlockStart - 1]
+        )
+    ) {
+        appendedBlockStart--;
+    }
+
+    const candidates = questionItems
+        .slice(appendedBlockStart)
+        .map(item => ({
+            item,
+            currentIndex: questionItems.indexOf(item)
+        }))
+        .filter(({ item }) => hasLikelyQuestionTitleSuffix(item))
+        .sort((a, b) => (
+            compareQuestionPriority(a.item, b.item) ||
+            a.currentIndex - b.currentIndex
+        ));
+    const candidateItems = new Set(
+        candidates.map(entry => entry.item)
+    );
+    const alreadyMovedItems = new Set();
+    let candidateBlockStart = null;
+    let repaired = false;
+
+    for (const { item: candidate } of candidates) {
+        const currentIndex = questionItems.indexOf(candidate);
+        const peers = questionItems.filter(item => item !== candidate);
+        const pendingCandidateIndexes = peers
+            .map((item, index) => (
+                candidateItems.has(item) &&
+                !alreadyMovedItems.has(item)
+                    ? index
+                    : -1
+            ))
+            .filter(index => index >= 0);
+        const currentGroupBoundary = pendingCandidateIndexes.length > 0
+            ? Math.min(...pendingCandidateIndexes)
+            : peers.length;
+        const movedIndexes = peers
+            .map((item, index) => (
+                alreadyMovedItems.has(item) ? index : -1
+            ))
+            .filter(index => index >= 0);
+        const afterMovedIndex = movedIndexes.length > 0
+            ? Math.max(...movedIndexes) + 1
+            : 0;
+        const priorityTargetIndex = candidateBlockStart === null
+            ? peers.findIndex(
+                (item, index) => (
+                    index < currentGroupBoundary &&
+                    compareQuestionPriority(candidate, item) < 0
+                )
+            )
+            : -1;
+        const insertionIndex = priorityTargetIndex >= 0
+            ? priorityTargetIndex
+            : Math.min(afterMovedIndex, currentGroupBoundary);
+
+        /* 只前移，不会把正常锁定的题目推到更后。 */
+        if (insertionIndex >= currentIndex) {
+            alreadyMovedItems.add(candidate);
+            continue;
+        }
+
+        questionItems.splice(currentIndex, 1);
+        questionItems.splice(insertionIndex, 0, candidate);
+        if (candidateBlockStart === null) {
+            candidateBlockStart = insertionIndex;
+        }
+        alreadyMovedItems.add(candidate);
+        repaired = true;
+    }
+
+    return repaired;
+}
+
+function createCurrentQuestionOrderState(questionItems) {
+    const entries = questionItems
+        .map(createQuestionOrderEntry)
+        .filter(Boolean);
+
+    return {
+        version: QUESTION_ORDER_LOCK_VERSION,
+        scopeSignature: questionOrderScopeSignature,
+        entries,
+        paths: entries
+            .map(entry => entry.path)
+            .filter(Boolean)
+    };
+}
+
+items.sort(compareQuestionPriority);
+
+const storedQuestionOrderLock = RANDOM_REVIEW_MODE
+    ? null
+    : readQuestionOrderLock();
+let questionOrderLocked = Boolean(storedQuestionOrderLock);
+
+if (storedQuestionOrderLock) {
+    applyLockedQuestionOrder(items, storedQuestionOrderLock);
+    const repairedLegacyOrder = repairLegacyAppendedRenames(
+        items,
+        storedQuestionOrderLock
+    );
+    const previousStateForMigration = repairedLegacyOrder
+        ? createCurrentQuestionOrderState(items)
+        : storedQuestionOrderLock;
+
+    /* 把锁定后新增的匹配题追加到末尾，后续刷新也保持同一位置。 */
+    if (!writeQuestionOrderLock(items, previousStateForMigration)) {
+        questionOrderLocked = false;
+    }
+}
 
 /**
  * 一次性清理当前筛选结果中旧版生成的 Notice 降级警告属性。
@@ -1703,7 +2177,11 @@ function createPrintRoot(printDocument) {
     const printRootEl = printDocument.createElement("main");
 
     printRootEl.className = "question-print-root";
-    printRootEl.setAttribute("aria-hidden", "true");
+    /*
+     * 不要设置 aria-hidden：Electron 根据可访问性标题结构生成 PDF
+     * outline；隐藏根节点会让页面上的 h1 无法进入书签目录。
+     */
+    printRootEl.setAttribute("role", "document");
     printRootEl.style.position = "fixed";
     printRootEl.style.left = "-10000px";
     printRootEl.style.top = "0";
@@ -1730,7 +2208,12 @@ function createPrintStyle(printDocument) {
         }
 
         .question-print-root {
-            font-family: "Microsoft YaHei", "PingFang SC",
+            /*
+             * Electron 37 / Chromium 138 在 PDF outline 模式下使用
+             * Microsoft YaHei 会把第 2 页后的 H1 文本重复拼接。
+             * Microsoft YaHei UI 外观接近且不会触发该引擎 bug。
+             */
+            font-family: "Microsoft YaHei UI", "PingFang SC",
                 "Noto Sans CJK SC", "Source Han Sans SC", sans-serif;
         }
 
@@ -1745,6 +2228,15 @@ function createPrintStyle(printDocument) {
         .question-print-item:last-child {
             break-after: auto;
             page-break-after: auto;
+        }
+
+        .question-print-title {
+            margin: 0 0 2mm;
+            font-size: 18pt;
+            font-weight: 700;
+            line-height: 1.25;
+            break-after: avoid-page;
+            page-break-after: avoid;
         }
 
         .question-print-source {
@@ -1764,7 +2256,7 @@ function createPrintStyle(printDocument) {
             /* 题图紧跟来源置顶，余下空间留给手写作答。 */
             justify-content: flex-start;
             width: 100%;
-            height: 245mm;
+            height: 236mm;
             gap: 3mm;
             overflow: hidden;
         }
@@ -1774,7 +2266,7 @@ function createPrintStyle(printDocument) {
             width: auto;
             height: auto;
             max-width: 100%;
-            max-height: var(--question-print-image-max-height, 245mm);
+            max-height: var(--question-print-image-max-height, 236mm);
             margin: 0 auto;
             object-fit: contain;
         }
@@ -1830,6 +2322,105 @@ function createPrintStyle(printDocument) {
     printDocument.head.appendChild(styleEl);
 
     return styleEl;
+}
+
+function sanitizePdfFileName(value, fallback = "题目筛选") {
+    const sanitized = String(value ?? "")
+        .replace(/[<>:"/\\|?*\u0000-\u001F]/g, "-")
+        .replace(/[. ]+$/g, "")
+        .trim();
+
+    return sanitized || fallback;
+}
+
+function getQuestionPdfDefaultName(questionCount) {
+    const sourceName = currentFile?.file?.name ??
+        currentFile?.file?.basename ??
+        "题目筛选";
+
+    return sanitizePdfFileName(
+        `${sourceName}-题目筛选-${questionCount}题`
+    ) + ".pdf";
+}
+
+function getPdfExportBridge(printWindow) {
+    const remote = printWindow?.electron?.remote ??
+        globalThis?.electron?.remote;
+    const webContents = remote?.getCurrentWebContents?.();
+
+    if (
+        !remote?.dialog?.showSaveDialog ||
+        typeof webContents?.printToPDF !== "function"
+    ) {
+        throw new Error(
+            "当前环境不支持带目录 PDF 导出，请在 Obsidian 桌面版中使用"
+        );
+    }
+
+    return { remote, webContents };
+}
+
+function getNodeFileSystem(remote) {
+    try {
+        if (typeof require === "function") {
+            return require("fs");
+        }
+    } catch (error) {
+        console.warn("Node 文件系统模块读取失败：", error);
+    }
+
+    try {
+        if (typeof remote?.require === "function") {
+            const remoteFs = remote.require("fs");
+
+            return {
+                promises: {
+                    writeFile(filePath, data) {
+                        return new Promise((resolve, reject) => {
+                            remoteFs.writeFile(
+                                filePath,
+                                data,
+                                error => error ? reject(error) : resolve()
+                            );
+                        });
+                    }
+                }
+            };
+        }
+    } catch (error) {
+        console.warn("Electron 文件系统模块读取失败：", error);
+    }
+
+    throw new Error("无法取得本地文件写入权限");
+}
+
+async function choosePdfSavePath(remote, defaultFileName) {
+    const result = await remote.dialog.showSaveDialog({
+        title: "导出带目录 PDF",
+        defaultPath: defaultFileName,
+        buttonLabel: "保存 PDF",
+        filters: [
+            { name: "PDF 文件", extensions: ["pdf"] }
+        ],
+        properties: ["showOverwriteConfirmation"]
+    });
+
+    return result?.canceled ? null : result?.filePath ?? null;
+}
+
+async function exportPdfWithOutline(remote, webContents, filePath) {
+    const pdfData = await webContents.printToPDF({
+        printBackground: true,
+        preferCSSPageSize: true,
+        generateTaggedPDF: true,
+        generateDocumentOutline: true
+    });
+
+    if (!pdfData || Number(pdfData.byteLength ?? pdfData.length) === 0) {
+        throw new Error("Electron 未生成 PDF 数据");
+    }
+
+    await getNodeFileSystem(remote).promises.writeFile(filePath, pdfData);
 }
 
 /**
@@ -1898,9 +2489,6 @@ async function printCurrentQuestions() {
     const objectUrls = [];
     let printRootEl = null;
     let printStyleEl = null;
-    let cleanupTimer = null;
-    let afterPrintTimer = null;
-    let afterPrintHandler = null;
     let cleanedUp = false;
 
     const cleanup = () => {
@@ -1908,23 +2496,8 @@ async function printCurrentQuestions() {
 
         cleanedUp = true;
 
-        if (cleanupTimer !== null) {
-            clearTimeout(cleanupTimer);
-        }
-
-        if (afterPrintTimer !== null) {
-            clearTimeout(afterPrintTimer);
-        }
-
         for (const objectUrl of objectUrls) {
             urlApi.revokeObjectURL(objectUrl);
-        }
-
-        if (afterPrintHandler) {
-            printWindow.removeEventListener(
-                "afterprint",
-                afterPrintHandler
-            );
         }
 
         printDocument.documentElement.classList.remove(
@@ -1938,6 +2511,17 @@ async function printCurrentQuestions() {
     };
 
     try {
+        const { remote, webContents } = getPdfExportBridge(printWindow);
+        const outputPath = await choosePdfSavePath(
+            remote,
+            getQuestionPdfDefaultName(printableItems.length)
+        );
+
+        if (!outputPath) {
+            cleanup();
+            return;
+        }
+
         printStyleEl = createPrintStyle(printDocument);
         printRootEl = createPrintRoot(printDocument);
 
@@ -1946,9 +2530,15 @@ async function printCurrentQuestions() {
         const imageDescriptors = [];
         let imageCount = 0;
 
-        for (const item of printableItems) {
+        for (const [printIndex, item] of printableItems.entries()) {
+            const questionNumber = printIndex + 1;
             const itemEl = printDocument.createElement("section");
             itemEl.className = "question-print-item";
+
+            const titleEl = printDocument.createElement("h1");
+            titleEl.className = "question-print-title";
+            titleEl.id = `question-${questionNumber}`;
+            titleEl.textContent = `第 ${questionNumber} 题`;
 
             const sourceEl = printDocument.createElement("p");
             sourceEl.className = "question-print-source";
@@ -1959,7 +2549,7 @@ async function printCurrentQuestions() {
 
             const itemImageCount = Math.max(1, item.images.length);
             const imageGapMm = 3;
-            const availableImageHeightMm = 245;
+            const availableImageHeightMm = 236;
             const maxImageHeightMm = Math.max(
                 20,
                 (
@@ -1968,6 +2558,7 @@ async function printCurrentQuestions() {
                 ) / itemImageCount
             );
 
+            itemEl.appendChild(titleEl);
             itemEl.appendChild(sourceEl);
             itemEl.appendChild(imagesEl);
             printRootEl.appendChild(itemEl);
@@ -2063,36 +2654,24 @@ async function printCurrentQuestions() {
         await waitForPrintLayout(printWindow);
         await waitForPrintLayout(printWindow);
 
-        afterPrintHandler = () => {
-            /* 给 Electron 留出读取打印树和图片资源的时间。 */
-            afterPrintTimer = setTimeout(cleanup, 1800);
-        };
-
-        printWindow.addEventListener(
-            "afterprint",
-            afterPrintHandler,
-            { once: true }
-        );
-
-        /* 极少数环境不会触发 afterprint，十分钟后兜底释放资源。 */
-        cleanupTimer = setTimeout(cleanup, 10 * 60 * 1000);
-
         new Notice(
-            "🖨️ 当前筛选已按每页 1 题准备 " +
-            `${printableItems.length} 道题、` +
-            `${imageCount} 张题图；` +
-            "请在打印窗口中选择“另存为 PDF”。",
-            6000
+            `⏳ 正在生成 ${printableItems.length} 道题的带目录 PDF…`,
+            5000
         );
 
-        printWindow.focus();
-        printWindow.print();
-    } catch (error) {
-        console.error("题目打印失败：", error);
+        await exportPdfWithOutline(remote, webContents, outputPath);
         cleanup();
 
         new Notice(
-            `❌ 打印准备失败：${error?.message ?? "未知错误"}`,
+            `✅ PDF 已保存；目录含 ${printableItems.length} 个一级题目书签。`,
+            6500
+        );
+    } catch (error) {
+        console.error("题目 PDF 导出失败：", error);
+        cleanup();
+
+        new Notice(
+            `❌ PDF 导出失败：${error?.message ?? "未知错误"}`,
             7000
         );
     }
@@ -2433,6 +3012,7 @@ function renderRandomReviewMode() {
         for (const item of items) {
             item.tableRow = null;
             item.filterMarker = null;
+            item.orderNumberEl = null;
         }
 
         if (displayedItems.length === 0) {
@@ -2453,6 +3033,7 @@ function renderRandomReviewMode() {
             const numberEl = viewDocument.createElement("span");
             numberEl.className = "question-random-number";
             numberEl.textContent = String(index + 1);
+            item.orderNumberEl = numberEl;
             numberCellEl.appendChild(numberEl);
 
             const sourceCellEl = viewDocument.createElement("td");
@@ -2681,7 +3262,12 @@ if (RANDOM_REVIEW_MODE) {
 
 displayedItems = items.slice(0, CONFIG.maxResults);
 
-const rows = displayedItems.map(item => {
+const rows = displayedItems.map((item, index) => {
+    const numberEl = document.createElement("span");
+    numberEl.className = "question-order-number";
+    numberEl.textContent = String(index + 1);
+    item.orderNumberEl = numberEl;
+
     const imageDisplay =
         item.images.length === 1
             ? item.images[0]
@@ -2694,6 +3280,7 @@ const rows = displayedItems.map(item => {
     );
 
     return [
+        numberEl,
         fullQuestionLink,
         imageDisplay,
         createLevelControl(item)
@@ -2710,6 +3297,10 @@ filterButtonEl = document.createElement("button");
 filterButtonEl.type = "button";
 filterButtonEl.className = "question-regression-filter-button";
 
+orderLockButtonEl = document.createElement("button");
+orderLockButtonEl.type = "button";
+orderLockButtonEl.className = "question-order-lock-button";
+
 printButtonEl = document.createElement("button");
 printButtonEl.type = "button";
 printButtonEl.className = "question-print-button";
@@ -2719,6 +3310,7 @@ filterSummaryEl = document.createElement("span");
 filterSummaryEl.className = "question-filter-summary";
 
 filterBarEl.appendChild(filterButtonEl);
+filterBarEl.appendChild(orderLockButtonEl);
 filterBarEl.appendChild(printButtonEl);
 filterBarEl.appendChild(filterSummaryEl);
 dv.container.appendChild(filterBarEl);
@@ -2734,12 +3326,35 @@ filterButtonEl.addEventListener("click", () => {
     refreshRegressionFilterUI();
 });
 
+orderLockButtonEl.addEventListener("click", () => {
+    if (questionOrderLocked) {
+        if (!clearQuestionOrderLock()) {
+            new Notice("❌ 无法解除当前题目顺序。", 4500);
+            return;
+        }
+
+        questionOrderLocked = false;
+        refreshRegressionFilterUI();
+        new Notice("🔓 已解除固定；下次刷新将恢复动态排序。", 4000);
+        return;
+    }
+
+    if (!writeQuestionOrderLock(items)) {
+        new Notice("❌ 无法保存当前题目顺序。", 4500);
+        return;
+    }
+
+    questionOrderLocked = true;
+    refreshRegressionFilterUI();
+    new Notice("📌 已固定当前题目顺序；评级刷新后也不会乱跳。", 4500);
+});
+
 printButtonEl.addEventListener("click", () => {
     void printCurrentQuestions();
 });
 
 dv.table(
-    ["题目", "题图预览", "状态反馈"],
+    ["题号", "题目", "题图预览", "状态反馈"],
     rows
 );
 
@@ -2764,18 +3379,28 @@ function refreshRegressionFilterUI() {
     }
 
     let displayedRegressedCount = 0;
+    let visibleQuestionNumber = 0;
 
     for (const item of displayedItems) {
         if (item.regressed) displayedRegressedCount++;
 
         const row = item.tableRow ??
             item.filterMarker?.closest("tr");
+        const rowHidden = regressionOnly && !item.regressed;
 
         if (row) {
             item.tableRow = row;
-            row.hidden =
-                regressionOnly &&
-                !item.regressed;
+            row.hidden = rowHidden;
+        }
+
+        if (!rowHidden) {
+            visibleQuestionNumber++;
+
+            if (item.orderNumberEl) {
+                item.orderNumberEl.textContent = String(
+                    visibleQuestionNumber
+                );
+            }
         }
 
         if (item.filterMarker) {
@@ -2848,8 +3473,27 @@ function refreshRegressionFilterUI() {
 
         printButtonEl.textContent =
             printInProgress
-                ? "⏳ 正在准备…"
-                : `🖨️ 打印当前题目（${printableCount}）`;
+                ? "⏳ 正在导出…"
+                : `📑 导出带目录 PDF（${printableCount}）`;
+    }
+
+    if (orderLockButtonEl) {
+        orderLockButtonEl.classList.toggle(
+            "is-active",
+            questionOrderLocked
+        );
+        orderLockButtonEl.setAttribute(
+            "aria-pressed",
+            String(questionOrderLocked)
+        );
+        orderLockButtonEl.disabled =
+            printInProgress || displayedItems.length === 0;
+        orderLockButtonEl.textContent = questionOrderLocked
+            ? "📌 当前顺序：已固定"
+            : "📍 固定当前顺序";
+        orderLockButtonEl.title = questionOrderLocked
+            ? "点击解除固定；解除后下次刷新恢复动态优先级排序"
+            : "保存当前完整题目顺序，评级导致视图刷新时仍保持不变";
     }
 
     if (randomReviewControls) {

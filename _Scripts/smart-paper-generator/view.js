@@ -7,6 +7,7 @@
  * - 题量不足时按同一试卷内的剩余科目权重自动补位
  * - 结合 level、降级、到期日期和复习次数加权抽题
  * - 独立预览本卷，并可按每页一题打印或另存为 PDF
+ * - 支持固定当前卷面题序，视图刷新后仍按原顺序恢复
  ******************************************************************/
 
 const CONFIG = {
@@ -15,8 +16,6 @@ const CONFIG = {
     questionCountOptions: [10, 20, 30, 40, 60, 100],
     maxQuestionCount: 100,
     printImageLoadTimeoutMs: 15000,
-    /* Windows“打印到 PDF”关闭对话框后仍可能继续写文件，暂缓释放题图资源。 */
-    printResourceReleaseDelayMs: 12000,
     defaultPaperType: "math1",
 
     /*
@@ -366,6 +365,213 @@ function getQuestionSourceName(item) {
     return sourceFile?.basename ??
         sourceFile?.name?.replace(/\.md$/i, "") ??
         String(item?.page?.file?.name ?? "未知题目");
+}
+
+/*
+ * 笔记标题会参与路径，重命名后路径必然变化；固定卷面不能只依赖路径。
+ * 下列锚点均不依赖标题，可在笔记重命名后继续识别同一道题。
+ */
+function getPaperQuestionOrderAnchors(item) {
+    const anchors = [];
+    const explicitId = item?.page?.question_id ??
+        item?.page?.question_uid;
+
+    if (
+        (typeof explicitId === "string" ||
+            typeof explicitId === "number") &&
+        String(explicitId).trim()
+    ) {
+        anchors.push(`question-id:${String(explicitId).trim()}`);
+    }
+
+    const sourceFile = resolveQuestionSourceFile(item);
+    const sourceCtime = Number(
+        sourceFile?.stat?.ctime ??
+        item?.page?.file?.ctime?.valueOf?.()
+    );
+
+    if (Number.isFinite(sourceCtime) && sourceCtime > 0) {
+        anchors.push(`note-ctime:${Math.trunc(sourceCtime)}`);
+    }
+
+    const imagePaths = asArray(item?.imageFiles)
+        .map(imageFile => normalizeVaultPath(imageFile?.path))
+        .filter(Boolean)
+        .sort();
+
+    if (imagePaths.length > 0) {
+        anchors.push(`question-images:${imagePaths.join("\u0000")}`);
+    }
+
+    return Array.from(new Set(anchors));
+}
+
+function createPaperOrderEntry(item) {
+    const path = normalizeVaultPath(getQuestionSourcePath(item));
+    const anchors = getPaperQuestionOrderAnchors(item);
+
+    return path || anchors.length > 0
+        ? { path, anchors }
+        : null;
+}
+
+function normalizeStoredPaperOrderEntry(entry) {
+    if (typeof entry === "string") {
+        const path = normalizeVaultPath(entry);
+        return path ? { path, anchors: [] } : null;
+    }
+
+    const path = normalizeVaultPath(entry?.path);
+    const anchors = Array.from(new Set(
+        asArray(entry?.anchors)
+            .map(anchor => String(anchor ?? "").trim())
+            .filter(Boolean)
+    ));
+
+    return path || anchors.length > 0
+        ? { path, anchors }
+        : null;
+}
+
+function getStoredPaperOrderEntries(state) {
+    const rawEntries = Array.isArray(state?.entries)
+        ? state.entries
+        : asArray(state?.paths);
+
+    return rawEntries
+        .map(normalizeStoredPaperOrderEntry)
+        .filter(Boolean);
+}
+
+function getPaperOrderPathParts(path) {
+    const normalizedPath = normalizeVaultPath(path);
+    const slashIndex = normalizedPath.lastIndexOf("/");
+    const directory = slashIndex >= 0
+        ? normalizedPath.slice(0, slashIndex)
+        : "";
+    const filename = slashIndex >= 0
+        ? normalizedPath.slice(slashIndex + 1)
+        : normalizedPath;
+
+    return {
+        directory: directory.toLocaleLowerCase(),
+        stem: filename.replace(/\.md$/i, "").toLocaleLowerCase()
+    };
+}
+
+/* 兼容旧版仅保存路径的锁，识别“原名 + 后缀”式重命名。 */
+function isLikelyRenamedPaperQuestionPath(storedPath, currentPath) {
+    const stored = getPaperOrderPathParts(storedPath);
+    const current = getPaperOrderPathParts(currentPath);
+
+    if (
+        !stored.stem ||
+        !current.stem ||
+        stored.directory !== current.directory ||
+        stored.stem === current.stem
+    ) {
+        return false;
+    }
+
+    const shorter = stored.stem.length <= current.stem.length
+        ? stored.stem
+        : current.stem;
+    const longer = shorter === stored.stem
+        ? current.stem
+        : stored.stem;
+
+    if (!longer.startsWith(shorter)) return false;
+
+    return /^[\s~\-_—－（(【\[]/.test(longer.slice(shorter.length));
+}
+
+function buildPaperOrderEntryLookup(entries) {
+    const orderByPath = new Map();
+    const orderByAnchor = new Map();
+
+    entries.forEach((entry, index) => {
+        if (entry.path && !orderByPath.has(entry.path)) {
+            orderByPath.set(entry.path, index);
+        }
+
+        for (const anchor of entry.anchors) {
+            if (!orderByAnchor.has(anchor)) {
+                orderByAnchor.set(anchor, index);
+            } else if (orderByAnchor.get(anchor) !== index) {
+                orderByAnchor.set(anchor, null);
+            }
+        }
+    });
+
+    return { entries, orderByPath, orderByAnchor };
+}
+
+function findPaperOrderEntryIndex(item, lookup) {
+    for (const anchor of getPaperQuestionOrderAnchors(item)) {
+        const index = lookup.orderByAnchor.get(anchor);
+        if (Number.isInteger(index)) return index;
+    }
+
+    const path = normalizeVaultPath(getQuestionSourcePath(item));
+    const exactIndex = lookup.orderByPath.get(path);
+
+    if (Number.isInteger(exactIndex)) return exactIndex;
+
+    const renamedMatches = [];
+
+    lookup.entries.forEach((entry, index) => {
+        if (
+            entry.anchors.length === 0 &&
+            isLikelyRenamedPaperQuestionPath(entry.path, path)
+        ) {
+            renamedMatches.push(index);
+        }
+    });
+
+    return renamedMatches.length === 1
+        ? renamedMatches[0]
+        : undefined;
+}
+
+function mergePaperOrderEntries(currentItems, previousState = null) {
+    const previousEntries = getStoredPaperOrderEntries(previousState);
+
+    if (previousEntries.length === 0) {
+        return currentItems
+            .map(createPaperOrderEntry)
+            .filter(Boolean);
+    }
+
+    const mergedEntries = previousEntries.map(entry => ({
+        path: entry.path,
+        anchors: [...entry.anchors]
+    }));
+    const lookup = buildPaperOrderEntryLookup(previousEntries);
+    const claimedIndexes = new Set();
+
+    for (const item of currentItems) {
+        const currentEntry = createPaperOrderEntry(item);
+        if (!currentEntry) continue;
+
+        const matchedIndex = findPaperOrderEntryIndex(item, lookup);
+
+        if (
+            Number.isInteger(matchedIndex) &&
+            !claimedIndexes.has(matchedIndex)
+        ) {
+            const previousEntry = mergedEntries[matchedIndex];
+            previousEntry.path = currentEntry.path || previousEntry.path;
+            previousEntry.anchors = Array.from(new Set([
+                ...previousEntry.anchors,
+                ...currentEntry.anchors
+            ]));
+            claimedIndexes.add(matchedIndex);
+        } else {
+            mergedEntries.push(currentEntry);
+        }
+    }
+
+    return mergedEntries;
 }
 
 /* ================================================================
@@ -930,12 +1136,17 @@ const printButtonEl = viewDocument.createElement("button");
 printButtonEl.type = "button";
 printButtonEl.className = "smart-paper-print-button";
 
+const orderLockButtonEl = viewDocument.createElement("button");
+orderLockButtonEl.type = "button";
+orderLockButtonEl.className = "smart-paper-order-lock-button";
+
 const summaryEl = viewDocument.createElement("div");
 summaryEl.className = "smart-paper-summary";
 
 controlsEl.appendChild(paperTypeLabelEl);
 controlsEl.appendChild(countLabelEl);
 controlsEl.appendChild(generateButtonEl);
+controlsEl.appendChild(orderLockButtonEl);
 controlsEl.appendChild(printButtonEl);
 controlsEl.appendChild(summaryEl);
 
@@ -982,6 +1193,250 @@ let buildInProgress = false;
 let printInProgress = false;
 let paperItems = [];
 let paperComposition = null;
+let paperOrderLocked = false;
+
+const PAPER_ORDER_LOCK_VERSION = 2;
+const LEGACY_PAPER_ORDER_LOCK_VERSION = 1;
+const paperOrderStorageKey =
+    "smart-paper-generator:order-lock:" +
+    encodeURIComponent(String(app.vault.getName?.() ?? "vault")) + ":" +
+    normalizeVaultPath(dv.current()?.file?.path ?? "default");
+
+function getPaperOrderStorage() {
+    try {
+        return viewWindow?.localStorage ?? null;
+    } catch (error) {
+        console.warn("智能组卷顺序存储不可用：", error);
+        return null;
+    }
+}
+
+function readPaperOrderLock() {
+    try {
+        const storage = getPaperOrderStorage();
+        const rawState = storage?.getItem(paperOrderStorageKey);
+        const state = rawState ? JSON.parse(rawState) : null;
+
+        const hasKnownPaperType = CONFIG.paperTypes.some(
+            type => type.id === state?.paperTypeId
+        );
+        const hasCurrentEntries =
+            state?.version === PAPER_ORDER_LOCK_VERSION &&
+            Array.isArray(state.entries);
+        const hasLegacyPaths =
+            state?.version === LEGACY_PAPER_ORDER_LOCK_VERSION &&
+            Array.isArray(state.paths);
+
+        if (
+            hasKnownPaperType &&
+            (hasCurrentEntries || hasLegacyPaths)
+        ) {
+            const entries = getStoredPaperOrderEntries(state);
+            if (entries.length > 0) return { ...state, entries };
+        }
+
+        if (rawState) storage?.removeItem(paperOrderStorageKey);
+    } catch (error) {
+        console.warn("固定卷面顺序读取失败：", error);
+    }
+
+    return null;
+}
+
+function writePaperOrderLock(previousState = null) {
+    const entries = mergePaperOrderEntries(
+        paperItems,
+        previousState
+    );
+    const paths = entries
+        .map(entry => entry.path)
+        .filter(Boolean);
+
+    if (entries.length === 0 || !paperComposition) return false;
+
+    try {
+        const storage = getPaperOrderStorage();
+        if (!storage) return false;
+
+        storage.setItem(
+            paperOrderStorageKey,
+            JSON.stringify({
+                version: PAPER_ORDER_LOCK_VERSION,
+                paperTypeId: paperComposition.paperTypeId,
+                requestedCount: paperComposition.requestedCount,
+                entries,
+                paths
+            })
+        );
+        return true;
+    } catch (error) {
+        console.warn("固定卷面顺序保存失败：", error);
+        return false;
+    }
+}
+
+function clearPaperOrderLock() {
+    try {
+        getPaperOrderStorage()?.removeItem(paperOrderStorageKey);
+        return true;
+    } catch (error) {
+        console.warn("固定卷面顺序清除失败：", error);
+        return false;
+    }
+}
+
+/* 题库缓存：重复点击“生成”时跳过全库扫描；任一笔记变化后签名失效并自动重建。 */
+let bankCache = null;
+
+function getBankVersionSignature() {
+    let pageCount = 0;
+    let maxMtime = 0;
+
+    try {
+        for (const page of Array.from(dv.pages())) {
+            pageCount++;
+
+            const mtime = page?.file?.mtime?.valueOf?.();
+            if (typeof mtime === "number" && mtime > maxMtime) {
+                maxMtime = mtime;
+            }
+        }
+    } catch (error) {
+        /* 全库查询失败时返回 null，调用方会强制重新扫描且不写缓存。 */
+        return null;
+    }
+
+    return `${pageCount}:${maxMtime}`;
+}
+
+function getCachedQuestionBank(paperType) {
+    const versionSignature = getBankVersionSignature();
+
+    if (
+        bankCache &&
+        bankCache.paperTypeId === paperType.id &&
+        versionSignature !== null &&
+        bankCache.signature === versionSignature
+    ) {
+        return bankCache.bank;
+    }
+
+    const bank = scanQuestionBank(paperType);
+
+    if (versionSignature !== null) {
+        bankCache = {
+            paperTypeId: paperType.id,
+            signature: versionSignature,
+            bank
+        };
+    }
+
+    return bank;
+}
+
+function restoreLockedPaper() {
+    const state = readPaperOrderLock();
+    if (!state) return false;
+
+    try {
+        const paperType = getPaperType(state.paperTypeId);
+        const bank = getCachedQuestionBank(paperType);
+        const storedEntries = getStoredPaperOrderEntries(state);
+        const lookup = buildPaperOrderEntryLookup(storedEntries);
+        const itemByOrderIndex = new Map();
+
+        for (const item of bank.items) {
+            const orderIndex = findPaperOrderEntryIndex(item, lookup);
+
+            if (
+                Number.isInteger(orderIndex) &&
+                !itemByOrderIndex.has(orderIndex)
+            ) {
+                itemByOrderIndex.set(orderIndex, item);
+            }
+        }
+
+        const restoredItems = Array.from(
+            { length: storedEntries.length },
+            (_, index) => itemByOrderIndex.get(index)
+        )
+            .filter(Boolean)
+            .map(item => ({
+                ...item,
+                selection: getSelectionProfile(item)
+            }));
+
+        if (restoredItems.length === 0) {
+            clearPaperOrderLock();
+            return false;
+        }
+
+        const requestedCount = Math.min(
+            CONFIG.maxQuestionCount,
+            Math.max(
+                1,
+                Math.floor(
+                    Number(state.requestedCount) || restoredItems.length
+                )
+            )
+        );
+        const targetCounts = allocateLargestRemainder(
+            requestedCount,
+            paperType.subjects
+        );
+        const actualCounts = Object.fromEntries(
+            paperType.subjects.map(subject => [subject.id, 0])
+        );
+
+        for (const item of restoredItems) {
+            if (Object.prototype.hasOwnProperty.call(
+                actualCounts,
+                item.subjectId
+            )) {
+                actualCounts[item.subjectId]++;
+            }
+        }
+
+        paperTypeSelectEl.value = paperType.id;
+
+        if (Array.from(countSelectEl.options).some(
+            option => Number(option.value) === requestedCount
+        )) {
+            countSelectEl.value = String(requestedCount);
+        }
+
+        paperItems = restoredItems;
+        paperComposition = {
+            requestedCount,
+            actualCount: restoredItems.length,
+            targetCounts,
+            actualCounts,
+            shortage: Math.max(0, requestedCount - restoredItems.length),
+            adjusted: paperType.subjects.some(subject => (
+                targetCounts[subject.id] !== actualCounts[subject.id]
+            )),
+            paperTypeId: paperType.id,
+            paperTypeLabel: paperType.label,
+            ratioLabel: paperType.ratioLabel,
+            subjects: paperType.subjects,
+            availableCounts: bank.availableCounts,
+            categorizedWithoutQuestionImage:
+                bank.categorizedWithoutQuestionImage,
+            skippedDuplicateQuestions: bank.skippedDuplicateQuestions
+        };
+        paperOrderLocked = true;
+
+        if (!writePaperOrderLock(state)) {
+            paperOrderLocked = false;
+        }
+
+        return true;
+    } catch (error) {
+        console.error("固定卷面恢复失败：", error);
+        paperOrderLocked = false;
+        return false;
+    }
+}
 
 function updatePaperTypeCopy() {
     const paperType = getPaperType(paperTypeSelectEl.value);
@@ -1190,12 +1645,29 @@ function refreshControls() {
     paperTypeSelectEl.disabled = busy;
     countSelectEl.disabled = busy;
     generateButtonEl.disabled = busy;
+    orderLockButtonEl.disabled = busy || paperItems.length === 0;
     printButtonEl.disabled = busy || paperItems.length === 0;
 
     paperTypeSelectEl.classList.toggle("smart-paper-busy", busy);
     countSelectEl.classList.toggle("smart-paper-busy", busy);
     generateButtonEl.classList.toggle("smart-paper-busy", busy);
+    orderLockButtonEl.classList.toggle("smart-paper-busy", busy);
     printButtonEl.classList.toggle("smart-paper-busy", busy);
+
+    orderLockButtonEl.classList.toggle(
+        "is-active",
+        paperOrderLocked
+    );
+    orderLockButtonEl.setAttribute(
+        "aria-pressed",
+        String(paperOrderLocked)
+    );
+    orderLockButtonEl.textContent = paperOrderLocked
+        ? "📌 当前题序：已固定"
+        : "📍 固定当前题序";
+    orderLockButtonEl.title = paperOrderLocked
+        ? "点击解除固定；当前卷面暂时保持不变"
+        : "保存当前卷面题序，评级触发视图刷新后仍按原题号恢复";
 
     generateButtonEl.textContent = buildInProgress
         ? "⏳ 正在扫描全库…"
@@ -1204,8 +1676,8 @@ function refreshControls() {
             : "🧠 智能组卷";
 
     printButtonEl.textContent = printInProgress
-        ? "⏳ 正在准备打印…"
-        : `🖨️ 打印本卷（${paperItems.length}）`;
+        ? "⏳ 正在导出 PDF…"
+        : `📑 导出带目录 PDF（${paperItems.length}）`;
 }
 
 async function generatePaper() {
@@ -1219,7 +1691,7 @@ async function generatePaper() {
 
         const paperType = getPaperType(paperTypeSelectEl.value);
         const requestedCount = Number(countSelectEl.value);
-        const bank = scanQuestionBank(paperType);
+        const bank = getCachedQuestionBank(paperType);
         const nextComposition = composePaper(
             bank,
             requestedCount,
@@ -1236,6 +1708,11 @@ async function generatePaper() {
 
         paperComposition = nextComposition;
         paperItems = [...nextComposition.items];
+
+        if (paperOrderLocked && !writePaperOrderLock()) {
+            paperOrderLocked = false;
+        }
+
         renderPaper();
 
         const message = nextComposition.adjusted
@@ -1340,7 +1817,8 @@ async function mapWithConcurrency(values, concurrency, mapper) {
 function createPrintRoot(printDocument) {
     const rootEl = printDocument.createElement("main");
     rootEl.className = "smart-paper-print-root";
-    rootEl.setAttribute("aria-hidden", "true");
+    /* 保留标题的可访问性语义，供 Electron 生成 PDF outline。 */
+    rootEl.setAttribute("role", "document");
     rootEl.style.position = "fixed";
     rootEl.style.left = "-10000px";
     rootEl.style.top = "0";
@@ -1365,7 +1843,8 @@ function createPrintStyle(printDocument) {
         }
 
         .smart-paper-print-root {
-            font-family: "Microsoft YaHei", "PingFang SC",
+            /* 避免 Electron 37 将第 2 页后的 PDF 书签标题重复拼接。 */
+            font-family: "Microsoft YaHei UI", "PingFang SC",
                 "Noto Sans CJK SC", "Source Han Sans SC", sans-serif;
         }
 
@@ -1380,6 +1859,15 @@ function createPrintStyle(printDocument) {
         .smart-paper-print-item:last-child {
             break-after: auto;
             page-break-after: auto;
+        }
+
+        .smart-paper-print-title {
+            margin: 0 0 2mm;
+            font-size: 18pt;
+            font-weight: 700;
+            line-height: 1.25;
+            break-after: avoid-page;
+            page-break-after: avoid;
         }
 
         .smart-paper-print-source {
@@ -1398,7 +1886,7 @@ function createPrintStyle(printDocument) {
             align-items: center;
             justify-content: flex-start;
             width: 100%;
-            height: 245mm;
+            height: 236mm;
             gap: 3mm;
             overflow: hidden;
         }
@@ -1408,7 +1896,7 @@ function createPrintStyle(printDocument) {
             width: auto;
             height: auto;
             max-width: 100%;
-            max-height: var(--smart-paper-image-max-height, 245mm);
+            max-height: var(--smart-paper-image-max-height, 236mm);
             margin: 0 auto;
             object-fit: contain;
         }
@@ -1465,6 +1953,103 @@ function createPrintStyle(printDocument) {
     return styleEl;
 }
 
+function sanitizePdfFileName(value, fallback = "智能组卷") {
+    const sanitized = String(value ?? "")
+        .replace(/[<>:"/\\|?*\u0000-\u001F]/g, "-")
+        .replace(/[. ]+$/g, "")
+        .trim();
+
+    return sanitized || fallback;
+}
+
+function getPaperPdfDefaultName(questionCount) {
+    const paperType = getPaperType(paperTypeSelectEl.value);
+
+    return sanitizePdfFileName(
+        `${paperType.label}-智能组卷-${questionCount}题`
+    ) + ".pdf";
+}
+
+function getPdfExportBridge(printWindow) {
+    const remote = printWindow?.electron?.remote ??
+        globalThis?.electron?.remote;
+    const webContents = remote?.getCurrentWebContents?.();
+
+    if (
+        !remote?.dialog?.showSaveDialog ||
+        typeof webContents?.printToPDF !== "function"
+    ) {
+        throw new Error(
+            "当前环境不支持带目录 PDF 导出，请在 Obsidian 桌面版中使用"
+        );
+    }
+
+    return { remote, webContents };
+}
+
+function getNodeFileSystem(remote) {
+    try {
+        if (typeof require === "function") {
+            return require("fs");
+        }
+    } catch (error) {
+        console.warn("Node 文件系统模块读取失败：", error);
+    }
+
+    try {
+        if (typeof remote?.require === "function") {
+            const remoteFs = remote.require("fs");
+
+            return {
+                promises: {
+                    writeFile(filePath, data) {
+                        return new Promise((resolve, reject) => {
+                            remoteFs.writeFile(
+                                filePath,
+                                data,
+                                error => error ? reject(error) : resolve()
+                            );
+                        });
+                    }
+                }
+            };
+        }
+    } catch (error) {
+        console.warn("Electron 文件系统模块读取失败：", error);
+    }
+
+    throw new Error("无法取得本地文件写入权限");
+}
+
+async function choosePdfSavePath(remote, defaultFileName) {
+    const result = await remote.dialog.showSaveDialog({
+        title: "导出带目录 PDF",
+        defaultPath: defaultFileName,
+        buttonLabel: "保存 PDF",
+        filters: [
+            { name: "PDF 文件", extensions: ["pdf"] }
+        ],
+        properties: ["showOverwriteConfirmation"]
+    });
+
+    return result?.canceled ? null : result?.filePath ?? null;
+}
+
+async function exportPdfWithOutline(remote, webContents, filePath) {
+    const pdfData = await webContents.printToPDF({
+        printBackground: true,
+        preferCSSPageSize: true,
+        generateTaggedPDF: true,
+        generateDocumentOutline: true
+    });
+
+    if (!pdfData || Number(pdfData.byteLength ?? pdfData.length) === 0) {
+        throw new Error("Electron 未生成 PDF 数据");
+    }
+
+    await getNodeFileSystem(remote).promises.writeFile(filePath, pdfData);
+}
+
 async function printPaper() {
     if (buildInProgress || printInProgress) return;
 
@@ -1491,24 +2076,14 @@ async function printPaper() {
     const objectUrls = [];
     let printRootEl = null;
     let printStyleEl = null;
-    let cleanupTimer = null;
-    let afterPrintTimer = null;
-    let afterPrintHandler = null;
     let cleanedUp = false;
 
     const cleanup = () => {
         if (cleanedUp) return;
         cleanedUp = true;
 
-        if (cleanupTimer !== null) clearTimeout(cleanupTimer);
-        if (afterPrintTimer !== null) clearTimeout(afterPrintTimer);
-
         for (const objectUrl of objectUrls) {
             urlApi.revokeObjectURL(objectUrl);
-        }
-
-        if (afterPrintHandler) {
-            printWindow.removeEventListener("afterprint", afterPrintHandler);
         }
 
         printDocument.documentElement.classList.remove(
@@ -1522,13 +2097,24 @@ async function printPaper() {
     };
 
     try {
+        const { remote, webContents } = getPdfExportBridge(printWindow);
+        const outputPath = await choosePdfSavePath(
+            remote,
+            getPaperPdfDefaultName(printableItems.length)
+        );
+
+        if (!outputPath) {
+            cleanup();
+            return;
+        }
+
         printStyleEl = createPrintStyle(printDocument);
         printRootEl = createPrintRoot(printDocument);
 
         const imageLoadPromises = [];
         const imageElements = [];
         let imageCount = 0;
-        const printEntries = printableItems.map(item => {
+        const printEntries = printableItems.map((item, index) => {
             const sourceFile = resolveQuestionSourceFile(item);
 
             if (!sourceFile) {
@@ -1540,10 +2126,11 @@ async function printPaper() {
 
             const itemImageCount = Math.max(1, item.imageFiles.length);
             const imageGapMm = 3;
-            const availableImageHeightMm = 245;
+            const availableImageHeightMm = 236;
 
             return {
                 item,
+                questionNumber: index + 1,
                 sourceFile,
                 maxImageHeightMm: Math.max(
                     20,
@@ -1579,10 +2166,20 @@ async function printPaper() {
         let imagePayloadIndex = 0;
 
         for (const entry of printEntries) {
-            const { item, sourceFile, maxImageHeightMm } = entry;
+            const {
+                item,
+                questionNumber,
+                sourceFile,
+                maxImageHeightMm
+            } = entry;
 
             const itemEl = printDocument.createElement("section");
             itemEl.className = "smart-paper-print-item";
+
+            const titleEl = printDocument.createElement("h1");
+            titleEl.className = "smart-paper-print-title";
+            titleEl.id = `question-${questionNumber}`;
+            titleEl.textContent = `第 ${questionNumber} 题`;
 
             const sourceEl = printDocument.createElement("p");
             sourceEl.className = "smart-paper-print-source";
@@ -1591,6 +2188,7 @@ async function printPaper() {
             const imagesEl = printDocument.createElement("div");
             imagesEl.className = "smart-paper-print-images";
 
+            itemEl.appendChild(titleEl);
             itemEl.appendChild(sourceEl);
             itemEl.appendChild(imagesEl);
             printRootEl.appendChild(itemEl);
@@ -1661,46 +2259,23 @@ async function printPaper() {
         await waitForPrintLayout(printWindow);
         await waitForPrintLayout(printWindow);
 
-        const resourceReleaseDelayMs = Math.max(
-            3000,
-            Number(CONFIG.printResourceReleaseDelayMs) || 12000
+        new Notice(
+            `⏳ 正在生成 ${printableItems.length} 道题的带目录 PDF…`,
+            5000
         );
 
-        afterPrintHandler = () => {
-            new Notice(
-                `⏳ Windows 正在完成 PDF 写入，请等待约 ` +
-                `${Math.ceil(resourceReleaseDelayMs / 1000)} 秒后再打开文件。`,
-                resourceReleaseDelayMs
-            );
-
-            afterPrintTimer = setTimeout(() => {
-                cleanup();
-                new Notice(
-                    "✅ 打印资源已安全释放；若已保存，现在可以打开 PDF。",
-                    5000
-                );
-            }, resourceReleaseDelayMs);
-        };
-        printWindow.addEventListener(
-            "afterprint",
-            afterPrintHandler,
-            { once: true }
-        );
-        cleanupTimer = setTimeout(cleanup, 10 * 60 * 1000);
+        await exportPdfWithOutline(remote, webContents, outputPath);
+        cleanup();
 
         new Notice(
-            `🖨️ 已按每页 1 题准备 ${printableItems.length} 道题、` +
-            `${imageCount} 张题图；请选择“另存为 PDF”。`,
-            6000
+            `✅ PDF 已保存；目录含 ${printableItems.length} 个一级题目书签。`,
+            6500
         );
-
-        printWindow.focus();
-        printWindow.print();
     } catch (error) {
-        console.error("智能试卷打印失败：", error);
+        console.error("智能试卷 PDF 导出失败：", error);
         cleanup();
         new Notice(
-            `❌ 打印准备失败：${error?.message ?? "未知错误"}`,
+            `❌ PDF 导出失败：${error?.message ?? "未知错误"}`,
             7000
         );
     }
@@ -1709,6 +2284,8 @@ async function printPaper() {
 paperTypeSelectEl.addEventListener("change", () => {
     paperItems = [];
     paperComposition = null;
+    paperOrderLocked = false;
+    clearPaperOrderLock();
     updatePaperTypeCopy();
     renderPaper();
     refreshControls();
@@ -1718,10 +2295,34 @@ generateButtonEl.addEventListener("click", () => {
     void generatePaper();
 });
 
+orderLockButtonEl.addEventListener("click", () => {
+    if (paperOrderLocked) {
+        if (!clearPaperOrderLock()) {
+            new Notice("❌ 无法解除当前卷面题序。", 4500);
+            return;
+        }
+
+        paperOrderLocked = false;
+        refreshControls();
+        new Notice("🔓 已解除固定；当前卷面不会立即改变。", 4000);
+        return;
+    }
+
+    if (!writePaperOrderLock()) {
+        new Notice("❌ 无法保存当前卷面题序。", 4500);
+        return;
+    }
+
+    paperOrderLocked = true;
+    refreshControls();
+    new Notice("📌 已固定当前卷面题序；刷新后仍按原题号恢复。", 4500);
+});
+
 printButtonEl.addEventListener("click", () => {
     void printPaper();
 });
 
+restoreLockedPaper();
 updatePaperTypeCopy();
 renderPaper();
 refreshControls();

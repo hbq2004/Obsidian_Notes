@@ -7,9 +7,7 @@
   "recent-files-obsidian",
   "obsidian-git",
   "obsidian-to-anki-plugin",
-  "hidden-folder-obsidian",
   "obsidian-hover-editor",
-  "callout-manager",
   "dataview",
   "templater-obsidian",
   "obsidian-tasks-plugin",
@@ -24,5 +22,7 @@
   "pdf-plus",
   "omnisearch",
   "cm-chs-patch",
-  "obsidian-tikzjax"
+  "obsidian-tikzjax",
+  "hidden-folder-obsidian",
+  "callout-manager"
 ]

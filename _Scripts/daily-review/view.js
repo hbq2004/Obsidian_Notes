@@ -1281,7 +1281,7 @@ function createLevelControl(item) {
                     entry.nextReview <= today;
             });
 
-            render();
+            render({ rescan: false });
         } catch (error) {
             console.error("评级写入失败：", error);
             selectEl.value = String(oldUiLevel ?? -1);
@@ -1384,7 +1384,7 @@ function render(options = {}) {
 
         buttonEl.addEventListener("click", () => {
             filterMode = option.id;
-            render();
+            render({ rescan: false });
         });
 
         controlsEl.appendChild(buttonEl);

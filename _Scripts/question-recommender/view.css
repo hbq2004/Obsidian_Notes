@@ -13,7 +13,8 @@
     margin: 0 0 12px;
 }
 
-.question-regression-filter-button {
+.question-regression-filter-button,
+.question-order-lock-button {
     appearance: none;
     padding: 6px 12px;
     border: 1px solid var(--background-modifier-border);
@@ -24,11 +25,13 @@
     color: var(--text-normal);
 }
 
-.question-regression-filter-button:hover {
+.question-regression-filter-button:hover,
+.question-order-lock-button:hover:not(:disabled) {
     background: var(--interactive-hover);
 }
 
-.question-regression-filter-button:disabled {
+.question-regression-filter-button:disabled,
+.question-order-lock-button:disabled {
     cursor: not-allowed;
     opacity: 0.55;
 }
@@ -59,6 +62,12 @@
     color: var(--text-error);
 }
 
+.question-order-lock-button.is-active {
+    border-color: var(--interactive-accent);
+    background: var(--interactive-accent);
+    color: var(--text-on-accent);
+}
+
 .question-filter-summary {
     color: var(--text-muted);
     font-size: 0.9em;
@@ -84,19 +93,24 @@
     border-collapse: collapse;
 }
 
-/* 三列宽度 */
+/* 四列宽度：题号 / 题目 / 题图 / 状态反馈 */
 .question-recommend-view th:nth-child(1),
 .question-recommend-view td:nth-child(1) {
-    width: 18%;
+    width: 7%;
 }
 
 .question-recommend-view th:nth-child(2),
 .question-recommend-view td:nth-child(2) {
-    width: 56%;
+    width: 17%;
 }
 
 .question-recommend-view th:nth-child(3),
 .question-recommend-view td:nth-child(3) {
+    width: 50%;
+}
+
+.question-recommend-view th:nth-child(4),
+.question-recommend-view td:nth-child(4) {
     width: 26%;
 }
 
@@ -116,14 +130,14 @@
     min-width: 0 !important;
 }
 
-/* 第一列和第三列居中 */
+/* 题号和状态反馈居中 */
 .question-recommend-view tbody td:nth-child(1),
-.question-recommend-view tbody td:nth-child(3) {
+.question-recommend-view tbody td:nth-child(4) {
     text-align: center !important;
 }
 
 /* 题目链接完整显示，不用省略号 */
-.question-recommend-view tbody td:nth-child(1) a {
+.question-recommend-view tbody td:nth-child(2) a {
     display: block;
     width: 100%;
     white-space: normal !important;
@@ -132,6 +146,11 @@
     overflow-wrap: anywhere !important;
     word-break: break-word !important;
     line-height: 1.45;
+}
+
+.question-order-number {
+    color: var(--text-accent);
+    font-weight: 700;
 }
 
 /* 去掉多图数组的列表黑点 */
@@ -249,6 +268,7 @@
     }
 
     .question-regression-filter-button,
+    .question-order-lock-button,
     .question-print-button {
         width: 100%;
     }
@@ -259,16 +279,21 @@
 
     .question-recommend-view th:nth-child(1),
     .question-recommend-view td:nth-child(1) {
-        width: 20%;
+        width: 8%;
     }
 
     .question-recommend-view th:nth-child(2),
     .question-recommend-view td:nth-child(2) {
-        width: 50%;
+        width: 18%;
     }
 
     .question-recommend-view th:nth-child(3),
     .question-recommend-view td:nth-child(3) {
+        width: 44%;
+    }
+
+    .question-recommend-view th:nth-child(4),
+    .question-recommend-view td:nth-child(4) {
         width: 30%;
     }
 }
@@ -414,6 +439,7 @@
     .question-random-reviewed-label,
     .question-random-draw-button,
     .question-random-review-view .question-regression-filter-button,
+    .question-random-review-view .question-order-lock-button,
     .question-random-review-view .question-print-button {
         width: 100%;
         box-sizing: border-box;
