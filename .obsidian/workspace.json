@@ -4,77 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "d7cb64aaeab2d8db",
+        "id": "b912083d5a690350",
         "type": "tabs",
         "children": [
           {
-            "id": "02745da9bbff493f",
-            "type": "leaf",
-            "pinned": true,
-            "state": {
-              "type": "canvas",
-              "state": {
-                "file": "01 - 数学/02 - 线代/01 - 行列式.canvas",
-                "viewState": {
-                  "x": 4165,
-                  "y": 7320,
-                  "zoom": -4
-                }
-              },
-              "pinned": true,
-              "icon": "lucide-layout-dashboard",
-              "title": "01 - 行列式"
-            }
-          },
-          {
-            "id": "c835f7fa190f1ca2",
-            "type": "leaf",
-            "pinned": true,
-            "state": {
-              "type": "canvas",
-              "state": {
-                "file": "01 - 数学/02 - 线代/02 - 矩阵.canvas",
-                "viewState": {
-                  "x": 1900,
-                  "y": 9750,
-                  "zoom": -4
-                }
-              },
-              "pinned": true,
-              "icon": "lucide-layout-dashboard",
-              "title": "02 - 矩阵"
-            }
-          },
-          {
-            "id": "fbb506a42ce44b29",
+            "id": "b5c5fcecd8362341",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "02 - 408/02 - 计算机组成原理/01/05 - 计算机系统的工作原理.md",
+                "file": "好题错题整理/_待确认/27_880线概/1-MCQ/880-XG-C10-T68FF-F55DD-Q001.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "05 - 计算机系统的工作原理"
-            }
-          },
-          {
-            "id": "a77d1f13b49aa6ed",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "02 - 408/02 - 计算机组成原理/01/02 - ⭐计算机硬件的基本组成与工作原理.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "02 - ⭐计算机硬件的基本组成与工作原理"
+              "title": "880-XG-C10-T68FF-F55DD-Q001"
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "vertical"
@@ -95,7 +42,7 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": true,
+                "autoReveal": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
@@ -109,7 +56,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:AM/高等数学篇/函数-极限-连续/基础题/选择题",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -179,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "02 - 408/02 - 计算机组成原理/01/02 - ⭐计算机硬件的基本组成与工作原理.md",
+                "file": "好题错题整理/_待确认/27_880线概/1-MCQ/880-XG-C10-T68FF-F55DD-Q001.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -308,59 +255,60 @@
   },
   "active": "9ee25ba6440a60e4",
   "lastOpenFiles": [
-    "02 - 408/02 - 计算机组成原理/01/03 - 计算机软件.md",
-    "02 - 408/02 - 计算机组成原理/01/04 - 计算机系统的层次结构.md",
-    "02 - 408/02 - 计算机组成原理/01/05 - 计算机系统的工作原理.md",
-    "02 - 408/02 - 计算机组成原理/01/06 - 计算机的性能指标.md",
-    "02 - 408/02 - 计算机组成原理/01/01 - 计算机的发展.md",
-    "02 - 408/02 - 计算机组成原理/01/02 - ⭐计算机硬件的基本组成与工作原理.md",
-    "_Attachments/Images/Pasted image 20260813210750.png",
-    "_Attachments/Images/Pasted image 20260813210748.png",
-    "_Attachments/Images/Pasted image 20260813210707.png",
-    "_Attachments/Images/Pasted image 20260813210611.png",
-    "_Attachments/Images/Pasted image 20260813210430.png",
-    "_Attachments/Images/Pasted image 20260813210337.png",
-    "_Attachments/Images/Pasted image 20260813210312.png",
-    "_Attachments/Images/Pasted image 20260813205921.png",
-    "_Attachments/Images/Pasted image 20260813205805.png",
-    "_Attachments/Images/Pasted image 20260813205528.png",
-    "_Attachments/Images/QQ20260813-203840.mp4",
-    "02 - 408/02 - 计算机组成原理/01/00 - 计算机组成原理.md",
-    "01 - 数学/02 - 线代/02 - 矩阵.canvas",
-    "好题错题整理/02 - 线代/26,没咋了线代基础,4,6,1.md",
-    "好题错题整理/02 - 线代/26,没咋了线代强化,1,3,7.md",
-    "好题错题整理/02 - 线代/26,没咋了线代强化,1,1,25.md",
-    "好题错题整理/02 - 线代/26,没咋了线代强化,1,1,7.md",
-    "好题错题整理/02 - 线代/26,没咋了线代强化,,1,1,24.md",
-    "好题错题整理/02 - 线代/26,没咋了线代基础,4,6,5.md",
+    "好题错题整理/_待确认/27_880/3-FRQ/880-GS-C09-TB0B2-Q001.md",
+    "好题错题整理/_待确认/27_880/3-FRQ/880-GS-C02-T2B4C-Q015.md",
+    "好题错题整理/_待确认/27_880/3-FRQ/880-GS-C01-T2B4C-Q003.md",
+    "好题错题整理/_待确认/27_880/3-FRQ/880-GS-C08-T2B4C-Q002.md",
+    "好题错题整理/_待确认/27_880/3-FRQ/880-GS-C08-T2B4C-905EF-Q001.md",
+    "好题错题整理/_待确认/27_880/3-FRQ/880-GS-C03-T2B4C-Q003.md",
+    "好题错题整理/_待确认/27_880/3-FRQ/880-GS-C03-T2B4C-Q002.md",
+    "好题错题整理/_待确认/27_880/3-FRQ/880-GS-C03-T2B4C-Q004.md",
+    "好题错题整理/_待确认/27_880/3-FRQ/880-GS-C04-T2B4C-Q001.md",
+    "好题错题整理/_待确认/27_880/3-FRQ/880-GS-C04-TB0B2-Q001.md",
+    "好题错题整理/_待确认/27_880/3-FRQ/880-GS-C08-T2B4C-Q001.md",
+    "好题错题整理/_待确认/27_880/3-FRQ/880-GS-C06-T2B4C-871F5-Q001.md",
+    "好题错题整理/_待确认/27_880/3-FRQ/880-GS-C01-T2B4C-Q001.md",
+    "好题错题整理/_待确认/27_880/3-FRQ/880-GS-C01-T2B4C-Q002.md",
+    "好题错题整理/_待确认/27_880/3-FRQ/880-GS-C03-T2B4C-Q001.md",
+    "_Attachments/题目识别/880-GS/880-GS-C08-T2B4C-Q002_题目.png",
+    "_Attachments/题目识别/880-GS/880-GS-C08-T2B4C-Q001_题目.png",
+    "_Attachments/题目识别/880-GS/880-GS-C02-T2B4C-Q015_题目.png",
+    "_Attachments/题目识别/880-GS/880-GS-C01-T2B4C-Q003_题目.png",
+    "_Attachments/题目识别/880-GS/880-GS-C01-T2B4C-Q002_题目.png",
+    "_Attachments/题目识别/880-GS/880-GS-C03-T2B4C-Q004_题目.png",
+    "_Attachments/题目识别/880-GS/880-GS-C03-T2B4C-Q003_题目.png",
+    "_Attachments/题目识别/880-GS/880-GS-C03-T2B4C-Q002_题目.png",
+    "_Attachments/题目识别/880-GS/880-GS-C03-T2B4C-Q001_题目.png",
+    "好题错题整理/_待确认/27_880/3-FRQ/880-GS-C01-T2B4C-568F3-Q001.md",
+    "好题错题整理/_待确认/欧几里得2026年8月模考/1-MCQ/OJD-202608-T68FFDF-Q010.md",
+    "好题错题整理/_待确认/欧几里得2026年8月模考/1-MCQ/OJD-202608-T68FFDF-Q009.md",
+    "好题错题整理/_待确认/欧几里得2026年8月模考/1-MCQ/OJD-202608-T68FFDF-Q008.md",
+    "好题错题整理/_待确认/欧几里得2026年8月模考/1-MCQ/OJD-202608-T68FFDF-Q002.md",
+    "好题错题整理/_待确认/欧几里得2026年8月模考/1-MCQ/OJD-202608-T68FFDF-Q001.md",
+    "好题错题整理/_待确认/880高数精选10题.md",
+    "好题错题整理/_待确认/欧几里得八月模考ep精选好题/1-MCQ/OJD-EP-T998A2D-Q003.md",
+    "_Attachments/题目识别/880-答案/880-GS-C05-TF1EA-Q001_答案.png",
+    "好题错题整理/_待确认/27_880/1-MCQ/880-GS-C05-TF1EA-Q001.md",
+    "好题错题整理/_待确认/27_880线概/3-FRQ/880-XG-C16-TB0B2-Q001.md",
+    "好题错题整理/_待确认/27_880线概/1-MCQ/880-XG-C15-T68FF-8BA7B-Q001.md",
     "01 - 数学/02 - 线代/01 - 行列式.canvas",
+    "01 - 数学/02 - 线代/02 - 矩阵.canvas",
     "01 - 数学/02 - 线代/05 - 矩阵相似理论.canvas",
+    "好题错题整理/_待确认/27_880线概/3-FRQ",
+    "好题错题整理/_待确认/27_880线概/2-FIB",
+    "_Attachments/题目识别/880-XG",
+    "好题错题整理/_待确认/27_880线概/1-MCQ",
+    "好题错题整理/_待确认/27_880线概",
+    "_Attachments/题目识别/880-答案",
+    "好题错题整理/_待确认/欧几里得八月模考ep精选好题/3-FRQ",
+    "_Attachments/题目识别/OJD-EP",
+    "好题错题整理/_待确认/欧几里得八月模考ep精选好题/1-MCQ",
+    "好题错题整理/_待确认/欧几里得八月模考ep精选好题",
     "01 - 数学/02 - 线代/06 - 二次型.canvas",
     "01 - 数学/02 - 线代/03 - 向量组.canvas",
-    "好题错题整理/_待确认/26,没咋了.md",
-    "好题错题整理/_待确认/26,没咋了线代基础,880a,没咋了线代强化,880b,1000a.md",
-    "好题错题整理/_待确认/26,没咋了线代强化.md",
-    "02 - 408/03 - 操作系统/01",
-    "02 - 408/02 - 计算机组成原理/02",
-    "02 - 408/02 - 计算机组成原理/01",
     "02 - 408/02 - 计算机组成原理/01.canvas",
-    "好题错题整理/好题错题筛选页.md",
-    "好题错题整理/02 - 线代/1000/27,1000b,4,3 - 怪题.md",
-    "好题错题整理/02 - 线代/27,zy_9,1,6.md",
-    "_Daily_Tasks/2026-08-12.md",
     "01 - 数学/02 - 线代/04 - 线性方程组.canvas",
-    "好题错题整理/02 - 线代/1000/27,1000b,3,9.md",
-    "好题错题整理/02 - 线代/26,没咋了线代强化,1,1,19.md",
-    "好题错题整理/02 - 线代/26,没咋了线代强化,1,3,2.md",
-    "好题错题整理/02 - 线代/1000/27,1000b,3,10.md",
-    "好题错题整理/02 - 线代/26,没咋了线代强化,1,3,4.md",
-    "好题错题整理/_待确认/20260812152432534.md.codex-tmp",
-    "好题错题整理/02 - 线代/20260812141155528.md.codex-bak",
-    "好题错题整理/02 - 线代/20260812141155528.md.codex-tmp",
     "01 - 数学/02 - 线代/秩 1 矩阵大观.canvas",
-    "_Attachments/题目识别",
-    "好题错题整理/_待确认",
-    "01 - 数学/02 - 线代/秩一矩阵.pdf",
     "01 - 数学/01 - 高数/06 - 无穷级数/无穷级数.canvas",
     "01 - 数学/01 - 高数/03 - 一元积分/02 - 一元积分计算大观.canvas"
   ]

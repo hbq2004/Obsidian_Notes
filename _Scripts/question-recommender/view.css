@@ -96,7 +96,8 @@
 /* 四列宽度：题号 / 题目 / 题图 / 状态反馈 */
 .question-recommend-view th:nth-child(1),
 .question-recommend-view td:nth-child(1) {
-    width: 7%;
+    width: 9%;
+    min-width: 4.75rem !important;
 }
 
 .question-recommend-view th:nth-child(2),
@@ -106,7 +107,7 @@
 
 .question-recommend-view th:nth-child(3),
 .question-recommend-view td:nth-child(3) {
-    width: 50%;
+    width: 48%;
 }
 
 .question-recommend-view th:nth-child(4),
@@ -121,6 +122,15 @@
     white-space: nowrap !important;
     overflow: hidden !important;
     padding: 8px 6px !important;
+}
+
+/* “题号”只有两个字，不允许 Obsidian 的表头省略号规则截成“题…” */
+.question-recommend-view thead th:nth-child(1),
+.question-recommend-view thead th:nth-child(1) > * {
+    max-width: none !important;
+    white-space: nowrap !important;
+    overflow: visible !important;
+    text-overflow: clip !important;
 }
 
 /* 单元格 */
@@ -279,7 +289,8 @@
 
     .question-recommend-view th:nth-child(1),
     .question-recommend-view td:nth-child(1) {
-        width: 8%;
+        width: 10%;
+        min-width: 4.75rem !important;
     }
 
     .question-recommend-view th:nth-child(2),
@@ -289,7 +300,7 @@
 
     .question-recommend-view th:nth-child(3),
     .question-recommend-view td:nth-child(3) {
-        width: 44%;
+        width: 42%;
     }
 
     .question-recommend-view th:nth-child(4),

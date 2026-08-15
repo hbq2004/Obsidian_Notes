@@ -85,27 +85,31 @@ const SUBJECT_INDEX_BY_ID = new Map(
     ALL_SUBJECTS.map((subject, index) => [subject.id, index])
 );
 
+/* 每个试卷类型包含的科目 ID 集合：明细表逐列判断归属用 O(1) 查表。 */
+const PAPER_TYPE_SUBJECT_IDS = new Map(
+    CONFIG.paperTypes.map(paperType => [
+        paperType.id,
+        new Set(paperType.subjects.map(subject => subject.id))
+    ])
+);
+const EMPTY_SUBJECT_SET = new Set();
+
 /* ================================================================
  * 1. 通用函数
  * ================================================================ */
 
-function asArray(value) {
-    if (value === undefined || value === null) return [];
-    if (Array.isArray(value)) return value;
-    if (typeof value === "string") return [value];
-
-    try {
-        return Array.from(value);
-    } catch {
-        return [value];
-    }
-}
+/* 正则常量：提升到模块顶层，避免热路径循环中重复构造。 */
+const PATH_BACKSLASH_RE = /\\/g;
+const PATH_SLASH_RUN_RE = /\/+/g;
+const PATH_EDGE_SLASH_RE = /^\/+|\/+$/g;
+const ISO_DATE_FULL_RE = /^(\d{4})-(\d{2})-(\d{2})$/;
+const ISO_DATE_SEARCH_RE = /(\d{4}-\d{2}-\d{2})/;
 
 function normalizeVaultPath(path) {
     return String(path ?? "")
-        .replace(/\\/g, "/")
-        .replace(/\/+/g, "/")
-        .replace(/^\/+|\/+$/g, "");
+        .replace(PATH_BACKSLASH_RE, "/")
+        .replace(PATH_SLASH_RUN_RE, "/")
+        .replace(PATH_EDGE_SLASH_RE, "");
 }
 
 function isTrue(value) {
@@ -130,9 +134,7 @@ function localDate() {
 }
 
 function isValidIsoDate(value) {
-    const match = String(value ?? "").match(
-        /^(\d{4})-(\d{2})-(\d{2})$/
-    );
+    const match = String(value ?? "").match(ISO_DATE_FULL_RE);
 
     if (!match) return false;
 
@@ -174,7 +176,7 @@ function normalizeIsoDate(value) {
     }
 
     const text = String(value);
-    const directMatch = text.match(/\d{4}-\d{2}-\d{2}/);
+    const directMatch = text.match(ISO_DATE_SEARCH_RE);
 
     if (directMatch && isValidIsoDate(directMatch[0])) {
         return directMatch[0];
@@ -184,7 +186,7 @@ function normalizeIsoDate(value) {
 }
 
 function formatDateShort(iso) {
-    const match = String(iso ?? "").match(/^(\d{4})-(\d{2})-(\d{2})$/);
+    const match = String(iso ?? "").match(ISO_DATE_FULL_RE);
     if (!match) return String(iso ?? "");
     return `${match[1]}.${match[2]}.${match[3]}`;
 }
@@ -251,7 +253,7 @@ function buildExam(page) {
 
     if (!date) {
         const nameMatch = String(page.file.name ?? "").match(
-            /(\d{4}-\d{2}-\d{2})/
+            ISO_DATE_SEARCH_RE
         );
         date = nameMatch ? normalizeIsoDate(nameMatch[1]) : null;
     }
@@ -328,7 +330,7 @@ function scanExams() {
         return { error: new Error("Dataview 无法读取全库页面") };
     }
 
-    const validExams = [];
+    let validExams = [];
     const invalidExams = [];
 
     for (const page of pages) {
@@ -346,10 +348,18 @@ function scanExams() {
         }
     }
 
-    validExams.sort((a, b) => (
+    /* Schwartzian transform：先一次性取出排序键，
+       避免比较器在 O(n log n) 次调用中反复转换路径字符串。 */
+    const keyedExams = validExams.map(exam => ({
+        exam,
+        date: exam.date,
+        path: String(exam.page.file.path)
+    }));
+    keyedExams.sort((a, b) => (
         a.date.localeCompare(b.date) ||
-        String(a.page.file.path).localeCompare(String(b.page.file.path))
+        a.path.localeCompare(b.path)
     ));
+    validExams = keyedExams.map(entry => entry.exam);
 
     if (invalidExams.length > 0) {
         console.warn(
@@ -524,26 +534,20 @@ function createTrendSvg(exams) {
         margin.top + innerHeight - clamp01(score / maxY) * innerHeight
     );
 
+    /* 全部子元素先拼成字符串，最后一次性写入 innerHTML，
+       避免逐点 createElementNS + appendChild。 */
+    const parts = [];
+
     /* 网格线与 Y 轴刻度 */
     for (let value = 0; value <= maxY; value += 25) {
         const y = yFor(value);
 
-        svg.appendChild(createSvgEl("line", {
-            x1: margin.left,
-            y1: y.toFixed(2),
-            x2: width - margin.right,
-            y2: y.toFixed(2),
-            class: "me-trend-grid"
-        }));
-
-        const labelEl = createSvgEl("text", {
-            x: (margin.left - 8).toFixed(2),
-            y: (y + 4).toFixed(2),
-            class: "me-trend-axis-label",
-            "text-anchor": "end"
-        });
-        labelEl.textContent = String(value);
-        svg.appendChild(labelEl);
+        parts.push(
+            `<line x1="${margin.left}" y1="${y.toFixed(2)}" ` +
+            `x2="${width - margin.right}" y2="${y.toFixed(2)}" class="me-trend-grid"/>`,
+            `<text x="${(margin.left - 8).toFixed(2)}" y="${(y + 4).toFixed(2)}" ` +
+            `class="me-trend-axis-label" text-anchor="end">${value}</text>`
+        );
     }
 
     /* X 轴日期刻度（点过多时每隔一个显示） */
@@ -553,14 +557,10 @@ function createTrendSvg(exams) {
         const exam = exams[index];
         const x = xFor(index);
 
-        const labelEl = createSvgEl("text", {
-            x: x.toFixed(2),
-            y: (height - margin.bottom + 18).toFixed(2),
-            class: "me-trend-axis-label",
-            "text-anchor": "middle"
-        });
-        labelEl.textContent = formatDateShort(exam.date);
-        svg.appendChild(labelEl);
+        parts.push(
+            `<text x="${x.toFixed(2)}" y="${(height - margin.bottom + 18).toFixed(2)}" ` +
+            `class="me-trend-axis-label" text-anchor="middle">${formatDateShort(exam.date)}</text>`
+        );
     }
 
     /* 折线 */
@@ -571,12 +571,11 @@ function createTrendSvg(exams) {
     });
 
     if (linePoints.length > 1) {
-        svg.appendChild(createSvgEl("polyline", {
-            points: linePoints
+        parts.push(
+            `<polyline points="${linePoints
                 .map(point => `${point.x.toFixed(2)},${point.y.toFixed(2)}`)
-                .join(" "),
-            class: "me-trend-line"
-        }));
+                .join(" ")}" class="me-trend-line"/>`
+        );
     }
 
     /* 每个模考点：目标虚线刻度 + 得分点 */
@@ -589,34 +588,26 @@ function createTrendSvg(exams) {
         const met = exam.met;
 
         /* 目标刻度 */
-        svg.appendChild(createSvgEl("line", {
-            x1: (point.x - 5).toFixed(2),
-            y1: targetY.toFixed(2),
-            x2: (point.x + 5).toFixed(2),
-            y2: targetY.toFixed(2),
-            class: met ? "me-trend-target met" : "me-trend-target"
-        }));
+        parts.push(
+            `<line x1="${(point.x - 5).toFixed(2)}" y1="${targetY.toFixed(2)}" ` +
+            `x2="${(point.x + 5).toFixed(2)}" y2="${targetY.toFixed(2)}" ` +
+            `class="${met ? "me-trend-target met" : "me-trend-target"}"/>`
+        );
 
         /* 得分点 */
-        svg.appendChild(createSvgEl("circle", {
-            cx: point.x.toFixed(2),
-            cy: point.y.toFixed(2),
-            r: 5,
-            class: met ? "me-trend-dot met" : "me-trend-dot miss",
-            fill: typeColor
-        }));
+        parts.push(
+            `<circle cx="${point.x.toFixed(2)}" cy="${point.y.toFixed(2)}" r="5" ` +
+            `class="${met ? "me-trend-dot met" : "me-trend-dot miss"}" fill="${typeColor}"/>`
+        );
 
         /* 分数标签 */
-        const scoreLabel = createSvgEl("text", {
-            x: point.x.toFixed(2),
-            y: (point.y - 10).toFixed(2),
-            class: "me-trend-score",
-            "text-anchor": "middle"
-        });
-        scoreLabel.textContent = String(Math.round(exam.total));
-        svg.appendChild(scoreLabel);
+        parts.push(
+            `<text x="${point.x.toFixed(2)}" y="${(point.y - 10).toFixed(2)}" ` +
+            `class="me-trend-score" text-anchor="middle">${Math.round(exam.total)}</text>`
+        );
     }
 
+    svg.innerHTML = parts.join("");
     return svg;
 }
 
@@ -1084,8 +1075,14 @@ function createStatsTable(exams) {
 
     const tbody = viewDocument.createElement("tbody");
 
+    /* 行先写入 DocumentFragment，最后一次性挂到 tbody，减少布局抖动。 */
+    const rowFragment = viewDocument.createDocumentFragment();
+
     for (const exam of exams) {
         const tr = viewDocument.createElement("tr");
+
+        /* 每场模考只查一次科目归属集合，替代原先双重循环里的线性查找。 */
+        const subjectIdSet = PAPER_TYPE_SUBJECT_IDS.get(exam.paperType?.id) ?? EMPTY_SUBJECT_SET;
 
         const dateTd = viewDocument.createElement("td");
         dateTd.className = "me-table-num";
@@ -1101,15 +1098,13 @@ function createStatsTable(exams) {
             const scoreTd = viewDocument.createElement("td");
             scoreTd.className = "me-table-num";
 
-            const inPaper = exam.paperType?.subjects.some(
-                item => item.id === subject.id
-            );
+            const score = exam.scores[subject.id];
+            const inPaper = subjectIdSet.has(subject.id);
 
             if (!inPaper) {
                 scoreTd.textContent = "—";
-            } else if (Number.isFinite(exam.scores[subject.id])) {
+            } else if (Number.isFinite(score)) {
                 const maxScore = subject.maxScore;
-                const score = exam.scores[subject.id];
                 const rate = score / maxScore;
 
                 scoreTd.textContent = String(Math.round(score));
@@ -1144,9 +1139,10 @@ function createStatsTable(exams) {
 
         tr.append(dateTd, typeTd, ...subjectTds, totalTd, targetTd, metTd, noteTd);
 
-        tbody.appendChild(tr);
+        rowFragment.appendChild(tr);
     }
 
+    tbody.appendChild(rowFragment);
     table.appendChild(tbody);
     return table;
 }

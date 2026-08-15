@@ -124,16 +124,6 @@ function tagKey(tag) {
         .toLocaleLowerCase();
 }
 
-function isSameTagOrDescendant(candidate, required) {
-    const candidateKey = tagKey(candidate);
-    const requiredKey = tagKey(required);
-
-    return (
-        candidateKey === requiredKey ||
-        candidateKey.startsWith(`${requiredKey}/`)
-    );
-}
-
 /* 科目根标签在视图加载时只规范化一次，避免扫描每道题时重复处理。 */
 const SUBJECT_MATCHERS = CONFIG.subjects.map((subject, index) => ({
     subject,
@@ -145,25 +135,16 @@ const SUBJECT_INDEX_BY_ID = new Map(
     SUBJECT_MATCHERS.map(entry => [entry.subject.id, entry.index])
 );
 
-function getPageTags(page) {
-    const rawTags = [
-        ...asArray(page?.tags),
-        ...asArray(page?.file?.etags)
-    ];
-    const result = [];
-    const visited = new Set();
+/* 预建 tagKey → 科目下标 索引：扫描时逐级查表即可判定归属，
+ * 代替原来的“科目 × 根标签 × 页面标签”三层嵌套循环比较。 */
+const SUBJECT_TAG_INDEX = new Map();
 
-    for (const rawTag of rawTags) {
-        const normalized = normalizeTag(rawTag);
-        const key = tagKey(normalized);
-
-        if (!normalized || visited.has(key)) continue;
-
-        visited.add(key);
-        result.push(normalized);
+for (const entry of SUBJECT_MATCHERS) {
+    for (const rootKey of entry.tagRootKeys) {
+        if (!SUBJECT_TAG_INDEX.has(rootKey)) {
+            SUBJECT_TAG_INDEX.set(rootKey, entry.index);
+        }
     }
-
-    return result;
 }
 
 /* 扫描热路径只需要比较键，跳过“规范化文本再规范化为键”的中间数组。 */
@@ -812,19 +793,33 @@ function getQuestionImageFiles(
 
 function detectSubject(page) {
     const pageTagKeys = getPageTagKeys(page);
+    let bestIndex = Number.POSITIVE_INFINITY;
 
-    for (const matcher of SUBJECT_MATCHERS) {
-        const hitSubject = matcher.tagRootKeys.some(requiredKey => (
-            pageTagKeys.some(candidateKey => (
-                candidateKey === requiredKey ||
-                candidateKey.startsWith(`${requiredKey}/`)
-            ))
-        ));
+    for (const candidateKey of pageTagKeys) {
+        /* 沿路径逐级回退：#AM/习题 → #AM，等价于原
+         * candidate === required || candidate.startsWith(`${required}/`)
+         * 的判定；取命中科目中最小的下标，等价于原“按 CONFIG.subjects
+         * 顺序返回第一个命中”的语义。 */
+        let probe = candidateKey;
 
-        if (hitSubject) return matcher.subject;
+        while (probe) {
+            const index = SUBJECT_TAG_INDEX.get(probe);
+
+            if (index !== undefined && index < bestIndex) {
+                bestIndex = index;
+                if (bestIndex === 0) return SUBJECT_MATCHERS[0].subject;
+            }
+
+            const slashIndex = probe.lastIndexOf("/");
+            if (slashIndex <= 0) break;
+
+            probe = probe.slice(0, slashIndex);
+        }
     }
 
-    return null;
+    return bestIndex === Number.POSITIVE_INFINITY
+        ? null
+        : SUBJECT_MATCHERS[bestIndex].subject;
 }
 
 function buildItem(page, context = {}) {
@@ -845,6 +840,12 @@ function buildItem(page, context = {}) {
             ? diffDays(nextReview, today)
             : 0;
 
+    /* 科目与排序用下标一次算好，避免 sort 比较器里反复查 Map */
+    const subject = detectSubject(page);
+    const subjectIndex = subject
+        ? (SUBJECT_INDEX_BY_ID.get(subject.id) ?? 999)
+        : 999;
+
     return {
         page,
         sourceFile,
@@ -860,7 +861,8 @@ function buildItem(page, context = {}) {
         lastReviewed: page.last_reviewed
             ? String(page.last_reviewed)
             : null,
-        subject: detectSubject(page)
+        subject,
+        subjectIndex
     };
 }
 
@@ -878,7 +880,9 @@ function scanDueQuestions() {
     const items = [];
 
     for (const page of pages) {
-        const pagePath = normalizeVaultPath(page?.file?.path);
+        /* 这里只需判断路径非空；Obsidian 内部路径恒为 "/" 分隔，
+         * 无需对全库每个页面做正则归一化（其结果从未被使用）。 */
+        const pagePath = page?.file?.path;
         if (!pagePath) continue;
 
         const nextReview = normalizeIsoDate(page.next_review);
@@ -911,15 +915,8 @@ function scanDueQuestions() {
             return regressedDifference;
         }
 
-        const subjectIndexA = a.subject
-            ? (SUBJECT_INDEX_BY_ID.get(a.subject.id) ?? 999)
-            : 999;
-        const subjectIndexB = b.subject
-            ? (SUBJECT_INDEX_BY_ID.get(b.subject.id) ?? 999)
-            : 999;
-
-        if (subjectIndexA !== subjectIndexB) {
-            return subjectIndexA - subjectIndexB;
+        if (a.subjectIndex !== b.subjectIndex) {
+            return a.subjectIndex - b.subjectIndex;
         }
 
         return a.page.file.name.localeCompare(
@@ -1043,7 +1040,8 @@ function createImagePreview(item) {
     const wrapEl = viewDocument.createElement("div");
     wrapEl.className = "dr-image-preview";
 
-    for (const imageFile of item.imageFiles.slice(0, 2)) {
+    /* buildItem 已用 maxResults=2 截断 imageFiles，无需再 slice 出中间数组 */
+    for (const imageFile of item.imageFiles) {
         const imageEl = viewDocument.createElement("img");
         imageEl.className = "dr-image";
         imageEl.loading = "lazy";

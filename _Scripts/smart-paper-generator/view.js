@@ -107,11 +107,27 @@ const IMAGE_MIME_TYPES = Object.freeze({
     avif: "image/avif"
 });
 const ALL_SUBJECTS = CONFIG.paperTypes.flatMap(type => type.subjects);
-const SUBJECT_TAG_MATCHERS = ALL_SUBJECTS.map(subject => ({
-    subject,
-    tagRootKeys: asArray(subject.tagRoots).map(tagKey)
-}));
-const PRINT_BINARY_READ_CONCURRENCY = 4;
+
+/*
+ * 预建“标签根 → 科目”索引：把科目识别从逐页的多重线性扫描降为
+ * 按标签前缀的 Map 查找。一个标签根理论上可能属于多个科目，
+ * 因此值为数组，与原有的多重匹配语义保持一致。
+ */
+const SUBJECT_BY_TAG_KEY = new Map();
+
+for (const subject of ALL_SUBJECTS) {
+    for (const rootKey of asArray(subject.tagRoots).map(tagKey)) {
+        const owners = SUBJECT_BY_TAG_KEY.get(rootKey);
+        if (owners) {
+            owners.push(subject);
+        } else {
+            SUBJECT_BY_TAG_KEY.set(rootKey, [subject]);
+        }
+    }
+}
+
+/* 打印前批量读取题图：并发数仅影响读取速度，不影响输出顺序与结果。 */
+const PRINT_BINARY_READ_CONCURRENCY = 8;
 
 /* ================================================================
  * 1. 通用函数
@@ -147,10 +163,6 @@ function getPaperType(paperTypeId) {
         CONFIG.paperTypes[0];
 }
 
-function getAllSubjects() {
-    return ALL_SUBJECTS;
-}
-
 function normalizeTag(tag) {
     const value = String(tag ?? "").trim();
     if (!value) return "";
@@ -161,16 +173,6 @@ function tagKey(tag) {
     return normalizeTag(tag)
         .replace(/\/+$/g, "")
         .toLocaleLowerCase();
-}
-
-function isSameTagOrDescendant(candidate, required) {
-    const candidateKey = tagKey(candidate);
-    const requiredKey = tagKey(required);
-
-    return (
-        candidateKey === requiredKey ||
-        candidateKey.startsWith(`${requiredKey}/`)
-    );
 }
 
 function getPageTags(page) {
@@ -357,14 +359,6 @@ function resolveQuestionSourceFile(item) {
 function getQuestionSourcePath(item) {
     return resolveQuestionSourceFile(item)?.path ??
         normalizeVaultPath(item?.page?.file?.path);
-}
-
-function getQuestionSourceName(item) {
-    const sourceFile = resolveQuestionSourceFile(item);
-
-    return sourceFile?.basename ??
-        sourceFile?.name?.replace(/\.md$/i, "") ??
-        String(item?.page?.file?.name ?? "未知题目");
 }
 
 /*
@@ -580,18 +574,31 @@ function mergePaperOrderEntries(currentItems, previousState = null) {
 
 function detectSubject(page, allowedSubjectIds) {
     const pageTagKeys = getPageTags(page).map(tagKey);
-    const tagMatches = SUBJECT_TAG_MATCHERS.filter(({ tagRootKeys }) => (
-        tagRootKeys.some(requiredKey => (
-            pageTagKeys.some(candidateKey => (
-                candidateKey === requiredKey ||
-                candidateKey.startsWith(`${requiredKey}/`)
-            ))
-        ))
-    ));
+    const matchedSubjects = new Set();
 
-    if (tagMatches.length !== 1) return null;
+    /*
+     * 原匹配规则等价于“标签根 == 候选标签 或 候选标签以 根/ 开头”：
+     * 从完整标签起逐级向上截断到各级前缀，每级做一次 Map 查找即可覆盖
+     * 全部前缀匹配，替代原先的 科目×标签根×候选标签 三重线性扫描。
+     */
+    for (const candidateKey of pageTagKeys) {
+        let key = candidateKey;
 
-    const matchedSubject = tagMatches[0].subject;
+        while (key) {
+            const owners = SUBJECT_BY_TAG_KEY.get(key);
+            if (owners) {
+                for (const owner of owners) matchedSubjects.add(owner);
+            }
+
+            const slashIndex = key.lastIndexOf("/");
+            if (slashIndex < 0) break;
+            key = key.slice(0, slashIndex);
+        }
+    }
+
+    if (matchedSubjects.size !== 1) return null;
+
+    const matchedSubject = Array.from(matchedSubjects)[0];
     return allowedSubjectIds.has(matchedSubject.id)
         ? matchedSubject
         : null;
@@ -661,20 +668,23 @@ function buildQuestionItem(page, subject, imageFiles, sourceFile = undefined) {
     };
 }
 
-function scanQuestionBank(paperType) {
+function scanQuestionBank(paperType, providedPages = null) {
     const subjects = asArray(paperType?.subjects);
 
     if (subjects.length === 0) {
         throw new Error("当前试卷没有配置科目");
     }
 
-    let pages;
+    let pages = providedPages;
 
-    try {
-        pages = Array.from(dv.pages());
-    } catch (error) {
-        console.error("智能组卷读取全库失败：", error);
-        throw new Error("Dataview 无法读取全库页面");
+    /* 未提供页面数组（签名查询失败的回退路径）时再自行扫描一次全库。 */
+    if (!pages) {
+        try {
+            pages = Array.from(dv.pages());
+        } catch (error) {
+            console.error("智能组卷读取全库失败：", error);
+            throw new Error("Dataview 无法读取全库页面");
+        }
     }
 
     const items = [];
@@ -1288,12 +1298,20 @@ function clearPaperOrderLock() {
 /* 题库缓存：重复点击“生成”时跳过全库扫描；任一笔记变化后签名失效并自动重建。 */
 let bankCache = null;
 
-function getBankVersionSignature() {
+/*
+ * 一次性物化 dv.pages()：同一份页面数组既用于计算版本签名，也直接交给
+ * scanQuestionBank 复用，避免首次加载或缓存失效时对全库执行两次扫描。
+ * 查询失败时返回 null 签名，调用方会强制重新扫描且不写缓存。
+ */
+function collectAllPages() {
+    let pages = null;
     let pageCount = 0;
     let maxMtime = 0;
 
     try {
-        for (const page of Array.from(dv.pages())) {
+        pages = Array.from(dv.pages());
+
+        for (const page of pages) {
             pageCount++;
 
             const mtime = page?.file?.mtime?.valueOf?.();
@@ -1302,15 +1320,14 @@ function getBankVersionSignature() {
             }
         }
     } catch (error) {
-        /* 全库查询失败时返回 null，调用方会强制重新扫描且不写缓存。 */
-        return null;
+        return { pages: null, signature: null };
     }
 
-    return `${pageCount}:${maxMtime}`;
+    return { pages, signature: `${pageCount}:${maxMtime}` };
 }
 
 function getCachedQuestionBank(paperType) {
-    const versionSignature = getBankVersionSignature();
+    const { pages, signature: versionSignature } = collectAllPages();
 
     if (
         bankCache &&
@@ -1321,7 +1338,7 @@ function getCachedQuestionBank(paperType) {
         return bankCache.bank;
     }
 
-    const bank = scanQuestionBank(paperType);
+    const bank = scanQuestionBank(paperType, pages);
 
     if (versionSignature !== null) {
         bankCache = {
@@ -1356,6 +1373,9 @@ function restoreLockedPaper() {
             }
         }
 
+        /* 今天日期与 moment 只构造一次，供全部恢复题共用，避免逐题重复计算。 */
+        const restoredToday = localDate();
+        const restoredTodayMoment = moment(restoredToday).startOf("day");
         const restoredItems = Array.from(
             { length: storedEntries.length },
             (_, index) => itemByOrderIndex.get(index)
@@ -1363,7 +1383,11 @@ function restoreLockedPaper() {
             .filter(Boolean)
             .map(item => ({
                 ...item,
-                selection: getSelectionProfile(item)
+                selection: getSelectionProfile(
+                    item,
+                    restoredToday,
+                    restoredTodayMoment
+                )
             }));
 
         if (restoredItems.length === 0) {
@@ -2111,6 +2135,11 @@ async function printPaper() {
         printStyleEl = createPrintStyle(printDocument);
         printRootEl = createPrintRoot(printDocument);
 
+        /* 超时上限对整卷恒定，提前算好避免在逐图循环里重复计算。 */
+        const printImageTimeoutMs = Math.max(
+            1000,
+            Number(CONFIG.printImageLoadTimeoutMs) || 15000
+        );
         const imageLoadPromises = [];
         const imageElements = [];
         let imageCount = 0;
@@ -2217,10 +2246,7 @@ async function printPaper() {
                 imageLoadPromises.push(
                     waitForPrintImage(
                         imageEl,
-                        Math.max(
-                            1000,
-                            Number(CONFIG.printImageLoadTimeoutMs) || 15000
-                        )
+                        printImageTimeoutMs
                     ).then(
                         () => null,
                         imageError => imageError

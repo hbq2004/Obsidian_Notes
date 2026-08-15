@@ -62,6 +62,15 @@ const viewDocument = dv.container.ownerDocument;
  * 1. 通用函数
  * ================================================================ */
 
+/* 常用正则只构造一次；这些函数会被逐页/逐标签调用，循环内反复 new RegExp 是纯浪费。 */
+const RE_TRAILING_SLASHES = /\/+$/g;
+const RE_BACKSLASH = /\\/g;
+const RE_MULTI_SLASH = /\/+/g;
+const RE_LEADING_TRAILING_SLASH = /^\/+|\/+$/g;
+const RE_ISO_DATE = /\d{4}-\d{2}-\d{2}/;
+const RE_MARKDOWN_IMG = /^!\[([^\]]*)\]\s*\(/;
+const RE_WIKI_EMBED = /^!?\[\[([\s\S]*)\]\]$/;
+
 function asArray(value) {
     if (value === undefined || value === null) return [];
     if (Array.isArray(value)) return value;
@@ -76,9 +85,9 @@ function asArray(value) {
 
 function normalizeVaultPath(path) {
     return String(path ?? "")
-        .replace(/\\/g, "/")
-        .replace(/\/+/g, "/")
-        .replace(/^\/+|\/+$/g, "");
+        .replace(RE_BACKSLASH, "/")
+        .replace(RE_MULTI_SLASH, "/")
+        .replace(RE_LEADING_TRAILING_SLASH, "");
 }
 
 function normalizeTag(tag) {
@@ -89,22 +98,8 @@ function normalizeTag(tag) {
 
 function tagKey(tag) {
     return normalizeTag(tag)
-        .replace(/\/+$/g, "")
+        .replace(RE_TRAILING_SLASHES, "")
         .toLocaleLowerCase();
-}
-
-/**
- * 判断候选标签是否等于目标标签，或属于目标标签的任意层级子标签。
- * 例如 #AM 可命中 #AM 与 #AM/极限/等价无穷小，但不会误命中 #AM2。
- */
-function isSameTagOrDescendant(candidate, required) {
-    const candidateKey = tagKey(candidate);
-    const requiredKey = tagKey(required);
-
-    return (
-        candidateKey === requiredKey ||
-        candidateKey.startsWith(`${requiredKey}/`)
-    );
 }
 
 /* 根标签只规范化一次；扫描时直接比较规范化后的键。 */
@@ -113,26 +108,51 @@ const SUBJECT_MATCHERS = CONFIG.subjects.map(subject => ({
     tagRootKeys: subject.tagRoots.map(tagKey)
 }));
 
-/* 读取页面真实标签：YAML/属性 tags + 正文精确标签 etags */
-function getPageTags(page) {
-    const rawTags = [
-        ...asArray(page?.tags),
-        ...asArray(page?.file?.etags)
-    ];
-    const result = [];
-    const visited = new Set();
+/* 预建“标签根 → 科目下标”映射：匹配时逐级向上查祖先标签键即可，无需对 7 科各自遍历全量标签。 */
+const TAG_SUBJECT_INDEXES = new Map();
+for (let index = 0; index < SUBJECT_MATCHERS.length; index++) {
+    for (const rootKey of SUBJECT_MATCHERS[index].tagRootKeys) {
+        let indexes = TAG_SUBJECT_INDEXES.get(rootKey);
 
-    for (const rawTag of rawTags) {
-        const normalized = normalizeTag(rawTag);
-        const key = tagKey(normalized);
+        if (!indexes) {
+            indexes = [];
+            TAG_SUBJECT_INDEXES.set(rootKey, indexes);
+        }
 
-        if (!normalized || visited.has(key)) continue;
+        if (!indexes.includes(index)) indexes.push(index);
+    }
+}
 
-        visited.add(key);
-        result.push(normalized);
+/* 语义与原实现一致（候选标签等于根标签或为其任意层级子标签即命中）：
+ * 等价于把候选键逐级去掉末段祖先后查映射，#AM/极限 → #AM/极限 → #AM。 */
+function matchSubjectIndexes(pageTagKeys) {
+    const matched = [];
+    const seen = new Set();
+
+    for (const key of pageTagKeys) {
+        let ancestorKey = key;
+
+        while (ancestorKey) {
+            const indexes = TAG_SUBJECT_INDEXES.get(ancestorKey);
+
+            if (indexes) {
+                for (const index of indexes) {
+                    if (!seen.has(index)) {
+                        seen.add(index);
+                        matched.push(index);
+                    }
+                }
+            }
+
+            const slashPos = ancestorKey.lastIndexOf("/");
+            if (slashPos < 0) break;
+            ancestorKey = ancestorKey.slice(0, slashPos);
+        }
     }
 
-    return result;
+    /* 与原实现一致：科目下标按升序输出。 */
+    matched.sort((a, b) => a - b);
+    return matched;
 }
 
 /* 扫描只消费规范化后的键，避免为每页创建无用的标签文本中间数组。 */
@@ -220,7 +240,7 @@ function normalizeIsoDate(value) {
     }
 
     const text = String(value);
-    const directMatch = text.match(/\d{4}-\d{2}-\d{2}/);
+    const directMatch = text.match(RE_ISO_DATE);
 
     if (directMatch) {
         const parsedDirect = moment(
@@ -261,6 +281,13 @@ function formatNumber(value, digits = 1) {
         : Number(value).toFixed(digits);
 }
 
+/* 独立“题目”字段判定（|题目、|宽度|题目、|题目|宽度）提升为普通函数，避免每次嵌入重建闭包。 */
+function hasMarkerToken(value, marker) {
+    return String(value ?? "")
+        .split("|")
+        .some(token => token.trim() === marker);
+}
+
 /**
  * 只把嵌入别名/替代文字中的独立“题目”字段视为题目标记。
  * 支持 |题目、|宽度|题目、|题目|宽度；不会因文件名含“题目”而误判。
@@ -269,19 +296,15 @@ function embedHasQuestionMarker(embed) {
     const marker = QUESTION_MARKER;
     if (!marker) return false;
 
-    const hasMarkerToken = value => String(value ?? "")
-        .split("|")
-        .some(token => token.trim() === marker);
-
     const original = String(embed?.original ?? "").trim();
-    if (!original) return hasMarkerToken(embed?.displayText);
+    if (!original) return hasMarkerToken(embed?.displayText, marker);
 
     /* 标准 Markdown 图片：![题目](image.png) */
-    const markdownMatch = original.match(/^!\[([^\]]*)\]\s*\(/);
-    if (markdownMatch) return hasMarkerToken(markdownMatch[1]);
+    const markdownMatch = original.match(RE_MARKDOWN_IMG);
+    if (markdownMatch) return hasMarkerToken(markdownMatch[1], marker);
 
     /* Wiki 嵌入；CachedMetadata.original 可能含或不含 ![[...]] 外壳。 */
-    const wikiMatch = original.match(/^!?\[\[([\s\S]*)\]\]$/);
+    const wikiMatch = original.match(RE_WIKI_EMBED);
     const inner = wikiMatch ? wikiMatch[1] : original;
     const parts = inner.split("|");
 
@@ -297,18 +320,30 @@ function isImageFile(file) {
     );
 }
 
+/* 题目标记判定按路径缓存：切换统计范围触发整树重渲染时，不再对同一批页面重复查 metadataCache。
+ * 缓存随本次视图生命周期存在；Obsidian 的 metadataCache 本身也是异步刷新的缓存，口径一致。 */
+const QUESTION_MARKER_CACHE = new Map();
+
 /** 页面是否包含带“题目”标记的嵌入图片（与另外两个脚本口径一致） */
 function hasQuestionMarker(page) {
-    const sourceFile = app.vault.getAbstractFileByPath(page.file.path);
+    const pagePath = page?.file?.path;
+
+    if (!pagePath) return false;
+    if (QUESTION_MARKER_CACHE.has(pagePath)) {
+        return QUESTION_MARKER_CACHE.get(pagePath);
+    }
+
+    const sourceFile = app.vault.getAbstractFileByPath(pagePath);
 
     if (!sourceFile || sourceFile.extension !== "md") {
+        QUESTION_MARKER_CACHE.set(pagePath, false);
         return false;
     }
 
     const cache = app.metadataCache.getFileCache(sourceFile);
     const embeds = cache?.embeds ?? [];
 
-    return embeds.some(embed => {
+    const result = embeds.some(embed => {
         if (!embedHasQuestionMarker(embed)) return false;
 
         const targetFile = app.metadataCache.getFirstLinkpathDest(
@@ -318,6 +353,9 @@ function hasQuestionMarker(page) {
 
         return isImageFile(targetFile);
     });
+
+    QUESTION_MARKER_CACHE.set(pagePath, result);
+    return result;
 }
 
 /* ================================================================
@@ -440,26 +478,15 @@ function scanAll(scope) {
         const pagePath = normalizeVaultPath(page?.file?.path);
         if (!pagePath) continue;
 
+        /* 预建映射一次匹配七科，取代原先对每科各做一次全量标签比较。 */
         const pageTagKeys = getPageTagKeys(page);
-        const matchedIndexes = [];
-
-        for (let index = 0; index < SUBJECT_MATCHERS.length; index++) {
-            if (seenBySubject[index].has(pagePath)) continue;
-
-            const hitSubject = SUBJECT_MATCHERS[index].tagRootKeys.some(
-                requiredKey => pageTagKeys.some(candidateKey => (
-                    candidateKey === requiredKey ||
-                    candidateKey.startsWith(`${requiredKey}/`)
-                ))
-            );
-
-            if (hitSubject) matchedIndexes.push(index);
-        }
+        const matchedIndexes = matchSubjectIndexes(pageTagKeys);
 
         if (matchedIndexes.length === 0) continue;
         if (scope === "question" && !hasQuestionMarker(page)) continue;
 
         for (const index of matchedIndexes) {
+            if (seenBySubject[index].has(pagePath)) continue;
             seenBySubject[index].add(pagePath);
             matchedBySubject[index].push(page);
         }
@@ -556,11 +583,14 @@ function createRadarSvg(statsList) {
         "aria-label": "七科综合掌握度雷达图"
     });
 
+    /* 子节点先挂到 Fragment，最后一次性插入 SVG，避免逐点 appendChild 触发多次布局。 */
+    const fragment = viewDocument.createDocumentFragment();
+
     /* 网格环 */
     for (let ring = 1; ring <= CONFIG.radarRingCount; ring++) {
         const ringRadius = (radius * ring) / CONFIG.radarRingCount;
 
-        svg.appendChild(createSvgEl("polygon", {
+        fragment.appendChild(createSvgEl("polygon", {
             points: polygonPoints(cx, cy, ringRadius, count),
             class: "kr-radar-ring"
         }));
@@ -574,7 +604,7 @@ function createRadarSvg(statsList) {
         const labelPos = polarPoint(cx, cy, radius + 22, angle);
         const anchor = axisTextAnchor(angle);
 
-        svg.appendChild(createSvgEl("line", {
+        fragment.appendChild(createSvgEl("line", {
             x1: cx,
             y1: cy,
             x2: outer.x.toFixed(2),
@@ -590,7 +620,7 @@ function createRadarSvg(statsList) {
             fill: stat.subject.color
         });
         labelEl.textContent = stat.subject.label;
-        svg.appendChild(labelEl);
+        fragment.appendChild(labelEl);
 
         const valueEl = createSvgEl("text", {
             x: labelPos.x.toFixed(2),
@@ -599,7 +629,7 @@ function createRadarSvg(statsList) {
             "text-anchor": anchor
         });
         valueEl.textContent = formatPercent(stat.mastery);
-        svg.appendChild(valueEl);
+        fragment.appendChild(valueEl);
     }
 
     /* 数据多边形与顶点 */
@@ -614,7 +644,7 @@ function createRadarSvg(statsList) {
         return { point, stat };
     });
 
-    svg.appendChild(createSvgEl("polygon", {
+    fragment.appendChild(createSvgEl("polygon", {
         points: dataPoints
             .map(entry => `${entry.point.x.toFixed(2)},${entry.point.y.toFixed(2)}`)
             .join(" "),
@@ -622,7 +652,7 @@ function createRadarSvg(statsList) {
     }));
 
     for (const entry of dataPoints) {
-        svg.appendChild(createSvgEl("circle", {
+        fragment.appendChild(createSvgEl("circle", {
             cx: entry.point.x.toFixed(2),
             cy: entry.point.y.toFixed(2),
             r: 3.5,
@@ -631,6 +661,7 @@ function createRadarSvg(statsList) {
         }));
     }
 
+    svg.appendChild(fragment);
     return svg;
 }
 

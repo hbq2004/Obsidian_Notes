@@ -1120,6 +1120,11 @@ for (const page of candidatePages) {
             level < peakLevel
         );
 
+    /* review_count 只解析一次，两个派生字段共用同一份解析结果。 */
+    const parsedReviewCount = parseIntegerScalar(page.review_count);
+    const hasRecordedReviewCount =
+        parsedReviewCount !== null && parsedReviewCount >= 0;
+
     items.push({
         page,
         sourceFile,
@@ -1128,8 +1133,8 @@ for (const page of candidatePages) {
         peakLevel,
         regressed,
         hasLegacyRegressionNotice,
-        hasRecordedReviewCount: hasValidReviewCount(page.review_count),
-        reviewCount: parseNonNegativeInteger(page.review_count),
+        hasRecordedReviewCount,
+        reviewCount: hasRecordedReviewCount ? parsedReviewCount : 0,
         nextReview: normalizeIsoDate(page.next_review)
     });
 }
@@ -1185,9 +1190,11 @@ function getQuestionOrderAnchors(item) {
         anchors.push(`question-id:${String(explicitId).trim()}`);
     }
 
-    const sourceFile = app.vault.getAbstractFileByPath(
-        getQuestionOrderPath(item)
-    ) ?? item?.sourceFile;
+    /* 候选条目构建时已持有 TFile，直接复用，避免对同一路径再次走 vault 查找。 */
+    const sourceFile = item?.sourceFile ??
+        app.vault.getAbstractFileByPath(
+            getQuestionOrderPath(item)
+        );
     const sourceCtime = Number(
         sourceFile?.stat?.ctime ??
         item?.page?.file?.ctime?.valueOf?.()
@@ -1382,24 +1389,43 @@ function mergeQuestionOrderEntries(questionItems, previousState = null) {
     return mergedEntries;
 }
 
+/*
+ * 预计算排序键（Schwartzian 变换）：降级标记、等级与文件名在首次渲染前
+ * 一次性读取，避免比较器在每次比较时重复访问字段与转换类型。
+ * 评级只会更新行内元素并刷新筛选 UI，不会重新排序，因此键不会过期。
+ */
+const questionPriorityKeyByItem = new Map();
+
+for (const item of items) {
+    questionPriorityKeyByItem.set(item, {
+        regressed: Number(item.regressed),
+        level: item.level ?? -1,
+        name: item.page.file.name
+    });
+}
+
 function compareQuestionPriority(a, b) {
+    const keyA = questionPriorityKeyByItem.get(a);
+    const keyB = questionPriorityKeyByItem.get(b);
+
     const regressionDifference =
-        Number(b.regressed) - Number(a.regressed);
+        (keyB ? keyB.regressed : Number(b.regressed)) -
+        (keyA ? keyA.regressed : Number(a.regressed));
 
     if (regressionDifference !== 0) {
         return regressionDifference;
     }
 
-    const levelA = a.level ?? -1;
-    const levelB = b.level ?? -1;
+    const levelA = keyA ? keyA.level : (a.level ?? -1);
+    const levelB = keyB ? keyB.level : (b.level ?? -1);
 
     if (levelA !== levelB) {
         return levelA - levelB;
     }
 
     return QUESTION_NAME_COLLATOR.compare(
-        a.page.file.name,
-        b.page.file.name
+        keyA ? keyA.name : a.page.file.name,
+        keyB ? keyB.name : b.page.file.name
     );
 }
 
@@ -1489,9 +1515,20 @@ function applyLockedQuestionOrder(questionItems, state) {
         getQuestionOrderEntries(state)
     );
 
+    /*
+     * 预计算每个题目的固定顺序下标：findQuestionOrderIndex 内部会重建
+     * 题图锚点（含路径排序）并在极端情况下线性扫描全部条目，比较器里
+     * 每比较一次就调用两次开销过大；一次性算好后排序只做整数比较。
+     */
+    const orderIndexByItem = new Map();
+
+    for (const item of questionItems) {
+        orderIndexByItem.set(item, findQuestionOrderIndex(item, lookup));
+    }
+
     questionItems.sort((a, b) => {
-        const orderA = findQuestionOrderIndex(a, lookup);
-        const orderB = findQuestionOrderIndex(b, lookup);
+        const orderA = orderIndexByItem.get(a);
+        const orderB = orderIndexByItem.get(b);
         const hasOrderA = orderA !== undefined;
         const hasOrderB = orderB !== undefined;
 

@@ -1,0 +1,591 @@
+/*
+ * 独立智能组卷视图
+ * 所有规则均限制在 .smart-paper-view 内，避免影响其他 DataviewJS 页面。
+ */
+
+.smart-paper-view {
+    --smart-paper-radius: 10px;
+    --smart-paper-cell-gap: 10px;
+    width: 100%;
+    min-width: 0;
+    color: var(--text-normal);
+}
+
+.smart-paper-view,
+.smart-paper-view * {
+    box-sizing: border-box;
+}
+
+.smart-paper-view[hidden],
+.smart-paper-view [hidden] {
+    display: none !important;
+}
+
+/* 标题与说明 */
+.smart-paper-view .smart-paper-header {
+    margin: 0 0 16px;
+    padding: 16px 18px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: var(--smart-paper-radius);
+    background: var(--background-secondary);
+}
+
+.smart-paper-view .smart-paper-title {
+    margin: 0;
+    color: var(--text-normal);
+    font-size: 1.35em;
+    line-height: 1.35;
+    text-align: center;
+}
+
+.smart-paper-view .smart-paper-description {
+    max-width: 860px;
+    margin: 8px auto 0;
+    color: var(--text-muted);
+    font-size: 0.92em;
+    line-height: 1.6;
+    text-align: center;
+    overflow-wrap: anywhere;
+}
+
+/* 组卷操作区 */
+.smart-paper-view .smart-paper-controls {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 0 0 12px;
+    padding: 14px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: var(--smart-paper-radius);
+    background: var(--background-secondary);
+}
+
+.smart-paper-view .smart-paper-type-label,
+.smart-paper-view .smart-paper-count-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+    color: var(--text-normal);
+    font-size: 0.92em;
+    font-weight: 600;
+}
+
+.smart-paper-view .smart-paper-type-select,
+.smart-paper-view .smart-paper-count-select {
+    min-width: 92px;
+    height: 36px;
+    padding: 5px 30px 5px 10px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 7px;
+    outline: none;
+    background-color: var(--interactive-normal);
+    color: var(--text-normal);
+    font-family: var(--font-interface);
+    font-size: 0.95em;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.smart-paper-view .smart-paper-type-select:hover:not(:disabled),
+.smart-paper-view .smart-paper-count-select:hover:not(:disabled) {
+    border-color: var(--background-modifier-border-hover);
+    background-color: var(--interactive-hover);
+}
+
+.smart-paper-view .smart-paper-type-select:focus-visible,
+.smart-paper-view .smart-paper-count-select:focus-visible,
+.smart-paper-view .smart-paper-generate-button:focus-visible,
+.smart-paper-view .smart-paper-order-lock-button:focus-visible,
+.smart-paper-view .smart-paper-print-button:focus-visible {
+    outline: 2px solid var(--interactive-accent);
+    outline-offset: 2px;
+}
+
+.smart-paper-view .smart-paper-generate-button,
+.smart-paper-view .smart-paper-order-lock-button,
+.smart-paper-view .smart-paper-print-button {
+    appearance: none;
+    min-height: 36px;
+    padding: 7px 14px;
+    border-radius: 7px;
+    font-family: var(--font-interface);
+    font-size: 0.92em;
+    font-weight: 600;
+    line-height: 1.25;
+    cursor: pointer;
+    transition: background-color 120ms ease, border-color 120ms ease,
+        filter 120ms ease, opacity 120ms ease;
+}
+
+.smart-paper-view .smart-paper-generate-button {
+    border: 1px solid var(--interactive-accent);
+    background: var(--interactive-accent);
+    color: var(--text-on-accent);
+}
+
+.smart-paper-view .smart-paper-print-button {
+    border: 1px solid var(--interactive-accent);
+    background: var(--background-primary);
+    color: var(--interactive-accent);
+}
+
+.smart-paper-view .smart-paper-order-lock-button {
+    border: 1px solid var(--background-modifier-border);
+    background: var(--interactive-normal);
+    color: var(--text-normal);
+}
+
+.smart-paper-view .smart-paper-order-lock-button.is-active {
+    border-color: var(--interactive-accent);
+    background: var(--interactive-accent);
+    color: var(--text-on-accent);
+}
+
+.smart-paper-view .smart-paper-generate-button:hover:not(:disabled) {
+    filter: brightness(1.08);
+}
+
+.smart-paper-view .smart-paper-print-button:hover:not(:disabled) {
+    background: var(--interactive-hover);
+}
+
+.smart-paper-view .smart-paper-order-lock-button:hover:not(:disabled) {
+    background: var(--interactive-hover);
+}
+
+.smart-paper-view .smart-paper-order-lock-button.is-active:hover:not(:disabled) {
+    background: var(--interactive-accent);
+    filter: brightness(1.08);
+}
+
+.smart-paper-view .smart-paper-type-select:disabled,
+.smart-paper-view .smart-paper-count-select:disabled,
+.smart-paper-view .smart-paper-generate-button:disabled,
+.smart-paper-view .smart-paper-order-lock-button:disabled,
+.smart-paper-view .smart-paper-print-button:disabled {
+    cursor: not-allowed;
+    opacity: 0.55;
+}
+
+.smart-paper-view .smart-paper-type-select.smart-paper-busy:disabled,
+.smart-paper-view .smart-paper-count-select.smart-paper-busy:disabled,
+.smart-paper-view .smart-paper-generate-button.smart-paper-busy:disabled,
+.smart-paper-view .smart-paper-order-lock-button.smart-paper-busy:disabled,
+.smart-paper-view .smart-paper-print-button.smart-paper-busy:disabled {
+    cursor: wait;
+}
+
+/* 组卷结果摘要、题库不足提示与空状态 */
+.smart-paper-view .smart-paper-summary {
+    flex: 1 1 100%;
+    min-width: 0;
+    margin: 2px 0 0;
+    padding: 9px 11px;
+    border-radius: 7px;
+    background: var(--background-primary);
+    color: var(--text-muted);
+    font-size: 0.9em;
+    line-height: 1.55;
+    overflow-wrap: anywhere;
+}
+
+.smart-paper-view .smart-paper-summary:empty {
+    display: none;
+}
+
+.smart-paper-view .smart-paper-empty {
+    margin: 14px 0;
+    padding: 28px 18px;
+    border: 1px dashed var(--background-modifier-border);
+    border-radius: var(--smart-paper-radius);
+    background: var(--background-secondary);
+    color: var(--text-muted);
+    line-height: 1.6;
+    text-align: center;
+}
+
+/* 试卷表格：题号 / 科目 / 来源 / 题图 / 选题依据 */
+.smart-paper-view .smart-paper-table-wrap {
+    width: 100%;
+    min-width: 0;
+    overflow-x: auto;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: var(--smart-paper-radius);
+    background: var(--background-primary);
+    scrollbar-width: thin;
+}
+
+.smart-paper-view .smart-paper-table {
+    width: 100%;
+    min-width: 900px;
+    margin: 0 !important;
+    border: 0 !important;
+    border-collapse: separate;
+    border-spacing: 0;
+    table-layout: fixed;
+    background: var(--background-primary);
+}
+
+.smart-paper-view .smart-paper-table th,
+.smart-paper-view .smart-paper-table td {
+    min-width: 0;
+    padding: 10px var(--smart-paper-cell-gap) !important;
+    border-right: 1px solid var(--background-modifier-border);
+    border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.smart-paper-view .smart-paper-table th:last-child,
+.smart-paper-view .smart-paper-table td:last-child {
+    border-right: 0;
+}
+
+.smart-paper-view .smart-paper-table tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+.smart-paper-view .smart-paper-table thead th {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background: var(--background-secondary);
+    color: var(--text-normal);
+    font-size: 0.9em;
+    font-weight: 700;
+    line-height: 1.35;
+    text-align: center !important;
+    vertical-align: middle !important;
+    white-space: nowrap;
+}
+
+.smart-paper-view .smart-paper-table tbody tr {
+    background: var(--background-primary);
+}
+
+.smart-paper-view .smart-paper-table tbody tr:nth-child(even) {
+    background: var(--background-primary-alt);
+}
+
+.smart-paper-view .smart-paper-table tbody tr:hover {
+    background: var(--background-modifier-hover);
+}
+
+.smart-paper-view .smart-paper-table tbody tr[hidden] {
+    display: none !important;
+}
+
+.smart-paper-view .smart-paper-table tbody td {
+    color: var(--text-normal);
+    line-height: 1.5;
+    vertical-align: top !important;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+.smart-paper-view .smart-paper-table th:nth-child(1),
+.smart-paper-view .smart-paper-table td:nth-child(1) {
+    width: 7%;
+    text-align: center;
+}
+
+.smart-paper-view .smart-paper-table th:nth-child(2),
+.smart-paper-view .smart-paper-table td:nth-child(2) {
+    width: 11%;
+    text-align: center;
+}
+
+.smart-paper-view .smart-paper-table th:nth-child(3),
+.smart-paper-view .smart-paper-table td:nth-child(3) {
+    width: 17%;
+}
+
+.smart-paper-view .smart-paper-table th:nth-child(4),
+.smart-paper-view .smart-paper-table td:nth-child(4) {
+    width: 43%;
+}
+
+.smart-paper-view .smart-paper-table th:nth-child(5),
+.smart-paper-view .smart-paper-table td:nth-child(5) {
+    width: 22%;
+}
+
+.smart-paper-view .smart-paper-question-number,
+.smart-paper-view .smart-paper-subject {
+    font-weight: 650;
+}
+
+.smart-paper-view .smart-paper-source,
+.smart-paper-view .smart-paper-source-link {
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+.smart-paper-view .smart-paper-source-link {
+    color: var(--link-color);
+    text-decoration-line: var(--link-decoration);
+}
+
+.smart-paper-view .smart-paper-source-link:hover {
+    color: var(--link-color-hover);
+    text-decoration-line: var(--link-decoration-hover);
+}
+
+/* 一题多图 */
+.smart-paper-view .smart-paper-images {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 8px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.smart-paper-view .smart-paper-image-item {
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.smart-paper-view .smart-paper-image {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    max-height: 430px;
+    margin: 0 auto;
+    border-radius: 4px;
+    object-fit: contain;
+}
+
+.smart-paper-view .smart-paper-image-placeholder {
+    display: grid;
+    min-height: 90px;
+    place-items: center;
+    padding: 12px;
+    border: 1px dashed var(--background-modifier-border);
+    border-radius: 6px;
+    color: var(--text-faint);
+    font-size: 0.86em;
+    text-align: center;
+}
+
+/* 个人掌握情况与入选依据 */
+.smart-paper-view .smart-paper-status-chips {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 0 0 7px;
+}
+
+.smart-paper-view .smart-paper-status-chip {
+    display: inline-flex;
+    align-items: center;
+    max-width: 100%;
+    min-height: 24px;
+    padding: 3px 8px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 999px;
+    background: var(--background-secondary);
+    color: var(--text-muted);
+    font-size: 0.78em;
+    font-weight: 600;
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+}
+
+.smart-paper-view .smart-paper-status-chip.smart-paper-level,
+.smart-paper-view .smart-paper-status-chip[data-status="level"] {
+    border-color: var(--interactive-accent);
+    color: var(--interactive-accent);
+}
+
+.smart-paper-view .smart-paper-status-chip.smart-paper-downgraded,
+.smart-paper-view .smart-paper-status-chip.smart-paper-overdue,
+.smart-paper-view .smart-paper-status-chip[data-status="downgraded"],
+.smart-paper-view .smart-paper-status-chip[data-status="overdue"] {
+    border-color: var(--background-modifier-error);
+    background: var(--background-modifier-error);
+    color: var(--text-error);
+}
+
+.smart-paper-view .smart-paper-status-chip.smart-paper-new,
+.smart-paper-view .smart-paper-status-chip[data-status="new"] {
+    color: var(--text-accent);
+}
+
+.smart-paper-view .smart-paper-basis {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 0.88em;
+    line-height: 1.55;
+    white-space: normal;
+    overflow-wrap: anywhere;
+}
+
+/* 中等宽度：保留表格布局并允许横向滚动 */
+@media (max-width: 1000px) {
+    .smart-paper-view .smart-paper-table {
+        min-width: 800px;
+    }
+
+    .smart-paper-view .smart-paper-table th:nth-child(3),
+    .smart-paper-view .smart-paper-table td:nth-child(3) {
+        width: 18%;
+    }
+
+    .smart-paper-view .smart-paper-table th:nth-child(4),
+    .smart-paper-view .smart-paper-table td:nth-child(4) {
+        width: 40%;
+    }
+
+    .smart-paper-view .smart-paper-table th:nth-child(5),
+    .smart-paper-view .smart-paper-table td:nth-child(5) {
+        width: 24%;
+    }
+}
+
+/* 窄屏：操作区纵向排列，表格改为逐题卡片 */
+@media (max-width: 720px) {
+    .smart-paper-view .smart-paper-header,
+    .smart-paper-view .smart-paper-controls {
+        padding: 12px;
+    }
+
+    .smart-paper-view .smart-paper-controls {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .smart-paper-view .smart-paper-type-label,
+    .smart-paper-view .smart-paper-count-label {
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .smart-paper-view .smart-paper-type-select,
+    .smart-paper-view .smart-paper-count-select {
+        flex: 1 1 auto;
+        width: 100%;
+    }
+
+    .smart-paper-view .smart-paper-generate-button,
+    .smart-paper-view .smart-paper-order-lock-button,
+    .smart-paper-view .smart-paper-print-button {
+        width: 100%;
+    }
+
+    .smart-paper-view .smart-paper-table-wrap {
+        overflow: visible;
+        border: 0;
+        background: transparent;
+    }
+
+    .smart-paper-view .smart-paper-table {
+        display: block;
+        min-width: 0;
+        background: transparent;
+    }
+
+    .smart-paper-view .smart-paper-table thead {
+        display: none;
+    }
+
+    .smart-paper-view .smart-paper-table tbody {
+        display: grid;
+        gap: 12px;
+    }
+
+    .smart-paper-view .smart-paper-table tbody tr {
+        display: block;
+        overflow: hidden;
+        border: 1px solid var(--background-modifier-border);
+        border-radius: var(--smart-paper-radius);
+        background: var(--background-primary);
+    }
+
+    .smart-paper-view .smart-paper-table tbody tr:nth-child(even) {
+        background: var(--background-primary);
+    }
+
+    .smart-paper-view .smart-paper-table tbody td,
+    .smart-paper-view .smart-paper-table tbody td:nth-child(n) {
+        display: grid;
+        grid-template-columns: 4.5rem minmax(0, 1fr);
+        gap: 10px;
+        width: 100%;
+        padding: 9px 10px !important;
+        border-right: 0;
+        border-bottom: 1px solid var(--background-modifier-border);
+        text-align: left;
+    }
+
+    .smart-paper-view .smart-paper-table tbody td:last-child {
+        border-bottom: 0;
+    }
+
+    .smart-paper-view .smart-paper-table tbody td::before {
+        color: var(--text-muted);
+        font-size: 0.82em;
+        font-weight: 700;
+        line-height: 1.5;
+    }
+
+    .smart-paper-view .smart-paper-table tbody td:nth-child(1)::before {
+        content: "题号";
+    }
+
+    .smart-paper-view .smart-paper-table tbody td:nth-child(2)::before {
+        content: "科目";
+    }
+
+    .smart-paper-view .smart-paper-table tbody td:nth-child(3)::before {
+        content: "来源";
+    }
+
+    .smart-paper-view .smart-paper-table tbody td:nth-child(4)::before {
+        content: "题图";
+    }
+
+    .smart-paper-view .smart-paper-table tbody td:nth-child(5)::before {
+        content: "依据";
+    }
+}
+
+/* Obsidian 导出/打印时隐藏交互控件，并避免表格横向裁切 */
+@media print {
+    .smart-paper-view .smart-paper-controls,
+    .smart-paper-view .smart-paper-empty {
+        display: none !important;
+    }
+
+    .smart-paper-view .smart-paper-header {
+        padding: 0 0 10px;
+        border: 0;
+        background: transparent;
+    }
+
+    .smart-paper-view .smart-paper-table-wrap {
+        overflow: visible;
+        border-color: var(--background-modifier-border);
+    }
+
+    .smart-paper-view .smart-paper-table {
+        min-width: 0;
+    }
+
+    .smart-paper-view .smart-paper-table thead th {
+        position: static;
+    }
+
+    .smart-paper-view .smart-paper-table tbody tr {
+        break-inside: avoid;
+    }
+
+    .smart-paper-view .smart-paper-image {
+        max-height: 360px;
+    }
+}
