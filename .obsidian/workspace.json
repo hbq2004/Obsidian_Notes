@@ -108,7 +108,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 353.5110321044922
+    "width": 353.5110321044922,
+    "collapsed": true
   },
   "right": {
     "id": "788c2b70f5d82052",
@@ -143,7 +144,7 @@
                 "sortOrder": "frequency",
                 "useHierarchy": true,
                 "showSearch": true,
-                "searchQuery": "880"
+                "searchQuery": ""
               },
               "icon": "lucide-tags",
               "title": "标签"
@@ -230,8 +231,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 374.5,
-    "collapsed": true
+    "width": 374.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -254,7 +254,7 @@
       "hidden-folder-obsidian:显示文件夹": false
     }
   },
-  "active": "12ec190f678aca36",
+  "active": "42733061a6ea5d4f",
   "lastOpenFiles": [
     "_Attachments/题目识别/1000-XG/1000-XG-TD64015-Q027_题目.png",
     "_Attachments/题目识别/1000-XG/1000-XG-TE8D696-Q004_题目.png",
