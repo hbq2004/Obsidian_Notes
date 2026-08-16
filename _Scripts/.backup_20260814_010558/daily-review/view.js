@@ -55,7 +55,7 @@ const CONFIG = {
     subjects: [
         { id: "AM",  label: "高数",   color: "#e15759", tagRoots: ["#AM", "#高数", "#高等数学"] },
         { id: "LA",  label: "线代",   color: "#4e79a7", tagRoots: ["#LA", "#线代", "#线性代数"] },
-        { id: "P&S", label: "概率",   color: "#59a14f", tagRoots: ["#P&S", "#PS", "#概率", "#概率论", "#概率统计", "#概率论与数理统计"] },
+        { id: "PS", label: "概率",   color: "#59a14f", tagRoots: ["#PS", "#PS", "#概率", "#概率论", "#概率统计", "#概率论与数理统计"] },
         { id: "DS",  label: "数据结构", color: "#f28e2b", tagRoots: ["#DS", "#数据结构"] },
         { id: "CO",  label: "计组",   color: "#76b7b2", tagRoots: ["#CO", "#计组", "#计算机组成原理"] },
         { id: "OS",  label: "操作系统", color: "#edc948", tagRoots: ["#OS", "#操作系统"] },

@@ -15,7 +15,7 @@
  *   scores:
  *     AM: 75
  *     LA: 30
- *     P&S: 30
+ *     PS: 30
  *   note: "选择题崩了"        # 可选
  *
  * 使用：在笔记中插入 DataviewJS 代码块
@@ -44,7 +44,7 @@ const CONFIG = {
             subjects: [
                 { id: "AM",  label: "高数", color: "#e15759", maxScore: 84 },
                 { id: "LA",  label: "线代", color: "#4e79a7", maxScore: 33 },
-                { id: "P&S", label: "概率", color: "#59a14f", maxScore: 33 }
+                { id: "PS", label: "概率", color: "#59a14f", maxScore: 33 }
             ]
         },
         {
@@ -70,7 +70,7 @@ const viewDocument = dv.container.ownerDocument;
 const ALL_SUBJECTS = [
     { id: "AM",  label: "高数",   color: "#e15759", maxScore: 84 },
     { id: "LA",  label: "线代",   color: "#4e79a7", maxScore: 33 },
-    { id: "P&S", label: "概率",   color: "#59a14f", maxScore: 33 },
+    { id: "PS", label: "概率",   color: "#59a14f", maxScore: 33 },
     { id: "DS",  label: "数据结构", color: "#f28e2b", maxScore: 45 },
     { id: "CO",  label: "计组",   color: "#76b7b2", maxScore: 45 },
     { id: "OS",  label: "操作系统", color: "#edc948", maxScore: 35 },
