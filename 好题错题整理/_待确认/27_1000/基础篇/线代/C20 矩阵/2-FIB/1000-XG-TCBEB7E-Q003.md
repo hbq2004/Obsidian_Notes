@@ -13,3 +13,9 @@ level:
 ![[_Attachments/题目识别/1000-XG/1000-XG-TCBEB7E-Q003_题目.png|题目]]
 
 3. 设 $A=\begin{bmatrix}0&0&-1\\0&1&0\\1&0&0\end{bmatrix}$, 则 $A^{13}=$ \_ .
+
+---
+
+## 答案
+
+![[_Attachments/题目识别/1000-答案/1000-XG-TCBEB7E-Q003_答案.png|答案]]

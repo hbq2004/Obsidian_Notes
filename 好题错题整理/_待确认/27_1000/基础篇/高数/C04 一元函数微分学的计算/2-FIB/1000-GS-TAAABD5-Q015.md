@@ -13,3 +13,9 @@ level:
 ![[_Attachments/题目识别/1000-GS/1000-GS-TAAABD5-Q015_题目.png|题目]]
 
 15. 曲线 $\begin{cases} x = e^t \sin 2t, \\ y = e^t \cos t \end{cases}$ 在对应 $t=0$ 处的点的切线方程为 \_\_\_\_\_\_.
+
+---
+
+## 答案
+
+![[_Attachments/题目识别/1000-答案/1000-GS-TAAABD5-Q015_答案.png|答案]]

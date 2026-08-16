@@ -13,3 +13,9 @@ level:
 ![[_Attachments/题目识别/1000-XG/1000-XG-TCBEB7E-Q005_题目.png|题目]]
 
 5. 已知 $A=\begin{bmatrix}1&-1\\1&0\end{bmatrix}$，若 $(PA)^2=PA$，$P$ 为可逆矩阵，则 $P=$ \_ .
+
+---
+
+## 答案
+
+![[_Attachments/题目识别/1000-答案/1000-XG-TCBEB7E-Q005_答案.png|答案]]

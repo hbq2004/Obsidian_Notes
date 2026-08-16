@@ -13,3 +13,9 @@ level:
 ![[_Attachments/题目识别/1000-GS/1000-GS-TAAABD5-Q016_题目.png|题目]]
 
 16. 若 $\begin{cases} x=\ln|t|, \\ y=e^{-t^2}, \end{cases}$，则 $\left. \frac{d^2y}{dx^2} \right|＿{t=\sqrt{2}} =$ \_ .
+
+---
+
+## 答案
+
+![[_Attachments/题目识别/1000-答案/1000-GS-TAAABD5-Q016_答案.png|答案]]

@@ -13,3 +13,9 @@ level:
 ![[_Attachments/题目识别/1000-XG/1000-XG-TCBEB7E-Q018_题目.png|题目]]
 
 18. 设 $A$ 是 $n$ 阶矩阵，满足 $A^2 = A$，则 $(A-2E)^3 - 3A =$ \_ .
+
+---
+
+## 答案
+
+![[_Attachments/题目识别/1000-答案/1000-XG-TCBEB7E-Q018_答案.png|答案]]

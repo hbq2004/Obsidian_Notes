@@ -13,3 +13,9 @@ level:
 ![[_Attachments/题目识别/1000-GS/1000-GS-TAAABD5-Q007_题目.png|题目]]
 
 $ 7. 设 \begin{cases} x = t - t^2, \\ t e^y + y + 1 = 0, \end{cases}  则  \left. \frac{dy}{dx} \right|＿{t=0} = \＿$
+
+---
+
+## 答案
+
+![[_Attachments/题目识别/1000-答案/1000-GS-TAAABD5-Q007_答案.png|答案]]

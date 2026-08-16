@@ -13,3 +13,9 @@ level:
 ![[_Attachments/题目识别/1000-GS/1000-GS-TAAABD5-Q011_题目.png|题目]]
 
 11. 已知函数 $f(x)=x^{2}\ln(1-x)$，则当 $n\geqslant 3$ 时，$f^{(n)}(0)=$ \_ .
+
+---
+
+## 答案
+
+![[_Attachments/题目识别/1000-答案/1000-GS-TAAABD5-Q011_答案.png|答案]]

@@ -13,3 +13,9 @@ level:
 ![[_Attachments/题目识别/1000-XG/1000-XG-TCBEB7E-Q009_题目.png|题目]]
 
 9. 设 $A, B$ 为 3 阶矩阵，且 $AB = \begin{bmatrix} 0 & 1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 1 \end{bmatrix}$，则必有( ).
+
+---
+
+## 答案
+
+![[_Attachments/题目识别/1000-答案/1000-XG-TCBEB7E-Q009_答案.png|答案]]

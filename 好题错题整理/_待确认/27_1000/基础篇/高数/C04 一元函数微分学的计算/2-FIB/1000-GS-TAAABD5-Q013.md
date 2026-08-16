@@ -13,3 +13,9 @@ level:
 ![[_Attachments/题目识别/1000-GS/1000-GS-TAAABD5-Q013_题目.png|题目]]
 
 13. 设 $f(x)=\lim\limits_{t\to\infty}x\left(1+\frac{1}{t}\right)^{t\sin x}$, 则 $f'(x)=$ \_ .
+
+---
+
+## 答案
+
+![[_Attachments/题目识别/1000-答案/1000-GS-TAAABD5-Q013_答案.png|答案]]

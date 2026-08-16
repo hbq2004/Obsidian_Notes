@@ -13,3 +13,9 @@ level:
 ![[_Attachments/题目识别/1000-GS/1000-GS-TAAABD5-Q006_题目.png|题目]]
 
 6. 设 $y=\ln\sqrt{\frac{1-x}{1+x^{2}}}$，则 $\left.y'\right|＿{x=0}=$ \_ .
+
+---
+
+## 答案
+
+![[_Attachments/题目识别/1000-答案/1000-GS-TAAABD5-Q006_答案.png|答案]]

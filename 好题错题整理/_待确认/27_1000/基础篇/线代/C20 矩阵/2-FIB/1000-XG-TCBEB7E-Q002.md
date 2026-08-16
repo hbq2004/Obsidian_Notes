@@ -13,3 +13,9 @@ level:
 ![[_Attachments/题目识别/1000-XG/1000-XG-TCBEB7E-Q002_题目.png|题目]]
 
 2. 设 $A=\begin{bmatrix}1&1\\0&1\end{bmatrix}$, $B=\begin{bmatrix}-1&1\\0&-1\end{bmatrix}$, 则 $A^{9}-B^{9}=$ \_ .
+
+---
+
+## 答案
+
+![[_Attachments/题目识别/1000-答案/1000-XG-TCBEB7E-Q002_答案.png|答案]]

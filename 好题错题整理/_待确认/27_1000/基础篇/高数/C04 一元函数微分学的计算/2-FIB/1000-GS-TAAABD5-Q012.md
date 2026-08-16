@@ -13,3 +13,9 @@ level:
 ![[_Attachments/题目识别/1000-GS/1000-GS-TAAABD5-Q012_题目.png|题目]]
 
 12. 设 $f(t)=\lim\limits_{n\to\infty}\cos t\cdot\left(\frac{n+t}{n-t}\right)^{n}$，则 $f'(0)=$ \_ .
+
+---
+
+## 答案
+
+![[_Attachments/题目识别/1000-答案/1000-GS-TAAABD5-Q012_答案.png|答案]]

@@ -13,3 +13,9 @@ level:
 ![[_Attachments/题目识别/1000-GS/1000-GS-TAAABD5-Q005_题目.png|题目]]
 
 5. 已知函数 $y = y(x)$ 满足 $(x + y^2)y' = 1$，$y(-1) = 0$，则 $\left. \frac{dx}{dy} \right|＿{y=0} =$ \_ .
+
+---
+
+## 答案
+
+![[_Attachments/题目识别/1000-答案/1000-GS-TAAABD5-Q005_答案.png|答案]]

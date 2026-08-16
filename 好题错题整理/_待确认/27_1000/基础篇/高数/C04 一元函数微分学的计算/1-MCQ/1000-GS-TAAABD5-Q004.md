@@ -21,3 +21,9 @@ B. $\frac{1}{4} \sqrt{e}$
 C. $\frac{1}{2} \sqrt{e}$
 
 D. $2\sqrt{e}$
+
+---
+
+## 答案
+
+![[_Attachments/题目识别/1000-答案/1000-GS-TAAABD5-Q004_答案.png|答案]]

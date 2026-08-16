@@ -21,3 +21,9 @@ B. $11! \cdot \cos 1$
 C. $10! - \sin 1$
 
 D. $11! \cdot \sin 1$
+
+---
+
+## 答案
+
+![[_Attachments/题目识别/1000-答案/1000-GS-TAAABD5-Q018_答案.png|答案]]

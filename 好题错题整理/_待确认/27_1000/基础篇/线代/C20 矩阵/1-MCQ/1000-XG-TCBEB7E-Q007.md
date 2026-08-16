@@ -17,3 +17,9 @@ A. $\begin{bmatrix}0&|A|A^{*}\\|B|B^{*}&0\end{bmatrix}$
 B. $\begin{bmatrix}0&(-1)^{n}|A|B^{*}\\(-1)^{n}|B|A^{*}&0\end{bmatrix}$
 C. $\begin{bmatrix}0&|B|A^{*}\\|A|B&0\end{bmatrix}$
 D. $\begin{bmatrix}O&(-1)^{n}|B|B^{*}\\(-1)^{n}|A|A^{*}&0\end{bmatrix}$
+
+---
+
+## 答案
+
+![[_Attachments/题目识别/1000-答案/1000-XG-TCBEB7E-Q007_答案.png|答案]]

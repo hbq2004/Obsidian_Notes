@@ -21,3 +21,9 @@ B. $\left[\begin{array}{ccc}1 & 0 & 0 \\ 2 & -1 & 0 \\ 3 & \frac{4}{3} & 1\end{a
 C. $\left[\begin{array}{ccc}1 & 0 & 0 \\ 2 & 1 & 0 \\ 3 & \frac{4}{3} & 1\end{array}\right]\left[\begin{array}{ccc}1 & 0 & 0 \\ 0 & 3 & 0 \\ 0 & 0 & -\frac{2}{3}\end{array}\right]\left[\begin{array}{ccc}1 & -1 & 2 \\ 0 & 1 & -\frac{1}{3}\end{array}\right]$
 
 D. $\left[\begin{array}{ccc}1 & 0 & 0 \\ 2 & -1 & 0 \\ 3 & \frac{4}{3} & 1\end{array}\right]\left[\begin{array}{ccc}1 & 0 & 0 \\ 0 & -3 & 0 \\ 0 & 0 & -\frac{2}{3}\end{array}\right]\left[\begin{array}{ccc}1 & -1 & 2 \\ 0 & 1 & -\frac{1}{3}\end{array}\right]$
+
+---
+
+## 答案
+
+![[_Attachments/题目识别/1000-答案/1000-XG-TCBEB7E-Q001_答案.png|答案]]

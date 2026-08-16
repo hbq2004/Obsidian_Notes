@@ -21,3 +21,9 @@ B. $\begin{bmatrix}1&0&0\\-2&2&0\\9&0&3\end{bmatrix}$
 C. $\begin{bmatrix}-3&0&0\\-6&2&0\\0&0&3\end{bmatrix}$
 
 D. $\begin{bmatrix}1&0&0\\-2&2&0\\-1&0&3\end{bmatrix}$
+
+---
+
+## 答案
+
+![[_Attachments/题目识别/1000-答案/1000-XG-TCBEB7E-Q013_答案.png|答案]]

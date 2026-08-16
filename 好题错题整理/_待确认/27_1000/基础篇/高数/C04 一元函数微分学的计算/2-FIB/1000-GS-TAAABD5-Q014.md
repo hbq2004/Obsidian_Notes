@@ -13,3 +13,9 @@ level:
 ![[_Attachments/题目识别/1000-GS/1000-GS-TAAABD5-Q014_题目.png|题目]]
 
 14. 设 $f(x)=\max\{x,x^{2}\}$, $0<x<2$, 则 $f'(x)=$ \_ .
+
+---
+
+## 答案
+
+![[_Attachments/题目识别/1000-答案/1000-GS-TAAABD5-Q014_答案.png|答案]]

@@ -13,3 +13,9 @@ level:
 ![[_Attachments/题目识别/1000-XG/1000-XG-TCBEB7E-Q008_题目.png|题目]]
 
 8. 设矩阵 $A = \begin{bmatrix} 1 & 2 & 4 \\ 0 & 1 & 5 \\ 0 & 0 & 3 \end{bmatrix}$，$B = \begin{bmatrix} 1 & 0 & 0 \\ 3 & 1 & 0 \\ 4 & 5 & 1 \end{bmatrix}$，则 $|A^{-1}B^* - A^*B^{-1}| = \＿$.
+
+---
+
+## 答案
+
+![[_Attachments/题目识别/1000-答案/1000-XG-TCBEB7E-Q008_答案.png|答案]]
