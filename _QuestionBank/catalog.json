@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-16T22:13:58.082682+08:00",
+  "generated_at": "2026-08-16T22:46:28.227791+08:00",
   "books": [
     {
       "id": "1000-XG",
@@ -26,7 +26,7 @@
       "note_layout": "sections",
       "created_at": "2026-08-16T21:11:22.046105+08:00",
       "question_count": 512,
-      "materialized_count": 510,
+      "materialized_count": 511,
       "anomaly_count": 30,
       "warnings": [
         "toc_source:manual"
@@ -529,7 +529,7 @@
             "section_heading_not_located"
           ],
           "question_count": 7,
-          "materialized_count": 6,
+          "materialized_count": 7,
           "anomaly_count": 0
         },
         {
@@ -726,7 +726,7 @@
       "note_layout": "sections",
       "created_at": "2026-08-16T21:11:10.527902+08:00",
       "question_count": 787,
-      "materialized_count": 781,
+      "materialized_count": 787,
       "anomaly_count": 37,
       "warnings": [
         "toc_source:manual"
@@ -909,7 +909,7 @@
             "section_heading_not_located"
           ],
           "question_count": 25,
-          "materialized_count": 24,
+          "materialized_count": 25,
           "anomaly_count": 0
         },
         {
@@ -1229,7 +1229,7 @@
             "section_heading_not_located"
           ],
           "question_count": 21,
-          "materialized_count": 19,
+          "materialized_count": 21,
           "anomaly_count": 0
         },
         {
@@ -1269,7 +1269,7 @@
             "section_heading_not_located"
           ],
           "question_count": 19,
-          "materialized_count": 17,
+          "materialized_count": 19,
           "anomaly_count": 0
         },
         {
@@ -1309,7 +1309,7 @@
             "section_heading_not_located"
           ],
           "question_count": 26,
-          "materialized_count": 25,
+          "materialized_count": 26,
           "anomaly_count": 0
         },
         {
@@ -11505,8 +11505,8 @@
         }
       ],
       "warnings": [],
-      "ocr_status": "pending",
-      "materialized": false,
+      "ocr_status": "complete",
+      "materialized": true,
       "pdf_pages": [
         146
       ],
@@ -24134,8 +24134,8 @@
         }
       ],
       "warnings": [],
-      "ocr_status": "pending",
-      "materialized": false,
+      "ocr_status": "complete",
+      "materialized": true,
       "pdf_pages": [
         479
       ],
@@ -24666,8 +24666,8 @@
         }
       ],
       "warnings": [],
-      "ocr_status": "pending",
-      "materialized": false,
+      "ocr_status": "complete",
+      "materialized": true,
       "pdf_pages": [
         493
       ],
@@ -24970,8 +24970,8 @@
         }
       ],
       "warnings": [],
-      "ocr_status": "pending",
-      "materialized": false,
+      "ocr_status": "complete",
+      "materialized": true,
       "pdf_pages": [
         501
       ],
@@ -25464,8 +25464,8 @@
         }
       ],
       "warnings": [],
-      "ocr_status": "pending",
-      "materialized": false,
+      "ocr_status": "complete",
+      "materialized": true,
       "pdf_pages": [
         514
       ],
@@ -26946,8 +26946,8 @@
         }
       ],
       "warnings": [],
-      "ocr_status": "pending",
-      "materialized": false,
+      "ocr_status": "complete",
+      "materialized": true,
       "pdf_pages": [
         553
       ],
@@ -48796,8 +48796,8 @@
         }
       ],
       "warnings": [],
-      "ocr_status": "pending",
-      "materialized": false,
+      "ocr_status": "complete",
+      "materialized": true,
       "pdf_pages": [
         340
       ],
