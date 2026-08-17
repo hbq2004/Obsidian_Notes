@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "cf938585fae06b30",
+        "id": "bc00336b1801f4c4",
         "type": "tabs",
         "children": [
           {
-            "id": "6cebf2e25ddfe65f",
+            "id": "6fa1d76b6b724869",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "好题错题整理/_待确认/27_ep大雪深埋/20_相似理论/1-MCQ/XDSM-2027-20-Q01.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "XDSM-2027-20-Q01"
+              "title": "新标签页"
             }
           }
         ]
@@ -254,8 +250,9 @@
       "hidden-folder-obsidian:显示文件夹": false
     }
   },
-  "active": "6cebf2e25ddfe65f",
+  "active": "12ec190f678aca36",
   "lastOpenFiles": [
+    "好题错题整理/_待确认/27_ep大雪深埋/20_相似理论/1-MCQ/XDSM-2027-20-Q01.md",
     "好题错题整理/_待确认/27_ep大雪深埋/14_微积分应用/1-MCQ/XDSM-2027-14-Q09.md",
     "好题错题整理/_待确认/27_ep大雪深埋/03_一元微分学/1-MCQ/XDSM-2027-03-Q20.md",
     "好题错题整理/_待确认/27_ep大雪深埋/03_一元微分学/1-MCQ/XDSM-2027-03-Q10.md",
@@ -281,7 +278,6 @@
     "好题错题整理/_待确认/27_ep大雪深埋/19_向量组与方程组/1-MCQ/XDSM-2027-19-Q21.md",
     "好题错题整理/_待确认/27_ep大雪深埋/19_向量组与方程组/3-FRQ/XDSM-2027-19-Q01.md",
     "好题错题整理/_待确认/27_ep大雪深埋/18_矩阵和行列式/3-FRQ/XDSM-2027-18-Q31.md",
-    "好题错题整理/_待确认/27_ep大雪深埋/15_无穷级数/3-FRQ/XDSM-2027-15-Q18.md",
     "好题错题整理/_待确认/27_ep大雪深埋/09_积分学不等式/2-FIB",
     "_Attachments/题目识别/XDSM-2027-答案/XDSM-2027-21-Q25_答案.png",
     "好题错题整理/_待确认/27_ep大雪深埋/28_参数估计和假设检验/1-MCQ",
