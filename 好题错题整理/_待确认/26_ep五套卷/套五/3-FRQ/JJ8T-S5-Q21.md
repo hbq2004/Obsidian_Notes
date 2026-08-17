@@ -1,0 +1,98 @@
+---
+ctime: 2026-08-18 02:29:15
+mtime: 2026-08-18 02:29:15
+tags:
+  - AM
+  - 26_ep五套卷/套五/FRQ
+  - 计算题
+  - 常系数线性微分方程组
+  - 特征值与特征向量
+  - 矩阵对角化
+  - 变量替换
+  - 通解
+points:
+level:
+---
+
+# FRQ 第 21 题
+
+![[_Attachments/题目识别/JJ8T/JJ8T-S5-Q21_题目.png|题目]]
+
+设可导函数 $x(t)$，$y(t)$，$z(t)$ 满足
+
+$$
+\frac{dx}{dt} = x + 3y - 3z,
+
+\frac{dy}{dt} = -x + 5y + z,
+
+\frac{dz}{dt} = -4x + 4y + 2z.
+$$
+
+(1) 设矩阵 $A$ 满足 $\left(\frac{dx}{dt}, \frac{dy}{dt}, \frac{dz}{dt}\right) = A\left(\begin{array}{l}x \\ y \\ z\end{array}\right)$ 求可逆矩阵 $P$ 和对角阵 $\Lambda$ 使得 $P^{-1}AP = \Lambda$；
+
+(2) 设变换 $\left(\begin{array}{l}x \\ y \\ z\end{array}\right) = P\left(\begin{array}{l}u \\ v \\ w\end{array}\right)$ 其中 $u, v, w$ 是关于 $t$ 的函数，证明 $\left(\frac{dx}{dt}, \frac{dy}{dt}, \frac{dz}{dt}\right) = P\left(\frac{du}{dt}, \frac{dv}{dt}, \frac{dw}{dt}\right)$；
+
+(3) 利用(2)用到的变换求出函数 $u, v, w$ 满足的方程，并求函数 $x(t)$，$y(t)$，$z(t)$ 的通解.
+
+
+---
+
+## 解析（AI 生成，仅供参考）
+
+【考点】本题考查常系数线性微分方程组的求解，通过矩阵对角化将耦合的微分方程解耦为一阶独立方程，类似算法竞赛中利用矩阵快速幂对角化线性递推。
+
+【解】
+
+（1）将方程组写成矩阵形式。设 $X=\begin{pmatrix}x\\y\\z\end{pmatrix}$，则 $\frac{dX}{dt}=AX$，其中
+$$A=\begin{pmatrix}1&3&-3\\-1&5&1\\-4&4&2\end{pmatrix}.$$
+
+求 $A$ 的特征多项式：
+$$\det(A-\lambda I)=\begin{vmatrix}1-\lambda&3&-3\\-1&5-\lambda&1\\-4&4&2-\lambda\end{vmatrix} = -(\lambda-6)(\lambda-4)(\lambda+2).$$
+所以特征值为 $\lambda_1=6,\lambda_2=4,\lambda_3=-2$。
+
+分别求特征向量：
+- 对 $\lambda_1=6$，解 $(A-6I)X=0$，得特征向量 $\alpha_1=(0,1,1)^T$；
+- 对 $\lambda_2=4$，解 $(A-4I)X=0$，得特征向量 $\alpha_2=(1,1,0)^T$；
+- 对 $\lambda_3=-2$，解 $(A+2I)X=0$，得特征向量 $\alpha_3=(1,0,1)^T$。
+
+取可逆矩阵 $P=(\alpha_1,\alpha_2,\alpha_3)=\begin{pmatrix}0&1&1\\1&1&0\\1&0&1\end{pmatrix}$，则
+$$P^{-1}AP=\Lambda=\begin{pmatrix}6&0&0\\0&4&0\\0&0&-2\end{pmatrix}.$$
+
+（2）设 $X=P\begin{pmatrix}u\\v\\w\end{pmatrix}$，因为 $P$ 是常数矩阵，两边对 $t$ 求导得
+$$\frac{dX}{dt}=P\frac{d}{dt}\begin{pmatrix}u\\v\\w\end{pmatrix},$$
+即 $\left(\frac{dx}{dt},\frac{dy}{dt},\frac{dz}{dt}\right)^T=P\left(\frac{du}{dt},\frac{dv}{dt},\frac{dw}{dt}\right)^T$。原题中左侧写为行向量，但实质相同。
+
+（3）由 $\frac{dX}{dt}=AX$ 及 $X=P\begin{pmatrix}u\\v\\w\end{pmatrix}$，得
+$$P\frac{d}{dt}\begin{pmatrix}u\\v\\w\end{pmatrix}=AP\begin{pmatrix}u\\v\\w\end{pmatrix}.$$
+左乘 $P^{-1}$ 得
+$$\frac{d}{dt}\begin{pmatrix}u\\v\\w\end{pmatrix}=\Lambda\begin{pmatrix}u\\v\\w\end{pmatrix}.$$
+即
+$$\frac{du}{dt}=6u,\quad \frac{dv}{dt}=4v,\quad \frac{dw}{dt}=-2w.$$
+解得
+$$u=C_1e^{6t},\quad v=C_2e^{4t},\quad w=C_3e^{-2t},$$
+其中 $C_1,C_2,C_3$ 为任意常数。
+
+由 $X=P\begin{pmatrix}u\\v\\w\end{pmatrix}$ 得
+$$x=v+w,\quad y=u+v,\quad z=u+w.$$
+所以通解为
+$$\begin{cases}x(t)=C_2e^{4t}+C_3e^{-2t},\\y(t)=C_1e^{6t}+C_2e^{4t},\\z(t)=C_1e^{6t}+C_3e^{-2t}.\end{cases}$$
+
+【答案】
+
+（1）$P=\begin{pmatrix}0&1&1\\1&1&0\\1&0&1\end{pmatrix}$，$\Lambda=\begin{pmatrix}6&0&0\\0&4&0\\0&0&-2\end{pmatrix}$；
+
+（2）证明略，见【解】；
+
+（3）$u=C_1e^{6t}$，$v=C_2e^{4t}$，$w=C_3e^{-2t}$，通解为
+$$\begin{cases}x(t)=C_2e^{4t}+C_3e^{-2t},\\y(t)=C_1e^{6t}+C_2e^{4t},\\z(t)=C_1e^{6t}+C_3e^{-2t}.\end{cases}$$
+
+关键给分点：特征值与特征向量计算、$P$ 与 $\Lambda$ 的正确性、解耦方程、通解形式。
+
+【易错点】易错点：特征向量与特征值对应顺序不一致导致 $\Lambda$ 错；求 $P^{-1}AP$ 时代入错误；通解中遗漏任意常数；求导时忘记 $P$ 为常数阵。防错提醒：求解后可用 $X=P\begin{pmatrix}u\\v\\w\end{pmatrix}$ 回代验证。
+
+> 题面按 $\frac{dX}{dt}=AX$ 列向量理解（OCR 疑误，请核对原书）。
+
+【命题规律】此类题是考研数学一常考题型，将线性代数中的矩阵对角化与常微分方程结合。复习时应熟练掌握特征值特征向量、对角化以及常系数线性方程组的解耦方法，注意变换前后变量的对应关系。
+
+> AI 生成，仅供参考。
+
