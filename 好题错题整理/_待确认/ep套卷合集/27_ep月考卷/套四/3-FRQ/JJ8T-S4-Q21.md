@@ -111,3 +111,195 @@ I &= \iint_\Sigma \mathbf{F}\cdot d\mathbf{S} = \int_{x=1}^2\int_{\theta=0}^{2\p
 
 【命题规律】
 本题将微分方程与曲面积分结合，属于综合题。备考时应加强“由方程求曲线→旋转曲面参数化→第二型曲面积分”的连贯训练，注意法向量方向的选择和曲线积分的几何意义。
+
+---
+
+## V4 Flash Max 解析
+
+**答案**:
+
+(1) \(L:\ y=\dfrac{x^2-1}{2}\)。
+
+(2) \(I=-\dfrac{4\pi}{3}\)。
+
+**解题切入点**:
+
+前半段是齐次微分方程：方程右边可写成 \(y/x\) 的函数，令 \(u=y/x\) 即可分离变量。这类似于算法题中先做“归一化”或“换元构造”的处理。  
+后半段是第二类曲面积分，本质是向量场通量。旋转曲面优先用参数化  
+\((x,f(x)\cos\theta,f(x)\sin\theta)\)，再按“外侧”确定法向。
+
+**推演**:
+
+令
+\[
+u=\frac yx,\qquad y=xu,\qquad y'=u+xu'.
+\]
+
+代入
+\[
+xy'=y+\sqrt{x^2+y^2}
+\]
+得
+\[
+x(u+xu')=xu+x\sqrt{1+u^2}.
+\]
+
+化简：
+\[
+x u'=\sqrt{1+u^2},
+\]
+即
+\[
+\frac{du}{\sqrt{1+u^2}}=\frac{dx}{x}.
+\]
+
+积分：
+\[
+\operatorname{arsinh}u=\ln x+C.
+\]
+
+由 \(y(1)=0\)，得 \(u(1)=0\)，所以 \(C=0\)。故
+\[
+u=\sinh(\ln x)=\frac{x-\frac1x}{2}.
+\]
+
+于是
+\[
+y=xu=\frac{x^2-1}{2}.
+\]
+
+所以
+\[
+L:\ y=\frac{x^2-1}{2},\quad 1\le x\le 2.
+\]
+
+---
+
+记
+\[
+f(x)=\frac{x^2-1}{2}.
+\]
+
+旋转曲面参数化为
+\[
+\mathbf r(x,\theta)=\bigl(x,\ f(x)\cos\theta,\ f(x)\sin\theta\bigr),
+\quad 1\le x\le 2,\quad 0\le \theta\le 2\pi.
+\]
+
+先算
+\[
+\mathbf r_x\times \mathbf r_\theta
+=\bigl(ff',\ -f\cos\theta,\ -f\sin\theta\bigr).
+\]
+
+取外侧时，面积元素取相反方向：
+\[
+d\mathbf S_{\text{外侧}}
+=-\mathbf r_x\times \mathbf r_\theta\,dx\,d\theta
+=\bigl(-ff',\ f\cos\theta,\ f\sin\theta\bigr)\,dx\,d\theta.
+\]
+
+被积向量场为
+\[
+\mathbf F=\frac{(x,y,z)}{\sqrt{x^2+y^2+z^2}}.
+\]
+
+在曲面上，
+\[
+x^2+y^2+z^2=x^2+f^2(x).
+\]
+
+而
+\[
+f(x)=\frac{x^2-1}{2}
+\]
+时，
+\[
+x^2+f^2=x^2+\frac{(x^2-1)^2}{4}
+=\frac{(x^2+1)^2}{4},
+\]
+所以
+\[
+\sqrt{x^2+y^2+z^2}=\frac{x^2+1}{2}.
+\]
+
+于是
+\[
+I=\int_1^2\int_0^{2\pi}
+\frac{-xff'+f^2}{\frac{x^2+1}{2}}\,d\theta\,dx.
+\]
+
+因为
+\[
+f'=x,
+\]
+所以
+\[
+-xff'+f^2=-x^2f+f^2=f(f-x^2).
+\]
+
+代入
+\[
+f=\frac{x^2-1}{2},\qquad f-x^2=-\frac{x^2+1}{2},
+\]
+得
+\[
+\frac{-xff'+f^2}{\frac{x^2+1}{2}}
+=
+\frac{\frac{x^2-1}{2}\cdot\left(-\frac{x^2+1}{2}\right)}
+{\frac{x^2+1}{2}}
+=-\frac{x^2-1}{2}.
+\]
+
+因此
+\[
+I=\int_1^2\int_0^{2\pi}\left(-\frac{x^2-1}{2}\right)d\theta\,dx
+=2\pi\int_1^2\left(-\frac{x^2-1}{2}\right)dx.
+\]
+
+计算：
+\[
+I=-\pi\int_1^2(x^2-1)\,dx
+=-\pi\left[\frac{x^3}{3}-x\right]_1^2
+=-\pi\cdot \frac43
+=-\frac{4\pi}{3}.
+\]
+
+**易错点**:
+
+1. 解齐次方程时容易丢掉 \(y=xu\) 求导产生的 \(xu'\)。  
+   自检：\(y=\frac{x^2-1}{2}\) 时，\(y'=x\)，左边 \(xy'=x^2\)，右边
+   \[
+   \frac{x^2-1}{2}+\sqrt{x^2+\frac{(x^2-1)^2}{4}}=x^2,
+   \]
+   满足方程。
+
+2. 曲面积分方向容易取反。  
+   \(\mathbf r_x\times \mathbf r_\theta\) 对应内侧，外侧应取
+   \[
+   d\mathbf S=(-ff',\ f\cos\theta,\ f\sin\theta)\,dx\,d\theta.
+   \]
+   若方向取反，会得到 \(+\frac{4\pi}{3}\)。
+
+3. 分母化简要利用曲面上 \(y^2+z^2=f^2(x)\)：
+   \[
+   \sqrt{x^2+y^2+z^2}=\frac{x^2+1}{2},
+   \]
+   不要保留根号继续积分。
+
+4. 可再用高斯公式检验符号：补上 \(x=2\) 的圆盘构成闭曲面，闭合面总通量为 \(\frac{2\pi}{3}\)，圆盘通量为 \(2\pi\)，故侧面通量为
+   \[
+   \frac{2\pi}{3}-2\pi=-\frac{4\pi}{3}.
+   \]
+
+**命题规律**:
+
+本题是“一阶齐次微分方程 + 旋转曲面第二类曲面积分”的综合题，常见于数一。  
+命题上常把一条曲线先通过微分方程求出，再绕坐标轴生成曲面，考查：
+
+- 齐次方程换元 \(u=y/x\)；
+- 旋转曲面参数化；
+- 第二类曲面积分的方向与计算；
+- 也可与高斯公式结合，补面后化为三重积分。
+
+变式通常有：旋转轴改为 \(y\) 轴、求旋转曲面面积、求第一类曲面积分，或用高斯公式直接求闭曲面通量。

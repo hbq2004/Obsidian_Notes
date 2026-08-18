@@ -70,3 +70,73 @@ $$\boxed{\frac{1}{\sqrt e}}$$
 【命题规律】
 
 考研数学一对此类极限的命题套路是：给出底数为 $\cos$、$\sin$、$\ln$ 等趋于 $1$ 的函数，指数为 $n$ 的多项式，制造 $1^\infty$ 型极限。解法固定为“取对数 + 等价无穷小/泰勒展开”。复习时建议把 $\ln\cos x$、$\ln\sin x/x$ 等常见展开式熟练记忆，并习惯用 $x=1/n$ 换元。
+
+---
+
+## V4 Flash Max 解析
+
+**答案**: $\boxed{\dfrac{1}{\sqrt e}}$，即 $e^{-1/2}$。
+
+**解题切入点**: 这是典型的 $1^\infty$ 型幂指极限：底数 $\cos\frac1n\to1$，指数 $n^2\to\infty$，不能直接代底数极限。处理套路是“先取对数，再化为函数极限”。令 $x=\frac1n$，则转化为 $\frac{\ln(\cos x)}{x^2}$。可类比算法题中“先取 $\log$ 把指数问题降维成乘法”。
+
+**推演**:  
+设
+$$
+a_n=\left(\cos\frac1n\right)^{n^2}.
+$$
+取对数：
+$$
+\ln a_n=n^2\ln\left(\cos\frac1n\right).
+$$
+令 $x=\frac1n$，$x\to0^+$，则
+$$
+\ln a_n=\frac{\ln(\cos x)}{x^2}.
+$$
+
+由等价无穷小：
+$$
+\cos x-1\sim -\frac{x^2}{2},\qquad \ln(1+t)\sim t\quad(t\to0),
+$$
+所以
+$$
+\ln(\cos x)=\ln(1+\cos x-1)\sim \cos x-1\sim -\frac{x^2}{2}.
+$$
+
+因此
+$$
+\lim_{n\to\infty}\ln a_n
+=\lim_{x\to0^+}\frac{\ln(\cos x)}{x^2}
+=\lim_{x\to0^+}\frac{-x^2/2}{x^2}
+=-\frac12.
+$$
+
+还原指数：
+$$
+\lim_{n\to\infty}a_n=e^{-1/2}=\frac1{\sqrt e}.
+$$
+
+也可用洛必达验证：
+$$
+\lim_{x\to0}\frac{\ln(\cos x)}{x^2}
+=\lim_{x\to0}\frac{-\tan x}{2x}
+=-\frac12.
+$$
+
+**易错点**:  
+1. 误以为 $\cos\frac1n\to1$，所以原极限为 $1$。这是 $1^\infty$ 未定式，指数 $n^2$ 会放大底数与 $1$ 的差距。  
+2. 取对数后忘记最后要还原成 $e^{\ln a_n}$。  
+3. 等价无穷小替换时，不能把 $\ln(\cos x)$ 直接换成 $\ln1=0$，要保留 $\cos x-1$ 的主部。  
+
+自检：取 $n=10$，$\cos0.1\approx0.9950$，$(0.9950)^{100}\approx0.6059$，与 $e^{-1/2}\approx0.6065$ 很接近，答案合理。
+
+**命题规律**:  
+这是考研数学中常见的“幂指函数求极限”问题。一般结论：若 $u_n\to1$，$v_n\to\infty$，且 $v_n(u_n-1)\to A$，则
+$$
+u_n^{v_n}\to e^A.
+$$
+
+本题中
+$$
+n^2\left(\cos\frac1n-1\right)\to-\frac12,
+$$
+所以原式为 $e^{-1/2}$。常见变式有 $\left(\cos\frac{a}{n}\right)^{n^2}$、$\left(\frac{\sin x}{x}\right)^{1/x^2}$ 等，常与等价无穷小、泰勒展开、洛必达法则和重要极限 $e$ 结合考查。

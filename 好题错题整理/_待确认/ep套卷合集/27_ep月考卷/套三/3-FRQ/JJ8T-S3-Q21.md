@@ -92,3 +92,239 @@ $$I = \iint_{\Sigma} = \iiint_{\Omega} - \iint_D = \frac{2\pi}{3} - 2\pi = -\fra
 - 直接参数化计算曲面时需注意第二类曲面积分的定向，容易出错。
 
 【命题规律】此类题常以微分方程求曲线，再结合旋转曲面考察第二类曲面积分，核心是高斯公式。复习时多练齐次方程与一阶线性方程，掌握旋转曲面方程，熟悉高斯公式补面技巧。
+
+---
+
+## V4 Flash Max 解析
+
+**答案**:
+
+(1) \(L:\ y=\dfrac{x^2-1}{2}\ (1\le x\le2)\)。
+
+(2) \(I=-\dfrac{4\pi}{3}\)。
+
+---
+
+**解题切入点**:
+
+第一问是齐次微分方程。把方程写成  
+\[
+y'=\frac yx+\sqrt{1+\left(\frac yx\right)^2}
+\]
+令 \(u=\frac yx\) 即可分离变量，这很像算法里“先归一化，再还原”。
+
+第二问是旋转曲面的第二型曲面积分，本质是求向量场
+\[
+\mathbf F=\frac{(x,y,z)}{\sqrt{x^2+y^2+z^2}}
+\]
+穿过曲面 \(\Sigma\) 的通量。旋转曲面用参数
+\[
+(x,\theta)=(x,r(x)\cos\theta,r(x)\sin\theta)
+\]
+处理即可，关键是“外侧”法向的符号。
+
+---
+
+**推演**:
+
+### 1. 解微分方程
+
+令
+\[
+u=\frac yx,\qquad y=xu,
+\]
+则
+\[
+y'=u+xu'.
+\]
+
+代入原方程：
+\[
+xy'=x(u+xu')=xu+x^2u',
+\]
+而
+\[
+y+\sqrt{x^2+y^2}=xu+x\sqrt{1+u^2}.
+\]
+所以
+\[
+xu+x^2u'=xu+x\sqrt{1+u^2},
+\]
+即
+\[
+x u'=\sqrt{1+u^2}.
+\]
+
+分离变量：
+\[
+\frac{du}{\sqrt{1+u^2}}=\frac{dx}{x}.
+\]
+
+积分得
+\[
+\ln\left(u+\sqrt{1+u^2}\right)=\ln x+C.
+\]
+
+由 \(y(1)=0\)，得 \(u(1)=0\)，所以 \(C=0\)。因此
+\[
+u+\sqrt{1+u^2}=x.
+\]
+
+解得
+\[
+u=\frac{x^2-1}{2x}.
+\]
+
+所以
+\[
+y=xu=\frac{x^2-1}{2}.
+\]
+
+故曲线 \(L\) 的方程为
+\[
+y=\frac{x^2-1}{2},\quad 1\le x\le2.
+\]
+
+---
+
+### 2. 计算曲面积分
+
+令旋转半径为
+\[
+r=f(x)=\frac{x^2-1}{2},\qquad f'(x)=x.
+\]
+
+曲面 \(\Sigma\) 的参数方程为
+\[
+\mathbf R(x,\theta)=(x,r\cos\theta,r\sin\theta),
+\]
+其中
+\[
+1\le x\le2,\quad 0\le\theta\le2\pi.
+\]
+
+“外侧”取远离 \(x\) 轴的一侧。计算切向量叉积：
+\[
+\mathbf R_\theta\times\mathbf R_x
+=(-r f'(x),\,r\cos\theta,\,r\sin\theta)
+=r(-x,\cos\theta,\sin\theta).
+\]
+
+因此外侧单位法向量为
+\[
+\mathbf n=\frac{(-x,\cos\theta,\sin\theta)}{\sqrt{1+x^2}}.
+\]
+
+面积元素为
+\[
+dS=|\mathbf R_\theta\times\mathbf R_x|\,dx\,d\theta
+=r\sqrt{1+x^2}\,dx\,d\theta.
+\]
+
+在曲面上，
+\[
+\sqrt{x^2+y^2+z^2}
+=\sqrt{x^2+r^2}
+=\sqrt{x^2+\left(\frac{x^2-1}{2}\right)^2}
+=\frac{x^2+1}{2}.
+\]
+
+记
+\[
+\rho=\sqrt{x^2+y^2+z^2}=\frac{x^2+1}{2},
+\]
+则
+\[
+\mathbf F=\frac{(x,y,z)}{\rho}
+=\frac{(x,r\cos\theta,r\sin\theta)}{\rho}.
+\]
+
+于是
+\[
+\mathbf F\cdot\mathbf n
+=
+\frac{x(-x)+r\cos^2\theta+r\sin^2\theta}
+{\rho\sqrt{1+x^2}}
+=
+\frac{r-x^2}{\rho\sqrt{1+x^2}}.
+\]
+
+而
+\[
+r-x^2=\frac{x^2-1}{2}-x^2=-\frac{x^2+1}{2}=-\rho.
+\]
+
+所以
+\[
+\mathbf F\cdot\mathbf n
+=-\frac1{\sqrt{1+x^2}}.
+\]
+
+因此
+\[
+I=\iint_\Sigma \mathbf F\cdot\mathbf n\,dS
+=\int_1^2\int_0^{2\pi}
+-\frac1{\sqrt{1+x^2}}\cdot r\sqrt{1+x^2}\,d\theta\,dx.
+\]
+
+化简得
+\[
+I=-2\pi\int_1^2 r\,dx
+=-2\pi\int_1^2 \frac{x^2-1}{2}\,dx.
+\]
+
+计算：
+\[
+I=-\pi\left[\frac{x^3}{3}-x\right]_1^2
+=-\pi\left[\left(\frac83-2\right)-\left(\frac13-1\right)\right]
+=-\frac{4\pi}{3}.
+\]
+
+---
+
+**易错点**:
+
+1. 解齐次方程时容易漏掉 \(y'=u+xu'\) 中的 \(xu'\) 项。注意 \(y=xu\)，求导后必须有两项。
+
+2. 曲面积分的符号极易出错。若取  
+\[
+\mathbf R_x\times\mathbf R_\theta=(r x,-r\cos\theta,-r\sin\theta),
+\]
+得到的是指向 \(x\) 轴内侧的法向，会算成 \(+\frac{4\pi}{3}\)。题设“外侧”应取相反方向，即
+\[
+\mathbf R_\theta\times\mathbf R_x.
+\]
+
+3. 面积元素中不能漏掉 \(r\sqrt{1+x^2}\)，虽然这里刚好与法向量分母约去。
+
+4. 自检：  
+   对曲线方程，\(y'=x\)，且
+\[
+\sqrt{x^2+y^2}=\frac{x^2+1}{2},
+\]
+所以
+\[
+y+\sqrt{x^2+y^2}
+=\frac{x^2-1}{2}+\frac{x^2+1}{2}
+=x^2
+=xy'.
+\]
+
+符号也可用补面检验：补上 \(x=2\) 端盖后用高斯公式，闭合曲面总通量为 \(\frac{2\pi}{3}\)，端盖通量为 \(2\pi\)，故侧面通量为
+\[
+\frac{2\pi}{3}-2\pi=-\frac{4\pi}{3}.
+\]
+
+---
+
+**命题规律**:
+
+本题是“一阶齐次微分方程 + 旋转曲面第二型曲面积分”的组合题。考研数学一常把微分方程求曲线、旋转面参数化、第二型曲面积分的方向与计算结合起来命题。
+
+常见变式有：
+
+- 补面后用高斯公式求非封闭曲面的通量；
+- 旋转曲面参数化直接计算；
+- 向量场为 \(\frac{(x,y,z)}{\sqrt{x^2+y^2+z^2}}\) 或 \(\frac{(x,y,z)}{(x^2+y^2+z^2)^{3/2}}\) 时，注意散度和奇点处理。
+
+这类题的关键是：先由微分方程确定几何形状，再熟练写出旋转曲面的外法向。

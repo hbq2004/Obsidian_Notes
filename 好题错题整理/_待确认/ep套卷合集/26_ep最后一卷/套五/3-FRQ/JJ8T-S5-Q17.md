@@ -126,3 +126,181 @@ $$
 
 【命题规律】
 此类题目常以“含参变限积分”为背景，先求偏导，再结合给定的偏微分方程反解被积函数。复习时需熟练掌握莱布尼茨公式、换元法，以及简单一阶微分方程求解。本质是“积分-求导-微分方程”链路的综合题，注意常数确定。
+
+---
+
+## V4 Flash Max 解析
+
+**答案**：
+
+在 \(x\ne 0\) 上讨论。令  
+\[
+F(u)=\int_0^u f(s)\,ds,\qquad a=\frac yx,
+\]
+则换元 \(v=t/x\) 得
+\[
+g=x\int_{y/x}^{1}f(v)\,dv=x[F(1)-F(a)].
+\]
+
+先求一阶偏导：
+\[
+g_x=F(1)-F(a)+a f(a),\qquad g_y=-f(a).
+\]
+
+再求二阶偏导：
+\[
+\boxed{
+g_{xx}=-\frac{y^2}{x^3}f'\left(\frac yx\right),\qquad
+g_{yy}=-\frac1x f'\left(\frac yx\right).
+}
+\]
+
+代入
+\[
+x^2(g_{xx}+g_{yy})+y=0
+\]
+得
+\[
+-\left(x+\frac{y^2}{x}\right)f'\left(\frac yx\right)+y=0,
+\]
+所以
+\[
+f'\left(\frac yx\right)=\frac{xy}{x^2+y^2}.
+\]
+令 \(u=\dfrac yx\)，则
+\[
+f'(u)=\frac{u}{1+u^2}.
+\]
+由 \(f(0)=0\)，得
+\[
+f(u)=\frac12\ln(1+u^2).
+\]
+
+因此最终
+\[
+\boxed{
+g_{xx}=-\frac{y^3}{x^2(x^2+y^2)},\qquad
+g_{yy}=-\frac{y}{x^2+y^2}.
+}
+\]
+
+又
+\[
+F(u)=\int_0^u \frac12\ln(1+s^2)\,ds
+=\frac u2\ln(1+u^2)-u+\arctan u,
+\]
+且
+\[
+F(1)=\frac{\ln2}{2}-1+\frac\pi4.
+\]
+所以
+\[
+\boxed{
+g(x,y)
+=x\left(\frac{\pi}{4}-1+\frac{\ln2}{2}\right)
++y-\frac y2\ln\left(1+\frac{y^2}{x^2}\right)
+-x\arctan\frac yx.
+}
+\]
+
+**解题切入点**：
+
+看到 \(\displaystyle g(x,y)=\int_y^x f\left(\frac tx\right)dt\)，上下限和积分变量都含 \(x\)，直接求导容易乱。先换元 \(u=\frac tx\)，把它变成
+\[
+g=x\int_{y/x}^{1}f(u)\,du=x[F(1)-F(y/x)].
+\]
+这样二元偏导就化成一元链式法则。类似算法里“把二维状态压缩成一维比例变量”，构造 \(F\) 则相当于预处理前缀和。之后代入 PDE，就变成一个关于 \(f'\) 的一阶 ODE。
+
+**推演**：
+
+1. 令 \(F(u)=\displaystyle\int_0^u f(s)\,ds\)，令 \(a=\dfrac yx\)，则
+\[
+g=x[F(1)-F(a)].
+\]
+
+2. 求导：
+\[
+g_y=-xF'(a)\cdot \frac1x=-f(a),
+\]
+所以
+\[
+g_{yy}=-\frac1x f'(a).
+\]
+
+又因为 \(a_x=-\dfrac y{x^2}\)，
+\[
+g_x=F(1)-F(a)-xF'(a)a_x
+=F(1)-F(a)+a f(a).
+\]
+再对 \(x\) 求导：
+\[
+g_{xx}
+=\frac{d}{dx}\bigl[F(1)-F(a)+a f(a)\bigr]
+=a f'(a)a_x
+=-\frac{y^2}{x^3}f'(a).
+\]
+
+3. 代入题设方程：
+\[
+x^2(g_{xx}+g_{yy})+y
+=x^2\left[-\frac{y^2}{x^3}f'(a)-\frac1x f'(a)\right]+y
+=-\left(x+\frac{y^2}{x}\right)f'(a)+y=0.
+\]
+于是
+\[
+f'(a)=\frac{y}{x+\frac{y^2}{x}}=\frac{xy}{x^2+y^2}.
+\]
+因 \(a=\dfrac yx\)，所以
+\[
+f'(a)=\frac{a}{1+a^2}.
+\]
+
+4. 积分：
+\[
+f(u)=\int_0^u \frac{s}{1+s^2}\,ds=\frac12\ln(1+u^2).
+\]
+
+5. 求 \(g\)：
+\[
+F(u)=\int_0^u \frac12\ln(1+s^2)\,ds
+=\frac u2\ln(1+u^2)-u+\arctan u.
+\]
+于是
+\[
+g=x[F(1)-F(a)]
+\]
+代入 \(a=\dfrac yx\)，得到
+\[
+g(x,y)
+=x\left(\frac{\pi}{4}-1+\frac{\ln2}{2}\right)
++y-\frac y2\ln\left(1+\frac{y^2}{x^2}\right)
+-x\arctan\frac yx.
+\]
+
+**易错点**：
+
+- 不要忘记 \(x\ne 0\)，原式中 \(t/x\) 已经限定了 \(x\ne0\)。
+- 求 \(g_{xx}\) 时容易漏掉 \(g_x\) 中的 \(a f(a)\) 项，或者把符号弄反。用 \(g=x[F(1)-F(a)]\) 再链式求导最稳。
+- 积分求 \(f\) 时不要丢掉常数；\(f(0)=0\) 的作用就是消去这个常数。若没有这个条件，\(g\) 中会多出 \(C(x-y)\)。
+- 自检：最终
+\[
+g_{xx}+g_{yy}
+=-\frac{y^3}{x^2(x^2+y^2)}-\frac{y}{x^2+y^2}
+=-\frac{y}{x^2},
+\]
+所以
+\[
+x^2(g_{xx}+g_{yy})+y=0.
+\]
+
+注：题干 OCR 为“\(f(u)\) 连续”，但求二阶偏导并反解出 \(f\) 需要可导性；本解按考研数学常规读法，默认题目隐含可导性成立。按 OCR 最合理读法。
+
+**命题规律**：
+
+这类题本质是“变限积分 + 多元复合函数求导 + 由 PDE 反解一阶 ODE”。高频变形包括：
+
+- 被积函数改为 \(f(x/t)\) 或 \(f(t-y)\)；
+- 上下限改为 \(\varphi(x),\psi(y)\)；
+- 方程系数改为 \(x^2+y^2\) 等，但仍用换元 \(u=\dfrac tx\) 降维。
+
+这种 \(g=x\Phi(y/x)\) 的结构是 1 次齐次函数，也可用欧拉齐次函数定理 \(x g_x+y g_y=g\) 做验证，是本类题的一个重要联系。

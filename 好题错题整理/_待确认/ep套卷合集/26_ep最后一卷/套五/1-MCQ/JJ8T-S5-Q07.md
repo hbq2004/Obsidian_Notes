@@ -65,3 +65,86 @@ $$
 【易错点】易误认为由$\ker(A)\subseteq\ker(B)$可推出$r(A)\ge r(B)$，进而推出转置后也有包含。实际上，解空间包含是子空间关系，不能由维数决定。分块矩阵展开时，要利用包含关系消去含$Bx_2$的项。防错：遇到此类问题，先写出分块方程，再逐项化简。（本卷无OCR疑误）
 
 【命题规律】常以选择题形式考查方程组解空间关系、矩阵秩、分块矩阵。复习时掌握$\ker(A)\subseteq\ker(B)$的等价条件（即$B$的行向量可由$A$的行向量线性表示），并熟悉分块矩阵的运算与零空间求法。
+
+---
+
+## V4 Flash Max 解析
+
+**答案**: D。将分块向量按 $z=\binom{u}{v}$ 分块后，D 中两个方程组都等价于 $Au=0,\ Av=0$，故同解。
+
+**解题切入点**: 看到分块矩阵方程，先按“上下两块”写成普通方程组；底行恰好是 $Av=0$，而题设 $N(A)\subseteq N(B)$ 告诉我们：一旦 $Av=0$，就有 $Bv=0$。这相当于算法竞赛里先处理掉一个约束条件，再化简主表达式。
+
+**推演**: 设 $z=\binom{u}{v}$，其中 $u,v$ 都是 $n$ 维列向量。
+
+先看 D。左边：
+$$
+\begin{pmatrix}
+A & AB\\
+0 & A
+\end{pmatrix}\binom{u}{v}=0
+\iff
+\begin{cases}
+Au+ABv=0,\\
+Av=0.
+\end{cases}
+$$
+由 $Av=0$ 及题设得 $Bv=0$，所以 $ABv=A(Bv)=0$，因此化简为
+$$
+\begin{cases}
+Au=0,\\
+Av=0.
+\end{cases}
+$$
+
+右边：
+$$
+\begin{pmatrix}
+A & BA\\
+0 & A
+\end{pmatrix}\binom{u}{v}=0
+\iff
+\begin{cases}
+Au+BAv=0,\\
+Av=0.
+\end{cases}
+$$
+由 $Av=0$ 得 $BAv=B(Av)=0$，所以同样化简为
+$$
+\begin{cases}
+Au=0,\\
+Av=0.
+\end{cases}
+$$
+
+故 D 中两个方程组同解。
+
+排除 A、B、C。取反例：
+$$
+A=\begin{pmatrix}0&1\\0&0\end{pmatrix},\qquad
+B=\begin{pmatrix}0&0\\0&1\end{pmatrix}.
+$$
+则
+$$
+Ax=\binom{x_2}{0},\qquad Bx=\binom{0}{x_2},
+$$
+所以 $N(A)=N(B)$，题设满足。
+
+但
+$$
+A^{\top}=\begin{pmatrix}0&0\\1&0\end{pmatrix},\qquad
+B^{\top}=\begin{pmatrix}0&0\\0&1\end{pmatrix},
+$$
+于是
+$$
+N(A^{\top})=\operatorname{span}\{(0,1)^{\top}\},\qquad
+N(B^{\top})=\operatorname{span}\{(1,0)^{\top}\},
+$$
+二者互不包含，故 A、B 错。
+
+又因为对该反例有 $AB=A,\ BA=0$，所以 C 中左边矩阵为
+$\begin{pmatrix}A&B\\0&A\end{pmatrix}$，右边矩阵为
+$\begin{pmatrix}0&B\\0&A\end{pmatrix}$。取 $u=(0,1)^{\top},v=0$，右方程组有解，但左方程组不满足，故 C 错。
+
+**易错点**: 容易由 $N(A)\subseteq N(B)$ 误推出 $N(A^{\top})\subseteq N(B^{\top})$，这是错的：条件对应的是行空间包含关系，不是转置零空间的包含关系。另一个易错点是分块化简时混淆 $ABv$ 与 $BAv$；D 中消去 $ABv$ 用的是题设 $Bv=0$，消去 $BAv$ 用的是 $BAv=B(Av)=0$，两者机制不同，不能混写。
+
+**命题规律**: 考研线代常把“解空间包含”与分块矩阵、秩、行空间放在一起考。常见变式有：由 $N(A)\subseteq N(B)$ 判断 $AB$ 与 $BA$ 的零空间是否相等、判断转置方程解空间关系、或利用“存在矩阵 $C$ 使 $B=CA$”进行构造。解题关键是先把解空间包含关系转化为“$Av=0\Rightarrow Bv=0$”，再逐项化简。

@@ -73,3 +73,169 @@ $$
 【易错点】易错点有二：一是分块行列式符号易漏掉 $(-1)^{9}=-1$；二是逆矩阵分块时易混淆顺序，导致 $X$ 块出现 $C$ 的位置错误。防错提醒：求分块矩阵逆时，务必利用 $MM^{-1}=I$ 逐块解方程；将逆矩阵化为伴随矩阵时注意系数 $\frac{1}{|A|}$、$\frac{1}{|B|}$ 与行列式相乘后的约简。另：题面中 C、D 选项存在 OCR 缺漏，按最合理读法判断为干扰项（题面按常见完整选项理解，OCR 疑误，请核对原书）。
 
 【命题规律】此类题常考分块矩阵的伴随矩阵或逆矩阵，命题套路是先给出若干可逆子块的模，再求整体伴随矩阵。复习建议：熟练掌握分块矩阵的行列式、逆矩阵公式，以及 $A^* = |A|A^{-1}$ 的互化，注意符号和块的位置即可。
+
+---
+
+## V4 Flash Max 解析
+
+**答案**: A。记 $M=\begin{pmatrix}O&A\\B&C\end{pmatrix}$，则 $|M|=-12$，且  
+$$M^{-1}=\begin{pmatrix}-B^{-1}CA^{-1}&B^{-1}\\A^{-1}&O\end{pmatrix},$$
+所以
+$$M^*=|M|M^{-1}=\begin{pmatrix}B^*CA^*&-3B^*\\-4A^*&O\end{pmatrix},$$
+与 A 一致。
+
+**解题切入点**: 遇到分块矩阵的伴随矩阵，不要硬算 36 个代数余子式。先判断是否可逆；若可逆，直接用  
+$$M^*=|M|M^{-1}$$  
+把问题转化为“分块矩阵求逆”。这就像算法竞赛里把整体大问题拆成“分块/分治”处理，而不是暴力枚举。
+
+**推演**:
+
+设 $O$ 为 3 阶零矩阵，$I$ 为 3 阶单位矩阵。
+
+1. 求 $|M|$。
+
+令  
+$$
+P=\begin{pmatrix}O&I\\I&O\end{pmatrix},\qquad
+Q=\begin{pmatrix}B&C\\O&A\end{pmatrix},
+$$
+则
+$$
+M=\begin{pmatrix}O&A\\B&C\end{pmatrix}=PQ.
+$$
+
+其中 $P$ 交换两组 3 阶行块，故
+$$
+|P|=(-1)^{3\cdot3}=-1.
+$$
+而 $Q$ 是分块上三角矩阵，所以
+$$
+|Q|=|B||A|=4\cdot3=12.
+$$
+因此
+$$
+|M|=|P||Q|=(-1)\cdot12=-12.
+$$
+
+2. 求 $M^{-1}$。
+
+设
+$$
+M^{-1}=\begin{pmatrix}X&Y\\Z&W\end{pmatrix},
+$$
+由
+$$
+MM^{-1}=I_6
+$$
+得
+$$
+\begin{pmatrix}
+O&A\\
+B&C
+\end{pmatrix}
+\begin{pmatrix}
+X&Y\\
+Z&W
+\end{pmatrix}
+=
+\begin{pmatrix}
+I&O\\
+O&I
+\end{pmatrix}.
+$$
+
+分块相乘：
+$$
+AZ=I \Rightarrow Z=A^{-1},
+$$
+$$
+AW=O \Rightarrow W=O,
+$$
+$$
+BX+CZ=O \Rightarrow BX=-CA^{-1} \Rightarrow X=-B^{-1}CA^{-1},
+$$
+$$
+BY+CW=I \Rightarrow BY=I \Rightarrow Y=B^{-1}.
+$$
+
+所以
+$$
+M^{-1}=
+\begin{pmatrix}
+-B^{-1}CA^{-1}&B^{-1}\\
+A^{-1}&O
+\end{pmatrix}.
+$$
+
+3. 转化为伴随矩阵。
+
+因为 $A,B$ 可逆，且
+$$
+A^*=|A|A^{-1}=3A^{-1},\qquad B^*=|B|B^{-1}=4B^{-1},
+$$
+所以
+$$
+A^{-1}=\frac{A^*}{3},\qquad B^{-1}=\frac{B^*}{4}.
+$$
+
+代入：
+$$
+M^{-1}=
+\begin{pmatrix}
+-\dfrac{1}{12}B^*CA^* & \dfrac{1}{4}B^*\\
+\dfrac{1}{3}A^* & O
+\end{pmatrix}.
+$$
+
+于是
+$$
+M^*=|M|M^{-1}=
+-12
+\begin{pmatrix}
+-\dfrac{1}{12}B^*CA^* & \dfrac{1}{4}B^*\\
+\dfrac{1}{3}A^* & O
+\end{pmatrix}
+=
+\begin{pmatrix}
+B^*CA^* & -3B^*\\
+-4A^* & O
+\end{pmatrix}.
+$$
+
+自检：令  
+$$
+N=\begin{pmatrix}
+B^*CA^* & -3B^*\\
+-4A^* & O
+\end{pmatrix},
+$$
+则
+$$
+MN=
+\begin{pmatrix}
+O&A\\
+B&C
+\end{pmatrix}
+\begin{pmatrix}
+B^*CA^* & -3B^*\\
+-4A^* & O
+\end{pmatrix}
+=
+\begin{pmatrix}
+-12I&O\\
+O&-12I
+\end{pmatrix}
+=|M|I_6,
+$$
+满足伴随矩阵定义，计算正确。
+
+**易错点**:
+
+- 不要把 $\det\begin{pmatrix}O&A\\B&C\end{pmatrix}$ 直接写成 $|A||B|$。零块在左上角时，行列式带符号 $(-1)^{3\cdot3}$，所以 $|M|=-12$。
+- $M^*=|M|M^{-1}$ 只在 $M$ 可逆时可直接使用；本题 $A,B$ 可逆，故 $M$ 可逆。
+- 矩阵乘法不能交换顺序，$B^{-1}CA^{-1}$ 不要写成 $CA^{-1}B^{-1}$ 或 $A^{-1}CB^{-1}$。
+- 符号易错：伴随矩阵右上角是 $-3B^*$，左下角是 $-4A^*$，不要漏负号。
+
+注：按OCR最合理读法，C、D 选项后半部分缺失，但不影响判定，正确项为 A。
+
+**命题规律**: 考研数学一常把“分块矩阵”和“伴随矩阵”结合考查。常见变式有：分块上三角/下三角矩阵的伴随矩阵、利用 $AA^*=|A|I$ 求逆、利用 $|A^*|=|A|^{n-1}$ 求行列式。核心是识别零块位置，快速求行列式和逆矩阵，再转回伴随矩阵。
