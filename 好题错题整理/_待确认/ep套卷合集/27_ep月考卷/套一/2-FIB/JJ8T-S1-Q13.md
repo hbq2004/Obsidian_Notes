@@ -29,27 +29,27 @@ level:
 
 【解】
 1. 求对应点。当 $t=0$ 时，
-\[ x=0+\cos0=1,\quad e^y+0\cdot y+\sin0=1 \Rightarrow e^y=1 \Rightarrow y=0. \]
+$$ x=0+\cos0=1,\quad e^y+0\cdot y+\sin0=1 \Rightarrow e^y=1 \Rightarrow y=0. $$
 故切点为 $(1,0)$。
 
 2. 求 $x'=\frac{dx}{dt}$：
-\[ x'=1-\sin t,\quad x'(0)=1. \]
+$$ x'=1-\sin t,\quad x'(0)=1. $$
 
 3. 对隐式方程 $e^y+ty+\sin t=1$ 两边关于 $t$ 求导，注意 $y$ 是 $t$ 的函数，记 $y'=\frac{dy}{dt}$：
-\[ e^y y' + y + t y' + \cos t=0. \]
+$$ e^y y' + y + t y' + \cos t=0. $$
 即
-\[ (e^y+t)y' + y+\cos t=0. \]
+$$ (e^y+t)y' + y+\cos t=0. $$
 代入 $t=0,y=0$：
-\[ (1+0)y'+0+1=0 \Rightarrow y'=-1. \]
+$$ (1+0)y'+0+1=0 \Rightarrow y'=-1. $$
 
 4. 由参数方程求导公式：
-\[ \frac{dy}{dx}=\frac{y'}{x'}=\frac{-1}{1}=-1. \]
+$$ \frac{dy}{dx}=\frac{y'}{x'}=\frac{-1}{1}=-1. $$
 所以切线方程为
-\[ y-0=-1(x-1) \Rightarrow y=1-x. \]
+$$ y-0=-1(x-1) \Rightarrow y=1-x. $$
 
 【答案】
 横线处应填：
-\[ \boxed{y=1-x} \]
+$$ \boxed{y=1-x} $$
 也可写为 $x+y=1$。
 
 【易错点】

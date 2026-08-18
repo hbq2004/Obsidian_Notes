@@ -99,41 +99,41 @@ $$\begin{cases}x(t)=C_2e^{4t}+C_3e^{-2t},\\y(t)=C_1e^{6t}+C_2e^{4t},\\z(t)=C_1e^
 ## V4 Flash Max 解析
 
 **答案**：  
-按列向量理解，令 \(X=(x,y,z)^T\)。系数矩阵为
-\[
+按列向量理解，令 $X=(x,y,z)^T$。系数矩阵为
+$$
 A=\begin{pmatrix}1&3&-3\\-1&5&1\\-4&4&2\end{pmatrix}.
-\]
+$$
 取
-\[
+$$
 P=\begin{pmatrix}1&0&1\\1&1&0\\0&1&1\end{pmatrix},\qquad
 \Lambda=\begin{pmatrix}4&0&0\\0&6&0\\0&0&-2\end{pmatrix},
-\]
-则 \(P^{-1}AP=\Lambda\)。令 \(X=P\begin{pmatrix}u&v&w\end{pmatrix}^T\) 后，
-\[
+$$
+则 $P^{-1}AP=\Lambda$。令 $X=P\begin{pmatrix}u&v&w\end{pmatrix}^T$ 后，
+$$
 u'=4u,\qquad v'=6v,\qquad w'=-2w.
-\]
+$$
 所以通解为
-\[
+$$
 \begin{pmatrix}x\\y\\z\end{pmatrix}
 =
 C_1e^{4t}\begin{pmatrix}1\\1\\0\end{pmatrix}
 +C_2e^{6t}\begin{pmatrix}0\\1\\1\end{pmatrix}
 +C_3e^{-2t}\begin{pmatrix}1\\0\\1\end{pmatrix},
-\]
+$$
 即
-\[
+$$
 x=C_1e^{4t}+C_3e^{-2t},\qquad
 y=C_1e^{4t}+C_2e^{6t},\qquad
 z=C_2e^{6t}+C_3e^{-2t}.
-\]
+$$
 
 **解题切入点**：  
-看到一阶常系数线性微分方程组，立刻写成矩阵形式 \(X'=AX\)。核心思路是“解耦”：通过特征值、特征向量把 \(A\) 对角化，再用变量替换 \(X=PU\) 把三维耦合方程组变成三个独立的一维方程。这类似于算法竞赛中把复杂状态转移按特征方向分解，变成若干个互不影响的子问题。
+看到一阶常系数线性微分方程组，立刻写成矩阵形式 $X'=AX$。核心思路是“解耦”：通过特征值、特征向量把 $A$ 对角化，再用变量替换 $X=PU$ 把三维耦合方程组变成三个独立的一维方程。这类似于算法竞赛中把复杂状态转移按特征方向分解，变成若干个互不影响的子问题。
 
 **推演**：
 
 1. 求特征值与特征向量。  
-\[
+$$
 \chi_A(\lambda)=|\lambda I-A|
 =
 \begin{vmatrix}
@@ -142,111 +142,111 @@ z=C_2e^{6t}+C_3e^{-2t}.
 4&-4&\lambda-2
 \end{vmatrix}
 =\lambda^3-8\lambda^2+4\lambda+48.
-\]
+$$
 因式分解：
-\[
+$$
 \chi_A(\lambda)=(\lambda-4)(\lambda-6)(\lambda+2),
-\]
+$$
 所以特征值为
-\[
+$$
 \lambda=4,\ 6,\ -2.
-\]
+$$
 
 分别求特征向量：
 
-\[
+$$
 \lambda=4:\quad (A-4I)X=0
 \Rightarrow X=k_4\begin{pmatrix}1\\1\\0\end{pmatrix},
-\]
+$$
 
-\[
+$$
 \lambda=6:\quad (A-6I)X=0
 \Rightarrow X=k_6\begin{pmatrix}0\\1\\1\end{pmatrix},
-\]
+$$
 
-\[
+$$
 \lambda=-2:\quad (A+2I)X=0
 \Rightarrow X=k_{-2}\begin{pmatrix}1\\0\\1\end{pmatrix}.
-\]
+$$
 
 取
-\[
+$$
 P=\begin{pmatrix}
 1&0&1\\
 1&1&0\\
 0&1&1
 \end{pmatrix},
-\]
-其列向量依次是特征值 \(4,6,-2\) 的特征向量。因为
-\[
+$$
+其列向量依次是特征值 $4,6,-2$ 的特征向量。因为
+$$
 AP=P\Lambda,
-\]
+$$
 且
-\[
+$$
 |P|=2\neq 0,
-\]
+$$
 所以
-\[
+$$
 P^{-1}AP=\Lambda.
-\]
+$$
 
 其中
-\[
+$$
 P^{-1}=
 \begin{pmatrix}
 \frac12&\frac12&-\frac12\\
 -\frac12&\frac12&\frac12\\
 \frac12&-\frac12&\frac12
 \end{pmatrix}.
-\]
+$$
 
 2. 证明变换后的导数关系。  
 令
-\[
+$$
 \begin{pmatrix}x\\y\\z\end{pmatrix}
 =
 P\begin{pmatrix}u\\v\\w\end{pmatrix}.
-\]
-因为 \(P\) 是常数矩阵，所以
-\[
+$$
+因为 $P$ 是常数矩阵，所以
+$$
 \begin{pmatrix}x'\\y'\\z'\end{pmatrix}
 =
 \frac{d}{dt}\left(P\begin{pmatrix}u\\v\\w\end{pmatrix}\right)
 =
 P\begin{pmatrix}u'\\v'\\w'\end{pmatrix}.
-\]
+$$
 
-3. 求 \(u,v,w\) 满足的方程。  
+3. 求 $u,v,w$ 满足的方程。  
 由
-\[
+$$
 X'=AX
-\]
+$$
 得
-\[
+$$
 P\begin{pmatrix}u'\\v'\\w'\end{pmatrix}
 =
 AP\begin{pmatrix}u\\v\\w\end{pmatrix}.
-\]
-左乘 \(P^{-1}\)，得
-\[
+$$
+左乘 $P^{-1}$，得
+$$
 \begin{pmatrix}u'\\v'\\w'\end{pmatrix}
 =
 P^{-1}AP\begin{pmatrix}u\\v\\w\end{pmatrix}
 =
 \Lambda\begin{pmatrix}u\\v\\w\end{pmatrix}.
-\]
+$$
 因此
-\[
+$$
 u'=4u,\qquad v'=6v,\qquad w'=-2w.
-\]
+$$
 
 解得
-\[
+$$
 u=C_1e^{4t},\qquad v=C_2e^{6t},\qquad w=C_3e^{-2t}.
-\]
+$$
 
-代回 \(X=PU\)，得
-\[
+代回 $X=PU$，得
+$$
 \begin{pmatrix}x\\y\\z\end{pmatrix}
 =
 \begin{pmatrix}
@@ -265,10 +265,10 @@ C_1e^{4t}+C_3e^{-2t}\\
 C_1e^{4t}+C_2e^{6t}\\
 C_2e^{6t}+C_3e^{-2t}
 \end{pmatrix}.
-\]
+$$
 
 回代检验：例如
-\[
+$$
 x+3y-3z
 =
 (C_1e^{4t}+C_3e^{-2t})
@@ -277,20 +277,20 @@ x+3y-3z
 =
 4C_1e^{4t}-2C_3e^{-2t}
 =x'.
-\]
+$$
 另外两式同理成立。
 
 **易错点**：  
-- \(P\) 的列向量必须与 \(\Lambda\) 的对角元一一对应。若改变特征向量顺序，\(\Lambda\) 中特征值顺序也要同步改变。  
-- 特征向量要逐一代回验证 \(Av_i=\lambda_i v_i\)，防止符号错误。  
-- \(P\) 是常数矩阵，所以 \((PU)'=PU'\)，不能多写一项 \(P'U\)。  
+- $P$ 的列向量必须与 $\Lambda$ 的对角元一一对应。若改变特征向量顺序，$\Lambda$ 中特征值顺序也要同步改变。  
+- 特征向量要逐一代回验证 $Av_i=\lambda_i v_i$，防止符号错误。  
+- $P$ 是常数矩阵，所以 $(PU)'=PU'$，不能多写一项 $P'U$。  
 - 通解中只有 3 个任意常数，不能把三个分量分别写成各带两个常数的形式而不加约束。  
-- 题干中的圆括号疑似缺少转置符号；按方程本身，最合理读法是导数向量与变量向量均为列向量，即 \(X'=AX\)。  
+- 题干中的圆括号疑似缺少转置符号；按方程本身，最合理读法是导数向量与变量向量均为列向量，即 $X'=AX$。  
 注：按OCR最合理读法，原式应理解为列向量等式，导数向量和变量向量均取列向量。
 
 **命题规律**：  
 这是“线性代数 + 常微分方程”的经典结合题。常见命题角度是：给出常系数线性齐次微分方程组，先要求对角化，再通过换元解耦求通解。核心流程固定：
-\[
+$$
 X'=AX,\qquad A=P\Lambda P^{-1},\qquad X=PU,\qquad U'=\Lambda U.
-\]
-常见变式包括：给初值求特解；矩阵有重根时用 Jordan 标准形；求矩阵指数 \(e^{At}=Pe^{\Lambda t}P^{-1}\)；讨论平衡点稳定性等。记忆方法：对角化就是解耦，看到 \(X'=AX\) 就找特征方向，把高维耦合系统拆成独立的一维系统。
+$$
+常见变式包括：给初值求特解；矩阵有重根时用 Jordan 标准形；求矩阵指数 $e^{At}=Pe^{\Lambda t}P^{-1}$；讨论平衡点稳定性等。记忆方法：对角化就是解耦，看到 $X'=AX$ 就找特征方向，把高维耦合系统拆成独立的一维系统。

@@ -33,7 +33,7 @@ level:
 所围区域 $S$ 可表示为：对 $0\le x\le t$，$y$ 介于切线与曲线之间；对 $t\le x\le 1$，$y$ 介于 $x$ 轴与曲线之间。绕 $y$ 轴旋转，用圆柱壳法：
 
 $$V=2\pi\int_0^1 x\, h(x)\,dx,$$ 其中 
-$$h(x)=\begin{cases}(1-\sqrt{x})^2-(1-t)(1-\frac{x}{t}), &0\le x\le t\\(1-\sqrt{x})^2, &t\le x\le 1\end{cases}$$
+$$h(x)=\begin{cases}(1-\sqrt{x})^2-(1-t)(1-\frac{x}{t}), &0\le x\le t\$1-\sqrt{x})^2, &t\le x\le 1\end{cases}$$
 
 因此
 $$V=2\pi\left(\int_0^1 x(1-\sqrt{x})^2 dx - \int_0^t x(1-t)(1-\frac{x}{t})dx\right).$$

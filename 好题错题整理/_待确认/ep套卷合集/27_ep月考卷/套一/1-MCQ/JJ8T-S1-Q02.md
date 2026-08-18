@@ -84,56 +84,56 @@ B 的极限为 $0$，C 的极限为 $\pi/2$；A、D 都因左右极限不一致�
 
 A：  
 当 $x\to0^+$ 时，
-\[
+$$
 \frac{\sin x}{|x|}\to 1,\qquad \arctan\frac1{|x|}\to \frac\pi2,
-\]
+$$
 所以右极限为 $\frac\pi2$。
 
 当 $x\to0^-$ 时，
-\[
+$$
 \frac{\sin x}{|x|}=\frac{\sin x}{-x}\to -1,\qquad \arctan\frac1{|x|}\to \frac\pi2,
-\]
+$$
 所以左极限为 $-\frac\pi2$。
 
 左右极限不相等，A 不存在。
 
 B：  
 因为
-\[
+$$
 \left|\frac{|\sin x|}{x}\arctan\frac1x\right|
 =\frac{|\sin x|}{|x|}\left|\arctan\frac1x\right|
 \le \frac{1}{|x|}\cdot \frac\pi2 \to 0 \quad (x\to\infty),
-\]
+$$
 由夹逼准则，
-\[
+$$
 \lim_{x\to\infty}\frac{|\sin x|}{x}\arctan\frac1x=0.
-\]
+$$
 所以 B 存在。
 
 C：  
 当 $x\to0^+$ 时，
-\[
+$$
 \frac{|\sin x|}{|x|}=\frac{\sin x}{x}\to 1,
-\]
+$$
 且
-\[
+$$
 \arctan\frac1x\to \frac\pi2.
-\]
+$$
 所以
-\[
+$$
 \lim_{x\to0^+}\frac{|\sin x|}{|x|}\arctan\frac1x=\frac\pi2.
-\]
+$$
 所以 C 存在。
 
 D：  
 当 $x\to0^+$ 时，
-\[
+$$
 \frac{\sin x}{x}\arctan\frac1x\to 1\cdot\frac\pi2=\frac\pi2.
-\]
+$$
 当 $x\to0^-$ 时，
-\[
+$$
 \frac{\sin x}{x}\arctan\frac1x\to 1\cdot\left(-\frac\pi2\right)=-\frac\pi2.
-\]
+$$
 左右极限不相等，D 不存在。
 
 **易错点**:  
@@ -147,9 +147,9 @@ D：
 **命题规律**:  
 这类题核心是“极限存在 $\Leftrightarrow$ 左右极限存在且相等”，常用绝对值、$\arctan\frac1x$、$\sin x$ 的振荡制造干扰。  
 常见变式有：
-\[
+$$
 \lim_{x\to0}x\arctan\frac1x=0,\qquad
 \lim_{x\to\infty}\frac{\sin x}{x}=0,\qquad
 \lim_{x\to0}\frac{\sin x}{|x|}\text{不存在}.
-\]
+$$
 它也与函数连续、间断点判断、可导定义中的极限式紧密相关。

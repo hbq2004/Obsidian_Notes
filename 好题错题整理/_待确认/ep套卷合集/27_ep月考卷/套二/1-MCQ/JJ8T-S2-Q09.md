@@ -35,28 +35,28 @@ D. $-\frac{e^4}{4\sqrt{3}}$
 【考点】本题考查参数方程所确定函数的导数，核心是 $y'_x=\frac{dy/dt}{dx/dt}$。类比算法竞赛：斜率就是“两个变化率之比”，先分别对参数 $t$ 求导，再相除即可。
 
 【解】由 $x=e^{-1/t^2}$，令 $u=-t^{-2}$，则
-\[
+$$
 \frac{dx}{dt}=e^{-1/t^2}\cdot\frac{d}{dt}(-t^{-2})
 =e^{-1/t^2}\cdot 2t^{-3}
 =\frac{2e^{-1/t^2}}{t^3}.
-\]
+$$
 由 $y=\arccos t$，
-\[
+$$
 \frac{dy}{dt}=-\frac{1}{\sqrt{1-t^2}}.
-\]
+$$
 当 $t=\frac12$ 时：
-\[
+$$
 e^{-1/t^2}=e^{-4},\qquad \frac{dx}{dt}=\frac{2e^{-4}}{(1/2)^3}=16e^{-4},
-\]
-\[
+$$
+$$
 \frac{dy}{dt}=-\frac{1}{\sqrt{1-\frac14}}=-\frac{1}{\sqrt3/2}=-\frac{2}{\sqrt3}.
-\]
+$$
 因此
-\[
+$$
 \frac{dy}{dx}=\frac{dy/dt}{dx/dt}
 =\frac{-2/\sqrt3}{16e^{-4}}
 =-\frac{e^4}{8\sqrt3}.
-\]
+$$
 
 【答案】切线斜率为 $-\frac{e^4}{8\sqrt3}$，选 **(A)**。
 
@@ -79,71 +79,71 @@ e^{-1/t^2}=e^{-4},\qquad \frac{dx}{dt}=\frac{2e^{-4}}{(1/2)^3}=16e^{-4},
 ## V4 Flash Max 解析
 
 **答案**: A。切线斜率  
-\[
+$$
 k=\left.\frac{dy}{dx}\right|_{t=1/2}=-\frac{e^4}{8\sqrt3}.
-\]
+$$
 
 **解题切入点**: 参数方程确定的函数求切线斜率，直接用参数方程求导公式  
-\[
+$$
 \frac{dy}{dx}=\frac{dy/dt}{dx/dt}
-\]  
+$$  
 不需要消去参数 $t$。可以类比算法竞赛里的“反向传播”：$x$ 和 $y$ 都是 $t$ 的函数，要求 $y$ 对 $x$ 的变化率，就先把 $y$ 对 $t$、$x$ 对 $t$ 分别求导，再相除。
 
 **推演**:  
 由参数方程求导公式：
-\[
+$$
 \frac{dy}{dx}=\frac{dy/dt}{dx/dt}.
-\]
+$$
 
 先求
-\[
+$$
 \frac{dy}{dt}=\frac{d}{dt}(\arccos t)=-\frac1{\sqrt{1-t^2}}.
-\]
+$$
 
 当 $t=\frac12$ 时：
-\[
+$$
 \left.\frac{dy}{dt}\right|_{t=1/2}
 =-\frac1{\sqrt{1-\frac14}}
 =-\frac1{\sqrt{\frac34}}
 =-\frac{2}{\sqrt3}.
-\]
+$$
 
 再求
-\[
+$$
 \frac{dx}{dt}=\frac{d}{dt}\left(e^{-1/t^2}\right).
-\]
+$$
 
 令 $u=-\frac1{t^2}$，则
-\[
+$$
 \frac{du}{dt}=\frac{2}{t^3},
-\]
+$$
 所以
-\[
+$$
 \frac{dx}{dt}=e^{-1/t^2}\cdot \frac{2}{t^3}.
-\]
+$$
 
 当 $t=\frac12$ 时：
-\[
+$$
 \left.\frac{dx}{dt}\right|_{t=1/2}
 =e^{-4}\cdot \frac{2}{(1/2)^3}
 =e^{-4}\cdot 16
 =\frac{16}{e^4}.
-\]
+$$
 
 因此切线斜率为
-\[
+$$
 k=\frac{-\frac{2}{\sqrt3}}{\frac{16}{e^4}}
 =-\frac{2}{16}\cdot e^4\cdot \frac1{\sqrt3}
 =-\frac{e^4}{8\sqrt3}.
-\]
+$$
 
 所以选 **A**。
 
 **易错点**:  
 - 容易把 $e^{-1/t^2}$ 的导数符号算错。  
-  \[
+  $$
   \frac{d}{dt}\left(-\frac1{t^2}\right)=\frac{2}{t^3}
-  \]
+  $$
   而不是 $-\frac{2}{t^3}$。取 $t=\frac12$ 时得到 $16$，不是 $-16$。
 - 容易忘记 $\arccos t$ 求导带负号。$y=\arccos t$ 在 $t=\frac12$ 处随 $t$ 增大而减小，所以 $dy/dt<0$。
 - 自检：$t=\frac12$ 时 $dx/dt>0$，$dy/dt<0$，所以斜率应为负，排除 B、C；再检查分母系数，得到 $\frac16$ 而不是 $\frac14$，故选 A。
