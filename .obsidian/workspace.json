@@ -4,17 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "76de6ec315cbd544",
+        "id": "ac1f16486b7d2ff5",
         "type": "tabs",
         "children": [
           {
-            "id": "97fea760b6c5f13b",
+            "id": "05135701e25808d8",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "好题错题整理/_待确认/27_零壹习题册/DS/21 - 数据结构综合题/3-FRQ/DS-C21-Q001.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "新标签页"
+              "title": "DS-C21-Q001"
             }
           }
         ]
@@ -121,6 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "好题错题整理/_待确认/27_零壹习题册/DS/21 - 数据结构综合题/3-FRQ/DS-C21-Q001.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
@@ -247,7 +252,7 @@
       "hidden-folder-obsidian:显示文件夹": false
     }
   },
-  "active": "12ec190f678aca36",
+  "active": "05135701e25808d8",
   "lastOpenFiles": [
     "好题错题整理/_待确认/27_零壹习题册/INDEX.md",
     "好题错题整理/_待确认/27_零壹习题册/CO/03 - 存储器/1-MCQ/CO-C03-Q003.md",
