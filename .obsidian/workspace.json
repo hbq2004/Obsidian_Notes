@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "ac1f16486b7d2ff5",
+        "id": "06b0628798419a5d",
         "type": "tabs",
         "children": [
           {
-            "id": "05135701e25808d8",
+            "id": "3a272f4df5a9e0e3",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "好题错题整理/_待确认/27_零壹习题册/DS/21 - 数据结构综合题/3-FRQ/DS-C21-Q001.md",
+                "file": "好题错题整理/_待确认/27_零壹习题册/DS/20 - 搜索与排序/1-MCQ/DS-C20-Q001.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "DS-C21-Q001"
+              "title": "DS-C20-Q001"
             }
           }
         ]
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "好题错题整理/_待确认/27_零壹习题册/DS/21 - 数据结构综合题/3-FRQ/DS-C21-Q001.md",
+                "file": "好题错题整理/_待确认/27_零壹习题册/DS/20 - 搜索与排序/1-MCQ/DS-C20-Q001.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
@@ -252,8 +252,9 @@
       "hidden-folder-obsidian:显示文件夹": false
     }
   },
-  "active": "05135701e25808d8",
+  "active": "3a272f4df5a9e0e3",
   "lastOpenFiles": [
+    "好题错题整理/_待确认/27_零壹习题册/DS/21 - 数据结构综合题/3-FRQ/DS-C21-Q001.md",
     "好题错题整理/_待确认/27_零壹习题册/INDEX.md",
     "好题错题整理/_待确认/27_零壹习题册/CO/03 - 存储器/1-MCQ/CO-C03-Q003.md",
     "好题错题整理/_待确认/27_零壹习题册/CO/03 - 存储器/1-MCQ/CO-C03-Q001.md",
@@ -287,7 +288,6 @@
     "好题错题整理/_待确认/27_零壹习题册/CO/07 - 输入输出系统IO/1-MCQ/CO-C07-Q010.md",
     "好题错题整理/_待确认/27_零壹习题册/CO/07 - 输入输出系统IO/1-MCQ/CO-C07-Q009.md",
     "好题错题整理/_待确认/27_零壹习题册/CO/07 - 输入输出系统IO/1-MCQ/CO-C07-Q008.md",
-    "好题错题整理/_待确认/27_零壹习题册/CO/07 - 输入输出系统IO/1-MCQ/CO-C07-Q007.md",
     "好题错题整理/_待确认/27_零壹习题册/CO/07 - 输入输出系统IO/1-MCQ",
     "好题错题整理/_待确认/27_零壹习题册/CO/07 - 输入输出系统IO",
     "03 - 英语/01 - 语法/句句真研-英一/第一部分 如何表达一件事—简单句/第二章 简单句的扩展/第二节 成分角度的扩展—同位语、插入语/附件/018-内容.png",
