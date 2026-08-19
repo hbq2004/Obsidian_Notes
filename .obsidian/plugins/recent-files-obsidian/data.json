@@ -1,6 +1,10 @@
 {
   "recentFiles": [
     {
+      "basename": "2026-08-20",
+      "path": "_Daily_Tasks/2026-08-20.md"
+    },
+    {
       "basename": "MZL-2026-S11-Q26",
       "path": "好题错题整理/_待确认/26_没咋了线代强化/1_行列式与矩阵/2-FIB/MZL-2026-S11-Q26.md"
     },
@@ -195,10 +199,6 @@
     {
       "basename": "900-XG-LA-C05-A-Q003",
       "path": "好题错题整理/_待确认/27_900/LA线代/第五章 矩阵的特征值与特征向量/2-FIB/900-XG-LA-C05-A-Q003.md"
-    },
-    {
-      "basename": "900-XG-LA-C05-A-Q004",
-      "path": "好题错题整理/_待确认/27_900/LA线代/第五章 矩阵的特征值与特征向量/2-FIB/900-XG-LA-C05-A-Q004.md"
     }
   ],
   "omittedPaths": [],
