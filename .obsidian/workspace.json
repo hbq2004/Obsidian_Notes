@@ -108,7 +108,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 353.5110321044922
+    "width": 353.5110321044922,
+    "collapsed": true
   },
   "right": {
     "id": "788c2b70f5d82052",
@@ -125,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "好题错题整理/_待确认/27_零壹习题册/DS/22 - 数据结构算法题/3-FRQ/DS-C22-Q001.md",
+                "file": "好题错题整理/_待确认/26_没咋了线代强化/1_行列式与矩阵/2-FIB/MZL-2026-S11-Q26.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
@@ -143,7 +144,7 @@
                 "sortOrder": "frequency",
                 "useHierarchy": true,
                 "showSearch": true,
-                "searchQuery": ""
+                "searchQuery": "真题"
               },
               "icon": "lucide-tags",
               "title": "标签"
@@ -208,7 +209,8 @@
               "title": "2 的出链列表"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       },
       {
         "id": "fc86d4887f1486af",
@@ -229,8 +231,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 374.5,
-    "collapsed": true
+    "width": 374.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -253,7 +254,7 @@
       "hidden-folder-obsidian:显示文件夹": false
     }
   },
-  "active": "ba691500d560e98c",
+  "active": "42733061a6ea5d4f",
   "lastOpenFiles": [
     "好题错题整理/_待确认/26_没咋了线代强化/1_行列式与矩阵/2-FIB/MZL-2026-S11-Q23.md",
     "好题错题整理/_待确认/26_没咋了线代强化/1_行列式与矩阵/2-FIB/MZL-2026-S11-Q05.md",
