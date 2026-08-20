@@ -27,14 +27,14 @@ level:
 ## DeepSeek V4 Flash Max 解析
 
 **答案**：
-$
+$$
 f_Z(z)=
 \begin{cases}
 z+1, & -1<z<0,\\[2mm]
 z-1, & 1<z<2,\\[2mm]
 0, & \text{其他}.
 \end{cases}
-$
+$$
 一句话理由：由于 $X$ 只取 $\pm1$ 两个值且等概率，将 $Y$ 的密度分别平移后按 $\frac12$ 加权即可。
 
 **解题切入点**：
@@ -48,48 +48,48 @@ $
 **推演**：
 设 $F_Z(z)=P\{Z\le z\}$，$F_Y(y)$ 为 $Y$ 的分布函数。由全概率公式及 $X,Y$ 独立：
 
-$
+$$
 \begin{aligned}
 F_Z(z)
 &=P\{X+Y\le z\}\\
 &=\sum_{x\in\{-1,1\}}P\{X=x\}P\{Y\le z-x\}\\
 &=\frac12F_Y(z+1)+\frac12F_Y(z-1).
 \end{aligned}
-$
+$$
 
 对 $z$ 求导（分段点处不影响密度结果）：
 
-$
+$$
 f_Z(z)=\frac12f_Y(z+1)+\frac12f_Y(z-1).
-$
+$$
 
 又因为
 
-$
+$$
 f_Y(y)=
 \begin{cases}
 2y, & 0<y<1,\\
 0, & \text{其他},
 \end{cases}
-$
+$$
 
 所以：
 
 1. 当 $0<z+1<1$，即 $-1<z<0$ 时，
-$
+$$
 f_Z(z)=\frac12\cdot 2(z+1)=z+1.
-$
+$$
 
 2. 当 $0<z-1<1$，即 $1<z<2$ 时，
-$
+$$
 f_Z(z)=\frac12\cdot 2(z-1)=z-1.
-$
+$$
 
 3. 其余区间，$f_Z(z)=0$。
 
 因此
 
-$
+$$
 \boxed{
 f_Z(z)=
 \begin{cases}
@@ -97,15 +97,15 @@ z+1, & -1<z<0,\\
 z-1, & 1<z<2,\\
 0, & \text{其他}.
 \end{cases}}
-$
+$$
 
 验证归一化：
 
-$
+$$
 \int_{-\infty}^{+\infty}f_Z(z)\,dz
 =\int_{-1}^{0}(z+1)\,dz+\int_{1}^{2}(z-1)\,dz
 =\frac12+\frac12=1.
-$
+$$
 
 **易错点**：
 

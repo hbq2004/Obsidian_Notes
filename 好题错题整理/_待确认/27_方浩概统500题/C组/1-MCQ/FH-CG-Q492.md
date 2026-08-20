@@ -38,9 +38,9 @@ level:
 
 设 $Y=2X$。对连续型随机变量，$Y=2X$ 的密度满足
 
-$
+$$
 f_Y(y)=\frac12 f_X\left(\frac y2\right).
-$
+$$
 
 逐项判断：
 
@@ -48,21 +48,21 @@ $
 
 若 $Y=2X$，则 $Y$ 只能取 $0,2,4,\dots$，即
 
-$
+$$
 P(Y=1)=0.
-$
+$$
 
 但如果 $Y\sim P(2\lambda)$，则
 
-$
+$$
 P(Y=1)=2\lambda e^{-2\lambda}>0,
-$
+$$
 
 矛盾。因此
 
-$
+$$
 2X\not\sim P(2\lambda).
-$
+$$
 
 所以 A 不正确。
 
@@ -70,22 +70,22 @@ $
 
 均匀分布密度为
 
-$
+$$
 f_X(x)=\frac1{b-a},\quad a\le x\le b.
-$
+$$
 
 于是
 
-$
+$$
 f_Y(y)=\frac12\cdot \frac1{b-a}
 =\frac1{2b-2a},\quad 2a\le y\le 2b.
-$
+$$
 
 所以
 
-$
+$$
 2X\sim U[2a,2b].
-$
+$$
 
 B 正确。
 
@@ -93,22 +93,22 @@ B 正确。
 
 指数分布密度按通常约定为
 
-$
+$$
 f_X(x)=\lambda e^{-\lambda x},\quad x>0.
-$
+$$
 
 则
 
-$
+$$
 f_Y(y)=\frac12\cdot \lambda e^{-\lambda y/2}
 =\frac{\lambda}{2}e^{-(\lambda/2)y},\quad y>0.
-$
+$$
 
 所以
 
-$
+$$
 2X\sim E\left(\frac{\lambda}{2}\right).
-$
+$$
 
 C 正确。
 
@@ -116,25 +116,25 @@ C 正确。
 
 正态分布密度为
 
-$
+$$
 f_X(x)=\frac1{\sqrt{2\pi}\sigma}
 \exp\left[-\frac{(x-\mu)^2}{2\sigma^2}\right].
-$
+$$
 
 则
 
-$
+$$
 f_Y(y)=\frac12\cdot \frac1{\sqrt{2\pi}\sigma}
 \exp\left[-\frac{(\frac y2-\mu)^2}{2\sigma^2}\right]
 =\frac1{\sqrt{2\pi}(2\sigma)}
 \exp\left[-\frac{(y-2\mu)^2}{2(4\sigma^2)}\right].
-$
+$$
 
 所以
 
-$
+$$
 2X\sim N(2\mu,4\sigma^2).
-$
+$$
 
 D 正确。
 

@@ -40,14 +40,14 @@ $\bar X=\frac1n\sum_{i=1}^n X_i\sim N\left(0,\frac1n\right).$
 令
 $Z=\sqrt n\,\bar X,$
 则 $Z\sim N(0,1)$。于是
-$P\{|\bar X|\le x\}
+$$P\{|\bar X|\le x\}
 =P\{|\sqrt n\,\bar X|\le \sqrt n\,x\}
-=P\{|Z|\le \sqrt n\,x\}.$
+=P\{|Z|\le \sqrt n\,x\}.$$
 
 设 $a=\sqrt n\,x$，则
-$P\{|Z|\le a\}
+$$P\{|Z|\le a\}
 =P\{-a\le Z\le a\}
-=\Phi(a)-\Phi(-a).$
+=\Phi(a)-\Phi(-a).$$
 
 由标准正态分布的对称性，
 $\Phi(-a)=1-\Phi(a),$
@@ -62,9 +62,9 @@ $2\Phi(a)-1=\alpha,$
 $\Phi(a)=\frac{1+\alpha}{2}.$
 
 于是右侧尾部概率为
-$P\{Z>a\}=1-\Phi(a)
+$$P\{Z>a\}=1-\Phi(a)
 =1-\frac{1+\alpha}{2}
-=\frac{1-\alpha}{2}.$
+=\frac{1-\alpha}{2}.$$
 
 题设中 $P\{X>z_\alpha\}=\alpha$ 说明 $z_\alpha$ 是标准正态分布的上侧 $\alpha$ 分位数。现在尾部概率是 $(1-\alpha)/2$，所以
 $a=z_{\frac{1-\alpha}{2}}.$

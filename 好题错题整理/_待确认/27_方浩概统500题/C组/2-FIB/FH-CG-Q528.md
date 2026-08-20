@@ -42,66 +42,66 @@ level:
 
 因为总体 $X\sim N(\mu,8)$，方差已知为 $8$，且 $X_1,X_2,\cdots,X_n$ 是简单随机样本，所以
 
-$
+$$
 \overline{X}=\frac1n\sum_{i=1}^n X_i
 \sim N\!\left(\mu,\frac{8}{n}\right).
-$
+$$
 
 当 $n=36$ 时，
 
-$
+$$
 \overline{X}\sim N\!\left(\mu,\frac{8}{36}\right)
 =N\!\left(\mu,\frac{2}{9}\right).
-$
+$$
 
 标准化得
 
-$
+$$
 Z=\frac{\overline{X}-\mu}{\sqrt{2/9}}
 =\frac{3(\overline{X}-\mu)}{\sqrt2}
 \sim N(0,1).
-$
+$$
 
 置信区间 $(\overline{X}-1,\overline{X}+1)$ 覆盖 $\mu$，等价于
 
-$
+$$
 \overline{X}-1<\mu<\overline{X}+1
-$
+$$
 
 即
 
-$
+$$
 |\overline{X}-\mu|<1.
-$
+$$
 
 因此置信度为
 
-$
+$$
 P(\overline{X}-1<\mu<\overline{X}+1)
 =P(|\overline{X}-\mu|<1).
-$
+$$
 
 用标准正态变量表示：
 
-$
+$$
 P(|\overline{X}-\mu|<1)
 =P\!\left(\left|\frac{\overline{X}-\mu}{\sqrt{2/9}}\right|<\frac{1}{\sqrt{2/9}}\right)
 =P\!\left(|Z|<\frac{3}{\sqrt2}\right).
-$
+$$
 
 由标准正态分布的对称性，
 
-$
+$$
 P\!\left(|Z|<\frac{3}{\sqrt2}\right)
 =\Phi\!\left(\frac{3}{\sqrt2}\right)-\Phi\!\left(-\frac{3}{\sqrt2}\right)
 =2\Phi\!\left(\frac{3}{\sqrt2}\right)-1.
-$
+$$
 
 所以 $n=36$ 时，置信度为
 
-$
+$$
 \boxed{2\Phi\!\left(\frac{3}{\sqrt2}\right)-1}.
-$
+$$
 
 ---
 
@@ -109,13 +109,13 @@ $
 
 1. **误用 $t$ 分布**：题目中总体方差 $8$ 已知，因此用标准正态分布，而不是 $t$ 分布。只有方差未知且需用样本方差估计时才用 $t_{n-1}$。
 2. **混淆方差与标准差**：$N(\mu,8)$ 中的 $8$ 是方差，不是标准差，即 $\sigma=\sqrt8$。样本均值标准差应为
-   $
+   $$
    \frac{\sigma}{\sqrt n}=\frac{\sqrt8}{6}=\frac{\sqrt2}{3}.
-   $
+   $$
 3. **忘记是双侧置信区间**：置信概率应为
-   $
+   $$
    P(|Z|\le a)=2\Phi(a)-1,
-   $
+   $$
    不能只写 $\Phi(a)$ 或 $\Phi(a)-0.5$。
 4. **不等号方向写反**：区间覆盖 $\mu$ 等价于 $|\overline{X}-\mu|<1$，而不是 $|\overline{X}-\mu|>1$。
 
@@ -130,9 +130,9 @@ $
 
 复习时应熟练掌握样本均值的标准化：
 
-$
+$$
 \frac{\overline{X}-\mu}{\sigma/\sqrt n}\sim N(0,1),
-$
+$$
 
 并理解置信水平就是随机区间覆盖未知参数的概率。
 

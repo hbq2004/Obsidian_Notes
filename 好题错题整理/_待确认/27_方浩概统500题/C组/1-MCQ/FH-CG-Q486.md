@@ -37,61 +37,61 @@ level:
 **推演**：
 
 设 $C=A\cup B$。因为 $0<P(B)<1$，所以
-$
+$$
 P(C)=P(A\cup B)\ge P(B)>0,
-$
+$$
 条件概率有意义。
 
 由于
-$
+$$
 (A\cap C)\cup(\bar A\cap C)=C,
-$
+$$
 且二者互不相容，因此
-$
+$$
 P(A|C)+P(\bar A|C)=1.
-$
+$$
 
 题设给出
-$
+$$
 P(A|C)=P(\bar A|C),
-$
+$$
 故
-$
+$$
 P(A|C)=\frac12.
-$
+$$
 
 又因为 $A\subset A\cup B$，所以
-$
+$$
 A\cap(A\cup B)=A.
-$
+$$
 
 于是
-$
+$$
 P(A|A\cup B)
 =\frac{P(A\cap(A\cup B))}{P(A\cup B)}
 =\frac{P(A)}{P(A\cup B)}
 =\frac12.
-$
+$$
 
 因此
-$
+$$
 P(A\cup B)=2P(A).
-$
+$$
 
 由概率加法公式：
-$
+$$
 P(A\cup B)=P(A)+P(B)-P(AB),
-$
+$$
 
 所以
-$
+$$
 P(A)+P(B)-P(AB)=2P(A),
-$
+$$
 
 移项得
-$
+$$
 P(A)=P(B)-P(AB).
-$
+$$
 
 对照选项，选 (A)。
 

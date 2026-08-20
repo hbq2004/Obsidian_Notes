@@ -42,96 +42,96 @@ level:
 **(A) 正确。**
 
 由条件概率定义：
-$
+$$
 P(AB|A)=\frac{P(AB)}{P(A)},
 \qquad
 P(AB|A\cup B)=\frac{P(AB)}{P(A\cup B)}.
-$
+$$
 因为
-$
+$$
 P(A\cup B)\ge P(A)>0,
-$
+$$
 且 $P(AB)\ge0$，所以
-$
+$$
 P(AB|A)=\frac{P(AB)}{P(A)}
 \ge
 \frac{P(AB)}{P(A\cup B)}
 =P(AB|A\cup B).
-$
+$$
 
 **(B) 正确。**
 
 若 $P(A|B)=1$，则
-$
+$$
 P(AB)=P(B),
-$
+$$
 于是
-$
+$$
 P(B\bar A)=P(B)-P(AB)=0.
-$
+$$
 因此
-$
+$$
 P(\bar B|\bar A)
 =1-P(B|\bar A)
 =1-\frac{P(B\bar A)}{P(\bar A)}
 =1.
-$
+$$
 
 **(C) 正确。**
 
 设 $p=P(C)$，$q=P(\bar C)$。由全概率公式：
-$
+$$
 P(A)=pP(A|C)+qP(A|\bar C),
-$
-$
+$$
+$$
 P(B)=pP(B|C)+qP(B|\bar C).
-$
+$$
 因为
-$
+$$
 P(A|C)\ge P(B|C),\qquad P(A|\bar C)\ge P(B|\bar C),
-$
+$$
 所以
-$
+$$
 P(A)\ge P(B).
-$
+$$
 
 **(D) 错误。**
 
 仍由全概率公式：
-$
+$$
 P(A)-P(B)
 =
 p\big[P(A|C)-P(B|C)\big]
 +
 q\big[P(A|\bar C)-P(B|\bar C)\big].
-$
+$$
 其中第一项 $\ge0$，第二项 $\le0$，两者可能抵消，也可能不抵消，不能推出 $P(A)=P(B)$。
 
 举一个反例：令
-$
+$$
 P(C\cap A\cap \bar B)=\frac12,\quad
 P(\bar C\cap A\cap B)=\frac14,\quad
 P(\bar C\cap \bar A\cap B)=\frac14,
-$
+$$
 其余原子事件概率为 $0$。则
-$
+$$
 P(C)=\frac12,\qquad P(A)=\frac34,\qquad P(B)=\frac12.
-$
+$$
 并且
-$
+$$
 P(A|C)=1,\quad P(B|C)=0,
-$
-$
+$$
+$$
 P(A|\bar C)=\frac12,\quad P(B|\bar C)=1.
-$
+$$
 于是满足
-$
+$$
 P(A|C)\ge P(B|C),\qquad P(A|\bar C)\le P(B|\bar C),
-$
+$$
 但
-$
+$$
 P(A)=\frac34\ne \frac12=P(B).
-$
+$$
 
 所以错误的是 **D**。
 

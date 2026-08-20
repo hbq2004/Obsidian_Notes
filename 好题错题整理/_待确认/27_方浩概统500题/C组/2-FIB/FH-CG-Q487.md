@@ -33,53 +33,53 @@ level:
 **推演**：
 
 由 $A\subset B$ 得
-$
+$$
 AB=A,
-$
+$$
 故
-$
+$$
 AB\cup C=A\cup C.
-$
+$$
 
 记 $A-C=A\overline C=A\cap C^c$。因为
-$
+$$
 A-C\subset A\subset A\cup C,
-$
+$$
 所以
-$
+$$
 (A-C)\cap(AB\cup C)=(A-C)\cap(A\cup C)=A-C.
-$
+$$
 
 由条件概率定义：
-$
+$$
 \begin{aligned}
 P(A-C\mid AB\cup C)
 &=\frac{P((A-C)\cap(AB\cup C))}{P(AB\cup C)}\\
 &=\frac{P(A-C)}{P(A\cup C)}.
 \end{aligned}
-$
+$$
 
 由 $A,C$ 相互独立：
-$
+$$
 P(AC)=P(A)P(C)=0.4\times 0.5=0.2.
-$
+$$
 
 于是
-$
+$$
 P(A-C)=P(A)-P(AC)=0.4-0.2=0.2,
-$
+$$
 且
-$
+$$
 P(A\cup C)=P(A)+P(C)-P(AC)
 =0.4+0.5-0.2=0.7.
-$
+$$
 
 所以
-$
+$$
 P(A-C\mid AB\cup C)
 =\frac{0.2}{0.7}
 =\frac{2}{7}.
-$
+$$
 
 **易错点**：
 
@@ -89,9 +89,9 @@ $
 4. 条件概率公式中要先算交集再除以条件事件概率；不能直接写成 $\dfrac{P(A-C)}{P(AB\cup C)}$，除非确认 $A-C\subset AB\cup C$，本题确实成立。
 
 **命题规律**：本题属于条件概率与事件运算、独立性结合的基础题，常见于选择题或填空题。变式可能为：给出 $A\subset B$ 且 $A,C$ 独立，求 $P(A\mid A\cup C)$、$P(\overline A\mid A\cup C)$，或将独立改为互斥、完备事件组。复习建议：熟练事件化简（包含、差、并、交），先画文氏图理清关系，再用
-$
+$$
 P(D\mid E)=\frac{P(DE)}{P(E)}
-$
+$$
 转化为无条件的概率计算。
 
 **知识点**：条件概率、事件运算（差、并）、事件的独立性、概率加法公式

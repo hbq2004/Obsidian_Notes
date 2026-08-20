@@ -32,17 +32,17 @@ level:
 **答案**：  
 （1）$p_1=\dfrac12,\ p_2=\dfrac14$。  
 （2）由递推式 $p_{n+1}=\dfrac{1-p_n}{2}$，可得
-$
+$$
 p_{n+1}-\frac13=-\frac12\left(p_n-\frac13\right),
-$
+$$
 所以 $\left\{p_n-\dfrac13\right\}$ 是公比为 $-\dfrac12$ 的等比数列，且
-$
+$$
 p_n=\frac13+\frac16\left(-\frac12\right)^{n-1}.
-$
+$$
 （3）
-$
+$$
 E(Y)=\frac n3+\frac19\left[1-\left(-\frac12\right)^n\right].
-$
+$$
 
 **解题切入点**：  
 拿到题目不要枚举所有传球路径，因为路径数是指数增长的。这相当于一个“概率 DP”问题：只需要保留当前球是否在乙手中这一状态。利用全概率公式列出相邻两项 $p_n,p_{n+1}$ 的递推关系；看到 $p_n-\dfrac13$ 的形式，应联想到把常数项“平移”掉，转化为等比数列。第三问求“次数”的期望，不需要求 $Y$ 的分布，用 $0$-$1$ 指示变量和期望线性性逐项相加即可。
@@ -50,14 +50,14 @@ $
 **推演**：  
 
 设 $A_k$ 表示“第 $k$ 次传球后球在乙手中”，则
-$
+$$
 p_k=P(A_k).
-$
+$$
 
 第 $1$ 次传球由甲传出，甲等可能传给乙或丙，所以
-$
+$$
 p_1=\frac12.
-$
+$$
 
 当 $n\ge1$ 时，考虑第 $n$ 次传球后球的位置：
 
@@ -65,61 +65,61 @@ $
 - 若第 $n$ 次传球后不在乙手中，概率为 $1-p_n$，则下一次传球时，传球者可能为甲或丙，而无论是甲还是丙，传给乙的概率都是 $\dfrac12$。
 
 因此
-$
+$$
 p_{n+1}=0\cdot p_n+\frac12(1-p_n)=\frac{1-p_n}{2}.
-$
+$$
 
 于是
-$
+$$
 p_2=\frac{1-p_1}{2}=\frac{1-\frac12}{2}=\frac14.
-$
+$$
 
 令
-$
+$$
 q_n=p_n-\frac13.
-$
+$$
 则
-$
+$$
 q_{n+1}=p_{n+1}-\frac13
 =\frac{1-p_n}{2}-\frac13
 =\frac16-\frac{p_n}{2}
 =-\frac12\left(p_n-\frac13\right)
 =-\frac12q_n.
-$
+$$
 
 又
-$
+$$
 q_1=p_1-\frac13=\frac12-\frac13=\frac16\ne0,
-$
+$$
 所以 $\left\{p_n-\dfrac13\right\}$ 是首项为 $\dfrac16$，公比为 $-\dfrac12$ 的等比数列，从而
-$
+$$
 p_n-\frac13=\frac16\left(-\frac12\right)^{n-1},
-$
+$$
 即
-$
+$$
 p_n=\frac13+\frac16\left(-\frac12\right)^{n-1}.
-$
+$$
 
 第三问设
-$
+$$
 I_k=
 \begin{cases}
 1,& \text{第 }k\text{ 次传球后球在乙手中},\\
 0,& \text{否则},
 \end{cases}
-$
+$$
 则
-$
+$$
 Y=\sum_{k=1}^n I_k.
-$
+$$
 
 由期望线性性，
-$
+$$
 E(Y)=\sum_{k=1}^n E(I_k)=\sum_{k=1}^n p_k.
-$
+$$
 
 代入 $p_k$ 的表达式：
-$
+$$
 \begin{aligned}
 E(Y)
 &=\sum_{k=1}^n\left[\frac13+\frac16\left(-\frac12\right)^{k-1}\right] \\
@@ -129,7 +129,7 @@ E(Y)
 &=\frac n3+\frac16\cdot\frac23\left[1-\left(-\frac12\right)^n\right] \\
 &=\frac n3+\frac19\left[1-\left(-\frac12\right)^n\right].
 \end{aligned}
-$
+$$
 
 **易错点**：  
 

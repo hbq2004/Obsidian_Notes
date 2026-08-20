@@ -40,67 +40,67 @@ $P(Y\le y)=P(X_1\le y,\dots,X_n\le y)=[P(X_1\le y)]^n,$
 因 $X_i\sim U[0,\theta]$，对 $0\le y\le\theta$，
 $P(X_i\le y)=\frac{y}{\theta},$
 所以
-$
+$$
 F_Y(y)=P(Y\le y)=
 \begin{cases}
 0,& y<0,\\[2mm]
 \left(\dfrac{y}{\theta}\right)^n,&0\le y\le\theta,\\[2mm]
 1,&y>\theta.
 \end{cases}
-$
+$$
 故 $Y$ 的密度函数为
-$
+$$
 f_Y(y)=\frac{n y^{n-1}}{\theta^n},\qquad 0<y<\theta.
-$
+$$
 
 于是
-$
+$$
 E[Y]=\int_0^\theta y\cdot \frac{n y^{n-1}}{\theta^n}\,dy
 =\frac{n}{\theta^n}\int_0^\theta y^n\,dy
 =\frac{n}{n+1}\theta,
-$
-$
+$$
+$$
 E[Y^2]=\int_0^\theta y^2\cdot \frac{n y^{n-1}}{\theta^n}\,dy
 =\frac{n}{\theta^n}\int_0^\theta y^{n+1}\,dy
 =\frac{n}{n+2}\theta^2.
-$
+$$
 
 展开 $h(c)$：
-$
+$$
 h(c)=E[(cY-\theta)^2]
 =c^2E[Y^2]-2c\theta E[Y]+\theta^2.
-$
+$$
 
 代入 $E[Y]$ 与 $E[Y^2]$：
-$
+$$
 h(c)=\frac{n}{n+2}\theta^2c^2-\frac{2n}{n+1}\theta^2c+\theta^2.
-$
+$$
 
 对 $c$ 求导：
-$
+$$
 h'(c)=\frac{2n}{n+2}\theta^2c-\frac{2n}{n+1}\theta^2.
-$
+$$
 令 $h'(c)=0$，得
-$
+$$
 \frac{n}{n+2}c=\frac{n}{n+1},
-$
+$$
 所以
-$
+$$
 c=\frac{n+2}{n+1}.
-$
+$$
 
 又因为
-$
+$$
 h''(c)=\frac{2n}{n+2}\theta^2>0,
-$
+$$
 所以该点为最小值点。
 
 此时最小均方误差为
-$
+$$
 h_{\min}
 =h\left(\frac{n+2}{n+1}\right)
 =\frac{\theta^2}{(n+1)^2}.
-$
+$$
 
 **易错点**：
 1. 展开时漏掉交叉项。  

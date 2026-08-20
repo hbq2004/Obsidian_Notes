@@ -39,67 +39,67 @@ $P[(A_1\cup A_2)|B]=P(A_1|B)+P(A_2|B)-P(A_1A_2|B).$
 **推演**：
 
 由条件概率定义与事件的容斥公式：
-$
+$$
 P[(A_1\cup A_2)|B]
 = \frac{P((A_1\cup A_2)B)}{P(B)}
 = \frac{P(A_1B)+P(A_2B)-P(A_1A_2B)}{P(B)}
 = P(A_1|B)+P(A_2|B)-P(A_1A_2|B).
-$
+$$
 
 题设给出：
-$
+$$
 P[(A_1\cup A_2)|B]
 = P(A_2|B)-P(A_1A_2|B).
-$
+$$
 
 两式比较，得：
-$
+$$
 P(A_1|B)=0.
-$
+$$
 
 所以：
 
 (A) 正确，因为 $P(A_1|B)=0$。
 
 (B) 正确，因为
-$
+$$
 P(\overline{A_1}|B)=1-P(A_1|B)=1.
-$
+$$
 
 由 $P(A_1|B)=0$，得：
-$
+$$
 P(A_1B)=P(B)P(A_1|B)=0.
-$
+$$
 
 又因为 $A_1A_2B\subset A_1B$，所以：
-$
+$$
 P(A_1A_2B)=0.
-$
+$$
 
 于是：
-$
+$$
 P(A_1B\cup A_2B)
 = P(A_1B)+P(A_2B)-P(A_1A_2B)
 = P(A_2B).
-$
+$$
 
 故 (D) 正确。
 
 再看 (C)。因为 $P(A_1B)=0$，所以
-$
+$$
 P(A_1\overline B)=P(A_1)-P(A_1B)=P(A_1)>0.
-$
+$$
 
 又 $P(\overline B)>0$，故
-$
+$$
 P(A_1|\overline B)=\frac{P(A_1\overline B)}{P(\overline B)}>0.
-$
+$$
 
 但在 $\overline B$ 条件下，容斥公式给出：
-$
+$$
 P[(A_1\cup A_2)|\overline B]
 = P(A_1|\overline B)+P(A_2|\overline B)-P(A_1A_2|\overline B).
-$
+$$
 
 而 C 的右边缺少正项 $P(A_1|\overline B)$，所以 C 不成立。
 

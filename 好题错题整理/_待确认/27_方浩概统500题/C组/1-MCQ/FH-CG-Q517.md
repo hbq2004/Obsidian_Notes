@@ -41,60 +41,60 @@ level:
 
 **推演**：  
 设 $\bar X_n=\dfrac1n\sum_{i=1}^nX_i$，记 $\mu=E X_1$，$\sigma^2=D X_1$。独立同分布中心极限定理要求 $\mu,\sigma^2$ 均有限，且 $\sigma^2>0$，此时
-$
+$$
 \frac{\bar X_n-\mu}{\sigma/\sqrt n}
 =\frac{\sum_{i=1}^nX_i-n\mu}{\sigma\sqrt n}
 \xrightarrow{d} N(0,1),
-$
+$$
 因此
-$
+$$
 \lim_{n\to\infty}P\left\{\frac{\bar X_n-\mu}{\sigma/\sqrt n}\le a\right\}=\Phi(a).
-$
+$$
 
 逐项检查：
 
 (A)  
-$
+$$
 P\{X_i=m\}=\frac{a}{m},\quad m=1,2,\cdots
-$
+$$
 由于
-$
+$$
 \sum_{m=1}^\infty \frac{a}{m}=+\infty,
-$
+$$
 该式无法归一化为一个分布列，排除。
 
 (B)  
 若令其归一化，则
-$
+$$
 E X_1=\sum_{m=1}^\infty m\cdot \frac{a}{m^2}
 =a\sum_{m=1}^\infty \frac1m=+\infty,
-$
+$$
 一阶矩不存在，中心极限定理不适用。
 
 (C)  
 其期望有限，因为
-$
+$$
 E X_1=a\sum_{m=1}^\infty \frac1{m^2}<+\infty,
-$
+$$
 但
-$
+$$
 E X_1^2=a\sum_{m=1}^\infty m^2\cdot \frac1{m^3}
 =a\sum_{m=1}^\infty \frac1m=+\infty,
-$
+$$
 二阶矩发散，方差不是有限值，仍不满足普通中心极限定理条件。
 
 (D)  
 $X_i$ 服从 $\{1,2,\cdots,k\}$ 上的均匀分布，取 $k\ge2$ 时，
-$
+$$
 E X_1=\frac{k+1}{2},\qquad
 D X_1=\frac{k^2-1}{12}.
-$
+$$
 均值、方差均有限，故由中心极限定理，
-$
+$$
 \frac{\bar X_n-\frac{k+1}{2}}
 {\sqrt{\frac{k^2-1}{12n}}}
 \xrightarrow{d}N(0,1),
-$
+$$
 即其分布函数趋于 $\Phi(a)$。
 
 若题面真的写的是未标准化的 $\bar X_n$，则根据大数定律 $\bar X_n\xrightarrow{P}\mu$，其极限分布是退化分布，不可能为标准正态分布；且这些 $X_i$ 都取正整数，当 $a<0$ 时 $P\{\bar X_n\le a\}=0$，而 $\Phi(a)>0$。因此须将 $Y$ 理解为标准化后的样本均值。

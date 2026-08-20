@@ -28,14 +28,14 @@ level:
 
 **答案**：  
 $Z$ 的分布律为
-$
+$$
 P\{Z=0\}=e^{-\lambda},
-$
+$$
 且对 $k=1,2,\ldots$，
-$
+$$
 P\{Z=2k\}=\frac13\frac{e^{-\lambda}\lambda^k}{k!},\qquad
 P\{Z=-2k\}=\frac23\frac{e^{-\lambda}\lambda^k}{k!},
-$
+$$
 其余 $z$ 的概率为 $0$。
 
 **解题切入点**：  
@@ -43,51 +43,51 @@ $
 
 **推演**：  
 设 $Y$ 的分布律为
-$
+$$
 p_k=P\{Y=k\}=\frac{e^{-\lambda}\lambda^k}{k!},\qquad k=0,1,2,\ldots.
-$
+$$
 
 由 $X$ 与 $Y$ 相互独立，得联合分布律
-$
+$$
 P\{X=2,Y=k\}=P\{X=2\}P\{Y=k\}=\frac13p_k,
-$
-$
+$$
+$$
 P\{X=-2,Y=k\}=P\{X=-2\}P\{Y=k\}=\frac23p_k.
-$
+$$
 
 当 $k=0$ 时，
-$
+$$
 X=2,\ Y=0\Rightarrow Z=0,
-$
-$
+$$
+$$
 X=-2,\ Y=0\Rightarrow Z=0.
-$
+$$
 两组合并后：
-$
+$$
 P\{Z=0\}=P\{X=2,Y=0\}+P\{X=-2,Y=0\}
 =\left(\frac13+\frac23\right)e^{-\lambda}=e^{-\lambda}.
-$
+$$
 
 当 $k\ge1$ 时，$Z=2k$ 只能来自 $X=2,Y=k$，所以
-$
+$$
 P\{Z=2k\}=P\{X=2,Y=k\}
 =\frac13\frac{e^{-\lambda}\lambda^k}{k!}.
-$
+$$
 
 同理，$Z=-2k$ 只能来自 $X=-2,Y=k$，所以
-$
+$$
 P\{Z=-2k\}=P\{X=-2,Y=k\}
 =\frac23\frac{e^{-\lambda}\lambda^k}{k!}.
-$
+$$
 
 其余 $z$ 不可能由 $XY$ 得到，故概率为 $0$。
 
 归一化检验：
-$
+$$
 P\{Z=0\}+\sum_{k=1}^{\infty}P\{Z=2k\}+\sum_{k=1}^{\infty}P\{Z=-2k\}
 =e^{-\lambda}+\sum_{k=1}^{\infty}\left(\frac13+\frac23\right)\frac{e^{-\lambda}\lambda^k}{k!}
 =e^{-\lambda}+1-e^{-\lambda}=1.
-$
+$$
 
 **易错点**：  
 1. 容易漏掉 $Z=0$ 或重复计算 $Z=0$。因为 $k=0$ 时 $X$ 取 $2$ 和 $-2$ 都对应 $Z=0$，必须合并，正负取值应从 $k=1$ 开始写。  

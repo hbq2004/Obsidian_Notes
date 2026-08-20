@@ -32,75 +32,75 @@ level:
 ## DeepSeek V4 Flash Max 解析
 
 **答案**：选 A。因为  
-$
+$$
 \rho=\frac{\operatorname{Cov}(U,V)}{\sqrt{\operatorname{Var}(U)\operatorname{Var}(V)}},
-$
+$$
 代入算出的 $\operatorname{Cov}(U,V)=\frac1{12}$、$\operatorname{Var}(U)=\frac16$、$\operatorname{Var}(V)=\frac7{144}$，得 $\rho=\frac{\sqrt{42}}7$。
 
 **解题切入点**：看到“相关系数”，先定位公式：  
-$
+$$
 \rho=\frac{\operatorname{Cov}(U,V)}{\sqrt{\operatorname{Var}(U)\operatorname{Var}(V)}}.
-$
+$$
 由于只要求一、二阶矩，不必求 $(U,V)$ 的联合分布。$X,Y$ 独立且均匀，矩 $E X^k$ 容易算，而且独立性可以把 $E(X^aY^b)$ 拆成 $E X^a E Y^b$，像算法题中能用公式算期望就不必枚举状态。
 
 **推演**：
 
 因为 $X\sim U(0,1)$，所以  
-$
+$$
 EX=\frac12,\qquad EX^2=\frac13,\qquad EX^3=\frac14,\qquad EX^4=\frac15.
-$
+$$
 同理 $Y$ 的各阶矩相同。由 $X,Y$ 独立，有  
-$
+$$
 E(X^aY^b)=EX^aEY^b.
-$
+$$
 
 先算 $U=X+Y$：
-$
+$$
 EU=EX+EY=\frac12+\frac12=1,
-$
-$
+$$
+$$
 \operatorname{Var}U=\operatorname{Var}X+\operatorname{Var}Y=\frac1{12}+\frac1{12}=\frac16.
-$
+$$
 
 再算 $V=XY$：
-$
+$$
 EV=EXEY=\frac12\cdot\frac12=\frac14,
-$
-$
+$$
+$$
 EV^2=E(X^2Y^2)=EX^2EY^2=\frac13\cdot\frac13=\frac19,
-$
+$$
 所以
-$
+$$
 \operatorname{Var}V=EV^2-(EV)^2=\frac19-\frac1{16}=\frac7{144}.
-$
+$$
 
 接着算协方差：
-$
+$$
 E(UV)=E[(X+Y)XY]=E(X^2Y)+E(XY^2).
-$
+$$
 由独立性，
-$
+$$
 E(X^2Y)=EX^2EY=\frac13\cdot\frac12=\frac16,
-$
-$
+$$
+$$
 E(XY^2)=EXEY^2=\frac12\cdot\frac13=\frac16.
-$
+$$
 因此
-$
+$$
 E(UV)=\frac16+\frac16=\frac13,
-$
-$
+$$
+$$
 \operatorname{Cov}(U,V)=E(UV)-EUEV=\frac13-1\cdot\frac14=\frac1{12}.
-$
+$$
 
 于是
-$
+$$
 \rho=\frac{\operatorname{Cov}(U,V)}{\sqrt{\operatorname{Var}(U)\operatorname{Var}(V)}}
 =\frac{\frac1{12}}{\sqrt{\frac16\cdot\frac7{144}}}
 =\frac{\frac1{12}}{\frac{\sqrt7}{12\sqrt6}}
 =\frac{\sqrt6}{\sqrt7}
 =\frac{\sqrt{42}}7.
-$
+$$
 
 所以选 **A**。
 

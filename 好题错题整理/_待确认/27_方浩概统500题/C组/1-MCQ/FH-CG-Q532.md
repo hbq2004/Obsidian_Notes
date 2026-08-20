@@ -41,55 +41,55 @@ level:
 
 犯第一类错误的概率为
 
-$
+$$
 \alpha=P(\text{拒绝 }H_0\mid H_0\text{ 为真}).
-$
+$$
 
 在 $H_0:\mu=\mu_0$ 成立时，
 
-$
+$$
 X_1,\dots,X_n\sim N(\mu_0,\sigma_0^2),
-$
+$$
 
 所以样本均值满足
 
-$
+$$
 \bar X\sim N\left(\mu_0,\frac{\sigma_0^2}{n}\right).
-$
+$$
 
 标准化得
 
-$
+$$
 Z=\frac{\bar X-\mu_0}{\sigma_0/\sqrt n}\sim N(0,1).
-$
+$$
 
 于是
 
-$
+$$
 \alpha(c)=P_{\mu=\mu_0}(\bar X>c)
 =P\left(Z>\frac{c-\mu_0}{\sigma_0/\sqrt n}\right)
 =1-\Phi\left(\frac{c-\mu_0}{\sigma_0/\sqrt n}\right),
-$
+$$
 
 其中 $\Phi(\cdot)$ 是标准正态分布的分布函数。
 
 因为 $\Phi(\cdot)$ 单调递增，所以当 $c$ 增大时，
 
-$
+$$
 \frac{c-\mu_0}{\sigma_0/\sqrt n}
-$
+$$
 
 增大，从而
 
-$
+$$
 \Phi\left(\frac{c-\mu_0}{\sigma_0/\sqrt n}\right)
-$
+$$
 
 增大，故
 
-$
+$$
 \alpha(c)=1-\Phi\left(\frac{c-\mu_0}{\sigma_0/\sqrt n}\right)
-$
+$$
 
 减小。
 

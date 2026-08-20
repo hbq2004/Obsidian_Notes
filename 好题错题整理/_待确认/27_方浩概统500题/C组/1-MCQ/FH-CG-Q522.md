@@ -57,8 +57,8 @@ $Y_i=\frac{X_i-\mu}{2},$
 则 $Y_i$ 独立同分布于 $N(0,1)$，且
 $\frac{X_i-\bar X}{2}=Y_i-\bar Y,\qquad \bar Y=\frac{\bar X-\mu}{2}.$
 由正态总体样本方差结论，
-$\sum_{i=1}^n\left(\frac{X_i-\bar X}{2}\right)^2
-=\sum_{i=1}^n (Y_i-\bar Y)^2\sim \chi^2(n-1).$
+$$\sum_{i=1}^n\left(\frac{X_i-\bar X}{2}\right)^2
+=\sum_{i=1}^n (Y_i-\bar Y)^2\sim \chi^2(n-1).$$
 故 B 正确。
 
 **(C)**  
@@ -67,9 +67,9 @@ $X_1-X_2\sim N(0,8),\qquad X_3-X_4\sim N(0,8),$
 且两者独立，因为它们来自互不重叠的样本指标组。于是
 $\frac{X_1-X_2}{\sqrt8}\sim N(0,1),\qquad \frac{X_3-X_4}{\sqrt8}\sim N(0,1),$
 且独立。因此
-$\frac{(X_1-X_2)^2+(X_3-X_4)^2}{8}
+$$\frac{(X_1-X_2)^2+(X_3-X_4)^2}{8}
 =\left(\frac{X_1-X_2}{\sqrt8}\right)^2+\left(\frac{X_3-X_4}{\sqrt8}\right)^2
-\sim \chi^2(1)+\chi^2(1)=\chi^2(2).$
+\sim \chi^2(1)+\chi^2(1)=\chi^2(2).$$
 故 C 正确。
 
 **(D)**  
@@ -88,8 +88,8 @@ $\frac{(X_1+X_2-X_3-X_4)^2}{8}=2W^2,$
 这是 $\chi^2(1)$ 变量的 $2$ 倍，不是 $\chi^2(1)$。
 
 也可用期望检验：
-$E\left[\frac{(X_1+X_2-X_3-X_4)^2}{8}\right]
-=\frac{16}{8}=2\neq 1=E[\chi^2(1)].$
+$$E\left[\frac{(X_1+X_2-X_3-X_4)^2}{8}\right]
+=\frac{16}{8}=2\neq 1=E[\chi^2(1)].$$
 故 D 不正确。
 
 **易错点**：

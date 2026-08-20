@@ -28,15 +28,15 @@ level:
 
 **答案**：题干中的长等号不能成立。按事件代数通常约定，
 
-$
+$$
 P[(A\cup B)(A\cup \overline{B})(\overline{A}\cup B)(\overline{A}\cup \overline{B})]=0,
-$
+$$
 
 而
 
-$
+$$
 P(AB)+P(A\overline{B})+P(\overline{A}B)+P(\overline{A}\overline{B})=1.
-$
+$$
 
 所以若原题是两个独立的空，则第一空填 \(\boxed{0}\)，第二空填 \(\boxed{1}\)；若按题面连等填空，则题干有误，无满足连等式的数。
 
@@ -44,71 +44,71 @@ $
 
 **推演**：按通常记号，事件并列表示交，即
 
-$
+$$
 AB=A\cap B.
-$
+$$
 
 设
 
-$
+$$
 E=(A\cup B)(A\cup \overline{B})(\overline{A}\cup B)(\overline{A}\cup \overline{B}).
-$
+$$
 
 先化简前两个因子：
 
-$
+$$
 (A\cup B)(A\cup \overline{B})
 =A\cup(B\overline{B})
 =A\cup\varnothing
 =A.
-$
+$$
 
 同理，
 
-$
+$$
 (\overline{A}\cup B)(\overline{A}\cup \overline{B})
 =\overline{A}\cup(B\overline{B})
 =\overline{A}.
-$
+$$
 
 因此
 
-$
+$$
 E=A\overline{A}=\varnothing.
-$
+$$
 
 所以
 
-$
+$$
 P[(A\cup B)(A\cup \overline{B})(\overline{A}\cup B)(\overline{A}\cup \overline{B})]=P(\varnothing)=0.
-$
+$$
 
 再看四项概率和。事件
 
-$
+$$
 AB,\quad A\overline{B},\quad \overline{A}B,\quad \overline{A}\overline{B}
-$
+$$
 
 两两互不相容，并且
 
-$
+$$
 AB\cup A\overline{B}=A,\qquad 
 \overline{A}B\cup \overline{A}\overline{B}=\overline{A},
-$
+$$
 
 所以
 
-$
+$$
 AB\cup A\overline{B}\cup \overline{A}B\cup \overline{A}\overline{B}
 =A\cup \overline{A}=\Omega.
-$
+$$
 
 由概率的有限可加性，
 
-$
+$$
 P(AB)+P(A\overline{B})+P(\overline{A}B)+P(\overline{A}\overline{B})
 =P(\Omega)=1.
-$
+$$
 
 因此左侧概率为 \(0\)，右侧四项概率和为 \(1\)，二者不能连等。
 

@@ -42,65 +42,65 @@ level:
 
 设 $X_1,\dots,X_n$ 独立同分布于 $N(\mu,\sigma^2)$，则
 
-$
+$$
 \overline X=\frac1n\sum_{i=1}^n X_i,\qquad 
 S^2=\frac1{n-1}\sum_{i=1}^n(X_i-\overline X)^2.
-$
+$$
 
 由正态总体抽样分布定理，在 $H_0:\mu=\mu_0$ 成立时，
 
-$
+$$
 \frac{\overline X-\mu_0}{\sigma/\sqrt n}\sim N(0,1),
 \qquad
 \frac{(n-1)S^2}{\sigma^2}\sim \chi^2(n-1),
-$
+$$
 
 且二者独立，因此
 
-$
+$$
 T=\frac{\overline X-\mu_0}{S/\sqrt n}
 \sim t(n-1).
-$
+$$
 
 题给不等式可等价变形为
 
-$
+$$
 \overline X-\mu_0 \ge t_{0.05}(n-1)\frac{S}{\sqrt n}
 \iff
 \frac{\overline X-\mu_0}{S/\sqrt n}\ge t_{0.05}(n-1),
-$
+$$
 
 即
 
-$
+$$
 T\ge t_{0.05}(n-1).
-$
+$$
 
 按 $t_{0.05}(n-1)$ 的上侧分位数定义：
 
-$
+$$
 P\left(T\ge t_{0.05}(n-1)\right)=0.05.
-$
+$$
 
 所以该拒绝域在原假设成立时的犯第一类错误概率为 $0.05$，即显著性水平 $\alpha=0.05$。
 
 同时，该拒绝域只拒绝 $T$ 很大、样本均值显著大于 $\mu_0$ 的情况，因此备择假设应为
 
-$
+$$
 H_1:\mu>\mu_0.
-$
+$$
 
 若是双侧检验 $H_1:\mu\ne\mu_0$，拒绝域应为
 
-$
+$$
 |T|\ge t_{0.025}(n-1)
-$
+$$
 
 （当 $\alpha=0.05$ 时），或
 
-$
+$$
 |T|\ge t_{0.05}(n-1)
-$
+$$
 
 （当 $\alpha=0.10$ 时），且必须同时包含左右两侧。因此 A、B 均不正确。
 

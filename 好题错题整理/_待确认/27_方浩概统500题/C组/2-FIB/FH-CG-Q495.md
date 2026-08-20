@@ -35,79 +35,79 @@ level:
 按考研数学常用记号 $N(\mu,\sigma^2)$，有 $D(X)=D(Y)=2$。
 
 令
-$
+$$
 U=2X+Y.
-$
+$$
 
 因为 $X,Y$ 独立，所以 $U$ 仍服从正态分布，且
-$
+$$
 E(U)=2E(X)+E(Y)=2\cdot0-2=-2,
-$
-$
+$$
+$$
 D(U)=4D(X)+D(Y)=4\cdot2+2=10.
-$
+$$
 
 因此
-$
+$$
 U\sim N(-2,10).
-$
+$$
 
 于是
-$
+$$
 P\{2X+Y<a\}
 =P\{U<a\}
 =P\left\{\frac{U+2}{\sqrt{10}}<\frac{a+2}{\sqrt{10}}\right\}
 =\Phi\left(\frac{a+2}{\sqrt{10}}\right),
-$
+$$
 其中 $\Phi$ 为标准正态分布函数。
 
 再令
-$
+$$
 V=X-2Y.
-$
+$$
 
 同理，$V$ 服从正态分布，且
-$
+$$
 E(V)=E(X)-2E(Y)=0-2(-2)=4,
-$
-$
+$$
+$$
 D(V)=D(X)+4D(Y)=2+4\cdot2=10.
-$
+$$
 
 因此
-$
+$$
 V\sim N(4,10).
-$
+$$
 
 所以
-$
+$$
 P\{X-2Y>0\}
 =P\{V>0\}
 =P\left\{\frac{V-4}{\sqrt{10}}>\frac{0-4}{\sqrt{10}}\right\}
 =1-\Phi\left(-\frac{4}{\sqrt{10}}\right).
-$
+$$
 
 由正态分布对称性，
-$
+$$
 1-\Phi\left(-\frac{4}{\sqrt{10}}\right)
 =\Phi\left(\frac{4}{\sqrt{10}}\right).
-$
+$$
 
 于是题设给出
-$
+$$
 \Phi\left(\frac{a+2}{\sqrt{10}}\right)
 =
 \Phi\left(\frac{4}{\sqrt{10}}\right).
-$
+$$
 
 因为 $\Phi$ 严格单调，所以
-$
+$$
 \frac{a+2}{\sqrt{10}}=\frac{4}{\sqrt{10}},
-$
+$$
 故
-$
+$$
 a=2.
-$
+$$
 
 **易错点**：
 
