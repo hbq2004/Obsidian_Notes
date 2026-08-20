@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "39131b582ee89336",
+        "id": "86017b704444d1ef",
         "type": "tabs",
         "children": [
           {
-            "id": "304f3f4b32b99435",
+            "id": "672d1871c724059d",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "好题错题整理/_待确认/27_张宇36讲/02 - 线代/06 - 第6讲 向量组/3-FRQ/L23-Q07.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "L23-Q07"
+              "title": "新标签页"
             }
           }
         ]
@@ -108,8 +104,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 353.5110321044922,
-    "collapsed": true
+    "width": 353.5110321044922
   },
   "right": {
     "id": "788c2b70f5d82052",
@@ -126,7 +121,6 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "好题错题整理/_待确认/27_张宇36讲/02 - 线代/06 - 第6讲 向量组/3-FRQ/L23-Q07.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
@@ -249,11 +243,14 @@
       "pdf-plus:PDF++: Toggle auto-copy": false,
       "pdf-plus:PDF++: Toggle auto-focus": false,
       "pdf-plus:PDF++: Toggle auto-paste": false,
-      "obsidian-excalidraw-plugin:新建绘图文件": false
+      "obsidian-excalidraw-plugin:新建绘图文件": false,
+      "hidden-folder-obsidian:隐藏文件夹": false
     }
   },
-  "active": "304f3f4b32b99435",
+  "active": "672d1871c724059d",
   "lastOpenFiles": [
+    "好题错题整理/_待确认/27_王道408/DS/01 - 绪论/DS-C01-Q01.md",
+    "好题错题整理/_待确认/27_张宇36讲/02 - 线代/06 - 第6讲 向量组/3-FRQ/L23-Q07.md",
     "健康与作息/睡眠分析/周分析-2026-W34.md",
     "健康与作息/睡眠分析/月度健康复盘-2026-08.md",
     "健康与作息/睡眠分析/AI睡眠解读-2026-08-20.md",
@@ -261,7 +258,6 @@
     "健康与作息/睡眠分析/睡眠运动分析报告-2026-08-20.md",
     "好题错题整理/_待确认/27_王道408/INDEX.md",
     "好题错题整理/_待确认/27_张宇36讲/INDEX.md",
-    "好题错题整理/_待确认/27_张宇36讲/02 - 线代/06 - 第6讲 向量组/3-FRQ/L23-Q07.md",
     "好题错题整理/_待确认/27_张宇36讲/02 - 线代/06 - 第6讲 向量组/3-FRQ/L23-Q06.md",
     "好题错题整理/_待确认/27_张宇36讲/02 - 线代/06 - 第6讲 向量组/3-FRQ/L23-Q03.md",
     "_Daily_Tasks/2026-08-20.md",
@@ -294,7 +290,6 @@
     "好题错题整理/_待确认/27_张宇36讲/03 - 概统/09 - 第9讲 参数估计与假设检验/2-FIB/L35-Q03.md",
     "好题错题整理/_待确认/27_张宇36讲/03 - 概统/09 - 第9讲 参数估计与假设检验/2-FIB/L35-Q01.md",
     "好题错题整理/_待确认/27_张宇36讲/03 - 概统/09 - 第9讲 参数估计与假设检验/1-MCQ/L35-Q12.md",
-    "好题错题整理/_待确认/27_张宇36讲/03 - 概统/09 - 第9讲 参数估计与假设检验/1-MCQ/L35-Q11.md",
     "好题错题整理/_待确认/27_张宇36讲/03 - 概统/09 - 第9讲 参数估计与假设检验/3-FRQ",
     "好题错题整理/_待确认/27_张宇36讲/03 - 概统/09 - 第9讲 参数估计与假设检验/2-FIB",
     "好题错题整理/_待确认/27_张宇36讲/03 - 概统/09 - 第9讲 参数估计与假设检验/1-MCQ",
