@@ -21,12 +21,12 @@ $ 21. (本题满分 12 分) 设函数 y=y(x)(x \geq 1) 满足微分方程 x y^{\
 
 $L: y=y(x)(1 \leq x \leq 2)$ 绕 $x$ 轴旋转一周所得的旋转曲面 $\Sigma$，取外侧。
 
-$\begin{equation}
-(1)$ 求曲线 L 的方程;
-$\end{equation}
+$$\begin{equation}
+(1)$$ 求曲线 L 的方程;
+$$\end{equation}
 \begin{equation}
-(2)$ 计算 $I = \iint_{\Sigma} \frac{x \, dy \, dz + y \, dz \, dx + z \, dx \, dy}{\sqrt{x^2 + y^2 + z^2}}.
-\end{equation}$
+(2)$$ 计算 $$I = \iint_{\Sigma} \frac{x \, dy \, dz + y \, dz \, dx + z \, dx \, dy}{\sqrt{x^2 + y^2 + z^2}}.
+\end{equation}$$
 
 
 ---
