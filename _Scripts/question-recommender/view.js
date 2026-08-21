@@ -1,6 +1,6 @@
 (async () => {
 /******************************************************************
- * Obsidian 题目推荐与目录筛选系统 V13
+ * Obsidian 题目推荐与目录筛选系统 V14.1
  * （支持标签推荐、目录筛选、随机二刷、评级排期与 PDF 导出）
  *
  * 1. 在整个仓库中搜索，不限制文件夹
@@ -3533,8 +3533,7 @@ function renderDirectoryMode() {
     const descriptionEl = viewDocument.createElement("p");
     descriptionEl.className = "question-directory-description";
     descriptionEl.textContent =
-        "目录来自 _待确认 的真实文件路径；保留/跳过只写入 curation，" +
-        "0～5 级评级继续使用原有复习排期。";
+        "选目录，直接跳题；1 保留 · 2 跳过 · 0 恢复待筛。";
 
     headerEl.appendChild(headingEl);
     headerEl.appendChild(descriptionEl);
@@ -3700,6 +3699,29 @@ function renderDirectoryMode() {
             : [];
     }
 
+    function goToQueueIndex(nextIndex, options = {}) {
+        if (queueItems.length === 0) return;
+
+        const numericIndex = Number(nextIndex);
+        if (!Number.isFinite(numericIndex)) return;
+
+        currentIndex = Math.max(
+            0,
+            Math.min(queueItems.length - 1, Math.trunc(numericIndex))
+        );
+        displayedItems = [queueItems[currentIndex]];
+        renderAll();
+
+        if (options.scrollToCard) {
+            requestAnimationFrame(() => {
+                cardEl.scrollIntoView?.({
+                    behavior: "smooth",
+                    block: "start"
+                });
+            });
+        }
+    }
+
     function createImageGallery(item, imageLinks, kind) {
         const galleryEl = viewDocument.createElement("div");
         galleryEl.className =
@@ -3751,6 +3773,22 @@ function renderDirectoryMode() {
         if (item.curation === "keep") return "✅ 已保留";
         if (item.curation === "skip") return "⏭ 已跳过";
         return "🕓 待筛";
+    }
+
+    function getDirectoryQuestionName(item) {
+        const file = item?.page?.file ?? {};
+        const pathName = normalizeVaultPath(file.path)
+            .split("/")
+            .filter(Boolean)
+            .pop() ?? "";
+        const fallbackName = pathName.replace(/\.md$/i, "");
+
+        return String(
+            file.basename ??
+            file.name ??
+            fallbackName ??
+            "未命名题目"
+        ).replace(/\.md$/i, "");
     }
 
     async function persistCuration(item, nextCuration) {
@@ -3829,9 +3867,17 @@ function renderDirectoryMode() {
                 "--question-directory-depth",
                 String(depth)
             );
-            buttonEl.textContent =
-                `${depth > 0 ? "↳ " : ""}${node.name} ` +
-                `· ${counts.pending}/${counts.total}`;
+            const labelEl = viewDocument.createElement("span");
+            labelEl.className = "question-directory-node-label";
+            labelEl.textContent =
+                `${depth > 0 ? "↳ " : ""}${node.name}`;
+
+            const countEl = viewDocument.createElement("span");
+            countEl.className = "question-directory-node-count";
+            countEl.textContent = `${counts.pending}/${counts.total}`;
+
+            buttonEl.appendChild(labelEl);
+            buttonEl.appendChild(countEl);
             buttonEl.title =
                 `待筛 ${counts.pending} · 保留 ${counts.keep} · ` +
                 `跳过 ${counts.skip} · 共 ${counts.total}`;
@@ -3921,6 +3967,83 @@ function renderDirectoryMode() {
         levelPanelEl.appendChild(levelLabelEl);
         levelPanelEl.appendChild(createLevelControl(item));
 
+        const locatorEl = viewDocument.createElement("div");
+        locatorEl.className = "question-directory-locator";
+
+        const locatorTitleEl = viewDocument.createElement("div");
+        locatorTitleEl.className = "question-directory-locator-title";
+        locatorTitleEl.textContent =
+            `当前目录题目 · ${currentIndex + 1}/${queueItems.length}`;
+
+        const locatorControlsEl = viewDocument.createElement("div");
+        locatorControlsEl.className = "question-directory-locator-controls";
+
+        const questionSelectEl = viewDocument.createElement("select");
+        questionSelectEl.className = "question-directory-question-select";
+        questionSelectEl.setAttribute("aria-label", "选择当前目录题目");
+
+        const numberWidth = Math.max(2, String(queueItems.length).length);
+        queueItems.forEach((candidate, index) => {
+            const optionEl = viewDocument.createElement("option");
+            const statusMark = candidate.curation === "keep"
+                ? "✓"
+                : candidate.curation === "skip"
+                    ? "—"
+                    : "○";
+            optionEl.value = String(index);
+            optionEl.textContent =
+                `${String(index + 1).padStart(numberWidth, "0")} ` +
+                `${statusMark}  ${getDirectoryQuestionName(candidate)}`;
+            questionSelectEl.appendChild(optionEl);
+        });
+        questionSelectEl.value = String(currentIndex);
+        questionSelectEl.addEventListener("change", () => {
+            goToQueueIndex(Number(questionSelectEl.value), {
+                scrollToCard: false
+            });
+        });
+
+        const jumpEl = viewDocument.createElement("div");
+        jumpEl.className = "question-directory-jump";
+
+        const jumpInputEl = viewDocument.createElement("input");
+        jumpInputEl.className = "question-directory-jump-input";
+        jumpInputEl.type = "number";
+        jumpInputEl.min = "1";
+        jumpInputEl.max = String(queueItems.length);
+        jumpInputEl.step = "1";
+        jumpInputEl.value = String(currentIndex + 1);
+        jumpInputEl.setAttribute("aria-label", "输入题目序号");
+        jumpInputEl.title = `输入 1～${queueItems.length}`;
+
+        const jumpButtonEl = viewDocument.createElement("button");
+        jumpButtonEl.type = "button";
+        jumpButtonEl.className = "question-directory-jump-button";
+        jumpButtonEl.textContent = "跳转";
+        jumpButtonEl.setAttribute("aria-label", "跳转到输入题号");
+
+        const jumpToInput = () => {
+            const requestedNumber = Number(jumpInputEl.value);
+            if (!Number.isFinite(requestedNumber)) return;
+            goToQueueIndex(requestedNumber - 1, {
+                scrollToCard: false
+            });
+        };
+
+        jumpButtonEl.addEventListener("click", jumpToInput);
+        jumpInputEl.addEventListener("keydown", event => {
+            if (event.key !== "Enter") return;
+            event.preventDefault();
+            jumpToInput();
+        });
+
+        jumpEl.appendChild(jumpInputEl);
+        jumpEl.appendChild(jumpButtonEl);
+        locatorControlsEl.appendChild(questionSelectEl);
+        locatorControlsEl.appendChild(jumpEl);
+        locatorEl.appendChild(locatorTitleEl);
+        locatorEl.appendChild(locatorControlsEl);
+
         const navigationEl = viewDocument.createElement("div");
         navigationEl.className = "question-directory-navigation";
 
@@ -3929,9 +4052,7 @@ function renderDirectoryMode() {
         previousButtonEl.textContent = "← 上一题 K";
         previousButtonEl.disabled = currentIndex <= 0;
         previousButtonEl.addEventListener("click", () => {
-            currentIndex = Math.max(0, currentIndex - 1);
-            displayedItems = [queueItems[currentIndex]];
-            renderAll();
+            goToQueueIndex(currentIndex - 1);
         });
 
         const positionEl = viewDocument.createElement("span");
@@ -3943,12 +4064,7 @@ function renderDirectoryMode() {
         nextButtonEl.textContent = "下一题 J →";
         nextButtonEl.disabled = currentIndex >= queueItems.length - 1;
         nextButtonEl.addEventListener("click", () => {
-            currentIndex = Math.min(
-                queueItems.length - 1,
-                currentIndex + 1
-            );
-            displayedItems = [queueItems[currentIndex]];
-            renderAll();
+            goToQueueIndex(currentIndex + 1);
         });
 
         navigationEl.appendChild(previousButtonEl);
@@ -3959,6 +4075,7 @@ function renderDirectoryMode() {
         cardEl.appendChild(pathEl);
         cardEl.appendChild(actionEl);
         cardEl.appendChild(levelPanelEl);
+        cardEl.appendChild(locatorEl);
         cardEl.appendChild(navigationEl);
 
         if (item.images.length > 0) {
@@ -4095,17 +4212,10 @@ function renderDirectoryMode() {
             void persistCuration(item, null);
         } else if (key === "j" || key === "arrowright") {
             event.preventDefault();
-            currentIndex = Math.min(
-                queueItems.length - 1,
-                currentIndex + 1
-            );
-            displayedItems = [queueItems[currentIndex]];
-            renderAll();
+            goToQueueIndex(currentIndex + 1);
         } else if (key === "k" || key === "arrowleft") {
             event.preventDefault();
-            currentIndex = Math.max(0, currentIndex - 1);
-            displayedItems = [queueItems[currentIndex]];
-            renderAll();
+            goToQueueIndex(currentIndex - 1);
         }
     });
 
