@@ -1317,6 +1317,7 @@ function refreshFilterUI() {
             : `当前显示 ${visibleNumber} 道`);
 
         filterSummaryEl.textContent = summaryParts.join(" · ");
+    }
 
     if (filterEmptyEl) {
         filterEmptyEl.hidden = !(
