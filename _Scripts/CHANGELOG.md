@@ -2,6 +2,17 @@
 
 > 由 AI 助手在本会话中对 `D:\Desktop\Obsidian_Notes\_Scripts` 目录的修改记录。
 
+## question-recommender V13：习题册目录快速筛选模式
+
+- **入口**：`dv.view("_Scripts/question-recommender", { mode: "directory" })`；默认读取 `好题错题整理/_待确认`，原标签推荐和 `random-review` 模式保持兼容。
+- **目录来源**：按真实文件路径递归构建“习题册 → 任意层级目录 → 题目”，不再依赖 tags 猜书；排除索引/汇总页，中文数字自然排序。实测识别 15 本习题册、6249 道题。
+- **快速筛选**：单题卡片、书籍/目录/状态/题目 ID 筛选、目录进度、折叠答案、上一题/下一题；快捷键 `1=保留`、`2=跳过`、`0=恢复待筛`、`J/K` 或左右方向键切题。
+- **状态字段**：`curation: keep|skip`、`curation_at`；字段缺失即待筛。不复用 `status`，避免把题目收录决策与单次做题结果混为一谈；不批量改写现有题目。
+- **复用能力**：当前题继续使用 question-recommender 的 0～5 级评级、历史峰值、降级检测、`next_review` 和 Tasks 同步；当前目录队列可导出带书签 PDF（单次最多 100 题）。
+- **附件性能**：题图/答案图按嵌入别名 `题目`/`答案` 统一解析，只有当前显示或导出时才懒加载；兼容多图题和无题图文本重建题。
+- **入口调整**：`好题错题整理/好题错题筛选页.md` 改为目录模式入口；`wrong-question-filter` 文件保留但不再由该页面加载。
+- **验证**：`node --check` 通过；真实 vault 模拟 Dataview 执行通过（6255 个 Markdown 页面、15 本书逐书题量全匹配），`900-GS-AM-C09-A-Q021` 无题图兜底和 `curation=keep` 模拟写入通过；CSS 花括号配对。
+
 ## 新增：错题打卡 + 错题筛选视图（wrong-question-filter）
 
 - **目录**：`_Scripts\wrong-question-filter\view.js` + `view.css`（新建）。

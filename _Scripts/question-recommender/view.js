@@ -1,7 +1,7 @@
 (async () => {
 /******************************************************************
- * Obsidian 全库同类题推荐系统 V12
- * （中文字体修正版，支持层级标签、Templater 与降级题按钮筛选）
+ * Obsidian 题目推荐与目录筛选系统 V13
+ * （支持标签推荐、目录筛选、随机二刷、评级排期与 PDF 导出）
  *
  * 1. 在整个仓库中搜索，不限制文件夹
  * 2. 读取当前文件的全部 tags
@@ -15,6 +15,7 @@
  * 10. 支持将当前筛选结果打印或另存为 PDF
  * 11. 支持按当前标签无放回随机抽取 X 道已刷题二刷
  * 12. 支持固定当前题目顺序，评级刷新后不再重新排序
+ * 13. 支持按 _待确认 的真实文件夹目录逐题快速筛选
  ******************************************************************/
 
 /* ================================================================
@@ -23,6 +24,10 @@
 
 const CONFIG = {
     questionMarker: "题目",
+    answerMarker: "答案",
+
+    /* 目录模式只扫描这个题目候选根目录。 */
+    directoryRoot: "好题错题整理/_待确认",
 
     maxResults: 100,
     randomReviewDefaultCount: 10,
@@ -97,6 +102,10 @@ const RANDOM_REVIEW_MODE =
     String(VIEW_OPTIONS.mode ?? "").trim().toLowerCase() ===
     "random-review";
 
+const DIRECTORY_MODE = ["directory", "book-toc"].includes(
+    String(VIEW_OPTIONS.mode ?? "").trim().toLowerCase()
+);
+
 /* 运行期只读对象：避免全库扫描和排序时重复创建排序规则。 */
 const QUESTION_NAME_COLLATOR = new Intl.Collator(
     "zh-CN",
@@ -155,6 +164,10 @@ dv.container.classList.add("question-recommend-view");
 
 if (RANDOM_REVIEW_MODE) {
     dv.container.classList.add("question-random-review-view");
+}
+
+if (DIRECTORY_MODE) {
+    dv.container.classList.add("question-directory-view");
 }
 
 /* ================================================================
@@ -965,8 +978,11 @@ async function syncReviewTask({
  * ================================================================ */
 
 const currentTags = getPageTags(currentFile);
+const directoryRoot = normalizeVaultPath(
+    VIEW_OPTIONS.root ?? CONFIG.directoryRoot
+);
 
-if (currentTags.length === 0) {
+if (!DIRECTORY_MODE && currentTags.length === 0) {
     dv.paragraph("💡 **提示**：当前专题笔记没有 tags，无法推荐同类题。");
     return;
 }
@@ -988,10 +1004,12 @@ const currentTagRequirements = currentTags.map(tag => {
 let candidatePages;
 
 try {
-    candidatePages = Array.from(dv.pages());
+    candidatePages = DIRECTORY_MODE
+        ? Array.from(dv.pages(`"${directoryRoot}"`))
+        : Array.from(dv.pages());
 } catch (error) {
-    console.error("Dataview 全库查询失败：", error);
-    dv.paragraph("❌ Dataview 无法读取仓库页面。");
+    console.error("Dataview 题目查询失败：", error);
+    dv.paragraph("❌ Dataview 无法读取题目页面。");
     return;
 }
 
@@ -1003,25 +1021,29 @@ try {
  * 只把嵌入别名/替代文字中的独立“题目”字段视为题目标记。
  * 支持 |题目、|宽度|题目、|题目|宽度；不会因文件名含“题目”而误判。
  */
-function hasQuestionMarkerToken(value) {
+function hasMarkerToken(value, marker) {
     const tokens = String(value ?? "").split("|");
 
     for (const token of tokens) {
-        if (token.trim() === QUESTION_MARKER) return true;
+        if (token.trim() === marker) return true;
     }
 
     return false;
 }
 
-function embedHasQuestionMarker(embed) {
-    if (!QUESTION_MARKER) return false;
+function hasQuestionMarkerToken(value) {
+    return hasMarkerToken(value, QUESTION_MARKER);
+}
+
+function embedHasMarker(embed, marker) {
+    if (!marker) return false;
 
     const original = String(embed?.original ?? "").trim();
-    if (!original) return hasQuestionMarkerToken(embed?.displayText);
+    if (!original) return hasMarkerToken(embed?.displayText, marker);
 
     const markdownMatch = original.match(MARKDOWN_EMBED_PATTERN);
     if (markdownMatch) {
-        return hasQuestionMarkerToken(markdownMatch[1]);
+        return hasMarkerToken(markdownMatch[1], marker);
     }
 
     const wikiMatch = original.match(WIKI_EMBED_PATTERN);
@@ -1029,13 +1051,17 @@ function embedHasQuestionMarker(embed) {
     const parts = inner.split("|");
 
     for (let index = 1; index < parts.length; index++) {
-        if (parts[index].trim() === QUESTION_MARKER) return true;
+        if (parts[index].trim() === marker) return true;
     }
 
     return false;
 }
 
-function getQuestionImages(page, knownSourceFile = undefined) {
+function embedHasQuestionMarker(embed) {
+    return embedHasMarker(embed, QUESTION_MARKER);
+}
+
+function getMarkedImages(page, marker, knownSourceFile = undefined) {
     const sourceFile = knownSourceFile === undefined
         ? app.vault.getAbstractFileByPath(page.file.path)
         : knownSourceFile;
@@ -1051,7 +1077,7 @@ function getQuestionImages(page, knownSourceFile = undefined) {
     const visitedPaths = new Set();
 
     for (const embed of embeds) {
-        if (!embedHasQuestionMarker(embed)) {
+        if (!embedHasMarker(embed, marker)) {
             continue;
         }
 
@@ -1075,14 +1101,75 @@ function getQuestionImages(page, knownSourceFile = undefined) {
     return result;
 }
 
+function getQuestionImages(page, knownSourceFile = undefined) {
+    return getMarkedImages(
+        page,
+        QUESTION_MARKER,
+        knownSourceFile
+    );
+}
+
+function getAnswerImages(page, knownSourceFile = undefined) {
+    return getMarkedImages(
+        page,
+        String(CONFIG.answerMarker ?? "答案").trim(),
+        knownSourceFile
+    );
+}
+
 /* ================================================================
  * 7. 筛选与构建题目数据
  * ================================================================ */
+
+function getDirectoryPageMetadata(page) {
+    const pagePath = normalizeVaultPath(page?.file?.path);
+    const rootPrefix = directoryRoot ? `${directoryRoot}/` : "";
+
+    if (!rootPrefix || !pagePath.startsWith(rootPrefix)) {
+        return null;
+    }
+
+    const relativePath = pagePath.slice(rootPrefix.length);
+    const parts = relativePath.split("/").filter(Boolean);
+
+    /* 至少需要“书文件夹/题目.md”，排除根目录里的汇总页。 */
+    if (parts.length < 2) return null;
+
+    const filename = parts[parts.length - 1];
+    const basename = filename.replace(/\.md$/i, "");
+
+    if (
+        !/\.md$/i.test(filename) ||
+        /^(?:index|.*索引)$/iu.test(basename)
+    ) {
+        return null;
+    }
+
+    return {
+        book: parts[0],
+        directoryParts: parts.slice(1, -1),
+        relativePath,
+        directoryPath: parts.slice(1, -1).join("/")
+    };
+}
+
+function normalizeCuration(value) {
+    const normalized = String(value ?? "").trim().toLowerCase();
+    return ["keep", "skip"].includes(normalized)
+        ? normalized
+        : null;
+}
 
 const items = [];
 
 for (const page of candidatePages) {
     if (page.file.path === currentFile.file.path) continue;
+
+    const directoryMetadata = DIRECTORY_MODE
+        ? getDirectoryPageMetadata(page)
+        : null;
+
+    if (DIRECTORY_MODE && !directoryMetadata) continue;
 
     /**
      * 当前文件的每一个标签，都必须在候选页面中找到：
@@ -1094,17 +1181,24 @@ for (const page of candidatePages) {
      * #27_ep/大雪深埋
      * #27_ep/大雪深埋/一阶方程/可分离变量
      */
-    if (!pageMatchesAllTagRequirements(
-        page,
-        currentTagRequirements
-    )) {
+    if (
+        !DIRECTORY_MODE &&
+        !pageMatchesAllTagRequirements(page, currentTagRequirements)
+    ) {
         continue;
     }
 
     const sourceFile = app.vault.getAbstractFileByPath(page.file.path);
-    const images = getQuestionImages(page, sourceFile);
+    if (!sourceFile || sourceFile.extension !== "md") continue;
 
-    if (images.length === 0) continue;
+    /* 目录模式只在当前题显示/导出时解析图片，避免启动时解析上万附件。 */
+    const images = DIRECTORY_MODE
+        ? null
+        : getQuestionImages(page, sourceFile);
+    const answerImages = DIRECTORY_MODE ? null : [];
+
+    /* 目录模式保留解析册重建的无题图题，其余模式维持原契约。 */
+    if (!DIRECTORY_MODE && images.length === 0) continue;
 
     const level = parseLevel(page.level);
     const peakLevel = parseLevel(page.peak_level) ?? level;
@@ -1129,6 +1223,10 @@ for (const page of candidatePages) {
         page,
         sourceFile,
         images,
+        answerImages,
+        directory: directoryMetadata,
+        curation: normalizeCuration(page.curation),
+        curationAt: String(page.curation_at ?? "").trim() || null,
         level,
         peakLevel,
         regressed,
@@ -1656,7 +1754,7 @@ function createCurrentQuestionOrderState(questionItems) {
 
 items.sort(compareQuestionPriority);
 
-const storedQuestionOrderLock = RANDOM_REVIEW_MODE
+const storedQuestionOrderLock = (RANDOM_REVIEW_MODE || DIRECTORY_MODE)
     ? null
     : readQuestionOrderLock();
 let questionOrderLocked = Boolean(storedQuestionOrderLock);
@@ -1721,7 +1819,8 @@ async function cleanupLegacyRegressionNotices(questionItems) {
 /* 随机二刷只负责抽题，不在打开面板时批量迁移整个候选池。 */
 if (
     CONFIG.cleanupLegacyRegressionNoticesOnLoad &&
-    !RANDOM_REVIEW_MODE
+    !RANDOM_REVIEW_MODE &&
+    !DIRECTORY_MODE
 ) {
     try {
         const removedNoticeCount =
@@ -2108,6 +2207,8 @@ async function repairExistingReviewTasks(questionItems) {
  * ================================================================ */
 
 function getCurrentlyPrintableItems() {
+    if (DIRECTORY_MODE) return displayedItems;
+
     return regressionOnly
         ? displayedItems.filter(item => item.regressed)
         : displayedItems;
@@ -3278,8 +3379,754 @@ function renderRandomReviewMode() {
 }
 
 /* ================================================================
- * 12. 渲染推荐结果
+ * 12. 习题册目录快速筛选模式
  * ================================================================ */
+
+function getCurationCounts(questionItems) {
+    const counts = {
+        total: questionItems.length,
+        pending: 0,
+        keep: 0,
+        skip: 0
+    };
+
+    for (const item of questionItems) {
+        if (item.curation === "keep") counts.keep++;
+        else if (item.curation === "skip") counts.skip++;
+        else counts.pending++;
+    }
+
+    return counts;
+}
+
+function buildDirectoryTree(bookItems) {
+    const root = {
+        name: "全部目录",
+        pathParts: [],
+        pathKey: "",
+        children: new Map(),
+        items: [...bookItems]
+    };
+
+    for (const item of bookItems) {
+        let node = root;
+
+        for (const part of item.directory?.directoryParts ?? []) {
+            if (!node.children.has(part)) {
+                const pathParts = [...node.pathParts, part];
+
+                node.children.set(part, {
+                    name: part,
+                    pathParts,
+                    pathKey: pathParts.join("/"),
+                    children: new Map(),
+                    items: []
+                });
+            }
+
+            node = node.children.get(part);
+            node.items.push(item);
+        }
+    }
+
+    return root;
+}
+
+function findDirectoryNode(root, pathKey) {
+    if (!pathKey) return root;
+
+    let node = root;
+
+    for (const part of String(pathKey).split("/").filter(Boolean)) {
+        node = node.children.get(part);
+        if (!node) return null;
+    }
+
+    return node;
+}
+
+function renderDirectoryMode() {
+    const viewDocument = dv.container.ownerDocument ?? document;
+    const books = Array.from(new Set(
+        items.map(item => item.directory?.book).filter(Boolean)
+    )).sort(QUESTION_NAME_COLLATOR.compare);
+
+    if (books.length === 0) {
+        dv.paragraph(
+            `💡 ${directoryRoot} 下没有找到可筛选的题目笔记。`
+        );
+        return;
+    }
+
+    items.sort((a, b) => QUESTION_NAME_COLLATOR.compare(
+        a.directory?.relativePath ?? a.page.file.path,
+        b.directory?.relativePath ?? b.page.file.path
+    ));
+
+    const storageKey =
+        "question-recommender:directory:" +
+        encodeURIComponent(String(app.vault.getName?.() ?? "vault")) +
+        ":" + normalizeVaultPath(currentFile.file.path);
+
+    function readState() {
+        try {
+            const storage = viewDocument.defaultView?.localStorage;
+            const raw = storage?.getItem(storageKey);
+            const state = raw ? JSON.parse(raw) : null;
+            return state && typeof state === "object" ? state : {};
+        } catch (error) {
+            console.warn("目录筛选进度读取失败：", error);
+            return {};
+        }
+    }
+
+    function writeState() {
+        try {
+            viewDocument.defaultView?.localStorage?.setItem(
+                storageKey,
+                JSON.stringify({
+                    book: selectedBook,
+                    directoryPath: selectedDirectoryPath,
+                    stateFilter,
+                    searchText,
+                    currentItemPath:
+                        queueItems[currentIndex]?.page?.file?.path ?? null
+                })
+            );
+        } catch (error) {
+            console.warn("目录筛选进度保存失败：", error);
+        }
+    }
+
+    const storedState = readState();
+    const configuredBook = String(VIEW_OPTIONS.book ?? "").trim();
+    let selectedBook = books.includes(configuredBook)
+        ? configuredBook
+        : books.includes(storedState.book)
+            ? storedState.book
+            : books[0];
+    let selectedDirectoryPath = String(
+        storedState.directoryPath ?? ""
+    );
+    let stateFilter = ["pending", "keep", "skip", "all"].includes(
+        storedState.stateFilter
+    )
+        ? storedState.stateFilter
+        : "pending";
+    let searchText = String(storedState.searchText ?? "").trim();
+    let currentIndex = 0;
+    let bookItems = [];
+    let directoryTree = null;
+    let selectedDirectoryNode = null;
+    let queueItems = [];
+    let curationWriteInProgress = false;
+
+    dv.container.tabIndex = 0;
+
+    const headerEl = viewDocument.createElement("header");
+    headerEl.className = "question-directory-header";
+
+    const headingEl = viewDocument.createElement("h3");
+    headingEl.className = "question-directory-title";
+    headingEl.textContent = "📚 按习题册目录筛选";
+
+    const descriptionEl = viewDocument.createElement("p");
+    descriptionEl.className = "question-directory-description";
+    descriptionEl.textContent =
+        "目录来自 _待确认 的真实文件路径；保留/跳过只写入 curation，" +
+        "0～5 级评级继续使用原有复习排期。";
+
+    headerEl.appendChild(headingEl);
+    headerEl.appendChild(descriptionEl);
+
+    const toolbarEl = viewDocument.createElement("div");
+    toolbarEl.className = "question-directory-toolbar";
+
+    const bookSelectEl = viewDocument.createElement("select");
+    bookSelectEl.className = "question-directory-select";
+    bookSelectEl.setAttribute("aria-label", "选择习题册");
+
+    for (const book of books) {
+        const optionEl = viewDocument.createElement("option");
+        optionEl.value = book;
+        optionEl.textContent = book;
+        bookSelectEl.appendChild(optionEl);
+    }
+
+    bookSelectEl.value = selectedBook;
+
+    const filterSelectEl = viewDocument.createElement("select");
+    filterSelectEl.className = "question-directory-select";
+    filterSelectEl.setAttribute("aria-label", "选择筛选状态");
+
+    for (const option of [
+        ["pending", "只看待筛"],
+        ["keep", "只看已保留"],
+        ["skip", "只看已跳过"],
+        ["all", "全部状态"]
+    ]) {
+        const optionEl = viewDocument.createElement("option");
+        optionEl.value = option[0];
+        optionEl.textContent = option[1];
+        filterSelectEl.appendChild(optionEl);
+    }
+
+    filterSelectEl.value = stateFilter;
+
+    const searchInputEl = viewDocument.createElement("input");
+    searchInputEl.className = "question-directory-search";
+    searchInputEl.type = "search";
+    searchInputEl.placeholder = "搜索题目 ID / 文件名";
+    searchInputEl.value = searchText;
+    searchInputEl.setAttribute("aria-label", "搜索题目");
+
+    const exportButtonEl = viewDocument.createElement("button");
+    exportButtonEl.type = "button";
+    exportButtonEl.className = "question-print-button";
+
+    toolbarEl.appendChild(bookSelectEl);
+    toolbarEl.appendChild(filterSelectEl);
+    toolbarEl.appendChild(searchInputEl);
+    toolbarEl.appendChild(exportButtonEl);
+
+    const summaryEl = viewDocument.createElement("div");
+    summaryEl.className = "question-directory-summary";
+    summaryEl.setAttribute("aria-live", "polite");
+
+    const progressTrackEl = viewDocument.createElement("div");
+    progressTrackEl.className = "question-directory-progress-track";
+
+    const progressBarEl = viewDocument.createElement("div");
+    progressBarEl.className = "question-directory-progress-bar";
+    progressTrackEl.appendChild(progressBarEl);
+
+    const layoutEl = viewDocument.createElement("div");
+    layoutEl.className = "question-directory-layout";
+
+    const sidebarEl = viewDocument.createElement("aside");
+    sidebarEl.className = "question-directory-sidebar";
+
+    const sidebarTitleEl = viewDocument.createElement("h4");
+    sidebarTitleEl.textContent = "目录";
+
+    const directoryListEl = viewDocument.createElement("div");
+    directoryListEl.className = "question-directory-list";
+
+    sidebarEl.appendChild(sidebarTitleEl);
+    sidebarEl.appendChild(directoryListEl);
+
+    const mainEl = viewDocument.createElement("main");
+    mainEl.className = "question-directory-main";
+
+    const cardEl = viewDocument.createElement("article");
+    cardEl.className = "question-directory-card";
+    mainEl.appendChild(cardEl);
+
+    layoutEl.appendChild(sidebarEl);
+    layoutEl.appendChild(mainEl);
+
+    dv.container.appendChild(headerEl);
+    dv.container.appendChild(toolbarEl);
+    dv.container.appendChild(summaryEl);
+    dv.container.appendChild(progressTrackEl);
+    dv.container.appendChild(layoutEl);
+
+    function itemMatchesState(item) {
+        if (stateFilter === "all") return true;
+        if (stateFilter === "pending") return item.curation === null;
+        return item.curation === stateFilter;
+    }
+
+    function itemMatchesSearch(item) {
+        const wanted = searchText.toLocaleLowerCase("zh-CN");
+        if (!wanted) return true;
+
+        return [
+            item.page.file.name,
+            item.page.file.path,
+            item.directory?.relativePath
+        ].some(value => String(value ?? "")
+            .toLocaleLowerCase("zh-CN")
+            .includes(wanted));
+    }
+
+    function getSortedChildren(node) {
+        return Array.from(node.children.values()).sort((a, b) =>
+            QUESTION_NAME_COLLATOR.compare(a.name, b.name)
+        );
+    }
+
+    function rebuildBookTree() {
+        bookItems = items.filter(
+            item => item.directory?.book === selectedBook
+        );
+        directoryTree = buildDirectoryTree(bookItems);
+        selectedDirectoryNode = findDirectoryNode(
+            directoryTree,
+            selectedDirectoryPath
+        );
+
+        if (!selectedDirectoryNode) {
+            selectedDirectoryPath = "";
+            selectedDirectoryNode = directoryTree;
+        }
+    }
+
+    function rebuildQueue(options = {}) {
+        const previousIndex = currentIndex;
+        const wantedPath = options.currentItemPath ?? null;
+
+        queueItems = selectedDirectoryNode.items.filter(item =>
+            itemMatchesState(item) && itemMatchesSearch(item)
+        );
+
+        if (wantedPath) {
+            const matchedIndex = queueItems.findIndex(
+                item => item.page.file.path === wantedPath
+            );
+
+            currentIndex = matchedIndex >= 0 ? matchedIndex : 0;
+        } else if (options.keepIndex) {
+            currentIndex = Math.min(
+                previousIndex,
+                Math.max(0, queueItems.length - 1)
+            );
+        } else {
+            currentIndex = 0;
+        }
+
+        displayedItems = queueItems[currentIndex]
+            ? [queueItems[currentIndex]]
+            : [];
+    }
+
+    function createImageGallery(item, imageLinks, kind) {
+        const galleryEl = viewDocument.createElement("div");
+        galleryEl.className =
+            `question-directory-images is-${kind}`;
+
+        for (const imageLink of imageLinks) {
+            const imageFile = resolvePrintImageFile(item, imageLink);
+
+            if (!imageFile) {
+                const missingEl = viewDocument.createElement("p");
+                missingEl.className = "question-directory-image-missing";
+                missingEl.textContent = "图片已移动或无法定位。";
+                galleryEl.appendChild(missingEl);
+                continue;
+            }
+
+            const imageEl = viewDocument.createElement("img");
+            imageEl.className = "question-directory-image";
+            imageEl.loading = "lazy";
+            imageEl.alt = `${item.page.file.name} · ${imageFile.name}`;
+            imageEl.src = app.vault.getResourcePath(imageFile);
+            imageEl.addEventListener("error", () => {
+                const missingEl = viewDocument.createElement("p");
+                missingEl.className = "question-directory-image-missing";
+                missingEl.textContent = `图片加载失败：${imageFile.name}`;
+                imageEl.replaceWith(missingEl);
+            }, { once: true });
+
+            galleryEl.appendChild(imageEl);
+        }
+
+        return galleryEl;
+    }
+
+    function ensureItemImages(item) {
+        if (!Array.isArray(item.images)) {
+            item.images = getQuestionImages(item.page, item.sourceFile);
+        }
+
+        if (!Array.isArray(item.answerImages)) {
+            item.answerImages = getAnswerImages(
+                item.page,
+                item.sourceFile
+            );
+        }
+    }
+
+    function getCurationLabel(item) {
+        if (item.curation === "keep") return "✅ 已保留";
+        if (item.curation === "skip") return "⏭ 已跳过";
+        return "🕓 待筛";
+    }
+
+    async function persistCuration(item, nextCuration) {
+        if (curationWriteInProgress) return;
+
+        const targetFile = resolveQuestionSourceFile(item);
+
+        if (!targetFile || targetFile.extension !== "md") {
+            new Notice("❌ 无法定位对应题目笔记。", 5000);
+            return;
+        }
+
+        curationWriteInProgress = true;
+        renderCard();
+
+        try {
+            const changedAt = localDateTime();
+
+            await app.fileManager.processFrontMatter(
+                targetFile,
+                frontmatter => {
+                    if (nextCuration === null) {
+                        delete frontmatter.curation;
+                        delete frontmatter.curation_at;
+                    } else {
+                        frontmatter.curation = nextCuration;
+                        frontmatter.curation_at = changedAt;
+                    }
+                }
+            );
+
+            item.curation = nextCuration;
+            item.curationAt = nextCuration === null ? null : changedAt;
+
+            const oldIndex = currentIndex;
+            rebuildQueue({ keepIndex: true });
+            currentIndex = Math.min(
+                oldIndex,
+                Math.max(0, queueItems.length - 1)
+            );
+            displayedItems = queueItems[currentIndex]
+                ? [queueItems[currentIndex]]
+                : [];
+
+            new Notice(
+                nextCuration === "keep"
+                    ? `✅ 已保留：${item.page.file.name}`
+                    : nextCuration === "skip"
+                        ? `⏭ 已跳过：${item.page.file.name}`
+                        : `↩ 已恢复待筛：${item.page.file.name}`,
+                2600
+            );
+        } catch (error) {
+            console.error("目录筛选状态写入失败：", error);
+            new Notice("❌ 筛选状态写入失败，请重试。", 5000);
+        } finally {
+            curationWriteInProgress = false;
+            renderAll();
+            dv.container.focus?.({ preventScroll: true });
+        }
+    }
+
+    function renderDirectoryList() {
+        directoryListEl.replaceChildren();
+
+        function appendNode(node, depth) {
+            const counts = getCurationCounts(node.items);
+            const buttonEl = viewDocument.createElement("button");
+            buttonEl.type = "button";
+            buttonEl.className = "question-directory-node";
+            buttonEl.classList.toggle(
+                "is-active",
+                node.pathKey === selectedDirectoryPath
+            );
+            buttonEl.style.setProperty(
+                "--question-directory-depth",
+                String(depth)
+            );
+            buttonEl.textContent =
+                `${depth > 0 ? "↳ " : ""}${node.name} ` +
+                `· ${counts.pending}/${counts.total}`;
+            buttonEl.title =
+                `待筛 ${counts.pending} · 保留 ${counts.keep} · ` +
+                `跳过 ${counts.skip} · 共 ${counts.total}`;
+            buttonEl.addEventListener("click", () => {
+                selectedDirectoryPath = node.pathKey;
+                selectedDirectoryNode = node;
+                rebuildQueue();
+                renderAll();
+            });
+            directoryListEl.appendChild(buttonEl);
+
+            for (const child of getSortedChildren(node)) {
+                appendNode(child, depth + 1);
+            }
+        }
+
+        appendNode(directoryTree, 0);
+    }
+
+    function renderCard() {
+        cardEl.replaceChildren();
+
+        const item = queueItems[currentIndex];
+
+        if (!item) {
+            const emptyEl = viewDocument.createElement("div");
+            emptyEl.className = "question-directory-empty";
+            emptyEl.textContent = stateFilter === "pending"
+                ? "🎉 当前目录已经没有待筛题目。"
+                : "当前目录和筛选条件下没有题目。";
+            cardEl.appendChild(emptyEl);
+            return;
+        }
+
+        ensureItemImages(item);
+
+        const cardHeaderEl = viewDocument.createElement("div");
+        cardHeaderEl.className = "question-directory-card-header";
+
+        const cardTitleEl = viewDocument.createElement("div");
+        cardTitleEl.className = "question-directory-card-title";
+        cardTitleEl.appendChild(
+            createRandomReviewSourceLink(item, viewDocument)
+        );
+
+        const badgeEl = viewDocument.createElement("span");
+        badgeEl.className =
+            `question-directory-curation-badge ` +
+            `is-${item.curation ?? "pending"}`;
+        badgeEl.textContent = getCurationLabel(item);
+
+        cardHeaderEl.appendChild(cardTitleEl);
+        cardHeaderEl.appendChild(badgeEl);
+
+        const pathEl = viewDocument.createElement("p");
+        pathEl.className = "question-directory-path";
+        pathEl.textContent = [
+            item.directory.book,
+            ...item.directory.directoryParts
+        ].join(" / ");
+
+        const actionEl = viewDocument.createElement("div");
+        actionEl.className = "question-directory-actions";
+
+        for (const action of [
+            ["keep", "1 · 保留", "is-keep"],
+            ["skip", "2 · 跳过", "is-skip"],
+            [null, "0 · 恢复待筛", "is-reset"]
+        ]) {
+            const buttonEl = viewDocument.createElement("button");
+            buttonEl.type = "button";
+            buttonEl.className =
+                `question-directory-action ${action[2]}`;
+            buttonEl.textContent = action[1];
+            buttonEl.disabled = curationWriteInProgress;
+            buttonEl.addEventListener("click", () => {
+                void persistCuration(item, action[0]);
+            });
+            actionEl.appendChild(buttonEl);
+        }
+
+        const levelPanelEl = viewDocument.createElement("div");
+        levelPanelEl.className = "question-directory-level-panel";
+
+        const levelLabelEl = viewDocument.createElement("span");
+        levelLabelEl.textContent = "掌握度";
+        levelPanelEl.appendChild(levelLabelEl);
+        levelPanelEl.appendChild(createLevelControl(item));
+
+        const navigationEl = viewDocument.createElement("div");
+        navigationEl.className = "question-directory-navigation";
+
+        const previousButtonEl = viewDocument.createElement("button");
+        previousButtonEl.type = "button";
+        previousButtonEl.textContent = "← 上一题 K";
+        previousButtonEl.disabled = currentIndex <= 0;
+        previousButtonEl.addEventListener("click", () => {
+            currentIndex = Math.max(0, currentIndex - 1);
+            displayedItems = [queueItems[currentIndex]];
+            renderAll();
+        });
+
+        const positionEl = viewDocument.createElement("span");
+        positionEl.textContent =
+            `第 ${currentIndex + 1} / ${queueItems.length} 题`;
+
+        const nextButtonEl = viewDocument.createElement("button");
+        nextButtonEl.type = "button";
+        nextButtonEl.textContent = "下一题 J →";
+        nextButtonEl.disabled = currentIndex >= queueItems.length - 1;
+        nextButtonEl.addEventListener("click", () => {
+            currentIndex = Math.min(
+                queueItems.length - 1,
+                currentIndex + 1
+            );
+            displayedItems = [queueItems[currentIndex]];
+            renderAll();
+        });
+
+        navigationEl.appendChild(previousButtonEl);
+        navigationEl.appendChild(positionEl);
+        navigationEl.appendChild(nextButtonEl);
+
+        cardEl.appendChild(cardHeaderEl);
+        cardEl.appendChild(pathEl);
+        cardEl.appendChild(actionEl);
+        cardEl.appendChild(levelPanelEl);
+        cardEl.appendChild(navigationEl);
+
+        if (item.images.length > 0) {
+            cardEl.appendChild(
+                createImageGallery(item, item.images, "question")
+            );
+        } else {
+            const noImageEl = viewDocument.createElement("div");
+            noImageEl.className = "question-directory-no-image";
+            noImageEl.textContent =
+                "本题做题本漏印或没有题图；点击题目名称打开 OCR 重建文本。";
+            cardEl.appendChild(noImageEl);
+        }
+
+        if (item.answerImages.length > 0) {
+            const answerDetailsEl = viewDocument.createElement("details");
+            answerDetailsEl.className = "question-directory-answer";
+
+            const answerSummaryEl = viewDocument.createElement("summary");
+            answerSummaryEl.textContent =
+                `展开答案图（${item.answerImages.length}）`;
+            answerDetailsEl.appendChild(answerSummaryEl);
+            answerDetailsEl.appendChild(
+                createImageGallery(item, item.answerImages, "answer")
+            );
+            cardEl.appendChild(answerDetailsEl);
+        }
+    }
+
+    function renderSummary() {
+        const bookCounts = getCurationCounts(bookItems);
+        const directoryCounts = getCurationCounts(
+            selectedDirectoryNode.items
+        );
+        const completed = bookCounts.keep + bookCounts.skip;
+        const percent = bookCounts.total > 0
+            ? Math.round(completed / bookCounts.total * 100)
+            : 0;
+        const directoryLabel = selectedDirectoryPath || "全部目录";
+
+        summaryEl.textContent =
+            `${selectedBook} · ${directoryLabel}：` +
+            `待筛 ${directoryCounts.pending}，保留 ${directoryCounts.keep}，` +
+            `跳过 ${directoryCounts.skip}，共 ${directoryCounts.total}；` +
+            `当前队列 ${queueItems.length} 题。`;
+        progressBarEl.style.width = `${percent}%`;
+        progressBarEl.title =
+            `${selectedBook} 已筛 ${completed}/${bookCounts.total}（${percent}%）`;
+
+        exportButtonEl.disabled =
+            printInProgress || queueItems.length === 0;
+        exportButtonEl.textContent = printInProgress
+            ? "⏳ 正在导出…"
+            : `📑 导出当前队列（${Math.min(
+                queueItems.length,
+                CONFIG.maxResults
+            )}）`;
+    }
+
+    function renderAll() {
+        renderDirectoryList();
+        renderSummary();
+        renderCard();
+        writeState();
+    }
+
+    bookSelectEl.addEventListener("change", () => {
+        selectedBook = bookSelectEl.value;
+        selectedDirectoryPath = "";
+        rebuildBookTree();
+        rebuildQueue();
+        renderAll();
+    });
+
+    filterSelectEl.addEventListener("change", () => {
+        stateFilter = filterSelectEl.value;
+        rebuildQueue();
+        renderAll();
+    });
+
+    searchInputEl.addEventListener("input", () => {
+        searchText = searchInputEl.value.trim();
+        rebuildQueue();
+        renderAll();
+    });
+
+    exportButtonEl.addEventListener("click", async () => {
+        if (printInProgress || queueItems.length === 0) return;
+
+        const originalDisplayedItems = displayedItems;
+        const exportItems = queueItems.slice(0, CONFIG.maxResults);
+
+        for (const item of exportItems) ensureItemImages(item);
+
+        if (queueItems.length > exportItems.length) {
+            new Notice(
+                `ℹ️ 当前队列 ${queueItems.length} 题，` +
+                `本次按上限导出前 ${exportItems.length} 题。`,
+                5000
+            );
+        }
+
+        displayedItems = exportItems;
+        renderSummary();
+
+        try {
+            await printCurrentQuestions();
+        } finally {
+            displayedItems = originalDisplayedItems;
+            renderSummary();
+        }
+    });
+
+    dv.container.addEventListener("keydown", event => {
+        const tagName = String(event.target?.tagName ?? "").toUpperCase();
+
+        if (["INPUT", "SELECT", "TEXTAREA"].includes(tagName)) {
+            return;
+        }
+
+        const item = queueItems[currentIndex];
+        if (!item || curationWriteInProgress) return;
+
+        const key = String(event.key ?? "").toLowerCase();
+
+        if (key === "1") {
+            event.preventDefault();
+            void persistCuration(item, "keep");
+        } else if (key === "2") {
+            event.preventDefault();
+            void persistCuration(item, "skip");
+        } else if (key === "0") {
+            event.preventDefault();
+            void persistCuration(item, null);
+        } else if (key === "j" || key === "arrowright") {
+            event.preventDefault();
+            currentIndex = Math.min(
+                queueItems.length - 1,
+                currentIndex + 1
+            );
+            displayedItems = [queueItems[currentIndex]];
+            renderAll();
+        } else if (key === "k" || key === "arrowleft") {
+            event.preventDefault();
+            currentIndex = Math.max(0, currentIndex - 1);
+            displayedItems = [queueItems[currentIndex]];
+            renderAll();
+        }
+    });
+
+    rebuildBookTree();
+    rebuildQueue({
+        currentItemPath: storedState.currentItemPath ?? null
+    });
+    renderAll();
+    requestAnimationFrame(() => {
+        dv.container.focus?.({ preventScroll: true });
+    });
+}
+
+/* ================================================================
+ * 13. 渲染推荐结果
+ * ================================================================ */
+
+if (DIRECTORY_MODE) {
+    renderDirectoryMode();
+    return;
+}
 
 if (items.length === 0) {
     const currentTagText = currentTags.join("、");
@@ -3406,6 +4253,8 @@ if (items.length > CONFIG.maxResults) {
  * 即时切换表格行，不重新查询仓库，也不修改题目或专题属性。
  */
 function refreshRegressionFilterUI() {
+    if (DIRECTORY_MODE) return;
+
     const regressionScope = RANDOM_REVIEW_MODE
         ? displayedItems
         : items;
