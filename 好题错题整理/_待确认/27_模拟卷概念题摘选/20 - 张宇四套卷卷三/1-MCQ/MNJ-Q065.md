@@ -34,9 +34,9 @@ level:
 ## DeepSeek V4 Flash Max 解析
 
 **答案**：按题面给定选项选 (C)。核心理由：原方程组是相容的非齐次线性方程组，且  
-\[
+$$
 \operatorname{rank}[\alpha_1\ \alpha_2\ \alpha_3]=2,
-\]
+$$
 所以解集是 $1$ 维直线；又 $\alpha_4\ne 0$，原点不在解集中，故直线不过原点。  
 （题面 A、B 文字重复，应为笔误；若原卷中“不过原点的一条直线”在 B，则应选 B。）
 
@@ -49,39 +49,39 @@ level:
 **推演**：
 
 由 $x_1\alpha_1+x_2\alpha_2=\alpha_3$ 有唯一解，知  
-\[
+$$
 \operatorname{rank}[\alpha_1\ \alpha_2\ \alpha_3]=\operatorname{rank}[\alpha_1\ \alpha_2]=2,
-\]
+$$
 所以 $\alpha_1,\alpha_2$ 线性无关，且  
-\[
+$$
 \alpha_3\in \operatorname{span}\{\alpha_1,\alpha_2\}.
-\]
+$$
 
 又 $\alpha_1,\alpha_2,\alpha_4$ 线性相关。若 $\alpha_4$ 不能由 $\alpha_1,\alpha_2$ 表示，则 $\alpha_1,\alpha_2,\alpha_4$ 线性无关，与题设矛盾。故  
-\[
+$$
 \alpha_4\in \operatorname{span}\{\alpha_1,\alpha_2\}.
-\]
+$$
 
 于是可唯一设  
-\[
+$$
 \alpha_3=p\alpha_1+q\alpha_2,\qquad \alpha_4=r\alpha_1+s\alpha_2.
-\]
+$$
 代入 $x\alpha_1+y\alpha_2+z\alpha_3=\alpha_4$，得  
-\[
+$$
 x\alpha_1+y\alpha_2+z(p\alpha_1+q\alpha_2)=r\alpha_1+s\alpha_2,
-\]
+$$
 即  
-\[
+$$
 (x+pz)\alpha_1+(y+qz)\alpha_2=r\alpha_1+s\alpha_2.
-\]
+$$
 因为 $\alpha_1,\alpha_2$ 线性无关，比较系数得  
-\[
+$$
 x+pz=r,\qquad y+qz=s.
-\]
+$$
 这是两个独立的平面方程，故交线为一条直线，参数形式为  
-\[
+$$
 (x,y,z)=(r,s,0)+t(-p,-q,1),\quad t\in\mathbb R.
-\]
+$$
 
 检查是否过原点：直接代入 $x=y=z=0$，左端为 $0$，右端为 $\alpha_4$，而 $\alpha_4\ne 0$，所以原点不在解集中。因此几何图形是“不过原点的一条直线”。
 

@@ -42,90 +42,90 @@ D. $\frac{n(\overline{X}-\mu)^2}{S_X^2}\sim F(1,n).$
 **推演**：  
 先写出正态总体的基本抽样分布结论：
 
-\[
+$$
 \bar X\sim N\left(\mu,\frac{\sigma^2}{n}\right),\qquad
 \frac{(n-1)S_X^2}{\sigma^2}\sim \chi^2(n-1),
-\]
+$$
 
 同理
-\[
+$$
 \bar Y\sim N\left(\mu,\frac{\sigma^2}{n}\right),\qquad
 \frac{(n-1)S_Y^2}{\sigma^2}\sim \chi^2(n-1).
-\]
+$$
 
 逐项分析。
 
 **A 选项错误。**  
 因为 $X,Y$ 独立，所以
 
-\[
+$$
 \bar X-\bar Y\sim N\left(0,\frac{2\sigma^2}{n}\right).
-\]
+$$
 
 于是
 
-\[
+$$
 \sqrt{\frac n2}\frac{\bar X-\bar Y}{\sigma}\sim N(0,1),
-\]
+$$
 
 而不是 $\sqrt n\frac{\bar X-\bar Y}{\sigma}\sim N(0,1)$。A 漏掉了 $\frac1{\sqrt2}$ 的因子。
 
 **B 选项错误。**  
 两个样本方差对应的卡方量相加：
 
-\[
+$$
 \frac{(n-1)S_X^2}{\sigma^2}+\frac{(n-1)S_Y^2}{\sigma^2}
 =
 \frac{(n-1)(S_X^2+S_Y^2)}{\sigma^2}
 \sim \chi^2(2n-2).
-\]
+$$
 
 而 B 写的是
 
-\[
+$$
 2(n-1)\frac{S_X^2+S_Y^2}{\sigma^2},
-\]
+$$
 
 比正确的卡方统计量多乘了一个 $2$，因此不是 $\chi^2(2n-2)$。
 
 **C 选项正确。**  
 令
 
-\[
+$$
 Z=\frac{\bar X-\bar Y}{\sqrt{2\sigma^2/n}}
 \sim N(0,1),
-\]
+$$
 
 再令
 
-\[
+$$
 U=\frac{(n-1)(S_X^2+S_Y^2)}{\sigma^2}
 \sim \chi^2(2n-2).
-\]
+$$
 
 则由 $t$ 分布定义，
 
-\[
+$$
 \frac{Z}{\sqrt{U/(2n-2)}}
 =
 \frac{\sqrt n(\bar X-\bar Y)}{\sqrt{S_X^2+S_Y^2}}
 \sim t(2n-2).
-\]
+$$
 
 这里用到了 $\bar X-\bar Y$ 与 $S_X^2+S_Y^2$ 独立，这是正态总体下样本均值与样本方差独立、且两组样本相互独立保证的。
 
 **D 选项错误。**  
 对单个正态总体，有
 
-\[
+$$
 \frac{\sqrt n(\bar X-\mu)}{S_X}\sim t(n-1).
-\]
+$$
 
 两边平方得
 
-\[
+$$
 \frac{n(\bar X-\mu)^2}{S_X^2}\sim F(1,n-1),
-\]
+$$
 
 而不是 $F(1,n)$。D 把第二自由度写错了。
 
@@ -138,15 +138,15 @@ U=\frac{(n-1)(S_X^2+S_Y^2)}{\sigma^2}
 **命题规律**：  
 本题是典型的“三大抽样分布”概念辨析题。命题人常通过修改系数、自由度来制造干扰项，例如把 $\sqrt{n/2}$ 写成 $\sqrt n$，把 $n-1$ 写成 $2(n-1)$，把 $n-1$ 写成 $n$。常见变式还有：两独立正态总体方差比
 
-\[
+$$
 \frac{S_X^2}{S_Y^2}\sim F(n-1,n-1),
-\]
+$$
 
 以及单样本
 
-\[
+$$
 \frac{\sqrt n(\bar X-\mu)}{S}\sim t(n-1).
-\]
+$$
 
 复习时建议把正态总体下样本均值、样本方差的抽样分布整理成表，重点记忆“已知 $\sigma$ 用正态，未知 $\sigma$ 用 $t$，样本方差用 $\chi^2$，方差比或 $t$ 的平方用 $F$”。
 
