@@ -1,6 +1,6 @@
 (async () => {
 /******************************************************************
- * Obsidian 题目推荐与目录筛选系统 V14.2
+ * Obsidian 题目推荐与目录筛选系统 V15
  * （支持标签推荐、目录筛选、随机二刷、评级排期与 PDF 导出）
  *
  * 1. 在整个仓库中搜索，不限制文件夹
@@ -3489,6 +3489,9 @@ function renderDirectoryMode() {
                     directoryPath: selectedDirectoryPath,
                     stateFilter,
                     searchText,
+                    basketPaths: Array.from(basketPaths),
+                    basketMode,
+                    batchPanelOpen,
                     currentItemPath:
                         queueItems[currentIndex]?.page?.file?.path ?? null
                 })
@@ -3499,6 +3502,10 @@ function renderDirectoryMode() {
     }
 
     const storedState = readState();
+    const itemByPath = new Map(items.map(item => [
+        normalizeVaultPath(item.page.file.path),
+        item
+    ]));
     const configuredBook = String(VIEW_OPTIONS.book ?? "").trim();
     let selectedBook = books.includes(configuredBook)
         ? configuredBook
@@ -3514,6 +3521,17 @@ function renderDirectoryMode() {
         ? storedState.stateFilter
         : "pending";
     let searchText = String(storedState.searchText ?? "").trim();
+    let basketPaths = new Set(
+        (Array.isArray(storedState.basketPaths)
+            ? storedState.basketPaths
+            : [])
+            .map(normalizeVaultPath)
+            .filter(path => itemByPath.has(path))
+    );
+    let basketMode = Boolean(
+        storedState.basketMode && basketPaths.size > 0
+    );
+    let batchPanelOpen = Boolean(storedState.batchPanelOpen);
     let currentIndex = 0;
     let bookItems = [];
     let directoryTree = null;
@@ -3533,7 +3551,7 @@ function renderDirectoryMode() {
     const descriptionEl = viewDocument.createElement("p");
     descriptionEl.className = "question-directory-description";
     descriptionEl.textContent =
-        "选目录，直接跳题；1 保留 · 2 跳过 · 0 恢复待筛。";
+        "按目录批量装入刷题篮，再集中刷题；1 保留 · 2 跳过 · 0 待筛。";
 
     headerEl.appendChild(headingEl);
     headerEl.appendChild(descriptionEl);
@@ -3599,6 +3617,13 @@ function renderDirectoryMode() {
     progressBarEl.className = "question-directory-progress-bar";
     progressTrackEl.appendChild(progressBarEl);
 
+    const basketBarEl = viewDocument.createElement("section");
+    basketBarEl.className = "question-directory-basket-bar";
+    basketBarEl.setAttribute("aria-live", "polite");
+
+    const batchPanelEl = viewDocument.createElement("section");
+    batchPanelEl.className = "question-directory-batch-panel";
+
     const layoutEl = viewDocument.createElement("div");
     layoutEl.className = "question-directory-layout";
 
@@ -3628,6 +3653,8 @@ function renderDirectoryMode() {
     dv.container.appendChild(toolbarEl);
     dv.container.appendChild(summaryEl);
     dv.container.appendChild(progressTrackEl);
+    dv.container.appendChild(basketBarEl);
+    dv.container.appendChild(batchPanelEl);
     dv.container.appendChild(layoutEl);
 
     function itemMatchesState(item) {
@@ -3675,9 +3702,11 @@ function renderDirectoryMode() {
         const previousIndex = currentIndex;
         const wantedPath = options.currentItemPath ?? null;
 
-        queueItems = selectedDirectoryNode.items.filter(item =>
-            itemMatchesState(item) && itemMatchesSearch(item)
-        );
+        queueItems = basketMode
+            ? Array.from(basketPaths)
+                .map(path => itemByPath.get(path))
+                .filter(Boolean)
+            : getDirectoryCandidateItems();
 
         if (wantedPath) {
             const matchedIndex = queueItems.findIndex(
@@ -3697,6 +3726,16 @@ function renderDirectoryMode() {
         displayedItems = queueItems[currentIndex]
             ? [queueItems[currentIndex]]
             : [];
+    }
+
+    function getDirectoryCandidateItems() {
+        return selectedDirectoryNode.items.filter(item =>
+            itemMatchesState(item) && itemMatchesSearch(item)
+        );
+    }
+
+    function getItemPath(item) {
+        return normalizeVaultPath(item?.page?.file?.path);
     }
 
     function goToQueueIndex(nextIndex, options = {}) {
@@ -3791,6 +3830,354 @@ function renderDirectoryMode() {
         ).replace(/\.md$/i, "");
     }
 
+    function parseQuestionIndexExpression(expression, maximum) {
+        const indices = [];
+        const seen = new Set();
+        const invalidTokens = [];
+        const normalized = String(expression ?? "")
+            .replace(/[，、；;]/g, ",")
+            .trim();
+
+        for (const rawToken of normalized.split(/[\s,]+/)) {
+            const token = rawToken.trim();
+            if (!token) continue;
+
+            const singleMatch = token.match(/^(\d+)$/);
+            const rangeMatch = token.match(/^(\d+)\s*[-~～—至]\s*(\d+)$/);
+            let numbers = [];
+
+            if (singleMatch) {
+                numbers = [Number(singleMatch[1])];
+            } else if (rangeMatch) {
+                const start = Number(rangeMatch[1]);
+                const end = Number(rangeMatch[2]);
+                const step = start <= end ? 1 : -1;
+
+                for (let value = start; ; value += step) {
+                    numbers.push(value);
+                    if (value === end) break;
+                }
+            } else {
+                invalidTokens.push(token);
+                continue;
+            }
+
+            for (const number of numbers) {
+                if (number < 1 || number > maximum) {
+                    invalidTokens.push(String(number));
+                    continue;
+                }
+
+                const index = number - 1;
+                if (seen.has(index)) continue;
+                seen.add(index);
+                indices.push(index);
+            }
+        }
+
+        return { indices, invalidTokens };
+    }
+
+    function addItemsToBasket(candidates) {
+        let added = 0;
+
+        for (const candidate of candidates) {
+            const path = getItemPath(candidate);
+            if (!path || basketPaths.has(path)) continue;
+            basketPaths.add(path);
+            added += 1;
+        }
+
+        return added;
+    }
+
+    function removeItemsFromBasket(candidates) {
+        let removed = 0;
+
+        for (const candidate of candidates) {
+            if (basketPaths.delete(getItemPath(candidate))) removed += 1;
+        }
+
+        if (basketPaths.size === 0) basketMode = false;
+        return removed;
+    }
+
+    function normalizeBasketOrder() {
+        basketPaths = new Set(
+            items
+                .map(getItemPath)
+                .filter(path => basketPaths.has(path))
+        );
+    }
+
+    function renderBasketBar() {
+        basketBarEl.replaceChildren();
+        basketBarEl.classList.toggle("is-active", basketMode);
+
+        const copyEl = viewDocument.createElement("div");
+        copyEl.className = "question-directory-basket-copy";
+
+        const titleEl = viewDocument.createElement("strong");
+        titleEl.textContent = basketMode
+            ? `🧺 正在刷题篮 · ${basketPaths.size} 题`
+            : `🧺 刷题篮 · 已选 ${basketPaths.size} 题`;
+
+        const hintEl = viewDocument.createElement("span");
+        hintEl.textContent = basketMode
+            ? "当前只在已选题目之间切换。"
+            : "按真实文件路径保存，可跨目录、跨习题册组合。";
+
+        copyEl.appendChild(titleEl);
+        copyEl.appendChild(hintEl);
+
+        const actionsEl = viewDocument.createElement("div");
+        actionsEl.className = "question-directory-basket-actions";
+
+        const batchButtonEl = viewDocument.createElement("button");
+        batchButtonEl.type = "button";
+        batchButtonEl.setAttribute("aria-label", "打开批量选题");
+        batchButtonEl.textContent = basketMode
+            ? "← 返回目录选题"
+            : batchPanelOpen
+                ? "收起批量选题"
+                : "＋ 批量选题";
+        batchButtonEl.addEventListener("click", () => {
+            if (basketMode) {
+                basketMode = false;
+                batchPanelOpen = true;
+                rebuildQueue();
+            } else {
+                batchPanelOpen = !batchPanelOpen;
+            }
+            renderAll();
+        });
+
+        const startButtonEl = viewDocument.createElement("button");
+        startButtonEl.type = "button";
+        startButtonEl.className = "question-directory-basket-start";
+        startButtonEl.setAttribute("aria-label", "开始刷题篮");
+        startButtonEl.textContent = basketMode
+            ? `刷题篮进行中（${basketPaths.size}）`
+            : `▶ 开始刷这 ${basketPaths.size} 题`;
+        startButtonEl.disabled = basketMode || basketPaths.size === 0;
+        startButtonEl.addEventListener("click", () => {
+            const currentPath = getItemPath(queueItems[currentIndex]);
+            normalizeBasketOrder();
+            basketMode = true;
+            batchPanelOpen = false;
+            rebuildQueue({
+                currentItemPath: basketPaths.has(currentPath)
+                    ? currentPath
+                    : null
+            });
+            renderAll();
+        });
+
+        const clearButtonEl = viewDocument.createElement("button");
+        clearButtonEl.type = "button";
+        clearButtonEl.className = "question-directory-basket-clear";
+        clearButtonEl.setAttribute("aria-label", "清空刷题篮");
+        clearButtonEl.textContent = "清空";
+        clearButtonEl.disabled = basketPaths.size === 0;
+        clearButtonEl.addEventListener("click", () => {
+            basketPaths.clear();
+            basketMode = false;
+            rebuildQueue();
+            renderAll();
+        });
+
+        actionsEl.appendChild(batchButtonEl);
+        actionsEl.appendChild(startButtonEl);
+        actionsEl.appendChild(clearButtonEl);
+        basketBarEl.appendChild(copyEl);
+        basketBarEl.appendChild(actionsEl);
+    }
+
+    function renderBatchPanel() {
+        batchPanelEl.replaceChildren();
+        batchPanelEl.hidden = !batchPanelOpen || basketMode;
+        if (batchPanelEl.hidden) return;
+
+        const candidates = getDirectoryCandidateItems();
+        const getSelectedHere = () => candidates.filter(item =>
+            basketPaths.has(getItemPath(item))
+        ).length;
+
+        const headerEl = viewDocument.createElement("div");
+        headerEl.className = "question-directory-batch-header";
+
+        const headerCopyEl = viewDocument.createElement("div");
+        const titleEl = viewDocument.createElement("strong");
+        titleEl.textContent = "批量选择当前目录";
+        const subtitleEl = viewDocument.createElement("span");
+        subtitleEl.textContent =
+            `${selectedBook} / ${selectedDirectoryPath || "全部目录"} · ` +
+            `已选 ${getSelectedHere()}/${candidates.length}`;
+        headerCopyEl.appendChild(titleEl);
+        headerCopyEl.appendChild(subtitleEl);
+
+        const closeButtonEl = viewDocument.createElement("button");
+        closeButtonEl.type = "button";
+        closeButtonEl.textContent = "关闭";
+        closeButtonEl.addEventListener("click", () => {
+            batchPanelOpen = false;
+            renderAll();
+        });
+
+        headerEl.appendChild(headerCopyEl);
+        headerEl.appendChild(closeButtonEl);
+
+        const rangeEl = viewDocument.createElement("div");
+        rangeEl.className = "question-directory-batch-range";
+
+        const rangeInputEl = viewDocument.createElement("input");
+        rangeInputEl.type = "text";
+        rangeInputEl.placeholder = "按当前目录序号，如 1,3-5,8";
+        rangeInputEl.setAttribute("aria-label", "输入批量题号或区间");
+
+        const rangeButtonEl = viewDocument.createElement("button");
+        rangeButtonEl.type = "button";
+        rangeButtonEl.textContent = "加入刷题篮";
+        rangeButtonEl.setAttribute("aria-label", "按题号加入刷题篮");
+
+        const addByExpression = () => {
+            const result = parseQuestionIndexExpression(
+                rangeInputEl.value,
+                candidates.length
+            );
+            const added = addItemsToBasket(
+                result.indices.map(index => candidates[index])
+            );
+
+            if (result.indices.length === 0) {
+                new Notice("请输入有效序号，例如 1,3-5,8。", 4000);
+                return;
+            }
+
+            if (result.invalidTokens.length > 0) {
+                new Notice(
+                    `已加入 ${added} 题；忽略无效项：` +
+                    result.invalidTokens.slice(0, 6).join("、"),
+                    5000
+                );
+            } else {
+                new Notice(`已向刷题篮加入 ${added} 题。`, 2600);
+            }
+
+            rangeInputEl.value = "";
+            renderAll();
+        };
+
+        rangeButtonEl.addEventListener("click", addByExpression);
+        rangeInputEl.addEventListener("keydown", event => {
+            if (event.key !== "Enter") return;
+            event.preventDefault();
+            addByExpression();
+        });
+
+        rangeEl.appendChild(rangeInputEl);
+        rangeEl.appendChild(rangeButtonEl);
+
+        const bulkActionsEl = viewDocument.createElement("div");
+        bulkActionsEl.className = "question-directory-batch-actions";
+
+        for (const [label, ariaLabel, handler] of [
+            ["全选当前目录", "全选当前目录题目", () => {
+                addItemsToBasket(candidates);
+            }],
+            ["反选当前目录", "反选当前目录题目", () => {
+                for (const candidate of candidates) {
+                    const path = getItemPath(candidate);
+                    if (basketPaths.has(path)) basketPaths.delete(path);
+                    else basketPaths.add(path);
+                }
+            }],
+            ["移除当前目录", "移除当前目录题目", () => {
+                removeItemsFromBasket(candidates);
+            }]
+        ]) {
+            const buttonEl = viewDocument.createElement("button");
+            buttonEl.type = "button";
+            buttonEl.textContent = label;
+            buttonEl.setAttribute("aria-label", ariaLabel);
+            buttonEl.disabled = candidates.length === 0;
+            buttonEl.addEventListener("click", () => {
+                handler();
+                renderAll();
+            });
+            bulkActionsEl.appendChild(buttonEl);
+        }
+
+        const coordinateHintEl = viewDocument.createElement("p");
+        coordinateHintEl.className = "question-directory-coordinate-hint";
+        coordinateHintEl.textContent =
+            "刷题篮保存真实路径；后续可直接接入 1.1.1 目录坐标清单。";
+
+        const listEl = viewDocument.createElement("div");
+        listEl.className = "question-directory-batch-list";
+
+        if (candidates.length === 0) {
+            const emptyEl = viewDocument.createElement("div");
+            emptyEl.className = "question-directory-batch-empty";
+            emptyEl.textContent = "当前目录与筛选条件下没有可选题目。";
+            listEl.appendChild(emptyEl);
+        } else {
+            const numberWidth = Math.max(2, String(candidates.length).length);
+
+            candidates.forEach((candidate, index) => {
+                const rowEl = viewDocument.createElement("label");
+                rowEl.className = "question-directory-batch-row";
+
+                const checkboxEl = viewDocument.createElement("input");
+                checkboxEl.type = "checkbox";
+                checkboxEl.checked = basketPaths.has(getItemPath(candidate));
+                checkboxEl.setAttribute(
+                    "aria-label",
+                    `选择第 ${index + 1} 题`
+                );
+                checkboxEl.addEventListener("change", () => {
+                    if (checkboxEl.checked) addItemsToBasket([candidate]);
+                    else removeItemsFromBasket([candidate]);
+                    renderBasketBar();
+                    subtitleEl.textContent =
+                        `${selectedBook} / ` +
+                        `${selectedDirectoryPath || "全部目录"} · ` +
+                        `已选 ${getSelectedHere()}/${candidates.length}`;
+                    writeState();
+                });
+
+                const indexEl = viewDocument.createElement("span");
+                indexEl.className = "question-directory-batch-index";
+                indexEl.textContent = String(index + 1)
+                    .padStart(numberWidth, "0");
+
+                const nameEl = viewDocument.createElement("span");
+                nameEl.className = "question-directory-batch-name";
+                nameEl.textContent = getDirectoryQuestionName(candidate);
+
+                const stateEl = viewDocument.createElement("span");
+                stateEl.className = "question-directory-batch-state";
+                stateEl.textContent = candidate.curation === "keep"
+                    ? "保留"
+                    : candidate.curation === "skip"
+                        ? "跳过"
+                        : "待筛";
+
+                rowEl.appendChild(checkboxEl);
+                rowEl.appendChild(indexEl);
+                rowEl.appendChild(nameEl);
+                rowEl.appendChild(stateEl);
+                listEl.appendChild(rowEl);
+            });
+        }
+
+        batchPanelEl.appendChild(headerEl);
+        batchPanelEl.appendChild(rangeEl);
+        batchPanelEl.appendChild(bulkActionsEl);
+        batchPanelEl.appendChild(coordinateHintEl);
+        batchPanelEl.appendChild(listEl);
+    }
+
     async function persistCuration(item, nextCuration) {
         if (curationWriteInProgress) return;
 
@@ -3882,6 +4269,7 @@ function renderDirectoryMode() {
                 `待筛 ${counts.pending} · 保留 ${counts.keep} · ` +
                 `跳过 ${counts.skip} · 共 ${counts.total}`;
             buttonEl.addEventListener("click", () => {
+                basketMode = false;
                 selectedDirectoryPath = node.pathKey;
                 selectedDirectoryNode = node;
                 rebuildQueue();
@@ -3959,6 +4347,35 @@ function renderDirectoryMode() {
             actionEl.appendChild(buttonEl);
         }
 
+        const basketToggleButtonEl = viewDocument.createElement("button");
+        basketToggleButtonEl.type = "button";
+        basketToggleButtonEl.className =
+            "question-directory-action is-basket";
+        basketToggleButtonEl.setAttribute(
+            "aria-label",
+            "切换当前题目的刷题篮状态"
+        );
+        basketToggleButtonEl.textContent = basketPaths.has(getItemPath(item))
+            ? "✓ 已在刷题篮"
+            : "＋ 加入刷题篮";
+        basketToggleButtonEl.addEventListener("click", () => {
+            const path = getItemPath(item);
+
+            if (basketPaths.has(path)) {
+                basketPaths.delete(path);
+
+                if (basketMode) {
+                    if (basketPaths.size === 0) basketMode = false;
+                    rebuildQueue({ keepIndex: true });
+                }
+            } else {
+                basketPaths.add(path);
+            }
+
+            renderAll();
+        });
+        actionEl.appendChild(basketToggleButtonEl);
+
         const levelPanelEl = viewDocument.createElement("div");
         levelPanelEl.className = "question-directory-level-panel";
 
@@ -3972,8 +4389,9 @@ function renderDirectoryMode() {
 
         const locatorTitleEl = viewDocument.createElement("div");
         locatorTitleEl.className = "question-directory-locator-title";
-        locatorTitleEl.textContent =
-            `当前目录题目 · ${currentIndex + 1}/${queueItems.length}`;
+        locatorTitleEl.textContent = basketMode
+            ? `刷题篮 · ${currentIndex + 1}/${queueItems.length}`
+            : `当前目录题目 · ${currentIndex + 1}/${queueItems.length}`;
 
         const locatorControlsEl = viewDocument.createElement("div");
         locatorControlsEl.className = "question-directory-locator-controls";
@@ -4116,11 +4534,13 @@ function renderDirectoryMode() {
             : 0;
         const directoryLabel = selectedDirectoryPath || "全部目录";
 
-        summaryEl.textContent =
-            `${selectedBook} · ${directoryLabel}：` +
-            `待筛 ${directoryCounts.pending}，保留 ${directoryCounts.keep}，` +
-            `跳过 ${directoryCounts.skip}，共 ${directoryCounts.total}；` +
-            `当前队列 ${queueItems.length} 题。`;
+        summaryEl.textContent = basketMode
+            ? `刷题篮模式：共 ${queueItems.length} 题，` +
+                `可跨习题册连续切题；目录筛选暂不影响当前队列。`
+            : `${selectedBook} · ${directoryLabel}：` +
+                `待筛 ${directoryCounts.pending}，保留 ${directoryCounts.keep}，` +
+                `跳过 ${directoryCounts.skip}，共 ${directoryCounts.total}；` +
+                `当前队列 ${queueItems.length} 题。`;
         progressBarEl.style.width = `${percent}%`;
         progressBarEl.title =
             `${selectedBook} 已筛 ${completed}/${bookCounts.total}（${percent}%）`;
@@ -4138,11 +4558,14 @@ function renderDirectoryMode() {
     function renderAll() {
         renderDirectoryList();
         renderSummary();
+        renderBasketBar();
+        renderBatchPanel();
         renderCard();
         writeState();
     }
 
     bookSelectEl.addEventListener("change", () => {
+        basketMode = false;
         selectedBook = bookSelectEl.value;
         selectedDirectoryPath = "";
         rebuildBookTree();
@@ -4151,12 +4574,14 @@ function renderDirectoryMode() {
     });
 
     filterSelectEl.addEventListener("change", () => {
+        basketMode = false;
         stateFilter = filterSelectEl.value;
         rebuildQueue();
         renderAll();
     });
 
     searchInputEl.addEventListener("input", () => {
+        basketMode = false;
         searchText = searchInputEl.value.trim();
         rebuildQueue();
         renderAll();
