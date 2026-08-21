@@ -508,7 +508,7 @@
 }
 
 /* ================================================================
- * V14.1：习题册目录快速筛选模式
+ * V14.2：习题册目录快速筛选模式
  * ================================================================ */
 
 .question-directory-view {
@@ -628,17 +628,19 @@
     gap: 1px;
 }
 
-.question-directory-node {
+.question-directory-list > button.question-directory-node {
     appearance: none;
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 8px;
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) max-content;
+    align-items: start !important;
+    gap: 5px;
     width: 100%;
-    min-height: 28px;
+    height: auto !important;
+    min-height: 28px !important;
+    max-height: none !important;
     padding: 4px 6px 4px
         calc(6px + var(--question-directory-depth, 0) * 12px);
-    overflow: hidden;
+    overflow: visible;
     border: 1px solid transparent;
     border-radius: 6px;
     box-shadow: none;
@@ -646,13 +648,15 @@
     color: var(--text-normal);
     text-align: left;
     font-size: 0.88em;
+    line-height: 1.35 !important;
+    white-space: normal !important;
 }
 
-.question-directory-node:hover {
+.question-directory-list > button.question-directory-node:hover {
     background: var(--background-modifier-hover);
 }
 
-.question-directory-node.is-active {
+.question-directory-list > button.question-directory-node.is-active {
     border-color: var(--interactive-accent);
     background: color-mix(
         in srgb,
@@ -664,12 +668,15 @@
 }
 
 .question-directory-node-label {
+    display: block !important;
     min-width: 0;
+    max-width: none !important;
     overflow: visible;
     line-height: 1.35;
     overflow-wrap: anywhere;
     text-overflow: clip;
-    white-space: normal;
+    white-space: normal !important;
+    word-break: break-word;
 }
 
 .question-directory-node-count {

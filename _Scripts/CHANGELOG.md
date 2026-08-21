@@ -2,6 +2,12 @@
 
 > 由 AI 助手在本会话中对 `D:\Desktop\Obsidian_Notes\_Scripts` 目录的修改记录。
 
+## question-recommender V14.2：覆盖主题固定按钮高度
+
+- **真实根因**：Obsidian 当前主题对按钮施加固定高度，V14.1 虽允许文字换行，但第二行仍被按钮盒裁切，因此长目录名依旧显示不全。
+- **修复**：目录按钮改用高优先级 CSS Grid；显式设置 `height: auto !important`、`max-height: none !important` 和 `white-space: normal !important`，名称占弹性列，题量占右侧独立列。
+- **验证**：确认主题覆盖规则存在，JavaScript 全量目录模拟通过，CSS 花括号 142/142 配对。
+
 ## question-recommender V14.1：目录标签截断与选题名称修复
 
 - **目录标签**：移除目录节点的强制单行省略号，长章节名现在会在计数胶囊左侧自然换行并完整显示，不再出现“1_行列式与…”这类截断。
