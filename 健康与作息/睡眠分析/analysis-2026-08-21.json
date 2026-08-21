@@ -1,94 +1,94 @@
 {
   "sleep": {
-    "nights": 13,
-    "range": "2026-08-10 ~ 2026-08-20",
+    "nights": 14,
+    "range": "2026-08-10 ~ 2026-08-21",
     "duration_min": {
-      "n": 13,
-      "mean": 360.08,
-      "median": 368,
-      "stdev": 183.48,
+      "n": 14,
+      "mean": 365.14,
+      "median": 373.0,
+      "stdev": 177.75,
       "min": 86,
       "max": 811,
-      "p10": 126.4,
-      "p25": 257.0,
-      "p75": 452.0,
-      "p90": 482.6
+      "p10": 129.1,
+      "p25": 273.5,
+      "p75": 448.25,
+      "p90": 482.4
     },
     "time_asleep_min": {
-      "n": 13,
-      "mean": 346.62,
-      "median": 343,
-      "stdev": 174.41,
+      "n": 14,
+      "mean": 351.21,
+      "median": 352.0,
+      "stdev": 168.88,
       "min": 86,
       "max": 785,
-      "p10": 126.4,
-      "p25": 257.0,
-      "p75": 439.0,
-      "p90": 452.2
+      "p10": 129.1,
+      "p25": 270.25,
+      "p75": 434.5,
+      "p90": 451.3
     },
     "sleep_score": {},
     "bedtime_hour": {
-      "n": 13,
-      "mean": 6.01,
-      "median": 6.01,
-      "stdev": 4.41,
+      "n": 14,
+      "mean": 5.64,
+      "median": 5.64,
+      "stdev": 4.31,
       "min": 2.75,
       "max": 23.85,
       "p10": null,
       "p90": null
     },
     "waketime_hour": {
-      "n": 13,
-      "mean": 13.21,
-      "median": 13.21,
-      "stdev": 2.23,
+      "n": 14,
+      "mean": 13.0,
+      "median": 13.0,
+      "stdev": 2.27,
       "min": 10.3,
       "max": 17.98,
       "p10": null,
       "p90": null
     },
     "efficiency": {
-      "n": 13,
-      "mean": 97.05,
-      "median": 98.1,
-      "stdev": 3.2,
+      "n": 14,
+      "mean": 96.93,
+      "median": 97.45,
+      "stdev": 3.11,
       "min": 90.74,
       "max": 100.0,
-      "p10": 91.59,
-      "p25": 95.98,
+      "p10": 91.94,
+      "p25": 95.51,
       "p75": 100.0,
       "p90": 100.0
     },
     "stage_ratio_mean": {
-      "deep": 0.1068,
-      "light": 0.4668,
-      "rem": 0.1956,
+      "deep": 0.1073,
+      "light": 0.4771,
+      "rem": 0.2013,
       "awake": 0.0
     },
     "stage_ratio_stdev": {
-      "deep": 0.0728,
-      "light": 0.2639,
-      "rem": 0.1115,
+      "deep": 0.0702,
+      "light": 0.257,
+      "rem": 0.1095,
       "awake": 0.0
     },
     "nights_short_lt6h": 6,
     "nights_score_lt60": 0,
     "naps": 0,
-    "night_hr_mean": 57.2
+    "night_hr_mean": 57.1
   },
   "regularity": {
-    "bedtime_stdev_h": 4.41,
-    "waketime_stdev_h": 2.23,
-    "social_jetlag_h": 0.31,
-    "weekday_bedtime_h": 5.92,
+    "bedtime_stdev_h": 4.31,
+    "waketime_stdev_h": 2.27,
+    "social_jetlag_h": 0.79,
+    "weekday_bedtime_h": 5.45,
     "weekend_bedtime_h": 6.23,
-    "weekday_duration_min": 360.6,
+    "weekday_duration_min": 366.5,
     "weekend_duration_min": 357,
-    "first_half_duration_min": 444.5,
-    "last_half_duration_min": 287.7,
-    "last7_duration_min": 287.7,
+    "first_half_duration_min": 435,
+    "last_half_duration_min": 295.3,
+    "last7_duration_min": 295.3,
     "last7_score": null,
-    "last7_bedtime_h": 7.84,
+    "last7_bedtime_h": 6.86,
     "weekday_avg": {
       "0": {
         "duration_min": 442.3,
@@ -111,8 +111,8 @@
         "score": null
       },
       "4": {
-        "duration_min": 452,
-        "bedtime_h": 4.78,
+        "duration_min": 441.5,
+        "bedtime_h": 3.89,
         "score": null
       },
       "5": {
@@ -141,8 +141,8 @@
     {
       "类型": "每日活动",
       "起始": "2026-08-10",
-      "截止": "2026-08-20",
-      "有数据天数": 11
+      "截止": "2026-08-21",
+      "有数据天数": 12
     },
     {
       "类型": "运动",
@@ -153,8 +153,8 @@
     {
       "类型": "心率",
       "起始": "2026-08-10",
-      "截止": "2026-08-20",
-      "有数据天数": 11
+      "截止": "2026-08-21",
+      "有数据天数": 12
     },
     {
       "类型": "血氧",

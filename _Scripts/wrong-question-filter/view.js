@@ -543,11 +543,12 @@ const VIEW_OPTIONS = (
 
 const hasAnyStatusMark = items.some(item => item.status !== null);
 
-/* 范围：wrong = 只看错题集合；all = 全部题目（打卡模式） */
+/* 范围：wrong = 只看错题集合；all = 全部题目（打卡模式）
+ * 默认始终进入 wrong 模式：未打卡时为空列表而非全库 6000+ 题，
+ * 避免页面一次性渲染过多题目；明确切换"全部题目"才展示全部。 */
 let viewMode = String(VIEW_OPTIONS.mode ?? "").toLowerCase() === "all"
     ? "all"
-    : (hasAnyStatusMark ? "wrong" : "all");
-
+    : "wrong";
 let subjectFilter = String(VIEW_OPTIONS.subject ?? "").trim().toUpperCase();
 let bookFilter = String(VIEW_OPTIONS.book ?? "").trim();
 let knowledgeFilter = String(VIEW_OPTIONS.knowledge ?? "").trim().toLocaleLowerCase("zh-CN");
@@ -556,6 +557,8 @@ let knowledgeFilter = String(VIEW_OPTIONS.knowledge ?? "").trim().toLocaleLowerC
 let includeWeakCandidates = true;
 
 let displayedItems = [];
+let displayCapped = false;
+let displayTotalCount = 0;
 let printInProgress = false;
 
 const viewDocument = dv.container.ownerDocument ?? document;
@@ -619,10 +622,23 @@ function matchesDimensionFilters(item) {
 }
 
 function recomputeDisplayedItems() {
-    displayedItems = items.filter(item => {
+    const filtered = items.filter(item => {
         if (!matchesDimensionFilters(item)) return false;
         return viewMode === "all" || isCandidateWrongItem(item);
     });
+
+    /* 全部题目模式限制显示上限，避免一次性渲染数千行 */
+    const maxAll = CONFIG.maxResults;
+
+    if (viewMode === "all" && filtered.length > maxAll) {
+        displayedItems = filtered.slice(0, maxAll);
+        displayCapped = true;
+        displayTotalCount = filtered.length;
+    } else {
+        displayedItems = filtered;
+        displayCapped = false;
+        displayTotalCount = filtered.length;
+    }
 }
 
 /* ================================================================
@@ -1262,7 +1278,9 @@ function refreshFilterUI() {
     if (titleEl) {
         titleEl.textContent = isWrongMode
             ? `🚨 错题筛选 · ${visibleNumber} 道`
-            : `📚 全部题目 · ${visibleNumber} 道（打卡模式）`;
+            : displayCapped
+                ? `📚 全部题目 · 显示前 ${visibleNumber} / ${displayTotalCount} 道（打卡模式）`
+                : `📚 全部题目 · ${visibleNumber} 道（打卡模式）`;
     }
 
     if (modeAllButtonEl) {
@@ -1294,10 +1312,11 @@ function refreshFilterUI() {
             ? `范围内错题/候选 ${totalWrongCount} 道`
             : `范围内共 ${totalAllCount} 道`);
 
-        summaryParts.push(`当前显示 ${visibleNumber} 道`);
+        summaryParts.push(displayCapped
+            ? `当前显示前 ${visibleNumber} 道（请用学科/书/知识点缩小范围）`
+            : `当前显示 ${visibleNumber} 道`);
 
         filterSummaryEl.textContent = summaryParts.join(" · ");
-    }
 
     if (filterEmptyEl) {
         filterEmptyEl.hidden = !(

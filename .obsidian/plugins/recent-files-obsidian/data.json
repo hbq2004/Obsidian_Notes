@@ -9,12 +9,16 @@
       "path": "健康与作息/睡眠分析/睡眠运动分析报告-2026-08-21.md"
     },
     {
+      "basename": "周分析-2026-W34",
+      "path": "健康与作息/睡眠分析/周分析-2026-W34.md"
+    },
+    {
       "basename": "月度健康复盘-2026-08",
       "path": "健康与作息/睡眠分析/月度健康复盘-2026-08.md"
     },
     {
-      "basename": "周分析-2026-W34",
-      "path": "健康与作息/睡眠分析/周分析-2026-W34.md"
+      "basename": "好题错题筛选页",
+      "path": "好题错题整理/好题错题筛选页.md"
     },
     {
       "basename": "L22-Q08",
@@ -121,14 +125,6 @@
       "path": "_Daily_Tasks/2026-08-20.md"
     },
     {
-      "basename": "sleep_overview",
-      "path": "健康与作息/睡眠分析/charts/sleep_overview.png"
-    },
-    {
-      "basename": "sleep_by_weekday",
-      "path": "健康与作息/睡眠分析/charts/sleep_by_weekday.png"
-    },
-    {
       "basename": "z_大雪深埋模考规划",
       "path": "z_大雪深埋模考规划.md"
     },
@@ -191,14 +187,6 @@
     {
       "basename": "FH-CG-Q495",
       "path": "好题错题整理/_待确认/27_方浩概统500题/C组/2-FIB/FH-CG-Q495.md"
-    },
-    {
-      "basename": "FH-CG-Q483",
-      "path": "好题错题整理/_待确认/27_方浩概统500题/C组/2-FIB/FH-CG-Q483.md"
-    },
-    {
-      "basename": "FH-A组6-Q185",
-      "path": "好题错题整理/_待确认/27_方浩概统500题/A组/第六章 数理统计的基本概念/1-MCQ/FH-A组6-Q185.md"
     }
   ],
   "omittedPaths": [],
