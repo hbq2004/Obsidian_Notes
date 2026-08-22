@@ -2,9 +2,9 @@
 	"nodes":[
 		{"id":"639a4c57b6875175","type":"group","x":-2320,"y":1500,"width":3280,"height":2360,"label":"古典概型和几何概型"},
 		{"id":"8a97dcb4e8d49d47","type":"group","x":-4800,"y":1360,"width":1440,"height":1980,"label":"基本概念"},
+		{"id":"ed804dad514d1646","type":"group","x":-2140,"y":1700,"width":1040,"height":2010,"label":"古典概型"},
 		{"id":"66ac04fc111baa4b","type":"group","x":1440,"y":1894,"width":2280,"height":1571,"label":"概率的性质与公式"},
 		{"id":"ecb47f89a73768c3","type":"group","x":4080,"y":1960,"width":2120,"height":1139,"label":"事件的独立性和独立重复试验"},
-		{"id":"ed804dad514d1646","type":"group","x":-2140,"y":1700,"width":1040,"height":2010,"label":"古典概型"},
 		{"id":"a305d8e548351074","type":"group","x":-720,"y":2050,"width":1500,"height":1056,"label":"几何概型"},
 		{"id":"2b1a10c38b12f4e2","type":"group","x":2580,"y":2188,"width":940,"height":1088,"label":"公式"},
 		{"id":"cc25a1595e1b37f4","type":"group","x":1560,"y":2452,"width":840,"height":280,"label":"性质"},
@@ -19,9 +19,6 @@
 			"width":435,
 			"height":102
 		},
-		{"id":"61ffdb1d4d022374","type":"file","file":"_Attachments/Images/Pasted image 20260822172806.png","x":-2120,"y":1720,"width":1000,"height":484},
-		{"id":"39ef4a969988197f","type":"file","file":"_Attachments/Images/Pasted image 20260822172850.png","x":-1957,"y":2420,"width":675,"height":436},
-		{"id":"1164b265dfa5bd7a","type":"file","file":"_Attachments/Images/Pasted image 20260822172911.png","x":-1957,"y":2856,"width":673,"height":834},
 		{"id":"92799d45f927f7a7","type":"file","file":"_Attachments/Images/Pasted image 20260822173020.png","x":-340,"y":2186,"width":750,"height":268},
 		{"id":"3f8a1f414fa50b50","type":"file","file":"_Attachments/Images/Pasted image 20260822173039.png","x":-277,"y":2754,"width":625,"height":205},
 		{"id":"3a1d4d9bf5f62af7","type":"file","file":"_Attachments/Images/Pasted image 20260822173416.png","x":2700,"y":2269,"width":650,"height":203},
@@ -41,7 +38,10 @@
 		{"id":"0736305ba91ad5fc","type":"file","file":"_Attachments/Images/Pasted image 20260822174620.png","x":-4720,"y":2202,"width":619,"height":254},
 		{"id":"061233ab50da021b","type":"file","file":"_Attachments/Images/Pasted image 20260822174704.png","x":-4695,"y":2520,"width":600,"height":284},
 		{"id":"6044458bda3f135e","type":"file","file":"_Attachments/Images/Pasted image 20260822174717.png","x":-4695,"y":2806,"width":600,"height":260},
-		{"id":"cc21e9008c086d96","type":"file","file":"_Attachments/Images/Pasted image 20260822174542.png","x":-4720,"y":1600,"width":650,"height":232}
+		{"id":"cc21e9008c086d96","type":"file","file":"_Attachments/Images/Pasted image 20260822174542.png","x":-4720,"y":1600,"width":650,"height":232},
+		{"id":"61ffdb1d4d022374","type":"file","file":"_Attachments/Images/Pasted image 20260822172806.png","x":-2120,"y":1720,"width":989,"height":484},
+		{"id":"39ef4a969988197f","type":"file","file":"_Attachments/Images/Pasted image 20260822172850.png","x":-1957,"y":2420,"width":672,"height":436},
+		{"id":"1164b265dfa5bd7a","type":"file","file":"_Attachments/Images/Pasted image 20260822172911.png","x":-1957,"y":2856,"width":673,"height":833}
 	],
 	"edges":[
 		{
