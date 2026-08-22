@@ -1,0 +1,32 @@
+{
+	"nodes":[
+		{"id":"f702bc7fbd1f108f","type":"file","file":"_Attachments/Images/result_REym7z 1.png","x":-280,"y":-580,"width":468,"height":696},
+		{
+			"id":"c31ca6b7d4aeba2e",
+			"type":"text",
+			"text":"数理统计",
+			"styleAttributes":{"textAlign":"center"},
+			"x":-225,
+			"y":360,
+			"width":360,
+			"height":84
+		}
+	],
+	"edges":[
+		{
+			"id":"235cdb88b413218b",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromFloating":false,
+			"fromNode":"c31ca6b7d4aeba2e",
+			"fromSide":"top",
+			"toNode":"f702bc7fbd1f108f",
+			"toSide":"bottom",
+			"label":"知识结构"
+		}
+	],
+	"metadata":{
+		"version":"1.0-1.0",
+		"frontmatter":{}
+	}
+}

@@ -1,0 +1,31 @@
+{
+	"nodes":[
+		{
+			"id":"fa6b388b29fceb29",
+			"type":"text",
+			"text":"多维随机变量及其分布",
+			"styleAttributes":{"textAlign":"center"},
+			"x":-240,
+			"y":-40,
+			"width":400,
+			"height":140
+		},
+		{"id":"ff2866f581b0fbab","type":"file","file":"_Attachments/Images/Pasted image 20260822171516.png","x":-234,"y":-720,"width":388,"height":400}
+	],
+	"edges":[
+		{
+			"id":"b5139eb773b81f12",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"fa6b388b29fceb29",
+			"fromSide":"top",
+			"toNode":"ff2866f581b0fbab",
+			"toSide":"bottom",
+			"label":"知识结构"
+		}
+	],
+	"metadata":{
+		"version":"1.0-1.0",
+		"frontmatter":{}
+	}
+}

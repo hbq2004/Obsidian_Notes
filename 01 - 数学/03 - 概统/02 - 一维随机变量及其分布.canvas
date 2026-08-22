@@ -1,0 +1,32 @@
+{
+	"nodes":[
+		{
+			"id":"6a4bdfe0b6593713",
+			"type":"text",
+			"text":"一维随机变量及其分布",
+			"styleAttributes":{"textAlign":"center"},
+			"x":-220,
+			"y":-60,
+			"width":500,
+			"height":120
+		},
+		{"id":"af6f53d53943d598","type":"file","file":"_Attachments/Images/Pasted image 20260822170748.png","x":-244,"y":-980,"width":548,"height":679}
+	],
+	"edges":[
+		{
+			"id":"7b04e86738fa3a2f",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromFloating":false,
+			"fromNode":"6a4bdfe0b6593713",
+			"fromSide":"top",
+			"toNode":"af6f53d53943d598",
+			"toSide":"bottom",
+			"label":"知识结构"
+		}
+	],
+	"metadata":{
+		"version":"1.0-1.0",
+		"frontmatter":{}
+	}
+}

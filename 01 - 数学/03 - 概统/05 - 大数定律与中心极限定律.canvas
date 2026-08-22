@@ -1,0 +1,32 @@
+{
+	"nodes":[
+		{
+			"id":"42ea896b86f66694",
+			"type":"text",
+			"text":"大数定律与中心极限定律",
+			"styleAttributes":{"textAlign":"center"},
+			"x":-360,
+			"y":-60,
+			"width":440,
+			"height":140
+		},
+		{"id":"3408db9ae6b4c54c","type":"file","file":"_Attachments/Images/Pasted image 20260822171757.png","x":-340,"y":-540,"width":400,"height":258}
+	],
+	"edges":[
+		{
+			"id":"4042b9dba73c2266",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromFloating":false,
+			"fromNode":"42ea896b86f66694",
+			"fromSide":"top",
+			"toNode":"3408db9ae6b4c54c",
+			"toSide":"bottom",
+			"label":"知识结构"
+		}
+	],
+	"metadata":{
+		"version":"1.0-1.0",
+		"frontmatter":{}
+	}
+}

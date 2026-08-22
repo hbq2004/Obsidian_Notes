@@ -1,0 +1,32 @@
+{
+	"nodes":[
+		{
+			"id":"f1f7d1ac5a6617af",
+			"type":"text",
+			"text":"随机变量的数字特征",
+			"styleAttributes":{"textAlign":"center"},
+			"x":-200,
+			"y":20,
+			"width":400,
+			"height":120
+		},
+		{"id":"3932d5f24c5a7d20","type":"file","file":"_Attachments/Images/Pasted image 20260822171716.png","x":-200,"y":-520,"width":399,"height":271}
+	],
+	"edges":[
+		{
+			"id":"e1e5891ecea7baec",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromFloating":false,
+			"fromNode":"f1f7d1ac5a6617af",
+			"fromSide":"top",
+			"toNode":"3932d5f24c5a7d20",
+			"toSide":"bottom",
+			"label":"知识结构"
+		}
+	],
+	"metadata":{
+		"version":"1.0-1.0",
+		"frontmatter":{}
+	}
+}
