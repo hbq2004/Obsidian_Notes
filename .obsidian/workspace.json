@@ -11,10 +11,17 @@
             "id": "e58e85e74d87b6f7",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "新标签页"
+              "type": "canvas",
+              "state": {
+                "file": "01 - 数学/03 - 概统/01 - 随机事件与概率.canvas",
+                "viewState": {
+                  "x": -3801.2814632974505,
+                  "y": 2113.8251335793575,
+                  "zoom": -1.8091098044697782
+                }
+              },
+              "icon": "lucide-layout-dashboard",
+              "title": "01 - 随机事件与概率"
             }
           }
         ]
@@ -104,7 +111,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 388.0124206542969
+    "width": 388.0124206542969,
+    "collapsed": true
   },
   "right": {
     "id": "788c2b70f5d82052",
@@ -249,8 +257,9 @@
       "hidden-folder-obsidian:隐藏文件夹": false
     }
   },
-  "active": "12ec190f678aca36",
+  "active": "e58e85e74d87b6f7",
   "lastOpenFiles": [
+    "好题错题整理/_待确认/李艳芳900-矩阵乘法-概念题例1.md",
     "_Attachments/题目识别/WDOS-2027-答案/WDOS-2027-FRQ-C01-S02-Q002.png",
     "_Attachments/题目识别/WDOS-2027-答案/WDOS-2027-FRQ-C01-S02-Q001.png",
     "_Attachments/题目识别/WDOS-2027-答案/WDOS-2027-MCQ-C01-S02-Q009.png",
@@ -261,7 +270,6 @@
     "_Attachments/题目识别/WDOS-2027-答案/WDOS-2027-MCQ-C01-S02-Q004.png",
     "_Attachments/题目识别/WDOS-2027-答案/WDOS-2027-MCQ-C01-S02-Q003.png",
     "_Attachments/题目识别/WDOS-2027-答案/WDOS-2027-MCQ-C01-S02-Q020.png",
-    "_Attachments/题目识别/WDOS-2027-答案/WDOS-2027-MCQ-C01-S02-Q002.png",
     "好题错题整理/好题错题筛选页.md",
     "好题错题整理/_待确认/27_900/01 - 高数/02 - 一元函数微分学/1-MCQ/Q025-900-GS-AM-C02-A.md",
     "好题错题整理/_待确认/880高数精选10题.md",
@@ -270,7 +278,6 @@
     "好题错题整理/_待确认/27_900/01 - 高数/02 - 一元函数微分学/1-MCQ/Q003-900-GS-AM-C02-B.md",
     "好题错题整理/_待确认/27_900/01 - 高数/02 - 一元函数微分学/1-MCQ/Q002-900-GS-AM-C02-A.md",
     "好题错题整理/_待确认/27_900/01 - 高数/02 - 一元函数微分学/1-MCQ/Q001-900-GS-AM-C02-A.md",
-    "好题错题整理/_待确认/李艳芳900-矩阵乘法-概念题例1.md",
     "好题错题整理/_待确认/27_王道408/04 - CN/04 - 网络层/3-FRQ/CN-C04-42-F08.md",
     "好题错题整理/_待确认/27_王道408/04 - CN/04 - 网络层/3-FRQ/CN-C04-42-F13.md",
     "好题错题整理/_待确认/27_王道408/03 - OS/1-MCQ/WDOS-2027-MCQ-C05-S03-Q035.md",
