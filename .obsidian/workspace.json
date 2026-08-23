@@ -11,17 +11,14 @@
             "id": "e58e85e74d87b6f7",
             "type": "leaf",
             "state": {
-              "type": "canvas",
+              "type": "markdown",
               "state": {
-                "file": "01 - 数学/03 - 概统/01 - 随机事件与概率.canvas",
-                "viewState": {
-                  "x": -26.33648154195805,
-                  "y": 3157.982027898459,
-                  "zoom": -2.5714286007426628
-                }
+                "file": "好题错题整理/_待确认/26_姜晓千四套卷/卷一/1-MCQ/JXQ4T-S1-Q07.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-layout-dashboard",
-              "title": "01 - 随机事件与概率"
+              "icon": "lucide-file",
+              "title": "JXQ4T-S1-Q07"
             }
           }
         ]
@@ -111,8 +108,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 388.0124206542969,
-    "collapsed": true
+    "width": 388.0124206542969
   },
   "right": {
     "id": "788c2b70f5d82052",
@@ -259,17 +255,21 @@
   },
   "active": "e58e85e74d87b6f7",
   "lastOpenFiles": [
-    "_Attachments/题目识别/WDOS-2027-答案/WDOS-2027-FRQ-C02-S01-Q001.png",
-    "_Attachments/题目识别/WDOS-2027-答案/WDOS-2027-MCQ-C02-S01-Q009.png",
-    "_Attachments/题目识别/WDOS-2027-答案/WDOS-2027-MCQ-C02-S01-Q008.png",
-    "_Attachments/题目识别/WDOS-2027-答案/WDOS-2027-MCQ-C02-S01-Q073.png",
-    "_Attachments/题目识别/WDOS-2027-答案/WDOS-2027-MCQ-C02-S01-Q072.png",
-    "_Attachments/题目识别/WDOS-2027-答案/WDOS-2027-MCQ-C02-S01-Q071.png",
-    "_Attachments/题目识别/WDOS-2027-答案/WDOS-2027-MCQ-C02-S01-Q070.png",
-    "_Attachments/题目识别/WDOS-2027-答案/WDOS-2027-MCQ-C02-S01-Q007.png",
-    "_Attachments/题目识别/WDOS-2027-答案/WDOS-2027-MCQ-C02-S01-Q069.png",
-    "_Attachments/题目识别/WDOS-2027-答案/WDOS-2027-MCQ-C02-S01-Q068.png",
-    "_Attachments/题目识别/WDOS-2027-答案/WDOS-2027-MCQ-C02-S01-Q067.png",
+    "好题错题整理/_待确认/26_姜晓千四套卷/卷一/1-MCQ/JXQ4T-S1-Q08.md",
+    "好题错题整理/_待确认/26_姜晓千四套卷/卷一/1-MCQ/JXQ4T-S1-Q10.md",
+    "好题错题整理/_待确认/26_姜晓千四套卷/卷一/1-MCQ/JXQ4T-S1-Q06.md",
+    "好题错题整理/_待确认/26_姜晓千四套卷/卷一/1-MCQ/JXQ4T-S1-Q01.md",
+    "01 - 数学/03 - 概统/01 - 随机事件与概率.canvas",
+    "_Attachments/题目识别/WDOS-2027-答案/WDOS-2027-FRQ-C02-S02-Q009.png",
+    "_Attachments/题目识别/WDOS-2027-答案/WDOS-2027-FRQ-C02-S02-Q008.png",
+    "_Attachments/题目识别/WDOS-2027-答案/WDOS-2027-FRQ-C02-S02-Q007.png",
+    "_Attachments/题目识别/WDOS-2027-答案/WDOS-2027-FRQ-C02-S02-Q006.png",
+    "_Attachments/题目识别/WDOS-2027-答案/WDOS-2027-FRQ-C02-S02-Q005.png",
+    "_Attachments/题目识别/WDOS-2027-答案/WDOS-2027-FRQ-C02-S02-Q004.png",
+    "_Attachments/题目识别/WDOS-2027-答案/WDOS-2027-FRQ-C02-S02-Q003.png",
+    "_Attachments/题目识别/WDOS-2027-答案/WDOS-2027-FRQ-C02-S02-Q002.png",
+    "_Attachments/题目识别/WDOS-2027-答案/WDOS-2027-FRQ-C02-S02-Q010.png",
+    "_Attachments/题目识别/WDOS-2027-答案/WDOS-2027-FRQ-C02-S02-Q001.png",
     "好题错题整理/_待确认/26_姜晓千四套卷/卷一/3-FRQ/JXQ4T-S1-Q22.md",
     "好题错题整理/_待确认/26_姜晓千四套卷/卷一/3-FRQ/JXQ4T-S1-Q21.md",
     "好题错题整理/_待确认/26_姜晓千四套卷/卷一/3-FRQ/JXQ4T-S1-Q20.md",
@@ -284,23 +284,18 @@
     "好题错题整理/_待确认/26_姜晓千四套卷/卷一/2-FIB/JXQ4T-S1-Q11.md",
     "好题错题整理/_待确认/26_姜晓千四套卷/卷一/2-FIB/JXQ4T-S1-Q12.md",
     "好题错题整理/_待确认/26_姜晓千四套卷/卷一/2-FIB",
-    "好题错题整理/_待确认/26_姜晓千四套卷/卷一/1-MCQ/JXQ4T-S1-Q10.md",
     "好题错题整理/_待确认/26_姜晓千四套卷/卷一/1-MCQ/JXQ4T-S1-Q09.md",
-    "好题错题整理/_待确认/26_姜晓千四套卷/卷一/1-MCQ/JXQ4T-S1-Q08.md",
     "好题错题整理/_待确认/26_姜晓千四套卷/卷一/1-MCQ/JXQ4T-S1-Q07.md",
-    "好题错题整理/_待确认/26_姜晓千四套卷/卷一/1-MCQ/JXQ4T-S1-Q06.md",
     "好题错题整理/_待确认/26_姜晓千四套卷/卷一/1-MCQ/JXQ4T-S1-Q05.md",
     "好题错题整理/_待确认/26_姜晓千四套卷/卷一/1-MCQ/JXQ4T-S1-Q04.md",
     "好题错题整理/_待确认/26_姜晓千四套卷/卷一/1-MCQ/JXQ4T-S1-Q03.md",
     "好题错题整理/_待确认/26_姜晓千四套卷/卷一/1-MCQ/JXQ4T-S1-Q02.md",
-    "好题错题整理/_待确认/26_姜晓千四套卷/卷一/1-MCQ/JXQ4T-S1-Q01.md",
     "_Attachments/题目识别/JXQ4T-答案",
     "_Attachments/题目识别/JXQ4T",
     "好题错题整理/_待确认/26_姜晓千四套卷/卷一/1-MCQ",
     "好题错题整理/_待确认/26_姜晓千四套卷/卷一",
     "好题错题整理/_待确认/26_姜晓千四套卷",
     "01 - 数学/03 - 概统/02 - 一维随机变量及其分布.canvas",
-    "01 - 数学/03 - 概统/01 - 随机事件与概率.canvas",
     "好题错题整理/_待确认/李艳芳900-矩阵乘法-概念题例1.md",
     "好题错题整理/好题错题筛选页.md",
     "好题错题整理/_待确认/27_900/01 - 高数/02 - 一元函数微分学/1-MCQ/Q025-900-GS-AM-C02-A.md",
