@@ -1,6 +1,70 @@
 {
   "recentFiles": [
     {
+      "basename": "02 - 一维随机变量及其分布",
+      "path": "01 - 数学/03 - 概统/02 - 一维随机变量及其分布.canvas"
+    },
+    {
+      "basename": "Pasted image 20260824172451",
+      "path": "_Attachments/Images/Pasted image 20260824172451.png"
+    },
+    {
+      "basename": "Pasted image 20260824172359",
+      "path": "_Attachments/Images/Pasted image 20260824172359.png"
+    },
+    {
+      "basename": "Pasted image 20260824172312",
+      "path": "_Attachments/Images/Pasted image 20260824172312.png"
+    },
+    {
+      "basename": "Pasted image 20260824172127",
+      "path": "_Attachments/Images/Pasted image 20260824172127.png"
+    },
+    {
+      "basename": "Pasted image 20260824172049",
+      "path": "_Attachments/Images/Pasted image 20260824172049.png"
+    },
+    {
+      "basename": "Pasted image 20260824171731",
+      "path": "_Attachments/Images/Pasted image 20260824171731.png"
+    },
+    {
+      "basename": "Pasted image 20260824171600",
+      "path": "_Attachments/Images/Pasted image 20260824171600.png"
+    },
+    {
+      "basename": "Pasted image 20260824171546",
+      "path": "_Attachments/Images/Pasted image 20260824171546.png"
+    },
+    {
+      "basename": "Pasted image 20260824171431",
+      "path": "_Attachments/Images/Pasted image 20260824171431.png"
+    },
+    {
+      "basename": "Pasted image 20260824171304",
+      "path": "_Attachments/Images/Pasted image 20260824171304.png"
+    },
+    {
+      "basename": "Pasted image 20260824171044",
+      "path": "_Attachments/Images/Pasted image 20260824171044.png"
+    },
+    {
+      "basename": "Pasted image 20260824170543",
+      "path": "_Attachments/Images/Pasted image 20260824170543.png"
+    },
+    {
+      "basename": "Pasted image 20260824170506",
+      "path": "_Attachments/Images/Pasted image 20260824170506.png"
+    },
+    {
+      "basename": "Pasted image 20260824170930",
+      "path": "_Attachments/Images/Pasted image 20260824170930.png"
+    },
+    {
+      "basename": "01 - 随机事件与概率",
+      "path": "01 - 数学/03 - 概统/01 - 随机事件与概率.canvas"
+    },
+    {
       "basename": "好题错题筛选页",
       "path": "好题错题整理/好题错题筛选页.md"
     },
@@ -51,14 +115,6 @@
     {
       "basename": "JXQ4T-S1-Q06",
       "path": "好题错题整理/_待确认/26_姜晓千四套卷/卷一/1-MCQ/JXQ4T-S1-Q06.md"
-    },
-    {
-      "basename": "01 - 随机事件与概率",
-      "path": "01 - 数学/03 - 概统/01 - 随机事件与概率.canvas"
-    },
-    {
-      "basename": "02 - 一维随机变量及其分布",
-      "path": "01 - 数学/03 - 概统/02 - 一维随机变量及其分布.canvas"
     },
     {
       "basename": "Pasted image 20260822174554",
@@ -143,62 +199,6 @@
     {
       "basename": "睡运-0821",
       "path": "健康与作息/睡眠分析/日报/睡运-0821.md"
-    },
-    {
-      "basename": "CO-C04-41-M01",
-      "path": "好题错题整理/_待确认/27_王道408/02 - CO/04 - 指令系统/1-MCQ/CO-C04-41-M01.md"
-    },
-    {
-      "basename": "CO-C03-32-M02",
-      "path": "好题错题整理/_待确认/27_王道408/02 - CO/03 - 存储系统/1-MCQ/CO-C03-32-M02.md"
-    },
-    {
-      "basename": "CO-C03-31-M10",
-      "path": "好题错题整理/_待确认/27_王道408/02 - CO/03 - 存储系统/1-MCQ/CO-C03-31-M10.md"
-    },
-    {
-      "basename": "CO-C03-31-M02",
-      "path": "好题错题整理/_待确认/27_王道408/02 - CO/03 - 存储系统/1-MCQ/CO-C03-31-M02.md"
-    },
-    {
-      "basename": "CO-C03-31-M01",
-      "path": "好题错题整理/_待确认/27_王道408/02 - CO/03 - 存储系统/1-MCQ/CO-C03-31-M01.md"
-    },
-    {
-      "basename": "CO-C05-51-M01",
-      "path": "好题错题整理/_待确认/27_王道408/02 - CO/05 - 中央处理器/1-MCQ/CO-C05-51-M01.md"
-    },
-    {
-      "basename": "YW-2026-TA59376-Q189",
-      "path": "好题错题整理/_待确认/26_杨威/01 - 行列式/2-FIB/YW-2026-TA59376-Q189.md"
-    },
-    {
-      "basename": "YW-2026-TA59376-Q273",
-      "path": "好题错题整理/_待确认/26_杨威/01 - 行列式/2-FIB/YW-2026-TA59376-Q273.md"
-    },
-    {
-      "basename": "YW-2026-TA59376-Q253",
-      "path": "好题错题整理/_待确认/26_杨威/01 - 行列式/2-FIB/YW-2026-TA59376-Q253.md"
-    },
-    {
-      "basename": "YW-2026-TA59376-Q015",
-      "path": "好题错题整理/_待确认/26_杨威/01 - 行列式/2-FIB/YW-2026-TA59376-Q015.md"
-    },
-    {
-      "basename": "YW-2026-TA59376-Q010",
-      "path": "好题错题整理/_待确认/26_杨威/01 - 行列式/2-FIB/YW-2026-TA59376-Q010.md"
-    },
-    {
-      "basename": "DS-C01-12-M18",
-      "path": "好题错题整理/_待确认/27_王道408/01 - DS/01 - 绪论/1-MCQ/DS-C01-12-M18.md"
-    },
-    {
-      "basename": "DS-C01-12-M16",
-      "path": "好题错题整理/_待确认/27_王道408/01 - DS/01 - 绪论/1-MCQ/DS-C01-12-M16.md"
-    },
-    {
-      "basename": "DS-C01-12-M13",
-      "path": "好题错题整理/_待确认/27_王道408/01 - DS/01 - 绪论/1-MCQ/DS-C01-12-M13.md"
     }
   ],
   "omittedPaths": [],
