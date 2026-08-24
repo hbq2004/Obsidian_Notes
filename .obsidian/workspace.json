@@ -11,17 +11,14 @@
             "id": "d02c40a1428a7cd9",
             "type": "leaf",
             "state": {
-              "type": "canvas",
+              "type": "markdown",
               "state": {
-                "file": "01 - 数学/03 - 概统/01 - 随机事件与概率.canvas",
-                "viewState": {
-                  "x": 1847.7767624934468,
-                  "y": 3363.5045793155273,
-                  "zoom": 0.6348516340782965
-                }
+                "file": "_Daily_Tasks/2026-08-25.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-layout-dashboard",
-              "title": "01 - 随机事件与概率"
+              "icon": "lucide-file",
+              "title": "2026-08-25"
             }
           }
         ]
@@ -111,8 +108,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 388.0124206542969,
-    "collapsed": true
+    "width": 388.0124206542969
   },
   "right": {
     "id": "788c2b70f5d82052",
@@ -258,12 +254,13 @@
   },
   "active": "d02c40a1428a7cd9",
   "lastOpenFiles": [
+    "01 - 数学/03 - 概统/01 - 随机事件与概率.canvas",
+    "_Daily_Tasks/2026-08-25.md",
     "_Attachments/Images/Pasted image 20260825011209.png",
     "_Attachments/Images/Pasted image 20260825010530.png",
     "_Attachments/Images/Pasted image 20260825005830.png",
     "_Attachments/Images/Pasted image 20260825003148.png",
     "好题错题整理/好题错题筛选页.md",
-    "01 - 数学/03 - 概统/01 - 随机事件与概率.canvas",
     "健康与作息/睡眠分析/日报/AI睡眠解读-0824.md",
     "好题错题整理/_待确认/26_没咋了线代强化/1_行列式与矩阵/1-MCQ/Q01-MZL-2026-S18.md",
     "好题错题整理/_待确认/26_没咋了线代强化/1_行列式与矩阵/1-MCQ/Q01-MZL-2026-S13.md",
@@ -287,7 +284,6 @@
     "好题错题整理/_待确认/模拟卷/2026/欧几里得2026年8月模考/1-MCQ/OJD-202608-T68FFDF-Q007.md",
     "好题错题整理/_待确认/模拟卷/2026/欧几里得2026年8月模考/1-MCQ/OJD-202608-T68FFDF-Q006.md",
     "好题错题整理/_待确认/模拟卷/2026/欧几里得2026年8月模考/1-MCQ/OJD-202608-T68FFDF-Q005.md",
-    "好题错题整理/_待确认/模拟卷/2026/欧几里得2026年8月模考/1-MCQ/OJD-202608-T68FFDF-Q002.md",
     "好题错题整理/_待确认/模拟卷/2026/欧几里得2026年8月模考/3-FRQ",
     "好题错题整理/_待确认/模拟卷/2026/欧几里得2026年8月模考/2-FIB",
     "好题错题整理/_待确认/模拟卷/2026/欧几里得2026年8月模考/1-MCQ",
@@ -304,7 +300,6 @@
     "_Attachments/题目识别/ZYT8T-答案/ZYT8T-S8-Q10_答案.png",
     "_Attachments/题目识别/ZYT8T/ZYT8T-S8-Q10_题目.png",
     "_Attachments/题目识别/ZYT8T-答案/ZYT8T-S8-Q09_答案.png",
-    "_Attachments/题目识别/ZYT8T/ZYT8T-S8-Q09_题目.png",
     "01 - 数学/03 - 概统/02 - 一维随机变量及其分布.canvas",
     "01 - 数学/03 - 概统/06 - 数理统计.canvas",
     "01 - 数学/03 - 概统/03 - 多维随机变量及其分布.canvas",
