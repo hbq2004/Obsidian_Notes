@@ -1,6 +1,6 @@
 ---
 ctime: 2026-08-24 17:34:56
-mtime: 2026-08-24 17:34:56
+mtime: 2026-08-24 17:52:05
 tags:
   - LA
   - 26_张宇八套卷/卷八/MCQ
@@ -18,11 +18,7 @@ level:
 
 ![[_Attachments/题目识别/ZYT8T/ZYT8T-S8-Q05_题目.png|题目]]
 
-5.设 $n$ 阶行列式 $D_n =$$ \begin{vmatrix} 0 & 1 & 2 & \cdots & 0 \\ \vdots & \vdots & \vdots & \cdots & \vdots \\ 0 & 0 & 0 & \cdots & 2 \end{vmatrix} $$，则
-(A) $D_1,D_2,\cdots,D_n$ 为等比数列.
-(B) $D_1,D_2,\cdots,D_n$ 为等差数列.
-(C) $D_n$ 为范德蒙德行列式.
-(D) $D_n = n$.
+5.设 $n$ 阶行列式 $D_n =$ $$\begin{vmatrix} 0 & 1 & 2 & \cdots & 0 \\ \vdots & \vdots & \vdots & \cdots & \vdots \\ 0 & 0 & 0 & \cdots & 2 \end{vmatrix}$$，则
 
 ![[_Attachments/题目识别/ZYT8T-答案/ZYT8T-S8-Q05_答案.png|答案]]
 

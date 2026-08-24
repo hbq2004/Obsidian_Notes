@@ -1,6 +1,6 @@
 ---
 ctime: 2026-08-24 17:34:54
-mtime: 2026-08-24 17:34:54
+mtime: 2026-08-24 17:52:04
 tags:
   - AM
   - 26_张宇八套卷/卷三/MCQ
@@ -17,12 +17,7 @@ level:
 
 ![[_Attachments/题目识别/ZYT8T/ZYT8T-S3-Q01_题目.png|题目]]
 
-$f(x, y) = \begin{cases} ... \\ y^2, & x = 0, \end{cases}$ 则点 $(0,0).
-
-(A) 是 $f(x,x)$ 的极小值点，也是 $f(x,y)$ 的极小值点.
-(B) 是 $f(x,x)$ 的极小值点，不是 $f(x,y)$ 的极小值点.
-(C) 不是 $f(x,x)$ 的极小值点，是 $f(x,y)$ 的极小值点.
-(D) 不是 $f(x,x)$ 的极小值点，也不是 $f(x,y)$ 的极小值点.
+$$f(x, y) = \begin{cases} \cdots \\ y^2, & x = 0, \end{cases}$$ 则点 $(0,0)$
 
 ![[_Attachments/题目识别/ZYT8T-答案/ZYT8T-S3-Q01_答案.png|答案]]
 
