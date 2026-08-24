@@ -3,7 +3,7 @@
 		{"id":"639a4c57b6875175","type":"group","x":-2320,"y":1500,"width":3280,"height":3700,"color":"1","label":"古典概型和几何概型"},
 		{"id":"8a97dcb4e8d49d47","type":"group","x":-5000,"y":1360,"width":1960,"height":2880,"label":"基本概念"},
 		{"id":"66ac04fc111baa4b","type":"group","x":1360,"y":1744,"width":2280,"height":1571,"color":"2","label":"概率的性质与公式"},
-		{"id":"ed804dad514d1646","type":"group","x":-2140,"y":1700,"width":1260,"height":2010,"label":"古典概型（理想化的模型）"},
+		{"id":"ed804dad514d1646","type":"group","x":-2240,"y":1700,"width":1480,"height":2010,"label":"古典概型（理想化的模型）"},
 		{"id":"ecb47f89a73768c3","type":"group","x":4080,"y":1960,"width":2120,"height":1139,"color":"3","label":"事件的独立性和独立重复试验"},
 		{"id":"45954b164742d9fb","type":"group","x":-4730,"y":2440,"width":1300,"height":1615,"label":"事件的关系与运算"},
 		{"id":"a305d8e548351074","type":"group","x":-720,"y":2050,"width":1500,"height":1056,"label":"几何概型"},
@@ -36,9 +36,6 @@
 		{"id":"6fb26859eebd79cd","type":"file","file":"_Attachments/Images/Pasted image 20260822173505.png","x":2620,"y":2619,"width":650,"height":173},
 		{"id":"2e5a92260c6cb778","type":"file","file":"_Attachments/Images/Pasted image 20260822173644.png","x":2620,"y":2795,"width":650,"height":173},
 		{"id":"bb868dbb75d8fa3a","type":"file","file":"_Attachments/Images/Pasted image 20260822173731.png","x":4220,"y":2100,"width":724,"height":508},
-		{"id":"1164b265dfa5bd7a","type":"file","file":"_Attachments/Images/Pasted image 20260822172911.png","x":-1957,"y":2856,"width":672,"height":832},
-		{"id":"39ef4a969988197f","type":"file","file":"_Attachments/Images/Pasted image 20260822172850.png","x":-1957,"y":2420,"width":672,"height":436},
-		{"id":"61ffdb1d4d022374","type":"file","file":"_Attachments/Images/Pasted image 20260822172806.png","x":-2120,"y":1720,"width":989,"height":484},
 		{"id":"9ff035769dc9b050","type":"file","file":"_Attachments/Images/Pasted image 20260822173822.png","x":5040,"y":2449,"width":794,"height":62},
 		{"id":"b07b3ecf09f784c2","type":"file","file":"_Attachments/Images/Pasted image 20260822173750.png","x":5045,"y":2236,"width":798,"height":115},
 		{"id":"db0cc243c2c6c302","type":"file","file":"_Attachments/Images/Pasted image 20260822173806.png","x":5045,"y":2358,"width":796,"height":86},
@@ -51,7 +48,21 @@
 		{"id":"7fc4a0ef39a82522","type":"file","file":"_Attachments/Images/Pasted image 20260823203432.png","x":-4467,"y":2790,"width":614,"height":156},
 		{"id":"6044458bda3f135e","type":"file","file":"_Attachments/Images/Pasted image 20260822174717.png","x":-3860,"y":1937,"width":600,"height":260},
 		{"id":"061233ab50da021b","type":"file","file":"_Attachments/Images/Pasted image 20260822174704.png","x":-3860,"y":1653,"width":599,"height":284},
-		{"id":"a3677808d6ca8e30","type":"file","file":"_Attachments/Images/Pasted image 20260825003148.png","x":-1760,"y":3960,"width":625,"height":1000}
+		{"id":"a3677808d6ca8e30","type":"file","file":"_Attachments/Images/Pasted image 20260825003148.png","x":-1760,"y":3960,"width":625,"height":1000},
+		{"id":"39ef4a969988197f","type":"file","file":"_Attachments/Images/Pasted image 20260822172850.png","x":-2080,"y":2421,"width":672,"height":436},
+		{"id":"1164b265dfa5bd7a","type":"file","file":"_Attachments/Images/Pasted image 20260822172911.png","x":-2080,"y":2857,"width":672,"height":832},
+		{"id":"61ffdb1d4d022374","type":"file","file":"_Attachments/Images/Pasted image 20260822172806.png","x":-2238,"y":1713,"width":989,"height":484},
+		{"id":"b57fa064eba8565c","type":"file","file":"_Attachments/Images/Pasted image 20260825005830.png","x":-1360,"y":2920,"width":525,"height":103},
+		{
+			"id":"84e82092986e34ac",
+			"type":"text",
+			"text":"返回取球与任意取球的概率一致",
+			"styleAttributes":{"textAlign":"center"},
+			"x":-1302,
+			"y":3168,
+			"width":410,
+			"height":105
+		}
 	],
 	"edges":[
 		{
@@ -122,6 +133,15 @@
 			"toNode":"3f8a1f414fa50b50",
 			"toSide":"top",
 			"label":"古典概型和几何概型的区别"
+		},
+		{
+			"id":"095c60ec3d4d98a2",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"b57fa064eba8565c",
+			"fromSide":"bottom",
+			"toNode":"84e82092986e34ac",
+			"toSide":"top"
 		}
 	],
 	"metadata":{
