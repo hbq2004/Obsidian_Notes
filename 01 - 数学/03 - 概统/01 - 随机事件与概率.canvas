@@ -52,16 +52,27 @@
 		{"id":"39ef4a969988197f","type":"file","file":"_Attachments/Images/Pasted image 20260822172850.png","x":-2080,"y":2421,"width":672,"height":436},
 		{"id":"1164b265dfa5bd7a","type":"file","file":"_Attachments/Images/Pasted image 20260822172911.png","x":-2080,"y":2857,"width":672,"height":832},
 		{"id":"61ffdb1d4d022374","type":"file","file":"_Attachments/Images/Pasted image 20260822172806.png","x":-2238,"y":1713,"width":989,"height":484},
-		{"id":"b57fa064eba8565c","type":"file","file":"_Attachments/Images/Pasted image 20260825005830.png","x":-1360,"y":2920,"width":525,"height":103},
+		{"id":"b57fa064eba8565c","type":"file","file":"_Attachments/Images/Pasted image 20260825005830.png","x":-1360,"y":2454,"width":525,"height":103},
 		{
 			"id":"84e82092986e34ac",
 			"type":"text",
 			"text":"返回取球与任意取球的概率一致",
 			"styleAttributes":{"textAlign":"center"},
 			"x":-1302,
-			"y":3168,
+			"y":2702,
 			"width":410,
 			"height":105
+		},
+		{"id":"d04b136256d45d12","type":"file","file":"_Attachments/Images/Pasted image 20260825010530.png","x":-1292,"y":2959,"width":400,"height":297},
+		{
+			"id":"88a13905637158c0",
+			"type":"text",
+			"text":"抓阄模型",
+			"styleAttributes":{"textAlign":"center"},
+			"x":-1222,
+			"y":3320,
+			"width":260,
+			"height":60
 		}
 	],
 	"edges":[
@@ -141,6 +152,15 @@
 			"fromNode":"b57fa064eba8565c",
 			"fromSide":"bottom",
 			"toNode":"84e82092986e34ac",
+			"toSide":"top"
+		},
+		{
+			"id":"419e5ea3d950bc1d",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"d04b136256d45d12",
+			"fromSide":"bottom",
+			"toNode":"88a13905637158c0",
 			"toSide":"top"
 		}
 	],
