@@ -11,17 +11,14 @@
             "id": "0011916629527d7b",
             "type": "leaf",
             "state": {
-              "type": "canvas",
+              "type": "markdown",
               "state": {
-                "file": "01 - 数学/03 - 概统/01 - 随机事件与概率.canvas",
-                "viewState": {
-                  "x": -4121.98379651287,
-                  "y": 2221.7356980822615,
-                  "zoom": -1.7867735197559647
-                }
+                "file": "好题错题整理/_待确认/26_张宇八套卷/卷一/1-MCQ/ZYT8T-S1-Q07.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-layout-dashboard",
-              "title": "01 - 随机事件与概率"
+              "icon": "lucide-file",
+              "title": "ZYT8T-S1-Q07"
             }
           }
         ]
@@ -111,8 +108,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 388.0124206542969,
-    "collapsed": true
+    "width": 388.0124206542969
   },
   "right": {
     "id": "788c2b70f5d82052",
@@ -129,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "01 - 数学/03 - 概统/01 - 随机事件与概率.canvas",
+                "file": "好题错题整理/_待确认/26_张宇八套卷/卷一/1-MCQ/ZYT8T-S1-Q07.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
@@ -259,6 +255,9 @@
   },
   "active": "0011916629527d7b",
   "lastOpenFiles": [
+    "好题错题整理/_待确认/26_张宇八套卷/卷一/1-MCQ/ZYT8T-S1-Q02.md",
+    "好题错题整理/_待确认/26_张宇八套卷/卷一/1-MCQ/ZYT8T-S1-Q01.md",
+    "01 - 数学/03 - 概统/01 - 随机事件与概率.canvas",
     "_Attachments/题目识别/ZYT8T/ZYT8T-S8-Q12_题目.png",
     "_Attachments/题目识别/ZYT8T-答案/ZYT8T-S8-Q11_答案.png",
     "_Attachments/题目识别/ZYT8T/ZYT8T-S8-Q11_题目.png",
@@ -269,7 +268,6 @@
     "_Attachments/题目识别/ZYT8T-答案/ZYT8T-S8-Q08_答案.png",
     "_Attachments/题目识别/ZYT8T/ZYT8T-S8-Q08_题目.png",
     "_Attachments/题目识别/ZYT8T-答案/ZYT8T-S8-Q07_答案.png",
-    "_Attachments/题目识别/ZYT8T/ZYT8T-S8-Q07_题目.png",
     "好题错题整理/_待确认/26_张宇八套卷/卷八/3-FRQ/ZYT8T-S8-Q22.md",
     "好题错题整理/_待确认/26_张宇八套卷/卷八/3-FRQ/ZYT8T-S8-Q21.md",
     "好题错题整理/_待确认/26_张宇八套卷/卷八/3-FRQ/ZYT8T-S8-Q20.md",
@@ -298,7 +296,6 @@
     "好题错题整理/_待确认/26_张宇八套卷/卷八",
     "好题错题整理/_待确认/26_张宇八套卷/卷七/3-FRQ/ZYT8T-S7-Q22.md",
     "好题错题整理/_待确认/26_张宇八套卷/卷七/3-FRQ/ZYT8T-S7-Q21.md",
-    "好题错题整理/_待确认/26_张宇八套卷/卷七/3-FRQ/ZYT8T-S7-Q20.md",
     "好题错题整理/_待确认/26_张宇八套卷/卷七/3-FRQ",
     "好题错题整理/_待确认/26_张宇八套卷/卷七/2-FIB",
     "好题错题整理/_待确认/26_张宇八套卷/卷七/1-MCQ",
@@ -306,7 +303,6 @@
     "好题错题整理/_待确认/26_张宇八套卷/卷六/3-FRQ",
     "好题错题整理/_待确认/26_张宇八套卷/卷六/2-FIB",
     "01 - 数学/03 - 概统/02 - 一维随机变量及其分布.canvas",
-    "01 - 数学/03 - 概统/01 - 随机事件与概率.canvas",
     "01 - 数学/03 - 概统/06 - 数理统计.canvas",
     "01 - 数学/03 - 概统/03 - 多维随机变量及其分布.canvas",
     "01 - 数学/03 - 概统/04 - 随机变量的数字特征.canvas",
