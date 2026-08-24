@@ -1,6 +1,6 @@
 ---
 ctime: 2026-08-24 13:30:19
-mtime: 2026-08-24 13:30:19
+mtime: 2026-08-24 16:00:51
 tags:
   - AM
   - 26_张宇八套卷/卷一/FIB
@@ -18,7 +18,11 @@ level:
 
 ![[_Attachments/题目识别/ZYT8T/ZYT8T-S1-Q14_题目.png|题目]]
 
-14. 已知 $\Omega = \{(x,y,z) | y^2+z^2 \le 1, 0 \le x \le 1\}$，$\Sigma$ 为 $\Omega$ 的边界面且取外侧，则 $$ \iint_{\Sigma} (y^3 + z \sin x) dzdx + z dxdy = \_\_\_\_\_\_. $$
+14.已知 $\Omega=\{(x,y,z) \mid y^2+z^2 \leqslant 1, 0 \leqslant x \leqslant 1\}$, $\Sigma$ 为 $\Omega$ 的边界面且取外侧, 则
+
+$$
+\oiint_{\Sigma} (y^3+z\sin x) \mathrm{d}z\mathrm{d}x + z\mathrm{d}x\mathrm{d}y = \_\_\_\_\_\_.
+$$
 
 ![[_Attachments/题目识别/ZYT8T-答案/ZYT8T-S1-Q14_答案.png|答案]]
 

@@ -1,6 +1,6 @@
 ---
 ctime: 2026-08-24 13:30:19
-mtime: 2026-08-24 13:30:19
+mtime: 2026-08-24 16:00:51
 tags:
   - AM
   - 26_张宇八套卷/卷一/MCQ
@@ -18,9 +18,9 @@ level:
 
 ![[_Attachments/题目识别/ZYT8T/ZYT8T-S1-Q03_题目.png|题目]]
 
-设级数 ① $\sum_{n=1}^{\infty} \frac{1}{n^{1+\frac{1}{n}}}$ ， ② $\sum_{n=2}^{\infty} \frac{1}{n^{1+\frac{1}{\sqrt{\ln n}}}}$ ，则 ( ).
-(A) ①收敛，②发散.
-(B) ①发散，②收敛.
+3. 设级数① $\sum_{n=1}^{\infty} \frac{1}{n^{1+\frac{1}{n}}}$ ，② $\sum_{n=2}^{\infty} \frac{1}{n^{1+\frac{1}{\sqrt{\ln n}}}}$ ，则（ ）
+(A) ①收敛,②发散.
+(B) ①发散,②收敛.
 (C) ①②均收敛
 (D) ①②均发散.
 

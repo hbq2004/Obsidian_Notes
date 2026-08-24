@@ -1,6 +1,6 @@
 ---
 ctime: 2026-08-24 13:30:19
-mtime: 2026-08-24 13:30:19
+mtime: 2026-08-24 16:00:51
 tags:
   - AM
   - 26_张宇八套卷/卷一/MCQ
@@ -17,11 +17,11 @@ level:
 
 ![[_Attachments/题目识别/ZYT8T/ZYT8T-S1-Q02_题目.png|题目]]
 
-2.设 $I_i=\iint_{D_i}\mathrm{e}^{-(x^2+y^2)}\mathrm{d}\sigma,i=1,2,3,$ 其中 $D_1=\{(x,y)|x^2+y^2\leq R^2\},D_2=\{(x,y)|x^2+y^2\leq 2R^2\},D_3=\{(x,y)||x|\leq R,|y|\leq R\},R>0,$ 则（  ）
-(A) $I_1<I_2<I_3.$
-(B) $I_2<I_3<I_1.$
-(C) $I_1<I_3<I_2.$
-(D) $I_3<I_2<I_1.$
+2.设 $I_i = \iint_{D_i} \mathrm{e}^{-(x^2+y^2)} \mathrm{d}\sigma, i=1,2,3$，其中 $D_1 = \{(x,y) \mid x^2 + y^2 \leq R^2\}, D_2 = \{(x,y) \mid x^2 + y^2 \leq 2R^2\}, D_3 = \{(x,y) \mid |x| \leq R, |y| \leq R\}, R > 0$，则（  ）
+(A) $I_1 < I_2 < I_3$.
+(B) $I_2 < I_3 < I_1$.
+(C) $I_1 < I_3 < I_2$.
+(D) $I_3 < I_2 < I_1$.
 
 ![[_Attachments/题目识别/ZYT8T-答案/ZYT8T-S1-Q02_答案.png|答案]]
 

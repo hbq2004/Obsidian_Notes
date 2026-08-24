@@ -1,6 +1,6 @@
 ---
 ctime: 2026-08-24 13:30:19
-mtime: 2026-08-24 13:30:19
+mtime: 2026-08-24 16:00:51
 tags:
   - PS
   - 26_张宇八套卷/卷一/MCQ
@@ -17,15 +17,11 @@ level:
 
 ![[_Attachments/题目识别/ZYT8T/ZYT8T-S1-Q08_题目.png|题目]]
 
-设 $X,Y$ 分别服从参数为 $n,m$ 的泊松分布，且 $n > m$，$F_X(x),F_Y(y)$ 分别是 $X,Y$ 的分布函数，$-\infty < z < +\infty$，则（\_\_\_\_）.
-
-(A) $P\{X \geq Y\}=1$.
-
-(B) $P\{X \leq Y\}=1$.
-
-(C) $F_X(z) \geq F_Y(z)$.
-
-(D) $F_X(z) \leq F_Y(z)$.
+设 $X, Y$ 分别服从参数为 $n, m$ 的泊松分布，且 $n > m, F_X(x), F_Y(y)$ 分别是 $X, Y$ 的分布函数，$-\infty < z < +\infty$，则 ( ).
+(A) $P\{X \ge Y\} = 1.$
+(B) $P\{X \le Y\} = 1.$
+(C) $F_X(z) \ge F_Y(z).$
+(D) $F_X(z) \le F_Y(z).$
 
 ![[_Attachments/题目识别/ZYT8T-答案/ZYT8T-S1-Q08_答案.png|答案]]
 

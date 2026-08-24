@@ -1,6 +1,6 @@
 ---
 ctime: 2026-08-24 13:30:19
-mtime: 2026-08-24 13:30:19
+mtime: 2026-08-24 16:00:51
 tags:
   - AM
   - 26_张宇八套卷/卷一/FRQ
@@ -18,7 +18,7 @@ level:
 
 ![[_Attachments/题目识别/ZYT8T/ZYT8T-S1-Q20_题目.png|题目]]
 
-设 $\Gamma$ 为曲线 $\begin{cases} x^2+y^2+z^2=a^2, \\ y=x\tan\theta, \end{cases}$ 其中 $a>0, -\frac{\pi}{2}<\theta<\frac{\pi}{2}$ ，从 $x$ 轴的正向看去， $\Gamma$ 的方向为顺时针方向. 求当 $\theta$ 为何值时， $I=\oint_{\Gamma}(y-z)dx+(z-x)dy+(x-y)dz$ 最大?并求出最大值.
+设 $\Gamma$ 为曲线 $\begin{cases} x^2 + y^2 + z^2 = a^2, \\ y = x \tan \theta, \end{cases}$ 其中 $a > 0, -\frac{\pi}{2} < \theta < \frac{\pi}{2}$，从 $x$ 轴的正向看去，$\Gamma$ 的方向为顺时针方向. 求当 $\theta$ 为何值时，$I = \oint_{\Gamma} (y - z)\mathrm{d}x + (z - x)\mathrm{d}y + (x - y)\mathrm{d}z$ 最大？并求出最大值.
 
 ![[_Attachments/题目识别/ZYT8T-答案/ZYT8T-S1-Q20_答案.png|答案]]
 

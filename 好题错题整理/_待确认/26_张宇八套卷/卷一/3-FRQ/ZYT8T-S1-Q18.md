@@ -1,6 +1,6 @@
 ---
 ctime: 2026-08-24 13:30:19
-mtime: 2026-08-24 13:30:19
+mtime: 2026-08-24 16:00:51
 tags:
   - AM
   - 26_张宇八套卷/卷一/FRQ
@@ -18,13 +18,9 @@ level:
 
 ![[_Attachments/题目识别/ZYT8T/ZYT8T-S1-Q18_题目.png|题目]]
 
-计算 $$\int_{0}^{1} \mathrm{d}x \int_{1}^{2} \left( \mathrm{e}^{-y^2} + \mathrm{e}^{y} \sin y \right) \mathrm{d}y .$$
+设 $y = y(x)$ 满足 $x^2y' + (x^2 - 3)y^2 = 0$ 且 $y(1) = 1$.
 
-18.（本题满分 12 分）
-
-设 $y = y(x)$ 满足 $x^2 y' + \left( x^2 - 3 \right) y^2 = 0$ 且 $y(1) = 1$.
-
-(1) 求 $y = y(x)$ 的表达式; (2) 计算 $$\int_{0}^{3} y^2(x) \mathrm{d}x .$$
+(1) 求 $y = y(x)$ 的表达式; (2) 计算 $\int_0^3 y^2(x)\mathrm{d}x$.
 
 ![[_Attachments/题目识别/ZYT8T-答案/ZYT8T-S1-Q18_答案.png|答案]]
 

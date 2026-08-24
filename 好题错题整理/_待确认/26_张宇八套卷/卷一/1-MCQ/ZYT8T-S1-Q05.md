@@ -1,6 +1,6 @@
 ---
 ctime: 2026-08-24 13:30:19
-mtime: 2026-08-24 13:30:19
+mtime: 2026-08-24 16:00:51
 tags:
   - LA
   - 26_张宇八套卷/卷一/MCQ
@@ -18,11 +18,12 @@ level:
 
 ![[_Attachments/题目识别/ZYT8T/ZYT8T-S1-Q05_题目.png|题目]]
 
-5.设 $A = \begin{pmatrix} a & 1 & 1 \\ 1 & a & a \\ 1 & 1 & a \end{pmatrix}$ 可经初等列变换化成 $B = \begin{pmatrix} a & 1 & 1 \\ 1 & a & 1 \\ 1 & 1 & a \end{pmatrix}$,则 $a$ 的取值范围为 (    ).
-(A) $ \{a| a \in \mathbf{R}, a \neq -2\} $.
-(B) $ \{a| a \in \mathbf{R}, a \neq -2, a \neq -1\} $.
-(C) $ \{a| a \in \mathbf{R}, a \neq 1, a \neq -1\} $.
-(D) $ \{a| a \in \mathbf{R}, a \neq -1\} $.
+设 $\mathbf{A}=\begin{pmatrix}1&a&a\\1&1&a\end{pmatrix}$ 可经初等列变换化成 $\mathbf{B}=\begin{pmatrix}1&a&1\\1&1&a\end{pmatrix}$，则 $a$ 的取值范围为（ ）.
+
+(A) $\{a|a\in \mathbf{R},a\neq -2\}$.
+(B) $\{a|a\in \mathbf{R},a\neq -2,a\neq -1\}$.
+(C) $\{a|a\in \mathbf{R},a\neq 1,a\neq -1\}$.
+(D) $\{a|a\in \mathbf{R},a\neq -1\}$.
 
 ![[_Attachments/题目识别/ZYT8T-答案/ZYT8T-S1-Q05_答案.png|答案]]
 

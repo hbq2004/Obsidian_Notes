@@ -1,6 +1,6 @@
 ---
 ctime: 2026-08-24 13:30:19
-mtime: 2026-08-24 13:30:19
+mtime: 2026-08-24 16:00:51
 tags:
   - AM
   - 26_张宇八套卷/卷一/FIB
@@ -17,7 +17,9 @@ level:
 
 ![[_Attachments/题目识别/ZYT8T/ZYT8T-S1-Q11_题目.png|题目]]
 
-$\lim_{x \to 0} \frac{|x|^{x+2}}{\sqrt{1+x^2}-1} = \_\_\_\_\_\_\_\_.$
+$$
+\lim_{x \to 0} \frac{|x|}{\sqrt{1 + x^2} - 1} = \_\_\_\_\_.
+$$
 
 ![[_Attachments/题目识别/ZYT8T-答案/ZYT8T-S1-Q11_答案.png|答案]]
 

@@ -1,6 +1,6 @@
 ---
 ctime: 2026-08-24 13:30:19
-mtime: 2026-08-24 13:30:19
+mtime: 2026-08-24 16:00:51
 tags:
   - PS
   - 26_张宇八套卷/卷一/MCQ
@@ -18,14 +18,12 @@ level:
 
 ![[_Attachments/题目识别/ZYT8T/ZYT8T-S1-Q09_题目.png|题目]]
 
-设 $X_1, X_2, \cdots, X_n$ ($n \geq 2$) 为来自正态总体 $X$ 的简单随机样本，$E(X) = \mu$，$D(X) = \sigma^2$，$\sigma > 0$，记
-$$Y = \frac{1}{n} \sum_{i=1}^{n} |X_i - \mu|$$
-则 $D(Y)$ = （\_）
+设 $X_1, X_2, \cdots, X_n (n \geq 2)$ 为来自正态总体 $X$ 的简单随机样本, $E(X)=\mu, D(X)=\sigma^2, \sigma>0$, 记 $Y=\frac{1}{n}\sum_{i=1}^{n}|X_i-\mu|$, 则 $D(Y)=$ ( ).
 
-(A) $\frac{\sigma^2}{n} \left( 1 - \frac{2}{\pi} \right).$
-(B) $\frac{\sigma^2}{n} \left( 1 - \frac{\pi}{2} \right).$
-(C) $\frac{\sigma^2}{n^2} \left( 1 - \frac{2}{\pi} \right).$
-(D) $\frac{\sigma^2}{n^2} \left( 1 - \frac{\pi}{2} \right).$
+(A) $\frac{\sigma^2}{n}\left(1-\frac{2}{\pi}\right)$.
+(B) $\frac{\sigma^2}{n}\left(1-\frac{\pi}{2}\right)$.
+(C) $\frac{\sigma^2}{n^2}\left(1-\frac{2}{\pi}\right)$.
+(D) $\frac{\sigma^2}{n^2}\left(1-\frac{\pi}{2}\right)$.
 
 ![[_Attachments/题目识别/ZYT8T-答案/ZYT8T-S1-Q09_答案.png|答案]]
 

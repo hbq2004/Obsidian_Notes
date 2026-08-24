@@ -1,6 +1,6 @@
 ---
 ctime: 2026-08-24 13:30:19
-mtime: 2026-08-24 13:30:19
+mtime: 2026-08-24 16:00:51
 tags:
   - AM
   - 26_张宇八套卷/卷一/FIB
@@ -18,7 +18,7 @@ level:
 
 ![[_Attachments/题目识别/ZYT8T/ZYT8T-S1-Q12_题目.png|题目]]
 
-$$z = \arcsin y^x$$ 在点 $ (-1, 2) $ 处的全微分为 $ \mathrm{d}z = \_\_\_ $.
+$z = \arcsin y^x$ 在点 $(-1,2)$ 处的全微分为 $\mathrm{d}z = \_\_\_\_\_\_$.
 
 ![[_Attachments/题目识别/ZYT8T-答案/ZYT8T-S1-Q12_答案.png|答案]]
 

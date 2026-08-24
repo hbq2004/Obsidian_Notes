@@ -1,6 +1,6 @@
 ---
 ctime: 2026-08-24 13:30:19
-mtime: 2026-08-24 13:30:19
+mtime: 2026-08-24 16:00:51
 tags:
   - LA
   - 26_张宇八套卷/卷一/MCQ
@@ -17,8 +17,7 @@ level:
 
 ![[_Attachments/题目识别/ZYT8T/ZYT8T-S1-Q06_题目.png|题目]]
 
-设二次型 $f(x_1,x_2,x_3)$ 在正交变换 $\mathbf{x}=\mathbf{Py}$ 下的标准形为 $y_1^2+y_2^2-2y_3^2$，其中 $\mathbf{P}=(\mathbf{e}_1,\mathbf{e}_2,\mathbf{e}_3)$。若 $\mathbf{Q}=(-\mathbf{e}_3,\mathbf{e}_2,\mathbf{e}_1)$，则 $f(x_1,x_2,x_3)$ 在正交变换 $\mathbf{x}=\mathbf{Qy}$ 下的标准形为（  ）
-
+设二次型 $f(x_1,x_2,x_3)$ 在正交变换 $\mathbf{x}=\mathbf{Py}$ 下的标准形为 $y_1^2+y_2^2-2y_3^2$,其中 $\mathbf{P}=(\mathbf{e}_1,\mathbf{e}_2,\mathbf{e}_3)$.若 $\mathbf{Q}=(-\mathbf{e}_3,\mathbf{e}_2,\mathbf{e}_1)$,则 $f(x_1,x_2,x_3)$ 在正交变换 $\mathbf{x}=\mathbf{Qy}$ 下的标准形为（ ）.
 (A) $2y_1^2-y_2^2+y_3^2$.
 (B) $2y_1^2+y_2^2-y_3^2$.
 (C) $-2y_1^2+y_2^2+y_3^2$.

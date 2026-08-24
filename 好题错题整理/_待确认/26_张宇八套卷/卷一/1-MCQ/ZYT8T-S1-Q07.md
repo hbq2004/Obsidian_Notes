@@ -1,6 +1,6 @@
 ---
 ctime: 2026-08-24 13:30:19
-mtime: 2026-08-24 13:30:19
+mtime: 2026-08-24 16:00:51
 tags:
   - LA
   - 26_张宇八套卷/卷一/MCQ
@@ -18,10 +18,14 @@ level:
 
 ![[_Attachments/题目识别/ZYT8T/ZYT8T-S1-Q07_题目.png|题目]]
 
-设 $\mathbf{A}$ 为 $n$ 阶矩阵, $r(\mathbf{A}) = r$, $\mathbf{E}_r$ 为 $r$ 阶单位矩阵, 则 "$\mathbf{A}^2 = \mathbf{A}$" 是 "存在列满秩矩阵 $\mathbf{C}_{n \times r}$, 使得 $\mathbf{A} = \mathbf{CB}, \mathbf{BC} = \mathbf{E}_r$" 的（ ）.
+设 $\mathbf{A}$ 为 $n$ 阶矩阵，$r(\mathbf{A})=r$，$\mathbf{E}_r$ 为 $r$ 阶单位矩阵，则 “$\mathbf{A}^2=\mathbf{A}$” 是 “存在列满秩矩阵 $\mathbf{C}_{n \times r}$，使得 $\mathbf{A}=\mathbf{CB}$，$\mathbf{BC}=\mathbf{E}_r$ ” 的 ( ).
+
 (A) 充分非必要条件.
+
 (B) 必要非充分条件.
+
 (C) 充分必要条件.
+
 (D) 既非充分又非必要条件.
 
 ![[_Attachments/题目识别/ZYT8T-答案/ZYT8T-S1-Q07_答案.png|答案]]

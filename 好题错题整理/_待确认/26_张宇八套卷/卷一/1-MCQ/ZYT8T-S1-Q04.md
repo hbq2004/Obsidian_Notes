@@ -1,6 +1,6 @@
 ---
 ctime: 2026-08-24 13:30:19
-mtime: 2026-08-24 13:30:19
+mtime: 2026-08-24 16:00:51
 tags:
   - AM
   - 26_张宇八套卷/卷一/MCQ
@@ -17,12 +17,18 @@ level:
 
 ![[_Attachments/题目识别/ZYT8T/ZYT8T-S1-Q04_题目.png|题目]]
 
-4. 设 $f(x)$ 在 $(0,+\infty)$ 内可导，以下结论（ ）.
-(I) 若 $\lim_{x\to+\infty} f(x)$ 存在，则 $\lim_{x\to+\infty} f'(x)$ 存在；
-(II) 若 $\lim_{x\to+\infty} f'(x)$ 存在，则 $\lim_{x\to+\infty} f(x)$ 存在；
-(III) 若 $\lim_{x\to+\infty} f'(x) = a \neq 0$，则 $f(x)$ 在 $x \to +\infty$ 时无界；
-(IV) 若 $\lim_{x\to+\infty} f'(x) = 0$，则 $f(x)$ 在 $x \to +\infty$ 时有界.
+设 $f(x)$ 在 $(0,+\infty)$ 内可导,以下结论（　　）.
+
+①若 $\lim_{x\to+\infty} f(x)$ 存在,则 $\lim_{x\to+\infty} f'(x)$ 存在;
+
+②若 $\lim_{x\to+\infty} f'(x)$ 存在,则 $\lim_{x\to+\infty} f(x)$ 存在;
+
+③若 $\lim_{x\to+\infty} f'(x) = a \neq 0$,则 $f(x)$ 在 $x \to +\infty$ 时无界;
+
+④若 $\lim_{x\to+\infty} f'(x) = 0$,则 $f(x)$ 在 $x \to +\infty$ 时有界.
+
 正确的个数为
+
 (A) 1.
 (B) 2.
 (C) 3.

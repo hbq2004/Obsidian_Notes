@@ -1,6 +1,6 @@
 ---
 ctime: 2026-08-24 13:30:19
-mtime: 2026-08-24 13:30:19
+mtime: 2026-08-24 16:00:51
 tags:
   - AM
   - 26_张宇八套卷/卷一/MCQ
@@ -18,17 +18,11 @@ level:
 
 ![[_Attachments/题目识别/ZYT8T/ZYT8T-S1-Q01_题目.png|题目]]
 
-符合题目要求的.
-
-1. 当 $x \to 0$ 时,以下无穷小量阶数最高的是 ( ) .
-
-A. $\int_{0}^{\sin x} \left[(1+t)^t - 1\right] \mathrm{d}t$ .
-
-B. $\int_{0}^{\sin x^2} (1+t)^{\frac{1}{t}} \mathrm{d}t$ .
-
-C. $\int_{0}^{\sin x} \left[\mathrm{e} - (1+t)^{\frac{1}{t}}\right] \mathrm{d}t$ .
-
-D. $\int_{0}^{\sin^2 x} (t\mathrm{e}^t - t) \mathrm{d}t$ .
+当 $x \to 0$ 时，以下无穷小量阶数最高的是（ ）.
+(A) $\int_0^{\sin x} [(1+t)^t - 1] dt$.
+(B) $\int_0^{\sin x^2} (1+t)^{\frac{1}{t}} dt$.
+(C) $\int_0^{\sin x} [e - (1+t)^{\frac{1}{t}}] dt$.
+(D) $\int_0^{\sin^2 x} (te^t - t) dt$.
 
 ![[_Attachments/题目识别/ZYT8T-答案/ZYT8T-S1-Q01_答案.png|答案]]
 

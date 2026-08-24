@@ -1,6 +1,6 @@
 ---
 ctime: 2026-08-24 13:30:19
-mtime: 2026-08-24 13:30:19
+mtime: 2026-08-24 16:00:51
 tags:
   - PS
   - 26_张宇八套卷/卷一/FIB
@@ -17,7 +17,7 @@ level:
 
 ![[_Attachments/题目识别/ZYT8T/ZYT8T-S1-Q16_题目.png|题目]]
 
-设随机变量 $X \sim B\left(2, \frac{1}{2}\right)$，则 $E\left(\mathrm{e}^{2X}\right)=$ \_\_\_\_\_\_ .
+16. 设随机变量 $X \sim B\left(2, \frac{1}{2}\right)$，则 $E\left(\mathrm{e}^{2X}\right) =$ \_\_\_\_\_\_.
 
 ![[_Attachments/题目识别/ZYT8T-答案/ZYT8T-S1-Q16_答案.png|答案]]
 

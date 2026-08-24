@@ -1,6 +1,6 @@
 ---
 ctime: 2026-08-24 13:30:19
-mtime: 2026-08-24 13:30:19
+mtime: 2026-08-24 16:00:51
 tags:
   - AM
   - 26_张宇八套卷/卷一/FRQ
@@ -18,7 +18,7 @@ level:
 
 ![[_Attachments/题目识别/ZYT8T/ZYT8T-S1-Q17_题目.png|题目]]
 
-计算 $\int_{0}^{1} \mathrm{d}x \int_{1}^{x}\left(\mathrm{e}^{-y^{2}} + \mathrm{e}^{y} \sin y\right) \mathrm{d}y$.
+计算 $\int_0^1 \mathrm{d}x \int_1^x \left( \mathrm{e}^{-y^2} + \mathrm{e}^y \sin y \right) \mathrm{d}y .$
 
 ![[_Attachments/题目识别/ZYT8T-答案/ZYT8T-S1-Q17_答案.png|答案]]
 
