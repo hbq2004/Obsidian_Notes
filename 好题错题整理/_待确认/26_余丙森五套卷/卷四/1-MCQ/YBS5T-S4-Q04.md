@@ -1,6 +1,6 @@
 ---
 ctime: 2026-08-24 15:13:03
-mtime: 2026-08-24 15:13:03
+mtime: 2026-08-24 15:25:08
 tags:
   - AM
   - 26_余丙森五套卷/卷四/MCQ
@@ -18,7 +18,7 @@ level:
 
 ![[_Attachments/题目识别/YBS5T/YBS5T-S4-Q04_题目.png|题目]]
 
-4. 设 $f(x,y)\geqslant 0$ 有一阶连续偏导数，$l$ 为曲线 $\begin{cases} z=f(x,y), \\ z=1 \end{cases}$ 上从点 $M(x_1,y_1,1)$ 到 $N(x_2,y_2,1)$ 的一段弧，其中 $M$ 在第二象限，$N$ 在第四象限，从 $z$ 轴正向看过去，$l$ 取逆时针方向，则以下积分中小于零的是(  ).
+设 $f(x,y)\geqslant 0$ 有一阶连续偏导数，$l$ 为曲线 $\begin{cases} z=f(x,y), \\ z=1 \end{cases}$ 上从点 $M(x_1,y_1,1)$ 到 $N(x_2,y_2,1)$ 的一段弧，其中 $M$ 在第二象限，$N$ 在第四象限，从 $z$ 轴正向看过去，$l$ 取逆时针方向，则以下积分中小于零的是(  ).
 
 (A) $\int_{l} f'_x(x,y)\mathrm{d}x + f'_y(x,y)\mathrm{d}y$
 (B) $\int_{l} f(x,y)\mathrm{d}s$

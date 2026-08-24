@@ -1,6 +1,6 @@
 ---
 ctime: 2026-08-24 15:13:03
-mtime: 2026-08-24 15:13:03
+mtime: 2026-08-24 15:25:08
 tags:
   - AM
   - 26_余丙森五套卷/卷二/FRQ
@@ -18,7 +18,7 @@ level:
 
 ![[_Attachments/题目识别/YBS5T/YBS5T-S2-Q17_题目.png|题目]]
 
-17.（本题满分 10 分）
+（本题满分 10 分）
 设函数 $f(x)$ 在 $(-\infty,\infty)$ 内有定义，$f(0)=1$，且 $\lim_{x\to0} \frac{\ln(1-x)+f(x)\sin x}{e^{x^2}-1}=0$。求 $f'(0)$ 以及极限 $\lim_{x\to0} \frac{xf(x)-e^x+\cos x}{\ln(1+x^2)}$ 的值。
 
 ![[_Attachments/题目识别/YBS5T-答案/YBS5T-S2-Q17_答案.png|答案]]

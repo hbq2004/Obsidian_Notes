@@ -1,6 +1,6 @@
 ---
 ctime: 2026-08-24 15:13:02
-mtime: 2026-08-24 15:13:02
+mtime: 2026-08-24 15:25:08
 tags:
   - AM
   - 26_余丙森五套卷/卷一/FIB
@@ -18,7 +18,7 @@ level:
 
 ![[_Attachments/题目识别/YBS5T/YBS5T-S1-Q12_题目.png|题目]]
 
-12. $\lim_{n\to\infty}\int_{0}^{n}\frac{x}{n^{2}+x}\mathrm{d}x = \_\_\_\_$.
+$\lim_{n\to\infty}\int_{0}^{n}\frac{x}{n^{2}+x}\mathrm{d}x = \_\_\_\_$.
 
 ![[_Attachments/题目识别/YBS5T-答案/YBS5T-S1-Q12_答案.png|答案]]
 

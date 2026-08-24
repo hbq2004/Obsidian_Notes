@@ -1,6 +1,6 @@
 ---
 ctime: 2026-08-24 15:13:03
-mtime: 2026-08-24 15:13:03
+mtime: 2026-08-24 15:25:08
 tags:
   - LA
   - 26_余丙森五套卷/卷三/MCQ
@@ -18,7 +18,7 @@ level:
 
 ![[_Attachments/题目识别/YBS5T/YBS5T-S3-Q05_题目.png|题目]]
 
-5. 设线性方程组 $A\mathbf{x} = \boldsymbol{\alpha}$ 有解, $\begin{pmatrix} \boldsymbol{A} \\ \boldsymbol{B} \end{pmatrix}\boldsymbol{x} = \begin{pmatrix} \boldsymbol{\alpha} \\ \boldsymbol{\beta} \end{pmatrix}$ 无解, 则下列结论中不正确的是 ( ).
+设线性方程组 $A\mathbf{x} = \boldsymbol{\alpha}$ 有解, $\begin{pmatrix} \boldsymbol{A} \\ \boldsymbol{B} \end{pmatrix}\boldsymbol{x} = \begin{pmatrix} \boldsymbol{\alpha} \\ \boldsymbol{\beta} \end{pmatrix}$ 无解, 则下列结论中不正确的是 ( ).
 
 (A) $r(\boldsymbol{B},\boldsymbol{\beta}) = r(\boldsymbol{B}) + 1$
 

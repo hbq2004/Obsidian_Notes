@@ -1,6 +1,6 @@
 ---
 ctime: 2026-08-24 15:13:03
-mtime: 2026-08-24 15:13:03
+mtime: 2026-08-24 15:25:08
 tags:
   - AM
   - 26_余丙森五套卷/卷三/FRQ
@@ -17,7 +17,7 @@ level:
 
 ![[_Attachments/题目识别/YBS5T/YBS5T-S3-Q18_题目.png|题目]]
 
-18.（本题满分 12 分）
+（本题满分 12 分）
 
 (1) 计算 $I = \int_{0}^{\frac{1}{2}} \mathrm{d}y \int_{y}^{\frac{1}{2}} \frac{\ln(1+x)}{x} \mathrm{d}x$;
 
