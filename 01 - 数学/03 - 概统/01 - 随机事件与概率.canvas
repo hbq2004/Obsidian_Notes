@@ -8,7 +8,7 @@
 		{"id":"45954b164742d9fb","type":"group","x":-4730,"y":2440,"width":1300,"height":1615,"label":"事件的关系与运算"},
 		{"id":"a305d8e548351074","type":"group","x":-1040,"y":2015,"width":1500,"height":1056,"label":"几何概型"},
 		{"id":"3333555728ba3449","type":"group","x":-2460,"y":3845,"width":1260,"height":1200,"label":"基本事件数的计算"},
-		{"id":"6aca5dd539bbf225","type":"group","x":1320,"y":3000,"width":1960,"height":560,"color":"6","label":"重点 —— 条件概率公式、全概率公式、贝叶斯公式"},
+		{"id":"6aca5dd539bbf225","type":"group","x":1320,"y":3000,"width":2000,"height":560,"color":"6","label":"重点 —— 条件概率公式、全概率公式、贝叶斯公式"},
 		{"id":"2b1a10c38b12f4e2","type":"group","x":2300,"y":1974,"width":920,"height":1002,"label":"公式"},
 		{"id":"98beb5575c0a8457","type":"group","x":-3920,"y":1573,"width":760,"height":707,"label":"概率的定义"},
 		{"id":"791915a3a2aacb60","type":"group","x":-4820,"y":1580,"width":740,"height":700,"label":"基本概念"},
@@ -75,9 +75,29 @@
 		{"id":"6fb26859eebd79cd","type":"file","file":"_Attachments/Images/Pasted image 20260822173505.png","x":2420,"y":2555,"width":650,"height":173},
 		{"id":"025b66cc32b57796","type":"file","file":"_Attachments/Images/Pasted image 20260822173432.png","x":2420,"y":2258,"width":640,"height":161},
 		{"id":"2e5a92260c6cb778","type":"file","file":"_Attachments/Images/Pasted image 20260822173644.png","x":2420,"y":2731,"width":650,"height":173},
-		{"id":"f47d62f5588784f4","type":"file","file":"_Attachments/Images/Pasted image 20260822173505.png","x":1460,"y":3294,"width":650,"height":173},
 		{"id":"71b80751f237b090","type":"file","file":"_Attachments/Images/Pasted image 20260822173432.png","x":1470,"y":3120,"width":640,"height":161},
-		{"id":"d51609e460189844","type":"file","file":"_Attachments/Images/Pasted image 20260822173644.png","x":2300,"y":3208,"width":650,"height":173}
+		{"id":"d51609e460189844","type":"file","file":"_Attachments/Images/Pasted image 20260822173644.png","x":2300,"y":3208,"width":650,"height":173},
+		{
+			"id":"d70252c5040ee222",
+			"type":"text",
+			"text":"知道结果，反求原因",
+			"styleAttributes":{"textAlign":"center"},
+			"x":2495,
+			"y":3467,
+			"width":260,
+			"height":60
+		},
+		{"id":"f47d62f5588784f4","type":"file","file":"_Attachments/Images/Pasted image 20260822173505.png","x":1470,"y":3295,"width":650,"height":173},
+		{
+			"id":"ab2614b8294c31f4",
+			"type":"text",
+			"text":"分子是分母的某一项",
+			"styleAttributes":{"textAlign":"center"},
+			"x":3040,
+			"y":3265,
+			"width":260,
+			"height":60
+		}
 	],
 	"edges":[
 		{
@@ -166,6 +186,24 @@
 			"toNode":"3f8a1f414fa50b50",
 			"toSide":"top",
 			"label":"古典概型和几何概型的区别"
+		},
+		{
+			"id":"987d5d0919d12e69",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"d51609e460189844",
+			"fromSide":"bottom",
+			"toNode":"d70252c5040ee222",
+			"toSide":"top"
+		},
+		{
+			"id":"f8cfc84df1fd77cf",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"d51609e460189844",
+			"fromSide":"right",
+			"toNode":"ab2614b8294c31f4",
+			"toSide":"left"
 		}
 	],
 	"metadata":{
