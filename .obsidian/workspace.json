@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "4e51f988d475ee5c",
+        "id": "b730ca5c413cb072",
         "type": "tabs",
         "children": [
           {
-            "id": "d02c40a1428a7cd9",
+            "id": "6edb070d9622b02e",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "缩写.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "缩写"
+              "title": "新标签页"
             }
           }
         ]
@@ -252,8 +248,9 @@
       "hidden-folder-obsidian:隐藏文件夹": false
     }
   },
-  "active": "d02c40a1428a7cd9",
+  "active": "12ec190f678aca36",
   "lastOpenFiles": [
+    "缩写.md",
     "数据库测试.base",
     "充分必要条件.md",
     "六级习题分类系统.md",
