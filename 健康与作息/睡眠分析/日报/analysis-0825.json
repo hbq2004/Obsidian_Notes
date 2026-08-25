@@ -1,103 +1,103 @@
 {
   "sleep": {
-    "nights": 22,
+    "nights": 15,
     "range": "2026-08-10 ~ 2026-08-25",
     "duration_min": {
-      "n": 22,
-      "mean": 341.82,
-      "median": 360.0,
-      "stdev": 186.96,
-      "min": 45,
-      "max": 811,
-      "p10": 88.8,
-      "p25": 175.25,
-      "p75": 452.75,
-      "p90": 499.2
+      "n": 15,
+      "mean": 469.53,
+      "median": 437,
+      "stdev": 149.99,
+      "min": 324,
+      "max": 959,
+      "p10": 348.8,
+      "p25": 378.0,
+      "p75": 492.0,
+      "p90": 570.6
     },
     "time_asleep_min": {
-      "n": 22,
-      "mean": 326.55,
-      "median": 339.5,
-      "stdev": 178.02,
-      "min": 45,
-      "max": 785,
-      "p10": 88.8,
-      "p25": 175.25,
-      "p75": 439.0,
-      "p90": 475.6
+      "n": 15,
+      "mean": 448.47,
+      "median": 421,
+      "stdev": 148.45,
+      "min": 293,
+      "max": 933,
+      "p10": 338.8,
+      "p25": 355.0,
+      "p75": 466.0,
+      "p90": 551.0
     },
     "sleep_score": {},
     "bedtime_hour": {
-      "n": 22,
-      "mean": 5.52,
-      "median": 5.52,
-      "stdev": 4.46,
+      "n": 15,
+      "mean": 4.83,
+      "median": 4.83,
+      "stdev": 2.17,
       "min": 2.72,
       "max": 23.85,
       "p10": null,
       "p90": null
     },
     "waketime_hour": {
-      "n": 22,
-      "mean": 12.97,
-      "median": 12.97,
-      "stdev": 2.7,
-      "min": 3.48,
-      "max": 17.98,
+      "n": 15,
+      "mean": 12.4,
+      "median": 12.4,
+      "stdev": 1.55,
+      "min": 10.3,
+      "max": 14.63,
       "p10": null,
       "p90": null
     },
     "efficiency": {
-      "n": 22,
-      "mean": 96.44,
-      "median": 96.85,
-      "stdev": 3.79,
-      "min": 86.36,
+      "n": 15,
+      "mean": 95.33,
+      "median": 96.34,
+      "stdev": 3.59,
+      "min": 87.91,
       "max": 100.0,
-      "p10": 90.76,
-      "p25": 95.37,
-      "p75": 100.0,
-      "p90": 100.0
+      "p10": 90.56,
+      "p25": 92.64,
+      "p75": 97.81,
+      "p90": 99.38
     },
     "stage_ratio_mean": {
-      "deep": 0.0858,
-      "light": 0.4545,
-      "rem": 0.04,
-      "awake": 0.1471
+      "deep": 0.1182,
+      "light": 0.6258,
+      "rem": 0.0402,
+      "awake": 0.2157
     },
     "stage_ratio_stdev": {
-      "deep": 0.0594,
-      "light": 0.281,
-      "rem": 0.0595,
-      "awake": 0.1031
+      "deep": 0.0336,
+      "light": 0.0465,
+      "rem": 0.029,
+      "awake": 0.0278
     },
-    "nights_short_lt6h": 11,
+    "nights_short_lt6h": 2,
     "nights_score_lt60": 0,
     "naps": 0,
-    "night_hr_mean": 56.5
+    "night_hr_mean": null
   },
   "regularity": {
-    "bedtime_stdev_h": 4.46,
-    "waketime_stdev_h": 2.7,
-    "social_jetlag_h": 2.56,
-    "weekday_bedtime_h": 4.85,
-    "weekend_bedtime_h": 7.42,
-    "weekday_duration_min": 357.9,
-    "weekend_duration_min": 287,
-    "first_half_duration_min": 391.2,
-    "last_half_duration_min": 292.5,
-    "last7_duration_min": 272.4,
+    "bedtime_stdev_h": 2.17,
+    "waketime_stdev_h": 1.55,
+    "social_jetlag_h": 2.17,
+    "weekday_bedtime_h": 4.24,
+    "weekend_bedtime_h": 6.41,
+    "weekday_duration_min": 509.8,
+    "weekend_duration_min": 358.8,
+    "first_half_duration_min": 487.6,
+    "last_half_duration_min": 453.8,
+    "last7_duration_min": 460.1,
     "last7_score": null,
-    "last7_bedtime_h": 6.02,
+    "last7_bedtime_h": 4.89,
     "weekday_avg": {
       "0": {
-        "duration_min": 323.3,
-        "bedtime_h": 10.3,
+        "duration_min": 631.3,
+        "bedtime_h": 10.65,
         "score": null
       },
       "1": {
-        "duration_min": 327.3,
-        "bedtime_h": 9.54,
+        "duration_min": 491,
+        "bedtime_h": 6.04,
         "score": null
       },
       "2": {
@@ -106,18 +106,18 @@
         "score": null
       },
       "3": {
-        "duration_min": 287,
-        "bedtime_h": 7.61,
+        "duration_min": 430.5,
+        "bedtime_h": 5.27,
         "score": null
       },
       "4": {
-        "duration_min": 461.3,
-        "bedtime_h": 3.59,
+        "duration_min": 476.5,
+        "bedtime_h": 3.89,
         "score": null
       },
       "5": {
-        "duration_min": 244.3,
-        "bedtime_h": 8.08,
+        "duration_min": 366.5,
+        "bedtime_h": 4.72,
         "score": null
       },
       "6": {
@@ -138,6 +138,7 @@
     "duration_min": 573,
     "asleep_min": 548,
     "awake_min": 25,
+    "segments": 1,
     "stages": {
       "light": 405,
       "awake": 168,
