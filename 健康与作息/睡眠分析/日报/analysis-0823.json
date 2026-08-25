@@ -1,103 +1,103 @@
 {
   "sleep": {
-    "nights": 18,
-    "range": "2026-08-10 ~ 2026-08-23",
+    "nights": 22,
+    "range": "2026-08-10 ~ 2026-08-25",
     "duration_min": {
-      "n": 18,
-      "mean": 351.89,
+      "n": 22,
+      "mean": 341.82,
       "median": 360.0,
-      "stdev": 176.69,
+      "stdev": 186.96,
       "min": 45,
       "max": 811,
-      "p10": 110.5,
-      "p25": 273.5,
-      "p75": 448.25,
-      "p90": 488.4
+      "p10": 88.8,
+      "p25": 175.25,
+      "p75": 452.75,
+      "p90": 499.2
     },
     "time_asleep_min": {
-      "n": 18,
-      "mean": 335.39,
+      "n": 22,
+      "mean": 326.55,
       "median": 339.5,
-      "stdev": 168.36,
+      "stdev": 178.02,
       "min": 45,
       "max": 785,
-      "p10": 110.5,
-      "p25": 266.0,
-      "p75": 434.5,
-      "p90": 461.2
+      "p10": 88.8,
+      "p25": 175.25,
+      "p75": 439.0,
+      "p90": 475.6
     },
     "sleep_score": {},
     "bedtime_hour": {
-      "n": 18,
-      "mean": 5.84,
-      "median": 5.84,
-      "stdev": 4.44,
-      "min": 2.75,
+      "n": 22,
+      "mean": 5.52,
+      "median": 5.52,
+      "stdev": 4.46,
+      "min": 2.72,
       "max": 23.85,
       "p10": null,
       "p90": null
     },
     "waketime_hour": {
-      "n": 18,
-      "mean": 13.06,
-      "median": 13.06,
-      "stdev": 2.17,
-      "min": 10.3,
+      "n": 22,
+      "mean": 12.97,
+      "median": 12.97,
+      "stdev": 2.7,
+      "min": 3.48,
       "max": 17.98,
       "p10": null,
       "p90": null
     },
     "efficiency": {
-      "n": 18,
-      "mean": 96.07,
-      "median": 96.57,
-      "stdev": 4.0,
+      "n": 22,
+      "mean": 96.44,
+      "median": 96.85,
+      "stdev": 3.79,
       "min": 86.36,
       "max": 100.0,
-      "p10": 90.65,
-      "p25": 94.63,
+      "p10": 90.76,
+      "p25": 95.37,
       "p75": 100.0,
       "p90": 100.0
     },
     "stage_ratio_mean": {
-      "deep": 0.1115,
-      "light": 0.4674,
-      "rem": 0.199,
-      "awake": 0.0
+      "deep": 0.0858,
+      "light": 0.4545,
+      "rem": 0.04,
+      "awake": 0.1471
     },
     "stage_ratio_stdev": {
-      "deep": 0.0729,
-      "light": 0.2567,
-      "rem": 0.1103,
-      "awake": 0.0
+      "deep": 0.0594,
+      "light": 0.281,
+      "rem": 0.0595,
+      "awake": 0.1031
     },
-    "nights_short_lt6h": 9,
+    "nights_short_lt6h": 11,
     "nights_score_lt60": 0,
     "naps": 0,
-    "night_hr_mean": 56.6
+    "night_hr_mean": 56.5
   },
   "regularity": {
-    "bedtime_stdev_h": 4.44,
-    "waketime_stdev_h": 2.17,
-    "social_jetlag_h": 2.33,
-    "weekday_bedtime_h": 5.09,
+    "bedtime_stdev_h": 4.46,
+    "waketime_stdev_h": 2.7,
+    "social_jetlag_h": 2.56,
+    "weekday_bedtime_h": 4.85,
     "weekend_bedtime_h": 7.42,
-    "weekday_duration_min": 376.8,
+    "weekday_duration_min": 357.9,
     "weekend_duration_min": 287,
-    "first_half_duration_min": 415.1,
-    "last_half_duration_min": 288.7,
-    "last7_duration_min": 290.1,
+    "first_half_duration_min": 391.2,
+    "last_half_duration_min": 292.5,
+    "last7_duration_min": 272.4,
     "last7_score": null,
-    "last7_bedtime_h": 6.74,
+    "last7_bedtime_h": 6.02,
     "weekday_avg": {
       "0": {
-        "duration_min": 442.3,
-        "bedtime_h": 14.39,
+        "duration_min": 323.3,
+        "bedtime_h": 10.3,
         "score": null
       },
       "1": {
-        "duration_min": 204.5,
-        "bedtime_h": 12.19,
+        "duration_min": 327.3,
+        "bedtime_h": 9.54,
         "score": null
       },
       "2": {
@@ -131,18 +131,140 @@
   "workout": {
     "error": "无运动记录"
   },
+  "last_night": {
+    "date": "2026-08-23",
+    "bedtime": "08:28",
+    "wake_time": "14:23",
+    "duration_min": 324,
+    "asleep_min": 293,
+    "awake_min": 31,
+    "stages": {
+      "light": 240,
+      "rem": 31,
+      "awake": 84,
+      "deep": 71
+    },
+    "stage_pct": {
+      "light": 0.563,
+      "rem": 0.073,
+      "awake": 0.197,
+      "deep": 0.167
+    },
+    "timeline": [
+      {
+        "stage": "light",
+        "start": "2026-08-23T08:28:00",
+        "end": "2026-08-23T08:55:00"
+      },
+      {
+        "stage": "light",
+        "start": "2026-08-23T08:55:00",
+        "end": "2026-08-23T09:11:00"
+      },
+      {
+        "stage": "light",
+        "start": "2026-08-23T09:11:00",
+        "end": "2026-08-23T09:37:00"
+      },
+      {
+        "stage": "light",
+        "start": "2026-08-23T09:37:00",
+        "end": "2026-08-23T09:38:00"
+      },
+      {
+        "stage": "light",
+        "start": "2026-08-23T09:38:00",
+        "end": "2026-08-23T09:47:00"
+      },
+      {
+        "stage": "light",
+        "start": "2026-08-23T09:47:00",
+        "end": "2026-08-23T10:02:00"
+      },
+      {
+        "stage": "light",
+        "start": "2026-08-23T10:02:00",
+        "end": "2026-08-23T10:31:00"
+      },
+      {
+        "stage": "rem",
+        "start": "2026-08-23T10:31:00",
+        "end": "2026-08-23T10:41:00"
+      },
+      {
+        "stage": "light",
+        "start": "2026-08-23T10:41:00",
+        "end": "2026-08-23T10:43:00"
+      },
+      {
+        "stage": "awake",
+        "start": "2026-08-23T10:43:00",
+        "end": "2026-08-23T11:13:00"
+      },
+      {
+        "stage": "light",
+        "start": "2026-08-23T11:13:00",
+        "end": "2026-08-23T11:42:00"
+      },
+      {
+        "stage": "light",
+        "start": "2026-08-23T11:42:00",
+        "end": "2026-08-23T12:06:00"
+      },
+      {
+        "stage": "light",
+        "start": "2026-08-23T12:06:00",
+        "end": "2026-08-23T12:18:00"
+      },
+      {
+        "stage": "awake",
+        "start": "2026-08-23T12:18:00",
+        "end": "2026-08-23T12:32:00"
+      },
+      {
+        "stage": "rem",
+        "start": "2026-08-23T12:32:00",
+        "end": "2026-08-23T12:53:00"
+      },
+      {
+        "stage": "awake",
+        "start": "2026-08-23T12:53:00",
+        "end": "2026-08-23T12:54:00"
+      },
+      {
+        "stage": "light",
+        "start": "2026-08-23T12:54:00",
+        "end": "2026-08-23T13:16:00"
+      },
+      {
+        "stage": "light",
+        "start": "2026-08-23T13:16:00",
+        "end": "2026-08-23T13:31:00"
+      },
+      {
+        "stage": "light",
+        "start": "2026-08-23T13:31:00",
+        "end": "2026-08-23T13:44:00"
+      },
+      {
+        "stage": "awake",
+        "start": "2026-08-23T13:44:00",
+        "end": "2026-08-23T14:23:00"
+      }
+    ]
+  },
   "coverage": [
     {
       "类型": "睡眠",
       "起始": "2026-08-10",
-      "截止": "2026-08-23",
-      "有数据天数": 14
+      "截止": "2026-08-24",
+      "有数据天数": 15
     },
     {
       "类型": "每日活动",
       "起始": "2026-08-10",
-      "截止": "2026-08-23",
-      "有数据天数": 14
+      "截止": "2026-08-25",
+      "有数据天数": 16
     },
     {
       "类型": "运动",
@@ -153,8 +275,8 @@
     {
       "类型": "心率",
       "起始": "2026-08-10",
-      "截止": "2026-08-23",
-      "有数据天数": 14
+      "截止": "2026-08-25",
+      "有数据天数": 16
     },
     {
       "类型": "血氧",
