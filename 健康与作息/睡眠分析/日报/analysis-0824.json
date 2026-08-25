@@ -1,94 +1,94 @@
 {
   "sleep": {
-    "nights": 22,
-    "range": "2026-08-10 ~ 2026-08-25",
+    "nights": 21,
+    "range": "2026-08-10 ~ 2026-08-24",
     "duration_min": {
-      "n": 22,
-      "mean": 341.82,
-      "median": 360.0,
-      "stdev": 186.96,
+      "n": 21,
+      "mean": 330.81,
+      "median": 352,
+      "stdev": 184.26,
       "min": 45,
       "max": 811,
-      "p10": 88.8,
-      "p25": 175.25,
-      "p75": 452.75,
-      "p90": 499.2
+      "p10": 86.0,
+      "p25": 148.0,
+      "p75": 452.0,
+      "p90": 483.0
     },
     "time_asleep_min": {
-      "n": 22,
-      "mean": 326.55,
-      "median": 339.5,
-      "stdev": 178.02,
+      "n": 21,
+      "mean": 316,
+      "median": 336,
+      "stdev": 175.37,
       "min": 45,
       "max": 785,
-      "p10": 88.8,
-      "p25": 175.25,
+      "p10": 86.0,
+      "p25": 148.0,
       "p75": 439.0,
-      "p90": 475.6
+      "p90": 454.0
     },
     "sleep_score": {},
     "bedtime_hour": {
-      "n": 22,
-      "mean": 5.52,
-      "median": 5.52,
-      "stdev": 4.46,
+      "n": 21,
+      "mean": 5.65,
+      "median": 5.65,
+      "stdev": 4.59,
       "min": 2.72,
       "max": 23.85,
       "p10": null,
       "p90": null
     },
     "waketime_hour": {
-      "n": 22,
-      "mean": 12.97,
-      "median": 12.97,
-      "stdev": 2.7,
+      "n": 21,
+      "mean": 12.89,
+      "median": 12.89,
+      "stdev": 2.76,
       "min": 3.48,
       "max": 17.98,
       "p10": null,
       "p90": null
     },
     "efficiency": {
-      "n": 22,
-      "mean": 96.44,
-      "median": 96.85,
-      "stdev": 3.79,
+      "n": 21,
+      "mean": 96.48,
+      "median": 96.91,
+      "stdev": 3.88,
       "min": 86.36,
       "max": 100.0,
-      "p10": 90.76,
-      "p25": 95.37,
+      "p10": 90.74,
+      "p25": 95.36,
       "p75": 100.0,
       "p90": 100.0
     },
     "stage_ratio_mean": {
-      "deep": 0.0858,
-      "light": 0.4545,
-      "rem": 0.04,
-      "awake": 0.1471
+      "deep": 0.0851,
+      "light": 0.447,
+      "rem": 0.0401,
+      "awake": 0.1421
     },
     "stage_ratio_stdev": {
-      "deep": 0.0594,
-      "light": 0.281,
-      "rem": 0.0595,
-      "awake": 0.1031
+      "deep": 0.0607,
+      "light": 0.2855,
+      "rem": 0.0609,
+      "awake": 0.1028
     },
     "nights_short_lt6h": 11,
     "nights_score_lt60": 0,
     "naps": 0,
-    "night_hr_mean": 56.5
+    "night_hr_mean": 56.6
   },
   "regularity": {
-    "bedtime_stdev_h": 4.46,
-    "waketime_stdev_h": 2.7,
-    "social_jetlag_h": 2.56,
-    "weekday_bedtime_h": 4.85,
+    "bedtime_stdev_h": 4.59,
+    "waketime_stdev_h": 2.76,
+    "social_jetlag_h": 2.49,
+    "weekday_bedtime_h": 4.93,
     "weekend_bedtime_h": 7.42,
-    "weekday_duration_min": 357.9,
+    "weekday_duration_min": 344.5,
     "weekend_duration_min": 287,
-    "first_half_duration_min": 391.2,
-    "last_half_duration_min": 292.5,
-    "last7_duration_min": 272.4,
+    "first_half_duration_min": 382.2,
+    "last_half_duration_min": 284.1,
+    "last7_duration_min": 262.1,
     "last7_score": null,
-    "last7_bedtime_h": 6.02,
+    "last7_bedtime_h": 5.66,
     "weekday_avg": {
       "0": {
         "duration_min": 323.3,
@@ -96,8 +96,8 @@
         "score": null
       },
       "1": {
-        "duration_min": 327.3,
-        "bedtime_h": 9.54,
+        "duration_min": 204.5,
+        "bedtime_h": 12.19,
         "score": null
       },
       "2": {
@@ -133,14 +133,270 @@
   },
   "last_night": {
     "date": "2026-08-24",
-    "bedtime": "13:12",
-    "wake_time": "15:06",
-    "duration_min": 114,
-    "asleep_min": 114,
-    "awake_min": 0,
-    "stages": {},
-    "stage_pct": {},
-    "timeline": []
+    "bedtime": "02:43",
+    "wake_time": "10:30",
+    "duration_min": 453,
+    "asleep_min": 439,
+    "awake_min": 14,
+    "stages": {
+      "light": 339,
+      "rem": 14,
+      "awake": 114,
+      "deep": 58
+    },
+    "stage_pct": {
+      "light": 0.646,
+      "rem": 0.027,
+      "awake": 0.217,
+      "deep": 0.11
+    },
+    "timeline": [
+      {
+        "stage": "light",
+        "start": "2026-08-24T02:43:00",
+        "end": "2026-08-24T03:05:00"
+      },
+      {
+        "stage": "light",
+        "start": "2026-08-24T03:05:00",
+        "end": "2026-08-24T03:10:00"
+      },
+      {
+        "stage": "light",
+        "start": "2026-08-24T03:10:00",
+        "end": "2026-08-24T03:17:00"
+      },
+      {
+        "stage": "light",
+        "start": "2026-08-24T03:17:00",
+        "end": "2026-08-24T03:28:00"
+      },
+      {
+        "stage": "light",
+        "start": "2026-08-24T03:28:00",
+        "end": "2026-08-24T03:29:00"
+      },
+      {
+        "stage": "rem",
+        "start": "2026-08-24T03:29:00",
+        "end": "2026-08-24T03:32:00"
+      },
+      {
+        "stage": "light",
+        "start": "2026-08-24T03:32:00",
+        "end": "2026-08-24T04:17:00"
+      },
+      {
+        "stage": "awake",
+        "start": "2026-08-24T04:17:00",
+        "end": "2026-08-24T04:29:00"
+      },
+      {
+        "stage": "light",
+        "start": "2026-08-24T04:29:00",
+        "end": "2026-08-24T04:34:00"
+      },
+      {
+        "stage": "awake",
+        "start": "2026-08-24T04:34:00",
+        "end": "2026-08-24T04:37:00"
+      },
+      {
+        "stage": "light",
+        "start": "2026-08-24T04:37:00",
+        "end": "2026-08-24T04:40:00"
+      },
+      {
+        "stage": "awake",
+        "start": "2026-08-24T04:40:00",
+        "end": "2026-08-24T04:50:00"
+      },
+      {
+        "stage": "light",
+        "start": "2026-08-24T04:50:00",
+        "end": "2026-08-24T05:03:00"
+      },
+      {
+        "stage": "light",
+        "start": "2026-08-24T05:03:00",
+        "end": "2026-08-24T05:15:00"
+      },
+      {
+        "stage": "light",
+        "start": "2026-08-24T05:15:00",
+        "end": "2026-08-24T05:37:00"
+      },
+      {
+        "stage": "light",
+        "start": "2026-08-24T05:37:00",
+        "end": "2026-08-24T05:46:00"
+      },
+      {
+        "stage": "light",
+        "start": "2026-08-24T05:46:00",
+        "end": "2026-08-24T06:09:00"
+      },
+      {
+        "stage": "awake",
+        "start": "2026-08-24T06:09:00",
+        "end": "2026-08-24T06:10:00"
+      },
+      {
+        "stage": "light",
+        "start": "2026-08-24T06:10:00",
+        "end": "2026-08-24T06:13:00"
+      },
+      {
+        "stage": "awake",
+        "start": "2026-08-24T06:13:00",
+        "end": "2026-08-24T06:14:00"
+      },
+      {
+        "stage": "light",
+        "start": "2026-08-24T06:14:00",
+        "end": "2026-08-24T06:23:00"
+      },
+      {
+        "stage": "awake",
+        "start": "2026-08-24T06:23:00",
+        "end": "2026-08-24T06:29:00"
+      },
+      {
+        "stage": "light",
+        "start": "2026-08-24T06:29:00",
+        "end": "2026-08-24T06:34:00"
+      },
+      {
+        "stage": "awake",
+        "start": "2026-08-24T06:34:00",
+        "end": "2026-08-24T06:50:00"
+      },
+      {
+        "stage": "light",
+        "start": "2026-08-24T06:50:00",
+        "end": "2026-08-24T06:51:00"
+      },
+      {
+        "stage": "awake",
+        "start": "2026-08-24T06:51:00",
+        "end": "2026-08-24T06:59:00"
+      },
+      {
+        "stage": "light",
+        "start": "2026-08-24T06:59:00",
+        "end": "2026-08-24T07:17:00"
+      },
+      {
+        "stage": "light",
+        "start": "2026-08-24T07:17:00",
+        "end": "2026-08-24T07:21:00"
+      },
+      {
+        "stage": "light",
+        "start": "2026-08-24T07:21:00",
+        "end": "2026-08-24T07:25:00"
+      },
+      {
+        "stage": "light",
+        "start": "2026-08-24T07:25:00",
+        "end": "2026-08-24T07:37:00"
+      },
+      {
+        "stage": "light",
+        "start": "2026-08-24T07:37:00",
+        "end": "2026-08-24T08:01:00"
+      },
+      {
+        "stage": "rem",
+        "start": "2026-08-24T08:01:00",
+        "end": "2026-08-24T08:12:00"
+      },
+      {
+        "stage": "light",
+        "start": "2026-08-24T08:12:00",
+        "end": "2026-08-24T08:13:00"
+      },
+      {
+        "stage": "awake",
+        "start": "2026-08-24T08:13:00",
+        "end": "2026-08-24T08:15:00"
+      },
+      {
+        "stage": "light",
+        "start": "2026-08-24T08:15:00",
+        "end": "2026-08-24T08:16:00"
+      },
+      {
+        "stage": "awake",
+        "start": "2026-08-24T08:16:00",
+        "end": "2026-08-24T08:22:00"
+      },
+      {
+        "stage": "light",
+        "start": "2026-08-24T08:22:00",
+        "end": "2026-08-24T08:26:00"
+      },
+      {
+        "stage": "awake",
+        "start": "2026-08-24T08:26:00",
+        "end": "2026-08-24T08:29:00"
+      },
+      {
+        "stage": "light",
+        "start": "2026-08-24T08:29:00",
+        "end": "2026-08-24T08:30:00"
+      },
+      {
+        "stage": "awake",
+        "start": "2026-08-24T08:30:00",
+        "end": "2026-08-24T08:45:00"
+      },
+      {
+        "stage": "light",
+        "start": "2026-08-24T08:45:00",
+        "end": "2026-08-24T09:21:00"
+      },
+      {
+        "stage": "light",
+        "start": "2026-08-24T09:21:00",
+        "end": "2026-08-24T09:22:00"
+      },
+      {
+        "stage": "light",
+        "start": "2026-08-24T09:22:00",
+        "end": "2026-08-24T09:27:00"
+      },
+      {
+        "stage": "light",
+        "start": "2026-08-24T09:27:00",
+        "end": "2026-08-24T09:31:00"
+      },
+      {
+        "stage": "light",
+        "start": "2026-08-24T09:31:00",
+        "end": "2026-08-24T09:50:00"
+      },
+      {
+        "stage": "awake",
+        "start": "2026-08-24T09:50:00",
+        "end": "2026-08-24T10:10:00"
+      },
+      {
+        "stage": "light",
+        "start": "2026-08-24T10:10:00",
+        "end": "2026-08-24T10:16:00"
+      },
+      {
+        "stage": "awake",
+        "start": "2026-08-24T10:16:00",
+        "end": "2026-08-24T10:27:00"
+      },
+      {
+        "stage": "light",
+        "start": "2026-08-24T10:27:00",
+        "end": "2026-08-24T10:30:00"
+      }
+    ]
   },
   "coverage": [
     {
