@@ -1,6 +1,34 @@
 {
   "recentFiles": [
     {
+      "basename": "缩写",
+      "path": "缩写.md"
+    },
+    {
+      "basename": "数据库测试",
+      "path": "数据库测试.base"
+    },
+    {
+      "basename": "充分必要条件",
+      "path": "充分必要条件.md"
+    },
+    {
+      "basename": "六级习题分类系统",
+      "path": "六级习题分类系统.md"
+    },
+    {
+      "basename": "z_大雪深埋模考规划",
+      "path": "z_大雪深埋模考规划.md"
+    },
+    {
+      "basename": "LaTeX Suite",
+      "path": "LaTeX Suite.md"
+    },
+    {
+      "basename": "未命名",
+      "path": "未命名.md"
+    },
+    {
       "basename": "2026-08-25",
       "path": "_Daily_Tasks/2026-08-25.md"
     },
@@ -71,10 +99,6 @@
     {
       "basename": "OJD-EP-T998A2D-Q001",
       "path": "好题错题整理/_待确认/模拟卷/2027/欧几里得八月模考ep精选好题/1-MCQ/OJD-EP-T998A2D-Q001.md"
-    },
-    {
-      "basename": "未命名",
-      "path": "未命名.md"
     },
     {
       "basename": "ZYT8T-S1-Q02",
@@ -175,30 +199,6 @@
     {
       "basename": "AI睡眠解读-0823",
       "path": "健康与作息/睡眠分析/日报/AI睡眠解读-0823.md"
-    },
-    {
-      "basename": "JXQ4T-S1-Q07",
-      "path": "好题错题整理/_待确认/26_姜晓千四套卷/卷一/1-MCQ/JXQ4T-S1-Q07.md"
-    },
-    {
-      "basename": "JXQ4T-S1-Q08",
-      "path": "好题错题整理/_待确认/26_姜晓千四套卷/卷一/1-MCQ/JXQ4T-S1-Q08.md"
-    },
-    {
-      "basename": "JXQ4T-S1-Q10",
-      "path": "好题错题整理/_待确认/26_姜晓千四套卷/卷一/1-MCQ/JXQ4T-S1-Q10.md"
-    },
-    {
-      "basename": "JXQ4T-S1-Q06",
-      "path": "好题错题整理/_待确认/26_姜晓千四套卷/卷一/1-MCQ/JXQ4T-S1-Q06.md"
-    },
-    {
-      "basename": "Pasted image 20260822174554",
-      "path": "_Attachments/Images/Pasted image 20260822174554.png"
-    },
-    {
-      "basename": "Pasted image 20260822174704",
-      "path": "_Attachments/Images/Pasted image 20260822174704.png"
     }
   ],
   "omittedPaths": [],
