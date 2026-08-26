@@ -11,17 +11,14 @@
             "id": "d280dd15cbe3aff5",
             "type": "leaf",
             "state": {
-              "type": "canvas",
+              "type": "markdown",
               "state": {
-                "file": "01 - 数学/03 - 概统/01 - 随机事件与概率.canvas",
-                "viewState": {
-                  "x": 4720.888153676507,
-                  "y": 2624.8968421917466,
-                  "zoom": -1.0954450977651105
-                }
+                "file": "健康与作息/睡眠分析/日报/AI睡眠解读-0826.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-layout-dashboard",
-              "title": "01 - 随机事件与概率"
+              "icon": "lucide-file",
+              "title": "AI睡眠解读-0826"
             }
           }
         ]
@@ -111,8 +108,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 388.0124206542969,
-    "collapsed": true
+    "width": 388.0124206542969
   },
   "right": {
     "id": "788c2b70f5d82052",
@@ -129,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "01 - 数学/03 - 概统/01 - 随机事件与概率.canvas",
+                "file": "健康与作息/睡眠分析/日报/AI睡眠解读-0826.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
@@ -173,7 +169,7 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "01 - 数学/03 - 概统/01 - 随机事件与概率.canvas"
+                "file": "健康与作息/睡眠分析/日报/AI睡眠解读-0826.md"
               },
               "icon": "lucide-info",
               "title": "笔记属性"
@@ -253,12 +249,14 @@
       "pdf-plus:PDF++: Toggle auto-copy": false,
       "pdf-plus:PDF++: Toggle auto-focus": false,
       "pdf-plus:PDF++: Toggle auto-paste": false,
-      "obsidian-excalidraw-plugin:新建绘图文件": false,
-      "hidden-folder-obsidian:隐藏文件夹": false
+      "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
   "active": "d280dd15cbe3aff5",
   "lastOpenFiles": [
+    "02 - 408/01 - 数据结构/卡特兰数_推导.md",
+    "02 - 408/01 - 数据结构/_代码模板/拓扑排序.md",
+    "01 - 数学/03 - 概统/01 - 随机事件与概率.canvas",
     "健康与作息/睡眠分析/日报/AI睡眠解读-0826.md",
     "健康与作息/睡眠分析/日报/睡运-0826 - 原数据.md",
     "健康与作息/睡眠分析/日报/analysis-0826.json",
@@ -267,7 +265,6 @@
     "_Attachments/Images/Pasted image 20260826160548.png",
     "_Attachments/Images/Pasted image 20260826160356.png",
     "01 - 数学/03 - 概统/02 - 一维随机变量及其分布.canvas",
-    "01 - 数学/03 - 概统/01 - 随机事件与概率.canvas",
     "_Attachments/Images/Pasted image 20260826153227.png",
     "好题错题整理/_待确认/26_没咋了线代强化/1_行列式与矩阵/1-MCQ/Q01-MZL-2026-S13.md",
     "好题错题整理/_待确认/27_ep题型方法梳理班/02 - 线代/01_行列式/1-MCQ/EPLA-2027-01Q05.md",
@@ -294,9 +291,7 @@
     "健康与作息/睡眠分析/日报/analysis-080823.json",
     "健康与作息/睡眠分析/日报/睡运-080823.md",
     "健康与作息/睡眠分析/日报/analysis-080822.json",
-    "健康与作息/睡眠分析/日报/睡运-080822.md",
     "健康与作息/睡眠分析/日报/analysis-080821.json",
-    "健康与作息/睡眠分析/日报/睡运-080821.md",
     "健康与作息/睡眠分析/日报/analysis-0820.json",
     "健康与作息/睡眠分析/日报/analysis-0819.json",
     "健康与作息/睡眠分析/日报/analysis-0818.json",
