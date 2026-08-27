@@ -4,11 +4,11 @@
 		{"id":"607fec40c24d0b62","type":"group","x":4080,"y":4640,"width":2880,"height":3040,"label":"综合好题"},
 		{"id":"8a97dcb4e8d49d47","type":"group","x":-5000,"y":1360,"width":1960,"height":2880,"label":"基本概念"},
 		{"id":"66ac04fc111baa4b","type":"group","x":1160,"y":1680,"width":2360,"height":2000,"color":"2","label":"概率的性质与公式"},
-		{"id":"ed804dad514d1646","type":"group","x":-2560,"y":1665,"width":1480,"height":2010,"label":"古典概型（理想化的模型）"},
+		{"id":"ed804dad514d1646","type":"group","x":-2600,"y":1620,"width":1280,"height":2055,"label":"古典概型（理想化的模型）"},
 		{"id":"923d3348c882b57f","type":"group","x":1440,"y":5520,"width":1620,"height":1500,"label":"抓阄模型"},
 		{"id":"ecb47f89a73768c3","type":"group","x":4080,"y":1960,"width":1860,"height":1220,"color":"3","label":"事件的独立性和独立重复试验"},
 		{"id":"45954b164742d9fb","type":"group","x":-4730,"y":2440,"width":1300,"height":1615,"label":"事件的关系与运算"},
-		{"id":"a305d8e548351074","type":"group","x":-1040,"y":2015,"width":1500,"height":1056,"label":"几何概型"},
+		{"id":"a305d8e548351074","type":"group","x":-1120,"y":2000,"width":1500,"height":1056,"label":"几何概型"},
 		{"id":"3333555728ba3449","type":"group","x":-2460,"y":3845,"width":1260,"height":1200,"label":"基本事件数的计算"},
 		{"id":"6aca5dd539bbf225","type":"group","x":1320,"y":3000,"width":2000,"height":560,"color":"6","label":"重点 —— 条件概率公式、全概率公式、贝叶斯公式"},
 		{"id":"2b1a10c38b12f4e2","type":"group","x":2300,"y":1974,"width":920,"height":1002,"label":"公式"},
@@ -19,8 +19,6 @@
 		{"id":"61ffdb1d4d022374","type":"file","file":"_Attachments/Images/Pasted image 20260822172806.png","x":-2558,"y":1678,"width":989,"height":484},
 		{"id":"eb7f380b80a862b5","type":"file","file":"_Attachments/Images/result_aXKYPr.png","x":-137,"y":-1420,"width":533,"height":1155},
 		{"id":"39ef4a969988197f","type":"file","file":"_Attachments/Images/Pasted image 20260822172850.png","x":-2400,"y":2386,"width":672,"height":436},
-		{"id":"3f8a1f414fa50b50","type":"file","file":"_Attachments/Images/Pasted image 20260822173039.png","x":-597,"y":2719,"width":615,"height":205},
-		{"id":"6e6945394a703cc8","type":"file","file":"_Attachments/Images/Pasted image 20260825011209.png","x":-639,"y":2045,"width":695,"height":340},
 		{
 			"id":"b553651cb89e1598",
 			"type":"text",
@@ -116,7 +114,9 @@
 		{"id":"b07b3ecf09f784c2","type":"file","file":"_Attachments/Images/Pasted image 20260822173750.png","x":5065,"y":2096,"width":798,"height":115},
 		{"id":"db0cc243c2c6c302","type":"file","file":"_Attachments/Images/Pasted image 20260822173806.png","x":5065,"y":2211,"width":796,"height":86},
 		{"id":"9ff035769dc9b050","type":"file","file":"_Attachments/Images/Pasted image 20260822173822.png","x":5066,"y":2297,"width":794,"height":62},
-		{"id":"565546d0fc8e7988","type":"file","file":"_Attachments/Images/Pasted image 20260827153036.png","x":5263,"y":2490,"width":400,"height":236}
+		{"id":"565546d0fc8e7988","type":"file","file":"_Attachments/Images/Pasted image 20260827153036.png","x":5263,"y":2490,"width":400,"height":236},
+		{"id":"3f8a1f414fa50b50","type":"file","file":"_Attachments/Images/Pasted image 20260822173039.png","x":-677,"y":2704,"width":615,"height":205},
+		{"id":"6e6945394a703cc8","type":"file","file":"_Attachments/Images/Pasted image 20260825011209.png","x":-719,"y":2030,"width":695,"height":340}
 	],
 	"edges":[
 		{
