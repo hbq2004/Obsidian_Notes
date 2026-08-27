@@ -6,7 +6,7 @@
 		{"id":"66ac04fc111baa4b","type":"group","x":1160,"y":1680,"width":2360,"height":2000,"color":"2","label":"概率的性质与公式"},
 		{"id":"ed804dad514d1646","type":"group","x":-2560,"y":1665,"width":1480,"height":2010,"label":"古典概型（理想化的模型）"},
 		{"id":"923d3348c882b57f","type":"group","x":1440,"y":5520,"width":1620,"height":1500,"label":"抓阄模型"},
-		{"id":"ecb47f89a73768c3","type":"group","x":4080,"y":1960,"width":2120,"height":1139,"color":"3","label":"事件的独立性和独立重复试验"},
+		{"id":"ecb47f89a73768c3","type":"group","x":4080,"y":1960,"width":1860,"height":1220,"color":"3","label":"事件的独立性和独立重复试验"},
 		{"id":"45954b164742d9fb","type":"group","x":-4730,"y":2440,"width":1300,"height":1615,"label":"事件的关系与运算"},
 		{"id":"a305d8e548351074","type":"group","x":-1040,"y":2015,"width":1500,"height":1056,"label":"几何概型"},
 		{"id":"3333555728ba3449","type":"group","x":-2460,"y":3845,"width":1260,"height":1200,"label":"基本事件数的计算"},
@@ -58,7 +58,6 @@
 		{"id":"2a35e7850aa3f4c6","type":"file","file":"_Attachments/Images/Pasted image 20260822173450.png","x":2420,"y":2419,"width":635,"height":135},
 		{"id":"6fb26859eebd79cd","type":"file","file":"_Attachments/Images/Pasted image 20260822173505.png","x":2420,"y":2555,"width":650,"height":173},
 		{"id":"025b66cc32b57796","type":"file","file":"_Attachments/Images/Pasted image 20260822173432.png","x":2420,"y":2258,"width":640,"height":161},
-		{"id":"9ff035769dc9b050","type":"file","file":"_Attachments/Images/Pasted image 20260822173822.png","x":5040,"y":2449,"width":794,"height":62},
 		{"id":"b07b3ecf09f784c2","type":"file","file":"_Attachments/Images/Pasted image 20260822173750.png","x":5045,"y":2236,"width":798,"height":115},
 		{"id":"db0cc243c2c6c302","type":"file","file":"_Attachments/Images/Pasted image 20260822173806.png","x":5045,"y":2358,"width":796,"height":86},
 		{"id":"853248ecc64bed7b","type":"file","file":"_Attachments/Images/Pasted image 20260822173957.png","x":5083,"y":2700,"width":725,"height":230},
@@ -114,7 +113,9 @@
 			"height":60
 		},
 		{"id":"2355b0f1a4f59721","type":"file","file":"_Attachments/Images/Pasted image 20260826153227.png","x":1908,"y":6462,"width":400,"height":275},
-		{"id":"565546d0fc8e7988","type":"file","file":"_Attachments/Images/Pasted image 20260827153036.png","x":4382,"y":2800,"width":400,"height":236}
+		{"id":"565546d0fc8e7988","type":"file","file":"_Attachments/Images/Pasted image 20260827153036.png","x":4120,"y":2793,"width":400,"height":236},
+		{"id":"2d37ef630621e700","type":"file","file":"_Attachments/Images/Pasted image 20260827154222.png","x":4645,"y":2837,"width":400,"height":192},
+		{"id":"9ff035769dc9b050","type":"file","file":"_Attachments/Images/Pasted image 20260822173822.png","x":5047,"y":2444,"width":794,"height":62}
 	],
 	"edges":[
 		{
@@ -241,6 +242,16 @@
 			"toNode":"565546d0fc8e7988",
 			"toSide":"top",
 			"label":"spj：概率为 0 的事件与任何事件都是独立的"
+		},
+		{
+			"id":"4d467b9c69b942f9",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"bb868dbb75d8fa3a",
+			"fromSide":"bottom",
+			"toNode":"2d37ef630621e700",
+			"toSide":"top",
+			"label":"有利和抑止"
 		}
 	],
 	"metadata":{
