@@ -7,7 +7,7 @@
 		{"id":"ed804dad514d1646","type":"group","x":-2600,"y":1620,"width":1280,"height":2055,"label":"古典概型（理想化的模型）"},
 		{"id":"923d3348c882b57f","type":"group","x":1440,"y":5520,"width":1620,"height":1500,"label":"抓阄模型"},
 		{"id":"ecb47f89a73768c3","type":"group","x":4080,"y":1960,"width":1860,"height":1220,"color":"3","label":"事件的独立性和独立重复试验 —— 重点"},
-		{"id":"45954b164742d9fb","type":"group","x":-4730,"y":2440,"width":1300,"height":1615,"label":"事件的关系与运算"},
+		{"id":"45954b164742d9fb","type":"group","x":-4730,"y":2440,"width":1390,"height":1620,"label":"事件的关系与运算"},
 		{"id":"a305d8e548351074","type":"group","x":-1120,"y":2000,"width":1500,"height":1056,"label":"几何概型"},
 		{"id":"3333555728ba3449","type":"group","x":-2460,"y":3845,"width":1260,"height":1200,"label":"基本事件数的计算"},
 		{"id":"6aca5dd539bbf225","type":"group","x":1320,"y":3000,"width":2000,"height":560,"color":"6","label":"重点 —— 条件概率公式、全概率公式、贝叶斯公式"},
@@ -116,7 +116,9 @@
 		{"id":"9ff035769dc9b050","type":"file","file":"_Attachments/Images/Pasted image 20260822173822.png","x":5066,"y":2297,"width":794,"height":62},
 		{"id":"565546d0fc8e7988","type":"file","file":"_Attachments/Images/Pasted image 20260827153036.png","x":5263,"y":2490,"width":400,"height":236},
 		{"id":"3f8a1f414fa50b50","type":"file","file":"_Attachments/Images/Pasted image 20260822173039.png","x":-677,"y":2704,"width":615,"height":205},
-		{"id":"6e6945394a703cc8","type":"file","file":"_Attachments/Images/Pasted image 20260825011209.png","x":-719,"y":2030,"width":695,"height":340}
+		{"id":"6e6945394a703cc8","type":"file","file":"_Attachments/Images/Pasted image 20260825011209.png","x":-719,"y":2030,"width":695,"height":340},
+		{"id":"b97fd7e60da9b5fb","type":"file","file":"_Attachments/Images/Pasted image 20260827171705.png","x":5320,"y":4720,"width":575,"height":383},
+		{"id":"9f339c75ab8ee3f8","type":"file","file":"_Attachments/Images/Pasted image 20260827171934.png","x":5320,"y":5280,"width":625,"height":255}
 	],
 	"edges":[
 		{
