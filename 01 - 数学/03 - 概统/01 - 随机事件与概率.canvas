@@ -6,7 +6,7 @@
 		{"id":"66ac04fc111baa4b","type":"group","x":1160,"y":1680,"width":2360,"height":2000,"color":"2","label":"概率的性质与公式"},
 		{"id":"ed804dad514d1646","type":"group","x":-2600,"y":1620,"width":1280,"height":2055,"label":"古典概型（理想化的模型）"},
 		{"id":"923d3348c882b57f","type":"group","x":1440,"y":5520,"width":1620,"height":1500,"label":"抓阄模型"},
-		{"id":"ecb47f89a73768c3","type":"group","x":4080,"y":1960,"width":1860,"height":1220,"color":"3","label":"事件的独立性和独立重复试验"},
+		{"id":"ecb47f89a73768c3","type":"group","x":4080,"y":1960,"width":1860,"height":1220,"color":"3","label":"事件的独立性和独立重复试验 —— 重点"},
 		{"id":"45954b164742d9fb","type":"group","x":-4730,"y":2440,"width":1300,"height":1615,"label":"事件的关系与运算"},
 		{"id":"a305d8e548351074","type":"group","x":-1120,"y":2000,"width":1500,"height":1056,"label":"几何概型"},
 		{"id":"3333555728ba3449","type":"group","x":-2460,"y":3845,"width":1260,"height":1200,"label":"基本事件数的计算"},
