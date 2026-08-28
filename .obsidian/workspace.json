@@ -4,21 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "49cc360b8e51fd75",
+        "id": "b47cdebe32d745d1",
         "type": "tabs",
         "children": [
           {
-            "id": "f386588e78f8bcc4",
+            "id": "e4e63bd37e05b39d",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "canvas",
               "state": {
-                "file": "健康与作息/睡眠分析/日报/AI睡眠解读-0827.md",
-                "mode": "source",
-                "source": false
+                "file": "01 - 数学/03 - 概统/01 - 随机事件与概率.canvas",
+                "viewState": {
+                  "x": -335.94249288619267,
+                  "y": 2983.104681702514,
+                  "zoom": -2.6661472579958017
+                }
               },
-              "icon": "lucide-file",
-              "title": "AI睡眠解读-0827"
+              "icon": "lucide-layout-dashboard",
+              "title": "01 - 随机事件与概率"
             }
           }
         ]
@@ -108,7 +111,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 388.0124206542969
+    "width": 388.0124206542969,
+    "collapsed": true
   },
   "right": {
     "id": "788c2b70f5d82052",
@@ -125,7 +129,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "健康与作息/睡眠分析/日报/AI睡眠解读-0827.md",
+                "file": "01 - 数学/03 - 概统/01 - 随机事件与概率.canvas",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
@@ -253,8 +257,9 @@
       "hidden-folder-obsidian:隐藏文件夹": false
     }
   },
-  "active": "f386588e78f8bcc4",
+  "active": "e4e63bd37e05b39d",
   "lastOpenFiles": [
+    "健康与作息/睡眠分析/日报/AI睡眠解读-0827.md",
     "02 - 408/02 - 计算机组成原理/01/06 - 计算机的性能指标.md",
     "健康与作息/睡眠分析/日报/睡运-0828 - 原数据.md",
     "健康与作息/睡眠分析/日报/analysis-0828.json",
@@ -263,7 +268,6 @@
     "02 - 408/04 - 计算机网络/03 - 数据链路层/3.8 以太网交换机.md",
     "01 - 数学/03 - 概统/01 - 随机事件与概率.canvas",
     "03 - 英语/03 - 外刊知识汲取",
-    "健康与作息/睡眠分析/日报/AI睡眠解读-0827.md",
     "健康与作息/睡眠分析/日报/睡运-0827 - 原数据.md",
     "健康与作息/睡眠分析/日报/analysis-0827.json",
     "健康与作息/睡眠分析/日报/睡运-0827.md",
