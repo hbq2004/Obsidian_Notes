@@ -15,9 +15,9 @@
               "state": {
                 "file": "01 - 数学/03 - 概统/01 - 随机事件与概率.canvas",
                 "viewState": {
-                  "x": 5628.881612317251,
-                  "y": 5678.420920916229,
-                  "zoom": -1.4439614385480741
+                  "x": 1295.569313772622,
+                  "y": 3913.239995931115,
+                  "zoom": -2.9045549022348887
                 }
               },
               "icon": "lucide-layout-dashboard",
@@ -38,8 +38,7 @@
               "title": "2026-08-27 - Frozen out"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -144,7 +143,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "03 - 英语/03 - 外刊知识汲取/2026-08-27 - Frozen out.md",
+                "file": "01 - 数学/03 - 概统/01 - 随机事件与概率.canvas",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
@@ -268,13 +267,14 @@
       "pdf-plus:PDF++: Toggle auto-copy": false,
       "pdf-plus:PDF++: Toggle auto-focus": false,
       "pdf-plus:PDF++: Toggle auto-paste": false,
-      "obsidian-excalidraw-plugin:新建绘图文件": false
+      "obsidian-excalidraw-plugin:新建绘图文件": false,
+      "hidden-folder-obsidian:隐藏文件夹": false
     }
   },
-  "active": "f386588e78f8bcc4",
+  "active": "f57b934e57079acb",
   "lastOpenFiles": [
-    "01 - 数学/03 - 概统/01 - 随机事件与概率.canvas",
     "03 - 英语/03 - 外刊知识汲取/2026-08-27 - Frozen out.md",
+    "01 - 数学/03 - 概统/01 - 随机事件与概率.canvas",
     "03 - 英语/03 - 外刊知识汲取",
     "健康与作息/睡眠分析/日报/AI睡眠解读-0827.md",
     "健康与作息/睡眠分析/日报/睡运-0827 - 原数据.md",
