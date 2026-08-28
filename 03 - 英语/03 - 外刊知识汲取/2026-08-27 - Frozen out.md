@@ -1,6 +1,6 @@
 ---
 ctime: 2026-08-27 23:02:09
-mtime: 2026-08-27 23:02:09
+mtime: 2026-08-28 14:56:36
 type: 外刊知识汲取
 article_id: economist-frozen-out-9c3b973f
 source_title: Frozen out
@@ -128,31 +128,31 @@ aliases:
 
 ### 侧栏词汇去重审校
 
-| 词元 | 本文语境义/搭配 | 原资料标注 | 审校 | 掌握建议 |
-| --- | --- | --- | --- | --- |
-| modestly | 程度有限地；income rose modestly | 未标考纲 | 保留 | 阅读识别 |
-| spot | 注意到；spot recruitment ads | 考纲 | 保留 | 主动掌握 |
-| endure | 长期忍受；endure insecure work | 考纲 | 保留 | 主动掌握 |
-| deflation | 通货紧缩、整体价格水平持续下降 | 未标考纲 | 修正定义 | 主动掌握 |
-| cohort | 具有共同经历的一代/群体 | 未标考纲 | 保留 | 主动掌握 |
-| bulge | 人口激增形成的高峰；population bulge | 未标考纲 | 补充语境 | 阅读识别 |
-| starkly | 鲜明地；contrast starkly with | 未标考纲 | 保留 | 主动掌握搭配 |
-| voraciously | 大量且急切地；hire voraciously | 未标考纲 | 保留 | 识别即可 |
-| woo | 招揽、吸引；woo graduates | 未标考纲 | 补充语境 | 阅读识别 |
-| distinguish | 区分；distinguish sharply between A and B | 考纲 | 保留 | 主动掌握 |
-| supplement | 补充；supplement household income | 考纲 | 保留 | 主动掌握 |
-| reclusive | 避世的、深居简出的 | 未标考纲 | 合并重复 | 识别即可 |
-| acute | 严重而紧迫的；an acute labour shortage | 考纲 | 保留 | 主动掌握 |
-| mobility | 流动性；labour/social mobility | 考纲 | 保留 | 主动掌握 |
-| stagnation | 长期停滞；decades of stagnation | 考纲 | 保留 | 主动掌握 |
-| incentive | 激励、诱因；give firms little incentive to do | 考纲 | 保留 | 主动掌握 |
-| nominal | 名义上的；nominal wages | 考纲 | 补充经济义 | 主动掌握 |
-| loom | 逼近、隐现；a crisis looms / questions loom | 考纲 | 保留 | 主动掌握 |
-| suppress | 压低、抑制；suppress wages | 考纲 | 保留 | 主动掌握 |
-| lament | 对……表示惋惜；lament that ... | 未标考纲 | 保留 | 阅读识别 |
-| woe | 困境、麻烦；financial woes | 未标考纲 | 保留 | 识别即可 |
-| nudge | 轻推、促使；nudge sb to do | 未标考纲 | 保留 | 阅读识别 |
-| belatedly | 迟来地；belatedly acknowledge/adjust | 未标考纲 | 保留 | 阅读识别 |
+| 词元          | 本文语境义/搭配                                | 原资料标注 | 审校    | 掌握建议   |
+| ----------- | --------------------------------------- | ----- | ----- | ------ |
+| modestly    | 程度有限地；income rose modestly              | 未标考纲  | 保留    | 阅读识别   |
+| spot        | 注意到；spot recruitment ads                | 考纲    | 保留    | 主动掌握   |
+| endure      | 长期忍受；endure insecure work               | 考纲    | 保留    | 主动掌握   |
+| deflation   | 通货紧缩、整体价格水平持续下降                         | 未标考纲  | 修正定义  | 主动掌握   |
+| cohort      | 具有共同经历的一代/群体                            | 未标考纲  | 保留    | 主动掌握   |
+| bulge       | 人口激增形成的高峰；population bulge              | 未标考纲  | 补充语境  | 阅读识别   |
+| starkly     | 鲜明地；contrast starkly with               | 未标考纲  | 保留    | 主动掌握搭配 |
+| voraciously | 大量且急切地；hire voraciously                 | 未标考纲  | 保留    | 识别即可   |
+| woo         | 招揽、吸引；woo graduates                     | 未标考纲  | 补充语境  | 阅读识别   |
+| distinguish | 区分；distinguish sharply between A and B  | 考纲    | 保留    | 主动掌握   |
+| supplement  | 补充；supplement household income          | 考纲    | 保留    | 主动掌握   |
+| reclusive   | 避世的、深居简出的                               | 未标考纲  | 合并重复  | 识别即可   |
+| acute       | 严重而紧迫的；an acute labour shortage         | 考纲    | 保留    | 主动掌握   |
+| mobility    | 流动性；labour/social mobility              | 考纲    | 保留    | 主动掌握   |
+| stagnation  | 长期停滞；decades of stagnation              | 考纲    | 保留    | 主动掌握   |
+| incentive   | 激励、诱因；give firms little incentive to do | 考纲    | 保留    | 主动掌握   |
+| nominal     | 名义上的；nominal wages                      | 考纲    | 补充经济义 | 主动掌握   |
+| loom        | 逼近、隐现；a crisis looms / questions loom   | 考纲    | 保留    | 主动掌握   |
+| suppress    | 压低、抑制；suppress wages                    | 考纲    | 保留    | 主动掌握   |
+| lament      | 对……表示惋惜；lament that ...                 | 未标考纲  | 保留    | 阅读识别   |
+| woe         | 困境、麻烦；financial woes                    | 未标考纲  | 保留    | 识别即可   |
+| nudge       | 轻推、促使；nudge sb to do                    | 未标考纲  | 保留    | 阅读识别   |
+| belatedly   | 迟来地；belatedly acknowledge/adjust        | 未标考纲  | 保留    | 阅读识别   |
 
 ### 独立补充的高价值语块
 
