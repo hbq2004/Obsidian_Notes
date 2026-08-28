@@ -118,7 +118,17 @@
 		{"id":"2355b0f1a4f59721","type":"file","file":"_Attachments/Images/Pasted image 20260826153227.png","x":1908,"y":6462,"width":400,"height":275},
 		{"id":"025b66cc32b57796","type":"file","file":"_Attachments/Images/Pasted image 20260822173432.png","x":2420,"y":2258,"width":640,"height":161},
 		{"id":"82796216a2193c58","type":"file","file":"_Attachments/Images/Pasted image 20260822173158.png","x":1320,"y":2278,"width":745,"height":91},
-		{"id":"9a32d4fb02497f6c","type":"file","file":"_Attachments/Images/Pasted image 20260822173209.png","x":1320,"y":2369,"width":750,"height":82}
+		{"id":"9a32d4fb02497f6c","type":"file","file":"_Attachments/Images/Pasted image 20260822173209.png","x":1320,"y":2369,"width":750,"height":82},
+		{
+			"id":"65d7376d29884aac",
+			"type":"text",
+			"text":"容易出题",
+			"styleAttributes":{"textAlign":"center"},
+			"x":-3660,
+			"y":3674,
+			"width":260,
+			"height":60
+		}
 	],
 	"edges":[
 		{
@@ -255,6 +265,24 @@
 			"toNode":"2d37ef630621e700",
 			"toSide":"top",
 			"label":"有利和抑止"
+		},
+		{
+			"id":"452ec18479ab8aa7",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"bba403682026d5d6",
+			"fromSide":"right",
+			"toNode":"65d7376d29884aac",
+			"toSide":"left"
+		},
+		{
+			"id":"4e1aa0f934765283",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"7c56c52b9440c7b9",
+			"fromSide":"right",
+			"toNode":"65d7376d29884aac",
+			"toSide":"left"
 		}
 	],
 	"metadata":{
