@@ -4,24 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "ead5aea4119fb4c1",
+        "id": "e96b4ce5bf3c3f2d",
         "type": "tabs",
         "children": [
           {
-            "id": "5f290f1724aca040",
+            "id": "82d322a1f265b267",
             "type": "leaf",
             "state": {
-              "type": "canvas",
+              "type": "markdown",
               "state": {
-                "file": "01 - 数学/03 - 概统/01 - 随机事件与概率.canvas",
-                "viewState": {
-                  "x": 4648.023284914234,
-                  "y": 2402.6755506722156,
-                  "zoom": 0.44149849233754024
-                }
+                "file": "03 - 英语/02 - 真题复盘/阅读/2020/Text 1.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-layout-dashboard",
-              "title": "01 - 随机事件与概率"
+              "icon": "lucide-file",
+              "title": "Text 1"
             }
           }
         ]
@@ -279,13 +276,15 @@
       "hidden-folder-obsidian:隐藏文件夹": false
     }
   },
-  "active": "5f290f1724aca040",
+  "active": "82d322a1f265b267",
   "lastOpenFiles": [
+    "01 - 数学/03 - 概统/01 - 随机事件与概率.canvas",
+    "03 - 英语/02 - 真题复盘/阅读/2020/Text 1.md",
+    "03 - 英语/02 - 真题复盘/阅读/2020",
     "_Daily_Tasks/2026-09-02.md",
     "_Daily_Tasks/2026-08-30.md",
     "_Daily_Tasks/2026-09-05.md",
     "01 - 数学/03 - 概统/02 - 一维随机变量及其分布.canvas",
-    "01 - 数学/03 - 概统/01 - 随机事件与概率.canvas",
     "01 - 数学/02 - 线代/04 - 线性方程组.canvas",
     "01 - 数学/02 - 线代/03 - 向量组.canvas",
     "01 - 数学/02 - 线代/06 - 二次型.canvas",
@@ -322,8 +321,6 @@
     "好题错题整理/_待确认/26_杨威/06 - 二次型/3-FRQ/YW-2026-T4E4366-Q197.md",
     "好题错题整理/_待确认/26_杨威/06 - 二次型/3-FRQ/YW-2026-T4E4366-Q208.md",
     "好题错题整理/_待确认/26_杨威/06 - 二次型/3-FRQ/YW-2026-T4E4366-Q169.md",
-    "好题错题整理/_待确认/26_杨威/06 - 二次型/3-FRQ/YW-2026-T4E4366-Q042.md",
-    "健康与作息/睡眠分析/日报/AI睡眠解读-0826.md",
     "健康与作息/睡眠分析/日报/analysis-0826.json",
     "_Attachments/Images/Pasted image 20260826160639.png",
     "_Attachments/Images/Pasted image 20260826160548.png",
@@ -332,7 +329,6 @@
     "健康与作息/睡眠分析/日报/analysis-080825.json",
     "健康与作息/睡眠分析/日报/analysis-080824.json",
     "健康与作息/睡眠分析/日报/analysis-080823.json",
-    "健康与作息/睡眠分析/日报/analysis-080822.json",
     "_Attachments/Images/Pasted image 20260825011209.png",
     "01 - 数学/03 - 概统/06 - 数理统计.canvas",
     "01 - 数学/03 - 概统/03 - 多维随机变量及其分布.canvas",
