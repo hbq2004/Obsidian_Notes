@@ -15,9 +15,9 @@
               "state": {
                 "file": "01 - 数学/03 - 概统/01 - 随机事件与概率.canvas",
                 "viewState": {
-                  "x": 980,
-                  "y": 3130,
-                  "zoom": -3.940281898722903
+                  "x": 1931.0190039309432,
+                  "y": 2597.204136620875,
+                  "zoom": -0.6539466054275703
                 }
               },
               "icon": "lucide-layout-dashboard",
@@ -253,7 +253,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 374.5
+    "width": 374.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -278,8 +279,11 @@
       "hidden-folder-obsidian:隐藏文件夹": false
     }
   },
-  "active": "dcf04f878205730d",
+  "active": "5f290f1724aca040",
   "lastOpenFiles": [
+    "_Daily_Tasks/2026-09-02.md",
+    "_Daily_Tasks/2026-08-30.md",
+    "_Daily_Tasks/2026-09-05.md",
     "01 - 数学/03 - 概统/02 - 一维随机变量及其分布.canvas",
     "01 - 数学/03 - 概统/01 - 随机事件与概率.canvas",
     "01 - 数学/02 - 线代/04 - 线性方程组.canvas",
@@ -320,8 +324,6 @@
     "好题错题整理/_待确认/26_杨威/06 - 二次型/3-FRQ/YW-2026-T4E4366-Q169.md",
     "好题错题整理/_待确认/26_杨威/06 - 二次型/3-FRQ/YW-2026-T4E4366-Q042.md",
     "健康与作息/睡眠分析/日报/AI睡眠解读-0826.md",
-    "02 - 408/01 - 数据结构/卡特兰数_推导.md",
-    "02 - 408/01 - 数据结构/_代码模板/拓扑排序.md",
     "健康与作息/睡眠分析/日报/analysis-0826.json",
     "_Attachments/Images/Pasted image 20260826160639.png",
     "_Attachments/Images/Pasted image 20260826160548.png",
@@ -334,7 +336,6 @@
     "_Attachments/Images/Pasted image 20260825011209.png",
     "01 - 数学/03 - 概统/06 - 数理统计.canvas",
     "01 - 数学/03 - 概统/03 - 多维随机变量及其分布.canvas",
-    "01 - 数学/03 - 概统/04 - 随机变量的数字特征.canvas",
-    "01 - 数学/03 - 概统/05 - 大数定律与中心极限定律.canvas"
+    "01 - 数学/03 - 概统/04 - 随机变量的数字特征.canvas"
   ]
 }
