@@ -5,6 +5,26 @@
       "path": "01 - 数学/03 - 概统/01 - 随机事件与概率.canvas"
     },
     {
+      "basename": "02 - 一维随机变量及其分布",
+      "path": "01 - 数学/03 - 概统/02 - 一维随机变量及其分布.canvas"
+    },
+    {
+      "basename": "04 - 线性方程组",
+      "path": "01 - 数学/02 - 线代/04 - 线性方程组.canvas"
+    },
+    {
+      "basename": "03 - 向量组",
+      "path": "01 - 数学/02 - 线代/03 - 向量组.canvas"
+    },
+    {
+      "basename": "06 - 二次型",
+      "path": "01 - 数学/02 - 线代/06 - 二次型.canvas"
+    },
+    {
+      "basename": "秩 1 矩阵大观",
+      "path": "01 - 数学/02 - 线代/秩 1 矩阵大观.canvas"
+    },
+    {
       "basename": "Pasted image 20260825005830",
       "path": "_Attachments/Images/Pasted image 20260825005830.png"
     },
@@ -109,10 +129,6 @@
       "path": "_Attachments/Images/Pasted image 20260826160356.png"
     },
     {
-      "basename": "02 - 一维随机变量及其分布",
-      "path": "01 - 数学/03 - 概统/02 - 一维随机变量及其分布.canvas"
-    },
-    {
       "basename": "Pasted image 20260826153227",
       "path": "_Attachments/Images/Pasted image 20260826153227.png"
     },
@@ -183,22 +199,6 @@
     {
       "basename": "EPTX-2027-01Q28",
       "path": "好题错题整理/_待确认/27_ep题型方法梳理班/03 - 概率/01_随机事件与概率/1-MCQ/EPTX-2027-01Q28.md"
-    },
-    {
-      "basename": "EPTX-2027-01Q26",
-      "path": "好题错题整理/_待确认/27_ep题型方法梳理班/03 - 概率/01_随机事件与概率/1-MCQ/EPTX-2027-01Q26.md"
-    },
-    {
-      "basename": "EPTX-2027-01Q23",
-      "path": "好题错题整理/_待确认/27_ep题型方法梳理班/03 - 概率/01_随机事件与概率/1-MCQ/EPTX-2027-01Q23.md"
-    },
-    {
-      "basename": "EPTX-2027-01Q13",
-      "path": "好题错题整理/_待确认/27_ep题型方法梳理班/03 - 概率/01_随机事件与概率/1-MCQ/EPTX-2027-01Q13.md"
-    },
-    {
-      "basename": "EPTX-2027-01Q01",
-      "path": "好题错题整理/_待确认/27_ep题型方法梳理班/03 - 概率/01_随机事件与概率/1-MCQ/EPTX-2027-01Q01.md"
     }
   ],
   "omittedPaths": [],

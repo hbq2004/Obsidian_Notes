@@ -11,10 +11,17 @@
             "id": "5f290f1724aca040",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "新标签页"
+              "type": "canvas",
+              "state": {
+                "file": "01 - 数学/03 - 概统/01 - 随机事件与概率.canvas",
+                "viewState": {
+                  "x": 980,
+                  "y": 3130,
+                  "zoom": -3.940281898722903
+                }
+              },
+              "icon": "lucide-layout-dashboard",
+              "title": "01 - 随机事件与概率"
             }
           }
         ]
@@ -93,8 +100,7 @@
               "title": "Source Control"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       },
       {
         "id": "021290095a38d257",
@@ -115,7 +121,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 500.8518524169922
+    "width": 385.821533203125,
+    "collapsed": true
   },
   "right": {
     "id": "788c2b70f5d82052",
@@ -138,6 +145,16 @@
               },
               "icon": "lucide-list",
               "title": "大纲"
+            }
+          },
+          {
+            "id": "dcf04f878205730d",
+            "type": "leaf",
+            "state": {
+              "type": "tag-index-view",
+              "state": {},
+              "icon": "hash",
+              "title": "Tag Index"
             }
           },
           {
@@ -214,7 +231,8 @@
               "title": "2 的出链列表"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       },
       {
         "id": "fc86d4887f1486af",
@@ -235,8 +253,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 374.5,
-    "collapsed": true
+    "width": 374.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -261,9 +278,14 @@
       "hidden-folder-obsidian:隐藏文件夹": false
     }
   },
-  "active": "e312e4bf0fb1d5bf",
+  "active": "dcf04f878205730d",
   "lastOpenFiles": [
+    "01 - 数学/03 - 概统/02 - 一维随机变量及其分布.canvas",
     "01 - 数学/03 - 概统/01 - 随机事件与概率.canvas",
+    "01 - 数学/02 - 线代/04 - 线性方程组.canvas",
+    "01 - 数学/02 - 线代/03 - 向量组.canvas",
+    "01 - 数学/02 - 线代/06 - 二次型.canvas",
+    "01 - 数学/02 - 线代/秩 1 矩阵大观.canvas",
     "健康与作息/睡眠分析/日报/AI睡眠解读-0827.md",
     "02 - 408/02 - 计算机组成原理/01/06 - 计算机的性能指标.md",
     "健康与作息/睡眠分析/日报/睡运-0828 - 原数据.md",
@@ -304,7 +326,6 @@
     "_Attachments/Images/Pasted image 20260826160639.png",
     "_Attachments/Images/Pasted image 20260826160548.png",
     "_Attachments/Images/Pasted image 20260826160356.png",
-    "01 - 数学/03 - 概统/02 - 一维随机变量及其分布.canvas",
     "_Attachments/Images/Pasted image 20260826153227.png",
     "健康与作息/睡眠分析/日报/analysis-080825.json",
     "健康与作息/睡眠分析/日报/analysis-080824.json",
@@ -314,9 +335,6 @@
     "01 - 数学/03 - 概统/06 - 数理统计.canvas",
     "01 - 数学/03 - 概统/03 - 多维随机变量及其分布.canvas",
     "01 - 数学/03 - 概统/04 - 随机变量的数字特征.canvas",
-    "01 - 数学/03 - 概统/05 - 大数定律与中心极限定律.canvas",
-    "01 - 数学/02 - 线代/01 - 行列式.canvas",
-    "01 - 数学/02 - 线代/03 - 向量组.canvas",
-    "01 - 数学/02 - 线代/02 - 矩阵.canvas"
+    "01 - 数学/03 - 概统/05 - 大数定律与中心极限定律.canvas"
   ]
 }
