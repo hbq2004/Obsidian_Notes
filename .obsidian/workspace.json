@@ -4,24 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "b47cdebe32d745d1",
+        "id": "ead5aea4119fb4c1",
         "type": "tabs",
         "children": [
           {
-            "id": "e4e63bd37e05b39d",
+            "id": "5f290f1724aca040",
             "type": "leaf",
             "state": {
-              "type": "canvas",
-              "state": {
-                "file": "01 - 数学/03 - 概统/01 - 随机事件与概率.canvas",
-                "viewState": {
-                  "x": -480.5837713978781,
-                  "y": 4029.427607836256,
-                  "zoom": -4
-                }
-              },
-              "icon": "lucide-layout-dashboard",
-              "title": "01 - 随机事件与概率"
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "新标签页"
             }
           }
         ]
@@ -51,6 +44,16 @@
               },
               "icon": "lucide-folder-closed",
               "title": "文件列表"
+            }
+          },
+          {
+            "id": "e312e4bf0fb1d5bf",
+            "type": "leaf",
+            "state": {
+              "type": "notebook-navigator",
+              "state": {},
+              "icon": "notebook-navigator",
+              "title": "Notebook Navigator"
             }
           },
           {
@@ -90,7 +93,8 @@
               "title": "Source Control"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       },
       {
         "id": "021290095a38d257",
@@ -111,8 +115,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 388.0124206542969,
-    "collapsed": true
+    "width": 500.8518524169922
   },
   "right": {
     "id": "788c2b70f5d82052",
@@ -129,7 +132,6 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "01 - 数学/03 - 概统/01 - 随机事件与概率.canvas",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
@@ -145,9 +147,9 @@
               "type": "tag",
               "state": {
                 "sortOrder": "frequency",
-                "useHierarchy": true,
-                "showSearch": true,
-                "searchQuery": "真题"
+                "useHierarchy": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-tags",
               "title": "标签"
@@ -254,11 +256,14 @@
       "pdf-plus:PDF++: Toggle auto-focus": false,
       "pdf-plus:PDF++: Toggle auto-paste": false,
       "obsidian-excalidraw-plugin:新建绘图文件": false,
+      "notebook-navigator:Notebook Navigator": false,
+      "tag-index:Open tag index": false,
       "hidden-folder-obsidian:隐藏文件夹": false
     }
   },
-  "active": "e4e63bd37e05b39d",
+  "active": "e312e4bf0fb1d5bf",
   "lastOpenFiles": [
+    "01 - 数学/03 - 概统/01 - 随机事件与概率.canvas",
     "健康与作息/睡眠分析/日报/AI睡眠解读-0827.md",
     "02 - 408/02 - 计算机组成原理/01/06 - 计算机的性能指标.md",
     "健康与作息/睡眠分析/日报/睡运-0828 - 原数据.md",
@@ -266,7 +271,6 @@
     "健康与作息/睡眠分析/日报/睡运-0828.md",
     "03 - 英语/03 - 外刊知识汲取/2026-08-27 - Frozen out.md",
     "02 - 408/04 - 计算机网络/03 - 数据链路层/3.8 以太网交换机.md",
-    "01 - 数学/03 - 概统/01 - 随机事件与概率.canvas",
     "03 - 英语/03 - 外刊知识汲取",
     "健康与作息/睡眠分析/日报/睡运-0827 - 原数据.md",
     "健康与作息/睡眠分析/日报/analysis-0827.json",
@@ -296,7 +300,6 @@
     "健康与作息/睡眠分析/日报/AI睡眠解读-0826.md",
     "02 - 408/01 - 数据结构/卡特兰数_推导.md",
     "02 - 408/01 - 数据结构/_代码模板/拓扑排序.md",
-    "健康与作息/睡眠分析/日报/睡运-0826 - 原数据.md",
     "健康与作息/睡眠分析/日报/analysis-0826.json",
     "_Attachments/Images/Pasted image 20260826160639.png",
     "_Attachments/Images/Pasted image 20260826160548.png",
