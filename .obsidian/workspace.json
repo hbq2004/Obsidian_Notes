@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "02 - 408/01 - 数据结构/大题/02 - 应用题/2026_Catalan.md",
+                "file": "02 - 408/01 - 数据结构/大题/02 - 应用题/408 数据结构非代码算法应用题专项题单.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2026_Catalan"
+              "title": "408 数据结构非代码算法应用题专项题单"
             }
           }
         ]
@@ -118,7 +118,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 385.821533203125
+    "width": 385.821533203125,
+    "collapsed": true
   },
   "right": {
     "id": "788c2b70f5d82052",
@@ -135,7 +136,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "02 - 408/01 - 数据结构/大题/02 - 应用题/2026_Catalan.md",
+                "file": "02 - 408/01 - 数据结构/大题/02 - 应用题/408 数据结构非代码算法应用题专项题单.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
@@ -249,8 +250,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 374.5,
-    "collapsed": true
+    "width": 374.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -277,8 +277,8 @@
   },
   "active": "ab101dda952db383",
   "lastOpenFiles": [
-    "02 - 408/01 - 数据结构/大题/02 - 应用题/408 数据结构非代码算法应用题专项题单.md",
     "02 - 408/01 - 数据结构/大题/02 - 应用题/2026_Catalan.md",
+    "02 - 408/01 - 数据结构/大题/02 - 应用题/408 数据结构非代码算法应用题专项题单.md",
     "01 - 数学/03 - 概统/01 - 随机事件与概率.canvas",
     "好题错题整理/_待确认/27_ep题型方法梳理班/03 - 概率/01_随机事件与概率/3-FRQ/EPTX-2027-01Q14.md",
     "好题错题整理/_待确认/27_张宇36讲/01 - 高数/13 - 第13讲 多元函数微分学/3-FRQ/L12-Q25.md",
