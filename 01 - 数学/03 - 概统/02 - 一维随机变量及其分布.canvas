@@ -5,8 +5,8 @@
 		{"id":"36ac36a096fbef4f","type":"group","x":1360,"y":1260,"width":2120,"height":1450,"color":"1","label":"离散型（初高中知识） —— 五大分布"},
 		{"id":"cb7a1004a18f1c03","type":"group","x":3720,"y":1284,"width":1880,"height":1468,"color":"2","label":"连续型 —— 三大分布"},
 		{"id":"479046b6af685ff2","type":"group","x":7040,"y":1580,"width":1160,"height":1300,"label":"随机变量函数的分布"},
+		{"id":"c861bc0ac3af37d5","type":"group","x":-3680,"y":800,"width":1780,"height":800,"label":"一维随机变量"},
 		{"id":"ff13dd5946b6caeb","type":"group","x":-320,"y":1010,"width":1080,"height":1100,"label":"一维连续性随机变量"},
-		{"id":"c861bc0ac3af37d5","type":"group","x":-3680,"y":800,"width":1740,"height":610,"label":"一维随机变量"},
 		{"id":"f94d6c200da75b08","type":"group","x":-1480,"y":910,"width":840,"height":757,"label":"一维离散型随机变量"},
 		{"id":"b8a971c96d3bd2c9","type":"file","file":"_Attachments/Images/Pasted image 20260824170930.png","x":-2600,"y":1012,"width":600,"height":256},
 		{"id":"065d0b7b0af3aec4","type":"file","file":"_Attachments/Images/Pasted image 20260824170506.png","x":-3640,"y":942,"width":479,"height":284},
@@ -33,7 +33,8 @@
 		{"id":"23539c792207fe0c","type":"file","file":"_Attachments/Images/Pasted image 20260824171044.png","x":-1380,"y":996,"width":600,"height":550},
 		{"id":"5ef5ac2df79ce777","type":"file","file":"_Attachments/Images/Pasted image 20260824172049.png","x":1580,"y":1387,"width":890,"height":1131},
 		{"id":"48edc9bfc850b3eb","type":"file","file":"_Attachments/Images/Pasted image 20260824171431.png","x":-140,"y":1667,"width":675,"height":348},
-		{"id":"35a1b35469c0c63c","type":"file","file":"_Attachments/Images/Pasted image 20260824172451.png","x":4740,"y":1525,"width":629,"height":969}
+		{"id":"35a1b35469c0c63c","type":"file","file":"_Attachments/Images/Pasted image 20260824172451.png","x":4740,"y":1525,"width":629,"height":969},
+		{"id":"47104ec677cfaa7e","type":"file","file":"_Attachments/Images/Pasted image 20260901034137.png","x":-2500,"y":1300,"width":400,"height":268}
 	],
 	"edges":[
 		{
@@ -91,6 +92,15 @@
 			"fromNode":"6a4bdfe0b6593713",
 			"fromSide":"bottom",
 			"toNode":"39a535f605781746",
+			"toSide":"top"
+		},
+		{
+			"id":"e48f04a0a652b410",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"b8a971c96d3bd2c9",
+			"fromSide":"bottom",
+			"toNode":"47104ec677cfaa7e",
 			"toSide":"top"
 		}
 	],
