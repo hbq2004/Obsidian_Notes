@@ -5,6 +5,10 @@
       "path": "01 - 数学/03 - 概统/01 - 随机事件与概率.canvas"
     },
     {
+      "basename": "Pasted image 20260831201459",
+      "path": "_Attachments/Images/Pasted image 20260831201459.png"
+    },
+    {
       "basename": "Pasted image 20260831200859",
       "path": "_Attachments/Images/Pasted image 20260831200859.png"
     },
@@ -195,10 +199,6 @@
     {
       "basename": "卡特兰数_推导",
       "path": "02 - 408/01 - 数据结构/卡特兰数_推导.md"
-    },
-    {
-      "basename": "拓扑排序",
-      "path": "02 - 408/01 - 数据结构/_代码模板/拓扑排序.md"
     }
   ],
   "omittedPaths": [],

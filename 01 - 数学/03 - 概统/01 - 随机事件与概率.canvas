@@ -4,9 +4,9 @@
 		{"id":"607fec40c24d0b62","type":"group","x":4080,"y":4640,"width":2880,"height":3040,"label":"综合好题"},
 		{"id":"8a97dcb4e8d49d47","type":"group","x":-5000,"y":1360,"width":1960,"height":2880,"label":"基本概念"},
 		{"id":"66ac04fc111baa4b","type":"group","x":1160,"y":1680,"width":2360,"height":2000,"color":"2","label":"概率的性质与公式"},
+		{"id":"ecb47f89a73768c3","type":"group","x":4080,"y":1960,"width":1920,"height":1880,"color":"3","label":"事件的独立性和独立重复试验 —— 重点"},
 		{"id":"ed804dad514d1646","type":"group","x":-2600,"y":1620,"width":1280,"height":2055,"label":"古典概型（理想化的模型）"},
 		{"id":"923d3348c882b57f","type":"group","x":1440,"y":5520,"width":1620,"height":1500,"label":"抓阄模型"},
-		{"id":"ecb47f89a73768c3","type":"group","x":4080,"y":1960,"width":1860,"height":1220,"color":"3","label":"事件的独立性和独立重复试验 —— 重点"},
 		{"id":"45954b164742d9fb","type":"group","x":-4730,"y":2440,"width":1390,"height":1620,"label":"事件的关系与运算"},
 		{"id":"a305d8e548351074","type":"group","x":-1120,"y":2000,"width":1500,"height":1056,"label":"几何概型"},
 		{"id":"3333555728ba3449","type":"group","x":-2460,"y":3845,"width":1260,"height":1200,"label":"基本事件数的计算"},
@@ -130,8 +130,19 @@
 		{"id":"9a32d4fb02497f6c","type":"file","file":"_Attachments/Images/Pasted image 20260822173209.png","x":1320,"y":2369,"width":750,"height":82},
 		{"id":"82796216a2193c58","type":"file","file":"_Attachments/Images/Pasted image 20260822173158.png","x":1320,"y":2278,"width":745,"height":91},
 		{"id":"1856f93bde3c3ef4","type":"file","file":"_Attachments/Images/Pasted image 20260831172205.png","x":1905,"y":3960,"width":848,"height":817},
-		{"id":"36f764315187600e","type":"file","file":"_Attachments/Images/Pasted image 20260831195833.png","x":6280,"y":2354,"width":950,"height":424},
-		{"id":"f8707ce491090fa2","type":"file","file":"_Attachments/Images/Pasted image 20260831200859.png","x":6393,"y":2778,"width":725,"height":208}
+		{"id":"36f764315187600e","type":"file","file":"_Attachments/Images/Pasted image 20260831195833.png","x":6640,"y":2672,"width":950,"height":424},
+		{"id":"f8707ce491090fa2","type":"file","file":"_Attachments/Images/Pasted image 20260831200859.png","x":6753,"y":3096,"width":725,"height":208},
+		{"id":"1001de33e2239a31","type":"file","file":"_Attachments/Images/Pasted image 20260831201459.png","x":4660,"y":3220,"width":625,"height":498},
+		{
+			"id":"ffadf68fec64fc1c",
+			"type":"text",
+			"text":"结论",
+			"styleAttributes":{"textAlign":"center"},
+			"x":5440,
+			"y":3440,
+			"width":260,
+			"height":60
+		}
 	],
 	"edges":[
 		{
@@ -304,6 +315,15 @@
 			"fromNode":"ecb47f89a73768c3",
 			"fromSide":"right",
 			"toNode":"36f764315187600e",
+			"toSide":"left"
+		},
+		{
+			"id":"ab5da1a3086758ee",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"1001de33e2239a31",
+			"fromSide":"right",
+			"toNode":"ffadf68fec64fc1c",
 			"toSide":"left"
 		}
 	],
