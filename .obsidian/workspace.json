@@ -13,15 +13,15 @@
             "state": {
               "type": "canvas",
               "state": {
-                "file": "01 - 数学/03 - 概统/01 - 随机事件与概率.canvas",
+                "file": "01 - 数学/03 - 概统/02 - 一维随机变量及其分布.canvas",
                 "viewState": {
-                  "x": 3646.54589068928,
-                  "y": 3403.7111783537766,
-                  "zoom": -2.904554902234889
+                  "x": 1538.7463449400266,
+                  "y": 1370.8938558769248,
+                  "zoom": -2.9045549022348887
                 }
               },
               "icon": "lucide-layout-dashboard",
-              "title": "01 - 随机事件与概率"
+              "title": "02 - 一维随机变量及其分布"
             }
           }
         ]
@@ -139,7 +139,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "01 - 数学/03 - 概统/01 - 随机事件与概率.canvas",
+                "file": "01 - 数学/03 - 概统/02 - 一维随机变量及其分布.canvas",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
@@ -280,12 +280,13 @@
   },
   "active": "ab101dda952db383",
   "lastOpenFiles": [
+    "01 - 数学/03 - 概统/03 - 多维随机变量及其分布.canvas",
+    "01 - 数学/03 - 概统/02 - 一维随机变量及其分布.canvas",
+    "01 - 数学/03 - 概统/01 - 随机事件与概率.canvas",
     "_Attachments/Images/Pasted image 20260831201459.png",
     "_Attachments/Images/Pasted image 20260831200859.png",
     "_Attachments/Images/Pasted image 20260831195833.png",
     "文稿/szg - 考研英语.md",
-    "01 - 数学/03 - 概统/01 - 随机事件与概率.canvas",
-    "01 - 数学/03 - 概统/02 - 一维随机变量及其分布.canvas",
     "_Attachments/Images/Pasted image 20260831172205.png",
     "02 - 408/01 - 数据结构/大题/02 - 应用题/01 - 真题2009、2014 - 最短路径与 Dijkstra/01 - 真题2009、2014 - 最短路径与 Dijkstra.md",
     "文稿",
@@ -332,9 +333,7 @@
     "_Attachments/Images/Pasted image 20260827151236.png",
     "02 - 408/01 - 数据结构/大题/未命名.canvas",
     "_Attachments/Images/Pasted image 20260826160639.png",
-    "_Attachments/Images/Pasted image 20260826160548.png",
     "01 - 数学/03 - 概统/06 - 数理统计.canvas",
-    "01 - 数学/03 - 概统/03 - 多维随机变量及其分布.canvas",
     "01 - 数学/03 - 概统/04 - 随机变量的数字特征.canvas"
   ]
 }
