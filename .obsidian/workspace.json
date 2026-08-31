@@ -11,14 +11,17 @@
             "id": "ab101dda952db383",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "canvas",
               "state": {
-                "file": "文稿/szg - 考研英语.md",
-                "mode": "source",
-                "source": false
+                "file": "01 - 数学/03 - 概统/01 - 随机事件与概率.canvas",
+                "viewState": {
+                  "x": -4121.491103268416,
+                  "y": 3314.2881387762245,
+                  "zoom": -2.174258170391482
+                }
               },
-              "icon": "lucide-file",
-              "title": "szg - 考研英语"
+              "icon": "lucide-layout-dashboard",
+              "title": "01 - 随机事件与概率"
             }
           }
         ]
@@ -118,7 +121,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 345.5
+    "width": 345.5,
+    "collapsed": true
   },
   "right": {
     "id": "788c2b70f5d82052",
@@ -135,7 +139,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "文稿/szg - 考研英语.md",
+                "file": "01 - 数学/03 - 概统/01 - 随机事件与概率.canvas",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
@@ -249,7 +253,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 374.5
+    "width": 374.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -270,14 +275,13 @@
       "pdf-plus:PDF++: Toggle auto-paste": false,
       "obsidian-excalidraw-plugin:新建绘图文件": false,
       "notebook-navigator:Notebook Navigator": false,
-      "tag-index:Open tag index": false,
-      "hidden-folder-obsidian:隐藏文件夹": false
+      "tag-index:Open tag index": false
     }
   },
   "active": "ab101dda952db383",
   "lastOpenFiles": [
-    "02 - 408/01 - 数据结构/大题/02 - 应用题/01 - 真题2009、2014 - 最短路径与 Dijkstra/01 - 真题2009、2014 - 最短路径与 Dijkstra.md",
     "文稿/szg - 考研英语.md",
+    "02 - 408/01 - 数据结构/大题/02 - 应用题/01 - 真题2009、2014 - 最短路径与 Dijkstra/01 - 真题2009、2014 - 最短路径与 Dijkstra.md",
     "文稿",
     "03 - 英语/未命名",
     "02 - 408/01 - 数据结构/大题/02 - 应用题/04 - 真题2011 - 邻接矩阵压缩存储/04 - 真题2011 - 邻接矩阵压缩存储.md",
