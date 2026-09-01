@@ -35,7 +35,17 @@
 		{"id":"97aecf039793075b","type":"file","file":"_Attachments/Images/Pasted image 20260824171546.png","x":6920,"y":1017,"width":872,"height":280},
 		{"id":"7dae5eabf73a2d72","type":"file","file":"_Attachments/Images/Pasted image 20260824171600.png","x":7120,"y":1680,"width":725,"height":345},
 		{"id":"8d25ccb2faf9fbf2","type":"file","file":"_Attachments/Images/Pasted image 20260824171731.png","x":7120,"y":2140,"width":614,"height":625},
-		{"id":"17cd0a649ab2d04a","type":"file","file":"_Attachments/Images/Pasted image 20260901170824.png","x":-1000,"y":2400,"width":800,"height":572}
+		{"id":"17cd0a649ab2d04a","type":"file","file":"_Attachments/Images/Pasted image 20260901170824.png","x":-1000,"y":2400,"width":800,"height":572},
+		{
+			"id":"10a1ae05ef2fcd2b",
+			"type":"text",
+			"text":"\n$$\n\\boxed{\n\\begin{aligned}\n\\text{分布函数 }F(x)&:\\quad \\text{离散、连续都有}\\\\\n\\text{分布律 }p_i&:\\quad \\text{离散型}\\\\\n\\text{概率密度 }f(x)&:\\quad \\text{连续型}\n\\end{aligned}}\n$$\n",
+			"styleAttributes":{"textAlign":"center"},
+			"x":-1615,
+			"y":2400,
+			"width":615,
+			"height":415
+		}
 	],
 	"edges":[
 		{
