@@ -1,10 +1,10 @@
 {
 	"nodes":[
 		{"id":"39a535f605781746","type":"group","x":1160,"y":1010,"width":4840,"height":2017,"label":"常见随机变量分布类型"},
-		{"id":"544dfcdf344c122a","type":"group","x":6760,"y":877,"width":1680,"height":2283,"label":"一维随机变量函数的分布"},
-		{"id":"36ac36a096fbef4f","type":"group","x":1360,"y":1260,"width":2160,"height":1450,"color":"1","label":"离散型（初高中知识） —— 五大分布"},
+		{"id":"544dfcdf344c122a","type":"group","x":6480,"y":877,"width":1680,"height":2283,"label":"一维随机变量函数的分布"},
+		{"id":"36ac36a096fbef4f","type":"group","x":1360,"y":1260,"width":2160,"height":1492,"color":"1","label":"离散型（初高中知识） —— 五大分布"},
 		{"id":"cb7a1004a18f1c03","type":"group","x":3720,"y":1284,"width":1880,"height":1468,"color":"2","label":"连续型 —— 三大分布"},
-		{"id":"479046b6af685ff2","type":"group","x":7040,"y":1580,"width":1160,"height":1300,"label":"随机变量函数的分布"},
+		{"id":"479046b6af685ff2","type":"group","x":6760,"y":1580,"width":1160,"height":1300,"label":"随机变量函数的分布"},
 		{"id":"c861bc0ac3af37d5","type":"group","x":-3680,"y":800,"width":1780,"height":800,"label":"一维随机变量"},
 		{"id":"ff13dd5946b6caeb","type":"group","x":-320,"y":1010,"width":1080,"height":1100,"label":"一维连续性随机变量"},
 		{"id":"f94d6c200da75b08","type":"group","x":-1480,"y":910,"width":840,"height":757,"label":"一维离散型随机变量"},
@@ -31,9 +31,6 @@
 		{"id":"dfd4cd9b5e8d3427","type":"file","file":"_Attachments/Images/Pasted image 20260824172312.png","x":3880,"y":1450,"width":750,"height":501},
 		{"id":"7239b8aeaf0b1670","type":"file","file":"_Attachments/Images/Pasted image 20260824172359.png","x":3880,"y":2050,"width":746,"height":573},
 		{"id":"35a1b35469c0c63c","type":"file","file":"_Attachments/Images/Pasted image 20260824172451.png","x":4740,"y":1525,"width":629,"height":969},
-		{"id":"97aecf039793075b","type":"file","file":"_Attachments/Images/Pasted image 20260824171546.png","x":6920,"y":1017,"width":872,"height":280},
-		{"id":"7dae5eabf73a2d72","type":"file","file":"_Attachments/Images/Pasted image 20260824171600.png","x":7120,"y":1680,"width":725,"height":345},
-		{"id":"8d25ccb2faf9fbf2","type":"file","file":"_Attachments/Images/Pasted image 20260824171731.png","x":7120,"y":2140,"width":614,"height":625},
 		{"id":"f6d0571ae2f7d305","type":"file","file":"_Attachments/Images/Pasted image 20260901194059.png","x":-2500,"y":1300,"width":400,"height":268},
 		{"id":"cc2b2f7e3a76b270","type":"file","file":"_Attachments/Images/Pasted image 20260824172127.png","x":2470,"y":1878,"width":649,"height":259},
 		{"id":"9f5011b78cdec8a3","type":"file","file":"_Attachments/Images/Pasted image 20260901193458.png","x":2470,"y":1385,"width":599,"height":337},
@@ -49,7 +46,20 @@
 		},
 		{"id":"47a5b93216e86d43","type":"file","file":"_Attachments/Images/Pasted image 20260901194423.png","x":2470,"y":1779,"width":525,"height":99},
 		{"id":"f0d63cfa15d03792","type":"file","file":"_Attachments/Images/Pasted image 20260901194627.png","x":3119,"y":1737,"width":354,"height":400},
-		{"id":"2f065d93959953b8","type":"file","file":"_Attachments/Images/Pasted image 20260824172138.png","x":2470,"y":2352,"width":649,"height":333}
+		{"id":"2f065d93959953b8","type":"file","file":"_Attachments/Images/Pasted image 20260824172138.png","x":2470,"y":2352,"width":649,"height":333},
+		{
+			"id":"3f05b01ce83a3804",
+			"type":"text",
+			"text":"超几何分布的由来\n—— 古典概型",
+			"styleAttributes":{"textAlign":"center"},
+			"x":3220,
+			"y":2474,
+			"width":267,
+			"height":89
+		},
+		{"id":"7dae5eabf73a2d72","type":"file","file":"_Attachments/Images/Pasted image 20260824171600.png","x":6840,"y":1680,"width":725,"height":345},
+		{"id":"8d25ccb2faf9fbf2","type":"file","file":"_Attachments/Images/Pasted image 20260824171731.png","x":6840,"y":2140,"width":614,"height":625},
+		{"id":"97aecf039793075b","type":"file","file":"_Attachments/Images/Pasted image 20260824171546.png","x":6800,"y":1120,"width":872,"height":280}
 	],
 	"edges":[
 		{
@@ -144,6 +154,15 @@
 			"fromSide":"bottom",
 			"toNode":"f6d0571ae2f7d305",
 			"toSide":"top"
+		},
+		{
+			"id":"aaa9affb5f8e0275",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"2f065d93959953b8",
+			"fromSide":"right",
+			"toNode":"3f05b01ce83a3804",
+			"toSide":"left"
 		}
 	],
 	"metadata":{
