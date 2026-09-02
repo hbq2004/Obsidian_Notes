@@ -4,6 +4,7 @@
 		{"id":"cb7a1004a18f1c03","type":"group","x":3720,"y":1284,"width":2280,"height":1743,"color":"2","label":"连续型 —— 三大分布"},
 		{"id":"544dfcdf344c122a","type":"group","x":6480,"y":877,"width":1680,"height":2283,"label":"一维随机变量函数的分布"},
 		{"id":"36ac36a096fbef4f","type":"group","x":1360,"y":1260,"width":2160,"height":1492,"color":"1","label":"离散型（初高中知识） —— 五大分布"},
+		{"id":"f82c4b45a19c6684","type":"group","x":6680,"y":4240,"width":2200,"height":1440,"label":"综合好题"},
 		{"id":"479046b6af685ff2","type":"group","x":6760,"y":1580,"width":1160,"height":1300,"label":"随机变量函数的分布"},
 		{"id":"c861bc0ac3af37d5","type":"group","x":-3680,"y":800,"width":1780,"height":800,"label":"一维随机变量"},
 		{"id":"ff13dd5946b6caeb","type":"group","x":-320,"y":1010,"width":1080,"height":1100,"label":"一维连续性随机变量"},
@@ -77,7 +78,9 @@
 			"width":260,
 			"height":60
 		},
-		{"id":"fb08431471310f88","type":"file","file":"_Attachments/Images/Capture_20260902_163003.jpg","x":5307,"y":2540,"width":575,"height":224}
+		{"id":"fb08431471310f88","type":"file","file":"_Attachments/Images/Capture_20260902_163003.jpg","x":5307,"y":2540,"width":575,"height":224},
+		{"id":"0d6f656fd1aa163f","type":"file","file":"_Attachments/Images/Pasted image 20260902165939.png","x":7960,"y":4640,"width":625,"height":420},
+		{"id":"e32a1ffcca1f5c83","type":"file","file":"_Attachments/Images/Pasted image 20260902170008.png","x":6960,"y":4440,"width":910,"height":1090}
 	],
 	"edges":[
 		{
