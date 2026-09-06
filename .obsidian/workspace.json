@@ -15,9 +15,9 @@
               "state": {
                 "file": "01 - 数学/03 - 概统/02 - 一维随机变量及其分布.canvas",
                 "viewState": {
-                  "x": 1975.7506560954607,
-                  "y": 3187.247978460314,
-                  "zoom": -1.5560385614519237
+                  "x": 2276.3236794498853,
+                  "y": 3993.7241453768193,
+                  "zoom": -2.5394065363131855
                 }
               },
               "icon": "lucide-layout-dashboard",
@@ -276,7 +276,8 @@
       "pdf-plus:PDF++: Toggle auto-paste": false,
       "obsidian-excalidraw-plugin:新建绘图文件": false,
       "notebook-navigator:Notebook Navigator": false,
-      "tag-index:Open tag index": false
+      "tag-index:Open tag index": false,
+      "hidden-folder-obsidian:隐藏文件夹": false
     }
   },
   "active": "aabaceef9bc83964",
