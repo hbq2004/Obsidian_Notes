@@ -1,14 +1,14 @@
 {
 	"nodes":[
 		{"id":"39a535f605781746","type":"group","x":1160,"y":1010,"width":4840,"height":2017,"label":"常见随机变量分布类型"},
-		{"id":"36ac36a096fbef4f","type":"group","x":1360,"y":1260,"width":2220,"height":1580,"color":"1","label":"离散型（初高中知识） —— 五大分布"},
-		{"id":"f82c4b45a19c6684","type":"group","x":6680,"y":4240,"width":2360,"height":2400,"label":"综合好题"},
 		{"id":"cb7a1004a18f1c03","type":"group","x":3720,"y":1284,"width":2280,"height":1743,"color":"2","label":"连续型 —— 三大分布"},
+		{"id":"36ac36a096fbef4f","type":"group","x":1360,"y":1260,"width":2220,"height":1580,"color":"1","label":"离散型（初高中知识） —— 五大分布"},
+		{"id":"ff13dd5946b6caeb","type":"group","x":-320,"y":1010,"width":1080,"height":1100,"label":"一维连续性随机变量"},
+		{"id":"f82c4b45a19c6684","type":"group","x":6680,"y":4240,"width":2360,"height":2400,"label":"综合好题"},
 		{"id":"544dfcdf344c122a","type":"group","x":6480,"y":877,"width":1680,"height":2283,"label":"一维随机变量函数的分布"},
 		{"id":"c861bc0ac3af37d5","type":"group","x":-3680,"y":840,"width":1980,"height":1440,"label":"一维随机变量"},
 		{"id":"d408c32170c0ad52","type":"group","x":-3120,"y":921,"width":1320,"height":1259,"color":"1","label":"分布函数的概念与性质"},
 		{"id":"479046b6af685ff2","type":"group","x":6760,"y":1580,"width":1160,"height":1300,"label":"随机变量函数的分布"},
-		{"id":"ff13dd5946b6caeb","type":"group","x":-320,"y":1010,"width":1080,"height":1100,"label":"一维连续性随机变量"},
 		{"id":"f94d6c200da75b08","type":"group","x":-1480,"y":910,"width":840,"height":757,"label":"一维离散型随机变量"},
 		{"id":"bbf379ccb8fb373c","type":"file","file":"_Attachments/Images/Pasted image 20260902155627.png","x":4812,"y":2085,"width":399,"height":293},
 		{"id":"94a5c7cf29b1664a","type":"file","file":"_Attachments/Images/Pasted image 20260902155848.png","x":4812,"y":2378,"width":400,"height":226},
@@ -32,17 +32,6 @@
 		{"id":"dfd4cd9b5e8d3427","type":"file","file":"_Attachments/Images/Pasted image 20260824172312.png","x":3880,"y":1450,"width":750,"height":501},
 		{"id":"8012920ebca4305f","type":"file","file":"_Attachments/Images/Pasted image 20260902160147.png","x":4480,"y":2007,"width":332,"height":844},
 		{"id":"9f5011b78cdec8a3","type":"file","file":"_Attachments/Images/Pasted image 20260901193458.png","x":2470,"y":1385,"width":599,"height":337},
-		{"id":"2f065d93959953b8","type":"file","file":"_Attachments/Images/Pasted image 20260824172138.png","x":2470,"y":2352,"width":649,"height":333},
-		{
-			"id":"3f05b01ce83a3804",
-			"type":"text",
-			"text":"超几何分布的由来\n—— 古典概型",
-			"styleAttributes":{"textAlign":"center"},
-			"x":3220,
-			"y":2474,
-			"width":267,
-			"height":89
-		},
 		{
 			"id":"c448d4717d484b58",
 			"type":"text",
@@ -53,12 +42,8 @@
 			"width":320,
 			"height":80
 		},
-		{"id":"f0d63cfa15d03792","type":"file","file":"_Attachments/Images/Pasted image 20260901194627.png","x":3119,"y":1737,"width":354,"height":400},
-		{"id":"cc2b2f7e3a76b270","type":"file","file":"_Attachments/Images/Pasted image 20260824172127.png","x":2470,"y":1878,"width":649,"height":259},
 		{"id":"47a5b93216e86d43","type":"file","file":"_Attachments/Images/Pasted image 20260901194423.png","x":2470,"y":1779,"width":522,"height":97},
 		{"id":"af6f53d53943d598","type":"file","file":"_Attachments/Images/Pasted image 20260822170748.png","x":1360,"y":-1120,"width":548,"height":679},
-		{"id":"e9dc24a370f0a0ec","type":"file","file":"_Attachments/Images/Pasted image 20260902154807.png","x":3755,"y":2007,"width":724,"height":638},
-		{"id":"275d9f87705d2547","type":"file","file":"_Attachments/Images/Pasted image 20260902154920.png","x":3880,"y":2697,"width":468,"height":83},
 		{"id":"b93331166ccb6e6a","type":"file","file":"_Attachments/Images/Pasted image 20260903214708.png","x":8080,"y":5840,"width":575,"height":430},
 		{"id":"562b0b3badbfb063","type":"file","file":"_Attachments/Images/Pasted image 20260903214728.png","x":7060,"y":5720,"width":875,"height":752},
 		{"id":"0d6f656fd1aa163f","type":"file","file":"_Attachments/Images/Pasted image 20260902165939.png","x":7960,"y":4640,"width":625,"height":417},
@@ -84,12 +69,27 @@
 		{"id":"b8a971c96d3bd2c9","type":"file","file":"_Attachments/Images/Pasted image 20260824170930.png","x":-2480,"y":1045,"width":600,"height":256},
 		{"id":"08ed037cb3a9b49d","type":"file","file":"_Attachments/Images/Pasted image 20260906001122.png","x":-3060,"y":1389,"width":625,"height":719},
 		{"id":"3fb49fb68df7ab3a","type":"file","file":"_Attachments/Images/Pasted image 20260906002119.png","x":-1700,"y":2393,"width":700,"height":582},
-		{"id":"00c14778c16434a7","type":"file","file":"_Attachments/Images/Pasted image 20260906002516.png","x":-200,"y":2393,"width":700,"height":566},
-		{"id":"fe6128b03f2e0a47","type":"file","file":"_Attachments/Images/Pasted image 20260902012026.png","x":2707,"y":3280,"width":1800,"height":1274},
 		{"id":"e7f3ac9bdae51184","type":"file","file":"_Attachments/Images/Pasted image 20260902012033.png","x":4547,"y":3280,"width":1048,"height":1481},
-		{"id":"b138440b4bfa064e","type":"file","file":"_Attachments/Images/Pasted image 20260906010747.png","x":1736,"y":3447,"width":783,"height":940},
 		{"id":"5ef5ac2df79ce777","type":"file","file":"_Attachments/Images/Pasted image 20260824172049.png","x":1580,"y":1387,"width":890,"height":1131},
-		{"id":"2a8a58b24b3ddf81","type":"file","file":"_Attachments/Images/Pasted image 20260906010850.png","x":1713,"y":2600,"width":625,"height":225}
+		{"id":"2a8a58b24b3ddf81","type":"file","file":"_Attachments/Images/Pasted image 20260906010850.png","x":1713,"y":2600,"width":625,"height":225},
+		{"id":"b138440b4bfa064e","type":"file","file":"_Attachments/Images/Pasted image 20260906010747.png","x":1736,"y":3447,"width":783,"height":940},
+		{"id":"2f065d93959953b8","type":"file","file":"_Attachments/Images/Pasted image 20260824172138.png","x":2470,"y":2352,"width":649,"height":333},
+		{"id":"fe6128b03f2e0a47","type":"file","file":"_Attachments/Images/Pasted image 20260902012026.png","x":2707,"y":3280,"width":1800,"height":1274},
+		{
+			"id":"3f05b01ce83a3804",
+			"type":"text",
+			"text":"超几何分布的由来\n—— 古典概型",
+			"styleAttributes":{"textAlign":"center"},
+			"x":3220,
+			"y":2474,
+			"width":267,
+			"height":89
+		},
+		{"id":"00c14778c16434a7","type":"file","file":"_Attachments/Images/Pasted image 20260906002516.png","x":-200,"y":2393,"width":693,"height":566},
+		{"id":"f0d63cfa15d03792","type":"file","file":"_Attachments/Images/Pasted image 20260901194627.png","x":3119,"y":1737,"width":354,"height":400},
+		{"id":"cc2b2f7e3a76b270","type":"file","file":"_Attachments/Images/Pasted image 20260824172127.png","x":2470,"y":1878,"width":649,"height":259},
+		{"id":"e9dc24a370f0a0ec","type":"file","file":"_Attachments/Images/Pasted image 20260902154807.png","x":3755,"y":2007,"width":724,"height":638},
+		{"id":"275d9f87705d2547","type":"file","file":"_Attachments/Images/Pasted image 20260902154920.png","x":3880,"y":2697,"width":468,"height":83}
 	],
 	"edges":[
 		{
