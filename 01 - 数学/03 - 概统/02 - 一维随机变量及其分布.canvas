@@ -1,10 +1,10 @@
 {
 	"nodes":[
 		{"id":"39a535f605781746","type":"group","x":1160,"y":1010,"width":4840,"height":2017,"label":"常见随机变量分布类型"},
+		{"id":"36ac36a096fbef4f","type":"group","x":1360,"y":1260,"width":2220,"height":1580,"color":"1","label":"离散型（初高中知识） —— 五大分布"},
 		{"id":"f82c4b45a19c6684","type":"group","x":6680,"y":4240,"width":2360,"height":2400,"label":"综合好题"},
 		{"id":"cb7a1004a18f1c03","type":"group","x":3720,"y":1284,"width":2280,"height":1743,"color":"2","label":"连续型 —— 三大分布"},
 		{"id":"544dfcdf344c122a","type":"group","x":6480,"y":877,"width":1680,"height":2283,"label":"一维随机变量函数的分布"},
-		{"id":"36ac36a096fbef4f","type":"group","x":1360,"y":1260,"width":2220,"height":1580,"color":"1","label":"离散型（初高中知识） —— 五大分布"},
 		{"id":"c861bc0ac3af37d5","type":"group","x":-3680,"y":840,"width":1980,"height":1440,"label":"一维随机变量"},
 		{"id":"d408c32170c0ad52","type":"group","x":-3120,"y":921,"width":1320,"height":1259,"color":"1","label":"分布函数的概念与性质"},
 		{"id":"479046b6af685ff2","type":"group","x":6760,"y":1580,"width":1160,"height":1300,"label":"随机变量函数的分布"},
@@ -31,7 +31,6 @@
 		{"id":"fb08431471310f88","type":"file","file":"_Attachments/Images/Capture_20260902_163003.jpg","x":5306,"y":2593,"width":574,"height":221},
 		{"id":"dfd4cd9b5e8d3427","type":"file","file":"_Attachments/Images/Pasted image 20260824172312.png","x":3880,"y":1450,"width":750,"height":501},
 		{"id":"8012920ebca4305f","type":"file","file":"_Attachments/Images/Pasted image 20260902160147.png","x":4480,"y":2007,"width":332,"height":844},
-		{"id":"5ef5ac2df79ce777","type":"file","file":"_Attachments/Images/Pasted image 20260824172049.png","x":1580,"y":1387,"width":890,"height":1131},
 		{"id":"9f5011b78cdec8a3","type":"file","file":"_Attachments/Images/Pasted image 20260901193458.png","x":2470,"y":1385,"width":599,"height":337},
 		{"id":"2f065d93959953b8","type":"file","file":"_Attachments/Images/Pasted image 20260824172138.png","x":2470,"y":2352,"width":649,"height":333},
 		{
@@ -89,7 +88,8 @@
 		{"id":"fe6128b03f2e0a47","type":"file","file":"_Attachments/Images/Pasted image 20260902012026.png","x":2707,"y":3280,"width":1800,"height":1274},
 		{"id":"e7f3ac9bdae51184","type":"file","file":"_Attachments/Images/Pasted image 20260902012033.png","x":4547,"y":3280,"width":1048,"height":1481},
 		{"id":"b138440b4bfa064e","type":"file","file":"_Attachments/Images/Pasted image 20260906010747.png","x":1736,"y":3447,"width":783,"height":940},
-		{"id":"2a8a58b24b3ddf81","type":"file","file":"_Attachments/Images/Pasted image 20260906010850.png","x":1713,"y":2600,"width":625,"height":225}
+		{"id":"2a8a58b24b3ddf81","type":"file","file":"_Attachments/Images/Pasted image 20260906010850.png","x":1713,"y":2600,"width":625,"height":225},
+		{"id":"5ef5ac2df79ce777","type":"file","file":"_Attachments/Images/Pasted image 20260824172049.png","x":1580,"y":1387,"width":890,"height":1131}
 	],
 	"edges":[
 		{
