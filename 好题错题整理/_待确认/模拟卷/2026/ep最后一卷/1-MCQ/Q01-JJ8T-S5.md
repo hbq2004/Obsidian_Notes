@@ -15,7 +15,7 @@ level:
 
 # MCQ 第 1 题
 
-![[_Attachments/题目识别/JJ8T/JJ8T-S5-Q01_题目.png|题目]]
+![[_Attachments/题目识别/JJ8T/JJ8T-EP-LAST-S5-Q01_题目.png|题目]]
 
 1. 设 $f(x)$ 在 $x=0$ 的邻域内有定义，且 $\lim\limits_{x\to0} \frac{f(x)}{x-\ln(1+x)} = 1$ 则()
 A. $f(0)=0$
