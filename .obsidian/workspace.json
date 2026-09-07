@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "451f9d4d62a74260",
+        "id": "dee2d5b375b32270",
         "type": "tabs",
         "children": [
           {
-            "id": "a03ca94522c40ca4",
+            "id": "6e3eb1f174c6fbec",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "好题错题整理/_待确认/模拟卷/2027/ep月考卷/1_卷一/3-FRQ/Q21-JJ8T-S1.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Q21-JJ8T-S1"
+              "title": "新标签页"
             }
           }
         ]
@@ -272,12 +268,15 @@
       "pdf-plus:PDF++: Toggle auto-paste": false,
       "obsidian-excalidraw-plugin:新建绘图文件": false,
       "notebook-navigator:Notebook Navigator": false,
-      "tag-index:Open tag index": false,
-      "hidden-folder-obsidian:隐藏文件夹": false
+      "tag-index:Open tag index": false
     }
   },
-  "active": "a03ca94522c40ca4",
+  "active": "12ec190f678aca36",
   "lastOpenFiles": [
+    "好题错题整理/_待确认/模拟卷/2027/ep月考卷/2_卷二/1-MCQ/Q08-JJ8T-S2.md",
+    "好题错题整理/_待确认/模拟卷/2027/ep月考卷/2_卷二/1-MCQ/Q01-JJ8T-S2.md",
+    "好题错题整理/_待确认/模拟卷/2027/ep月考卷/1_卷一/3-FRQ/Q22-JJ8T-S1.md",
+    "好题错题整理/_待确认/模拟卷/2027/ep月考卷/1_卷一/3-FRQ/Q21-JJ8T-S1.md",
     "_Attachments/题目识别/JJ8T/_ocr-repair-backups/20260907-101726/JJ8T-S4-Q15_题目.png",
     "_Attachments/题目识别/JJ8T/_ocr-repair-backups/20260907-101726/JJ8T-S4-Q14_题目.png",
     "_Attachments/题目识别/JJ8T/_ocr-repair-backups/20260907-101726/JJ8T-S4-Q13_题目.png",
@@ -288,7 +287,6 @@
     "_Attachments/题目识别/JJ8T/_ocr-repair-backups/20260907-101726/JJ8T-S4-Q08_题目.png",
     "_Attachments/题目识别/JJ8T/_ocr-repair-backups/20260907-101726/JJ8T-S4-Q07_题目.png",
     "_Attachments/题目识别/JJ8T/_ocr-repair-backups/20260907-101726/JJ8T-S4-Q06_题目.png",
-    "_Attachments/题目识别/JJ8T/_ocr-repair-backups/20260907-101726/JJ8T-S4-Q05_题目.png",
     "_Attachments/题目识别/JJ8T/_ocr-repair-backups/20260907-101726",
     "好题错题整理/_待确认/模拟卷/2027/ep月考卷/1_卷一/3-FRQ/Q20-JJ8T-S1.md",
     "好题错题整理/_待确认/模拟卷/2027/ep月考卷/1_卷一/3-FRQ/Q18-JJ8T-S1.md",
@@ -313,9 +311,6 @@
     "好题错题整理/_待确认/模拟卷/2027/ep月考卷/3_卷三/1-MCQ/Q09-JJ8T-S3.md",
     "好题错题整理/_待确认/模拟卷/2027/ep月考卷/3_卷三/1-MCQ/Q08-JJ8T-S3.md",
     "好题错题整理/_待确认/模拟卷/2027/ep月考卷/3_卷三/1-MCQ/Q06-JJ8T-S3.md",
-    "好题错题整理/_待确认/模拟卷/2027/ep月考卷/3_卷三/1-MCQ/Q02-JJ8T-S3.md",
-    "好题错题整理/_待确认/模拟卷/2027/ep月考卷/2_卷二/1-MCQ/Q09-JJ8T-S2.md",
-    "好题错题整理/_待确认/模拟卷/2027/ep月考卷/2_卷二/1-MCQ/Q10-JJ8T-S2.md",
     "_Attachments/题目识别/JJ8T/_ocr-repair-backups/20260907-095351",
     "_Attachments/题目识别/JJ8T/_ocr-repair-backups/20260907-093104",
     "_Attachments/题目识别/JJ8T/_ocr-repair-backups/20260907-093015",
