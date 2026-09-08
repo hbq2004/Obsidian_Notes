@@ -1,29 +1,173 @@
 {
 	"nodes":[
-		{"id":"a933437752c376a2","type":"file","file":"_Attachments/Images/Pasted image 20260714061310.png","x":-180,"y":-460,"width":400,"height":328},
+		{"id":"5f86d70829164de5","type":"group","x":-9760,"y":3520,"width":10120,"height":3800,"color":"2","label":"概念"},
+		{"id":"5ca7f398554621a1","type":"group","x":5920,"y":3650,"width":4560,"height":2270,"color":"2","label":"多元函数的极值和最值"},
+		{"id":"0ee920f728dfbbd3","type":"group","x":800,"y":3650,"width":4000,"height":1855,"color":"1","label":"多元函数求导法则"},
+		{"id":"f543092aa5651bcb","type":"group","x":-5100,"y":3840,"width":5100,"height":880,"label":"可微"},
+		{"id":"6d1019737427c092","type":"group","x":-6440,"y":3920,"width":1080,"height":3160,"label":"偏导数"},
+		{"id":"d802f65d9bec417c","type":"group","x":-9480,"y":4100,"width":2720,"height":1240,"label":"基本概念 —— 类比一元函数"},
+		{"id":"a8e20db7a64bdf04","type":"group","x":1500,"y":6140,"width":2600,"height":1180,"label":"例题"},
+		{"id":"bc4519c148d90572","type":"group","x":6260,"y":4660,"width":1900,"height":845,"label":"无条件极值"},
+		{"id":"f8e0e8b415b36e55","type":"group","x":8480,"y":4660,"width":1360,"height":845,"label":"条件极值与拉格朗日数乘"},
+		{"id":"5e03d5b6b6d652a7","type":"group","x":-8600,"y":4280,"width":640,"height":817,"color":"1","label":"二元函数极限"},
+		{"id":"adf657e4ed7b0327","type":"file","file":"_Attachments/Images/Pasted image 20260908220038.png","x":1280,"y":-960,"width":527,"height":648},
 		{
 			"id":"8ca62e9e5d8e123e",
 			"type":"text",
 			"text":"多元微分",
 			"styleAttributes":{"textAlign":"center"},
-			"x":-120,
-			"y":140,
+			"x":1403,
+			"y":60,
 			"width":280,
 			"height":140
 		},
-		{"id":"360829ce0c202168","type":"file","file":"_Attachments/Images/Pasted image 20260714061315.png","x":220,"y":-455,"width":675,"height":322}
+		{"id":"eb1ae89cfb4f11cb","type":"file","file":"_Attachments/Images/Pasted image 20260908220956.png","x":-6360,"y":3988,"width":913,"height":1937},
+		{"id":"cc128b7f53af02d2","type":"file","file":"_Attachments/Images/Pasted image 20260908221405.png","x":-4960,"y":3980,"width":775,"height":551},
+		{"id":"a6f723672eb75eb9","type":"file","file":"_Attachments/Images/Pasted image 20260908220428.png","x":-9360,"y":4220,"width":625,"height":551},
+		{"id":"afe7acfae5dded04","type":"file","file":"_Attachments/Images/Pasted image 20260908220502.png","x":-8580,"y":4300,"width":600,"height":257},
+		{"id":"56d75ece841e57fe","type":"file","file":"_Attachments/Images/Pasted image 20260908221156.png","x":-6279,"y":6308,"width":750,"height":713},
+		{"id":"8dafbcbf35f8bc1c","type":"file","file":"_Attachments/Images/Pasted image 20260908220651.png","x":-7860,"y":4314,"width":825,"height":231},
+		{"id":"88c61d63ce5e623b","type":"file","file":"_Attachments/Images/Pasted image 20260908220705.png","x":-7797,"y":4620,"width":700,"height":621},
+		{"id":"63cf11173ef150c5","type":"file","file":"_Attachments/Images/Pasted image 20260908220618.png","x":-8542,"y":4680,"width":525,"height":397},
+		{"id":"45875e3eefe82432","type":"file","file":"_Attachments/Images/Pasted image 20260908221618.png","x":-4572,"y":4931,"width":1539,"height":460},
+		{"id":"40acd243499f57f6","type":"file","file":"_Attachments/Images/Pasted image 20260908221641.png","x":-1240,"y":4140,"width":1050,"height":333},
+		{"id":"c3b066d1a76f8c55","type":"file","file":"_Attachments/Images/Pasted image 20260908221434.png","x":-4000,"y":4060,"width":875,"height":424},
+		{"id":"1a54ef6131179e78","type":"file","file":"_Attachments/Images/Pasted image 20260908221506.png","x":-2980,"y":3918,"width":670,"height":675},
+		{"id":"d5ba092da06e62d4","type":"file","file":"_Attachments/Images/Pasted image 20260908221604.png","x":-2220,"y":3988,"width":800,"height":569},
+		{"id":"54d576fddaf56b0e","type":"file","file":"_Attachments/Images/Pasted image 20260908223048.png","x":3760,"y":-481,"width":829,"height":1093},
+		{"id":"46b2bd32c19150c8","type":"file","file":"_Attachments/Images/Pasted image 20260908222449.png","x":7170,"y":-268,"width":2225,"height":807},
+		{"id":"5ae03aa92b89e9d4","type":"file","file":"_Attachments/Images/Pasted image 20260908222428.png","x":5120,"y":-278,"width":2050,"height":817},
+		{"id":"10b8c63b15e490a7","type":"file","file":"_Attachments/Images/Pasted image 20260908222632.png","x":1055,"y":3941,"width":1100,"height":707},
+		{"id":"e8fd44c7d8d6fa3a","type":"file","file":"_Attachments/Images/Pasted image 20260908222705.png","x":2378,"y":4140,"width":975,"height":353},
+		{"id":"55adcdd9dc3bea95","type":"file","file":"_Attachments/Images/Pasted image 20260908222750.png","x":3640,"y":3946,"width":800,"height":741},
+		{"id":"cf10f811cc7503c6","type":"file","file":"_Attachments/Images/Pasted image 20260908222853.png","x":3703,"y":4853,"width":675,"height":383},
+		{"id":"37d4306940533587","type":"file","file":"_Attachments/Images/Pasted image 20260908222206.png","x":6880,"y":5380,"width":625,"height":48},
+		{"id":"e5b007ac59ba4b6e","type":"file","file":"_Attachments/Images/Pasted image 20260908222135.png","x":7260,"y":4746,"width":775,"height":468},
+		{"id":"cc2577f604ec3ad7","type":"file","file":"_Attachments/Images/Pasted image 20260908222322.png","x":8720,"y":4844,"width":775,"height":526},
+		{"id":"afca0096ae463b1d","type":"file","file":"_Attachments/Images/Pasted image 20260908221947.png","x":6320,"y":3880,"width":1100,"height":533},
+		{"id":"4f879303b1ecdd0d","type":"file","file":"_Attachments/Images/Pasted image 20260908222105.png","x":6360,"y":4720,"width":775,"height":519},
+		{"id":"e0252529dd02b2f6","type":"file","file":"_Attachments/Images/Pasted image 20260908223321.png","x":1620,"y":6377,"width":925,"height":626},
+		{"id":"19225d9adae569d6","type":"file","file":"_Attachments/Images/Pasted image 20260908223244.png","x":2860,"y":6200,"width":600,"height":1060}
 	],
 	"edges":[
 		{
-			"id":"8f35c658a998f067",
+			"id":"1236a9926ac436e4",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"8ca62e9e5d8e123e",
+			"fromSide":"top",
+			"toNode":"adf657e4ed7b0327",
+			"toSide":"bottom",
+			"label":"知识结构"
+		},
+		{
+			"id":"39e5c709d988818a",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"afe7acfae5dded04",
+			"fromSide":"bottom",
+			"toNode":"63cf11173ef150c5",
+			"toSide":"top"
+		},
+		{
+			"id":"8a1a2dce4f9d3198",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"8dafbcbf35f8bc1c",
+			"fromSide":"bottom",
+			"toNode":"88c61d63ce5e623b",
+			"toSide":"top"
+		},
+		{
+			"id":"8d0837768a9f80ac",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"eb1ae89cfb4f11cb",
+			"fromSide":"bottom",
+			"toNode":"56d75ece841e57fe",
+			"toSide":"top"
+		},
+		{
+			"id":"99d3aee1ff40d6d9",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"8ca62e9e5d8e123e",
+			"fromSide":"bottom",
+			"toNode":"5f86d70829164de5",
+			"toSide":"top"
+		},
+		{
+			"id":"ba37f9a9dce6b8dc",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"8ca62e9e5d8e123e",
+			"fromSide":"bottom",
+			"toNode":"0ee920f728dfbbd3",
+			"toSide":"top"
+		},
+		{
+			"id":"c11f40fc3229e0d3",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"8ca62e9e5d8e123e",
+			"fromSide":"bottom",
+			"toNode":"5ca7f398554621a1",
+			"toSide":"top"
+		},
+		{
+			"id":"e48b0f908628fff5",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"4f879303b1ecdd0d",
+			"fromSide":"bottom",
+			"toNode":"37d4306940533587",
+			"toSide":"top"
+		},
+		{
+			"id":"d005e91634e47679",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"e5b007ac59ba4b6e",
+			"fromSide":"bottom",
+			"toNode":"37d4306940533587",
+			"toSide":"top"
+		},
+		{
+			"id":"ce6537c053071bc6",
 			"styleAttributes":{},
 			"toFloating":false,
 			"fromFloating":false,
 			"fromNode":"8ca62e9e5d8e123e",
-			"fromSide":"top",
-			"toNode":"a933437752c376a2",
-			"toSide":"bottom",
-			"label":"知识结构"
+			"fromSide":"right",
+			"toNode":"54d576fddaf56b0e",
+			"toSide":"left"
+		},
+		{
+			"id":"07134b9f00a3cf7d",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"55adcdd9dc3bea95",
+			"fromSide":"bottom",
+			"toNode":"cf10f811cc7503c6",
+			"toSide":"top"
+		},
+		{
+			"id":"10e5355534bbffaf",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"54d576fddaf56b0e",
+			"fromSide":"right",
+			"toNode":"5ae03aa92b89e9d4",
+			"toSide":"left"
+		},
+		{
+			"id":"ebba91e788d21374",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"0ee920f728dfbbd3",
+			"fromSide":"bottom",
+			"toNode":"a8e20db7a64bdf04",
+			"toSide":"top"
 		}
 	],
 	"metadata":{
