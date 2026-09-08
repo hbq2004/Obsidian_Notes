@@ -4,24 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "f6efe413f5083698",
+        "id": "d96a49173d2d4df7",
         "type": "tabs",
         "children": [
           {
-            "id": "a455f9f5c854124b",
+            "id": "eb925eee2db935d2",
             "type": "leaf",
             "state": {
               "type": "canvas",
               "state": {
-                "file": "01 - 数学/03 - 概统/02 - 一维随机变量及其分布.canvas",
+                "file": "01 - 数学/01 - 高数/07 - 多元微分/多元微分.canvas",
                 "viewState": {
-                  "x": 4878.8572450572265,
-                  "y": 3877.74980370304,
-                  "zoom": -2.904554902234889
+                  "x": 357.5,
+                  "y": -90,
+                  "zoom": 0
                 }
               },
               "icon": "lucide-layout-dashboard",
-              "title": "02 - 一维随机变量及其分布"
+              "title": "多元微分"
             }
           }
         ]
@@ -279,9 +279,27 @@
       "tag-index:Open tag index": false
     }
   },
-  "active": "a455f9f5c854124b",
+  "active": "eb925eee2db935d2",
   "lastOpenFiles": [
-    "_Attachments/Images/Pasted image 20260907195639.png",
+    "01 - 数学/01 - 高数/08 - 多重积分/01 - 二重积分.canvas",
+    "_Attachments/Images/Pasted image 20260908205021.png",
+    "_Attachments/Images/Pasted image 20260908204934.png",
+    "_Attachments/Images/Pasted image 20260908204732.png",
+    "_Attachments/Images/Pasted image 20260908204601.png",
+    "_Attachments/Images/Pasted image 20260908204521.png",
+    "_Attachments/Images/Pasted image 20260908204216.png",
+    "_Attachments/Images/Pasted image 20260908204141.png",
+    "_Attachments/Images/Pasted image 20260908203820.png",
+    "_Attachments/Images/Pasted image 20260908203703.png",
+    "_Attachments/Images/Pasted image 20260908203522.png",
+    "01 - 数学/01 - 高数/08 - 多重积分/02 - 三重积分和曲线曲面积分.canvas",
+    "01 - 数学/01 - 高数/07 - 多元微分/多元微分.canvas",
+    "01 - 数学/01 - 高数/微积分应用.canvas",
+    "01 - 数学/01 - 高数/01 - 函数、极限、连续/01 - 函数极限 + 连续与间断大观.canvas",
+    "01 - 数学/01 - 高数/05 - 中值定理/01 - 中值定理大观.canvas",
+    "01 - 数学/01 - 高数/05 - 中值定理/02 - 微分等式与微分不等式.canvas",
+    "01 - 数学/01 - 高数/04 - 微分方程/微分方程求解大观.canvas",
+    "01 - 数学/03 - 概统/02 - 一维随机变量及其分布.canvas",
     "01 - 数学/03 - 概统/01 - 随机事件与概率.canvas",
     "好题错题整理/_待确认/模拟卷/2027/ep月考卷/4_卷四/3-FRQ/Q19-JJ8T-S4.md",
     "好题错题整理/_待确认/模拟卷/2027/ep月考卷/4_卷四/3-FRQ/Q20-JJ8T-S4.md",
@@ -293,16 +311,6 @@
     "好题错题整理/_待确认/模拟卷/2027/ep月考卷/2_卷二/2-FIB/Q15-JJ8T-S2.md",
     "好题错题整理/_待确认/模拟卷/2027/ep月考卷/2_卷二/2-FIB/Q13-JJ8T-S2.md",
     "好题错题整理/_待确认/27_880/27_880_高数/1-MCQ/Q001-880-GS-C09-T68FF-F9755.md",
-    "_Attachments/题目识别/JJ8T/_ocr-repair-backups/20260907-175437/JJ8T-S5-Q22_题目.png",
-    "_Attachments/题目识别/JJ8T/_ocr-repair-backups/20260907-175437/JJ8T-S5-Q21_题目.png",
-    "_Attachments/题目识别/JJ8T/_ocr-repair-backups/20260907-175437/JJ8T-S5-Q20_题目.png",
-    "_Attachments/题目识别/JJ8T/_ocr-repair-backups/20260907-175437/JJ8T-S5-Q19_题目.png",
-    "_Attachments/题目识别/JJ8T/_ocr-repair-backups/20260907-175437/JJ8T-S5-Q18_题目.png",
-    "_Attachments/题目识别/JJ8T/_ocr-repair-backups/20260907-175437/JJ8T-S5-Q17_题目.png",
-    "_Attachments/题目识别/JJ8T/_ocr-repair-backups/20260907-175437/JJ8T-S5-Q16_题目.png",
-    "_Attachments/题目识别/JJ8T/_ocr-repair-backups/20260907-175437/JJ8T-S5-Q15_题目.png",
-    "_Attachments/题目识别/JJ8T/_ocr-repair-backups/20260907-175437/JJ8T-S5-Q14_题目.png",
-    "_Attachments/题目识别/JJ8T/_ocr-repair-backups/20260907-175437/JJ8T-S5-Q13_题目.png",
     "_Attachments/题目识别/JJ8T/_ocr-repair-backups/20260907-175437",
     "好题错题整理/_待确认/模拟卷/2026/ep最后一卷/1-MCQ/_ocr-attachment-backups/20260907-174744/Q01-JJ8T-S5.md",
     "好题错题整理/_待确认/模拟卷/2026/ep最后一卷/1-MCQ/_ocr-attachment-backups/20260907-174744",
@@ -327,15 +335,6 @@
     "_Attachments/题目识别/JJ8T/_ocr-repair-backups/20260907-154614",
     "_Attachments/题目识别/JJ8T/_ocr-repair-backups/20260907-150329",
     "_Attachments/题目识别/JJ8T/_ocr-repair-backups/20260907-143911",
-    "_Attachments/题目识别/JJ8T/_ocr-repair-backups/20260907-101726",
-    "01 - 数学/03 - 概统/02 - 一维随机变量及其分布.canvas",
-    "01 - 数学/03 - 概统/03 - 多维随机变量及其分布.canvas",
-    "01 - 数学/02 - 线代/04 - 线性方程组.canvas",
-    "01 - 数学/02 - 线代/03 - 向量组.canvas",
-    "01 - 数学/02 - 线代/06 - 二次型.canvas",
-    "01 - 数学/02 - 线代/秩 1 矩阵大观.canvas",
-    "02 - 408/01 - 数据结构/大题/未命名.canvas",
-    "01 - 数学/03 - 概统/06 - 数理统计.canvas",
-    "01 - 数学/03 - 概统/04 - 随机变量的数字特征.canvas"
+    "_Attachments/题目识别/JJ8T/_ocr-repair-backups/20260907-101726"
   ]
 }

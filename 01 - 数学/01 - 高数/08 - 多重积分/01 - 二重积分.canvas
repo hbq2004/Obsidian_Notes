@@ -1,0 +1,226 @@
+{
+	"nodes":[
+		{"id":"ccd9954792afdfe8","type":"group","x":1680,"y":800,"width":5520,"height":1480,"color":"2","label":"对称性 —— 普通对称与轮换对称"},
+		{"id":"8d6f72e28497f269","type":"group","x":-3040,"y":720,"width":4480,"height":1440,"color":"1","label":"计算"},
+		{"id":"c8b3a0d67a0594b4","type":"group","x":1820,"y":1045,"width":2900,"height":894,"label":"普通对称性"},
+		{"id":"b670a368bc28ed2e","type":"group","x":4840,"y":960,"width":2080,"height":1200,"label":"轮换对称性"},
+		{"id":"b3bb564e71117aea","type":"group","x":1040,"y":-1600,"width":2080,"height":1120,"label":"古鲁金第二定理"},
+		{
+			"id":"cb79405a5e5500aa",
+			"type":"text",
+			"text":"二重积分",
+			"styleAttributes":{"textAlign":"center"},
+			"x":-120,
+			"y":-160,
+			"width":240,
+			"height":160
+		},
+		{"id":"90f4345342a38c78","type":"file","file":"_Attachments/Images/Pasted image 20260908201506.png","x":-200,"y":-680,"width":400,"height":320},
+		{"id":"7b5adc9e0de58caa","type":"file","file":"_Attachments/Images/Pasted image 20260908204216.png","x":1180,"y":-1500,"width":817,"height":886},
+		{
+			"id":"298feff8379ea2aa",
+			"type":"text",
+			"text":"建议直接使用武忠祥的二重积分旋转体公式 ——",
+			"styleAttributes":{"textAlign":"center"},
+			"x":2280,
+			"y":-1158,
+			"width":640,
+			"height":203
+		},
+		{"id":"3fba24868d1c86ba","type":"file","file":"_Attachments/Images/Pasted image 20260908204521.png","x":-4756,"y":395,"width":566,"height":720},
+		{"id":"e7ae25742e4441bd","type":"file","file":"_Attachments/Images/Pasted image 20260908204601.png","x":-4760,"y":1235,"width":575,"height":224},
+		{"id":"53007914315cb6a0","type":"file","file":"_Attachments/Images/Pasted image 20260908201748.png","x":-3976,"y":515,"width":648,"height":650},
+		{"id":"70a2a14dcae92f30","type":"file","file":"_Attachments/Images/Pasted image 20260908204732.png","x":-3961,"y":1417,"width":618,"height":842},
+		{"id":"2775dde8d01adcc7","type":"file","file":"_Attachments/Images/Pasted image 20260908204934.png","x":-2940,"y":868,"width":904,"height":1192},
+		{"id":"43aed49fbe9efa6e","type":"file","file":"_Attachments/Images/Pasted image 20260908205021.png","x":-1980,"y":907,"width":956,"height":1072},
+		{"id":"3aad363b790eee29","type":"file","file":"_Attachments/Images/Pasted image 20260908203522.png","x":-865,"y":928,"width":725,"height":662},
+		{"id":"c4ef393a3293905b","type":"file","file":"_Attachments/Images/Pasted image 20260908203703.png","x":-865,"y":1727,"width":725,"height":291},
+		{"id":"99fcfa61837178c5","type":"file","file":"_Attachments/Images/Pasted image 20260908203820.png","x":180,"y":868,"width":1143,"height":1150},
+		{"id":"9953ee2d11cac3fa","type":"file","file":"_Attachments/Images/Pasted image 20260908203040.png","x":5500,"y":1640,"width":750,"height":67},
+		{"id":"7e834cb99ef53fde","type":"file","file":"_Attachments/Images/Pasted image 20260908203249.png","x":5500,"y":1707,"width":750,"height":232},
+		{
+			"id":"5380e42a3d91f9f6",
+			"type":"text",
+			"text":"普通对称性与轮换对称性对比",
+			"styleAttributes":{"textAlign":"center"},
+			"x":5620,
+			"y":2000,
+			"width":460,
+			"height":80
+		},
+		{"id":"e8d4fd95ea4b4290","type":"file","file":"_Attachments/Images/Pasted image 20260908203117.png","x":5920,"y":1091,"width":750,"height":363},
+		{"id":"402298cb02bdfe63","type":"file","file":"_Attachments/Images/Pasted image 20260908202034.png","x":1880,"y":1571,"width":500,"height":284},
+		{"id":"6a726825d8a37485","type":"file","file":"_Attachments/Images/Pasted image 20260908202104.png","x":2420,"y":1571,"width":600,"height":281},
+		{"id":"e79bc26b30043bf2","type":"file","file":"_Attachments/Images/Pasted image 20260908202131.png","x":3060,"y":1603,"width":875,"height":252},
+		{"id":"e219e5254f8644e8","type":"file","file":"_Attachments/Images/Pasted image 20260908202146.png","x":4000,"y":1634,"width":625,"height":156},
+		{"id":"636dfc08422da374","type":"file","file":"_Attachments/Images/Pasted image 20260908201848.png","x":3020,"y":1100,"width":548,"height":280},
+		{"id":"69113d76c7ecf177","type":"file","file":"_Attachments/Images/Pasted image 20260908202332.png","x":5080,"y":1045,"width":575,"height":455}
+	],
+	"edges":[
+		{
+			"id":"cbea7642bae56bf4",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromFloating":false,
+			"fromNode":"cb79405a5e5500aa",
+			"fromSide":"top",
+			"toNode":"90f4345342a38c78",
+			"toSide":"bottom",
+			"label":"知识结构"
+		},
+		{
+			"id":"17b2b77a81b78062",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromFloating":false,
+			"fromNode":"cb79405a5e5500aa",
+			"fromSide":"bottom",
+			"toNode":"ccd9954792afdfe8",
+			"toSide":"top",
+			"label":"对称性⭐"
+		},
+		{
+			"id":"8884c48c01d69e7d",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"636dfc08422da374",
+			"fromSide":"bottom",
+			"toNode":"402298cb02bdfe63",
+			"toSide":"top"
+		},
+		{
+			"id":"b23c7501bcf42317",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromFloating":false,
+			"fromNode":"c8b3a0d67a0594b4",
+			"fromSide":"left",
+			"toNode":"6a726825d8a37485",
+			"toSide":"top"
+		},
+		{
+			"id":"310a669004e14e5b",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"636dfc08422da374",
+			"fromSide":"bottom",
+			"toNode":"e79bc26b30043bf2",
+			"toSide":"top"
+		},
+		{
+			"id":"5790a5b7afec67e7",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"636dfc08422da374",
+			"fromSide":"bottom",
+			"toNode":"e219e5254f8644e8",
+			"toSide":"top"
+		},
+		{
+			"id":"c20e9c4775ab3c9d",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"69113d76c7ecf177",
+			"fromSide":"right",
+			"toNode":"e8d4fd95ea4b4290",
+			"toSide":"left"
+		},
+		{
+			"id":"3cc9c1c10c963758",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromFloating":false,
+			"fromNode":"3aad363b790eee29",
+			"fromSide":"bottom",
+			"toNode":"c4ef393a3293905b",
+			"toSide":"top",
+			"label":"本质是换元法"
+		},
+		{
+			"id":"9e2c33f14ea0e1a2",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromFloating":false,
+			"fromNode":"8d6f72e28497f269",
+			"fromSide":"top",
+			"toNode":"99fcfa61837178c5",
+			"toSide":"top",
+			"label":"换元法（雅可比换元）⭐"
+		},
+		{
+			"id":"819ff7be3041bbd7",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromFloating":false,
+			"fromNode":"cb79405a5e5500aa",
+			"fromSide":"bottom",
+			"toNode":"53007914315cb6a0",
+			"toSide":"top",
+			"label":"性质"
+		},
+		{
+			"id":"6900cbc418fc7fd6",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"7b5adc9e0de58caa",
+			"fromSide":"right",
+			"toNode":"298feff8379ea2aa",
+			"toSide":"left"
+		},
+		{
+			"id":"58ba27048acf87cb",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromFloating":false,
+			"fromNode":"cb79405a5e5500aa",
+			"fromSide":"bottom",
+			"toNode":"3fba24868d1c86ba",
+			"toSide":"top",
+			"label":"二重积分的本质概念"
+		},
+		{
+			"id":"dc1edbd631e18421",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"3fba24868d1c86ba",
+			"fromSide":"bottom",
+			"toNode":"e7ae25742e4441bd",
+			"toSide":"top"
+		},
+		{
+			"id":"8671bcf809bfb03e",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromFloating":false,
+			"fromNode":"53007914315cb6a0",
+			"fromSide":"bottom",
+			"toNode":"70a2a14dcae92f30",
+			"toSide":"top",
+			"label":"好题"
+		},
+		{
+			"id":"de94177a4e3947bf",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"cb79405a5e5500aa",
+			"fromSide":"bottom",
+			"toNode":"8d6f72e28497f269",
+			"toSide":"top"
+		},
+		{
+			"id":"210129127fc093ff",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromFloating":false,
+			"fromNode":"8d6f72e28497f269",
+			"fromSide":"top",
+			"toNode":"3aad363b790eee29",
+			"toSide":"top",
+			"label":"极坐标和直角坐标系的互相转化"
+		}
+	],
+	"metadata":{
+		"version":"1.0-1.0",
+		"frontmatter":{}
+	}
+}

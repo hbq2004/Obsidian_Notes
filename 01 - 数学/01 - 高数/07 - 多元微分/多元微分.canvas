@@ -18,10 +18,12 @@
 			"id":"8f35c658a998f067",
 			"styleAttributes":{},
 			"toFloating":false,
+			"fromFloating":false,
 			"fromNode":"8ca62e9e5d8e123e",
 			"fromSide":"top",
 			"toNode":"a933437752c376a2",
-			"toSide":"bottom"
+			"toSide":"bottom",
+			"label":"知识结构"
 		}
 	],
 	"metadata":{

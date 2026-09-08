@@ -8,30 +8,7 @@
 		{"id":"42e71937ae8d1e37","type":"group","x":-3520,"y":1020,"width":1040,"height":680,"color":"6","label":"注意点"},
 		{"id":"6ff69da0cffabc67","type":"file","file":"_Attachments/Images/Capture_20260427_201146.jpg","x":-1794,"y":677,"width":844,"height":513},
 		{"id":"1d19cc007da0fe4d","type":"file","file":"_Attachments/Images/Capture_20260427_201551.jpg","x":-1800,"y":1368,"width":856,"height":214},
-		{
-			"id":"760eeec74960c0dc",
-			"type":"text",
-			"text":"一阶微分方程",
-			"styleAttributes":{"textAlign":"center"},
-			"x":-950,
-			"y":-300,
-			"width":295,
-			"height":100
-		},
-		{
-			"id":"9bd482ae6dff9fd5",
-			"type":"text",
-			"text":"若是一阶线性齐次（$q(x) = 0$），则：\n\n$$\n通解为: y = Ce^{-\\int P(x)dx}\n$$",
-			"styleAttributes":{"textAlign":"center"},
-			"x":-820,
-			"y":844,
-			"width":340,
-			"height":180
-		},
-		{"id":"2e76d3aa521ca558","type":"file","file":"_Attachments/Images/Pasted image 20260720211243.png","x":-944,"y":1368,"width":773,"height":215},
-		{"id":"4474edc2399ee384","type":"file","file":"_Attachments/Images/Capture_20260427_223523.jpg","x":-570,"y":551,"width":400,"height":97},
 		{"id":"2668ffbaf5898d5e","type":"file","file":"_Attachments/Images/Pasted image 20260720174734.png","x":-1800,"y":1582,"width":798,"height":102},
-		{"id":"9d73124d6715bd1f","type":"file","file":"_Attachments/Images/Pasted image 20260721073123.png","x":-861,"y":1720,"width":607,"height":60},
 		{"id":"c722cfe65809b1ea","type":"file","file":"_Attachments/Images/Pasted image 20260428144549.png","x":-1725,"y":348,"width":774,"height":182},
 		{
 			"id":"183e9f1c0ba378ec",
@@ -117,7 +94,6 @@
 			"width":430,
 			"height":120
 		},
-		{"id":"4037da15a4e78259","type":"file","file":"_Attachments/Images/Pasted image 20260428144429.png","x":-2600,"y":343,"width":550,"height":126},
 		{
 			"id":"af07ec5066f94b7b",
 			"type":"text",
@@ -138,6 +114,7 @@
 			"width":260,
 			"height":60
 		},
+		{"id":"4037da15a4e78259","type":"file","file":"_Attachments/Images/Pasted image 20260428144429.png","x":-2600,"y":343,"width":550,"height":126},
 		{
 			"id":"aedc4661c0c2b672",
 			"type":"text",
@@ -150,84 +127,7 @@
 		},
 		{"id":"8b880c112d1673a4","type":"file","file":"_Attachments/Images/Pasted image 20260428144408.png","x":-3260,"y":359,"width":522,"height":105},
 		{"id":"febcf920e3e62309","type":"file","file":"_Attachments/Images/Pasted image 20260428144355.png","x":-3840,"y":349,"width":544,"height":115},
-		{"id":"559373edcfeadd7a","type":"file","file":"_Attachments/Images/Pasted image 20260428145208.png","x":3654,"y":985,"width":500,"height":235},
-		{"id":"95ebc76eb902da81","type":"file","file":"_Attachments/Images/result_KvJJ1R.png","x":3654,"y":1221,"width":499,"height":173},
-		{"id":"db04a6cd380d295f","type":"file","file":"_Attachments/Images/Pasted image 20260428145406.png","x":4155,"y":988,"width":500,"height":231},
-		{"id":"585cfe25ebed0b00","type":"file","file":"_Attachments/Images/Pasted image 20260502032410.png","x":3778,"y":3577,"width":476,"height":504},
-		{
-			"id":"a2adaa3cbe254abd",
-			"type":"text",
-			"text":"不含三角\n\n1. 指数照抄\n2. 多项式次数相同\n3. 乘幂函数 $k = 0, 1, 2$ ",
-			"styleAttributes":{"textAlign":"center"},
-			"x":4760,
-			"y":1000,
-			"width":320,
-			"height":208
-		},
-		{"id":"93c4ed69d59d4ef0","type":"file","file":"_Attachments/Images/Capture_20260428_004652.jpg","x":5351,"y":2450,"width":621,"height":581},
-		{"id":"cc2e92e39d97bf5a","type":"file","file":"_Attachments/Images/Pasted image 20260502031715.png","x":5972,"y":3337,"width":800,"height":466},
-		{"id":"9c9f53b3440f47ec","type":"file","file":"_Attachments/Images/Pasted image 20260428145612.png","x":3667,"y":1595,"width":473,"height":175},
-		{"id":"f0a95c6c732f9385","type":"file","file":"_Attachments/Images/Pasted image 20260719072941.png","x":3667,"y":1770,"width":474,"height":283},
-		{"id":"77739f10731a274d","type":"file","file":"_Attachments/Images/Pasted image 20260428145425.png","x":4155,"y":1221,"width":475,"height":226},
-		{
-			"id":"822230a4a1e57f8f",
-			"type":"text",
-			"text":"含三角\n\n1. 指数照抄\n2. 多项式取最高次\n3. 乘幂函数 $k = 0, 1$ ",
-			"styleAttributes":{"textAlign":"center"},
-			"x":4720,
-			"y":1239,
-			"width":360,
-			"height":208
-		},
-		{
-			"id":"86a9c6e31e6b23a7",
-			"type":"text",
-			"text":"齐次",
-			"styleAttributes":{"textAlign":"center"},
-			"x":2441,
-			"y":323,
-			"width":260,
-			"height":60
-		},
-		{
-			"id":"76b636f0d1b63aa9",
-			"type":"text",
-			"text":"若是变系数，则其根的结构没有任何规律，可能出现任何常系数根的所有组合\n\n有非常多的**模拟题**会考到变系数方程，需要注意不能使用常系数的公式",
-			"styleAttributes":{"textAlign":"center"},
-			"x":5490,
-			"y":359,
-			"width":410,
-			"height":183
-		},
-		{"id":"5e7bf0ed2eccde44","type":"file","file":"_Attachments/Images/Pasted image 20260428160007.png","x":5000,"y":279,"width":400,"height":272},
-		{"id":"2dd1d27e523ccb1a","type":"file","file":"_Attachments/Images/Pasted image 20260719073006.png","x":3204,"y":985,"width":450,"height":370},
-		{"id":"3a64f4e352284707","type":"file","file":"_Attachments/Images/result_JNyye2.png","x":2310,"y":995,"width":500,"height":230},
-		{"id":"fe901d258d62d84c","type":"file","file":"_Attachments/Images/Pasted image 20260719073258.png","x":1640,"y":1009,"width":270,"height":400},
-		{"id":"fea00b1c64488e21","type":"file","file":"_Attachments/Images/Capture_20260430_220145.jpg","x":2210,"y":1557,"width":679,"height":58},
-		{"id":"afd1aa9a9db70662","type":"file","file":"_Attachments/Images/Pasted image 20260428145042.png","x":2310,"y":1227,"width":500,"height":160},
-		{"id":"1aab39ca941d82d9","type":"file","file":"_Attachments/Images/Pasted image 20260719073306.png","x":1910,"y":1009,"width":399,"height":218},
-		{
-			"id":"2cb6622253e1b363",
-			"type":"text",
-			"text":"⭐对于任何阶数的**常系数线性齐次常微分方程**，都可以使用特征方程 + 解的叠加原理求解",
-			"styleAttributes":{"textAlign":"center"},
-			"x":2111,
-			"y":1491,
-			"width":877,
-			"height":66
-		},
 		{"id":"8b31fe456e18b5c1","type":"file","file":"_Attachments/Images/Capture_20260427_223551.jpg","x":-130,"y":567,"width":399,"height":219},
-		{"id":"b649051322ad6307","type":"file","file":"_Attachments/Images/Capture_20260427_223605.jpg","x":350,"y":567,"width":450,"height":64},
-		{
-			"id":"0e424de6d69048ab",
-			"type":"text",
-			"text":"转化之后统一使用**一阶线性微分方程**的**公式**求解",
-			"styleAttributes":{"textAlign":"center"},
-			"x":320,
-			"y":267,
-			"width":540,
-			"height":60
-		},
 		{
 			"id":"4d3365f75ec44178",
 			"type":"text",
@@ -238,69 +138,48 @@
 			"width":260,
 			"height":60
 		},
-		{"id":"4e2b467f09a01509","type":"file","file":"_Attachments/Images/Pasted image 20260428144812.png","x":2321,"y":496,"width":495,"height":62},
-		{"id":"2dd4143306a73b13","type":"file","file":"_Attachments/Images/Pasted image 20260428144834.png","x":2321,"y":558,"width":489,"height":107},
+		{"id":"2e9e7b81f2630add","type":"file","file":"_Attachments/Images/Pasted image 20260719213355.png","x":1536,"y":368,"width":400,"height":190},
+		{"id":"8bf3c20c9e6ec952","type":"file","file":"_Attachments/Images/Pasted image 20260428144238.png","x":1040,"y":368,"width":496,"height":166},
 		{
-			"id":"d0ad8bb24b184aa5",
+			"id":"bcdc714d01114db3",
 			"type":"text",
-			"text":"非齐次",
+			"text":"(5) 全微分方程（后续多元积分会详细讲解）",
 			"styleAttributes":{"textAlign":"center"},
-			"x":3774,
-			"y":365,
-			"width":260,
-			"height":60
-		},
-		{"id":"29d2c1e03c46c325","type":"file","file":"_Attachments/Images/Pasted image 20260428144800.png","x":3679,"y":605,"width":465,"height":62},
-		{"id":"4ea64d6d66c2c7cd","type":"file","file":"_Attachments/Images/Pasted image 20260428145122.png","x":3679,"y":667,"width":475,"height":96},
-		{
-			"id":"9280e7fe87d2bc36",
-			"type":"text",
-			"text":"高阶微分方程",
-			"styleAttributes":{"textAlign":"center"},
-			"x":3517,
-			"y":-160,
-			"width":300,
-			"height":80
+			"x":1070,
+			"y":134,
+			"width":440,
+			"height":74
 		},
 		{
-			"id":"32521ec2034bf1bc",
+			"id":"25a3e706c4cebdd8",
 			"type":"text",
-			"text":"二阶常系数线性",
+			"text":"[全微分方程](https://www.bilibili.com/video/BV1834y1X7v6/) ",
 			"styleAttributes":{"textAlign":"center"},
-			"x":3107,
-			"y":74,
-			"width":260,
-			"height":60
-		},
-		{
-			"id":"8873c730caf91037",
-			"type":"text",
-			"text":"解的结构",
-			"styleAttributes":{"textAlign":"center"},
-			"x":5270,
-			"y":79,
-			"width":260,
-			"height":60
-		},
-		{
-			"id":"01a63dd0b9afaf79",
-			"type":"text",
-			"text":"通解中本质独立的任意常数个数 = 微分方程的阶数",
-			"styleAttributes":{"textAlign":"center"},
-			"x":2700,
-			"y":-1040,
-			"width":280,
+			"x":1100,
+			"y":631,
+			"width":380,
 			"height":120
 		},
 		{
-			"id":"789a705914df208c",
+			"id":"760eeec74960c0dc",
 			"type":"text",
-			"text":"1. 线性（不能出现平方）\n2. ",
+			"text":"一阶微分方程",
 			"styleAttributes":{"textAlign":"center"},
-			"x":3160,
-			"y":-660,
-			"width":280,
-			"height":90
+			"x":-950,
+			"y":-300,
+			"width":295,
+			"height":100
+		},
+		{"id":"b649051322ad6307","type":"file","file":"_Attachments/Images/Capture_20260427_223605.jpg","x":350,"y":567,"width":450,"height":64},
+		{
+			"id":"0e424de6d69048ab",
+			"type":"text",
+			"text":"转化之后统一使用**一阶线性微分方程**的**公式**求解",
+			"styleAttributes":{"textAlign":"center"},
+			"x":320,
+			"y":267,
+			"width":540,
+			"height":60
 		},
 		{
 			"id":"3ccddcc14560e3ff",
@@ -324,9 +203,184 @@
 			"width":560,
 			"height":80
 		},
-		{"id":"2e9e7b81f2630add","type":"file","file":"_Attachments/Images/Pasted image 20260719213355.png","x":1536,"y":368,"width":400,"height":190},
 		{"id":"265bd8331c14ae27","type":"file","file":"_Attachments/Images/cfca20799ae6652dedcbb4f7596de4b6_720.jpg","x":494,"y":-1480,"width":593,"height":643},
+		{
+			"id":"762c9b381dba3016",
+			"type":"text",
+			"text":"微分方程求解大观",
+			"styleAttributes":{"textAlign":"center"},
+			"x":660,
+			"y":-620,
+			"width":260,
+			"height":120
+		},
+		{
+			"id":"9bd482ae6dff9fd5",
+			"type":"text",
+			"text":"若是一阶线性齐次（$q(x) = 0$），则：\n\n$$\n通解为: y = Ce^{-\\int P(x)dx}\n$$",
+			"styleAttributes":{"textAlign":"center"},
+			"x":-820,
+			"y":844,
+			"width":340,
+			"height":180
+		},
+		{"id":"2e76d3aa521ca558","type":"file","file":"_Attachments/Images/Pasted image 20260720211243.png","x":-944,"y":1368,"width":773,"height":215},
+		{"id":"4474edc2399ee384","type":"file","file":"_Attachments/Images/Capture_20260427_223523.jpg","x":-570,"y":551,"width":400,"height":97},
+		{"id":"9d73124d6715bd1f","type":"file","file":"_Attachments/Images/Pasted image 20260721073123.png","x":-861,"y":1720,"width":607,"height":60},
+		{"id":"585cfe25ebed0b00","type":"file","file":"_Attachments/Images/Pasted image 20260502032410.png","x":3778,"y":3577,"width":476,"height":504},
+		{"id":"93c4ed69d59d4ef0","type":"file","file":"_Attachments/Images/Capture_20260428_004652.jpg","x":5351,"y":2450,"width":621,"height":581},
+		{"id":"cc2e92e39d97bf5a","type":"file","file":"_Attachments/Images/Pasted image 20260502031715.png","x":5972,"y":3337,"width":800,"height":466},
+		{"id":"a3c33cab4fcf8eaf","type":"file","file":"_Attachments/Images/Pasted image 20260428005544.png","x":4476,"y":3683,"width":874,"height":297},
+		{
+			"id":"400c8c7bd80879b1",
+			"type":"text",
+			"text":"注意点：\n\n1. 长除到**对应多项式的最高次数**\n2. 最后**可能还需要合并系数**（2010真题）",
+			"styleAttributes":{"textAlign":"center"},
+			"x":7000,
+			"y":3474,
+			"width":520,
+			"height":199
+		},
+		{"id":"7cb37aec9371f839","type":"file","file":"_Attachments/Images/result_yYzbN1.png","x":5972,"y":3970,"width":799,"height":564},
+		{"id":"559373edcfeadd7a","type":"file","file":"_Attachments/Images/Pasted image 20260428145208.png","x":3654,"y":985,"width":500,"height":235},
+		{"id":"db04a6cd380d295f","type":"file","file":"_Attachments/Images/Pasted image 20260428145406.png","x":4155,"y":988,"width":500,"height":231},
+		{
+			"id":"a2adaa3cbe254abd",
+			"type":"text",
+			"text":"不含三角\n\n1. 指数照抄\n2. 多项式次数相同\n3. 乘幂函数 $k = 0, 1, 2$ ",
+			"styleAttributes":{"textAlign":"center"},
+			"x":4760,
+			"y":1000,
+			"width":320,
+			"height":208
+		},
+		{"id":"77739f10731a274d","type":"file","file":"_Attachments/Images/Pasted image 20260428145425.png","x":4155,"y":1221,"width":475,"height":226},
+		{
+			"id":"822230a4a1e57f8f",
+			"type":"text",
+			"text":"含三角\n\n1. 指数照抄\n2. 多项式取最高次\n3. 乘幂函数 $k = 0, 1$ ",
+			"styleAttributes":{"textAlign":"center"},
+			"x":4720,
+			"y":1239,
+			"width":360,
+			"height":208
+		},
+		{
+			"id":"76b636f0d1b63aa9",
+			"type":"text",
+			"text":"若是变系数，则其根的结构没有任何规律，可能出现任何常系数根的所有组合\n\n有非常多的**模拟题**会考到变系数方程，需要注意不能使用常系数的公式",
+			"styleAttributes":{"textAlign":"center"},
+			"x":5490,
+			"y":359,
+			"width":410,
+			"height":183
+		},
+		{"id":"5e7bf0ed2eccde44","type":"file","file":"_Attachments/Images/Pasted image 20260428160007.png","x":5000,"y":279,"width":400,"height":272},
+		{
+			"id":"8873c730caf91037",
+			"type":"text",
+			"text":"解的结构",
+			"styleAttributes":{"textAlign":"center"},
+			"x":5270,
+			"y":79,
+			"width":260,
+			"height":60
+		},
+		{"id":"aea81592b4a0699f","type":"file","file":"_Attachments/Images/result_48oK80.png","x":3080,"y":3794,"width":698,"height":280},
+		{
+			"id":"c3af8fcf4f370de7",
+			"type":"text",
+			"text":"注例 6 是最复杂的",
+			"styleAttributes":{"textAlign":"center"},
+			"x":3886,
+			"y":4160,
+			"width":260,
+			"height":60
+		},
+		{"id":"95ebc76eb902da81","type":"file","file":"_Attachments/Images/result_KvJJ1R.png","x":3654,"y":1221,"width":499,"height":173},
+		{"id":"9c9f53b3440f47ec","type":"file","file":"_Attachments/Images/Pasted image 20260428145612.png","x":3667,"y":1595,"width":473,"height":175},
+		{"id":"f0a95c6c732f9385","type":"file","file":"_Attachments/Images/Pasted image 20260719072941.png","x":3667,"y":1770,"width":474,"height":283},
+		{
+			"id":"d0ad8bb24b184aa5",
+			"type":"text",
+			"text":"非齐次",
+			"styleAttributes":{"textAlign":"center"},
+			"x":3774,
+			"y":365,
+			"width":260,
+			"height":60
+		},
+		{"id":"29d2c1e03c46c325","type":"file","file":"_Attachments/Images/Pasted image 20260428144800.png","x":3679,"y":605,"width":465,"height":62},
+		{"id":"4ea64d6d66c2c7cd","type":"file","file":"_Attachments/Images/Pasted image 20260428145122.png","x":3679,"y":667,"width":475,"height":96},
+		{
+			"id":"01a63dd0b9afaf79",
+			"type":"text",
+			"text":"通解中本质独立的任意常数个数 = 微分方程的阶数",
+			"styleAttributes":{"textAlign":"center"},
+			"x":2700,
+			"y":-1040,
+			"width":280,
+			"height":120
+		},
+		{
+			"id":"789a705914df208c",
+			"type":"text",
+			"text":"1. 线性（不能出现平方）\n2. ",
+			"styleAttributes":{"textAlign":"center"},
+			"x":3160,
+			"y":-660,
+			"width":280,
+			"height":90
+		},
 		{"id":"18d41390a00133e4","type":"file","file":"_Attachments/Images/Pasted image 20260720070235.png","x":2600,"y":-620,"width":399,"height":50},
+		{
+			"id":"86a9c6e31e6b23a7",
+			"type":"text",
+			"text":"齐次",
+			"styleAttributes":{"textAlign":"center"},
+			"x":2441,
+			"y":323,
+			"width":260,
+			"height":60
+		},
+		{"id":"2dd1d27e523ccb1a","type":"file","file":"_Attachments/Images/Pasted image 20260719073006.png","x":3204,"y":985,"width":450,"height":370},
+		{"id":"3a64f4e352284707","type":"file","file":"_Attachments/Images/result_JNyye2.png","x":2310,"y":995,"width":500,"height":230},
+		{"id":"fe901d258d62d84c","type":"file","file":"_Attachments/Images/Pasted image 20260719073258.png","x":1640,"y":1009,"width":270,"height":400},
+		{"id":"fea00b1c64488e21","type":"file","file":"_Attachments/Images/Capture_20260430_220145.jpg","x":2210,"y":1557,"width":679,"height":58},
+		{"id":"afd1aa9a9db70662","type":"file","file":"_Attachments/Images/Pasted image 20260428145042.png","x":2310,"y":1227,"width":500,"height":160},
+		{"id":"1aab39ca941d82d9","type":"file","file":"_Attachments/Images/Pasted image 20260719073306.png","x":1910,"y":1009,"width":399,"height":218},
+		{
+			"id":"2cb6622253e1b363",
+			"type":"text",
+			"text":"⭐对于任何阶数的**常系数线性齐次常微分方程**，都可以使用特征方程 + 解的叠加原理求解",
+			"styleAttributes":{"textAlign":"center"},
+			"x":2111,
+			"y":1491,
+			"width":877,
+			"height":66
+		},
+		{"id":"4e2b467f09a01509","type":"file","file":"_Attachments/Images/Pasted image 20260428144812.png","x":2321,"y":496,"width":495,"height":62},
+		{"id":"2dd4143306a73b13","type":"file","file":"_Attachments/Images/Pasted image 20260428144834.png","x":2321,"y":558,"width":489,"height":107},
+		{
+			"id":"9280e7fe87d2bc36",
+			"type":"text",
+			"text":"高阶微分方程",
+			"styleAttributes":{"textAlign":"center"},
+			"x":3517,
+			"y":-160,
+			"width":300,
+			"height":80
+		},
+		{
+			"id":"32521ec2034bf1bc",
+			"type":"text",
+			"text":"二阶常系数线性",
+			"styleAttributes":{"textAlign":"center"},
+			"x":3107,
+			"y":74,
+			"width":260,
+			"height":60
+		},
 		{
 			"id":"00cfc6d03f4fcb5f",
 			"type":"text",
@@ -347,27 +401,6 @@
 			"width":260,
 			"height":60
 		},
-		{"id":"8bf3c20c9e6ec952","type":"file","file":"_Attachments/Images/Pasted image 20260428144238.png","x":1040,"y":368,"width":496,"height":166},
-		{
-			"id":"bcdc714d01114db3",
-			"type":"text",
-			"text":"(5) 全微分方程（后续多元积分会详细讲解）",
-			"styleAttributes":{"textAlign":"center"},
-			"x":1070,
-			"y":134,
-			"width":440,
-			"height":74
-		},
-		{
-			"id":"762c9b381dba3016",
-			"type":"text",
-			"text":"微分方程求解大观",
-			"styleAttributes":{"textAlign":"center"},
-			"x":660,
-			"y":-620,
-			"width":260,
-			"height":120
-		},
 		{
 			"id":"8013b9a18e4367eb",
 			"type":"text",
@@ -378,39 +411,6 @@
 			"width":520,
 			"height":200
 		},
-		{
-			"id":"25a3e706c4cebdd8",
-			"type":"text",
-			"text":"[全微分方程](https://www.bilibili.com/video/BV1834y1X7v6/) ",
-			"styleAttributes":{"textAlign":"center"},
-			"x":1100,
-			"y":631,
-			"width":380,
-			"height":120
-		},
-		{"id":"a3c33cab4fcf8eaf","type":"file","file":"_Attachments/Images/Pasted image 20260428005544.png","x":4476,"y":3683,"width":874,"height":297},
-		{"id":"aea81592b4a0699f","type":"file","file":"_Attachments/Images/result_48oK80.png","x":3080,"y":3794,"width":698,"height":280},
-		{
-			"id":"c3af8fcf4f370de7",
-			"type":"text",
-			"text":"注例 6 是最复杂的",
-			"styleAttributes":{"textAlign":"center"},
-			"x":3886,
-			"y":4160,
-			"width":260,
-			"height":60
-		},
-		{
-			"id":"400c8c7bd80879b1",
-			"type":"text",
-			"text":"注意点：\n\n1. 长除到**对应多项式的最高次数**\n2. 最后**可能还需要合并系数**（2010真题）",
-			"styleAttributes":{"textAlign":"center"},
-			"x":7000,
-			"y":3474,
-			"width":520,
-			"height":199
-		},
-		{"id":"7cb37aec9371f839","type":"file","file":"_Attachments/Images/result_yYzbN1.png","x":5972,"y":3970,"width":799,"height":564},
 		{
 			"id":"18c837aa20998eb7",
 			"type":"text",
@@ -432,6 +432,7 @@
 			"height":160
 		},
 		{"id":"ddcd3cc5777e4fb6","type":"file","file":"_Attachments/Images/result_xvG5v6.png","x":2240,"y":3326,"width":650,"height":387},
+		{"id":"66892976a156cd8b","type":"file","file":"_Attachments/Images/Pasted image 20260428005442.png","x":3080,"y":3577,"width":700,"height":212},
 		{
 			"id":"d65a629d6af04eb2",
 			"type":"text",
@@ -441,8 +442,7 @@
 			"y":2640,
 			"width":300,
 			"height":100
-		},
-		{"id":"66892976a156cd8b","type":"file","file":"_Attachments/Images/Pasted image 20260428005442.png","x":3080,"y":3577,"width":700,"height":212}
+		}
 	],
 	"edges":[
 		{
