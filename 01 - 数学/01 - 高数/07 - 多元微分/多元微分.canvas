@@ -73,24 +73,12 @@
 		{"id":"e5b007ac59ba4b6e","type":"file","file":"_Attachments/Images/Pasted image 20260908222135.png","x":16290,"y":2999,"width":964,"height":585},
 		{"id":"661fc126c4f5c927","type":"file","file":"_Attachments/Images/Pasted image 20260909211048.png","x":16520,"y":4360,"width":1975,"height":754},
 		{"id":"558f153eadf05656","type":"file","file":"_Attachments/Images/Pasted image 20260909210557.png","x":17757,"y":1917,"width":760,"height":832},
-		{"id":"cc2577f604ec3ad7","type":"file","file":"_Attachments/Images/Pasted image 20260908222322.png","x":17960,"y":3240,"width":968,"height":656},
 		{"id":"3beec38a5a61c588","type":"file","file":"_Attachments/Images/Pasted image 20260909203143.png","x":-13842,"y":275,"width":900,"height":633},
 		{"id":"072b32b7725f8dcb","type":"file","file":"_Attachments/Images/Pasted image 20260909205327.png","x":-14040,"y":3296,"width":1216,"height":1621},
 		{"id":"7806cffe43bc36ae","type":"file","file":"_Attachments/Images/Pasted image 20260909202708.png","x":-14577,"y":588,"width":516,"height":654},
 		{"id":"148f80be2373f910","type":"file","file":"_Attachments/Images/Pasted image 20260909202653.png","x":-13829,"y":1075,"width":875,"height":548},
 		{"id":"156302a6b75285ae","type":"file","file":"_Attachments/Images/Pasted image 20260909205502.png","x":-14465,"y":5148,"width":850,"height":560},
 		{"id":"0709e9ad7854e8f9","type":"file","file":"_Attachments/Images/Pasted image 20260909204904.png","x":-15223,"y":3257,"width":1175,"height":1660},
-		{"id":"cbac6897529088ef","type":"file","file":"_Attachments/Images/Pasted image 20260909210703.png","x":19000,"y":3340,"width":596,"height":509},
-		{
-			"id":"c8ef1c2a6640a1e3",
-			"type":"text",
-			"text":"利用**线性代数方程组的知识**快速求解",
-			"styleAttributes":{"textAlign":"center"},
-			"x":19090,
-			"y":3960,
-			"width":420,
-			"height":80
-		},
 		{"id":"87c1d49535b36207","type":"file","file":"_Attachments/Images/Pasted image 20260909203446.png","x":-16217,"y":53,"width":1266,"height":1726},
 		{"id":"464542ed2533a737","type":"file","file":"_Attachments/Images/Pasted image 20260909204118.png","x":-16660,"y":4400,"width":1214,"height":1033},
 		{"id":"ccf63a7445b92e75","type":"file","file":"_Attachments/Images/Pasted image 20260909203808.png","x":-17520,"y":3240,"width":1499,"height":934},
@@ -148,6 +136,18 @@
 			"y":9392,
 			"width":700,
 			"height":160
+		},
+		{"id":"cc2577f604ec3ad7","type":"file","file":"_Attachments/Images/Pasted image 20260908222322.png","x":18011,"y":3080,"width":968,"height":656},
+		{"id":"cbac6897529088ef","type":"file","file":"_Attachments/Images/Pasted image 20260909210703.png","x":19051,"y":3180,"width":596,"height":509},
+		{
+			"id":"c8ef1c2a6640a1e3",
+			"type":"text",
+			"text":"[利用**线性代数方程组的知识**快速求解](https://v.douyin.com/BLi-pR7xObI/)\n",
+			"styleAttributes":{"textAlign":"center"},
+			"x":19080,
+			"y":3800,
+			"width":539,
+			"height":140
 		}
 	],
 	"edges":[
