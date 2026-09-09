@@ -10,8 +10,9 @@
 		{"id":"f015bc823c41412e","type":"group","x":-16457,"y":-165,"width":3840,"height":2280,"label":"二重极限与累次极限"},
 		{"id":"493c539210519fb7","type":"group","x":3680,"y":-1360,"width":5720,"height":1300,"label":"选学"},
 		{"id":"6d1019737427c092","type":"group","x":-8193,"y":1035,"width":1460,"height":3600,"label":"偏导数"},
+		{"id":"b815f8a2b52a4c23","type":"group","x":-640,"y":7920,"width":3240,"height":1340,"color":"4","label":"综合好题"},
+		{"id":"a8e20db7a64bdf04","type":"group","x":778,"y":5120,"width":2192,"height":1774,"label":"例题"},
 		{"id":"d802f65d9bec417c","type":"group","x":-11113,"y":1495,"width":2720,"height":1240,"label":"基本概念 —— 类比一元函数"},
-		{"id":"a8e20db7a64bdf04","type":"group","x":574,"y":5120,"width":2600,"height":1180,"label":"例题"},
 		{"id":"bc4519c148d90572","type":"group","x":15080,"y":2840,"width":2410,"height":1107,"label":"无条件极值"},
 		{"id":"f8e0e8b415b36e55","type":"group","x":17840,"y":3022,"width":1960,"height":1098,"label":"条件极值与拉格朗日数乘"},
 		{"id":"097191f3c563cd99","type":"group","x":-9753,"y":3200,"width":1200,"height":1320,"label":"偏积分"},
@@ -21,8 +22,6 @@
 		{"id":"e8fd44c7d8d6fa3a","type":"file","file":"_Attachments/Images/Pasted image 20260908222705.png","x":1163,"y":2654,"width":968,"height":353},
 		{"id":"55adcdd9dc3bea95","type":"file","file":"_Attachments/Images/Pasted image 20260908222750.png","x":2300,"y":2502,"width":794,"height":741},
 		{"id":"5500a2a42bbec738","type":"file","file":"_Attachments/Images/Pasted image 20260909170932.png","x":3094,"y":2502,"width":825,"height":327},
-		{"id":"e0252529dd02b2f6","type":"file","file":"_Attachments/Images/Pasted image 20260908223321.png","x":694,"y":5357,"width":925,"height":623},
-		{"id":"19225d9adae569d6","type":"file","file":"_Attachments/Images/Pasted image 20260908223244.png","x":1934,"y":5180,"width":596,"height":1059},
 		{"id":"cf10f811cc7503c6","type":"file","file":"_Attachments/Images/Pasted image 20260908222853.png","x":2363,"y":3380,"width":668,"height":383},
 		{"id":"27d55e44db701c3a","type":"file","file":"_Attachments/Images/Pasted image 20260909201201.png","x":1366,"y":3080,"width":564,"height":523},
 		{"id":"4748d99d6a16e2c5","type":"file","file":"_Attachments/Images/Pasted image 20260909170457.png","x":1366,"y":3610,"width":574,"height":80},
@@ -110,7 +109,33 @@
 		{"id":"464542ed2533a737","type":"file","file":"_Attachments/Images/Pasted image 20260909204118.png","x":-16660,"y":4400,"width":1214,"height":1033},
 		{"id":"ccf63a7445b92e75","type":"file","file":"_Attachments/Images/Pasted image 20260909203808.png","x":-17520,"y":3240,"width":1499,"height":934},
 		{"id":"1f7e853304c7de01","type":"file","file":"_Attachments/Images/Pasted image 20260909203855.png","x":-17630,"y":4261,"width":851,"height":1312},
-		{"id":"3699faed70096e04","type":"file","file":"_Attachments/Images/Pasted image 20260909233035.png","x":3094,"y":2829,"width":625,"height":471}
+		{"id":"3699faed70096e04","type":"file","file":"_Attachments/Images/Pasted image 20260909233035.png","x":3094,"y":2829,"width":550,"height":414},
+		{"id":"e0252529dd02b2f6","type":"file","file":"_Attachments/Images/Pasted image 20260908223321.png","x":859,"y":5360,"width":925,"height":623},
+		{"id":"19225d9adae569d6","type":"file","file":"_Attachments/Images/Pasted image 20260908223244.png","x":1984,"y":5360,"width":596,"height":1059},
+		{"id":"2de2a712690bed6a","type":"file","file":"_Attachments/Images/Pasted image 20260909233748.png","x":-360,"y":8200,"width":725,"height":470},
+		{
+			"id":"430461a32ad4ab72",
+			"type":"text",
+			"text":"隐函数存在定理 + 复合多元函数",
+			"styleAttributes":{"textAlign":"center"},
+			"x":460,
+			"y":8325,
+			"width":580,
+			"height":220
+		},
+		{"id":"ca850b055b3d6399","type":"file","file":"_Attachments/Images/Pasted image 20260909234234.png","x":2363,"y":3763,"width":675,"height":436},
+		{"id":"04a75c90803eda81","type":"file","file":"_Attachments/Images/Pasted image 20260909234335.png","x":10340,"y":5720,"width":1325,"height":748},
+		{
+			"id":"73258748da12a437",
+			"type":"text",
+			"text":"$df (1, 1)$：表示第一个位置为 $1$，第二个位置为 $1$.\n$dz(1, 1)$：表示 $x = 1$，$y = 1$.\n",
+			"styleAttributes":{"textAlign":"center"},
+			"x":10700,
+			"y":6660,
+			"width":580,
+			"height":140
+		},
+		{"id":"f54dea11f9da4ffd","type":"file","file":"_Attachments/Images/Pasted image 20260909234917.png","x":12240,"y":4611,"width":1408,"height":1975}
 	],
 	"edges":[
 		{
@@ -405,6 +430,24 @@
 			"fromNode":"f8e0e8b415b36e55",
 			"fromSide":"bottom",
 			"toNode":"661fc126c4f5c927",
+			"toSide":"top"
+		},
+		{
+			"id":"a3e8bfd247560514",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"2de2a712690bed6a",
+			"fromSide":"right",
+			"toNode":"430461a32ad4ab72",
+			"toSide":"left"
+		},
+		{
+			"id":"af1a367970fb06b3",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"04a75c90803eda81",
+			"fromSide":"bottom",
+			"toNode":"73258748da12a437",
 			"toSide":"top"
 		}
 	],
