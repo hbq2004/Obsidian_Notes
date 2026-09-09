@@ -35,14 +35,14 @@
 		{"id":"e79bc26b30043bf2","type":"file","file":"_Attachments/Images/Pasted image 20260908202131.png","x":3060,"y":1603,"width":845,"height":252},
 		{"id":"9953ee2d11cac3fa","type":"file","file":"_Attachments/Images/Pasted image 20260908203040.png","x":5500,"y":1640,"width":684,"height":67},
 		{"id":"e219e5254f8644e8","type":"file","file":"_Attachments/Images/Pasted image 20260908202146.png","x":4000,"y":1634,"width":611,"height":156},
+		{"id":"402298cb02bdfe63","type":"file","file":"_Attachments/Images/Pasted image 20260908202034.png","x":1880,"y":1571,"width":497,"height":284},
+		{"id":"636dfc08422da374","type":"file","file":"_Attachments/Images/Pasted image 20260908201848.png","x":3020,"y":1100,"width":548,"height":280},
+		{"id":"69113d76c7ecf177","type":"file","file":"_Attachments/Images/Pasted image 20260908202332.png","x":5080,"y":1045,"width":575,"height":453},
 		{"id":"2775dde8d01adcc7","type":"file","file":"_Attachments/Images/Pasted image 20260908204934.png","x":-2940,"y":868,"width":904,"height":1191},
 		{"id":"43aed49fbe9efa6e","type":"file","file":"_Attachments/Images/Pasted image 20260908205021.png","x":-1980,"y":907,"width":955,"height":1072},
 		{"id":"3aad363b790eee29","type":"file","file":"_Attachments/Images/Pasted image 20260908203522.png","x":-865,"y":928,"width":725,"height":659},
 		{"id":"c4ef393a3293905b","type":"file","file":"_Attachments/Images/Pasted image 20260908203703.png","x":-865,"y":1727,"width":723,"height":291},
 		{"id":"99fcfa61837178c5","type":"file","file":"_Attachments/Images/Pasted image 20260908203820.png","x":180,"y":868,"width":1130,"height":1150},
-		{"id":"402298cb02bdfe63","type":"file","file":"_Attachments/Images/Pasted image 20260908202034.png","x":1880,"y":1571,"width":497,"height":284},
-		{"id":"636dfc08422da374","type":"file","file":"_Attachments/Images/Pasted image 20260908201848.png","x":3020,"y":1100,"width":548,"height":280},
-		{"id":"69113d76c7ecf177","type":"file","file":"_Attachments/Images/Pasted image 20260908202332.png","x":5080,"y":1045,"width":575,"height":453},
 		{"id":"7e834cb99ef53fde","type":"file","file":"_Attachments/Images/Pasted image 20260908203249.png","x":5500,"y":1707,"width":749,"height":225},
 		{
 			"id":"5380e42a3d91f9f6",
@@ -217,15 +217,6 @@
 			"toNode":"3aad363b790eee29",
 			"toSide":"top",
 			"label":"极坐标和直角坐标系的互相转化"
-		},
-		{
-			"id":"1b8981d72f69e55e",
-			"styleAttributes":{},
-			"toFloating":false,
-			"fromNode":"8d6f72e28497f269",
-			"fromSide":"right",
-			"toNode":"bd95305a7345c54a",
-			"toSide":"left"
 		}
 	],
 	"metadata":{
