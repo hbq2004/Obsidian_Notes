@@ -148,6 +148,16 @@
 			"y":3800,
 			"width":539,
 			"height":140
+		},
+		{
+			"id":"dabea2102332ebc1",
+			"type":"text",
+			"text":"记住流程！！！⭐",
+			"styleAttributes":{"textAlign":"center"},
+			"x":-2492,
+			"y":2000,
+			"width":488,
+			"height":120
 		}
 	],
 	"edges":[
@@ -471,6 +481,15 @@
 			"fromSide":"right",
 			"toNode":"de75e25020efcd9f",
 			"toSide":"left"
+		},
+		{
+			"id":"f8a77b84425228d5",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"40acd243499f57f6",
+			"fromSide":"bottom",
+			"toNode":"dabea2102332ebc1",
+			"toSide":"top"
 		}
 	],
 	"metadata":{
