@@ -15,9 +15,9 @@
               "state": {
                 "file": "01 - 数学/01 - 高数/07 - 多元微分/多元微分.canvas",
                 "viewState": {
-                  "x": 360,
-                  "y": 3180,
-                  "zoom": -4
+                  "x": -849.5900531667651,
+                  "y": 10631.251456483746,
+                  "zoom": -0.7302967318434065
                 }
               },
               "icon": "lucide-layout-dashboard",
@@ -121,7 +121,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 345.5
+    "width": 345.5,
+    "collapsed": true
   },
   "right": {
     "id": "788c2b70f5d82052",
@@ -280,27 +281,27 @@
   },
   "active": "eb925eee2db935d2",
   "lastOpenFiles": [
-    "01 - 数学/01 - 高数/08 - 多重积分/01 - 二重积分.canvas",
+    "_Attachments/Images/Pasted image 20260909172516.png",
+    "_Attachments/Images/Pasted image 20260909172446.png",
+    "_Attachments/Images/Pasted image 20260909172425.png",
+    "_Attachments/Images/Pasted image 20260909172228.png",
+    "_Attachments/Images/Pasted image 20260909171736.png",
+    "_Attachments/Images/Pasted image 20260909171522.png",
+    "_Attachments/Images/Pasted image 20260909171216.png",
     "01 - 数学/01 - 高数/07 - 多元微分/多元微分.canvas",
+    "_Attachments/Images/Pasted image 20260909171207.png",
+    "_Attachments/Images/Pasted image 20260909170932.png",
+    "_Attachments/Images/Pasted image 20260909170724.png",
+    "_Attachments/Images/Pasted image 20260909170626.png",
+    "01 - 数学/01 - 高数/08 - 多重积分/01 - 二重积分.canvas",
     "01 - 数学/01 - 高数/08 - 多重积分/02 - 空间解析几何.canvas",
     "01 - 数学/01 - 高数/08 - 多重积分/03 - 三重积分和曲线曲面积分.canvas",
     "01 - 数学/01 - 高数/微积分应用.canvas",
     "01 - 数学/03 - 概统/01 - 随机事件与概率.canvas",
-    "_Attachments/Images/Pasted image 20260908223321.png",
-    "_Attachments/Images/Pasted image 20260908223244.png",
-    "_Attachments/Images/Pasted image 20260908223048.png",
-    "_Attachments/Images/Pasted image 20260908222853.png",
-    "_Attachments/Images/Pasted image 20260908222750.png",
-    "_Attachments/Images/Pasted image 20260908222705.png",
-    "_Attachments/Images/Pasted image 20260908222632.png",
-    "_Attachments/Images/Pasted image 20260908222449.png",
-    "_Attachments/Images/Pasted image 20260908222428.png",
-    "_Attachments/Images/Pasted image 20260908222322.png",
     "01 - 数学/01 - 高数/01 - 函数、极限、连续/01 - 函数极限 + 连续与间断大观.canvas",
     "01 - 数学/01 - 高数/05 - 中值定理/01 - 中值定理大观.canvas",
     "01 - 数学/01 - 高数/05 - 中值定理/02 - 微分等式与微分不等式.canvas",
     "01 - 数学/01 - 高数/04 - 微分方程/微分方程求解大观.canvas",
-    "01 - 数学/03 - 概统/02 - 一维随机变量及其分布.canvas",
     "好题错题整理/_待确认/模拟卷/2027/ep月考卷/4_卷四/3-FRQ/Q19-JJ8T-S4.md",
     "好题错题整理/_待确认/模拟卷/2027/ep月考卷/4_卷四/3-FRQ/Q20-JJ8T-S4.md",
     "好题错题整理/_待确认/模拟卷/2027/ep月考卷/3_卷三/2-FIB/Q15-JJ8T-S3.md",
