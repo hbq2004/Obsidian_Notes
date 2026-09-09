@@ -2,10 +2,10 @@
 	"nodes":[
 		{"id":"b608d73fb4e403ec","type":"group","x":-6860,"y":7040,"width":8730,"height":5600,"color":"5","label":"抽象复合多元函数的偏导数、全微分"},
 		{"id":"5f86d70829164de5","type":"group","x":-11393,"y":915,"width":10120,"height":3800,"color":"2","label":"概念"},
-		{"id":"ca424a15f5f7d086","type":"group","x":-18023,"y":1337,"width":5303,"height":2423,"label":"连续、可偏导、偏导连续、可微"},
+		{"id":"ca424a15f5f7d086","type":"group","x":-17920,"y":2992,"width":5303,"height":2768,"label":"连续、可偏导、偏导连续、可微"},
 		{"id":"0ee920f728dfbbd3","type":"group","x":-480,"y":1900,"width":4708,"height":2580,"color":"1","label":"多元函数求导法则"},
 		{"id":"5ca7f398554621a1","type":"group","x":4640,"y":960,"width":4560,"height":2270,"color":"2","label":"多元函数的极值和最值"},
-		{"id":"f015bc823c41412e","type":"group","x":-17760,"y":-1560,"width":4520,"height":2160,"label":"二重极限与累次极限"},
+		{"id":"f015bc823c41412e","type":"group","x":-16457,"y":-165,"width":3840,"height":2280,"label":"二重极限与累次极限"},
 		{"id":"493c539210519fb7","type":"group","x":3680,"y":-1360,"width":5720,"height":1300,"label":"选学"},
 		{"id":"6d1019737427c092","type":"group","x":-8193,"y":1035,"width":1460,"height":3600,"label":"偏导数"},
 		{"id":"f543092aa5651bcb","type":"group","x":-6633,"y":1235,"width":5100,"height":880,"label":"可微"},
@@ -80,10 +80,12 @@
 		{"id":"e0252529dd02b2f6","type":"file","file":"_Attachments/Images/Pasted image 20260908223321.png","x":3800,"y":5357,"width":925,"height":623},
 		{"id":"36aef67420ce7624","type":"file","file":"_Attachments/Images/Pasted image 20260909202015.png","x":-4513,"y":2326,"width":1050,"height":716},
 		{"id":"b32515c1cd834f4a","type":"file","file":"_Attachments/Images/Pasted image 20260909202510.png","x":-4513,"y":3042,"width":1050,"height":415},
-		{"id":"3beec38a5a61c588","type":"file","file":"_Attachments/Images/Pasted image 20260909203143.png","x":-15145,"y":-1120,"width":900,"height":641},
-		{"id":"148f80be2373f910","type":"file","file":"_Attachments/Images/Pasted image 20260909202653.png","x":-15132,"y":-320,"width":875,"height":554},
-		{"id":"87c1d49535b36207","type":"file","file":"_Attachments/Images/Pasted image 20260909203446.png","x":-17520,"y":-1342,"width":1268,"height":1726},
-		{"id":"7806cffe43bc36ae","type":"file","file":"_Attachments/Images/Pasted image 20260909202708.png","x":-15880,"y":-807,"width":516,"height":656}
+		{"id":"87c1d49535b36207","type":"file","file":"_Attachments/Images/Pasted image 20260909203446.png","x":-16217,"y":53,"width":1268,"height":1726},
+		{"id":"3beec38a5a61c588","type":"file","file":"_Attachments/Images/Pasted image 20260909203143.png","x":-13842,"y":275,"width":900,"height":641},
+		{"id":"7806cffe43bc36ae","type":"file","file":"_Attachments/Images/Pasted image 20260909202708.png","x":-14577,"y":588,"width":516,"height":656},
+		{"id":"148f80be2373f910","type":"file","file":"_Attachments/Images/Pasted image 20260909202653.png","x":-13829,"y":1075,"width":875,"height":554},
+		{"id":"ccf63a7445b92e75","type":"file","file":"_Attachments/Images/Pasted image 20260909203808.png","x":-17660,"y":3240,"width":1500,"height":953},
+		{"id":"1f7e853304c7de01","type":"file","file":"_Attachments/Images/Pasted image 20260909203855.png","x":-17520,"y":4320,"width":860,"height":1312}
 	],
 	"edges":[
 		{
