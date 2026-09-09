@@ -2,6 +2,7 @@
 	"nodes":[
 		{"id":"b608d73fb4e403ec","type":"group","x":-6860,"y":7040,"width":8730,"height":5600,"color":"5","label":"抽象复合多元函数的偏导数、全微分"},
 		{"id":"5f86d70829164de5","type":"group","x":-11393,"y":915,"width":10120,"height":3800,"color":"2","label":"概念"},
+		{"id":"ca424a15f5f7d086","type":"group","x":-18023,"y":1337,"width":5303,"height":2423,"label":"连续、可偏导、偏导连续、可微"},
 		{"id":"0ee920f728dfbbd3","type":"group","x":-480,"y":1900,"width":4708,"height":2580,"color":"1","label":"多元函数求导法则"},
 		{"id":"5ca7f398554621a1","type":"group","x":4640,"y":960,"width":4560,"height":2270,"color":"2","label":"多元函数的极值和最值"},
 		{"id":"f015bc823c41412e","type":"group","x":-17760,"y":-1560,"width":4520,"height":2160,"label":"二重极限与累次极限"},
@@ -81,7 +82,8 @@
 		{"id":"b32515c1cd834f4a","type":"file","file":"_Attachments/Images/Pasted image 20260909202510.png","x":-4513,"y":3042,"width":1050,"height":415},
 		{"id":"3beec38a5a61c588","type":"file","file":"_Attachments/Images/Pasted image 20260909203143.png","x":-15145,"y":-1120,"width":900,"height":641},
 		{"id":"148f80be2373f910","type":"file","file":"_Attachments/Images/Pasted image 20260909202653.png","x":-15132,"y":-320,"width":875,"height":554},
-		{"id":"7806cffe43bc36ae","type":"file","file":"_Attachments/Images/Pasted image 20260909202708.png","x":-16120,"y":-880,"width":516,"height":656}
+		{"id":"87c1d49535b36207","type":"file","file":"_Attachments/Images/Pasted image 20260909203446.png","x":-17520,"y":-1342,"width":1268,"height":1726},
+		{"id":"7806cffe43bc36ae","type":"file","file":"_Attachments/Images/Pasted image 20260909202708.png","x":-15880,"y":-807,"width":516,"height":656}
 	],
 	"edges":[
 		{
@@ -295,6 +297,24 @@
 			"fromSide":"bottom",
 			"toNode":"148f80be2373f910",
 			"toSide":"top"
+		},
+		{
+			"id":"9938065473f72d7a",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"87c1d49535b36207",
+			"fromSide":"right",
+			"toNode":"7806cffe43bc36ae",
+			"toSide":"left"
+		},
+		{
+			"id":"8e495b8d91e42a33",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"5f86d70829164de5",
+			"fromSide":"left",
+			"toNode":"ca424a15f5f7d086",
+			"toSide":"right"
 		}
 	],
 	"metadata":{
