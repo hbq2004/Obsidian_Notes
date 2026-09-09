@@ -2,13 +2,13 @@
 	"nodes":[
 		{"id":"b608d73fb4e403ec","type":"group","x":-6860,"y":7040,"width":8730,"height":5600,"color":"5","label":"抽象复合多元函数的偏导数、全微分"},
 		{"id":"5f86d70829164de5","type":"group","x":-11393,"y":915,"width":10120,"height":3800,"color":"2","label":"概念"},
+		{"id":"0ee920f728dfbbd3","type":"group","x":-480,"y":1900,"width":4708,"height":2580,"color":"1","label":"多元函数求导法则"},
 		{"id":"5ca7f398554621a1","type":"group","x":4640,"y":960,"width":4560,"height":2270,"color":"2","label":"多元函数的极值和最值"},
-		{"id":"0ee920f728dfbbd3","type":"group","x":-480,"y":1900,"width":4540,"height":1955,"color":"1","label":"多元函数求导法则"},
 		{"id":"493c539210519fb7","type":"group","x":3680,"y":-1360,"width":5720,"height":1300,"label":"选学"},
 		{"id":"6d1019737427c092","type":"group","x":-8193,"y":1035,"width":1460,"height":3600,"label":"偏导数"},
 		{"id":"f543092aa5651bcb","type":"group","x":-6633,"y":1235,"width":5100,"height":880,"label":"可微"},
 		{"id":"d802f65d9bec417c","type":"group","x":-11113,"y":1495,"width":2720,"height":1240,"label":"基本概念 —— 类比一元函数"},
-		{"id":"a8e20db7a64bdf04","type":"group","x":3440,"y":4910,"width":2600,"height":1180,"label":"例题"},
+		{"id":"a8e20db7a64bdf04","type":"group","x":3680,"y":5120,"width":2600,"height":1180,"label":"例题"},
 		{"id":"bc4519c148d90572","type":"group","x":4980,"y":1970,"width":1900,"height":845,"label":"无条件极值"},
 		{"id":"f8e0e8b415b36e55","type":"group","x":7200,"y":1970,"width":1360,"height":845,"label":"条件极值与拉格朗日数乘"},
 		{"id":"5e03d5b6b6d652a7","type":"group","x":-10233,"y":1675,"width":640,"height":817,"color":"1","label":"二元函数极限"},
@@ -26,7 +26,6 @@
 		{"id":"6426e755c8f07b68","type":"file","file":"_Attachments/Images/Pasted image 20260909170724.png","x":1320,"y":1971,"width":550,"height":244},
 		{"id":"10b8c63b15e490a7","type":"file","file":"_Attachments/Images/Pasted image 20260908222632.png","x":-160,"y":2455,"width":1094,"height":707},
 		{"id":"e8fd44c7d8d6fa3a","type":"file","file":"_Attachments/Images/Pasted image 20260908222705.png","x":1163,"y":2654,"width":968,"height":353},
-		{"id":"4748d99d6a16e2c5","type":"file","file":"_Attachments/Images/Pasted image 20260909170457.png","x":1235,"y":3201,"width":825,"height":124},
 		{"id":"54d576fddaf56b0e","type":"file","file":"_Attachments/Images/Pasted image 20260908223048.png","x":3813,"y":-1254,"width":829,"height":1091},
 		{"id":"5ae03aa92b89e9d4","type":"file","file":"_Attachments/Images/Pasted image 20260908222428.png","x":5080,"y":-1112,"width":2050,"height":807},
 		{"id":"46b2bd32c19150c8","type":"file","file":"_Attachments/Images/Pasted image 20260908222449.png","x":7130,"y":-1102,"width":2150,"height":807},
@@ -38,8 +37,6 @@
 		{"id":"55adcdd9dc3bea95","type":"file","file":"_Attachments/Images/Pasted image 20260908222750.png","x":2300,"y":2502,"width":794,"height":741},
 		{"id":"cf10f811cc7503c6","type":"file","file":"_Attachments/Images/Pasted image 20260908222853.png","x":2363,"y":3380,"width":668,"height":383},
 		{"id":"5500a2a42bbec738","type":"file","file":"_Attachments/Images/Pasted image 20260909170932.png","x":3094,"y":2502,"width":825,"height":329},
-		{"id":"19225d9adae569d6","type":"file","file":"_Attachments/Images/Pasted image 20260908223244.png","x":4800,"y":4970,"width":596,"height":1059},
-		{"id":"e0252529dd02b2f6","type":"file","file":"_Attachments/Images/Pasted image 20260908223321.png","x":3560,"y":5147,"width":925,"height":623},
 		{"id":"eb1ae89cfb4f11cb","type":"file","file":"_Attachments/Images/Pasted image 20260908220956.png","x":-7981,"y":1107,"width":912,"height":1937},
 		{"id":"cc128b7f53af02d2","type":"file","file":"_Attachments/Images/Pasted image 20260908221405.png","x":-6493,"y":1375,"width":775,"height":545},
 		{"id":"f1bff6697087f1b2","type":"file","file":"_Attachments/Images/Pasted image 20260909170626.png","x":-7213,"y":4375,"width":432,"height":160},
@@ -62,18 +59,24 @@
 		{"id":"50eedea0f5cc1698","type":"file","file":"_Attachments/Images/Pasted image 20260909171216.png","x":-6358,"y":10233,"width":2875,"height":1609},
 		{"id":"c4feb4e90c8148af","type":"file","file":"_Attachments/Images/Pasted image 20260909171522.png","x":-6420,"y":12120,"width":3000,"height":246},
 		{"id":"779abf7436e987f8","type":"file","file":"_Attachments/Images/Pasted image 20260909171736.png","x":-2400,"y":8160,"width":3425,"height":828},
-		{"id":"966713ec16600a31","type":"file","file":"_Attachments/Images/Pasted image 20260909172516.png","x":-800,"y":10381,"width":2125,"height":685},
+		{"id":"966713ec16600a31","type":"file","file":"_Attachments/Images/Pasted image 20260909172516.png","x":-1920,"y":10381,"width":2125,"height":685},
 		{
 			"id":"87dff14c9189bc5b",
 			"type":"text",
 			"text":"[彻底搞懂：多元函数z=F(x,y)对“位置”和“变量” 求偏导的区别！ - 考研数学李烈老师](https://www.bilibili.com/video/BV11F4m1V7wo/) \n\n\n",
 			"styleAttributes":{"textAlign":"center"},
-			"x":-347,
+			"x":-1467,
 			"y":9681,
 			"width":1220,
 			"height":552
 		},
-		{"id":"37e12afbc0619b9d","type":"file","file":"_Attachments/Images/Pasted image 20260909201201.png","x":-3000,"y":9551,"width":1865,"height":1730}
+		{"id":"27d55e44db701c3a","type":"file","file":"_Attachments/Images/Pasted image 20260909201201.png","x":1366,"y":3080,"width":564,"height":530},
+		{"id":"4748d99d6a16e2c5","type":"file","file":"_Attachments/Images/Pasted image 20260909170457.png","x":1366,"y":3610,"width":575,"height":84},
+		{"id":"dec60357bced7c19","type":"file","file":"_Attachments/Images/Pasted image 20260909201824.png","x":980,"y":3925,"width":650,"height":397},
+		{"id":"dc98acc5ce08fd17","type":"file","file":"_Attachments/Images/Pasted image 20260909201838.png","x":1840,"y":3880,"width":575,"height":442},
+		{"id":"19225d9adae569d6","type":"file","file":"_Attachments/Images/Pasted image 20260908223244.png","x":5040,"y":5180,"width":596,"height":1059},
+		{"id":"e0252529dd02b2f6","type":"file","file":"_Attachments/Images/Pasted image 20260908223321.png","x":3800,"y":5357,"width":925,"height":623},
+		{"id":"36aef67420ce7624","type":"file","file":"_Attachments/Images/Pasted image 20260909202015.png","x":-5873,"y":2980,"width":875,"height":597}
 	],
 	"edges":[
 		{
@@ -177,17 +180,6 @@
 			"toSide":"top"
 		},
 		{
-			"id":"3a4c57b9146de390",
-			"styleAttributes":{},
-			"toFloating":false,
-			"fromFloating":false,
-			"fromNode":"e8fd44c7d8d6fa3a",
-			"fromSide":"bottom",
-			"toNode":"4748d99d6a16e2c5",
-			"toSide":"top",
-			"label":"ep 建议"
-		},
-		{
 			"id":"d66a7f664fdbf8b3",
 			"styleAttributes":{},
 			"toFloating":false,
@@ -252,6 +244,42 @@
 			"fromNode":"87dff14c9189bc5b",
 			"fromSide":"bottom",
 			"toNode":"966713ec16600a31",
+			"toSide":"top"
+		},
+		{
+			"id":"7ee4472f0223459c",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"e8fd44c7d8d6fa3a",
+			"fromSide":"bottom",
+			"toNode":"27d55e44db701c3a",
+			"toSide":"top"
+		},
+		{
+			"id":"9013785e5b152dbc",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"4748d99d6a16e2c5",
+			"fromSide":"bottom",
+			"toNode":"dec60357bced7c19",
+			"toSide":"top"
+		},
+		{
+			"id":"fa37f0b4d3c5e864",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"4748d99d6a16e2c5",
+			"fromSide":"bottom",
+			"toNode":"dc98acc5ce08fd17",
+			"toSide":"top"
+		},
+		{
+			"id":"db55b97eb5285e80",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"45875e3eefe82432",
+			"fromSide":"bottom",
+			"toNode":"36aef67420ce7624",
 			"toSide":"top"
 		}
 	],
