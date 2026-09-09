@@ -282,6 +282,7 @@
 			"id":"fa37f0b4d3c5e864",
 			"styleAttributes":{},
 			"toFloating":false,
+			"fromFloating":false,
 			"fromNode":"4748d99d6a16e2c5",
 			"fromSide":"bottom",
 			"toNode":"dc98acc5ce08fd17",
