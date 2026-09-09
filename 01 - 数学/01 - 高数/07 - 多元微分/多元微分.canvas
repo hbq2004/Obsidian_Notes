@@ -135,20 +135,20 @@
 			"height":140
 		},
 		{"id":"c4feb4e90c8148af","type":"file","file":"_Attachments/Images/Pasted image 20260909171522.png","x":5695,"y":6800,"width":2560,"height":246},
-		{"id":"7d0d0846fb1792a6","type":"file","file":"_Attachments/Images/Pasted image 20260910000433.png","x":13760,"y":8160,"width":258,"height":400},
-		{"id":"a700a9cc2a6c19d6","type":"file","file":"_Attachments/Images/Pasted image 20260910000433.png","x":7360,"y":8360,"width":1433,"height":2222},
+		{"id":"cfc6704d78b403df","type":"file","file":"_Attachments/Images/Pasted image 20260909210245.png","x":7487,"y":10880,"width":2061,"height":2452},
+		{"id":"00fb1a0d80296ebc","type":"file","file":"_Attachments/Images/Pasted image 20260909210437.png","x":9767,"y":11440,"width":1827,"height":1634},
+		{"id":"a700a9cc2a6c19d6","type":"file","file":"_Attachments/Images/Pasted image 20260910000433.png","x":7085,"y":8357,"width":1433,"height":2222},
+		{"id":"2eece98922fd224b","type":"file","file":"_Attachments/Images/Pasted image 20260910001335.png","x":8518,"y":8357,"width":1795,"height":2229},
 		{
 			"id":"de75e25020efcd9f",
 			"type":"text",
 			"text":"通过**变换**（换元），把中间变量变成结果\n—— 可以直接使用先求后代",
 			"styleAttributes":{"textAlign":"center"},
-			"x":9417,
-			"y":9351,
+			"x":10880,
+			"y":9392,
 			"width":700,
-			"height":240
-		},
-		{"id":"cfc6704d78b403df","type":"file","file":"_Attachments/Images/Pasted image 20260909210245.png","x":7078,"y":10720,"width":2061,"height":2452},
-		{"id":"00fb1a0d80296ebc","type":"file","file":"_Attachments/Images/Pasted image 20260909210437.png","x":9358,"y":11280,"width":1827,"height":1634}
+			"height":160
+		}
 	],
 	"edges":[
 		{
@@ -464,10 +464,10 @@
 			"toSide":"top"
 		},
 		{
-			"id":"d1a4b51a080f0511",
+			"id":"da37cf23cd1dac77",
 			"styleAttributes":{},
 			"toFloating":false,
-			"fromNode":"a700a9cc2a6c19d6",
+			"fromNode":"2eece98922fd224b",
 			"fromSide":"right",
 			"toNode":"de75e25020efcd9f",
 			"toSide":"left"
