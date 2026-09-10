@@ -1,16 +1,19 @@
 {
 	"nodes":[
+		{"id":"d244aa9e47d9197c","type":"group","x":2480,"y":520,"width":2200,"height":1580,"label":"应用"},
+		{"id":"34d042a2a7e42e04","type":"group","x":-480,"y":480,"width":2200,"height":1480,"label":"计算"},
+		{"id":"c402a453c1307029","type":"group","x":-2640,"y":480,"width":1840,"height":1480,"label":"概念、性质、对称性"},
 		{
 			"id":"efaee6c2b1d8c9b7",
 			"type":"text",
 			"text":"三重积分",
 			"styleAttributes":{"textAlign":"center"},
-			"x":-180,
-			"y":40,
+			"x":110,
+			"y":-60,
 			"width":340,
 			"height":120
 		},
-		{"id":"3d001b161d0c3033","type":"file","file":"_Attachments/Images/Pasted image 20260910172115.png","x":-210,"y":-500,"width":400,"height":268}
+		{"id":"3d001b161d0c3033","type":"file","file":"_Attachments/Images/Pasted image 20260910172115.png","x":80,"y":-600,"width":400,"height":268}
 	],
 	"edges":[
 		{
@@ -23,6 +26,33 @@
 			"toNode":"3d001b161d0c3033",
 			"toSide":"bottom",
 			"label":"知识结构"
+		},
+		{
+			"id":"01c80934417dc616",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"efaee6c2b1d8c9b7",
+			"fromSide":"bottom",
+			"toNode":"c402a453c1307029",
+			"toSide":"top"
+		},
+		{
+			"id":"36ba94441a3bcc13",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"efaee6c2b1d8c9b7",
+			"fromSide":"bottom",
+			"toNode":"34d042a2a7e42e04",
+			"toSide":"top"
+		},
+		{
+			"id":"125aa7db6f170bed",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"efaee6c2b1d8c9b7",
+			"fromSide":"bottom",
+			"toNode":"d244aa9e47d9197c",
+			"toSide":"top"
 		}
 	],
 	"metadata":{

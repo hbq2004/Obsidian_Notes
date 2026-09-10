@@ -30,15 +30,15 @@
             "state": {
               "type": "canvas",
               "state": {
-                "file": "01 - 数学/01 - 高数/08 - 多重积分/04 - 曲线曲面积分.canvas",
+                "file": "01 - 数学/01 - 高数/08 - 多重积分/02 - 空间解析几何.canvas",
                 "viewState": {
-                  "x": 91.75480272368476,
-                  "y": -956.0428936267443,
-                  "zoom": -2.3889007332305057
+                  "x": 5714.112018514711,
+                  "y": 2609.01342350613,
+                  "zoom": -0.7136647067046674
                 }
               },
               "icon": "lucide-layout-dashboard",
-              "title": "04 - 曲线曲面积分"
+              "title": "02 - 空间解析几何"
             }
           }
         ],
@@ -300,26 +300,27 @@
   },
   "active": "62a4668b549fe310",
   "lastOpenFiles": [
+    "_Attachments/Images/Pasted image 20260910175156.png",
+    "_Attachments/Images/Pasted image 20260910175127.png",
+    "_Attachments/Images/Pasted image 20260910175109.png",
+    "_Attachments/Images/Pasted image 20260910174846.png",
+    "_Attachments/Images/Pasted image 20260910174526.png",
+    "_Attachments/Images/Pasted image 20260910174415.png",
+    "_Attachments/Images/Pasted image 20260910174357.png",
+    "_Attachments/Images/Pasted image 20260910174150.png",
+    "_Attachments/Images/Pasted image 20260910173936.png",
+    "_Attachments/Images/Pasted image 20260910173918.png",
+    "_Attachments/Images/Pasted image 20260910173809.png",
     "01 - 数学/01 - 高数/08 - 多重积分/03 - 三重积分.canvas",
-    "01 - 数学/01 - 高数/08 - 多重积分/04 - 曲线曲面积分.canvas",
-    "_Attachments/Images/Pasted image 20260910172246.png",
-    "_Attachments/Images/Pasted image 20260910172115.png",
     "01 - 数学/01 - 高数/08 - 多重积分/02 - 空间解析几何.canvas",
-    "好题错题整理/_待确认/27_880/27_880_高数/1-MCQ/Q002-880-GS-C05-T68FF.md",
     "01 - 数学/01 - 高数/08 - 多重积分/01 - 二重积分.canvas",
-    "_Attachments/Images/Pasted image 20260910171307.png",
+    "01 - 数学/01 - 高数/08 - 多重积分/04 - 曲线曲面积分.canvas",
+    "好题错题整理/_待确认/27_880/27_880_高数/1-MCQ/Q002-880-GS-C05-T68FF.md",
     "01 - 数学/01 - 高数/07 - 多元微分/多元微分.canvas",
     "_Daily_Tasks/2026-09-10.md",
     "_Daily_Tasks/2026-09-12.md",
     "_Daily_Tasks/2026-09-17.md",
     "_Daily_Tasks/2026-09-11.md",
-    "_Attachments/Images/Pasted image 20260908222135.png",
-    "_Attachments/Images/Pasted image 20260908222105.png",
-    "_Attachments/Images/Pasted image 20260908221641.png",
-    "_Attachments/Images/Pasted image 20260910001335.png",
-    "_Attachments/Images/Pasted image 20260910000433.png",
-    "_Attachments/Images/Pasted image 20260909235518.png",
-    "_Attachments/Images/Pasted image 20260909234917.png",
     "01 - 数学/01 - 高数/06 - 无穷级数/无穷级数.canvas",
     "01 - 数学/01 - 高数/微积分应用.canvas",
     "01 - 数学/03 - 概统/01 - 随机事件与概率.canvas",
