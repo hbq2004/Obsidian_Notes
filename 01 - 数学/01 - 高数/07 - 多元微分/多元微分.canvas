@@ -369,6 +369,7 @@
 			"id":"8e495b8d91e42a33",
 			"styleAttributes":{},
 			"toFloating":false,
+			"fromFloating":false,
 			"fromNode":"5f86d70829164de5",
 			"fromSide":"left",
 			"toNode":"ca424a15f5f7d086",
