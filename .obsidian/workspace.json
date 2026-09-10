@@ -15,9 +15,9 @@
               "state": {
                 "file": "01 - 数学/01 - 高数/07 - 多元微分/多元微分.canvas",
                 "viewState": {
-                  "x": -13435.101417150077,
-                  "y": 3871.113481644297,
-                  "zoom": -2.174258170391481
+                  "x": 11805.41101708776,
+                  "y": 4778.09406149085,
+                  "zoom": -0.3485163407829639
                 }
               },
               "icon": "lucide-layout-dashboard",
@@ -276,7 +276,8 @@
       "pdf-plus:PDF++: Toggle auto-paste": false,
       "obsidian-excalidraw-plugin:新建绘图文件": false,
       "notebook-navigator:Notebook Navigator": false,
-      "tag-index:Open tag index": false
+      "tag-index:Open tag index": false,
+      "hidden-folder-obsidian:隐藏文件夹": false
     }
   },
   "active": "eb925eee2db935d2",
