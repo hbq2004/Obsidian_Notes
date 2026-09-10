@@ -1,0 +1,31 @@
+{
+	"nodes":[
+		{
+			"id":"c4a57078dde5a20e",
+			"type":"text",
+			"text":"曲线曲面积分",
+			"styleAttributes":{"textAlign":"center"},
+			"x":-420,
+			"y":-40,
+			"width":800,
+			"height":240
+		},
+		{"id":"77868143de694186","type":"file","file":"_Attachments/Images/Pasted image 20260910172246.png","x":-420,"y":-1620,"width":799,"height":1135}
+	],
+	"edges":[
+		{
+			"id":"0079a5c9c9935045",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"c4a57078dde5a20e",
+			"fromSide":"top",
+			"toNode":"77868143de694186",
+			"toSide":"bottom",
+			"label":"知识结构"
+		}
+	],
+	"metadata":{
+		"version":"1.0-1.0",
+		"frontmatter":{}
+	}
+}

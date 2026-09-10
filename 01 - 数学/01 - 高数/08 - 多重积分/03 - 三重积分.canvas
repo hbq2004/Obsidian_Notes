@@ -1,0 +1,32 @@
+{
+	"nodes":[
+		{
+			"id":"efaee6c2b1d8c9b7",
+			"type":"text",
+			"text":"三重积分",
+			"styleAttributes":{"textAlign":"center"},
+			"x":-180,
+			"y":40,
+			"width":340,
+			"height":120
+		},
+		{"id":"3d001b161d0c3033","type":"file","file":"_Attachments/Images/Pasted image 20260910172115.png","x":-210,"y":-500,"width":400,"height":268}
+	],
+	"edges":[
+		{
+			"id":"95dd4e93f47327c8",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromFloating":false,
+			"fromNode":"efaee6c2b1d8c9b7",
+			"fromSide":"top",
+			"toNode":"3d001b161d0c3033",
+			"toSide":"bottom",
+			"label":"知识结构"
+		}
+	],
+	"metadata":{
+		"version":"1.0-1.0",
+		"frontmatter":{}
+	}
+}
