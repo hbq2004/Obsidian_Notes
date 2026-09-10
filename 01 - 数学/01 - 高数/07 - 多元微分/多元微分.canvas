@@ -158,7 +158,17 @@
 			"height":160
 		},
 		{"id":"cfc6704d78b403df","type":"file","file":"_Attachments/Images/Pasted image 20260909210245.png","x":7487,"y":10880,"width":2061,"height":2452},
-		{"id":"00fb1a0d80296ebc","type":"file","file":"_Attachments/Images/Pasted image 20260909210437.png","x":9767,"y":11440,"width":1827,"height":1634}
+		{"id":"00fb1a0d80296ebc","type":"file","file":"_Attachments/Images/Pasted image 20260909210437.png","x":9767,"y":11440,"width":1827,"height":1634},
+		{
+			"id":"9511084042738fb1",
+			"type":"text",
+			"text":"1. 初等函数的线性组合（没有除法）默认无穷阶导都连续\n2. 注意可以**先代后求**",
+			"styleAttributes":{},
+			"x":16740,
+			"y":3711,
+			"width":660,
+			"height":110
+		}
 	],
 	"edges":[
 		{
@@ -490,6 +500,15 @@
 			"fromNode":"40acd243499f57f6",
 			"fromSide":"bottom",
 			"toNode":"dabea2102332ebc1",
+			"toSide":"top"
+		},
+		{
+			"id":"b7c0b200c0d11dea",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"e5b007ac59ba4b6e",
+			"fromSide":"bottom",
+			"toNode":"9511084042738fb1",
 			"toSide":"top"
 		}
 	],
