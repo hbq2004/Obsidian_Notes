@@ -5,7 +5,7 @@
 		{"id":"961bebd28f15226d","type":"group","x":-7640,"y":1600,"width":4360,"height":4880,"label":"空间曲线与曲面"},
 		{"id":"e92b114ea0f97448","type":"group","x":-1680,"y":1600,"width":5280,"height":2440,"color":"1","label":"多元函数微分学的几何应用"},
 		{"id":"83a829c4763b11de","type":"group","x":-10800,"y":1600,"width":2960,"height":4320,"label":"空间平面与直线"},
-		{"id":"cf87c20fc716725a","type":"group","x":-17120,"y":870,"width":4880,"height":2160,"label":"向量代数"},
+		{"id":"cf87c20fc716725a","type":"group","x":-16800,"y":960,"width":4240,"height":2080,"label":"向量代数"},
 		{
 			"id":"27afd3ce94b32500",
 			"type":"text",
@@ -69,6 +69,7 @@
 			"id":"b848a5dcb9454610",
 			"styleAttributes":{},
 			"toFloating":false,
+			"fromFloating":false,
 			"fromNode":"27afd3ce94b32500",
 			"fromSide":"bottom",
 			"toNode":"8b6687417936bb45",
