@@ -5,8 +5,32 @@
       "path": "01 - 数学/01 - 高数/08 - 多重积分/02 - 空间解析几何.canvas"
     },
     {
+      "basename": "01 - 二重积分",
+      "path": "01 - 数学/01 - 高数/08 - 多重积分/01 - 二重积分.canvas"
+    },
+    {
+      "basename": "Pasted image 20260910175908",
+      "path": "_Attachments/Images/Pasted image 20260910175908.png"
+    },
+    {
+      "basename": "Pasted image 20260910175920",
+      "path": "_Attachments/Images/Pasted image 20260910175920.png"
+    },
+    {
       "basename": "Pasted image 20260910175156",
       "path": "_Attachments/Images/Pasted image 20260910175156.png"
+    },
+    {
+      "basename": "Pasted image 20260910175839",
+      "path": "_Attachments/Images/Pasted image 20260910175839.png"
+    },
+    {
+      "basename": "Pasted image 20260910175701",
+      "path": "_Attachments/Images/Pasted image 20260910175701.png"
+    },
+    {
+      "basename": "Pasted image 20260910175751",
+      "path": "_Attachments/Images/Pasted image 20260910175751.png"
     },
     {
       "basename": "Pasted image 20260910175127",
@@ -59,10 +83,6 @@
     {
       "basename": "03 - 三重积分",
       "path": "01 - 数学/01 - 高数/08 - 多重积分/03 - 三重积分.canvas"
-    },
-    {
-      "basename": "01 - 二重积分",
-      "path": "01 - 数学/01 - 高数/08 - 多重积分/01 - 二重积分.canvas"
     },
     {
       "basename": "04 - 曲线曲面积分",
@@ -179,26 +199,6 @@
     {
       "basename": "Pasted image 20260908222750",
       "path": "_Attachments/Images/Pasted image 20260908222750.png"
-    },
-    {
-      "basename": "Pasted image 20260909170932",
-      "path": "_Attachments/Images/Pasted image 20260909170932.png"
-    },
-    {
-      "basename": "Pasted image 20260909224450",
-      "path": "_Attachments/Images/Pasted image 20260909224450.png"
-    },
-    {
-      "basename": "Pasted image 20260908203820",
-      "path": "_Attachments/Images/Pasted image 20260908203820.png"
-    },
-    {
-      "basename": "Pasted image 20260908205021",
-      "path": "_Attachments/Images/Pasted image 20260908205021.png"
-    },
-    {
-      "basename": "Pasted image 20260908202104",
-      "path": "_Attachments/Images/Pasted image 20260908202104.png"
     }
   ],
   "omittedPaths": [],
