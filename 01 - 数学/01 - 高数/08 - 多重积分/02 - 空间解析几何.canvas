@@ -6,6 +6,7 @@
 		{"id":"e92b114ea0f97448","type":"group","x":-1680,"y":1600,"width":5280,"height":2440,"color":"1","label":"多元函数微分学的几何应用"},
 		{"id":"83a829c4763b11de","type":"group","x":-10800,"y":1600,"width":2960,"height":4320,"label":"空间平面与直线"},
 		{"id":"cf87c20fc716725a","type":"group","x":-16800,"y":960,"width":4240,"height":2080,"label":"向量代数"},
+		{"id":"aba79c425519db02","type":"group","x":-15720,"y":3640,"width":2040,"height":920,"label":"例题"},
 		{
 			"id":"27afd3ce94b32500",
 			"type":"text",
@@ -42,7 +43,9 @@
 			"width":380,
 			"height":200
 		},
-		{"id":"fc3e0766256857d6","type":"file","file":"_Attachments/Images/Pasted image 20260910173809.png","x":-14000,"y":1500,"width":1313,"height":958}
+		{"id":"fc3e0766256857d6","type":"file","file":"_Attachments/Images/Pasted image 20260910173809.png","x":-14000,"y":1500,"width":1313,"height":958},
+		{"id":"a9ae2e01b9574ca4","type":"file","file":"_Attachments/Images/Pasted image 20260910201748.png","x":-15440,"y":3840,"width":625,"height":456},
+		{"id":"5142c1b7b1629eca","type":"file","file":"_Attachments/Images/Pasted image 20260910201658.png","x":-14734,"y":3880,"width":675,"height":380}
 	],
 	"edges":[
 		{
@@ -119,6 +122,15 @@
 			"fromNode":"ba1390f42a175a66",
 			"fromSide":"bottom",
 			"toNode":"30ff21c2a1f1c33e",
+			"toSide":"top"
+		},
+		{
+			"id":"0997623661b4a8b9",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"cf87c20fc716725a",
+			"fromSide":"bottom",
+			"toNode":"aba79c425519db02",
 			"toSide":"top"
 		}
 	],
