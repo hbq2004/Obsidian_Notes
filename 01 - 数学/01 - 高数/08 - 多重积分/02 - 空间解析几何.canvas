@@ -70,7 +70,27 @@
 		},
 		{"id":"688bd5faa62f124d","type":"file","file":"_Attachments/Images/Pasted image 20260910173631.png","x":-16640,"y":1712,"width":1171,"height":471},
 		{"id":"a9ae2e01b9574ca4","type":"file","file":"_Attachments/Images/Pasted image 20260910201748.png","x":-15440,"y":3840,"width":620,"height":456},
-		{"id":"2834385a25727a72","type":"file","file":"_Attachments/Images/Pasted image 20260910175839.png","x":7680,"y":3528,"width":2021,"height":1378}
+		{"id":"2834385a25727a72","type":"file","file":"_Attachments/Images/Pasted image 20260910175839.png","x":7680,"y":3528,"width":2021,"height":1378},
+		{
+			"id":"179d3bcdd8440c2b",
+			"type":"text",
+			"text":"1. 定义法\n2. 公式法 —— 可微",
+			"styleAttributes":{"textAlign":"center"},
+			"x":7420,
+			"y":3020,
+			"width":360,
+			"height":120
+		},
+		{
+			"id":"1d548d398a632699",
+			"type":"text",
+			"text":"梯度：某点切平面的法向量",
+			"styleAttributes":{"textAlign":"center"},
+			"x":7160,
+			"y":5040,
+			"width":400,
+			"height":100
+		}
 	],
 	"edges":[
 		{
@@ -135,6 +155,7 @@
 			"id":"d358dc0dde567195",
 			"styleAttributes":{},
 			"toFloating":false,
+			"fromFloating":false,
 			"fromNode":"d105455d95388a0a",
 			"fromSide":"right",
 			"toNode":"2834385a25727a72",
@@ -192,6 +213,24 @@
 			"fromNode":"da4caaaa92a10575",
 			"fromSide":"right",
 			"toNode":"0c98285327dc14aa",
+			"toSide":"left"
+		},
+		{
+			"id":"29eb2b4f48cbf7c9",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"7a217280cb9bae20",
+			"fromSide":"right",
+			"toNode":"179d3bcdd8440c2b",
+			"toSide":"left"
+		},
+		{
+			"id":"07bd49b2ccbc5913",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"d105455d95388a0a",
+			"fromSide":"right",
+			"toNode":"1d548d398a632699",
 			"toSide":"left"
 		}
 	],
