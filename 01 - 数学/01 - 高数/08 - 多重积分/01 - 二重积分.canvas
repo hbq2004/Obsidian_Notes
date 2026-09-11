@@ -4,8 +4,8 @@
 		{"id":"8d6f72e28497f269","type":"group","x":-3040,"y":720,"width":4480,"height":1440,"color":"1","label":"计算"},
 		{"id":"227730bc03443cc7","type":"group","x":-2980,"y":820,"width":2040,"height":1310,"label":"计算方法"},
 		{"id":"c8b3a0d67a0594b4","type":"group","x":1820,"y":1045,"width":2900,"height":894,"label":"普通对称性"},
-		{"id":"b670a368bc28ed2e","type":"group","x":4840,"y":960,"width":2080,"height":1200,"label":"轮换对称性"},
 		{"id":"b3bb564e71117aea","type":"group","x":1040,"y":-1600,"width":2080,"height":1120,"label":"古鲁金第二定理"},
+		{"id":"b670a368bc28ed2e","type":"group","x":4840,"y":960,"width":2080,"height":1200,"label":"轮换对称性"},
 		{"id":"9953ee2d11cac3fa","type":"file","file":"_Attachments/Images/Pasted image 20260908203040.png","x":5500,"y":1640,"width":684,"height":67},
 		{"id":"7e834cb99ef53fde","type":"file","file":"_Attachments/Images/Pasted image 20260908203249.png","x":5500,"y":1707,"width":749,"height":225},
 		{
@@ -19,6 +19,12 @@
 			"height":80
 		},
 		{"id":"e8d4fd95ea4b4290","type":"file","file":"_Attachments/Images/Pasted image 20260908203117.png","x":5920,"y":1091,"width":746,"height":363},
+		{"id":"e7ae25742e4441bd","type":"file","file":"_Attachments/Images/Pasted image 20260908204601.png","x":-4760,"y":1235,"width":575,"height":222},
+		{"id":"53007914315cb6a0","type":"file","file":"_Attachments/Images/Pasted image 20260908201748.png","x":-3976,"y":515,"width":646,"height":650},
+		{"id":"70a2a14dcae92f30","type":"file","file":"_Attachments/Images/Pasted image 20260908204732.png","x":-3961,"y":1417,"width":617,"height":842},
+		{"id":"3fba24868d1c86ba","type":"file","file":"_Attachments/Images/Pasted image 20260908204521.png","x":-4756,"y":395,"width":566,"height":718},
+		{"id":"2775dde8d01adcc7","type":"file","file":"_Attachments/Images/Pasted image 20260908204934.png","x":-2940,"y":868,"width":904,"height":1191},
+		{"id":"69113d76c7ecf177","type":"file","file":"_Attachments/Images/Pasted image 20260908202332.png","x":5080,"y":1045,"width":575,"height":453},
 		{
 			"id":"cb79405a5e5500aa",
 			"type":"text",
@@ -41,15 +47,6 @@
 			"width":640,
 			"height":203
 		},
-		{"id":"e7ae25742e4441bd","type":"file","file":"_Attachments/Images/Pasted image 20260908204601.png","x":-4760,"y":1235,"width":575,"height":222},
-		{"id":"53007914315cb6a0","type":"file","file":"_Attachments/Images/Pasted image 20260908201748.png","x":-3976,"y":515,"width":646,"height":650},
-		{"id":"70a2a14dcae92f30","type":"file","file":"_Attachments/Images/Pasted image 20260908204732.png","x":-3961,"y":1417,"width":617,"height":842},
-		{"id":"3fba24868d1c86ba","type":"file","file":"_Attachments/Images/Pasted image 20260908204521.png","x":-4756,"y":395,"width":566,"height":718},
-		{"id":"2775dde8d01adcc7","type":"file","file":"_Attachments/Images/Pasted image 20260908204934.png","x":-2940,"y":868,"width":904,"height":1191},
-		{"id":"3aad363b790eee29","type":"file","file":"_Attachments/Images/Pasted image 20260908203522.png","x":-865,"y":928,"width":725,"height":659},
-		{"id":"c4ef393a3293905b","type":"file","file":"_Attachments/Images/Pasted image 20260908203703.png","x":-865,"y":1727,"width":723,"height":291},
-		{"id":"43aed49fbe9efa6e","type":"file","file":"_Attachments/Images/Pasted image 20260908205021.png","x":-1920,"y":928,"width":955,"height":1072},
-		{"id":"99fcfa61837178c5","type":"file","file":"_Attachments/Images/Pasted image 20260908203820.png","x":65,"y":980,"width":1130,"height":1150},
 		{
 			"id":"012345ed67e8ee1a",
 			"type":"text",
@@ -60,11 +57,15 @@
 			"width":380,
 			"height":88
 		},
-		{"id":"636dfc08422da374","type":"file","file":"_Attachments/Images/Pasted image 20260908201848.png","x":3020,"y":1100,"width":548,"height":280},
 		{"id":"402298cb02bdfe63","type":"file","file":"_Attachments/Images/Pasted image 20260908202034.png","x":1880,"y":1571,"width":497,"height":284},
-		{"id":"69113d76c7ecf177","type":"file","file":"_Attachments/Images/Pasted image 20260908202332.png","x":5080,"y":1045,"width":575,"height":453},
 		{"id":"e79bc26b30043bf2","type":"file","file":"_Attachments/Images/Pasted image 20260908202131.png","x":3060,"y":1603,"width":845,"height":252},
 		{"id":"6a726825d8a37485","type":"file","file":"_Attachments/Images/Pasted image 20260908202104.png","x":2420,"y":1571,"width":600,"height":278},
+		{"id":"e219e5254f8644e8","type":"file","file":"_Attachments/Images/Pasted image 20260908202146.png","x":4000,"y":1634,"width":611,"height":156},
+		{"id":"3aad363b790eee29","type":"file","file":"_Attachments/Images/Pasted image 20260908203522.png","x":-865,"y":928,"width":725,"height":659},
+		{"id":"c4ef393a3293905b","type":"file","file":"_Attachments/Images/Pasted image 20260908203703.png","x":-865,"y":1727,"width":723,"height":291},
+		{"id":"43aed49fbe9efa6e","type":"file","file":"_Attachments/Images/Pasted image 20260908205021.png","x":-1920,"y":928,"width":955,"height":1072},
+		{"id":"99fcfa61837178c5","type":"file","file":"_Attachments/Images/Pasted image 20260908203820.png","x":65,"y":980,"width":1130,"height":1150},
+		{"id":"636dfc08422da374","type":"file","file":"_Attachments/Images/Pasted image 20260908201848.png","x":3020,"y":1100,"width":548,"height":280},
 		{
 			"id":"28c272712042b675",
 			"type":"text",
@@ -74,8 +75,7 @@
 			"y":784,
 			"width":340,
 			"height":84
-		},
-		{"id":"e219e5254f8644e8","type":"file","file":"_Attachments/Images/Pasted image 20260908202146.png","x":4000,"y":1634,"width":611,"height":156}
+		}
 	],
 	"edges":[
 		{
