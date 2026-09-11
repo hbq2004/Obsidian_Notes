@@ -7,20 +7,6 @@
 		{"id":"83a829c4763b11de","type":"group","x":-10800,"y":1600,"width":2980,"height":4320,"label":"空间平面与直线"},
 		{"id":"cf87c20fc716725a","type":"group","x":-16800,"y":960,"width":4240,"height":2080,"label":"向量代数"},
 		{"id":"aba79c425519db02","type":"group","x":-15720,"y":3640,"width":2040,"height":920,"label":"例题"},
-		{
-			"id":"30ff21c2a1f1c33e",
-			"type":"text",
-			"text":"**重点**\n\n1. 垂直方程\n2. 平行方程",
-			"styleAttributes":{"textAlign":"center"},
-			"x":-14914,
-			"y":2700,
-			"width":380,
-			"height":200
-		},
-		{"id":"688bd5faa62f124d","type":"file","file":"_Attachments/Images/Pasted image 20260910173631.png","x":-16640,"y":1712,"width":1171,"height":471},
-		{"id":"a9ae2e01b9574ca4","type":"file","file":"_Attachments/Images/Pasted image 20260910201748.png","x":-15440,"y":3840,"width":620,"height":456},
-		{"id":"2834385a25727a72","type":"file","file":"_Attachments/Images/Pasted image 20260910175839.png","x":7680,"y":3528,"width":2021,"height":1378},
-		{"id":"33232947d0bca13c","type":"file","file":"_Attachments/Images/Pasted image 20260911225348.png","x":8240,"y":5840,"width":1416,"height":1808},
 		{"id":"92e4d5437efeda7d","type":"file","file":"_Attachments/Images/Pasted image 20260910175109.png","x":-1320,"y":2000,"width":1700,"height":1696},
 		{"id":"43545815092e3168","type":"file","file":"_Attachments/Images/Pasted image 20260910171307.png","x":-164,"y":-1440,"width":509,"height":975},
 		{"id":"13ec55936dd33b93","type":"file","file":"_Attachments/Images/Pasted image 20260910173936.png","x":-9421,"y":2037,"width":1120,"height":992},
@@ -91,7 +77,21 @@
 		{"id":"022d8156a95a3870","type":"file","file":"_Attachments/Images/Pasted image 20260910175908.png","x":5600,"y":5728,"width":2249,"height":853},
 		{"id":"dbd6c0fdeeb8db74","type":"file","file":"_Attachments/Images/Pasted image 20260910175920.png","x":5600,"y":6968,"width":2175,"height":830},
 		{"id":"fc3e0766256857d6","type":"file","file":"_Attachments/Images/Pasted image 20260910173809.png","x":-14000,"y":1500,"width":1311,"height":958},
-		{"id":"ba1390f42a175a66","type":"file","file":"_Attachments/Images/Pasted image 20260910173737.png","x":-15280,"y":1282,"width":1111,"height":1325}
+		{"id":"ba1390f42a175a66","type":"file","file":"_Attachments/Images/Pasted image 20260910173737.png","x":-15280,"y":1282,"width":1111,"height":1325},
+		{"id":"2834385a25727a72","type":"file","file":"_Attachments/Images/Pasted image 20260910175839.png","x":7680,"y":3528,"width":2021,"height":1378},
+		{"id":"33232947d0bca13c","type":"file","file":"_Attachments/Images/Pasted image 20260911225348.png","x":8240,"y":5840,"width":1416,"height":1793},
+		{
+			"id":"30ff21c2a1f1c33e",
+			"type":"text",
+			"text":"**重点**\n\n1. 垂直方程\n2. 平行方程",
+			"styleAttributes":{"textAlign":"center"},
+			"x":-14914,
+			"y":2700,
+			"width":380,
+			"height":200
+		},
+		{"id":"688bd5faa62f124d","type":"file","file":"_Attachments/Images/Pasted image 20260910173631.png","x":-16640,"y":1712,"width":1171,"height":471},
+		{"id":"a9ae2e01b9574ca4","type":"file","file":"_Attachments/Images/Pasted image 20260910201748.png","x":-15440,"y":3840,"width":620,"height":456}
 	],
 	"edges":[
 		{
