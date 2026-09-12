@@ -1,10 +1,10 @@
 {
 	"nodes":[
 		{"id":"d7a7064960ec161c","type":"group","x":-11040,"y":1280,"width":8160,"height":5440,"label":"空间解析几何"},
-		{"id":"8b6687417936bb45","type":"group","x":4960,"y":1280,"width":5120,"height":6960,"color":"2","label":"场论初步"},
+		{"id":"8b6687417936bb45","type":"group","x":4560,"y":1280,"width":5120,"height":6960,"color":"2","label":"场论初步"},
 		{"id":"961bebd28f15226d","type":"group","x":-7640,"y":1600,"width":4360,"height":4880,"label":"空间曲线与曲面"},
 		{"id":"83a829c4763b11de","type":"group","x":-10800,"y":1600,"width":2960,"height":4880,"label":"空间平面与直线"},
-		{"id":"e92b114ea0f97448","type":"group","x":-1680,"y":1600,"width":5280,"height":2440,"color":"1","label":"多元函数微分学的几何应用"},
+		{"id":"e92b114ea0f97448","type":"group","x":-1600,"y":1360,"width":5280,"height":2440,"color":"1","label":"多元函数微分学的几何应用"},
 		{"id":"cf87c20fc716725a","type":"group","x":-16800,"y":960,"width":4240,"height":2080,"label":"向量代数"},
 		{"id":"aba79c425519db02","type":"group","x":-15720,"y":3640,"width":2040,"height":920,"label":"例题"},
 		{"id":"fc3e0766256857d6","type":"file","file":"_Attachments/Images/Pasted image 20260910173809.png","x":-14000,"y":1500,"width":1311,"height":958},
@@ -40,58 +40,8 @@
 			"width":785,
 			"height":136
 		},
-		{
-			"id":"8a16bd27ff6cbec9",
-			"type":"text",
-			"text":"**核心**\n一条曲线绕一条直线转一圈，\n曲线上的每一个点都会画出一个圆；\n所有这些圆拼起来，就是旋转曲面。",
-			"styleAttributes":{"textAlign":"center"},
-			"x":-4259,
-			"y":4700,
-			"width":775,
-			"height":209
-		},
 		{"id":"010fa35896671fe8","type":"file","file":"_Attachments/Images/Pasted image 20260911172744.png","x":-4384,"y":5004,"width":1007,"height":581},
 		{"id":"2c920b98a4ab9ec4","type":"file","file":"_Attachments/Images/Pasted image 20260911172641.png","x":-4384,"y":5585,"width":1025,"height":652},
-		{"id":"92e4d5437efeda7d","type":"file","file":"_Attachments/Images/Pasted image 20260910175109.png","x":-1320,"y":2000,"width":1700,"height":1696},
-		{"id":"43545815092e3168","type":"file","file":"_Attachments/Images/Pasted image 20260910171307.png","x":-164,"y":-1440,"width":509,"height":975},
-		{"id":"f57c73c80feb847e","type":"file","file":"_Attachments/Images/Pasted image 20260910175127.png","x":720,"y":2183,"width":2224,"height":1321},
-		{
-			"id":"27afd3ce94b32500",
-			"type":"text",
-			"text":"空间解析几何",
-			"styleAttributes":{"textAlign":"center"},
-			"x":-100,
-			"y":-100,
-			"width":380,
-			"height":140
-		},
-		{"id":"7a217280cb9bae20","type":"file","file":"_Attachments/Images/Pasted image 20260910175751.png","x":5280,"y":2623,"width":1660,"height":1845},
-		{"id":"d105455d95388a0a","type":"file","file":"_Attachments/Images/Pasted image 20260910175701.png","x":5280,"y":4663,"width":1577,"height":722},
-		{"id":"022d8156a95a3870","type":"file","file":"_Attachments/Images/Pasted image 20260910175908.png","x":5600,"y":5728,"width":2249,"height":853},
-		{"id":"dbd6c0fdeeb8db74","type":"file","file":"_Attachments/Images/Pasted image 20260910175920.png","x":5600,"y":6968,"width":2175,"height":830},
-		{"id":"53a280c98d025a83","type":"file","file":"_Attachments/Images/Pasted image 20260910175156.png","x":6360,"y":1480,"width":2071,"height":770},
-		{
-			"id":"1d548d398a632699",
-			"type":"text",
-			"text":"梯度：某点切平面的法向量",
-			"styleAttributes":{"textAlign":"center"},
-			"x":7160,
-			"y":5040,
-			"width":400,
-			"height":100
-		},
-		{
-			"id":"179d3bcdd8440c2b",
-			"type":"text",
-			"text":"1. 定义法\n2. 公式法 —— 可微",
-			"styleAttributes":{"textAlign":"center"},
-			"x":7420,
-			"y":3020,
-			"width":360,
-			"height":120
-		},
-		{"id":"2834385a25727a72","type":"file","file":"_Attachments/Images/Pasted image 20260910175839.png","x":7680,"y":3528,"width":2021,"height":1378},
-		{"id":"33232947d0bca13c","type":"file","file":"_Attachments/Images/Pasted image 20260911225348.png","x":8240,"y":5840,"width":1416,"height":1793},
 		{"id":"d1eb389ae6852b00","type":"file","file":"_Attachments/Images/Capture_20260912_214622.jpg","x":-9897,"y":5860,"width":775,"height":433},
 		{
 			"id":"4fd279e6dac6b895",
@@ -102,7 +52,57 @@
 			"y":5760,
 			"width":340,
 			"height":100
-		}
+		},
+		{
+			"id":"8a16bd27ff6cbec9",
+			"type":"text",
+			"text":"旋转曲面的**核心** ⭐⭐⭐\n一条曲线绕一条直线转一圈，\n曲线上的每一个点都会画出一个圆；\n所有这些圆拼起来，就是旋转曲面。",
+			"styleAttributes":{"textAlign":"center"},
+			"x":-6255,
+			"y":4920,
+			"width":775,
+			"height":209
+		},
+		{"id":"92e4d5437efeda7d","type":"file","file":"_Attachments/Images/Pasted image 20260910175109.png","x":-1240,"y":1760,"width":1700,"height":1696},
+		{"id":"f57c73c80feb847e","type":"file","file":"_Attachments/Images/Pasted image 20260910175127.png","x":800,"y":1943,"width":2224,"height":1321},
+		{
+			"id":"179d3bcdd8440c2b",
+			"type":"text",
+			"text":"1. 定义法\n2. 公式法 —— 可微",
+			"styleAttributes":{"textAlign":"center"},
+			"x":7020,
+			"y":3020,
+			"width":360,
+			"height":120
+		},
+		{"id":"022d8156a95a3870","type":"file","file":"_Attachments/Images/Pasted image 20260910175908.png","x":5200,"y":5728,"width":2249,"height":853},
+		{"id":"dbd6c0fdeeb8db74","type":"file","file":"_Attachments/Images/Pasted image 20260910175920.png","x":5200,"y":6968,"width":2175,"height":830},
+		{"id":"7a217280cb9bae20","type":"file","file":"_Attachments/Images/Pasted image 20260910175751.png","x":4880,"y":2623,"width":1660,"height":1845},
+		{"id":"d105455d95388a0a","type":"file","file":"_Attachments/Images/Pasted image 20260910175701.png","x":4880,"y":4663,"width":1577,"height":722},
+		{"id":"53a280c98d025a83","type":"file","file":"_Attachments/Images/Pasted image 20260910175156.png","x":5960,"y":1480,"width":2071,"height":770},
+		{"id":"2834385a25727a72","type":"file","file":"_Attachments/Images/Pasted image 20260910175839.png","x":7280,"y":3528,"width":2021,"height":1378},
+		{"id":"33232947d0bca13c","type":"file","file":"_Attachments/Images/Pasted image 20260911225348.png","x":7840,"y":5840,"width":1416,"height":1793},
+		{
+			"id":"1d548d398a632699",
+			"type":"text",
+			"text":"梯度：某点切平面的法向量",
+			"styleAttributes":{"textAlign":"center"},
+			"x":6760,
+			"y":5040,
+			"width":400,
+			"height":100
+		},
+		{
+			"id":"27afd3ce94b32500",
+			"type":"text",
+			"text":"空间解析几何",
+			"styleAttributes":{"textAlign":"center"},
+			"x":800,
+			"y":-100,
+			"width":380,
+			"height":140
+		},
+		{"id":"43545815092e3168","type":"file","file":"_Attachments/Images/Pasted image 20260910171307.png","x":736,"y":-1440,"width":509,"height":975}
 	],
 	"edges":[
 		{
@@ -207,15 +207,6 @@
 			"fromNode":"52bfb52b27afe2e3",
 			"fromSide":"bottom",
 			"toNode":"9c37312a6889dd70",
-			"toSide":"top"
-		},
-		{
-			"id":"5a2fb1fd60415ff7",
-			"styleAttributes":{},
-			"toFloating":false,
-			"fromNode":"8a16bd27ff6cbec9",
-			"fromSide":"bottom",
-			"toNode":"010fa35896671fe8",
 			"toSide":"top"
 		},
 		{
