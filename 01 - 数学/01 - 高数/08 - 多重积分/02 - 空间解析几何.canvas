@@ -124,6 +124,17 @@
 			"y":1760,
 			"width":320,
 			"height":60
+		},
+		{"id":"5ac32b5654291900","type":"file","file":"_Attachments/Images/Pasted image 20260913025149.png","x":-11005,"y":7520,"width":1325,"height":1003},
+		{
+			"id":"ce25ad0ecda7cca4",
+			"type":"text",
+			"text":"公垂线",
+			"styleAttributes":{"textAlign":"center"},
+			"x":-10480,
+			"y":8660,
+			"width":280,
+			"height":100
 		}
 	],
 	"edges":[
@@ -284,6 +295,15 @@
 			"fromSide":"right",
 			"toNode":"c243227571c24108",
 			"toSide":"left"
+		},
+		{
+			"id":"a1e50dd341890ecd",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"5ac32b5654291900",
+			"fromSide":"bottom",
+			"toNode":"ce25ad0ecda7cca4",
+			"toSide":"top"
 		}
 	],
 	"metadata":{
