@@ -35,6 +35,10 @@
 			"width":640,
 			"height":203
 		},
+		{"id":"3aad363b790eee29","type":"file","file":"_Attachments/Images/Pasted image 20260908203522.png","x":-865,"y":928,"width":725,"height":659},
+		{"id":"c4ef393a3293905b","type":"file","file":"_Attachments/Images/Pasted image 20260908203703.png","x":-865,"y":1727,"width":723,"height":291},
+		{"id":"43aed49fbe9efa6e","type":"file","file":"_Attachments/Images/Pasted image 20260908205021.png","x":-1920,"y":928,"width":955,"height":1072},
+		{"id":"99fcfa61837178c5","type":"file","file":"_Attachments/Images/Pasted image 20260908203820.png","x":65,"y":980,"width":1130,"height":1150},
 		{
 			"id":"cb79405a5e5500aa",
 			"type":"text",
@@ -56,9 +60,6 @@
 			"width":380,
 			"height":88
 		},
-		{"id":"3aad363b790eee29","type":"file","file":"_Attachments/Images/Pasted image 20260908203522.png","x":-865,"y":928,"width":725,"height":659},
-		{"id":"c4ef393a3293905b","type":"file","file":"_Attachments/Images/Pasted image 20260908203703.png","x":-865,"y":1727,"width":723,"height":291},
-		{"id":"43aed49fbe9efa6e","type":"file","file":"_Attachments/Images/Pasted image 20260908205021.png","x":-1920,"y":928,"width":955,"height":1072},
 		{
 			"id":"28c272712042b675",
 			"type":"text",
@@ -74,8 +75,7 @@
 		{"id":"e79bc26b30043bf2","type":"file","file":"_Attachments/Images/Pasted image 20260908202131.png","x":3060,"y":1603,"width":845,"height":252},
 		{"id":"6a726825d8a37485","type":"file","file":"_Attachments/Images/Pasted image 20260908202104.png","x":2420,"y":1571,"width":600,"height":278},
 		{"id":"636dfc08422da374","type":"file","file":"_Attachments/Images/Pasted image 20260908201848.png","x":3020,"y":1100,"width":548,"height":280},
-		{"id":"e219e5254f8644e8","type":"file","file":"_Attachments/Images/Pasted image 20260908202146.png","x":3940,"y":1633,"width":752,"height":192},
-		{"id":"99fcfa61837178c5","type":"file","file":"_Attachments/Images/Pasted image 20260908203820.png","x":65,"y":980,"width":1130,"height":1150}
+		{"id":"e219e5254f8644e8","type":"file","file":"_Attachments/Images/Pasted image 20260908202146.png","x":3940,"y":1633,"width":752,"height":192}
 	],
 	"edges":[
 		{
