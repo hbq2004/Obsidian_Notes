@@ -4,8 +4,8 @@
 		{"id":"8d6f72e28497f269","type":"group","x":-3040,"y":720,"width":4480,"height":1440,"color":"1","label":"计算"},
 		{"id":"227730bc03443cc7","type":"group","x":-2980,"y":820,"width":2040,"height":1310,"label":"计算方法"},
 		{"id":"c8b3a0d67a0594b4","type":"group","x":1820,"y":1045,"width":2900,"height":894,"label":"普通对称性"},
-		{"id":"b3bb564e71117aea","type":"group","x":1040,"y":-1600,"width":2080,"height":1120,"label":"古鲁金第二定理"},
 		{"id":"b670a368bc28ed2e","type":"group","x":4840,"y":960,"width":2080,"height":1200,"label":"轮换对称性"},
+		{"id":"b3bb564e71117aea","type":"group","x":1040,"y":-1600,"width":2080,"height":1120,"label":"古鲁金第二定理"},
 		{"id":"9953ee2d11cac3fa","type":"file","file":"_Attachments/Images/Pasted image 20260908203040.png","x":5500,"y":1640,"width":684,"height":67},
 		{"id":"7e834cb99ef53fde","type":"file","file":"_Attachments/Images/Pasted image 20260908203249.png","x":5500,"y":1707,"width":749,"height":225},
 		{
@@ -24,18 +24,6 @@
 		{"id":"70a2a14dcae92f30","type":"file","file":"_Attachments/Images/Pasted image 20260908204732.png","x":-3961,"y":1417,"width":617,"height":842},
 		{"id":"3fba24868d1c86ba","type":"file","file":"_Attachments/Images/Pasted image 20260908204521.png","x":-4756,"y":395,"width":566,"height":718},
 		{"id":"2775dde8d01adcc7","type":"file","file":"_Attachments/Images/Pasted image 20260908204934.png","x":-2940,"y":868,"width":904,"height":1191},
-		{"id":"69113d76c7ecf177","type":"file","file":"_Attachments/Images/Pasted image 20260908202332.png","x":5080,"y":1045,"width":575,"height":453},
-		{
-			"id":"cb79405a5e5500aa",
-			"type":"text",
-			"text":"二重积分",
-			"styleAttributes":{"textAlign":"center"},
-			"x":-120,
-			"y":-160,
-			"width":240,
-			"height":160
-		},
-		{"id":"90f4345342a38c78","type":"file","file":"_Attachments/Images/Pasted image 20260908201506.png","x":-200,"y":-680,"width":400,"height":320},
 		{"id":"7b5adc9e0de58caa","type":"file","file":"_Attachments/Images/Pasted image 20260908204216.png","x":1180,"y":-1500,"width":814,"height":886},
 		{
 			"id":"298feff8379ea2aa",
@@ -48,6 +36,17 @@
 			"height":203
 		},
 		{
+			"id":"cb79405a5e5500aa",
+			"type":"text",
+			"text":"二重积分",
+			"styleAttributes":{"textAlign":"center"},
+			"x":-120,
+			"y":-160,
+			"width":240,
+			"height":160
+		},
+		{"id":"90f4345342a38c78","type":"file","file":"_Attachments/Images/Pasted image 20260908201506.png","x":-200,"y":-680,"width":400,"height":320},
+		{
 			"id":"012345ed67e8ee1a",
 			"type":"text",
 			"text":"极坐标和直角坐标系的互相转化",
@@ -57,15 +56,9 @@
 			"width":380,
 			"height":88
 		},
-		{"id":"402298cb02bdfe63","type":"file","file":"_Attachments/Images/Pasted image 20260908202034.png","x":1880,"y":1571,"width":497,"height":284},
-		{"id":"e79bc26b30043bf2","type":"file","file":"_Attachments/Images/Pasted image 20260908202131.png","x":3060,"y":1603,"width":845,"height":252},
-		{"id":"6a726825d8a37485","type":"file","file":"_Attachments/Images/Pasted image 20260908202104.png","x":2420,"y":1571,"width":600,"height":278},
-		{"id":"e219e5254f8644e8","type":"file","file":"_Attachments/Images/Pasted image 20260908202146.png","x":4000,"y":1634,"width":611,"height":156},
 		{"id":"3aad363b790eee29","type":"file","file":"_Attachments/Images/Pasted image 20260908203522.png","x":-865,"y":928,"width":725,"height":659},
 		{"id":"c4ef393a3293905b","type":"file","file":"_Attachments/Images/Pasted image 20260908203703.png","x":-865,"y":1727,"width":723,"height":291},
 		{"id":"43aed49fbe9efa6e","type":"file","file":"_Attachments/Images/Pasted image 20260908205021.png","x":-1920,"y":928,"width":955,"height":1072},
-		{"id":"99fcfa61837178c5","type":"file","file":"_Attachments/Images/Pasted image 20260908203820.png","x":65,"y":980,"width":1130,"height":1150},
-		{"id":"636dfc08422da374","type":"file","file":"_Attachments/Images/Pasted image 20260908201848.png","x":3020,"y":1100,"width":548,"height":280},
 		{
 			"id":"28c272712042b675",
 			"type":"text",
@@ -75,7 +68,14 @@
 			"y":784,
 			"width":340,
 			"height":84
-		}
+		},
+		{"id":"69113d76c7ecf177","type":"file","file":"_Attachments/Images/Pasted image 20260908202332.png","x":5080,"y":1045,"width":575,"height":453},
+		{"id":"402298cb02bdfe63","type":"file","file":"_Attachments/Images/Pasted image 20260908202034.png","x":1880,"y":1571,"width":497,"height":284},
+		{"id":"e79bc26b30043bf2","type":"file","file":"_Attachments/Images/Pasted image 20260908202131.png","x":3060,"y":1603,"width":845,"height":252},
+		{"id":"6a726825d8a37485","type":"file","file":"_Attachments/Images/Pasted image 20260908202104.png","x":2420,"y":1571,"width":600,"height":278},
+		{"id":"636dfc08422da374","type":"file","file":"_Attachments/Images/Pasted image 20260908201848.png","x":3020,"y":1100,"width":548,"height":280},
+		{"id":"99fcfa61837178c5","type":"file","file":"_Attachments/Images/Pasted image 20260908203820.png","x":65,"y":980,"width":1130,"height":1150},
+		{"id":"e219e5254f8644e8","type":"file","file":"_Attachments/Images/Pasted image 20260908202146.png","x":3940,"y":1633,"width":761,"height":192}
 	],
 	"edges":[
 		{
@@ -104,19 +104,10 @@
 			"id":"8884c48c01d69e7d",
 			"styleAttributes":{},
 			"toFloating":false,
+			"fromFloating":false,
 			"fromNode":"636dfc08422da374",
 			"fromSide":"bottom",
 			"toNode":"402298cb02bdfe63",
-			"toSide":"top"
-		},
-		{
-			"id":"b23c7501bcf42317",
-			"styleAttributes":{},
-			"toFloating":false,
-			"fromFloating":false,
-			"fromNode":"c8b3a0d67a0594b4",
-			"fromSide":"left",
-			"toNode":"6a726825d8a37485",
 			"toSide":"top"
 		},
 		{
@@ -233,6 +224,15 @@
 			"fromNode":"28c272712042b675",
 			"fromSide":"bottom",
 			"toNode":"99fcfa61837178c5",
+			"toSide":"top"
+		},
+		{
+			"id":"94bb043e2ce62bed",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"636dfc08422da374",
+			"fromSide":"bottom",
+			"toNode":"6a726825d8a37485",
 			"toSide":"top"
 		}
 	],

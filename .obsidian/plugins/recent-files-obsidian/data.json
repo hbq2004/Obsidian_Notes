@@ -1,12 +1,24 @@
 {
   "recentFiles": [
     {
+      "basename": "01 - 二重积分",
+      "path": "01 - 数学/01 - 高数/08 - 多重积分/01 - 二重积分.canvas"
+    },
+    {
+      "basename": "Pasted image 20260908202146",
+      "path": "_Attachments/Images/Pasted image 20260908202146.png"
+    },
+    {
       "basename": "02 - 空间解析几何",
       "path": "01 - 数学/01 - 高数/08 - 多重积分/02 - 空间解析几何.canvas"
     },
     {
-      "basename": "01 - 二重积分",
-      "path": "01 - 数学/01 - 高数/08 - 多重积分/01 - 二重积分.canvas"
+      "basename": "03 - 三重积分",
+      "path": "01 - 数学/01 - 高数/08 - 多重积分/03 - 三重积分.canvas"
+    },
+    {
+      "basename": "04 - 曲线曲面积分",
+      "path": "01 - 数学/01 - 高数/08 - 多重积分/04 - 曲线曲面积分.canvas"
     },
     {
       "basename": "Pasted image 20260911225348",
@@ -35,14 +47,6 @@
     {
       "basename": "Pasted image 20260910174526",
       "path": "_Attachments/Images/Pasted image 20260910174526.png"
-    },
-    {
-      "basename": "03 - 三重积分",
-      "path": "01 - 数学/01 - 高数/08 - 多重积分/03 - 三重积分.canvas"
-    },
-    {
-      "basename": "04 - 曲线曲面积分",
-      "path": "01 - 数学/01 - 高数/08 - 多重积分/04 - 曲线曲面积分.canvas"
     },
     {
       "basename": "多元微分",
@@ -195,10 +199,6 @@
     {
       "basename": "Pasted image 20260908223244",
       "path": "_Attachments/Images/Pasted image 20260908223244.png"
-    },
-    {
-      "basename": "Pasted image 20260908223321",
-      "path": "_Attachments/Images/Pasted image 20260908223321.png"
     }
   ],
   "omittedPaths": [],
