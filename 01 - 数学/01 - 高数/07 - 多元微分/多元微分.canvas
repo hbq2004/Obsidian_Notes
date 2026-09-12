@@ -17,8 +17,6 @@
 		{"id":"f8e0e8b415b36e55","type":"group","x":17840,"y":3022,"width":1960,"height":1098,"label":"条件极值与拉格朗日数乘"},
 		{"id":"097191f3c563cd99","type":"group","x":-9753,"y":3200,"width":1200,"height":1320,"label":"偏积分"},
 		{"id":"5e03d5b6b6d652a7","type":"group","x":-10233,"y":1675,"width":640,"height":817,"color":"1","label":"二元函数极限"},
-		{"id":"cfc6704d78b403df","type":"file","file":"_Attachments/Images/Pasted image 20260909210245.png","x":7487,"y":10880,"width":2061,"height":2452},
-		{"id":"00fb1a0d80296ebc","type":"file","file":"_Attachments/Images/Pasted image 20260909210437.png","x":9767,"y":11440,"width":1827,"height":1634},
 		{"id":"e0252529dd02b2f6","type":"file","file":"_Attachments/Images/Pasted image 20260908223321.png","x":859,"y":5360,"width":925,"height":623},
 		{"id":"779abf7436e987f8","type":"file","file":"_Attachments/Images/Pasted image 20260909171736.png","x":9495,"y":2814,"width":3253,"height":828},
 		{
@@ -168,7 +166,9 @@
 			"y":3800,
 			"width":539,
 			"height":140
-		}
+		},
+		{"id":"cfc6704d78b403df","type":"file","file":"_Attachments/Images/Pasted image 20260909210245.png","x":7487,"y":10880,"width":2061,"height":2452},
+		{"id":"00fb1a0d80296ebc","type":"file","file":"_Attachments/Images/Pasted image 20260909210437.png","x":9767,"y":11440,"width":1827,"height":1634}
 	],
 	"edges":[
 		{
