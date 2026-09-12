@@ -3,32 +3,10 @@
 		{"id":"d7a7064960ec161c","type":"group","x":-11040,"y":1280,"width":8160,"height":5440,"label":"空间解析几何"},
 		{"id":"8b6687417936bb45","type":"group","x":4960,"y":1280,"width":5120,"height":6960,"color":"2","label":"场论初步"},
 		{"id":"961bebd28f15226d","type":"group","x":-7640,"y":1600,"width":4360,"height":4880,"label":"空间曲线与曲面"},
+		{"id":"83a829c4763b11de","type":"group","x":-10800,"y":1600,"width":2960,"height":4880,"label":"空间平面与直线"},
 		{"id":"e92b114ea0f97448","type":"group","x":-1680,"y":1600,"width":5280,"height":2440,"color":"1","label":"多元函数微分学的几何应用"},
-		{"id":"83a829c4763b11de","type":"group","x":-10800,"y":1600,"width":2980,"height":4320,"label":"空间平面与直线"},
 		{"id":"cf87c20fc716725a","type":"group","x":-16800,"y":960,"width":4240,"height":2080,"label":"向量代数"},
 		{"id":"aba79c425519db02","type":"group","x":-15720,"y":3640,"width":2040,"height":920,"label":"例题"},
-		{
-			"id":"179d3bcdd8440c2b",
-			"type":"text",
-			"text":"1. 定义法\n2. 公式法 —— 可微",
-			"styleAttributes":{"textAlign":"center"},
-			"x":7420,
-			"y":3020,
-			"width":360,
-			"height":120
-		},
-		{
-			"id":"1d548d398a632699",
-			"type":"text",
-			"text":"梯度：某点切平面的法向量",
-			"styleAttributes":{"textAlign":"center"},
-			"x":7160,
-			"y":5040,
-			"width":400,
-			"height":100
-		},
-		{"id":"2834385a25727a72","type":"file","file":"_Attachments/Images/Pasted image 20260910175839.png","x":7680,"y":3528,"width":2021,"height":1378},
-		{"id":"33232947d0bca13c","type":"file","file":"_Attachments/Images/Pasted image 20260911225348.png","x":8240,"y":5840,"width":1416,"height":1793},
 		{"id":"fc3e0766256857d6","type":"file","file":"_Attachments/Images/Pasted image 20260910173809.png","x":-14000,"y":1500,"width":1311,"height":958},
 		{"id":"5142c1b7b1629eca","type":"file","file":"_Attachments/Images/Pasted image 20260910201658.png","x":-14734,"y":3880,"width":671,"height":380},
 		{"id":"ba1390f42a175a66","type":"file","file":"_Attachments/Images/Pasted image 20260910173737.png","x":-15280,"y":1282,"width":1111,"height":1325},
@@ -91,7 +69,40 @@
 		{"id":"d105455d95388a0a","type":"file","file":"_Attachments/Images/Pasted image 20260910175701.png","x":5280,"y":4663,"width":1577,"height":722},
 		{"id":"022d8156a95a3870","type":"file","file":"_Attachments/Images/Pasted image 20260910175908.png","x":5600,"y":5728,"width":2249,"height":853},
 		{"id":"dbd6c0fdeeb8db74","type":"file","file":"_Attachments/Images/Pasted image 20260910175920.png","x":5600,"y":6968,"width":2175,"height":830},
-		{"id":"53a280c98d025a83","type":"file","file":"_Attachments/Images/Pasted image 20260910175156.png","x":6360,"y":1480,"width":2071,"height":770}
+		{"id":"53a280c98d025a83","type":"file","file":"_Attachments/Images/Pasted image 20260910175156.png","x":6360,"y":1480,"width":2071,"height":770},
+		{
+			"id":"1d548d398a632699",
+			"type":"text",
+			"text":"梯度：某点切平面的法向量",
+			"styleAttributes":{"textAlign":"center"},
+			"x":7160,
+			"y":5040,
+			"width":400,
+			"height":100
+		},
+		{
+			"id":"179d3bcdd8440c2b",
+			"type":"text",
+			"text":"1. 定义法\n2. 公式法 —— 可微",
+			"styleAttributes":{"textAlign":"center"},
+			"x":7420,
+			"y":3020,
+			"width":360,
+			"height":120
+		},
+		{"id":"2834385a25727a72","type":"file","file":"_Attachments/Images/Pasted image 20260910175839.png","x":7680,"y":3528,"width":2021,"height":1378},
+		{"id":"33232947d0bca13c","type":"file","file":"_Attachments/Images/Pasted image 20260911225348.png","x":8240,"y":5840,"width":1416,"height":1793},
+		{"id":"d1eb389ae6852b00","type":"file","file":"_Attachments/Images/Capture_20260912_214622.jpg","x":-9897,"y":5860,"width":775,"height":433},
+		{
+			"id":"4fd279e6dac6b895",
+			"type":"text",
+			"text":"直线在平面上的投影方程",
+			"styleAttributes":{"textAlign":"center"},
+			"x":-9679,
+			"y":5760,
+			"width":340,
+			"height":100
+		}
 	],
 	"edges":[
 		{
