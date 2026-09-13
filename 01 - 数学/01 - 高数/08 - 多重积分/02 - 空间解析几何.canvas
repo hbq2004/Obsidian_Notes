@@ -6,7 +6,7 @@
 		{"id":"83a829c4763b11de","type":"group","x":-11000,"y":1560,"width":3160,"height":4880,"label":"空间平面与直线"},
 		{"id":"e92b114ea0f97448","type":"group","x":-1600,"y":1360,"width":5280,"height":2440,"color":"1","label":"多元函数微分学的几何应用"},
 		{"id":"cf87c20fc716725a","type":"group","x":-16800,"y":960,"width":4240,"height":2080,"label":"向量代数"},
-		{"id":"6fbe17bb7df140ca","type":"group","x":-11120,"y":7440,"width":3020,"height":1180,"label":"公垂线"},
+		{"id":"6fbe17bb7df140ca","type":"group","x":-11120,"y":7440,"width":3460,"height":1180,"label":"公垂线"},
 		{"id":"aba79c425519db02","type":"group","x":-15720,"y":3640,"width":2040,"height":920,"label":"例题"},
 		{"id":"5ac32b5654291900","type":"file","file":"_Attachments/Images/Pasted image 20260913025149.png","x":-11005,"y":7520,"width":1325,"height":994},
 		{"id":"d1eb389ae6852b00","type":"file","file":"_Attachments/Images/Capture_20260912_214622.jpg","x":-9897,"y":5820,"width":775,"height":432},
@@ -127,7 +127,17 @@
 		},
 		{"id":"2834385a25727a72","type":"file","file":"_Attachments/Images/Pasted image 20260910175839.png","x":7280,"y":3528,"width":2021,"height":1378},
 		{"id":"33232947d0bca13c","type":"file","file":"_Attachments/Images/Pasted image 20260911225348.png","x":7840,"y":5840,"width":1416,"height":1793},
-		{"id":"7acb635cd6baf0c7","type":"file","file":"_Attachments/Images/Pasted image 20260913154906.png","x":-9680,"y":7509,"width":1500,"height":1015}
+		{"id":"7acb635cd6baf0c7","type":"file","file":"_Attachments/Images/Pasted image 20260913154906.png","x":-9680,"y":7509,"width":1500,"height":1015},
+		{
+			"id":"9afc84973a882e6d",
+			"type":"text",
+			"text":"⭐参数方程的形式**表示直线上的某个点**",
+			"styleAttributes":{"textAlign":"center"},
+			"x":-8180,
+			"y":7740,
+			"width":460,
+			"height":100
+		}
 	],
 	"edges":[
 		{
