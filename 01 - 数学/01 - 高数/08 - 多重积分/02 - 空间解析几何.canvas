@@ -3,8 +3,8 @@
 		{"id":"d7a7064960ec161c","type":"group","x":-11280,"y":1240,"width":8400,"height":5440,"label":"空间解析几何"},
 		{"id":"8b6687417936bb45","type":"group","x":4560,"y":1280,"width":5120,"height":6960,"color":"2","label":"场论初步"},
 		{"id":"961bebd28f15226d","type":"group","x":-7640,"y":1560,"width":4360,"height":4880,"label":"空间曲线与曲面"},
+		{"id":"e92b114ea0f97448","type":"group","x":-1600,"y":1360,"width":5360,"height":2880,"color":"1","label":"多元函数微分学的几何应用"},
 		{"id":"83a829c4763b11de","type":"group","x":-11000,"y":1560,"width":3160,"height":4880,"label":"空间平面与直线"},
-		{"id":"e92b114ea0f97448","type":"group","x":-1600,"y":1360,"width":5280,"height":2440,"color":"1","label":"多元函数微分学的几何应用"},
 		{"id":"6fbe17bb7df140ca","type":"group","x":-11120,"y":7440,"width":3460,"height":1180,"label":"公垂线"},
 		{"id":"cf87c20fc716725a","type":"group","x":-16800,"y":960,"width":4240,"height":2080,"label":"向量代数"},
 		{"id":"aba79c425519db02","type":"group","x":-15720,"y":3640,"width":2040,"height":920,"label":"例题"},
@@ -149,7 +149,8 @@
 			"height":120
 		},
 		{"id":"2834385a25727a72","type":"file","file":"_Attachments/Images/Pasted image 20260910175839.png","x":7280,"y":3528,"width":2021,"height":1378},
-		{"id":"33232947d0bca13c","type":"file","file":"_Attachments/Images/Pasted image 20260911225348.png","x":7840,"y":5840,"width":1416,"height":1793}
+		{"id":"33232947d0bca13c","type":"file","file":"_Attachments/Images/Pasted image 20260911225348.png","x":7840,"y":5840,"width":1416,"height":1793},
+		{"id":"6059d77275ef2f0d","type":"file","file":"_Attachments/Images/Pasted image 20260913200840.png","x":-1252,"y":3620,"width":1725,"height":475}
 	],
 	"edges":[
 		{
@@ -326,6 +327,15 @@
 			"fromNode":"0192642944e3ebca",
 			"fromSide":"bottom",
 			"toNode":"09e4f1e0404e050d",
+			"toSide":"top"
+		},
+		{
+			"id":"acf16bee12b97165",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"92e4d5437efeda7d",
+			"fromSide":"bottom",
+			"toNode":"6059d77275ef2f0d",
 			"toSide":"top"
 		}
 	],
