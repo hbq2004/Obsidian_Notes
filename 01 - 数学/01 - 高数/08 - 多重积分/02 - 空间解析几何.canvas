@@ -23,8 +23,6 @@
 			"height":200
 		},
 		{"id":"688bd5faa62f124d","type":"file","file":"_Attachments/Images/Pasted image 20260910173631.png","x":-16640,"y":1712,"width":1171,"height":471},
-		{"id":"5ac32b5654291900","type":"file","file":"_Attachments/Images/Pasted image 20260913025149.png","x":-11005,"y":7520,"width":1325,"height":994},
-		{"id":"d1eb389ae6852b00","type":"file","file":"_Attachments/Images/Capture_20260912_214622.jpg","x":-9897,"y":5820,"width":775,"height":432},
 		{
 			"id":"4fd279e6dac6b895",
 			"type":"text",
@@ -35,6 +33,32 @@
 			"width":340,
 			"height":100
 		},
+		{"id":"98f5fba1bad52019","type":"file","file":"_Attachments/Images/Pasted image 20260913021521.png","x":-9161,"y":1680,"width":593,"height":221},
+		{"id":"fb8d8ad5e8737bba","type":"file","file":"_Attachments/Images/Pasted image 20260910174150.png","x":-10055,"y":3160,"width":1194,"height":2400},
+		{
+			"id":"0c98285327dc14aa",
+			"type":"text",
+			"text":"(2) 二次曲面 + (3) 柱面 —— **记忆**\n(4) 旋转曲面 —— **计算**",
+			"styleAttributes":{"textAlign":"center"},
+			"x":-4120,
+			"y":3852,
+			"width":785,
+			"height":136
+		},
+		{"id":"9b165175a7557378","type":"file","file":"_Attachments/Images/Pasted image 20260910173918.png","x":-10560,"y":1868,"width":1010,"height":1121},
+		{
+			"id":"8d98c94c3ea004b5",
+			"type":"text",
+			"text":"注意漏掉的平面！",
+			"styleAttributes":{"textAlign":"center"},
+			"x":-10900,
+			"y":3130,
+			"width":260,
+			"height":60
+		},
+		{"id":"c05075cc871fdce9","type":"file","file":"_Attachments/Images/Pasted image 20260913021226.png","x":-10960,"y":2420,"width":400,"height":256},
+		{"id":"5ac32b5654291900","type":"file","file":"_Attachments/Images/Pasted image 20260913025149.png","x":-11005,"y":7520,"width":1325,"height":994},
+		{"id":"d1eb389ae6852b00","type":"file","file":"_Attachments/Images/Capture_20260912_214622.jpg","x":-9897,"y":5820,"width":775,"height":432},
 		{
 			"id":"8a16bd27ff6cbec9",
 			"type":"text",
@@ -47,7 +71,6 @@
 		},
 		{"id":"29fbc47d9bc4d273","type":"file","file":"_Attachments/Images/Pasted image 20260910205529.png","x":-8861,"y":4220,"width":824,"height":487},
 		{"id":"13ec55936dd33b93","type":"file","file":"_Attachments/Images/Pasted image 20260910173936.png","x":-9421,"y":1997,"width":1120,"height":992},
-		{"id":"98f5fba1bad52019","type":"file","file":"_Attachments/Images/Pasted image 20260913021521.png","x":-9161,"y":1680,"width":593,"height":221},
 		{
 			"id":"c243227571c24108",
 			"type":"text",
@@ -59,10 +82,7 @@
 			"height":60
 		},
 		{"id":"7acb635cd6baf0c7","type":"file","file":"_Attachments/Images/Pasted image 20260913154906.png","x":-9680,"y":7509,"width":1500,"height":1000},
-		{"id":"fb8d8ad5e8737bba","type":"file","file":"_Attachments/Images/Pasted image 20260910174150.png","x":-10055,"y":3160,"width":1194,"height":2400},
-		{"id":"da4caaaa92a10575","type":"file","file":"_Attachments/Images/Pasted image 20260910174846.png","x":-5480,"y":1640,"width":1096,"height":4559},
 		{"id":"97b4ae18b9d9473b","type":"file","file":"_Attachments/Images/Pasted image 20260910174526.png","x":-7360,"y":1960,"width":1551,"height":2732},
-		{"id":"2c920b98a4ab9ec4","type":"file","file":"_Attachments/Images/Pasted image 20260911172641.png","x":-4384,"y":5545,"width":1025,"height":652},
 		{
 			"id":"9afc84973a882e6d",
 			"type":"text",
@@ -73,31 +93,11 @@
 			"width":460,
 			"height":100
 		},
-		{"id":"1be9133802f17c00","type":"file","file":"_Attachments/Images/Pasted image 20260913162422.png","x":-6220,"y":5089,"width":675,"height":95},
-		{
-			"id":"0192642944e3ebca",
-			"type":"text",
-			"text":"本质两个方程：\n1. 两点连线垂直于旋转直线\n2. 两点与旋转直线的 ”距离“ 相等",
-			"styleAttributes":{"textAlign":"center"},
-			"x":-6216,
-			"y":5240,
-			"width":667,
-			"height":220
-		},
-		{"id":"09e4f1e0404e050d","type":"file","file":"_Attachments/Images/Pasted image 20260913162651.png","x":-6220,"y":5460,"width":675,"height":296},
+		{"id":"da4caaaa92a10575","type":"file","file":"_Attachments/Images/Pasted image 20260910174846.png","x":-5480,"y":1640,"width":1096,"height":4559},
+		{"id":"2c920b98a4ab9ec4","type":"file","file":"_Attachments/Images/Pasted image 20260911172641.png","x":-4384,"y":5545,"width":1025,"height":652},
+		{"id":"1be9133802f17c00","type":"file","file":"_Attachments/Images/Pasted image 20260913162422.png","x":-6220,"y":5089,"width":673,"height":95},
 		{"id":"010fa35896671fe8","type":"file","file":"_Attachments/Images/Pasted image 20260911172744.png","x":-4384,"y":4964,"width":1007,"height":581},
-		{
-			"id":"0c98285327dc14aa",
-			"type":"text",
-			"text":"(2) 二次曲面 + (3) 柱面 —— **记忆**\n(4) 旋转曲面 —— **计算**",
-			"styleAttributes":{"textAlign":"center"},
-			"x":-4120,
-			"y":3852,
-			"width":785,
-			"height":136
-		},
 		{"id":"92e4d5437efeda7d","type":"file","file":"_Attachments/Images/Pasted image 20260910175109.png","x":-1240,"y":1760,"width":1700,"height":1696},
-		{"id":"f57c73c80feb847e","type":"file","file":"_Attachments/Images/Pasted image 20260910175127.png","x":800,"y":1943,"width":2224,"height":1321},
 		{"id":"9c37312a6889dd70","type":"file","file":"_Attachments/Images/Pasted image 20260910203651.png","x":-8244,"y":2760,"width":398,"height":96},
 		{"id":"52bfb52b27afe2e3","type":"file","file":"_Attachments/Images/Pasted image 20260910203621.png","x":-8200,"y":2293,"width":311,"height":400},
 		{
@@ -111,18 +111,18 @@
 			"height":140
 		},
 		{"id":"43545815092e3168","type":"file","file":"_Attachments/Images/Pasted image 20260910171307.png","x":736,"y":-1440,"width":509,"height":975},
-		{"id":"9b165175a7557378","type":"file","file":"_Attachments/Images/Pasted image 20260910173918.png","x":-10560,"y":1868,"width":1010,"height":1121},
 		{
-			"id":"8d98c94c3ea004b5",
+			"id":"0192642944e3ebca",
 			"type":"text",
-			"text":"注意漏掉的平面！",
+			"text":"本质两个方程：\n1. 两点连线垂直于旋转直线\n2. 两点与旋转直线的 ”距离“ 相等",
 			"styleAttributes":{"textAlign":"center"},
-			"x":-10900,
-			"y":3130,
-			"width":260,
-			"height":60
+			"x":-6216,
+			"y":5240,
+			"width":667,
+			"height":220
 		},
-		{"id":"c05075cc871fdce9","type":"file","file":"_Attachments/Images/Pasted image 20260913021226.png","x":-10960,"y":2420,"width":400,"height":256},
+		{"id":"09e4f1e0404e050d","type":"file","file":"_Attachments/Images/Pasted image 20260913162651.png","x":-6220,"y":5460,"width":675,"height":296},
+		{"id":"f57c73c80feb847e","type":"file","file":"_Attachments/Images/Pasted image 20260910175127.png","x":800,"y":1943,"width":2224,"height":1321},
 		{"id":"7a217280cb9bae20","type":"file","file":"_Attachments/Images/Pasted image 20260910175751.png","x":4880,"y":2623,"width":1660,"height":1845},
 		{"id":"d105455d95388a0a","type":"file","file":"_Attachments/Images/Pasted image 20260910175701.png","x":4880,"y":4663,"width":1577,"height":722},
 		{"id":"022d8156a95a3870","type":"file","file":"_Attachments/Images/Pasted image 20260910175908.png","x":5200,"y":5728,"width":2249,"height":853},

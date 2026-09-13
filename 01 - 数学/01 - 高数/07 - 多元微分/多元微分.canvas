@@ -228,15 +228,6 @@
 			"toSide":"top"
 		},
 		{
-			"id":"c11f40fc3229e0d3",
-			"styleAttributes":{},
-			"toFloating":false,
-			"fromNode":"8ca62e9e5d8e123e",
-			"fromSide":"bottom",
-			"toNode":"5ca7f398554621a1",
-			"toSide":"top"
-		},
-		{
 			"id":"e48b0f908628fff5",
 			"styleAttributes":{},
 			"toFloating":false,
