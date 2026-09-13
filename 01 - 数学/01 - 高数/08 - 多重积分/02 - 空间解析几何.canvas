@@ -137,7 +137,19 @@
 			"y":7740,
 			"width":460,
 			"height":100
-		}
+		},
+		{"id":"1be9133802f17c00","type":"file","file":"_Attachments/Images/Pasted image 20260913162422.png","x":-6220,"y":5089,"width":675,"height":100},
+		{
+			"id":"0192642944e3ebca",
+			"type":"text",
+			"text":"本质两个方程：\n1. 两点连线垂直于旋转直线\n2. 两点与旋转直线的 ”距离“ 相等",
+			"styleAttributes":{"textAlign":"center"},
+			"x":-6216,
+			"y":5240,
+			"width":667,
+			"height":220
+		},
+		{"id":"09e4f1e0404e050d","type":"file","file":"_Attachments/Images/Pasted image 20260913162651.png","x":-6220,"y":5460,"width":675,"height":296}
 	],
 	"edges":[
 		{
@@ -297,6 +309,24 @@
 			"fromSide":"right",
 			"toNode":"c243227571c24108",
 			"toSide":"left"
+		},
+		{
+			"id":"0d69131b1202e660",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"1be9133802f17c00",
+			"fromSide":"bottom",
+			"toNode":"0192642944e3ebca",
+			"toSide":"top"
+		},
+		{
+			"id":"94aa300c25dbb010",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"0192642944e3ebca",
+			"fromSide":"bottom",
+			"toNode":"09e4f1e0404e050d",
+			"toSide":"top"
 		}
 	],
 	"metadata":{
