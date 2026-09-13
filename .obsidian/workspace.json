@@ -15,8 +15,8 @@
               "state": {
                 "file": "01 - 数学/01 - 高数/08 - 多重积分/02 - 空间解析几何.canvas",
                 "viewState": {
-                  "x": 1706.543595033254,
-                  "y": 2653.1075264321794,
+                  "x": 1673.6924620673167,
+                  "y": 2550.1482717089325,
                   "zoom": -1.078813072626371
                 }
               },
@@ -28,12 +28,14 @@
             "id": "4638039eab06f682",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "_Attachments/Images/Pasted image 20260910175127.png"
+                "file": "好题错题整理/_待确认/27_880/27_880_高数/1-MCQ/Q010-880-GS-C05-T68FF.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-image",
-              "title": "Pasted image 20260910175127"
+              "icon": "lucide-file",
+              "title": "Q010-880-GS-C05-T68FF"
             }
           },
           {
@@ -44,8 +46,8 @@
               "state": {
                 "file": "01 - 数学/01 - 高数/07 - 多元微分/多元微分.canvas",
                 "viewState": {
-                  "x": 4311.145190392785,
-                  "y": 2408.2704175050226,
+                  "x": 9195.863231513758,
+                  "y": 6068.582766295776,
                   "zoom": -4
                 }
               },
@@ -311,7 +313,11 @@
   },
   "active": "4638039eab06f682",
   "lastOpenFiles": [
+    "01 - 数学/01 - 高数/07 - 多元微分/多元微分.canvas",
     "01 - 数学/01 - 高数/08 - 多重积分/02 - 空间解析几何.canvas",
+    "好题错题整理/_待确认/27_880/27_880_高数/1-MCQ/Q010-880-GS-C05-T68FF.md",
+    "_Attachments/Images/Pasted image 20260913170937.png",
+    "_Attachments/Images/Pasted image 20260910175127.png",
     "_Attachments/Images/Pasted image 20260913162651.png",
     "_Attachments/Images/Pasted image 20260913162422.png",
     "_Daily_Tasks/2026-09-15.md",
@@ -322,7 +328,6 @@
     "_Daily_Tasks/2026-09-20.md",
     "_Daily_Tasks/2026-09-13.md",
     "_Daily_Tasks/2026-09-19.md",
-    "01 - 数学/01 - 高数/07 - 多元微分/多元微分.canvas",
     "_Attachments/Images/Pasted image 20260911172744.png",
     "_Attachments/Images/Capture_20260912_214622.jpg",
     "01 - 数学/02 - 线代/03 - 向量组.canvas",
@@ -332,8 +337,6 @@
     "01 - 数学/01 - 高数/08 - 多重积分/01 - 二重积分.canvas",
     "01 - 数学/01 - 高数/08 - 多重积分/03 - 三重积分.canvas",
     "01 - 数学/01 - 高数/08 - 多重积分/04 - 曲线曲面积分.canvas",
-    "_Attachments/Images/Pasted image 20260911225348.png",
-    "_Attachments/Images/Pasted image 20260911172641.png",
     "好题错题整理/_待确认/27_880/27_880_高数/1-MCQ/Q002-880-GS-C05-T68FF.md",
     "_Daily_Tasks/2026-09-10.md",
     "_Daily_Tasks/2026-09-12.md",
@@ -359,7 +362,6 @@
     "好题错题整理/_待确认/27_880/27_880_高数/1-MCQ/Q001-880-GS-C05-T68FF-E54A8.md",
     "好题错题整理/_待确认/27_880/27_880_高数/1-MCQ/Q001-880-GS-C03-T68FF.md",
     "好题错题整理/_待确认/27_880/27_880_高数/1-MCQ/Q001-880-GS-C01-T68FF.md",
-    "好题错题整理/_待确认/模拟卷/2026/ep最后一卷/1-MCQ/Q02-JJ8T-S5.md",
     "_Attachments/题目识别/JJ8T/_ocr-repair-backups/20260907-164308",
     "_Attachments/题目识别/JJ8T/_ocr-repair-backups/20260907-162013",
     "_Attachments/题目识别/JJ8T/_ocr-repair-backups/20260907-154614",
