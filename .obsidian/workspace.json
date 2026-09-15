@@ -15,9 +15,9 @@
               "state": {
                 "file": "01 - 数学/01 - 高数/08 - 多重积分/01 - 二重积分.canvas",
                 "viewState": {
-                  "x": 27.101808420706107,
-                  "y": 503.25515420185286,
-                  "zoom": -2.6514836592170354
+                  "x": -2264.5104751045674,
+                  "y": 1645.3417576245727,
+                  "zoom": -1.9211869273736282
                 }
               },
               "icon": "lucide-layout-dashboard",
@@ -276,11 +276,14 @@
       "pdf-plus:PDF++: Toggle auto-paste": false,
       "obsidian-excalidraw-plugin:新建绘图文件": false,
       "notebook-navigator:Notebook Navigator": false,
-      "tag-index:Open tag index": false
+      "tag-index:Open tag index": false,
+      "hidden-folder-obsidian:隐藏文件夹": false
     }
   },
   "active": "d41b9c8c6eb4616b",
   "lastOpenFiles": [
+    "_Attachments/Images/Pasted image 20260908204732.png",
+    "01 - 数学/01 - 高数/08 - 多重积分/01 - 二重积分.canvas",
     "01 - 数学/01 - 高数/07 - 多元微分/多元微分.canvas",
     "01 - 数学/01 - 高数/08 - 多重积分/02 - 空间解析几何.canvas",
     "_Attachments/Images/Pasted image 20260908222105.png",
@@ -292,7 +295,6 @@
     "01 - 数学/01 - 高数/02 - 一元微分/03 - 一元微分学的几何应用.canvas",
     "_Daily_Tasks/2026-09-22.md",
     "01 - 数学/01 - 高数/08 - 多重积分/03 - 三重积分.canvas",
-    "01 - 数学/01 - 高数/08 - 多重积分/01 - 二重积分.canvas",
     "_Daily_Tasks/2026-09-18.md",
     "_Daily_Tasks/2026-09-21.md",
     "01 - 数学/01 - 高数/08 - 多重积分/04 - 曲线曲面积分.canvas",
