@@ -4,57 +4,27 @@
     "type": "split",
     "children": [
       {
-        "id": "d96a49173d2d4df7",
+        "id": "24272c2b9c5acb74",
         "type": "tabs",
         "children": [
           {
-            "id": "62a4668b549fe310",
+            "id": "d41b9c8c6eb4616b",
             "type": "leaf",
             "state": {
               "type": "canvas",
               "state": {
-                "file": "01 - 数学/01 - 高数/07 - 多元微分/多元微分.canvas",
+                "file": "01 - 数学/01 - 高数/08 - 多重积分/01 - 二重积分.canvas",
                 "viewState": {
-                  "x": 16957.870082422545,
-                  "y": 3319.3461154798415,
-                  "zoom": 0.2697032681565932
+                  "x": 27.101808420706107,
+                  "y": 503.25515420185286,
+                  "zoom": -2.6514836592170354
                 }
               },
               "icon": "lucide-layout-dashboard",
-              "title": "多元微分"
-            }
-          },
-          {
-            "id": "ca6602a23760d7f5",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "_Attachments/Images/Pasted image 20260908222105.png"
-              },
-              "icon": "lucide-image",
-              "title": "Pasted image 20260908222105"
-            }
-          },
-          {
-            "id": "d27ec9b260fe860f",
-            "type": "leaf",
-            "state": {
-              "type": "canvas",
-              "state": {
-                "file": "01 - 数学/01 - 高数/08 - 多重积分/02 - 空间解析几何.canvas",
-                "viewState": {
-                  "x": 4938.976152501229,
-                  "y": 2274.1583422161766,
-                  "zoom": -3.2697032681565927
-                }
-              },
-              "icon": "lucide-layout-dashboard",
-              "title": "02 - 空间解析几何"
+              "title": "01 - 二重积分"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -309,10 +279,11 @@
       "tag-index:Open tag index": false
     }
   },
-  "active": "ca6602a23760d7f5",
+  "active": "d41b9c8c6eb4616b",
   "lastOpenFiles": [
     "01 - 数学/01 - 高数/07 - 多元微分/多元微分.canvas",
     "01 - 数学/01 - 高数/08 - 多重积分/02 - 空间解析几何.canvas",
+    "_Attachments/Images/Pasted image 20260908222105.png",
     "_Attachments/Images/Pasted image 20260915214523.png",
     "_Attachments/Images/Pasted image 20260915214511.png",
     "_Attachments/Images/Pasted image 20260909210703.png",
@@ -332,7 +303,6 @@
     "_Attachments/Images/Pasted image 20260913193205.png",
     "_Attachments/Images/Pasted image 20260910175127.png",
     "_Attachments/Images/Pasted image 20260913192354.png",
-    "_Attachments/Images/Pasted image 20260909235518.png",
     "好题错题整理/_待确认/27_880/27_880_高数/1-MCQ/Q001-880-GS-C05-T68FF.md",
     "好题错题整理/_待确认/27_880/27_880_高数/2-FIB/Q009-880-GS-C05-TC67C.md",
     "好题错题整理/_待确认/27_880/27_880_高数/1-MCQ/Q010-880-GS-C05-T68FF.md",
