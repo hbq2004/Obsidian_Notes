@@ -11,33 +11,8 @@
 		{"id":"5436615a8a2bba4e","type":"file","file":"_Attachments/Images/Pasted image 20260718210505.png","x":7560,"y":480,"width":282,"height":339},
 		{"id":"5cc2cb0a12b77544","type":"file","file":"_Attachments/Images/Pasted image 20260718210442.png","x":6960,"y":480,"width":592,"height":172},
 		{"id":"8444b9bff803b842","type":"file","file":"_Attachments/Images/Pasted image 20260718205528.png","x":6973,"y":-120,"width":575,"height":455},
-		{"id":"6a4a179e4fb15b11","type":"file","file":"_Attachments/Images/Pasted image 20260718210325.png","x":4000,"y":1480,"width":548,"height":134},
-		{
-			"id":"cc7e2eb0d69ea891",
-			"type":"text",
-			"text":"[李艳芳反函数求导](https://www.bilibili.com/video/BV1pPwAzNEaU/) ",
-			"styleAttributes":{"textAlign":"center"},
-			"x":-1137,
-			"y":1759,
-			"width":240,
-			"height":80
-		},
-		{"id":"15b30a08172a7594","type":"file","file":"_Attachments/Images/Pasted image 20260718205913.png","x":1760,"y":1673,"width":650,"height":286},
-		{"id":"3720c43a93b65ad6","type":"file","file":"_Attachments/Images/result_0qJVwp.png","x":2800,"y":1719,"width":625,"height":196},
-		{"id":"aead486013e35546","type":"file","file":"_Attachments/Images/Pasted image 20260718205440.png","x":-420,"y":-820,"width":400,"height":342},
-		{
-			"id":"d8b6174c276212df",
-			"type":"text",
-			"text":"一元微分计算大观",
-			"styleAttributes":{"textAlign":"center"},
-			"x":-360,
-			"y":-120,
-			"width":280,
-			"height":100
-		},
 		{"id":"9e5091ef74a7d834","type":"file","file":"_Attachments/Images/Pasted image 20260718210457.png","x":6960,"y":652,"width":594,"height":172},
-		{"id":"e69ceda9055c1080","type":"file","file":"_Attachments/Images/Pasted image 20260718205748.png","x":-360,"y":1700,"width":980,"height":243},
-		{"id":"a4f1f41e4c1e3d6c","type":"file","file":"_Attachments/Images/result_6yLo2X.png","x":820,"y":1597,"width":722,"height":438},
+		{"id":"6a4a179e4fb15b11","type":"file","file":"_Attachments/Images/Pasted image 20260718210325.png","x":4000,"y":1480,"width":548,"height":134},
 		{"id":"efc48f3af0238166","type":"file","file":"_Attachments/Images/Pasted image 20260718210340.png","x":4000,"y":1614,"width":545,"height":291},
 		{"id":"ec2260876eaf4631","type":"file","file":"_Attachments/Images/Pasted image 20260718210115.png","x":4000,"y":1980,"width":525,"height":221},
 		{"id":"8cf7bd9c582b75da","type":"file","file":"_Attachments/Images/Pasted image 20260718210138.png","x":4000,"y":2280,"width":480,"height":149},
@@ -52,7 +27,32 @@
 			"y":2671,
 			"width":300,
 			"height":120
-		}
+		},
+		{"id":"3720c43a93b65ad6","type":"file","file":"_Attachments/Images/result_0qJVwp.png","x":2800,"y":1719,"width":625,"height":196},
+		{
+			"id":"cc7e2eb0d69ea891",
+			"type":"text",
+			"text":"[李艳芳反函数求导](https://www.bilibili.com/video/BV1pPwAzNEaU/) ",
+			"styleAttributes":{"textAlign":"center"},
+			"x":-1137,
+			"y":1759,
+			"width":240,
+			"height":80
+		},
+		{"id":"15b30a08172a7594","type":"file","file":"_Attachments/Images/Pasted image 20260718205913.png","x":1760,"y":1673,"width":650,"height":286},
+		{"id":"aead486013e35546","type":"file","file":"_Attachments/Images/Pasted image 20260718205440.png","x":-420,"y":-820,"width":400,"height":342},
+		{
+			"id":"d8b6174c276212df",
+			"type":"text",
+			"text":"一元微分计算大观",
+			"styleAttributes":{"textAlign":"center"},
+			"x":-360,
+			"y":-120,
+			"width":280,
+			"height":100
+		},
+		{"id":"e69ceda9055c1080","type":"file","file":"_Attachments/Images/Pasted image 20260718205748.png","x":-360,"y":1700,"width":980,"height":243},
+		{"id":"a4f1f41e4c1e3d6c","type":"file","file":"_Attachments/Images/result_6yLo2X.png","x":820,"y":1597,"width":722,"height":438}
 	],
 	"edges":[
 		{
