@@ -148,16 +148,6 @@
 			"height":110
 		},
 		{"id":"558f153eadf05656","type":"file","file":"_Attachments/Images/Pasted image 20260909210557.png","x":19117,"y":2057,"width":760,"height":832},
-		{
-			"id":"c8ef1c2a6640a1e3",
-			"type":"text",
-			"text":"[利用**线性代数方程组的知识**快速求解](https://v.douyin.com/BLi-pR7xObI/)\n",
-			"styleAttributes":{"textAlign":"center"},
-			"x":20440,
-			"y":3940,
-			"width":539,
-			"height":140
-		},
 		{"id":"cc2577f604ec3ad7","type":"file","file":"_Attachments/Images/Pasted image 20260908222322.png","x":19371,"y":3220,"width":968,"height":656},
 		{"id":"072b32b7725f8dcb","type":"file","file":"_Attachments/Images/Pasted image 20260909205327.png","x":-14040,"y":3296,"width":1216,"height":1621},
 		{"id":"148f80be2373f910","type":"file","file":"_Attachments/Images/Pasted image 20260909202653.png","x":-13829,"y":1075,"width":875,"height":548},
@@ -169,7 +159,17 @@
 		{"id":"464542ed2533a737","type":"file","file":"_Attachments/Images/Pasted image 20260909204118.png","x":-16660,"y":4400,"width":1214,"height":1033},
 		{"id":"ccf63a7445b92e75","type":"file","file":"_Attachments/Images/Pasted image 20260909203808.png","x":-17520,"y":3240,"width":1499,"height":934},
 		{"id":"1f7e853304c7de01","type":"file","file":"_Attachments/Images/Pasted image 20260909203855.png","x":-17630,"y":4261,"width":851,"height":1312},
-		{"id":"cbac6897529088ef","type":"file","file":"_Attachments/Images/Pasted image 20260909210703.png","x":20420,"y":3320,"width":596,"height":509}
+		{"id":"cbac6897529088ef","type":"file","file":"_Attachments/Images/Pasted image 20260909210703.png","x":20420,"y":3320,"width":596,"height":509},
+		{
+			"id":"c8ef1c2a6640a1e3",
+			"type":"text",
+			"text":"[利用**线性代数方程组的知识**快速求解](https://v.douyin.com/BLi-pR7xObI/)\n",
+			"styleAttributes":{"textAlign":"center"},
+			"x":20449,
+			"y":3940,
+			"width":539,
+			"height":140
+		}
 	],
 	"edges":[
 		{
