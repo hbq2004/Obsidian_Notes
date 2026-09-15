@@ -14,7 +14,7 @@
 		{"id":"a8e20db7a64bdf04","type":"group","x":778,"y":5120,"width":2192,"height":1774,"label":"例题"},
 		{"id":"d802f65d9bec417c","type":"group","x":-11113,"y":1495,"width":2720,"height":1240,"label":"基本概念 —— 类比一元函数"},
 		{"id":"bc4519c148d90572","type":"group","x":16440,"y":2980,"width":2410,"height":1107,"label":"无条件极值"},
-		{"id":"f8e0e8b415b36e55","type":"group","x":19200,"y":3162,"width":1960,"height":1098,"label":"条件极值与拉格朗日数乘"},
+		{"id":"f8e0e8b415b36e55","type":"group","x":19200,"y":3162,"width":2360,"height":1098,"label":"条件极值与拉格朗日数乘"},
 		{"id":"097191f3c563cd99","type":"group","x":-9753,"y":3200,"width":1200,"height":1320,"label":"偏积分"},
 		{"id":"5e03d5b6b6d652a7","type":"group","x":-10233,"y":1675,"width":640,"height":817,"color":"1","label":"二元函数极限"},
 		{"id":"10b8c63b15e490a7","type":"file","file":"_Attachments/Images/Pasted image 20260908222632.png","x":-160,"y":2455,"width":1094,"height":707},
@@ -169,7 +169,9 @@
 			"y":3940,
 			"width":539,
 			"height":140
-		}
+		},
+		{"id":"08e54c8ba99c8fec","type":"file","file":"_Attachments/Images/Pasted image 20260915214511.png","x":21016,"y":3614,"width":464,"height":211},
+		{"id":"4193a4c750b81d09","type":"file","file":"_Attachments/Images/Pasted image 20260915214523.png","x":21016,"y":3571,"width":475,"height":43}
 	],
 	"edges":[
 		{
