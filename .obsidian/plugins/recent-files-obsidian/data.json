@@ -1,6 +1,26 @@
 {
   "recentFiles": [
     {
+      "basename": "03 - 多维随机变量及其分布",
+      "path": "01 - 数学/03 - 概统/03 - 多维随机变量及其分布.canvas"
+    },
+    {
+      "basename": "04 - 随机变量的数字特征",
+      "path": "01 - 数学/03 - 概统/04 - 随机变量的数字特征.canvas"
+    },
+    {
+      "basename": "02 - 一维随机变量及其分布",
+      "path": "01 - 数学/03 - 概统/02 - 一维随机变量及其分布.canvas"
+    },
+    {
+      "basename": "05 - 大数定律与中心极限定律",
+      "path": "01 - 数学/03 - 概统/05 - 大数定律与中心极限定律.canvas"
+    },
+    {
+      "basename": "06 - 数理统计",
+      "path": "01 - 数学/03 - 概统/06 - 数理统计.canvas"
+    },
+    {
       "basename": "01 - 二重积分",
       "path": "01 - 数学/01 - 高数/08 - 多重积分/01 - 二重积分.canvas"
     },
@@ -179,26 +199,6 @@
     {
       "basename": "Pasted image 20260910175109",
       "path": "_Attachments/Images/Pasted image 20260910175109.png"
-    },
-    {
-      "basename": "03 - 三重积分",
-      "path": "01 - 数学/01 - 高数/08 - 多重积分/03 - 三重积分.canvas"
-    },
-    {
-      "basename": "04 - 曲线曲面积分",
-      "path": "01 - 数学/01 - 高数/08 - 多重积分/04 - 曲线曲面积分.canvas"
-    },
-    {
-      "basename": "Pasted image 20260910172246",
-      "path": "_Attachments/Images/Pasted image 20260910172246.png"
-    },
-    {
-      "basename": "Pasted image 20260913200840",
-      "path": "_Attachments/Images/Pasted image 20260913200840.png"
-    },
-    {
-      "basename": "Q014-880-GS-C05-TC67C",
-      "path": "好题错题整理/_待确认/27_880/27_880_高数/2-FIB/Q014-880-GS-C05-TC67C.md"
     }
   ],
   "omittedPaths": [],
