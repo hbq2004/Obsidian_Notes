@@ -15,9 +15,9 @@
               "state": {
                 "file": "01 - 数学/01 - 高数/08 - 多重积分/01 - 二重积分.canvas",
                 "viewState": {
-                  "x": -5447.585498521919,
-                  "y": 638.0770097859029,
-                  "zoom": -2.0925103411517307
+                  "x": -5690.051541233661,
+                  "y": 709.5658612779882,
+                  "zoom": -0.2667685115432129
                 }
               },
               "icon": "lucide-layout-dashboard",
@@ -45,7 +45,7 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": true,
+                "autoReveal": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
@@ -124,7 +124,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 345.5
+    "width": 345.5,
+    "collapsed": true
   },
   "right": {
     "id": "788c2b70f5d82052",
@@ -234,7 +235,8 @@
               "title": "2 的出链列表"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       },
       {
         "id": "fc86d4887f1486af",
