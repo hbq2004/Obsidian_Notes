@@ -3,13 +3,12 @@
 		{"id":"ccd9954792afdfe8","type":"group","x":1680,"y":800,"width":5520,"height":1480,"color":"2","label":"对称性 —— 普通对称与轮换对称"},
 		{"id":"8d6f72e28497f269","type":"group","x":-3040,"y":720,"width":4480,"height":1440,"color":"1","label":"计算"},
 		{"id":"227730bc03443cc7","type":"group","x":-2980,"y":820,"width":2040,"height":1310,"label":"计算方法"},
+		{"id":"b3bb564e71117aea","type":"group","x":1040,"y":-1600,"width":2080,"height":1120,"label":"古鲁金第二定理"},
 		{"id":"c8b3a0d67a0594b4","type":"group","x":1820,"y":1045,"width":2900,"height":894,"label":"普通对称性"},
 		{"id":"b670a368bc28ed2e","type":"group","x":4840,"y":960,"width":2080,"height":1200,"label":"轮换对称性"},
-		{"id":"b3bb564e71117aea","type":"group","x":1040,"y":-1600,"width":2080,"height":1120,"label":"古鲁金第二定理"},
 		{"id":"69113d76c7ecf177","type":"file","file":"_Attachments/Images/Pasted image 20260908202332.png","x":5080,"y":1045,"width":575,"height":453},
 		{"id":"402298cb02bdfe63","type":"file","file":"_Attachments/Images/Pasted image 20260908202034.png","x":1880,"y":1571,"width":497,"height":284},
 		{"id":"6a726825d8a37485","type":"file","file":"_Attachments/Images/Pasted image 20260908202104.png","x":2420,"y":1571,"width":600,"height":278},
-		{"id":"7b5adc9e0de58caa","type":"file","file":"_Attachments/Images/Pasted image 20260908204216.png","x":1180,"y":-1500,"width":814,"height":886},
 		{
 			"id":"298feff8379ea2aa",
 			"type":"text",
@@ -20,7 +19,6 @@
 			"width":640,
 			"height":203
 		},
-		{"id":"90f4345342a38c78","type":"file","file":"_Attachments/Images/Pasted image 20260908201506.png","x":-200,"y":-680,"width":400,"height":320},
 		{"id":"636dfc08422da374","type":"file","file":"_Attachments/Images/Pasted image 20260908201848.png","x":3020,"y":1100,"width":548,"height":280},
 		{"id":"e219e5254f8644e8","type":"file","file":"_Attachments/Images/Pasted image 20260908202146.png","x":3940,"y":1633,"width":752,"height":192},
 		{"id":"e79bc26b30043bf2","type":"file","file":"_Attachments/Images/Pasted image 20260908202131.png","x":3060,"y":1603,"width":845,"height":252},
@@ -75,7 +73,9 @@
 			"y":784,
 			"width":340,
 			"height":84
-		}
+		},
+		{"id":"90f4345342a38c78","type":"file","file":"_Attachments/Images/Pasted image 20260908201506.png","x":-200,"y":-680,"width":400,"height":320},
+		{"id":"7b5adc9e0de58caa","type":"file","file":"_Attachments/Images/Pasted image 20260908204216.png","x":1180,"y":-1500,"width":814,"height":886}
 	],
 	"edges":[
 		{
