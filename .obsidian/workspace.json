@@ -15,9 +15,9 @@
               "state": {
                 "file": "01 - 数学/01 - 高数/08 - 多重积分/01 - 二重积分.canvas",
                 "viewState": {
-                  "x": -4599.720459583821,
-                  "y": 868.2973792006705,
-                  "zoom": -2.0925103411517307
+                  "x": -378.059080002594,
+                  "y": 1288.2196409906167,
+                  "zoom": -2.6514836592170354
                 }
               },
               "icon": "lucide-layout-dashboard",
@@ -124,8 +124,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 345.5,
-    "collapsed": true
+    "width": 345.5
   },
   "right": {
     "id": "788c2b70f5d82052",
@@ -284,6 +283,12 @@
   },
   "active": "4fbb584d9f444a97",
   "lastOpenFiles": [
+    "好题错题整理/_待确认/网络随机题/抖音",
+    "好题错题整理/_待确认/网络随机题/其他网络",
+    "好题错题整理/_待确认/网络随机题/B站",
+    "好题错题整理/_待确认/网络随机题",
+    "_Attachments/Images/Pasted image 20260908204934.png",
+    "01 - 数学/01 - 高数/08 - 多重积分/01 - 二重积分.canvas",
     "_Attachments/Images/Pasted image 20260916175624.png",
     "_Backups/好题错题整理-408-tags-before-20260916-161249/files/_待确认/27_王道408/01 - DS/07 - 查找/1-MCQ/DS-C07-75-M12.md",
     "_Backups/好题错题整理-408-tags-before-20260916-161249/files/_待确认/27_王道408/01 - DS/07 - 查找/1-MCQ/DS-C07-75-M14.md",
@@ -317,11 +322,7 @@
     "_Backups/好题错题整理-408-tags-before-20260916-161249/files/_待确认/27_王道408/01 - DS/05 - 树与二叉树/3-FRQ",
     "_Backups/好题错题整理-408-tags-before-20260916-161249/files/_待确认/27_王道408/01 - DS/03 - 栈、队列和数组/1-MCQ",
     "_Backups/好题错题整理-408-tags-before-20260916-161249/files/_待确认/27_王道408/01 - DS/03 - 栈、队列和数组",
-    "_Backups/好题错题整理-408-tags-before-20260916-161249/summary.json",
-    "_Backups/好题错题整理-408-tags-before-20260916-161249/tag-mapping.csv",
-    "_Backups/好题错题整理-408-tags-before-20260916-161249/manifest.csv",
     "01 - 数学/01 - 高数/微积分应用.canvas",
-    "01 - 数学/01 - 高数/08 - 多重积分/01 - 二重积分.canvas",
     "_Attachments/Images/Pasted image 20260916151233.png",
     "_Attachments/Images/Pasted image 20260916151059.png",
     "_Attachments/Images/Pasted image 20260916144415.png",
@@ -332,8 +333,6 @@
     "01 - 数学/01 - 高数/08 - 多重积分/02 - 空间解析几何.canvas",
     "_Attachments/Images/Pasted image 20260908222105.png",
     "_Attachments/Images/Pasted image 20260915214523.png",
-    "_Attachments/Images/Pasted image 20260915214511.png",
-    "_Attachments/Images/Pasted image 20260909210703.png",
     "01 - 数学/01 - 高数/02 - 一元微分/02 - 一元微分计算大观.canvas",
     "01 - 数学/01 - 高数/02 - 一元微分/03 - 一元微分学的几何应用.canvas",
     "01 - 数学/01 - 高数/08 - 多重积分/03 - 三重积分.canvas",
