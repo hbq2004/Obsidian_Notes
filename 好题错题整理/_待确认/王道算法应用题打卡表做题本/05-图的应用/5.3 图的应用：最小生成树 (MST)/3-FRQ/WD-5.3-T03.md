@@ -9,8 +9,8 @@ tags:
   - Kruskal算法
   - 并查集
   - 贪心策略
-  - 避圈法
 points:
+  - 避圈法
 level:
 ---
 

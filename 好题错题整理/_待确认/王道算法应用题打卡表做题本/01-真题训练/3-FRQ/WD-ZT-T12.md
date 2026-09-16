@@ -8,9 +8,9 @@ tags:
   - 二叉树
   - 前缀编码
   - 哈夫曼树
+points:
   - 译码过程
   - 字典树
-points:
 level:
 ---
 

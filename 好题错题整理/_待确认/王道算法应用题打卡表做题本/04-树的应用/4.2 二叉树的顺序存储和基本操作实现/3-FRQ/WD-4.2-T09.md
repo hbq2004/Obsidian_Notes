@@ -7,9 +7,9 @@ tags:
   - 概念题
   - 完全二叉树
   - 顺序存储
+points:
   - 编号性质
   - 左孩子公式
-points:
 level:
 ---
 

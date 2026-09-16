@@ -9,8 +9,8 @@ tags:
   - 有向无环图
   - Kahn算法
   - 入度
-  - DFS逆后序
 points:
+  - DFS逆后序
 level:
 ---
 

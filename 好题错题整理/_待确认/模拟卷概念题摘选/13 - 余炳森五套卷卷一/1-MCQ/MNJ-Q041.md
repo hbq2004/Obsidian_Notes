@@ -8,9 +8,9 @@ tags:
   - 正定矩阵
   - 实对称矩阵
   - 矩阵的秩
+points:
   - 二次型定义
   - A^TA与AA^T
-points:
 level:
 ---
 

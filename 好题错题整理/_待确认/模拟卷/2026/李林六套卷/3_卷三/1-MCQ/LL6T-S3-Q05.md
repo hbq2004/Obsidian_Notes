@@ -8,9 +8,9 @@ tags:
   - 向量组等价
   - 线性表示
   - 线性方程组
+points:
   - 交集子空间
   - 基底
-points:
 level:
 ---
 

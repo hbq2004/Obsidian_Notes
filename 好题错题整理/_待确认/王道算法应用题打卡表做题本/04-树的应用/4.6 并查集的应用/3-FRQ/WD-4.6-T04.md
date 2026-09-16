@@ -7,10 +7,10 @@ tags:
   - 计算题
   - 并查集
   - 双亲表示法
+points:
   - Union操作
   - Find操作
   - 森林表示
-points:
 level:
 ---
 

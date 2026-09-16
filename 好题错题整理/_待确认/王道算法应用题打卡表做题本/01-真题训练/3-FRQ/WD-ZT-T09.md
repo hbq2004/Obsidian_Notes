@@ -8,9 +8,9 @@ tags:
   - 最小生成树
   - Prim算法
   - MST唯一性
-  - 割性质
   - 邻接表
 points:
+  - 割性质
 level:
 ---
 

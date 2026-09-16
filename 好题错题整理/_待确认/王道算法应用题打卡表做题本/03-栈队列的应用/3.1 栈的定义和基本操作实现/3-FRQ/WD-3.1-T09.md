@@ -8,9 +8,9 @@ tags:
   - 栈
   - 括号匹配
   - 后进先出
+points:
   - 栈顶操作
   - 匹配规则
-points:
 level:
 ---
 

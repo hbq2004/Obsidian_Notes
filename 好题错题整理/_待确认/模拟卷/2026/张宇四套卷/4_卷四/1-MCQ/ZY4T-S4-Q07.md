@@ -5,11 +5,11 @@ tags:
   - LA
   - 26_张宇四套卷/卷四/MCQ
   - 概念题
-  - 严格对角占优矩阵
   - 矩阵可逆判定
+points:
+  - 严格对角占优矩阵
   - 线性方程组解的存在唯一性
   - Gerschgorin圆
-points:
 level:
 ---
 

@@ -8,9 +8,9 @@ tags:
   - 傅里叶级数
   - 余弦级数
   - 周期延拓
+points:
   - 偶延拓
   - 收敛定理
-points:
 level:
 ---
 

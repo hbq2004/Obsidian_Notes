@@ -7,9 +7,9 @@ tags:
   - 计算题
   - 函数方程
   - 定积分换元
+points:
   - 区间平移
   - 积分性质
-points:
 level:
 ---
 

@@ -8,9 +8,9 @@ tags:
   - 堆排序
   - 大根堆
   - 完全二叉树
+points:
   - 向下调整
   - 建堆过程
-points:
 level:
 ---
 

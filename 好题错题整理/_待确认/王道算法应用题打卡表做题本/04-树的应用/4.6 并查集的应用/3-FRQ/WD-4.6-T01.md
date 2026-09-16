@@ -8,9 +8,9 @@ tags:
   - 并查集
   - 数组实现
   - 路径压缩
+points:
   - 按秩合并
   - 集合表示
-points:
 level:
 ---
 

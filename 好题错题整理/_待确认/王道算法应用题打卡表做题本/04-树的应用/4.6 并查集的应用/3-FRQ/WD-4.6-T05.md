@@ -8,9 +8,9 @@ tags:
   - 并查集
   - 双亲表示法
   - 路径压缩
+points:
   - Find操作
   - 树形图转换
-points:
 level:
 ---
 

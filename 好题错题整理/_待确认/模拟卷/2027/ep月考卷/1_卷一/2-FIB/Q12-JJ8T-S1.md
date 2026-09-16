@@ -7,10 +7,10 @@ tags:
   - 概念题
   - 导数定义
   - 幂指函数极限
+points:
   - 0^0未定式
   - 局部线性化
   - xlnx极限
-points:
 level:
 ---
 

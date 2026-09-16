@@ -8,8 +8,8 @@ tags:
   - 独立正态变量
   - 卡方分布
   - 瑞利分布
-  - Gamma函数
 points:
+  - Gamma函数
 level:
 ---
 
