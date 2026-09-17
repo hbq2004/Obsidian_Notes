@@ -7,9 +7,6 @@
 		{"id":"aa5571c101820380","type":"group","x":-7720,"y":3080,"width":6000,"height":2880,"label":"二维连续型随机变量的概率密度、边缘概率密度和条件概率密度"},
 		{"id":"d7945f7bcfcc427c","type":"group","x":-11800,"y":3080,"width":3840,"height":2640,"label":"二维离散随机变量的概率分布、边缘分布和条件分布"},
 		{"id":"125f82c795ec23dd","type":"group","x":-16320,"y":2540,"width":4000,"height":1620,"label":"n 维随机变量及其分布函数"},
-		{"id":"53577cbc21905fb8","type":"file","file":"_Attachments/Images/Pasted image 20260917172915.png","x":18155,"y":3560,"width":1325,"height":469},
-		{"id":"60f8b6f5017471fe","type":"file","file":"_Attachments/Images/Pasted image 20260917173010.png","x":18155,"y":4156,"width":1425,"height":1307},
-		{"id":"e37642bb713aef0f","type":"file","file":"_Attachments/Images/Pasted image 20260917173108.png","x":19715,"y":4155,"width":1600,"height":775},
 		{
 			"id":"fa6b388b29fceb29",
 			"type":"text",
@@ -52,7 +49,11 @@
 			"height":60
 		},
 		{"id":"46e06e122618ab52","type":"file","file":"_Attachments/Images/Pasted image 20260917175124.png","x":-13898,"y":3667,"width":750,"height":392},
-		{"id":"f3217b25082003d3","type":"file","file":"_Attachments/Images/Pasted image 20260917184306.png","x":-11337,"y":5051,"width":975,"height":507}
+		{"id":"f3217b25082003d3","type":"file","file":"_Attachments/Images/Pasted image 20260917184306.png","x":-11337,"y":5051,"width":975,"height":507},
+		{"id":"53577cbc21905fb8","type":"file","file":"_Attachments/Images/Pasted image 20260917172915.png","x":18155,"y":3560,"width":1325,"height":450},
+		{"id":"60f8b6f5017471fe","type":"file","file":"_Attachments/Images/Pasted image 20260917173010.png","x":18155,"y":4156,"width":1425,"height":1296},
+		{"id":"e37642bb713aef0f","type":"file","file":"_Attachments/Images/Pasted image 20260917173108.png","x":19715,"y":4155,"width":1559,"height":775},
+		{"id":"beef4d5b8321f99a","type":"file","file":"_Attachments/Images/Pasted image 20260917185647.png","x":-7142,"y":5220,"width":950,"height":376}
 	],
 	"edges":[
 		{
@@ -135,6 +136,15 @@
 			"fromNode":"9e8bb609ef3aa9e8",
 			"fromSide":"bottom",
 			"toNode":"f3217b25082003d3",
+			"toSide":"top"
+		},
+		{
+			"id":"57f1e8f36e8bf569",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"1e9f4ac334a2f161",
+			"fromSide":"bottom",
+			"toNode":"beef4d5b8321f99a",
 			"toSide":"top"
 		}
 	],
