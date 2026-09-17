@@ -1,8 +1,8 @@
 {
 	"nodes":[
 		{"id":"4e9516518755c1b6","type":"group","x":9760,"y":2720,"width":11840,"height":3280,"label":"多维随机变量函数的分布"},
-		{"id":"edf0f20b56ca83d6","type":"group","x":-11920,"y":2720,"width":10520,"height":3360,"label":"常见的两类二维随机变量"},
-		{"id":"b7dc10bc81be55fd","type":"group","x":-640,"y":2720,"width":9840,"height":3240,"label":"随机变量的相互独立性"},
+		{"id":"edf0f20b56ca83d6","type":"group","x":-11920,"y":2720,"width":10520,"height":3360,"color":"1","label":"常见的两类二维随机变量"},
+		{"id":"b7dc10bc81be55fd","type":"group","x":-640,"y":2720,"width":9840,"height":3240,"color":"2","label":"随机变量的相互独立性"},
 		{"id":"a18c11fd0f88608c","type":"group","x":13600,"y":3040,"width":7840,"height":2704,"label":"相互独立随机变量函数的七种分布"},
 		{"id":"aa5571c101820380","type":"group","x":-7720,"y":3080,"width":6000,"height":2880,"label":"二维连续型随机变量的概率密度、边缘概率密度和条件概率密度"},
 		{"id":"d7945f7bcfcc427c","type":"group","x":-11800,"y":3080,"width":3840,"height":2640,"label":"二维离散随机变量的概率分布、边缘分布和条件分布"},
