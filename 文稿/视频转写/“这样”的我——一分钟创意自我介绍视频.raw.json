@@ -1,0 +1,741 @@
+{
+  "file_url": "https://dashscope-file-mgr.oss-cn-beijing.aliyuncs.com/dashscope-instant/8bf6c34b0e73a4368a97b1913e25eaec/2026-09-18/b005d3d7-f861-9b2c-a28d-19f09c714507/source.m4a?x-oss-credential=LTAI5tETa3nVJuuzYP57WmzH%2F20260917%2Fcn-beijing%2Foss%2Faliyun_v4_request&x-oss-date=20260917T193806Z&x-oss-expires=172800&x-oss-signature=acbd6ce8252c28cb5c63a2fd2e5768923e8fc9d128c3a20e7b52b023ba4c0890&x-oss-signature-version=OSS4-HMAC-SHA256",
+  "properties": {
+    "audio_format": "aac",
+    "channels": [
+      0,
+      1
+    ],
+    "original_sampling_rate": 44100,
+    "original_duration_in_milliseconds": 34876
+  },
+  "transcripts": [
+    {
+      "channel_id": 0,
+      "content_duration_in_milliseconds": 31920,
+      "text": "Hello everyone, my name is He Qianhua. The character Qian means beautiful and talented, while the character Hua resembles the Asian character for flower and symbolize blooming and gorgeous. As you may notice, each character in my name has a single person next to it. So I think my parents want me to grow into a person who is beautiful, gorgeous and talented. Like the lively flower bloom in the spring, and I would also like to bring a touch of gorgeousness to every aspect of my life. Thank you. ",
+      "sentences": [
+        {
+          "begin_time": 640,
+          "end_time": 3000,
+          "text": "Hello everyone, my name is He Qianhua.",
+          "sentence_id": 1,
+          "words": [
+            {
+              "begin_time": 640,
+              "end_time": 960,
+              "text": "Hello",
+              "punctuation": "",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 960,
+              "end_time": 1440,
+              "text": " everyone",
+              "punctuation": ",",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 1560,
+              "end_time": 1680,
+              "text": " my",
+              "punctuation": "",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 1680,
+              "end_time": 1920,
+              "text": " name",
+              "punctuation": "",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 1920,
+              "end_time": 2120,
+              "text": " is",
+              "punctuation": "",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 2120,
+              "end_time": 2360,
+              "text": " He",
+              "punctuation": "",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 2360,
+              "end_time": 2488,
+              "text": " Q",
+              "punctuation": "",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 2488,
+              "end_time": 2680,
+              "text": "ian",
+              "punctuation": "",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 2680,
+              "end_time": 3000,
+              "text": "hua",
+              "punctuation": ".",
+              "confidence": 1.0
+            }
+          ]
+        },
+        {
+          "begin_time": 3280,
+          "end_time": 13080,
+          "text": " The character Qian means beautiful and talented, while the character Hua resembles the Asian character for flower and symbolize blooming and gorgeous.",
+          "sentence_id": 2,
+          "words": [
+            {
+              "begin_time": 3280,
+              "end_time": 3520,
+              "text": " The",
+              "punctuation": "",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 3520,
+              "end_time": 3920,
+              "text": " character",
+              "punctuation": "",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 3920,
+              "end_time": 4064,
+              "text": " Q",
+              "punctuation": "",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 4064,
+              "end_time": 4280,
+              "text": "ian",
+              "punctuation": "",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 4280,
+              "end_time": 4680,
+              "text": " means",
+              "punctuation": "",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 4680,
+              "end_time": 5160,
+              "text": " beautiful",
+              "punctuation": "",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 5160,
+              "end_time": 5480,
+              "text": " and",
+              "punctuation": "",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 5480,
+              "end_time": 6040,
+              "text": " talented",
+              "punctuation": ",",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 6440,
+              "end_time": 6680,
+              "text": " while",
+              "punctuation": "",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 6680,
+              "end_time": 6920,
+              "text": " the",
+              "punctuation": "",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 6920,
+              "end_time": 7320,
+              "text": " character",
+              "punctuation": "",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 7320,
+              "end_time": 8000,
+              "text": " Hua",
+              "punctuation": "",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 8000,
+              "end_time": 8600,
+              "text": " resembles",
+              "punctuation": "",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 8600,
+              "end_time": 8840,
+              "text": " the",
+              "punctuation": "",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 8840,
+              "end_time": 9280,
+              "text": " Asian",
+              "punctuation": "",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 9280,
+              "end_time": 9720,
+              "text": " character",
+              "punctuation": "",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 9720,
+              "end_time": 10040,
+              "text": " for",
+              "punctuation": "",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 10040,
+              "end_time": 10760,
+              "text": " flower",
+              "punctuation": "",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 10760,
+              "end_time": 11080,
+              "text": " and",
+              "punctuation": "",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 11080,
+              "end_time": 11240,
+              "text": " symbol",
+              "punctuation": "",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 11240,
+              "end_time": 11600,
+              "text": "ize",
+              "punctuation": "",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 11600,
+              "end_time": 11828,
+              "text": " blo",
+              "punctuation": "",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 11828,
+              "end_time": 12120,
+              "text": "oming",
+              "punctuation": "",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 12120,
+              "end_time": 12560,
+              "text": " and",
+              "punctuation": "",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 12560,
+              "end_time": 13080,
+              "text": " gorgeous",
+              "punctuation": ".",
+              "confidence": 1.0
+            }
+          ]
+        },
+        {
+          "begin_time": 13720,
+          "end_time": 18680,
+          "text": " As you may notice, each character in my name has a single person next to it.",
+          "sentence_id": 3,
+          "words": [
+            {
+              "begin_time": 13720,
+              "end_time": 13920,
+              "text": " As",
+              "punctuation": "",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 13920,
+              "end_time": 14040,
+              "text": " you",
+              "punctuation": "",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 14040,
+              "end_time": 14320,
+              "text": " may",
+              "punctuation": "",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 14320,
+              "end_time": 14720,
+              "text": " notice",
+              "punctuation": ",",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 15080,
+              "end_time": 15480,
+              "text": " each",
+              "punctuation": "",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 15480,
+              "end_time": 15960,
+              "text": " character",
+              "punctuation": "",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 15960,
+              "end_time": 16120,
+              "text": " in",
+              "punctuation": "",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 16120,
+              "end_time": 16280,
+              "text": " my",
+              "punctuation": "",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 16280,
+              "end_time": 16680,
+              "text": " name",
+              "punctuation": "",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 16680,
+              "end_time": 16880,
+              "text": " has",
+              "punctuation": "",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 16880,
+              "end_time": 17120,
+              "text": " a",
+              "punctuation": "",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 17120,
+              "end_time": 17560,
+              "text": " single",
+              "punctuation": "",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 17560,
+              "end_time": 17880,
+              "text": " person",
+              "punctuation": "",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 17880,
+              "end_time": 18160,
+              "text": " next",
+              "punctuation": "",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 18160,
+              "end_time": 18320,
+              "text": " to",
+              "punctuation": "",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 18320,
+              "end_time": 18680,
+              "text": " it",
+              "punctuation": ".",
+              "confidence": 1.0
+            }
+          ]
+        },
+        {
+          "begin_time": 18960,
+          "end_time": 25360,
+          "text": " So I think my parents want me to grow into a person who is beautiful, gorgeous and talented. ",
+          "sentence_id": 4,
+          "words": [
+            {
+              "begin_time": 18960,
+              "end_time": 19160,
+              "text": " So",
+              "punctuation": "",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 19160,
+              "end_time": 19320,
+              "text": " I",
+              "punctuation": "",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 19320,
+              "end_time": 19600,
+              "text": " think",
+              "punctuation": "",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 19600,
+              "end_time": 19920,
+              "text": " my",
+              "punctuation": "",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 19920,
+              "end_time": 20360,
+              "text": " parents",
+              "punctuation": "",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 20360,
+              "end_time": 20520,
+              "text": " want",
+              "punctuation": "",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 20520,
+              "end_time": 20640,
+              "text": " me",
+              "punctuation": "",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 20640,
+              "end_time": 20880,
+              "text": " to",
+              "punctuation": "",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 20880,
+              "end_time": 21120,
+              "text": " grow",
+              "punctuation": "",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 21120,
+              "end_time": 21480,
+              "text": " into",
+              "punctuation": "",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 21480,
+              "end_time": 21800,
+              "text": " a",
+              "punctuation": "",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 21800,
+              "end_time": 22400,
+              "text": " person",
+              "punctuation": "",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 22400,
+              "end_time": 22600,
+              "text": " who",
+              "punctuation": "",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 22600,
+              "end_time": 22920,
+              "text": " is",
+              "punctuation": "",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 22920,
+              "end_time": 23480,
+              "text": " beautiful",
+              "punctuation": ",",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 23920,
+              "end_time": 24440,
+              "text": " gorgeous",
+              "punctuation": "",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 24440,
+              "end_time": 24760,
+              "text": " and",
+              "punctuation": "",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 24760,
+              "end_time": 25360,
+              "text": " talented",
+              "punctuation": ". ",
+              "confidence": 1.0
+            }
+          ]
+        },
+        {
+          "begin_time": 25690,
+          "end_time": 33370,
+          "text": "Like the lively flower bloom in the spring, and I would also like to bring a touch of gorgeousness to every aspect of my life.",
+          "sentence_id": 5,
+          "words": [
+            {
+              "begin_time": 25690,
+              "end_time": 25930,
+              "text": "Like",
+              "punctuation": "",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 25930,
+              "end_time": 26090,
+              "text": " the",
+              "punctuation": "",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 26090,
+              "end_time": 26530,
+              "text": " lively",
+              "punctuation": "",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 26530,
+              "end_time": 27010,
+              "text": " flower",
+              "punctuation": "",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 27010,
+              "end_time": 27250,
+              "text": " bloom",
+              "punctuation": "",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 27250,
+              "end_time": 27370,
+              "text": " in",
+              "punctuation": "",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 27370,
+              "end_time": 27530,
+              "text": " the",
+              "punctuation": "",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 27530,
+              "end_time": 28170,
+              "text": " spring",
+              "punctuation": ",",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 28930,
+              "end_time": 29090,
+              "text": " and",
+              "punctuation": "",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 29090,
+              "end_time": 29210,
+              "text": " I",
+              "punctuation": "",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 29210,
+              "end_time": 29450,
+              "text": " would",
+              "punctuation": "",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 29450,
+              "end_time": 29690,
+              "text": " also",
+              "punctuation": "",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 29690,
+              "end_time": 29850,
+              "text": " like",
+              "punctuation": "",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 29850,
+              "end_time": 30010,
+              "text": " to",
+              "punctuation": "",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 30010,
+              "end_time": 30210,
+              "text": " bring",
+              "punctuation": "",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 30210,
+              "end_time": 30330,
+              "text": " a",
+              "punctuation": "",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 30330,
+              "end_time": 30610,
+              "text": " touch",
+              "punctuation": "",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 30610,
+              "end_time": 31010,
+              "text": " of",
+              "punctuation": "",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 31010,
+              "end_time": 31250,
+              "text": " gorgeous",
+              "punctuation": "",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 31250,
+              "end_time": 31530,
+              "text": "ness",
+              "punctuation": "",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 31530,
+              "end_time": 31810,
+              "text": " to",
+              "punctuation": "",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 31810,
+              "end_time": 32210,
+              "text": " every",
+              "punctuation": "",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 32210,
+              "end_time": 32530,
+              "text": " aspect",
+              "punctuation": "",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 32530,
+              "end_time": 32690,
+              "text": " of",
+              "punctuation": "",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 32690,
+              "end_time": 32890,
+              "text": " my",
+              "punctuation": "",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 32890,
+              "end_time": 33370,
+              "text": " life",
+              "punctuation": ".",
+              "confidence": 1.0
+            }
+          ]
+        },
+        {
+          "begin_time": 33850,
+          "end_time": 34570,
+          "text": " Thank you. ",
+          "sentence_id": 6,
+          "words": [
+            {
+              "begin_time": 33850,
+              "end_time": 34050,
+              "text": " Thank",
+              "punctuation": "",
+              "confidence": 1.0
+            },
+            {
+              "begin_time": 34050,
+              "end_time": 34570,
+              "text": " you",
+              "punctuation": ". ",
+              "confidence": 1.0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
