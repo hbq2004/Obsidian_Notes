@@ -17,7 +17,7 @@
                 "viewState": {
                   "x": -5308.13203109898,
                   "y": 8361.875626384497,
-                  "zoom": 0.016632025138739626
+                  "zoom": -1.4439614385480746
                 }
               },
               "icon": "lucide-layout-dashboard",
@@ -86,8 +86,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "de36ae7c692e0648",
@@ -216,6 +215,7 @@
   },
   "active": "43cbaf7e48dc13e8",
   "lastOpenFiles": [
+    "文稿/视频转写",
     "_Attachments/Images/Pasted image 20260917211929.png",
     "_Attachments/Images/Pasted image 20260917205749.png",
     "_Attachments/Images/Pasted image 20260917205205.png",
@@ -227,7 +227,6 @@
     "_Attachments/Images/Pasted image 20260917193358.png",
     "_Attachments/Images/Pasted image 20260917190814.png",
     "_Attachments/Images/Pasted image 20260917185647.png",
-    "_Attachments/Images/Pasted image 20260917184306.png",
     "01 - 数学/03 - 概统/04 - 随机变量的数字特征.canvas",
     "01 - 数学/03 - 概统/05 - 大数定律与中心极限定律.canvas",
     "好题错题整理/_待确认/随机题目/未注明来源/WEB-20260917-170613-8d10.md",
