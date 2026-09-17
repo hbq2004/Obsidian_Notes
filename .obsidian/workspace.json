@@ -15,9 +15,9 @@
               "state": {
                 "file": "01 - 数学/03 - 概统/03 - 多维随机变量及其分布.canvas",
                 "viewState": {
-                  "x": -8149.569364475457,
-                  "y": 3471.0954948828635,
-                  "zoom": -1.8091098044697778
+                  "x": -15704.498398328638,
+                  "y": 3063.96608322273,
+                  "zoom": 0.016632025138739626
                 }
               },
               "icon": "lucide-layout-dashboard",
@@ -103,7 +103,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "_Attachments/Images/Pasted image 20260917155846.png",
+                "file": "01 - 数学/03 - 概统/03 - 多维随机变量及其分布.canvas",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "_Attachments/Images/Pasted image 20260917155846.png",
+                "file": "01 - 数学/03 - 概统/03 - 多维随机变量及其分布.canvas",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
@@ -165,7 +165,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "_Attachments/Images/Pasted image 20260917155846.png",
+                "file": "01 - 数学/03 - 概统/03 - 多维随机变量及其分布.canvas",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -184,11 +184,12 @@
               "title": "Calendar"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
-    "width": 300,
+    "width": 451.4732666015625,
     "collapsed": true
   },
   "left-ribbon": {
@@ -215,10 +216,21 @@
   },
   "active": "43cbaf7e48dc13e8",
   "lastOpenFiles": [
-    "_Attachments/Images/Pasted image 20260917155846.png",
-    "_Attachments/Images/Pasted image 20260917152842.png",
-    "_Attachments/Images/Pasted image 20260917152626.png",
-    "_Attachments/Images/Pasted image 20260917152520.png",
+    "01 - 数学/03 - 概统/04 - 随机变量的数字特征.canvas",
+    "01 - 数学/03 - 概统/03 - 多维随机变量及其分布.canvas",
+    "_Attachments/Images/Pasted image 20260917173108.png",
+    "_Attachments/Images/Pasted image 20260917173010.png",
+    "_Attachments/Images/Pasted image 20260917172915.png",
+    "_Attachments/Images/Pasted image 20260917172849.png",
+    "_Attachments/Images/Pasted image 20260917172829.png",
+    "_Attachments/Images/Pasted image 20260917172753.png",
+    "_Attachments/Images/Pasted image 20260917172727.png",
+    "_Attachments/Images/Pasted image 20260917172525.png",
+    "_Attachments/Images/Pasted image 20260917172455.png",
+    "_Attachments/Images/Pasted image 20260917172428.png",
+    "01 - 数学/03 - 概统/05 - 大数定律与中心极限定律.canvas",
+    "好题错题整理/_待确认/随机题目/未注明来源/WEB-20260917-170613-8d10.md",
+    "好题错题整理/_待确认/随机题目/未注明来源",
     "01 - 数学/03 - 概统/02 - 一维随机变量及其分布.canvas",
     "01 - 数学/03 - 概统/01 - 随机事件与概率.canvas"
   ]
