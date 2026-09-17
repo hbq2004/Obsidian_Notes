@@ -54,12 +54,23 @@
 		{"id":"beef4d5b8321f99a","type":"file","file":"_Attachments/Images/Pasted image 20260917185647.png","x":-7142,"y":5220,"width":950,"height":376},
 		{"id":"f5055c676a04818c","type":"file","file":"_Attachments/Images/Pasted image 20260917171356.png","x":-3600,"y":3200,"width":1753,"height":2560},
 		{"id":"8f03a77f4cc6e312","type":"file","file":"_Attachments/Images/Pasted image 20260917171545.png","x":-5680,"y":3231,"width":1039,"height":2529},
-		{"id":"64441a2e338e4d6b","type":"file","file":"_Attachments/Images/Pasted image 20260917190814.png","x":-4641,"y":3880,"width":800,"height":451},
+		{"id":"64441a2e338e4d6b","type":"file","file":"_Attachments/Images/Pasted image 20260917190814.png","x":-4641,"y":3880,"width":875,"height":493},
 		{"id":"030a3eed225906f3","type":"file","file":"_Attachments/Images/Pasted image 20260917194520.png","x":-6918,"y":6759,"width":2126,"height":2809},
 		{"id":"993b77aeea1226e9","type":"file","file":"_Attachments/Images/Pasted image 20260917195658.png","x":-4478,"y":6911,"width":2372,"height":2560},
 		{"id":"08b3b9b6a816a39b","type":"file","file":"_Attachments/Images/Pasted image 20260917193358.png","x":-10849,"y":6759,"width":1528,"height":2688},
 		{"id":"54f9274a6a8895ab","type":"file","file":"_Attachments/Images/Pasted image 20260917204241.png","x":-6821,"y":10080,"width":1933,"height":2710},
-		{"id":"ce0fcccea1a4b2bf","type":"file","file":"_Attachments/Images/Pasted image 20260917205205.png","x":-2106,"y":8164,"width":1550,"height":440}
+		{"id":"ce0fcccea1a4b2bf","type":"file","file":"_Attachments/Images/Pasted image 20260917205205.png","x":-2106,"y":8164,"width":1550,"height":440},
+		{"id":"9ebf02e3290731ce","type":"file","file":"_Attachments/Images/Pasted image 20260917205749.png","x":-4800,"y":10080,"width":1895,"height":2353},
+		{
+			"id":"ca71b55fc882f6c8",
+			"type":"text",
+			"text":"求某个字母的边缘概率密度：\n切一刀，把另外一个字母积掉",
+			"styleAttributes":{"textAlign":"center"},
+			"x":-4373,
+			"y":4440,
+			"width":340,
+			"height":200
+		}
 	],
 	"edges":[
 		{
@@ -160,6 +171,15 @@
 			"fromNode":"030a3eed225906f3",
 			"fromSide":"bottom",
 			"toNode":"54f9274a6a8895ab",
+			"toSide":"top"
+		},
+		{
+			"id":"5df89952235920ad",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"64441a2e338e4d6b",
+			"fromSide":"bottom",
+			"toNode":"ca71b55fc882f6c8",
 			"toSide":"top"
 		}
 	],
