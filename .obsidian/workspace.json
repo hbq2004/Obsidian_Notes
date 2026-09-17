@@ -1,27 +1,20 @@
 {
   "main": {
-    "id": "5324373015726ba8",
+    "id": "d5d7239803744980",
     "type": "split",
     "children": [
       {
-        "id": "3e036ebe88760705",
+        "id": "9f5695f36a4cbce2",
         "type": "tabs",
         "children": [
           {
-            "id": "97042956652ca06c",
+            "id": "43cbaf7e48dc13e8",
             "type": "leaf",
             "state": {
-              "type": "canvas",
-              "state": {
-                "file": "01 - 数学/01 - 高数/08 - 多重积分/01 - 二重积分.canvas",
-                "viewState": {
-                  "x": 650.4677023369572,
-                  "y": 2207.597010873643,
-                  "zoom": -1.6944786134162442
-                }
-              },
-              "icon": "lucide-layout-dashboard",
-              "title": "01 - 二重积分"
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "新标签页"
             }
           }
         ]
@@ -30,16 +23,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "ee636a372a44cc40",
+    "id": "c709be0e32477afe",
     "type": "split",
     "children": [
       {
-        "id": "c0e7e161521c3933",
+        "id": "57ad602cd44bbc4e",
         "type": "tabs",
-        "dimension": 65.50137994480221,
         "children": [
           {
-            "id": "12ec190f678aca36",
+            "id": "889d008d3a0b974c",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -54,17 +46,7 @@
             }
           },
           {
-            "id": "e312e4bf0fb1d5bf",
-            "type": "leaf",
-            "state": {
-              "type": "notebook-navigator",
-              "state": {},
-              "icon": "notebook-navigator",
-              "title": "Notebook Navigator"
-            }
-          },
-          {
-            "id": "29d7a9f6720fac2b",
+            "id": "ac0a431849acd393",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -81,7 +63,7 @@
             }
           },
           {
-            "id": "de7b63e125de8912",
+            "id": "b5109cfe82be9887",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -92,123 +74,27 @@
               "icon": "lucide-bookmark",
               "title": "书签"
             }
-          },
-          {
-            "id": "9ee25ba6440a60e4",
-            "type": "leaf",
-            "state": {
-              "type": "git-view",
-              "state": {},
-              "icon": "git-pull-request",
-              "title": "Source Control"
-            }
-          }
-        ]
-      },
-      {
-        "id": "021290095a38d257",
-        "type": "tabs",
-        "dimension": 34.49862005519779,
-        "children": [
-          {
-            "id": "b061961892ad316c",
-            "type": "leaf",
-            "state": {
-              "type": "recent-files",
-              "state": {},
-              "icon": "clock",
-              "title": "Recent files"
-            }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 345.5,
-    "collapsed": true
+    "width": 300
   },
   "right": {
-    "id": "788c2b70f5d82052",
+    "id": "de36ae7c692e0648",
     "type": "split",
     "children": [
       {
-        "id": "d3194df03de22e80",
+        "id": "74519f95873b29fd",
         "type": "tabs",
-        "dimension": 66.90265486725664,
         "children": [
           {
-            "id": "2985ca4c34adc55a",
-            "type": "leaf",
-            "state": {
-              "type": "outline",
-              "state": {
-                "file": "01 - 数学/03 - 概统/03 - 多维随机变量及其分布.canvas",
-                "followCursor": false,
-                "showSearch": true,
-                "searchQuery": ""
-              },
-              "icon": "lucide-list",
-              "title": "大纲"
-            }
-          },
-          {
-            "id": "42733061a6ea5d4f",
-            "type": "leaf",
-            "state": {
-              "type": "tag",
-              "state": {
-                "sortOrder": "frequency",
-                "useHierarchy": false,
-                "showSearch": false,
-                "searchQuery": ""
-              },
-              "icon": "lucide-tags",
-              "title": "标签"
-            }
-          },
-          {
-            "id": "730d3f96cd74f495",
-            "type": "leaf",
-            "state": {
-              "type": "all-properties",
-              "state": {
-                "sortOrder": "frequency",
-                "showSearch": true,
-                "searchQuery": ""
-              },
-              "icon": "lucide-archive",
-              "title": "添加笔记属性"
-            }
-          },
-          {
-            "id": "dcf04f878205730d",
-            "type": "leaf",
-            "state": {
-              "type": "tag-index-view",
-              "state": {},
-              "icon": "hash",
-              "title": "Tag Index"
-            }
-          },
-          {
-            "id": "93510c5ac65e26b3",
-            "type": "leaf",
-            "state": {
-              "type": "file-properties",
-              "state": {
-                "file": "01 - 数学/01 - 高数/08 - 多重积分/01 - 二重积分.canvas"
-              },
-              "icon": "lucide-info",
-              "title": "笔记属性"
-            }
-          },
-          {
-            "id": "66bba441f4181092",
+            "id": "edd5d7726e590ff4",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "01 - 数学/01 - 高数/08 - 多重积分/01 - 二重积分.canvas",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -222,29 +108,63 @@
             }
           },
           {
-            "id": "31a6fc57ba27f308",
+            "id": "1de75499d47671b2",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Anki/2.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "2 的出链列表"
+              "title": "出链"
             }
-          }
-        ],
-        "currentTab": 1
-      },
-      {
-        "id": "fc86d4887f1486af",
-        "type": "tabs",
-        "dimension": 33.097345132743364,
-        "children": [
+          },
           {
-            "id": "c4f5b980ce38c67a",
+            "id": "8d3fbc7d8b90b71c",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "58362eb96b47b3b4",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "添加笔记属性"
+            }
+          },
+          {
+            "id": "01bb9c77408a535b",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "大纲"
+            }
+          },
+          {
+            "id": "f3b8eee8025450a2",
             "type": "leaf",
             "state": {
               "type": "calendar",
@@ -257,87 +177,31 @@
       }
     ],
     "direction": "horizontal",
-    "width": 374.5,
+    "width": 300,
     "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
-      "daily-notes:打开/创建今天的日记": false,
-      "zk-prefixer:创建时间戳笔记": false,
-      "omnisearch:Omnisearch": false,
       "switcher:打开快速切换": false,
       "graph:查看关系图谱": false,
       "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
       "command-palette:打开命令面板": false,
+      "zk-prefixer:创建时间戳笔记": false,
       "bases:新建数据库": false,
       "obsidian-git:Open Git source control": false,
       "obsidian-to-anki-plugin:Obsidian_to_Anki - Scan Vault": false,
       "templater-obsidian:Templater": false,
-      "callout-manager:Insert Callout": false,
+      "obsidian-excalidraw-plugin:新建绘图文件": false,
       "pdf-plus:PDF++: Toggle auto-copy": false,
       "pdf-plus:PDF++: Toggle auto-focus": false,
       "pdf-plus:PDF++: Toggle auto-paste": false,
-      "obsidian-excalidraw-plugin:新建绘图文件": false,
+      "omnisearch:Omnisearch": false,
+      "callout-manager:Insert Callout": false,
       "notebook-navigator:Notebook Navigator": false,
       "tag-index:Open tag index": false
     }
   },
-  "active": "97042956652ca06c",
-  "lastOpenFiles": [
-    "01 - 数学/03 - 概统/03 - 多维随机变量及其分布.canvas",
-    "01 - 数学/03 - 概统/04 - 随机变量的数字特征.canvas",
-    "01 - 数学/03 - 概统/06 - 数理统计.canvas",
-    "01 - 数学/03 - 概统/05 - 大数定律与中心极限定律.canvas",
-    "好题错题整理/_待确认/随机题目/Codex验收/CODEX-RANDOM-CHECK-20260917.md",
-    "_Attachments/Images/随机题目-Codex验收-CODEX-RANDOM-CHECK-20260917-答案-01.png",
-    "_Attachments/Images/随机题目-Codex验收-CODEX-RANDOM-CHECK-20260917-题目.png",
-    "好题错题整理/_待确认/随机题目/Codex验收",
-    "_Attachments/Images/Pasted image 20260917012832.png",
-    "_Attachments/Images/Pasted image 20260917012648.png",
-    "_Attachments/Images/Pasted image 20260917012624.png",
-    "01 - 数学/03 - 概统/01 - 随机事件与概率.canvas",
-    "01 - 数学/03 - 概统/02 - 一维随机变量及其分布.canvas",
-    "01 - 数学/01 - 高数/08 - 多重积分/01 - 二重积分.canvas",
-    "_Attachments/Images/Pasted image 20260916230952.png",
-    "_Attachments/Images/Pasted image 20260916230607.png",
-    "02 - 408/01 - 数据结构/大题/01 - 算法题/2026,41,BST,searchX.md",
-    "02 - 408/01 - 数据结构/大题/01 - 算法题/2011,42.md",
-    "02 - 408/01 - 数据结构/大题/01 - 算法题/2009,42.md",
-    "02 - 408/01 - 数据结构/大题/01 - 算法题/2010,42.md",
-    "02 - 408/01 - 数据结构/大题/01 - 算法题/2012,42.md",
-    "02 - 408/01 - 数据结构/大题/01 - 算法题/2016,43.md",
-    "好题错题整理/_待确认/随机题目/抖音",
-    "好题错题整理/_待确认/随机题目/其他网络",
-    "好题错题整理/_待确认/随机题目/B站",
-    "好题错题整理/_待确认/随机题目",
-    "_Attachments/Images/网络随机题-其他网络-Codex写回验收-CODEX-WRITE-CHECK-20260916-答案-01.png",
-    "_Attachments/Images/网络随机题-其他网络-Codex写回验收-CODEX-WRITE-CHECK-20260916-题目.png",
-    "好题错题整理/_待确认/网络随机题/其他网络/Codex写回验收/CODEX-WRITE-CHECK-20260916.md",
-    "好题错题整理/_待确认/网络随机题/其他网络/Codex写回验收",
-    "好题错题整理/_待确认/网络随机题/抖音",
-    "好题错题整理/_待确认/网络随机题/其他网络",
-    "好题错题整理/_待确认/网络随机题/B站",
-    "好题错题整理/_待确认/网络随机题",
-    "_Attachments/Images/Pasted image 20260908204934.png",
-    "_Backups/好题错题整理-408-tags-before-20260916-161249/files/_待确认/27_王道408/01 - DS/07 - 查找/1-MCQ/DS-C07-75-M12.md",
-    "_Backups/好题错题整理-408-tags-before-20260916-161249/files/_待确认/27_王道408/01 - DS/07 - 查找/1-MCQ/DS-C07-75-M14.md",
-    "_Backups/好题错题整理-408-tags-before-20260916-161249/files/_待确认/27_王道408/01 - DS/07 - 查找/1-MCQ/DS-C07-75-M07.md",
-    "_Backups/好题错题整理-408-tags-before-20260916-161249/files/_待确认/27_王道408/01 - DS/07 - 查找/1-MCQ/DS-C07-74-M22.md",
-    "_Backups/好题错题整理-408-tags-before-20260916-161249/files/_待确认/27_王道408/01 - DS/07 - 查找/1-MCQ/DS-C07-74-M11.md",
-    "_Backups/好题错题整理-408-tags-before-20260916-161249/files/_待确认/27_王道408/01 - DS/07 - 查找/1-MCQ/DS-C07-74-M10.md",
-    "_Backups/好题错题整理-408-tags-before-20260916-161249/files/_待确认/27_王道408/01 - DS/06 - 图/1-MCQ/DS-C06-64-M41.md",
-    "_Backups/好题错题整理-408-tags-before-20260916-161249/files/_待确认/27_王道408/01 - DS/06 - 图/1-MCQ/DS-C06-64-M11.md",
-    "_Backups/好题错题整理-408-tags-before-20260916-161249/files/_待确认/27_王道408/01 - DS/06 - 图/1-MCQ/DS-C06-63-M17.md",
-    "_Backups/好题错题整理-408-tags-before-20260916-161249/files/_待确认/27_王道408/01 - DS/06 - 图/1-MCQ/DS-C06-63-M16.md",
-    "_Backups/好题错题整理-408-tags-before-20260916-161249/files/_待确认/27_王道408/01 - DS/06 - 图/1-MCQ/DS-C06-63-M11.md",
-    "_Backups/好题错题整理-408-tags-before-20260916-161249/files/_待确认/27_王道408/01 - DS/06 - 图/1-MCQ/DS-C06-63-M10.md",
-    "_Backups/好题错题整理-408-tags-before-20260916-161249/files/_待确认/27_王道408/01 - DS/06 - 图/1-MCQ/DS-C06-63-M09.md",
-    "_Backups/好题错题整理-408-tags-before-20260916-161249/files/_待确认/27_王道408/01 - DS/06 - 图/1-MCQ/DS-C06-63-M08.md",
-    "_Backups/好题错题整理-408-tags-before-20260916-161249/files/_待确认/27_王道408/01 - DS/06 - 图/1-MCQ/DS-C06-63-M05.md",
-    "_Backups/好题错题整理-408-tags-before-20260916-161249/files/_待确认/27_王道408/01 - DS/06 - 图/1-MCQ/DS-C06-63-M07.md",
-    "_Backups/好题错题整理-408-tags-before-20260916-161249/files/_待确认/27_王道408/01 - DS/06 - 图/1-MCQ/DS-C06-63-M03.md",
-    "01 - 数学/01 - 高数/微积分应用.canvas",
-    "01 - 数学/01 - 高数/07 - 多元微分/多元微分.canvas",
-    "01 - 数学/01 - 高数/08 - 多重积分/02 - 空间解析几何.canvas"
-  ]
+  "active": "43cbaf7e48dc13e8",
+  "lastOpenFiles": []
 }

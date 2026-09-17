@@ -3,13 +3,14 @@ ctime: 2026-08-15 19:15:57
 mtime: 2026-08-20 01:07:44
 tags:
   - AM
-  - AM/精选好题
+  - 好题
   - 计算题
+  - 不等式
+points:
   - 矩阵的秩
   - Sylvester不等式
   - 秩一矩阵
   - 矩阵的迹
-points:
 level:
 ---
 
