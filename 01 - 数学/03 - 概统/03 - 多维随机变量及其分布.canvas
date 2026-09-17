@@ -6,7 +6,7 @@
 		{"id":"a18c11fd0f88608c","type":"group","x":13600,"y":3040,"width":7840,"height":2704,"label":"相互独立随机变量函数的七种分布"},
 		{"id":"aa5571c101820380","type":"group","x":-7720,"y":3080,"width":6000,"height":2880,"label":"二维连续型随机变量的概率密度、边缘概率密度和条件概率密度"},
 		{"id":"d7945f7bcfcc427c","type":"group","x":-11800,"y":3080,"width":3840,"height":2640,"label":"二维离散随机变量的概率分布、边缘分布和条件分布"},
-		{"id":"125f82c795ec23dd","type":"group","x":-16320,"y":2540,"width":3280,"height":1080,"label":"n 维随机变量及其分布函数"},
+		{"id":"125f82c795ec23dd","type":"group","x":-16320,"y":2540,"width":4000,"height":1620,"label":"n 维随机变量及其分布函数"},
 		{"id":"53577cbc21905fb8","type":"file","file":"_Attachments/Images/Pasted image 20260917172915.png","x":18155,"y":3560,"width":1325,"height":469},
 		{"id":"60f8b6f5017471fe","type":"file","file":"_Attachments/Images/Pasted image 20260917173010.png","x":18155,"y":4156,"width":1425,"height":1307},
 		{"id":"e37642bb713aef0f","type":"file","file":"_Attachments/Images/Pasted image 20260917173108.png","x":19715,"y":4155,"width":1600,"height":775},
@@ -37,9 +37,21 @@
 		{"id":"f5055c676a04818c","type":"file","file":"_Attachments/Images/Pasted image 20260917171356.png","x":-3840,"y":3200,"width":1753,"height":2560},
 		{"id":"1e9f4ac334a2f161","type":"file","file":"_Attachments/Images/Pasted image 20260917155846.png","x":-7480,"y":3751,"width":1625,"height":1270},
 		{"id":"8f03a77f4cc6e312","type":"file","file":"_Attachments/Images/Pasted image 20260917171545.png","x":-5480,"y":3200,"width":1039,"height":2529},
-		{"id":"f140ce5762aba006","type":"file","file":"_Attachments/Images/Pasted image 20260917012648.png","x":-14160,"y":2767,"width":924,"height":576},
+		{"id":"f140ce5762aba006","type":"file","file":"_Attachments/Images/Pasted image 20260917012648.png","x":-14160,"y":2767,"width":1274,"height":800},
 		{"id":"05f6ff053ad843c3","type":"file","file":"_Attachments/Images/Pasted image 20260917012624.png","x":-16240,"y":2827,"width":1075,"height":452},
-		{"id":"0f4df0cf443c2e75","type":"file","file":"_Attachments/Images/Pasted image 20260917012832.png","x":-15000,"y":2620,"width":551,"height":879}
+		{"id":"0f4df0cf443c2e75","type":"file","file":"_Attachments/Images/Pasted image 20260917012832.png","x":-15000,"y":2620,"width":551,"height":879},
+		{"id":"23a7cd020004ab49","type":"file","file":"_Attachments/Images/Pasted image 20260917174812.png","x":-14974,"y":3499,"width":500,"height":335},
+		{
+			"id":"2d578547c0674f67",
+			"type":"text",
+			"text":"二维差分",
+			"styleAttributes":{"textAlign":"center"},
+			"x":-14380,
+			"y":3637,
+			"width":260,
+			"height":60
+		},
+		{"id":"46e06e122618ab52","type":"file","file":"_Attachments/Images/Pasted image 20260917175124.png","x":-13898,"y":3667,"width":750,"height":392}
 	],
 	"edges":[
 		{
@@ -95,6 +107,24 @@
 			"fromNode":"536de9dc3e810ff3",
 			"fromSide":"bottom",
 			"toNode":"61a8df8154855571",
+			"toSide":"top"
+		},
+		{
+			"id":"d41babdae1551331",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"23a7cd020004ab49",
+			"fromSide":"right",
+			"toNode":"2d578547c0674f67",
+			"toSide":"left"
+		},
+		{
+			"id":"11184f58c80e52d9",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"f140ce5762aba006",
+			"fromSide":"bottom",
+			"toNode":"46e06e122618ab52",
 			"toSide":"top"
 		}
 	],
