@@ -1,6 +1,26 @@
 {
   "recentFiles": [
     {
+      "basename": "03 - 多维随机变量及其分布",
+      "path": "01 - 数学/03 - 概统/03 - 多维随机变量及其分布.canvas"
+    },
+    {
+      "basename": "Pasted image 20260917205205",
+      "path": "_Attachments/Images/Pasted image 20260917205205.png"
+    },
+    {
+      "basename": "02 - 空间解析几何",
+      "path": "01 - 数学/01 - 高数/08 - 多重积分/02 - 空间解析几何.canvas"
+    },
+    {
+      "basename": "01 - 二重积分",
+      "path": "01 - 数学/01 - 高数/08 - 多重积分/01 - 二重积分.canvas"
+    },
+    {
+      "basename": "03 - 三重积分",
+      "path": "01 - 数学/01 - 高数/08 - 多重积分/03 - 三重积分.canvas"
+    },
+    {
       "basename": "亚瑟爱数学 - 预报名",
       "path": "视频转写文稿/亚瑟爱数学 - 预报名.md"
     },
@@ -33,10 +53,6 @@
       "path": "视频转写文稿/douyin-transcript (2).md"
     },
     {
-      "basename": "03 - 多维随机变量及其分布",
-      "path": "01 - 数学/03 - 概统/03 - 多维随机变量及其分布.canvas"
-    },
-    {
       "basename": "Pasted image 20260917194520",
       "path": "_Attachments/Images/Pasted image 20260917194520.png"
     },
@@ -47,10 +63,6 @@
     {
       "basename": "Pasted image 20260917205749",
       "path": "_Attachments/Images/Pasted image 20260917205749.png"
-    },
-    {
-      "basename": "Pasted image 20260917205205",
-      "path": "_Attachments/Images/Pasted image 20260917205205.png"
     },
     {
       "basename": "Pasted image 20260917195658",
@@ -187,18 +199,6 @@
     {
       "basename": "02 - 一维随机变量及其分布",
       "path": "01 - 数学/03 - 概统/02 - 一维随机变量及其分布.canvas"
-    },
-    {
-      "basename": "01 - 随机事件与概率",
-      "path": "01 - 数学/03 - 概统/01 - 随机事件与概率.canvas"
-    },
-    {
-      "basename": "03 - 三重积分",
-      "path": "01 - 数学/01 - 高数/08 - 多重积分/03 - 三重积分.canvas"
-    },
-    {
-      "basename": "01 - 二重积分",
-      "path": "01 - 数学/01 - 高数/08 - 多重积分/01 - 二重积分.canvas"
     }
   ],
   "omittedPaths": [],

@@ -4,21 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "9f5695f36a4cbce2",
+        "id": "ccb5de4a87fd0bdc",
         "type": "tabs",
         "children": [
           {
-            "id": "43cbaf7e48dc13e8",
+            "id": "9c06b7220f1dff89",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "canvas",
               "state": {
-                "file": "视频转写文稿/亚瑟爱数学 - 预报名.md",
-                "mode": "source",
-                "source": false
+                "file": "01 - 数学/03 - 概统/03 - 多维随机变量及其分布.canvas",
+                "viewState": {
+                  "x": -5076.9533011507065,
+                  "y": 4013.871763553699,
+                  "zoom": 0.016632025138739626
+                }
               },
-              "icon": "lucide-file",
-              "title": "亚瑟爱数学 - 预报名"
+              "icon": "lucide-layout-dashboard",
+              "title": "03 - 多维随机变量及其分布"
             }
           }
         ]
@@ -41,7 +44,7 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": false,
+                "autoReveal": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
@@ -83,7 +86,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "de36ae7c692e0648",
@@ -210,8 +214,12 @@
       "tag-index:Open tag index": false
     }
   },
-  "active": "889d008d3a0b974c",
+  "active": "9c06b7220f1dff89",
   "lastOpenFiles": [
+    "01 - 数学/01 - 高数/08 - 多重积分/02 - 空间解析几何.canvas",
+    "01 - 数学/01 - 高数/08 - 多重积分/01 - 二重积分.canvas",
+    "01 - 数学/01 - 高数/08 - 多重积分/03 - 三重积分.canvas",
+    "视频转写文稿/亚瑟爱数学 - 预报名.md",
     "视频转写文稿/douyin-transcript.md",
     "视频转写文稿/douyin-transcript (3).md",
     "视频转写文稿/douyin-transcript (4).md",
@@ -219,7 +227,6 @@
     "视频转写文稿/douyin-transcript (6).md",
     "视频转写文稿/douyin-transcript (7).md",
     "视频转写文稿/douyin-transcript (2).md",
-    "视频转写文稿/亚瑟爱数学 - 预报名.md",
     "01 - 数学/03 - 概统/03 - 多维随机变量及其分布.canvas",
     "视频转写文稿",
     "文稿/视频转写/douyin-transcript.md",

@@ -26,19 +26,31 @@
 		{"id":"5142c1b7b1629eca","type":"file","file":"_Attachments/Images/Pasted image 20260910201658.png","x":-14734,"y":3880,"width":671,"height":380},
 		{"id":"ba1390f42a175a66","type":"file","file":"_Attachments/Images/Pasted image 20260910173737.png","x":-15280,"y":1282,"width":1111,"height":1325},
 		{"id":"9b165175a7557378","type":"file","file":"_Attachments/Images/Pasted image 20260910173918.png","x":-10560,"y":1868,"width":1010,"height":1121},
-		{"id":"97b4ae18b9d9473b","type":"file","file":"_Attachments/Images/Pasted image 20260910174526.png","x":-7360,"y":1960,"width":1551,"height":2732},
-		{"id":"52bfb52b27afe2e3","type":"file","file":"_Attachments/Images/Pasted image 20260910203621.png","x":-8200,"y":2293,"width":311,"height":400},
+		{"id":"98f5fba1bad52019","type":"file","file":"_Attachments/Images/Pasted image 20260913021521.png","x":-9161,"y":1680,"width":593,"height":221},
 		{
-			"id":"4fd279e6dac6b895",
+			"id":"0c98285327dc14aa",
 			"type":"text",
-			"text":"直线在平面上的投影方程",
+			"text":"(2) 二次曲面 + (3) 柱面 —— **记忆**\n(4) 旋转曲面 —— **计算**",
 			"styleAttributes":{"textAlign":"center"},
-			"x":-9679,
-			"y":5720,
-			"width":340,
-			"height":100
+			"x":-4120,
+			"y":3852,
+			"width":785,
+			"height":136
 		},
-		{"id":"9c37312a6889dd70","type":"file","file":"_Attachments/Images/Pasted image 20260910203651.png","x":-8244,"y":2760,"width":398,"height":96},
+		{"id":"2c920b98a4ab9ec4","type":"file","file":"_Attachments/Images/Pasted image 20260911172641.png","x":-4384,"y":5545,"width":1025,"height":652},
+		{
+			"id":"c243227571c24108",
+			"type":"text",
+			"text":"点向式转化为一般式",
+			"styleAttributes":{"textAlign":"center"},
+			"x":-8440,
+			"y":1760,
+			"width":320,
+			"height":60
+		},
+		{"id":"09e4f1e0404e050d","type":"file","file":"_Attachments/Images/Pasted image 20260913162651.png","x":-6220,"y":5460,"width":675,"height":296},
+		{"id":"52bfb52b27afe2e3","type":"file","file":"_Attachments/Images/Pasted image 20260910203621.png","x":-8200,"y":2293,"width":311,"height":400},
+		{"id":"97b4ae18b9d9473b","type":"file","file":"_Attachments/Images/Pasted image 20260910174526.png","x":-7360,"y":1960,"width":1551,"height":2732},
 		{
 			"id":"8d98c94c3ea004b5",
 			"type":"text",
@@ -50,7 +62,6 @@
 			"height":60
 		},
 		{"id":"fb8d8ad5e8737bba","type":"file","file":"_Attachments/Images/Pasted image 20260910174150.png","x":-10055,"y":3160,"width":1194,"height":2400},
-		{"id":"13ec55936dd33b93","type":"file","file":"_Attachments/Images/Pasted image 20260910173936.png","x":-9421,"y":1997,"width":1120,"height":992},
 		{"id":"c05075cc871fdce9","type":"file","file":"_Attachments/Images/Pasted image 20260913021226.png","x":-10960,"y":2420,"width":400,"height":256},
 		{
 			"id":"8a16bd27ff6cbec9",
@@ -75,19 +86,19 @@
 		},
 		{"id":"29fbc47d9bc4d273","type":"file","file":"_Attachments/Images/Pasted image 20260910205529.png","x":-8861,"y":4220,"width":824,"height":487},
 		{"id":"d1eb389ae6852b00","type":"file","file":"_Attachments/Images/Capture_20260912_214622.jpg","x":-9897,"y":5820,"width":775,"height":432},
-		{"id":"09e4f1e0404e050d","type":"file","file":"_Attachments/Images/Pasted image 20260913162651.png","x":-6220,"y":5460,"width":675,"height":296},
-		{"id":"5ac32b5654291900","type":"file","file":"_Attachments/Images/Pasted image 20260913025149.png","x":-11005,"y":7520,"width":1325,"height":994},
-		{"id":"98f5fba1bad52019","type":"file","file":"_Attachments/Images/Pasted image 20260913021521.png","x":-9161,"y":1680,"width":593,"height":221},
 		{
-			"id":"c243227571c24108",
+			"id":"4fd279e6dac6b895",
 			"type":"text",
-			"text":"点向式转化为一般式",
+			"text":"直线在平面上的投影方程",
 			"styleAttributes":{"textAlign":"center"},
-			"x":-8440,
-			"y":1760,
-			"width":320,
-			"height":60
+			"x":-9679,
+			"y":5720,
+			"width":340,
+			"height":100
 		},
+		{"id":"13ec55936dd33b93","type":"file","file":"_Attachments/Images/Pasted image 20260910173936.png","x":-9421,"y":1997,"width":1120,"height":992},
+		{"id":"9c37312a6889dd70","type":"file","file":"_Attachments/Images/Pasted image 20260910203651.png","x":-8244,"y":2760,"width":398,"height":96},
+		{"id":"5ac32b5654291900","type":"file","file":"_Attachments/Images/Pasted image 20260913025149.png","x":-11005,"y":7520,"width":1325,"height":994},
 		{"id":"7acb635cd6baf0c7","type":"file","file":"_Attachments/Images/Pasted image 20260913154906.png","x":-9680,"y":7509,"width":1500,"height":1000},
 		{
 			"id":"9afc84973a882e6d",
@@ -100,7 +111,6 @@
 			"height":100
 		},
 		{"id":"022d8156a95a3870","type":"file","file":"_Attachments/Images/Pasted image 20260910175908.png","x":5200,"y":5728,"width":2249,"height":853},
-		{"id":"33232947d0bca13c","type":"file","file":"_Attachments/Images/Pasted image 20260911225348.png","x":7840,"y":5840,"width":1416,"height":1793},
 		{"id":"dbd6c0fdeeb8db74","type":"file","file":"_Attachments/Images/Pasted image 20260910175920.png","x":5200,"y":6968,"width":2175,"height":830},
 		{
 			"id":"1d548d398a632699",
@@ -112,6 +122,7 @@
 			"width":400,
 			"height":100
 		},
+		{"id":"33232947d0bca13c","type":"file","file":"_Attachments/Images/Pasted image 20260911225348.png","x":7840,"y":5840,"width":1416,"height":1793},
 		{"id":"53a280c98d025a83","type":"file","file":"_Attachments/Images/Pasted image 20260910175156.png","x":5960,"y":1480,"width":2071,"height":770},
 		{"id":"7a217280cb9bae20","type":"file","file":"_Attachments/Images/Pasted image 20260910175751.png","x":4880,"y":2623,"width":1660,"height":1845},
 		{
@@ -139,18 +150,7 @@
 			"y":-100,
 			"width":380,
 			"height":140
-		},
-		{
-			"id":"0c98285327dc14aa",
-			"type":"text",
-			"text":"(2) 二次曲面 + (3) 柱面 —— **记忆**\n(4) 旋转曲面 —— **计算**",
-			"styleAttributes":{"textAlign":"center"},
-			"x":-4120,
-			"y":3852,
-			"width":785,
-			"height":136
-		},
-		{"id":"2c920b98a4ab9ec4","type":"file","file":"_Attachments/Images/Pasted image 20260911172641.png","x":-4384,"y":5545,"width":1025,"height":652}
+		}
 	],
 	"edges":[
 		{
