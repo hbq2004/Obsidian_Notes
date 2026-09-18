@@ -11,17 +11,14 @@
             "id": "43cbaf7e48dc13e8",
             "type": "leaf",
             "state": {
-              "type": "canvas",
+              "type": "markdown",
               "state": {
-                "file": "01 - 数学/03 - 概统/03 - 多维随机变量及其分布.canvas",
-                "viewState": {
-                  "x": -3966.068794483229,
-                  "y": 4527.025187252637,
-                  "zoom": -4
-                }
+                "file": "视频转写文稿/亚瑟爱数学 - 预报名.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-layout-dashboard",
-              "title": "03 - 多维随机变量及其分布"
+              "icon": "lucide-file",
+              "title": "亚瑟爱数学 - 预报名"
             }
           }
         ]
@@ -86,8 +83,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "de36ae7c692e0648",
@@ -214,8 +210,18 @@
       "tag-index:Open tag index": false
     }
   },
-  "active": "43cbaf7e48dc13e8",
+  "active": "889d008d3a0b974c",
   "lastOpenFiles": [
+    "视频转写文稿/douyin-transcript.md",
+    "视频转写文稿/douyin-transcript (3).md",
+    "视频转写文稿/douyin-transcript (4).md",
+    "视频转写文稿/douyin-transcript (5).md",
+    "视频转写文稿/douyin-transcript (6).md",
+    "视频转写文稿/douyin-transcript (7).md",
+    "视频转写文稿/douyin-transcript (2).md",
+    "视频转写文稿/亚瑟爱数学 - 预报名.md",
+    "01 - 数学/03 - 概统/03 - 多维随机变量及其分布.canvas",
+    "视频转写文稿",
     "文稿/视频转写/douyin-transcript.md",
     "文稿/视频转写/douyin-transcript.srt",
     "文稿/视频转写/douyin-transcript.txt",
@@ -229,7 +235,6 @@
     "_Attachments/Images/Pasted image 20260917205749.png",
     "_Attachments/Images/Pasted image 20260917205205.png",
     "_Attachments/Images/Pasted image 20260917195658.png",
-    "01 - 数学/03 - 概统/03 - 多维随机变量及其分布.canvas",
     "_Attachments/Images/Pasted image 20260917204241.png",
     "_Attachments/Images/Pasted image 20260917194520.png",
     "_Attachments/Images/Pasted image 20260917194447.png",
