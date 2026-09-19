@@ -82,7 +82,17 @@
 		{"id":"9e8bb609ef3aa9e8","type":"file","file":"_Attachments/Images/Pasted image 20260917152520.png","x":-11600,"y":3343,"width":1500,"height":1475},
 		{"id":"f3217b25082003d3","type":"file","file":"_Attachments/Images/Pasted image 20260917184306.png","x":-11337,"y":5051,"width":974,"height":507},
 		{"id":"f140ce5762aba006","type":"file","file":"_Attachments/Images/Pasted image 20260917012648.png","x":-14160,"y":2767,"width":1274,"height":794},
-		{"id":"46e06e122618ab52","type":"file","file":"_Attachments/Images/Pasted image 20260917175124.png","x":-13898,"y":3667,"width":748,"height":392}
+		{"id":"46e06e122618ab52","type":"file","file":"_Attachments/Images/Pasted image 20260917175124.png","x":-13898,"y":3667,"width":748,"height":392},
+		{
+			"id":"1f82ec258ac4d540",
+			"type":"text",
+			"text":"本质就是二重积分换元",
+			"styleAttributes":{"textAlign":"center"},
+			"x":12404,
+			"y":5840,
+			"width":460,
+			"height":108
+		}
 	],
 	"edges":[
 		{
@@ -211,6 +221,15 @@
 			"fromNode":"c7815ee7ce7ab56e",
 			"fromSide":"bottom",
 			"toNode":"c4d3d0d23b2ce42a",
+			"toSide":"top"
+		},
+		{
+			"id":"5a851743565ca4a6",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"61a8df8154855571",
+			"fromSide":"bottom",
+			"toNode":"1f82ec258ac4d540",
 			"toSide":"top"
 		}
 	],
