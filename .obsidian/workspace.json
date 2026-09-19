@@ -11,17 +11,14 @@
             "id": "9c06b7220f1dff89",
             "type": "leaf",
             "state": {
-              "type": "canvas",
+              "type": "markdown",
               "state": {
-                "file": "01 - 数学/03 - 概统/03 - 多维随机变量及其分布.canvas",
-                "viewState": {
-                  "x": 12596.070541940788,
-                  "y": 5529.578874042138,
-                  "zoom": -0.7136647067046674
-                }
+                "file": "六级习题分类系统.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-layout-dashboard",
-              "title": "03 - 多维随机变量及其分布"
+              "icon": "lucide-file",
+              "title": "六级习题分类系统"
             }
           }
         ]
@@ -216,9 +213,10 @@
   },
   "active": "9c06b7220f1dff89",
   "lastOpenFiles": [
+    "肯德基员工情况反映_投诉信.md",
+    "01 - 数学/03 - 概统/03 - 多维随机变量及其分布.canvas",
     "_Attachments/Images/Pasted image 20260919091439.png",
     "01 - 数学/03 - 概统/04 - 随机变量的数字特征.canvas",
-    "01 - 数学/03 - 概统/03 - 多维随机变量及其分布.canvas",
     "_Attachments/Images/Pasted image 20260917204241.png",
     "_Attachments/Images/Pasted image 20260917195658.png",
     "_Attachments/Images/Codex 图像 2026年9月18日 20_41_28.png",
@@ -249,7 +247,6 @@
     "_Attachments/Images/Pasted image 20260917205749.png",
     "_Attachments/Images/Pasted image 20260917205205.png",
     "_Attachments/Images/Pasted image 20260917194520.png",
-    "_Attachments/Images/Pasted image 20260917194447.png",
     "01 - 数学/03 - 概统/05 - 大数定律与中心极限定律.canvas",
     "好题错题整理/_待确认/随机题目/未注明来源/WEB-20260917-170613-8d10.md",
     "好题错题整理/_待确认/随机题目/未注明来源",
