@@ -135,6 +135,7 @@
 			"id":"98edb712a32c0efe",
 			"styleAttributes":{},
 			"toFloating":false,
+			"fromFloating":false,
 			"fromNode":"536de9dc3e810ff3",
 			"fromSide":"bottom",
 			"toNode":"61a8df8154855571",
