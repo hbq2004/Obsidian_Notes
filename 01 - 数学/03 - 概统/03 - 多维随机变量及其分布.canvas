@@ -1,21 +1,12 @@
 {
 	"nodes":[
-		{"id":"4e9516518755c1b6","type":"group","x":9760,"y":2720,"width":11840,"height":3280,"label":"多维随机变量函数的分布"},
+		{"id":"4e9516518755c1b6","type":"group","x":9760,"y":2720,"width":11840,"height":3280,"color":"3","label":"多维随机变量函数的分布"},
 		{"id":"edf0f20b56ca83d6","type":"group","x":-11920,"y":2720,"width":10520,"height":3360,"color":"1","label":"常见的两类二维随机变量"},
 		{"id":"b7dc10bc81be55fd","type":"group","x":-640,"y":2720,"width":9840,"height":3240,"color":"2","label":"随机变量的相互独立性"},
 		{"id":"a18c11fd0f88608c","type":"group","x":13600,"y":3040,"width":7840,"height":2704,"label":"相互独立随机变量函数的七种分布"},
 		{"id":"aa5571c101820380","type":"group","x":-7720,"y":3080,"width":6000,"height":2880,"label":"二维连续型随机变量的概率密度、边缘概率密度和条件概率密度"},
 		{"id":"d7945f7bcfcc427c","type":"group","x":-11800,"y":3080,"width":3840,"height":2640,"label":"二维离散随机变量的概率分布、边缘分布和条件分布"},
 		{"id":"125f82c795ec23dd","type":"group","x":-16320,"y":2540,"width":4000,"height":1620,"label":"n 维随机变量及其分布函数"},
-		{"id":"08b3b9b6a816a39b","type":"file","file":"_Attachments/Images/Pasted image 20260917193358.png","x":-10849,"y":6759,"width":1528,"height":2677},
-		{"id":"ada0aeb1845ebff3","type":"file","file":"_Attachments/Images/Pasted image 20260917152842.png","x":-9640,"y":3160,"width":1080,"height":2398},
-		{"id":"f3217b25082003d3","type":"file","file":"_Attachments/Images/Pasted image 20260917184306.png","x":-11337,"y":5051,"width":974,"height":507},
-		{"id":"9e8bb609ef3aa9e8","type":"file","file":"_Attachments/Images/Pasted image 20260917152520.png","x":-11600,"y":3343,"width":1500,"height":1475},
-		{"id":"53577cbc21905fb8","type":"file","file":"_Attachments/Images/Pasted image 20260917172915.png","x":18155,"y":3560,"width":1325,"height":450},
-		{"id":"60f8b6f5017471fe","type":"file","file":"_Attachments/Images/Pasted image 20260917173010.png","x":18155,"y":4156,"width":1425,"height":1296},
-		{"id":"e37642bb713aef0f","type":"file","file":"_Attachments/Images/Pasted image 20260917173108.png","x":19715,"y":4155,"width":1559,"height":775},
-		{"id":"f140ce5762aba006","type":"file","file":"_Attachments/Images/Pasted image 20260917012648.png","x":-14160,"y":2767,"width":1274,"height":794},
-		{"id":"46e06e122618ab52","type":"file","file":"_Attachments/Images/Pasted image 20260917175124.png","x":-13898,"y":3667,"width":748,"height":392},
 		{"id":"0f4df0cf443c2e75","type":"file","file":"_Attachments/Images/Pasted image 20260917012832.png","x":-15000,"y":2620,"width":551,"height":879},
 		{"id":"23a7cd020004ab49","type":"file","file":"_Attachments/Images/Pasted image 20260917174812.png","x":-14974,"y":3499,"width":500,"height":333},
 		{
@@ -82,7 +73,16 @@
 		},
 		{"id":"ff2866f581b0fbab","type":"file","file":"_Attachments/Images/Pasted image 20260822171516.png","x":-234,"y":-720,"width":388,"height":400},
 		{"id":"86b432319195814f","type":"file","file":"_Attachments/Images/Pasted image 20260917172849.png","x":16475,"y":3820,"width":1531,"height":1370},
-		{"id":"c4d3d0d23b2ce42a","type":"file","file":"_Attachments/Images/Pasted image 20260919091439.png","x":7268,"y":4935,"width":1400,"height":679}
+		{"id":"c4d3d0d23b2ce42a","type":"file","file":"_Attachments/Images/Pasted image 20260919091439.png","x":7268,"y":4935,"width":1400,"height":679},
+		{"id":"53577cbc21905fb8","type":"file","file":"_Attachments/Images/Pasted image 20260917172915.png","x":18155,"y":3560,"width":1325,"height":450},
+		{"id":"60f8b6f5017471fe","type":"file","file":"_Attachments/Images/Pasted image 20260917173010.png","x":18155,"y":4156,"width":1425,"height":1296},
+		{"id":"e37642bb713aef0f","type":"file","file":"_Attachments/Images/Pasted image 20260917173108.png","x":19715,"y":4155,"width":1559,"height":775},
+		{"id":"ada0aeb1845ebff3","type":"file","file":"_Attachments/Images/Pasted image 20260917152842.png","x":-9640,"y":3160,"width":1080,"height":2398},
+		{"id":"08b3b9b6a816a39b","type":"file","file":"_Attachments/Images/Pasted image 20260917193358.png","x":-10849,"y":6759,"width":1528,"height":2677},
+		{"id":"9e8bb609ef3aa9e8","type":"file","file":"_Attachments/Images/Pasted image 20260917152520.png","x":-11600,"y":3343,"width":1500,"height":1475},
+		{"id":"f3217b25082003d3","type":"file","file":"_Attachments/Images/Pasted image 20260917184306.png","x":-11337,"y":5051,"width":974,"height":507},
+		{"id":"f140ce5762aba006","type":"file","file":"_Attachments/Images/Pasted image 20260917012648.png","x":-14160,"y":2767,"width":1274,"height":794},
+		{"id":"46e06e122618ab52","type":"file","file":"_Attachments/Images/Pasted image 20260917175124.png","x":-13898,"y":3667,"width":748,"height":392}
 	],
 	"edges":[
 		{
