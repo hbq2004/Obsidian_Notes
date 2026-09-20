@@ -4,21 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "ccb5de4a87fd0bdc",
+        "id": "68e8b20701d05177",
         "type": "tabs",
         "children": [
           {
-            "id": "9c06b7220f1dff89",
+            "id": "6da965358c25fb0f",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "canvas",
               "state": {
-                "file": "六级习题分类系统.md",
-                "mode": "source",
-                "source": false
+                "file": "01 - 数学/03 - 概统/03 - 多维随机变量及其分布.canvas",
+                "viewState": {
+                  "x": -3124.4949510601364,
+                  "y": 4676.102928776616,
+                  "zoom": -3.2697032681565927
+                }
               },
-              "icon": "lucide-file",
-              "title": "六级习题分类系统"
+              "icon": "lucide-layout-dashboard",
+              "title": "03 - 多维随机变量及其分布"
             }
           }
         ]
@@ -83,7 +86,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "de36ae7c692e0648",
@@ -210,10 +214,10 @@
       "tag-index:Open tag index": false
     }
   },
-  "active": "9c06b7220f1dff89",
+  "active": "6da965358c25fb0f",
   "lastOpenFiles": [
-    "肯德基员工情况反映_投诉信.md",
     "六级习题分类系统.md",
+    "肯德基员工情况反映_投诉信.md",
     "01 - 数学/03 - 概统/03 - 多维随机变量及其分布.canvas",
     "_Attachments/Images/Pasted image 20260919091439.png",
     "01 - 数学/03 - 概统/04 - 随机变量的数字特征.canvas",
