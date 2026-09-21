@@ -1,7 +1,7 @@
 {
 	"nodes":[
 		{"id":"39a535f605781746","type":"group","x":1160,"y":1010,"width":4840,"height":2017,"label":"常见随机变量分布类型"},
-		{"id":"f82c4b45a19c6684","type":"group","x":6680,"y":4240,"width":2360,"height":2400,"label":"综合好题"},
+		{"id":"f82c4b45a19c6684","type":"group","x":6680,"y":4240,"width":2520,"height":3560,"label":"综合好题"},
 		{"id":"cb7a1004a18f1c03","type":"group","x":3720,"y":1284,"width":2280,"height":1743,"color":"2","label":"连续型 —— 三大分布"},
 		{"id":"544dfcdf344c122a","type":"group","x":6480,"y":877,"width":1680,"height":2283,"label":"一维随机变量函数的分布"},
 		{"id":"36ac36a096fbef4f","type":"group","x":1360,"y":1260,"width":2220,"height":1580,"color":"1","label":"离散型（初高中知识） —— 五大分布"},
@@ -100,7 +100,19 @@
 		{"id":"e7f3ac9bdae51184","type":"file","file":"_Attachments/Images/Pasted image 20260902012033.png","x":4232,"y":3367,"width":1048,"height":1481},
 		{"id":"a88420699876230b","type":"file","file":"_Attachments/Images/Pasted image 20260907195639.png","x":5430,"y":3367,"width":952,"height":1345},
 		{"id":"fe6128b03f2e0a47","type":"file","file":"_Attachments/Images/Pasted image 20260902012026.png","x":2392,"y":3367,"width":1800,"height":1274},
-		{"id":"b138440b4bfa064e","type":"file","file":"_Attachments/Images/Pasted image 20260906010747.png","x":1448,"y":3477,"width":783,"height":940}
+		{"id":"b138440b4bfa064e","type":"file","file":"_Attachments/Images/Pasted image 20260906010747.png","x":1448,"y":3477,"width":783,"height":940},
+		{"id":"db05ec438d16be8c","type":"file","file":"_Attachments/Images/Pasted image 20260921210440.png","x":7120,"y":6860,"width":850,"height":469},
+		{"id":"d4b4a83ad9038563","type":"file","file":"_Attachments/Images/Pasted image 20260921210436.png","x":8220,"y":6867,"width":775,"height":462},
+		{
+			"id":"8e8598a7b47b7f24",
+			"type":"text",
+			"text":"$\\mu$ —— 均值\n$\\sigma$ —— 标准差：距离均值的距离",
+			"styleAttributes":{"textAlign":"center"},
+			"x":5383,
+			"y":1360,
+			"width":423,
+			"height":100
+		}
 	],
 	"edges":[
 		{
@@ -240,6 +252,24 @@
 			"fromSide":"bottom",
 			"toNode":"d0243adffd69ca99",
 			"toSide":"top"
+		},
+		{
+			"id":"8a1e2ed617e4debf",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"35a1b35469c0c63c",
+			"fromSide":"top",
+			"toNode":"8e8598a7b47b7f24",
+			"toSide":"bottom"
+		},
+		{
+			"id":"0e5c9044218f40dc",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"db05ec438d16be8c",
+			"fromSide":"right",
+			"toNode":"d4b4a83ad9038563",
+			"toSide":"left"
 		}
 	],
 	"metadata":{
