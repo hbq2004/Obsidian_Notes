@@ -4,21 +4,45 @@
     "type": "split",
     "children": [
       {
-        "id": "68e8b20701d05177",
+        "id": "27d3e1d454bbffdd",
         "type": "tabs",
         "children": [
           {
-            "id": "6da965358c25fb0f",
+            "id": "13ef411740b3da55",
             "type": "leaf",
+            "pinned": true,
             "state": {
-              "type": "markdown",
+              "type": "canvas",
               "state": {
-                "file": "视频转写文稿/睡眠质量/Master Your Sleep & Be More Alert When Awake _ Huberman Lab Essentials.md",
-                "mode": "source",
-                "source": false
+                "file": "01 - 数学/03 - 概统/02 - 一维随机变量及其分布.canvas",
+                "viewState": {
+                  "x": 5640.987866421653,
+                  "y": 2178.196825422361,
+                  "zoom": -0.8295352760019009
+                }
               },
-              "icon": "lucide-file",
-              "title": "Master Your Sleep & Be More Alert When Awake _ Huberman Lab Essentials"
+              "pinned": true,
+              "icon": "lucide-layout-dashboard",
+              "title": "02 - 一维随机变量及其分布"
+            }
+          },
+          {
+            "id": "5dba2a7fcc508e37",
+            "type": "leaf",
+            "pinned": true,
+            "state": {
+              "type": "canvas",
+              "state": {
+                "file": "01 - 数学/03 - 概统/03 - 多维随机变量及其分布.canvas",
+                "viewState": {
+                  "x": 2807.9937137724914,
+                  "y": 5230.453380294847,
+                  "zoom": -4
+                }
+              },
+              "pinned": true,
+              "icon": "lucide-layout-dashboard",
+              "title": "03 - 多维随机变量及其分布"
             }
           }
         ]
@@ -41,7 +65,7 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": true,
+                "autoReveal": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
@@ -83,7 +107,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "de36ae7c692e0648",
@@ -210,25 +235,26 @@
       "tag-index:Open tag index": false
     }
   },
-  "active": "6da965358c25fb0f",
+  "active": "13ef411740b3da55",
   "lastOpenFiles": [
+    "01 - 数学/03 - 概统/03 - 多维随机变量及其分布.canvas",
+    "01 - 数学/03 - 概统/02 - 一维随机变量及其分布.canvas",
+    "01 - 数学/03 - 概统/04 - 随机变量的数字特征.canvas",
+    "01 - 数学/03 - 概统/01 - 随机事件与概率.canvas",
+    "视频转写文稿/睡眠质量/Master Your Sleep & Be More Alert When Awake _ Huberman Lab Essentials.md",
     "视频转写文稿/睡眠质量/How I FIXED My Terrible Sleep - 10 Habits.md",
     "视频转写文稿/睡眠质量/douyin-transcript (2).md",
     "视频转写文稿/睡眠质量/douyin-transcript.md",
     "视频转写文稿/睡眠质量/6 tips for better sleep _ Sleeping with Science, a TED series.md",
     "视频转写文稿/新手10U起步如何做到财富自由！绝对干货.md",
-    "视频转写文稿/睡眠质量/Master Your Sleep & Be More Alert When Awake _ Huberman Lab Essentials.md",
     "视频转写文稿/睡眠质量",
     "视频转写文稿/10U战神系列第1期：挑战千倍失败！从10美金到745美金，再回到10美金，全程实盘记录期权_合约滚仓.md",
     "视频转写文稿/新手10U起步如何做到财富自由！绝对干货.md.pre-chinese-fix-20260921-033818.bak",
     "视频转写文稿/10U战神系列第1期：挑战千倍失败！从10美金到745美金，再回到10美金，全程实盘记录期权_合约滚仓.md.pre-chinese-fix-20260921-033818.bak",
     "视频转写文稿/亚瑟爱数学 - 预报名.md",
-    "01 - 数学/03 - 概统/02 - 一维随机变量及其分布.canvas",
-    "01 - 数学/03 - 概统/03 - 多维随机变量及其分布.canvas",
     "六级习题分类系统.md",
     "肯德基员工情况反映_投诉信.md",
     "_Attachments/Images/Pasted image 20260919091439.png",
-    "01 - 数学/03 - 概统/04 - 随机变量的数字特征.canvas",
     "_Attachments/Images/Pasted image 20260917204241.png",
     "_Attachments/Images/Pasted image 20260917195658.png",
     "_Attachments/Images/Codex 图像 2026年9月18日 20_41_28.png",
@@ -258,7 +284,6 @@
     "_Attachments/Images/Pasted image 20260917205205.png",
     "_Attachments/Images/Pasted image 20260917194520.png",
     "01 - 数学/03 - 概统/05 - 大数定律与中心极限定律.canvas",
-    "好题错题整理/_待确认/随机题目/未注明来源/WEB-20260917-170613-8d10.md",
-    "01 - 数学/03 - 概统/01 - 随机事件与概率.canvas"
+    "好题错题整理/_待确认/随机题目/未注明来源/WEB-20260917-170613-8d10.md"
   ]
 }
