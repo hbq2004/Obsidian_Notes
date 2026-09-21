@@ -16,9 +16,9 @@
               "state": {
                 "file": "01 - 数学/03 - 概统/02 - 一维随机变量及其分布.canvas",
                 "viewState": {
-                  "x": 5731.584104762936,
-                  "y": 1536.0096924906964,
-                  "zoom": 0.6348516340782971
+                  "x": 5702.9838858459525,
+                  "y": 2249.2629344868046,
+                  "zoom": 0.38178039106044315
                 }
               },
               "pinned": true,
@@ -35,9 +35,9 @@
               "state": {
                 "file": "01 - 数学/03 - 概统/03 - 多维随机变量及其分布.canvas",
                 "viewState": {
-                  "x": 2807.9937137724914,
-                  "y": 5230.453380294847,
-                  "zoom": -4
+                  "x": 0,
+                  "y": 0,
+                  "zoom": 0
                 }
               },
               "pinned": true,
@@ -45,7 +45,8 @@
               "title": "03 - 多维随机变量及其分布"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -232,15 +233,16 @@
       "omnisearch:Omnisearch": false,
       "callout-manager:Insert Callout": false,
       "notebook-navigator:Notebook Navigator": false,
-      "tag-index:Open tag index": false
+      "tag-index:Open tag index": false,
+      "hidden-folder-obsidian:隐藏文件夹": false
     }
   },
-  "active": "13ef411740b3da55",
+  "active": "5dba2a7fcc508e37",
   "lastOpenFiles": [
+    "01 - 数学/03 - 概统/02 - 一维随机变量及其分布.canvas",
     "_Attachments/Images/Pasted image 20260921210440.png",
     "_Attachments/Images/Pasted image 20260921210436.png",
     "01 - 数学/03 - 概统/03 - 多维随机变量及其分布.canvas",
-    "01 - 数学/03 - 概统/02 - 一维随机变量及其分布.canvas",
     "01 - 数学/03 - 概统/04 - 随机变量的数字特征.canvas",
     "01 - 数学/03 - 概统/01 - 随机事件与概率.canvas",
     "视频转写文稿/睡眠质量/Master Your Sleep & Be More Alert When Awake _ Huberman Lab Essentials.md",
@@ -283,7 +285,6 @@
     "文稿/视频转写/“这样”的我——一分钟创意自我介绍视频.raw.json",
     "_Attachments/Images/Pasted image 20260917211929.png",
     "_Attachments/Images/Pasted image 20260917205749.png",
-    "_Attachments/Images/Pasted image 20260917205205.png",
     "01 - 数学/03 - 概统/05 - 大数定律与中心极限定律.canvas",
     "好题错题整理/_待确认/随机题目/未注明来源/WEB-20260917-170613-8d10.md"
   ]
