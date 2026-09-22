@@ -35,9 +35,9 @@
               "state": {
                 "file": "01 - 数学/03 - 概统/03 - 多维随机变量及其分布.canvas",
                 "viewState": {
-                  "x": 0,
-                  "y": 0,
-                  "zoom": 0
+                  "x": 4914.567409014617,
+                  "y": 3535.1566651452995,
+                  "zoom": -4
                 }
               },
               "pinned": true,
@@ -233,8 +233,7 @@
       "omnisearch:Omnisearch": false,
       "callout-manager:Insert Callout": false,
       "notebook-navigator:Notebook Navigator": false,
-      "tag-index:Open tag index": false,
-      "hidden-folder-obsidian:隐藏文件夹": false
+      "tag-index:Open tag index": false
     }
   },
   "active": "5dba2a7fcc508e37",
