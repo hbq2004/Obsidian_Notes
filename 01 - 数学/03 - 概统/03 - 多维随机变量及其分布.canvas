@@ -8,9 +8,6 @@
 		{"id":"d7945f7bcfcc427c","type":"group","x":-11800,"y":3080,"width":3840,"height":2640,"label":"二维离散随机变量的概率分布、边缘分布和条件分布"},
 		{"id":"125f82c795ec23dd","type":"group","x":-16320,"y":2540,"width":4000,"height":1620,"label":"n 维随机变量及其分布函数"},
 		{"id":"e37642bb713aef0f","type":"file","file":"_Attachments/Images/Pasted image 20260917173108.png","x":19715,"y":4155,"width":1559,"height":775},
-		{"id":"54f9274a6a8895ab","type":"file","file":"_Attachments/Images/Pasted image 20260917204241.png","x":-6821,"y":10080,"width":1918,"height":2710},
-		{"id":"9ebf02e3290731ce","type":"file","file":"_Attachments/Images/Pasted image 20260917205749.png","x":-4314,"y":10080,"width":2032,"height":2539},
-		{"id":"d9935a2e9c8f339e","type":"file","file":"_Attachments/Images/Pasted image 20260917211929.png","x":-2000,"y":10080,"width":2106,"height":2632},
 		{
 			"id":"3f98c8cab26d6674",
 			"type":"text",
@@ -22,21 +19,6 @@
 			"height":180
 		},
 		{"id":"b19cd02132bbfb70","type":"file","file":"_Attachments/Images/Codex 图像 2026年9月18日 20_41_28.png","x":-6026,"y":13920,"width":5066,"height":7160},
-		{"id":"f140ce5762aba006","type":"file","file":"_Attachments/Images/Pasted image 20260917012648.png","x":-14160,"y":2767,"width":1274,"height":794},
-		{"id":"46e06e122618ab52","type":"file","file":"_Attachments/Images/Pasted image 20260917175124.png","x":-13898,"y":3667,"width":748,"height":392},
-		{
-			"id":"2d578547c0674f67",
-			"type":"text",
-			"text":"二维差分",
-			"styleAttributes":{"textAlign":"center"},
-			"x":-14380,
-			"y":3637,
-			"width":260,
-			"height":60
-		},
-		{"id":"0f4df0cf443c2e75","type":"file","file":"_Attachments/Images/Pasted image 20260917012832.png","x":-15000,"y":2620,"width":551,"height":879},
-		{"id":"23a7cd020004ab49","type":"file","file":"_Attachments/Images/Pasted image 20260917174812.png","x":-14974,"y":3499,"width":500,"height":333},
-		{"id":"05f6ff053ad843c3","type":"file","file":"_Attachments/Images/Pasted image 20260917012624.png","x":-16240,"y":2827,"width":1075,"height":452},
 		{"id":"d918cbedae8a62ff","type":"file","file":"_Attachments/Images/Pasted image 20260917171825.png","x":-160,"y":3200,"width":2061,"height":1912},
 		{"id":"f4b8b9eb301548f9","type":"file","file":"_Attachments/Images/Pasted image 20260917171919.png","x":2360,"y":3200,"width":1790,"height":1966},
 		{"id":"8f1df269a7f0664a","type":"file","file":"_Attachments/Images/Pasted image 20260917172022.png","x":4680,"y":3200,"width":1914,"height":2074},
@@ -92,7 +74,25 @@
 		{"id":"d2473908a254772c","type":"file","file":"_Attachments/Images/Pasted image 20260917172829.png","x":15155,"y":4156,"width":1250,"height":895},
 		{"id":"86b432319195814f","type":"file","file":"_Attachments/Images/Pasted image 20260917172849.png","x":16475,"y":3820,"width":1531,"height":1370},
 		{"id":"53577cbc21905fb8","type":"file","file":"_Attachments/Images/Pasted image 20260917172915.png","x":18155,"y":3560,"width":1325,"height":450},
-		{"id":"60f8b6f5017471fe","type":"file","file":"_Attachments/Images/Pasted image 20260917173010.png","x":18155,"y":4156,"width":1425,"height":1296}
+		{"id":"60f8b6f5017471fe","type":"file","file":"_Attachments/Images/Pasted image 20260917173010.png","x":18155,"y":4156,"width":1425,"height":1296},
+		{"id":"f140ce5762aba006","type":"file","file":"_Attachments/Images/Pasted image 20260917012648.png","x":-14160,"y":2767,"width":1274,"height":794},
+		{"id":"54f9274a6a8895ab","type":"file","file":"_Attachments/Images/Pasted image 20260917204241.png","x":-6821,"y":10080,"width":1918,"height":2710},
+		{"id":"9ebf02e3290731ce","type":"file","file":"_Attachments/Images/Pasted image 20260917205749.png","x":-4314,"y":10080,"width":2032,"height":2539},
+		{"id":"d9935a2e9c8f339e","type":"file","file":"_Attachments/Images/Pasted image 20260917211929.png","x":-2000,"y":10080,"width":2106,"height":2632},
+		{"id":"46e06e122618ab52","type":"file","file":"_Attachments/Images/Pasted image 20260917175124.png","x":-13898,"y":3667,"width":748,"height":392},
+		{
+			"id":"2d578547c0674f67",
+			"type":"text",
+			"text":"二维差分",
+			"styleAttributes":{"textAlign":"center"},
+			"x":-14380,
+			"y":3637,
+			"width":260,
+			"height":60
+		},
+		{"id":"0f4df0cf443c2e75","type":"file","file":"_Attachments/Images/Pasted image 20260917012832.png","x":-15000,"y":2620,"width":551,"height":879},
+		{"id":"23a7cd020004ab49","type":"file","file":"_Attachments/Images/Pasted image 20260917174812.png","x":-14974,"y":3499,"width":500,"height":333},
+		{"id":"05f6ff053ad843c3","type":"file","file":"_Attachments/Images/Pasted image 20260917012624.png","x":-16240,"y":2827,"width":1075,"height":452}
 	],
 	"edges":[
 		{
