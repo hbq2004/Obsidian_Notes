@@ -16,9 +16,9 @@
               "state": {
                 "file": "01 - 数学/03 - 概统/02 - 一维随机变量及其分布.canvas",
                 "viewState": {
-                  "x": 5702.9838858459525,
-                  "y": 2249.2629344868046,
-                  "zoom": 0.38178039106044315
+                  "x": 5733.372503783935,
+                  "y": 2360.060323000521,
+                  "zoom": -0.7136647067046674
                 }
               },
               "pinned": true,
@@ -36,7 +36,7 @@
                 "file": "01 - 数学/03 - 概统/03 - 多维随机变量及其分布.canvas",
                 "viewState": {
                   "x": 1198.8164324521167,
-                  "y": 5743.5746338952995,
+                  "y": 7373.596939369788,
                   "zoom": -4
                 }
               },
@@ -45,8 +45,7 @@
               "title": "03 - 多维随机变量及其分布"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -236,12 +235,12 @@
       "tag-index:Open tag index": false
     }
   },
-  "active": "5dba2a7fcc508e37",
+  "active": "13ef411740b3da55",
   "lastOpenFiles": [
+    "01 - 数学/03 - 概统/03 - 多维随机变量及其分布.canvas",
     "01 - 数学/03 - 概统/02 - 一维随机变量及其分布.canvas",
     "_Attachments/Images/Pasted image 20260921210440.png",
     "_Attachments/Images/Pasted image 20260921210436.png",
-    "01 - 数学/03 - 概统/03 - 多维随机变量及其分布.canvas",
     "01 - 数学/03 - 概统/04 - 随机变量的数字特征.canvas",
     "01 - 数学/03 - 概统/01 - 随机事件与概率.canvas",
     "视频转写文稿/睡眠质量/Master Your Sleep & Be More Alert When Awake _ Huberman Lab Essentials.md",
