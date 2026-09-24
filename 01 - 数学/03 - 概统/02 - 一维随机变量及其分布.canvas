@@ -1,11 +1,11 @@
 {
 	"nodes":[
 		{"id":"39a535f605781746","type":"group","x":1160,"y":1010,"width":4840,"height":2017,"label":"常见随机变量分布类型"},
-		{"id":"f82c4b45a19c6684","type":"group","x":6680,"y":4240,"width":2520,"height":3560,"label":"综合好题"},
 		{"id":"cb7a1004a18f1c03","type":"group","x":3720,"y":1284,"width":2280,"height":1743,"color":"2","label":"连续型 —— 三大分布"},
 		{"id":"544dfcdf344c122a","type":"group","x":6480,"y":877,"width":1680,"height":2283,"label":"一维随机变量函数的分布"},
-		{"id":"36ac36a096fbef4f","type":"group","x":1360,"y":1260,"width":2220,"height":1580,"color":"1","label":"离散型（初高中知识） —— 五大分布"},
 		{"id":"479046b6af685ff2","type":"group","x":6760,"y":1580,"width":1160,"height":1300,"label":"随机变量函数的分布"},
+		{"id":"f82c4b45a19c6684","type":"group","x":6680,"y":4240,"width":2520,"height":3560,"label":"综合好题"},
+		{"id":"36ac36a096fbef4f","type":"group","x":1360,"y":1260,"width":2220,"height":1580,"color":"1","label":"离散型（初高中知识） —— 五大分布"},
 		{"id":"ff13dd5946b6caeb","type":"group","x":-320,"y":1010,"width":1080,"height":1100,"label":"一维连续性随机变量"},
 		{"id":"f94d6c200da75b08","type":"group","x":-1480,"y":910,"width":840,"height":757,"label":"一维离散型随机变量"},
 		{"id":"c861bc0ac3af37d5","type":"group","x":-3680,"y":840,"width":1980,"height":1440,"label":"一维随机变量"},
@@ -18,28 +18,6 @@
 		{"id":"3fb49fb68df7ab3a","type":"file","file":"_Attachments/Images/Pasted image 20260906002119.png","x":-1700,"y":2393,"width":700,"height":578},
 		{"id":"db05ec438d16be8c","type":"file","file":"_Attachments/Images/Pasted image 20260921210440.png","x":7120,"y":6860,"width":850,"height":469},
 		{"id":"d4b4a83ad9038563","type":"file","file":"_Attachments/Images/Pasted image 20260921210436.png","x":8220,"y":6867,"width":775,"height":462},
-		{"id":"1808063f86ec83c7","type":"file","file":"_Attachments/Images/Pasted image 20260903170656.png","x":5280,"y":2518,"width":625,"height":75},
-		{"id":"bbf379ccb8fb373c","type":"file","file":"_Attachments/Images/Pasted image 20260902155627.png","x":4812,"y":2085,"width":399,"height":293},
-		{"id":"94a5c7cf29b1664a","type":"file","file":"_Attachments/Images/Pasted image 20260902155848.png","x":4812,"y":2378,"width":400,"height":226},
-		{"id":"35a1b35469c0c63c","type":"file","file":"_Attachments/Images/Pasted image 20260824172451.png","x":5280,"y":1549,"width":629,"height":969},
-		{"id":"fb08431471310f88","type":"file","file":"_Attachments/Images/Capture_20260902_163003.jpg","x":5306,"y":2593,"width":574,"height":221},
-		{"id":"881e1a8197bb76d7","type":"file","file":"_Attachments/Images/Capture_20260902_161044.jpg","x":4812,"y":2604,"width":399,"height":251},
-		{"id":"8012920ebca4305f","type":"file","file":"_Attachments/Images/Pasted image 20260902160147.png","x":4480,"y":2007,"width":332,"height":844},
-		{"id":"dfd4cd9b5e8d3427","type":"file","file":"_Attachments/Images/Pasted image 20260824172312.png","x":3755,"y":1436,"width":750,"height":501},
-		{
-			"id":"a273bf30c6735928",
-			"type":"text",
-			"text":"指数分布的无记忆性",
-			"styleAttributes":{"textAlign":"center"},
-			"x":4882,
-			"y":2920,
-			"width":260,
-			"height":60
-		},
-		{"id":"8d25ccb2faf9fbf2","type":"file","file":"_Attachments/Images/Pasted image 20260824171731.png","x":6840,"y":2140,"width":614,"height":625},
-		{"id":"7dae5eabf73a2d72","type":"file","file":"_Attachments/Images/Pasted image 20260824171600.png","x":6840,"y":1680,"width":725,"height":345},
-		{"id":"e9dc24a370f0a0ec","type":"file","file":"_Attachments/Images/Pasted image 20260902154807.png","x":3755,"y":2007,"width":724,"height":638},
-		{"id":"275d9f87705d2547","type":"file","file":"_Attachments/Images/Pasted image 20260902154920.png","x":3880,"y":2697,"width":468,"height":83},
 		{"id":"97aecf039793075b","type":"file","file":"_Attachments/Images/Pasted image 20260824171546.png","x":6800,"y":1120,"width":872,"height":280},
 		{
 			"id":"8e8598a7b47b7f24",
@@ -112,7 +90,29 @@
 		{"id":"23539c792207fe0c","type":"file","file":"_Attachments/Images/Pasted image 20260824171044.png","x":-1380,"y":996,"width":600,"height":550},
 		{"id":"562b0b3badbfb063","type":"file","file":"_Attachments/Images/Pasted image 20260903214728.png","x":7060,"y":5720,"width":875,"height":752},
 		{"id":"b93331166ccb6e6a","type":"file","file":"_Attachments/Images/Pasted image 20260903214708.png","x":8080,"y":5840,"width":575,"height":430},
-		{"id":"d7d6210986353ca9","type":"file","file":"_Attachments/Images/Pasted image 20260901192846.png","x":-1000,"y":2972,"width":788,"height":163}
+		{"id":"d7d6210986353ca9","type":"file","file":"_Attachments/Images/Pasted image 20260901192846.png","x":-1000,"y":2972,"width":788,"height":163},
+		{"id":"1808063f86ec83c7","type":"file","file":"_Attachments/Images/Pasted image 20260903170656.png","x":5280,"y":2518,"width":625,"height":75},
+		{"id":"bbf379ccb8fb373c","type":"file","file":"_Attachments/Images/Pasted image 20260902155627.png","x":4812,"y":2085,"width":399,"height":293},
+		{"id":"94a5c7cf29b1664a","type":"file","file":"_Attachments/Images/Pasted image 20260902155848.png","x":4812,"y":2378,"width":400,"height":226},
+		{"id":"35a1b35469c0c63c","type":"file","file":"_Attachments/Images/Pasted image 20260824172451.png","x":5280,"y":1549,"width":629,"height":969},
+		{"id":"fb08431471310f88","type":"file","file":"_Attachments/Images/Capture_20260902_163003.jpg","x":5306,"y":2593,"width":574,"height":221},
+		{"id":"881e1a8197bb76d7","type":"file","file":"_Attachments/Images/Capture_20260902_161044.jpg","x":4812,"y":2604,"width":399,"height":251},
+		{"id":"8012920ebca4305f","type":"file","file":"_Attachments/Images/Pasted image 20260902160147.png","x":4480,"y":2007,"width":332,"height":844},
+		{"id":"dfd4cd9b5e8d3427","type":"file","file":"_Attachments/Images/Pasted image 20260824172312.png","x":3755,"y":1436,"width":750,"height":501},
+		{
+			"id":"a273bf30c6735928",
+			"type":"text",
+			"text":"指数分布的无记忆性",
+			"styleAttributes":{"textAlign":"center"},
+			"x":4882,
+			"y":2920,
+			"width":260,
+			"height":60
+		},
+		{"id":"8d25ccb2faf9fbf2","type":"file","file":"_Attachments/Images/Pasted image 20260824171731.png","x":6840,"y":2140,"width":614,"height":625},
+		{"id":"7dae5eabf73a2d72","type":"file","file":"_Attachments/Images/Pasted image 20260824171600.png","x":6840,"y":1680,"width":725,"height":345},
+		{"id":"e9dc24a370f0a0ec","type":"file","file":"_Attachments/Images/Pasted image 20260902154807.png","x":3755,"y":2007,"width":724,"height":638},
+		{"id":"275d9f87705d2547","type":"file","file":"_Attachments/Images/Pasted image 20260902154920.png","x":3880,"y":2697,"width":468,"height":83}
 	],
 	"edges":[
 		{
