@@ -17,7 +17,7 @@
                 "file": "01 - 数学/03 - 概统/02 - 一维随机变量及其分布.canvas",
                 "viewState": {
                   "x": 5733.372503783935,
-                  "y": 2360.060323000521,
+                  "y": 3529.576109200658,
                   "zoom": -0.7136647067046674
                 }
               },
@@ -44,8 +44,23 @@
               "icon": "lucide-layout-dashboard",
               "title": "03 - 多维随机变量及其分布"
             }
+          },
+          {
+            "id": "c040278061df678b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "视频转写文稿/新手10U起步如何做到财富自由！绝对干货.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "新手10U起步如何做到财富自由！绝对干货"
+            }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -234,12 +249,12 @@
       "tag-index:Open tag index": false
     }
   },
-  "active": "13ef411740b3da55",
+  "active": "c040278061df678b",
   "lastOpenFiles": [
+    "01 - 数学/03 - 概统/02 - 一维随机变量及其分布.canvas",
     "视频转写文稿/投资/损失厌恶.md",
     "视频转写文稿/投资",
     "01 - 数学/03 - 概统/03 - 多维随机变量及其分布.canvas",
-    "01 - 数学/03 - 概统/02 - 一维随机变量及其分布.canvas",
     "_Attachments/Images/Pasted image 20260921210440.png",
     "_Attachments/Images/Pasted image 20260921210436.png",
     "01 - 数学/03 - 概统/04 - 随机变量的数字特征.canvas",
