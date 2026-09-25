@@ -35,8 +35,8 @@
               "state": {
                 "file": "01 - 数学/03 - 概统/03 - 多维随机变量及其分布.canvas",
                 "viewState": {
-                  "x": 1198.8164324521167,
-                  "y": 7373.596939369788,
+                  "x": 1882.3730730771167,
+                  "y": 9284.052994057289,
                   "zoom": -4
                 }
               },
@@ -44,23 +44,8 @@
               "icon": "lucide-layout-dashboard",
               "title": "03 - 多维随机变量及其分布"
             }
-          },
-          {
-            "id": "c040278061df678b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "视频转写文稿/新手10U起步如何做到财富自由！绝对干货.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "新手10U起步如何做到财富自由！绝对干货"
-            }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -122,7 +107,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "de36ae7c692e0648",
@@ -246,15 +232,17 @@
       "omnisearch:Omnisearch": false,
       "callout-manager:Insert Callout": false,
       "notebook-navigator:Notebook Navigator": false,
-      "tag-index:Open tag index": false
+      "tag-index:Open tag index": false,
+      "hidden-folder-obsidian:隐藏文件夹": false
     }
   },
-  "active": "c040278061df678b",
+  "active": "13ef411740b3da55",
   "lastOpenFiles": [
+    "01 - 数学/03 - 概统/03 - 多维随机变量及其分布.canvas",
+    "视频转写文稿/新手10U起步如何做到财富自由！绝对干货.md",
     "01 - 数学/03 - 概统/02 - 一维随机变量及其分布.canvas",
     "视频转写文稿/投资/损失厌恶.md",
     "视频转写文稿/投资",
-    "01 - 数学/03 - 概统/03 - 多维随机变量及其分布.canvas",
     "_Attachments/Images/Pasted image 20260921210440.png",
     "_Attachments/Images/Pasted image 20260921210436.png",
     "01 - 数学/03 - 概统/04 - 随机变量的数字特征.canvas",
@@ -264,7 +252,6 @@
     "视频转写文稿/睡眠质量/douyin-transcript (2).md",
     "视频转写文稿/睡眠质量/douyin-transcript.md",
     "视频转写文稿/睡眠质量/6 tips for better sleep _ Sleeping with Science, a TED series.md",
-    "视频转写文稿/新手10U起步如何做到财富自由！绝对干货.md",
     "视频转写文稿/睡眠质量",
     "视频转写文稿/10U战神系列第1期：挑战千倍失败！从10美金到745美金，再回到10美金，全程实盘记录期权_合约滚仓.md",
     "视频转写文稿/新手10U起步如何做到财富自由！绝对干货.md.pre-chinese-fix-20260921-033818.bak",
