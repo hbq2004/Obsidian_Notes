@@ -8,19 +8,6 @@
 		{"id":"d7945f7bcfcc427c","type":"group","x":-11800,"y":3080,"width":3840,"height":2640,"label":"二维离散随机变量的概率分布、边缘分布和条件分布"},
 		{"id":"125f82c795ec23dd","type":"group","x":-16320,"y":2540,"width":4000,"height":1620,"label":"n 维随机变量及其分布函数"},
 		{"id":"e37642bb713aef0f","type":"file","file":"_Attachments/Images/Pasted image 20260917173108.png","x":19715,"y":4155,"width":1559,"height":775},
-		{"id":"ff2866f581b0fbab","type":"file","file":"_Attachments/Images/Pasted image 20260822171516.png","x":-234,"y":-720,"width":388,"height":400},
-		{
-			"id":"fa6b388b29fceb29",
-			"type":"text",
-			"text":"多维随机变量及其分布",
-			"styleAttributes":{"textAlign":"center"},
-			"x":-240,
-			"y":-40,
-			"width":400,
-			"height":140
-		},
-		{"id":"f140ce5762aba006","type":"file","file":"_Attachments/Images/Pasted image 20260917012648.png","x":-14160,"y":2767,"width":1274,"height":794},
-		{"id":"46e06e122618ab52","type":"file","file":"_Attachments/Images/Pasted image 20260917175124.png","x":-13898,"y":3667,"width":748,"height":392},
 		{
 			"id":"2d578547c0674f67",
 			"type":"text",
@@ -34,7 +21,6 @@
 		{"id":"0f4df0cf443c2e75","type":"file","file":"_Attachments/Images/Pasted image 20260917012832.png","x":-15000,"y":2620,"width":551,"height":879},
 		{"id":"23a7cd020004ab49","type":"file","file":"_Attachments/Images/Pasted image 20260917174812.png","x":-14974,"y":3499,"width":500,"height":333},
 		{"id":"05f6ff053ad843c3","type":"file","file":"_Attachments/Images/Pasted image 20260917012624.png","x":-16240,"y":2827,"width":1075,"height":452},
-		{"id":"86b432319195814f","type":"file","file":"_Attachments/Images/Pasted image 20260917172849.png","x":16475,"y":3820,"width":1531,"height":1370},
 		{"id":"53577cbc21905fb8","type":"file","file":"_Attachments/Images/Pasted image 20260917172915.png","x":18155,"y":3560,"width":1325,"height":450},
 		{"id":"60f8b6f5017471fe","type":"file","file":"_Attachments/Images/Pasted image 20260917173010.png","x":18155,"y":4156,"width":1425,"height":1296},
 		{"id":"c4d3d0d23b2ce42a","type":"file","file":"_Attachments/Images/Pasted image 20260919091439.png","x":7268,"y":4935,"width":1367,"height":679},
@@ -92,7 +78,21 @@
 		{"id":"d2473908a254772c","type":"file","file":"_Attachments/Images/Pasted image 20260917172829.png","x":15155,"y":4156,"width":1250,"height":895},
 		{"id":"61a8df8154855571","type":"file","file":"_Attachments/Images/Pasted image 20260917172525.png","x":11897,"y":4200,"width":1473,"height":1544},
 		{"id":"536de9dc3e810ff3","type":"file","file":"_Attachments/Images/Pasted image 20260917172455.png","x":12000,"y":2923,"width":1275,"height":1051},
-		{"id":"c7815ee7ce7ab56e","type":"file","file":"_Attachments/Images/Pasted image 20260917172050.png","x":6880,"y":3761,"width":2175,"height":935}
+		{"id":"c7815ee7ce7ab56e","type":"file","file":"_Attachments/Images/Pasted image 20260917172050.png","x":6880,"y":3761,"width":2175,"height":935},
+		{"id":"ff2866f581b0fbab","type":"file","file":"_Attachments/Images/Pasted image 20260822171516.png","x":-234,"y":-720,"width":388,"height":400},
+		{
+			"id":"fa6b388b29fceb29",
+			"type":"text",
+			"text":"多维随机变量及其分布",
+			"styleAttributes":{"textAlign":"center"},
+			"x":-240,
+			"y":-40,
+			"width":400,
+			"height":140
+		},
+		{"id":"86b432319195814f","type":"file","file":"_Attachments/Images/Pasted image 20260917172849.png","x":16475,"y":3820,"width":1531,"height":1370},
+		{"id":"f140ce5762aba006","type":"file","file":"_Attachments/Images/Pasted image 20260917012648.png","x":-14160,"y":2767,"width":1274,"height":794},
+		{"id":"46e06e122618ab52","type":"file","file":"_Attachments/Images/Pasted image 20260917175124.png","x":-13898,"y":3667,"width":748,"height":392}
 	],
 	"edges":[
 		{
