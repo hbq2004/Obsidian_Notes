@@ -51,16 +51,28 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "z_大雪深埋模考规划.md",
+                "file": "视频转写文稿/douyin-transcript (2).md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "z_大雪深埋模考规划"
+              "title": "douyin-transcript (2)"
+            }
+          },
+          {
+            "id": "0326fb3de2179ee8",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.14.4"
+              },
+              "icon": "lucide-book-up",
+              "title": "版本说明 1.14.4"
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -249,8 +261,9 @@
       "tag-index:Open tag index": false
     }
   },
-  "active": "02fe29a2543ee34b",
+  "active": "0326fb3de2179ee8",
   "lastOpenFiles": [
+    "z_大雪深埋模考规划.md",
     "_Attachments/Images/Pasted image 20260930061637.png",
     "01 - 数学/03 - 概统/03 - 多维随机变量及其分布.canvas",
     "_Daily_Tasks/2026-09-30.md",
@@ -303,7 +316,6 @@
     "文稿/视频转写/douyin-transcript.txt",
     "文稿/视频转写/douyin-transcript.raw.json",
     "_Attachments/Images/Pasted image 20260917211929.png",
-    "_Attachments/Images/Pasted image 20260917205749.png",
     "01 - 数学/03 - 概统/05 - 大数定律与中心极限定律.canvas"
   ]
 }
